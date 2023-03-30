@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APP_QUANLY_KTX", "APP_QUANLY_KTX\APP_QUANLY_KTX.csproj", "{8A591876-0ABF-4EA9-B8A8-F8F88C8CD553}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A591876-0ABF-4EA9-B8A8-F8F88C8CD553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A591876-0ABF-4EA9-B8A8-F8F88C8CD553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A591876-0ABF-4EA9-B8A8-F8F88C8CD553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A591876-0ABF-4EA9-B8A8-F8F88C8CD553}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BED93529-36F8-4EA6-A196-EFC686B99CD6}
+	EndGlobalSection
+EndGlobal
