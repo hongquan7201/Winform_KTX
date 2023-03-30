@@ -2281,7 +2281,6 @@
             this.groupBox2.Size = new System.Drawing.Size(959, 159);
             this.groupBox2.TabIndex = 52;
             this.groupBox2.TabStop = false;
-          //  this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // labelControl71
             // 
@@ -2450,7 +2449,7 @@
             // pictureEdit4
             // 
             this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
-            this.pictureEdit4.Location = new System.Drawing.Point(369, 7);
+            this.pictureEdit4.Location = new System.Drawing.Point(365, 13);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
