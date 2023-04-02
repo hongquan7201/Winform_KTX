@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DOAN_TN\\Winform_KTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\APP_QUANLY_KTX.csproj": {}
+    "D:\\MyProjet\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\APP_QUANLY_KTX.csproj": {}
   },
   "projects": {
-    "D:\\DOAN_TN\\Winform_KTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\APP_QUANLY_KTX.csproj": {
+    "D:\\MyProjet\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\APP_QUANLY_KTX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DOAN_TN\\Winform_KTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\APP_QUANLY_KTX.csproj",
+        "projectUniqueName": "D:\\MyProjet\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\APP_QUANLY_KTX.csproj",
         "projectName": "APP_QUANLY_KTX",
-        "projectPath": "D:\\DOAN_TN\\Winform_KTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\APP_QUANLY_KTX.csproj",
-        "packagesPath": "C:\\Users\\QUAN\\.nuget\\packages\\",
-        "outputPath": "D:\\DOAN_TN\\Winform_KTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\obj\\",
+        "projectPath": "D:\\MyProjet\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\APP_QUANLY_KTX.csproj",
+        "packagesPath": "C:\\Users\\levot\\.nuget\\packages\\",
+        "outputPath": "D:\\MyProjet\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
+          "D:\\app\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\QUAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\levot\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -28,8 +28,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "D:\\app\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -51,6 +50,30 @@
             "DevExpress.Win.Design": {
               "target": "Package",
               "version": "[22.2.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.13, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
@@ -72,7 +95,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
