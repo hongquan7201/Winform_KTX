@@ -3,6 +3,7 @@ using Newtonsoft.Json.Serialization;
 using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 
@@ -18,7 +19,7 @@ namespace ProjectQLKTX.APIsHelper
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(chitietphieukho, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/chitietphieukho/add", content);
+            var response = await httpClient.PostAsync($"api/chitietphieukho/add", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
@@ -29,7 +30,7 @@ namespace ProjectQLKTX.APIsHelper
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             string query = "/api/chitietphieukho/delete/{0}";
-            var response = await httpClient.GetAsync(string.Format(query, id));
+            var response = await httpClient.DeleteAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;

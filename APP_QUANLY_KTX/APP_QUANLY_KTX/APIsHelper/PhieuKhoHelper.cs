@@ -18,7 +18,7 @@ namespace ProjectQLKTX.APIsHelper
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(phieuKho, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/phieukho/add", content);
+            var response = await httpClient.PostAsync($"api/phieukho/add", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
@@ -29,7 +29,7 @@ namespace ProjectQLKTX.APIsHelper
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             string query = "/api/phieukho/delete/{0}";
-            var response = await httpClient.GetAsync(string.Format(query, id));
+            var response = await httpClient.DeleteAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
