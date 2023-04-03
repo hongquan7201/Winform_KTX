@@ -3,6 +3,7 @@ using Newtonsoft.Json.Serialization;
 using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 
