@@ -18,7 +18,7 @@ namespace ProjectQLKTX.Logins
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(account, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PostAsync($"api/nhanvien/login", content);
+            var response = await httpClient.PutAsync($"api/nhanvien/login", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<Role> data = JsonConvert.DeserializeObject<APIRespone<Role>>(body);
             return data;

@@ -1,40 +1,53 @@
 ﻿using ProjectQLKTX.Interface;
+using ProjectQLKTX.Logins;
+using ProjectQLKTX.Models;
 
 namespace ProjectQLKTX
 {
     public partial class frmDangNhap : DevExpress.XtraEditors.XtraForm
     {
-        private readonly INhanVienHelper _nhanVienHelper;
-        public frmDangNhap(INhanVienHelper nhanVienHelper)
+        private readonly ILoginHelper _loginHelper;
+        public frmDangNhap(ILoginHelper loginHelper)
         {
             InitializeComponent();
-            _nhanVienHelper = nhanVienHelper;
-            //  _bienLaiHelper = bienLaiHelper;
+            _loginHelper = loginHelper;
         }
 
         private void cb_Hienthi_CheckedChanged(object sender, EventArgs e)
         {
             if (cb_Hienthi.Checked)
             {
-                txt_password.PasswordChar = (char)0;
+                txtPassword.PasswordChar = (char)0;
             }
             else
             {
-                txt_password.PasswordChar = '*';
+                txtPassword.PasswordChar = '*';
             }
         }
 
         private async void btn_Dangnhap_CheckedChanged(object sender, EventArgs e)
         {
-            //var s = await _nhanVienHelper.GetListNhanVien();
-            var x = await _nhanVienHelper.GetNhanVien(Guid.Parse("b991f15c-1e25-4b5c-9a2b-efd846c37c76"));
-            x.data.name = "LamLe03001";
-            x.data.cccd = "123456789";
-            var edit = await _nhanVienHelper.EditNhanVien(x.data.id, x.data);
-            var result = await _nhanVienHelper.GetNhanVien(x.data.id);
-            //Home home = new Home();
-            //home.Show();
-            //this.Hide();
+            Account account = new Account();
+            account.email = txtEmail.Text;
+            account.password = txtPassword.Text;
+            if (!string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtPassword.Text))
+            {
+                var login = await _loginHelper.Login(account);
+                if (login.status == 200)
+                {
+                    Home home = new Home();
+                    home.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(login.message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui Lòng Kiểm Tra Thông Tin Đăng Nhập!");
+            }
         }
     }
 }
