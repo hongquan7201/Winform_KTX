@@ -1,14 +1,14 @@
-﻿using ProjectQLKTX.Models;
+﻿using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Models;
 
 namespace ProjectQLKTX.Interface
 {
     public interface IHoaDonHelper
     {
-        Task GetListHoaDon();
-        Task GetHoaDon(Guid id);
-        Task AddHoaDon(Hoadon hoaDon);
-        Task EditHoaDon(Congto hoaDon);
-        Task DeleteHoaDon(Guid id);
+        Task<APIRespone<List<Hoadon>>> GetListHoaDon();
+        Task<APIRespone<Hoadon>> GetHoaDon(Guid id);
+        Task<APIRespone<string>> AddHoaDon(Hoadon hoaDon);
+        Task<APIRespone<string>> EditHoaDon(Guid id, Hoadon hoaDon);
+        Task<APIRespone<string>> DeleteHoaDon(Guid id);
     }
 }

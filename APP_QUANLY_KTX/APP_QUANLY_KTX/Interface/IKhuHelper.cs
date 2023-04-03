@@ -1,13 +1,14 @@
-﻿using ProjectQLKTX.Models;
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Models;
 
 namespace ProjectQLKTX.Interface
 {
     public interface IKhuHelper
     {
-        Task GetListKhu();
-        Task GetKhu(Guid id);
-        Task AddKhu(Khu khu);
-        Task EditKhu(Khu khu);
-        Task DeleteKhu(Guid id);
+        Task<APIRespone<List<Khu>>> GetListKhu();
+        Task<APIRespone<Khu>> GetKhu(Guid id);
+        Task<APIRespone<string>> AddKhu(Khu khu);
+        Task<APIRespone<string>> EditKhu(Guid id,Khu khu);
+        Task<APIRespone<string>> DeleteKhu(Guid id);
     }
 }

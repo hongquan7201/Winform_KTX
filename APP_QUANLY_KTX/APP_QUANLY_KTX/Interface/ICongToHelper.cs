@@ -1,14 +1,15 @@
-﻿using ProjectQLKTX.Models;
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Models;
 
 namespace ProjectQLKTX.Interface
 {
-    public interface IHoaDonHelpers
+    public interface ICongToHelper
     {
-        Task GetListHoaDon();
-        Task GetHoaDon(Guid id);
-        Task AddHoaDon(Congto HoaDon);
-        Task EditHoaDon(Congto HoaDon);
-        Task DeleteHoaDon(Guid id);
+        Task<APIRespone<List<Congto>>> GetListCongTo();
+        Task<APIRespone<Bienlai>> GetCongTo(Guid id);
+        Task<APIRespone<string>> AddCongTo(Congto CongTo);
+        Task<APIRespone<string>> EditCongTo(Guid id,Congto CongTo);
+        Task<APIRespone<string>> DeleteCongTo(Guid id);
 
     }
 }

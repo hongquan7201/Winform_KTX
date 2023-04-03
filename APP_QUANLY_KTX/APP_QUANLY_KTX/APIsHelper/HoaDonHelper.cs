@@ -1,76 +1,74 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
-using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Text.Json;
 
-namespace ProjectQLKTX.APIsHelper.BienLaiHelper
+namespace ProjectQLKTX.APIsHelper
 {
-    public class BienLaiHelper : IBienLaiHelper
+    public class HoaDonHelper : IHoaDonHelper
     {
-        public async Task<APIReponse> AddBienLai(Bienlai bienLai)
+        public async Task<APIRespone<string>> AddHoaDon(Hoadon hoaDon)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            var json = System.Text.Json.JsonSerializer.Serialize(bienLai);
+            var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+            var json = JsonConvert.SerializeObject(hoaDon, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PostAsync("api/bienlai", content);
-            response.EnsureSuccessStatusCode();
+            var response = await httpClient.PutAsync($"api/hoadon/add", content);
             var body = await response.Content.ReadAsStringAsync();
-            APIReponse data = JsonConvert.DeserializeObject<APIReponse>(body);
+            APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
         }
 
-        public async Task<APIReponse> DeleteBienLai(Guid id)
+        public async Task<APIRespone<string>> DeleteHoaDon(Guid id)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/bienlai/delete/{0}";
+            string query = "/api/hoadon/delete/{0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIReponse data = JsonConvert.DeserializeObject<APIReponse>(body);
+            APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
         }
 
-        public async Task<APIReponse> EditBienLai(Guid id,Bienlai bienLai)
+        public async Task<APIRespone<string>> EditHoaDon(Guid id, Hoadon hoaDon)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
-            var json = System.Text.Json.JsonSerializer.Serialize(bienLai, options);
+            var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+            var json = JsonConvert.SerializeObject(hoaDon, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/bienlai/edit/{id}", content);
-            response.EnsureSuccessStatusCode();
+            var response = await httpClient.PutAsync($"api/hoadon/edit/{id}", content);
             var body = await response.Content.ReadAsStringAsync();
-            APIReponse data = JsonConvert.DeserializeObject<APIReponse>(body);
+            APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
         }
 
-        public async Task<BienLaiResponse<Bienlai>> GetBienLai(Guid id)
+        public async Task<APIRespone<Hoadon>> GetHoaDon(Guid id)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/bienlai/{0}";
-            var response = await httpClient.GetAsync(string.Format(query,id));
+            string query = "/api/hoadon/{0}";
+            var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            BienLaiResponse<Bienlai> data = JsonConvert.DeserializeObject<BienLaiResponse<Bienlai>>(body);
+            APIRespone<Hoadon> data = JsonConvert.DeserializeObject<APIRespone<Hoadon>>(body);
             return data;
         }
 
-        public async Task<BienLaiResponse<ListBienLaiResult>> GetListBienLai()
+        public async Task<APIRespone<List<Hoadon>>> GetListHoaDon()
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/bienlai";
+            string query = "/api/hoadon";
             var response = await httpClient.GetAsync(query);
             var body = await response.Content.ReadAsStringAsync();
-            BienLaiResponse<ListBienLaiResult> data = JsonConvert.DeserializeObject<BienLaiResponse<ListBienLaiResult>>(body);
+            APIRespone<List<Hoadon>> data = JsonConvert.DeserializeObject<APIRespone<List<Hoadon>>>(body);
             return data;
-
         }
     }
 }

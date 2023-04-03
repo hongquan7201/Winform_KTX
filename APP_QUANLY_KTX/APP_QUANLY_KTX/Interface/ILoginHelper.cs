@@ -1,10 +1,11 @@
-﻿using ProjectQLKTX.Models;
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Models;
 
 namespace ProjectQLKTX.Interface
 {
     public interface ILoginHelper
     {
-        Task Login(string email,string password);
+        Task<APIRespone<string>> Login(string email,string password);
         Task Register(string email, string password);
     }
 }

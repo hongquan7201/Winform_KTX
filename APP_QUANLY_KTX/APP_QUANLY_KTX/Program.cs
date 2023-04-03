@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ProjectQLKTX.APIsHelper.BienLaiHelper;
-using ProjectQLKTX.APIsHelper.NhanVienHelper;
+using ProjectQLKTX.APIsHelper;
 using ProjectQLKTX.Interface;
 using Serilog;
 

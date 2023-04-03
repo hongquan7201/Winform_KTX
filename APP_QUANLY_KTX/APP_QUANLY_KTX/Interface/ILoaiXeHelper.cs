@@ -1,13 +1,14 @@
-﻿using ProjectQLKTX.Models;
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Models;
 
 namespace ProjectQLKTX.Interface
 {
     public interface ILoaiXeHelper
     {
-        Task GetListLoaiXe();
-        Task GetLoaiXe(Guid id);
-        Task AddLoaiXe(Loaixe loaiXe);
-        Task EditLoaiXe(Loaixe loaiXe);
-        Task DeleteLoaiXe(Guid id);
+        Task<APIRespone<List<Loaixe>>> GetListLoaiXe();
+        Task<APIRespone<Loaixe>> GetLoaiXe(Guid id);
+        Task<APIRespone<string>> AddLoaiXe(Loaixe loaiXe);
+        Task<APIRespone<string>> EditLoaiXe(Guid id,Loaixe loaiXe);
+        Task<APIRespone<string>> DeleteLoaiXe(Guid id);
     }
 }

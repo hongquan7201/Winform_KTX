@@ -1,14 +1,14 @@
-﻿using ProjectQLKTX.APIsHelper.BienLaiHelper;
+﻿using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Models;
 
 namespace ProjectQLKTX.Interface
 {
     public interface IChiTietCongToHelper
     {
-        Task GetListChiTietCongTo();
-        Task GetChiTietCongTo(Guid id);
-        Task AddChiTietCongTo(Chitietcongto chiTietCongTo);
-        Task EditChiTietCongTo(Guid id,Chitietcongto chiTietCongTo);
-        Task DeleteChiTietCongTo(Guid id);
+        Task<APIRespone<List<Chitietcongto>>> GetListChiTietCongTo();
+        Task<APIRespone<Chitietcongto>> GetChiTietCongTo(Guid id);
+        Task<APIRespone<string>> AddChiTietCongTo(Chitietcongto chiTietCongTo);
+        Task<APIRespone<string>> EditChiTietCongTo(Guid id,Chitietcongto chiTietCongTo);
+        Task<APIRespone<string>> DeleteChiTietCongTo(Guid id);
     }
 }

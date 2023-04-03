@@ -1,4 +1,4 @@
-﻿namespace ProjectQLKTX.APIsHelper
+﻿namespace ProjectQLKTX.APIsHelper.API
 {
     public class Constant
     {

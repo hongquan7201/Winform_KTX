@@ -1,15 +1,14 @@
-﻿using ProjectQLKTX.APIsHelper;
-using ProjectQLKTX.APIsHelper.BienLaiHelper;
+﻿using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Models;
 
 namespace ProjectQLKTX.Interface
 {
     public interface IBienLaiHelper
     {
-        Task<BienLaiResponse<ListBienLaiResult>> GetListBienLai();
-        Task<BienLaiResponse<Bienlai>> GetBienLai(Guid id);
-        Task<APIReponse> AddBienLai(Bienlai bienLai);
-        Task<APIReponse> EditBienLai(Guid id,Bienlai bienLai);
-        Task<APIReponse> DeleteBienLai(Guid id);
+        Task<APIRespone<List<Bienlai>>> GetListBienLai();
+        Task<APIRespone<Bienlai>> GetBienLai(Guid id);
+        Task<APIRespone<string>> AddBienLai(Bienlai bienLai);
+        Task<APIRespone<string>> EditBienLai(Guid id,Bienlai bienLai);
+        Task<APIRespone<string>> DeleteBienLai(Guid id);
     }
 }
