@@ -32,15 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDSNhanVien));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.btn_Them = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Sua = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Xoa = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Reload = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Xuatfile = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Tim = new DevExpress.XtraBars.BarButtonItem();
-            this.txt_Tim = new DevExpress.XtraBars.BarEditItem();
+            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReload = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuatfile = new DevExpress.XtraBars.BarButtonItem();
+            this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.btn_Thoat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTim = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -58,32 +58,36 @@
             this.barEditItem3 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.dtNgayvaolam = new System.Windows.Forms.DateTimePicker();
+            this.cbHonnhan = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.img = new System.Windows.Forms.PictureBox();
+            this.btnImport = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_MSNV = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.txt_SĐT = new DevExpress.XtraEditors.TextEdit();
-            this.cb_Tongiao = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbMSNV = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtSĐT = new DevExpress.XtraEditors.TextEdit();
+            this.cbTongiao = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_Phongban = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.txt_Hoten = new DevExpress.XtraEditors.TextEdit();
+            this.cbPhongban = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtHoten = new DevExpress.XtraEditors.TextEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_Chucvu = new DevExpress.XtraEditors.TextEdit();
+            this.txtChucvu = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_Bophan = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbBophan = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_Dantoc = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.radio_Nam = new System.Windows.Forms.RadioButton();
-            this.radio_Nu = new System.Windows.Forms.RadioButton();
+            this.cbDantoc = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.radioNam = new System.Windows.Forms.RadioButton();
+            this.radioNu = new System.Windows.Forms.RadioButton();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.dt_Ngaysinh = new System.Windows.Forms.DateTimePicker();
+            this.dtNgaysinh = new System.Windows.Forms.DateTimePicker();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_Quequan = new DevExpress.XtraEditors.TextEdit();
+            this.txtQuequan = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_CCCD = new DevExpress.XtraEditors.TextEdit();
+            this.txtCCCD = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -92,22 +96,18 @@
             this.NGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GIOITINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CCCD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HONNHAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DIENTHOAI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.QUEQUAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HINHANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PHONGBAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CHUCVU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TONGIAO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.NGAYVAOLAM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HONNHAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.BOPHAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DANTOC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -115,21 +115,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_MSNV.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_SĐT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Tongiao.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Phongban.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Hoten.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Chucvu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Bophan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Dantoc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Quequan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_CCCD.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbHonnhan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMSNV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSĐT.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTongiao.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbPhongban.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHoten.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChucvu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbBophan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbDantoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuequan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCCCD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -142,23 +142,23 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.btn_Them,
-            this.btn_Sua,
-            this.btn_Xoa,
-            this.btn_Reload,
+            this.btnThem,
+            this.btnSua,
+            this.btnXoa,
+            this.btnReload,
             this.barButtonItem5,
-            this.btn_Xuatfile,
+            this.btnXuatfile,
             this.barButtonItem7,
             this.barButtonItem8,
             this.barButtonItem9,
             this.barEditItem1,
             this.barButtonItem10,
-            this.btn_Tim,
+            this.btnTim,
             this.barEditItem2,
             this.barButtonItem12,
             this.barEditItem3,
-            this.txt_Tim,
-            this.btn_Thoat});
+            this.txtTim,
+            this.btnThoat});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 17;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -174,81 +174,81 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Them, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Sua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Xoa, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Reload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Xuatfile, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Tim, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.txt_Tim),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Thoat, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfile, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.txtTim, true),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
             // 
-            // btn_Them
+            // btnThem
             // 
-            this.btn_Them.Caption = "Thêm";
-            this.btn_Them.Id = 0;
-            this.btn_Them.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Them.ImageOptions.Image")));
-            this.btn_Them.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Them.ImageOptions.LargeImage")));
-            this.btn_Them.Name = "btn_Them";
+            this.btnThem.Caption = "Thêm";
+            this.btnThem.Id = 0;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
+            this.btnThem.Name = "btnThem";
             // 
-            // btn_Sua
+            // btnSua
             // 
-            this.btn_Sua.Caption = "Sửa";
-            this.btn_Sua.Id = 1;
-            this.btn_Sua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Sua.ImageOptions.SvgImage")));
-            this.btn_Sua.Name = "btn_Sua";
+            this.btnSua.Caption = "Sửa";
+            this.btnSua.Id = 1;
+            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
+            this.btnSua.Name = "btnSua";
             // 
-            // btn_Xoa
+            // btnXoa
             // 
-            this.btn_Xoa.Caption = "Xóa";
-            this.btn_Xoa.Id = 2;
-            this.btn_Xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.ImageOptions.Image")));
-            this.btn_Xoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.ImageOptions.LargeImage")));
-            this.btn_Xoa.Name = "btn_Xoa";
+            this.btnXoa.Caption = "Xóa";
+            this.btnXoa.Id = 2;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
+            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
+            this.btnXoa.Name = "btnXoa";
             // 
-            // btn_Reload
+            // btnReload
             // 
-            this.btn_Reload.Caption = "Reload";
-            this.btn_Reload.Id = 3;
-            this.btn_Reload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Reload.ImageOptions.Image")));
-            this.btn_Reload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Reload.ImageOptions.LargeImage")));
-            this.btn_Reload.Name = "btn_Reload";
+            this.btnReload.Caption = "Reload";
+            this.btnReload.Id = 3;
+            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
+            this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
+            this.btnReload.Name = "btnReload";
             // 
-            // btn_Xuatfile
+            // btnXuatfile
             // 
-            this.btn_Xuatfile.Caption = "Xuất File";
-            this.btn_Xuatfile.Id = 5;
-            this.btn_Xuatfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Xuatfile.ImageOptions.SvgImage")));
-            this.btn_Xuatfile.Name = "btn_Xuatfile";
+            this.btnXuatfile.Caption = "Xuất File";
+            this.btnXuatfile.Id = 5;
+            this.btnXuatfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXuatfile.ImageOptions.SvgImage")));
+            this.btnXuatfile.Name = "btnXuatfile";
             // 
-            // btn_Tim
+            // txtTim
             // 
-            this.btn_Tim.Caption = "Tìm";
-            this.btn_Tim.Id = 11;
-            this.btn_Tim.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Tim.ImageOptions.SvgImage")));
-            this.btn_Tim.Name = "btn_Tim";
-            // 
-            // txt_Tim
-            // 
-            this.txt_Tim.Caption = "barEditItem4";
-            this.txt_Tim.Edit = this.repositoryItemTextEdit4;
-            this.txt_Tim.Id = 15;
-            this.txt_Tim.Name = "txt_Tim";
+            this.txtTim.Caption = "barEditItem4";
+            this.txtTim.Edit = this.repositoryItemTextEdit4;
+            this.txtTim.Id = 15;
+            this.txtTim.Name = "txtTim";
             // 
             // repositoryItemTextEdit4
             // 
             this.repositoryItemTextEdit4.AutoHeight = false;
             this.repositoryItemTextEdit4.Name = "repositoryItemTextEdit4";
             // 
-            // btn_Thoat
+            // btnTim
             // 
-            this.btn_Thoat.Caption = "Thoát";
-            this.btn_Thoat.Id = 16;
-            this.btn_Thoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Thoat.ImageOptions.SvgImage")));
-            this.btn_Thoat.Name = "btn_Thoat";
+            this.btnTim.Caption = "Tìm";
+            this.btnTim.Id = 11;
+            this.btnTim.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTim.ImageOptions.SvgImage")));
+            this.btnTim.Name = "btnTim";
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 16;
+            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
+            this.btnThoat.Name = "btnThoat";
             // 
             // barDockControlTop
             // 
@@ -358,35 +358,35 @@
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.labelControl14);
-            this.groupControl2.Controls.Add(this.dateTimePicker1);
-            this.groupControl2.Controls.Add(this.comboBoxEdit1);
+            this.groupControl2.Controls.Add(this.dtNgayvaolam);
+            this.groupControl2.Controls.Add(this.cbHonnhan);
             this.groupControl2.Controls.Add(this.labelControl13);
-            this.groupControl2.Controls.Add(this.pictureBox1);
-            this.groupControl2.Controls.Add(this.simpleButton1);
+            this.groupControl2.Controls.Add(this.img);
+            this.groupControl2.Controls.Add(this.btnImport);
             this.groupControl2.Controls.Add(this.labelControl12);
-            this.groupControl2.Controls.Add(this.cb_MSNV);
-            this.groupControl2.Controls.Add(this.txt_SĐT);
-            this.groupControl2.Controls.Add(this.cb_Tongiao);
+            this.groupControl2.Controls.Add(this.cbMSNV);
+            this.groupControl2.Controls.Add(this.txtSĐT);
+            this.groupControl2.Controls.Add(this.cbTongiao);
             this.groupControl2.Controls.Add(this.labelControl1);
-            this.groupControl2.Controls.Add(this.cb_Phongban);
-            this.groupControl2.Controls.Add(this.txt_Hoten);
+            this.groupControl2.Controls.Add(this.cbPhongban);
+            this.groupControl2.Controls.Add(this.txtHoten);
             this.groupControl2.Controls.Add(this.labelControl11);
             this.groupControl2.Controls.Add(this.labelControl3);
-            this.groupControl2.Controls.Add(this.txt_Chucvu);
+            this.groupControl2.Controls.Add(this.txtChucvu);
             this.groupControl2.Controls.Add(this.labelControl4);
-            this.groupControl2.Controls.Add(this.cb_Bophan);
+            this.groupControl2.Controls.Add(this.cbBophan);
             this.groupControl2.Controls.Add(this.labelControl10);
             this.groupControl2.Controls.Add(this.labelControl2);
-            this.groupControl2.Controls.Add(this.cb_Dantoc);
-            this.groupControl2.Controls.Add(this.radio_Nam);
-            this.groupControl2.Controls.Add(this.radio_Nu);
+            this.groupControl2.Controls.Add(this.cbDantoc);
+            this.groupControl2.Controls.Add(this.radioNam);
+            this.groupControl2.Controls.Add(this.radioNu);
             this.groupControl2.Controls.Add(this.labelControl9);
-            this.groupControl2.Controls.Add(this.dt_Ngaysinh);
+            this.groupControl2.Controls.Add(this.dtNgaysinh);
             this.groupControl2.Controls.Add(this.labelControl8);
-            this.groupControl2.Controls.Add(this.txt_Quequan);
+            this.groupControl2.Controls.Add(this.txtQuequan);
             this.groupControl2.Controls.Add(this.labelControl6);
             this.groupControl2.Controls.Add(this.labelControl5);
-            this.groupControl2.Controls.Add(this.txt_CCCD);
+            this.groupControl2.Controls.Add(this.txtCCCD);
             this.groupControl2.Controls.Add(this.labelControl7);
             this.groupControl2.Location = new System.Drawing.Point(6, 30);
             this.groupControl2.Name = "groupControl2";
@@ -394,28 +394,66 @@
             this.groupControl2.TabIndex = 11;
             this.groupControl2.Text = "Thông Tin Nhân Viên";
             // 
-            // pictureBox1
+            // labelControl14
             // 
-            this.pictureBox1.Image = global::ProjectQLKTX.Properties.Resources.noimage;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 40);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(122, 124);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.Location = new System.Drawing.Point(160, 206);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(82, 16);
+            this.labelControl14.TabIndex = 49;
+            this.labelControl14.Text = "Ngày Vào Làm";
             // 
-            // simpleButton1
+            // dtNgayvaolam
             // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(25, 176);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(80, 36);
-            this.simpleButton1.TabIndex = 1;
-            this.simpleButton1.Text = "Import";
+            this.dtNgayvaolam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayvaolam.Location = new System.Drawing.Point(248, 204);
+            this.dtNgayvaolam.Name = "dtNgayvaolam";
+            this.dtNgayvaolam.Size = new System.Drawing.Size(221, 21);
+            this.dtNgayvaolam.TabIndex = 50;
+            // 
+            // cbHonnhan
+            // 
+            this.cbHonnhan.Location = new System.Drawing.Point(568, 163);
+            this.cbHonnhan.MenuManager = this.barManager1;
+            this.cbHonnhan.Name = "cbHonnhan";
+            this.cbHonnhan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbHonnhan.Size = new System.Drawing.Size(276, 20);
+            this.cbHonnhan.TabIndex = 48;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Location = new System.Drawing.Point(507, 164);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(55, 16);
+            this.labelControl13.TabIndex = 47;
+            this.labelControl13.Text = "Hôn Nhân";
+            // 
+            // img
+            // 
+            this.img.Image = global::ProjectQLKTX.Properties.Resources.noimage;
+            this.img.Location = new System.Drawing.Point(10, 40);
+            this.img.Name = "img";
+            this.img.Size = new System.Drawing.Size(122, 124);
+            this.img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.img.TabIndex = 2;
+            this.img.TabStop = false;
+            // 
+            // btnImport
+            // 
+            this.btnImport.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnImport.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnImport.Appearance.Options.UseBackColor = true;
+            this.btnImport.Appearance.Options.UseFont = true;
+            this.btnImport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImport.ImageOptions.Image")));
+            this.btnImport.Location = new System.Drawing.Point(25, 176);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(80, 36);
+            this.btnImport.TabIndex = 1;
+            this.btnImport.Text = "Import";
             // 
             // labelControl12
             // 
@@ -427,33 +465,33 @@
             this.labelControl12.TabIndex = 46;
             this.labelControl12.Text = "SĐT";
             // 
-            // cb_MSNV
+            // cbMSNV
             // 
-            this.cb_MSNV.Location = new System.Drawing.Point(248, 37);
-            this.cb_MSNV.MenuManager = this.barManager1;
-            this.cb_MSNV.Name = "cb_MSNV";
-            this.cb_MSNV.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbMSNV.Location = new System.Drawing.Point(248, 37);
+            this.cbMSNV.MenuManager = this.barManager1;
+            this.cbMSNV.Name = "cbMSNV";
+            this.cbMSNV.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_MSNV.Size = new System.Drawing.Size(221, 20);
-            this.cb_MSNV.TabIndex = 34;
+            this.cbMSNV.Size = new System.Drawing.Size(221, 20);
+            this.cbMSNV.TabIndex = 34;
             // 
-            // txt_SĐT
+            // txtSĐT
             // 
-            this.txt_SĐT.Location = new System.Drawing.Point(566, 202);
-            this.txt_SĐT.MenuManager = this.barManager1;
-            this.txt_SĐT.Name = "txt_SĐT";
-            this.txt_SĐT.Size = new System.Drawing.Size(278, 20);
-            this.txt_SĐT.TabIndex = 45;
+            this.txtSĐT.Location = new System.Drawing.Point(566, 202);
+            this.txtSĐT.MenuManager = this.barManager1;
+            this.txtSĐT.Name = "txtSĐT";
+            this.txtSĐT.Size = new System.Drawing.Size(278, 20);
+            this.txtSĐT.TabIndex = 45;
             // 
-            // cb_Tongiao
+            // cbTongiao
             // 
-            this.cb_Tongiao.Location = new System.Drawing.Point(737, 118);
-            this.cb_Tongiao.MenuManager = this.barManager1;
-            this.cb_Tongiao.Name = "cb_Tongiao";
-            this.cb_Tongiao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbTongiao.Location = new System.Drawing.Point(737, 118);
+            this.cbTongiao.MenuManager = this.barManager1;
+            this.cbTongiao.Name = "cbTongiao";
+            this.cbTongiao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_Tongiao.Size = new System.Drawing.Size(107, 20);
-            this.cb_Tongiao.TabIndex = 44;
+            this.cbTongiao.Size = new System.Drawing.Size(107, 20);
+            this.cbTongiao.TabIndex = 44;
             // 
             // labelControl1
             // 
@@ -465,23 +503,23 @@
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "MSNV";
             // 
-            // cb_Phongban
+            // cbPhongban
             // 
-            this.cb_Phongban.Location = new System.Drawing.Point(566, 74);
-            this.cb_Phongban.MenuManager = this.barManager1;
-            this.cb_Phongban.Name = "cb_Phongban";
-            this.cb_Phongban.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbPhongban.Location = new System.Drawing.Point(566, 74);
+            this.cbPhongban.MenuManager = this.barManager1;
+            this.cbPhongban.Name = "cbPhongban";
+            this.cbPhongban.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_Phongban.Size = new System.Drawing.Size(110, 20);
-            this.cb_Phongban.TabIndex = 42;
+            this.cbPhongban.Size = new System.Drawing.Size(110, 20);
+            this.cbPhongban.TabIndex = 42;
             // 
-            // txt_Hoten
+            // txtHoten
             // 
-            this.txt_Hoten.Location = new System.Drawing.Point(248, 74);
-            this.txt_Hoten.MenuManager = this.barManager1;
-            this.txt_Hoten.Name = "txt_Hoten";
-            this.txt_Hoten.Size = new System.Drawing.Size(221, 20);
-            this.txt_Hoten.TabIndex = 8;
+            this.txtHoten.Location = new System.Drawing.Point(248, 74);
+            this.txtHoten.MenuManager = this.barManager1;
+            this.txtHoten.Name = "txtHoten";
+            this.txtHoten.Size = new System.Drawing.Size(221, 20);
+            this.txtHoten.TabIndex = 8;
             // 
             // labelControl11
             // 
@@ -503,13 +541,13 @@
             this.labelControl3.TabIndex = 9;
             this.labelControl3.Text = "Họ Tên";
             // 
-            // txt_Chucvu
+            // txtChucvu
             // 
-            this.txt_Chucvu.Location = new System.Drawing.Point(568, 37);
-            this.txt_Chucvu.MenuManager = this.barManager1;
-            this.txt_Chucvu.Name = "txt_Chucvu";
-            this.txt_Chucvu.Size = new System.Drawing.Size(276, 20);
-            this.txt_Chucvu.TabIndex = 40;
+            this.txtChucvu.Location = new System.Drawing.Point(568, 37);
+            this.txtChucvu.MenuManager = this.barManager1;
+            this.txtChucvu.Name = "txtChucvu";
+            this.txtChucvu.Size = new System.Drawing.Size(276, 20);
+            this.txtChucvu.TabIndex = 40;
             // 
             // labelControl4
             // 
@@ -521,15 +559,15 @@
             this.labelControl4.TabIndex = 13;
             this.labelControl4.Text = "Ngày Sinh";
             // 
-            // cb_Bophan
+            // cbBophan
             // 
-            this.cb_Bophan.Location = new System.Drawing.Point(737, 74);
-            this.cb_Bophan.MenuManager = this.barManager1;
-            this.cb_Bophan.Name = "cb_Bophan";
-            this.cb_Bophan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbBophan.Location = new System.Drawing.Point(737, 74);
+            this.cbBophan.MenuManager = this.barManager1;
+            this.cbBophan.Name = "cbBophan";
+            this.cbBophan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_Bophan.Size = new System.Drawing.Size(107, 20);
-            this.cb_Bophan.TabIndex = 39;
+            this.cbBophan.Size = new System.Drawing.Size(107, 20);
+            this.cbBophan.TabIndex = 39;
             // 
             // labelControl10
             // 
@@ -551,39 +589,39 @@
             this.labelControl2.TabIndex = 15;
             this.labelControl2.Text = "Giới Tính";
             // 
-            // cb_Dantoc
+            // cbDantoc
             // 
-            this.cb_Dantoc.Location = new System.Drawing.Point(568, 118);
-            this.cb_Dantoc.MenuManager = this.barManager1;
-            this.cb_Dantoc.Name = "cb_Dantoc";
-            this.cb_Dantoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbDantoc.Location = new System.Drawing.Point(568, 118);
+            this.cbDantoc.MenuManager = this.barManager1;
+            this.cbDantoc.Name = "cbDantoc";
+            this.cbDantoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_Dantoc.Size = new System.Drawing.Size(108, 20);
-            this.cb_Dantoc.TabIndex = 37;
+            this.cbDantoc.Size = new System.Drawing.Size(108, 20);
+            this.cbDantoc.TabIndex = 37;
             // 
-            // radio_Nam
+            // radioNam
             // 
-            this.radio_Nam.AutoSize = true;
-            this.radio_Nam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radio_Nam.Location = new System.Drawing.Point(266, 105);
-            this.radio_Nam.Name = "radio_Nam";
-            this.radio_Nam.Size = new System.Drawing.Size(51, 20);
-            this.radio_Nam.TabIndex = 16;
-            this.radio_Nam.TabStop = true;
-            this.radio_Nam.Text = "Nam";
-            this.radio_Nam.UseVisualStyleBackColor = true;
+            this.radioNam.AutoSize = true;
+            this.radioNam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioNam.Location = new System.Drawing.Point(266, 105);
+            this.radioNam.Name = "radioNam";
+            this.radioNam.Size = new System.Drawing.Size(51, 20);
+            this.radioNam.TabIndex = 16;
+            this.radioNam.TabStop = true;
+            this.radioNam.Text = "Nam";
+            this.radioNam.UseVisualStyleBackColor = true;
             // 
-            // radio_Nu
+            // radioNu
             // 
-            this.radio_Nu.AutoSize = true;
-            this.radio_Nu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radio_Nu.Location = new System.Drawing.Point(327, 105);
-            this.radio_Nu.Name = "radio_Nu";
-            this.radio_Nu.Size = new System.Drawing.Size(41, 20);
-            this.radio_Nu.TabIndex = 17;
-            this.radio_Nu.TabStop = true;
-            this.radio_Nu.Text = "Nữ";
-            this.radio_Nu.UseVisualStyleBackColor = true;
+            this.radioNu.AutoSize = true;
+            this.radioNu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioNu.Location = new System.Drawing.Point(327, 105);
+            this.radioNu.Name = "radioNu";
+            this.radioNu.Size = new System.Drawing.Size(41, 20);
+            this.radioNu.TabIndex = 17;
+            this.radioNu.TabStop = true;
+            this.radioNu.Text = "Nữ";
+            this.radioNu.UseVisualStyleBackColor = true;
             // 
             // labelControl9
             // 
@@ -595,13 +633,13 @@
             this.labelControl9.TabIndex = 30;
             this.labelControl9.Text = "Phòng ban";
             // 
-            // dt_Ngaysinh
+            // dtNgaysinh
             // 
-            this.dt_Ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_Ngaysinh.Location = new System.Drawing.Point(248, 130);
-            this.dt_Ngaysinh.Name = "dt_Ngaysinh";
-            this.dt_Ngaysinh.Size = new System.Drawing.Size(221, 21);
-            this.dt_Ngaysinh.TabIndex = 18;
+            this.dtNgaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgaysinh.Location = new System.Drawing.Point(248, 130);
+            this.dtNgaysinh.Name = "dtNgaysinh";
+            this.dtNgaysinh.Size = new System.Drawing.Size(221, 21);
+            this.dtNgaysinh.TabIndex = 18;
             // 
             // labelControl8
             // 
@@ -613,13 +651,13 @@
             this.labelControl8.TabIndex = 28;
             this.labelControl8.Text = "Dân Tộc";
             // 
-            // txt_Quequan
+            // txtQuequan
             // 
-            this.txt_Quequan.Location = new System.Drawing.Point(248, 244);
-            this.txt_Quequan.MenuManager = this.barManager1;
-            this.txt_Quequan.Name = "txt_Quequan";
-            this.txt_Quequan.Size = new System.Drawing.Size(596, 20);
-            this.txt_Quequan.TabIndex = 19;
+            this.txtQuequan.Location = new System.Drawing.Point(248, 244);
+            this.txtQuequan.MenuManager = this.barManager1;
+            this.txtQuequan.Name = "txtQuequan";
+            this.txtQuequan.Size = new System.Drawing.Size(596, 20);
+            this.txtQuequan.TabIndex = 19;
             // 
             // labelControl6
             // 
@@ -641,13 +679,13 @@
             this.labelControl5.TabIndex = 20;
             this.labelControl5.Text = "Quê Quán";
             // 
-            // txt_CCCD
+            // txtCCCD
             // 
-            this.txt_CCCD.Location = new System.Drawing.Point(248, 166);
-            this.txt_CCCD.MenuManager = this.barManager1;
-            this.txt_CCCD.Name = "txt_CCCD";
-            this.txt_CCCD.Size = new System.Drawing.Size(221, 20);
-            this.txt_CCCD.TabIndex = 25;
+            this.txtCCCD.Location = new System.Drawing.Point(248, 166);
+            this.txtCCCD.MenuManager = this.barManager1;
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Size = new System.Drawing.Size(221, 20);
+            this.txtCCCD.TabIndex = 25;
             // 
             // labelControl7
             // 
@@ -769,6 +807,21 @@
             this.CCCD.VisibleIndex = 4;
             this.CCCD.Width = 120;
             // 
+            // HONNHAN
+            // 
+            this.HONNHAN.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HONNHAN.AppearanceCell.Options.UseFont = true;
+            this.HONNHAN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HONNHAN.AppearanceHeader.Options.UseFont = true;
+            this.HONNHAN.Caption = "HÔN NHÂN";
+            this.HONNHAN.FieldName = "HONNHAN";
+            this.HONNHAN.MaxWidth = 120;
+            this.HONNHAN.MinWidth = 120;
+            this.HONNHAN.Name = "HONNHAN";
+            this.HONNHAN.Visible = true;
+            this.HONNHAN.VisibleIndex = 5;
+            this.HONNHAN.Width = 120;
+            // 
             // DIENTHOAI
             // 
             this.DIENTHOAI.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -855,51 +908,6 @@
             this.TONGIAO.Name = "TONGIAO";
             this.TONGIAO.Width = 120;
             // 
-            // repositoryItemLookUpEdit2
-            // 
-            this.repositoryItemLookUpEdit2.AutoHeight = false;
-            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(568, 163);
-            this.comboBoxEdit1.MenuManager = this.barManager1;
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(276, 20);
-            this.comboBoxEdit1.TabIndex = 48;
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(507, 164);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(55, 16);
-            this.labelControl13.TabIndex = 47;
-            this.labelControl13.Text = "Hôn Nhân";
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(160, 206);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(82, 16);
-            this.labelControl14.TabIndex = 49;
-            this.labelControl14.Text = "Ngày Vào Làm";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(248, 204);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(221, 21);
-            this.dateTimePicker1.TabIndex = 50;
-            // 
             // NGAYVAOLAM
             // 
             this.NGAYVAOLAM.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -915,21 +923,6 @@
             this.NGAYVAOLAM.Visible = true;
             this.NGAYVAOLAM.VisibleIndex = 10;
             this.NGAYVAOLAM.Width = 120;
-            // 
-            // HONNHAN
-            // 
-            this.HONNHAN.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.HONNHAN.AppearanceCell.Options.UseFont = true;
-            this.HONNHAN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.HONNHAN.AppearanceHeader.Options.UseFont = true;
-            this.HONNHAN.Caption = "HÔN NHÂN";
-            this.HONNHAN.FieldName = "HONNHAN";
-            this.HONNHAN.MaxWidth = 120;
-            this.HONNHAN.MinWidth = 120;
-            this.HONNHAN.Name = "HONNHAN";
-            this.HONNHAN.Visible = true;
-            this.HONNHAN.VisibleIndex = 5;
-            this.HONNHAN.Width = 120;
             // 
             // BOPHAN
             // 
@@ -974,6 +967,13 @@
             this.DANTOC.Name = "DANTOC";
             this.DANTOC.Width = 100;
             // 
+            // repositoryItemLookUpEdit2
+            // 
+            this.repositoryItemLookUpEdit2.AutoHeight = false;
+            this.repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
+            // 
             // frmDSNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -985,6 +985,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDSNhanVien";
@@ -998,21 +999,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_MSNV.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_SĐT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Tongiao.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Phongban.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Hoten.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Chucvu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Bophan.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Dantoc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Quequan.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_CCCD.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbHonnhan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMSNV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSĐT.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTongiao.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbPhongban.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHoten.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtChucvu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbBophan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbDantoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuequan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCCCD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1022,15 +1023,15 @@
 
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarButtonItem btn_Them;
-        private DevExpress.XtraBars.BarButtonItem btn_Sua;
-        private DevExpress.XtraBars.BarButtonItem btn_Xoa;
-        private DevExpress.XtraBars.BarButtonItem btn_Reload;
-        private DevExpress.XtraBars.BarButtonItem btn_Xuatfile;
-        private DevExpress.XtraBars.BarButtonItem btn_Tim;
-        private DevExpress.XtraBars.BarEditItem txt_Tim;
+        private DevExpress.XtraBars.BarButtonItem btnThem;
+        private DevExpress.XtraBars.BarButtonItem btnSua;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
+        private DevExpress.XtraBars.BarButtonItem btnReload;
+        private DevExpress.XtraBars.BarButtonItem btnXuatfile;
+        private DevExpress.XtraBars.BarButtonItem btnTim;
+        private DevExpress.XtraBars.BarEditItem txtTim;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit4;
-        private DevExpress.XtraBars.BarButtonItem btn_Thoat;
+        private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
@@ -1062,32 +1063,32 @@
         private DevExpress.XtraGrid.Columns.GridColumn TONGIAO;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private PictureBox pictureBox1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private PictureBox img;
+        private DevExpress.XtraEditors.SimpleButton btnImport;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_MSNV;
-        private DevExpress.XtraEditors.TextEdit txt_SĐT;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_Tongiao;
+        private DevExpress.XtraEditors.ComboBoxEdit cbMSNV;
+        private DevExpress.XtraEditors.TextEdit txtSĐT;
+        private DevExpress.XtraEditors.ComboBoxEdit cbTongiao;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_Phongban;
-        private DevExpress.XtraEditors.TextEdit txt_Hoten;
+        private DevExpress.XtraEditors.ComboBoxEdit cbPhongban;
+        private DevExpress.XtraEditors.TextEdit txtHoten;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit txt_Chucvu;
+        private DevExpress.XtraEditors.TextEdit txtChucvu;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_Bophan;
+        private DevExpress.XtraEditors.ComboBoxEdit cbBophan;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_Dantoc;
-        private RadioButton radio_Nam;
-        private RadioButton radio_Nu;
+        private DevExpress.XtraEditors.ComboBoxEdit cbDantoc;
+        private RadioButton radioNam;
+        private RadioButton radioNu;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DateTimePicker dt_Ngaysinh;
+        private DateTimePicker dtNgaysinh;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit txt_Quequan;
+        private DevExpress.XtraEditors.TextEdit txtQuequan;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txt_CCCD;
+        private DevExpress.XtraEditors.TextEdit txtCCCD;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraGrid.Columns.GridColumn HONNHAN;
         private DevExpress.XtraGrid.Columns.GridColumn NGAYVAOLAM;
@@ -1095,8 +1096,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn SDT;
         private DevExpress.XtraGrid.Columns.GridColumn DANTOC;
         private DevExpress.XtraEditors.LabelControl labelControl14;
-        private DateTimePicker dateTimePicker1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DateTimePicker dtNgayvaolam;
+        private DevExpress.XtraEditors.ComboBoxEdit cbHonnhan;
         private DevExpress.XtraEditors.LabelControl labelControl13;
     }
 }

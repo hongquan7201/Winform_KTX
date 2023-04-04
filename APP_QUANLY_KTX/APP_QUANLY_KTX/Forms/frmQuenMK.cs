@@ -22,15 +22,5 @@ namespace ProjectQLKTX
             //frmDangNhap DangNhap = new frmDangNhap();
             //DangNhap.ShowDialog();
         }
-
-        private void frmQuenMK_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLaylaiMk_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

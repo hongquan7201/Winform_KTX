@@ -17,15 +17,5 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
-
-        private void lb_Namsochotrong_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

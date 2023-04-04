@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Hosting;
 using ProjectQLKTX.APIsHelper;
 using ProjectQLKTX.Interface;
+using ProjectQLKTX.Logins;
 using Serilog;
 
 namespace ProjectQLKTX
@@ -77,6 +78,9 @@ namespace ProjectQLKTX
                 .ConfigureServices((context, services) =>
                 {
                     services.AddSingleton<frmDangNhap>();
+                    services.AddTransient<ILoginHelper, LoginHelper>();
+
+
                     services.AddTransient<IBienLaiHelper, BienLaiHelper>();
                     services.AddTransient<INhanVienHelper, NhanVienHelper>();
                 }).Build();

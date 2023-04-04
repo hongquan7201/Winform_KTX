@@ -22,5 +22,10 @@ namespace ProjectQLKTX
         {
 
         }
+
+        private void frmQLHopDong_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

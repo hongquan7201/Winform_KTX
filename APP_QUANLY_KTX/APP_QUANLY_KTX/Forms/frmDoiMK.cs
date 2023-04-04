@@ -17,15 +17,5 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
-
-        private void frmDoiMK_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureEdit3_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

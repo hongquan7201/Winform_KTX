@@ -1,7 +1,6 @@
 ﻿using DevExpress.XtraBars;
 
 namespace ProjectQLKTX
-
 {
     public partial class Home : DevExpress.XtraBars.Ribbon.RibbonForm
     {
@@ -9,7 +8,7 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
-        private void btn_DSSV_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnDSSV_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmDSSinhVien frmDSSinhVien = new frmDSSinhVien();
             frmDSSinhVien.ShowDialog();
@@ -24,12 +23,12 @@ namespace ProjectQLKTX
             frmThanNhanSV frmThanNhanSV = new frmThanNhanSV();
             frmThanNhanSV.ShowDialog();
         }
-        private void btnDanhsachkyluat_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnDSKyLuat_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmDSKyLuat frmDSKyLuat = new frmDSKyLuat();
             frmDSKyLuat.ShowDialog();
         }
-        private void btnNhanvien_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnDSNV_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmDSNhanVien frmDSNhanVien = new frmDSNhanVien();
             frmDSNhanVien.ShowDialog();
@@ -37,9 +36,9 @@ namespace ProjectQLKTX
         private void btnQLHDong_ItemClick(object sender, ItemClickEventArgs e)
         {
            frmQLHopDong frmDSHopDong = new frmQLHopDong();
-            frmDSHopDong.ShowDialog();
+           frmDSHopDong.ShowDialog();
         }
-        private void btnQLHD_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnQLHDon_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmQLHoaDon frmQLHoaDon = new frmQLHoaDon();
             frmQLHoaDon.ShowDialog();
@@ -84,12 +83,12 @@ namespace ProjectQLKTX
             frmTraPhong frmTraPhong = new frmTraPhong();
             frmTraPhong.ShowDialog();
         }
-        private void btn_TTSV_ItemClick(object sender, ItemClickEventArgs e)
+        private void btn_ThongTinSV_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmThongTinCaNhanSV frmThongTinCaNhanSV = new frmThongTinCaNhanSV();
             frmThongTinCaNhanSV.ShowDialog();
         }
-        private void btnTTNV_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnThongTinNV_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmThongTinCaNhanNV frmThongTinCaNhanNV = new frmThongTinCaNhanNV();
             frmThongTinCaNhanNV.ShowDialog();
@@ -99,31 +98,41 @@ namespace ProjectQLKTX
             frmQLDichVu frmQLDichVu = new frmQLDichVu();
             frmQLDichVu.ShowDialog();
         }
-
-        private void btn_BCDThu_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
-        private void btn_TKSLHDong_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
-        private void btn_TKTTPhong_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
-        private void btn_TKSLuong_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
         private void btnDoiMK1_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmDoiMK frmDoiMK = new frmDoiMK();
             frmDoiMK.ShowDialog();
+        }
+        private void btnTTSinhVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmThongTinCaNhanSV frmThongTinCaNhanSV = new frmThongTinCaNhanSV();
+            frmThongTinCaNhanSV.ShowDialog();
+        }
+        private void btnTTnhanvien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmThongTinCaNhanNV frmThongTinCaNhanNV = new frmThongTinCaNhanNV();
+            frmThongTinCaNhanNV.ShowDialog();
+        }
+        private void btnQLnhaxe_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmQLNhaXe frmQLNhaXe = new frmQLNhaXe();
+            frmQLNhaXe.ShowDialog();
+        }
+        private void btnDangxuat1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Home home = new Home();
+            home.ShowDialog();
+
+        }
+
+        private void pictureEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThoat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

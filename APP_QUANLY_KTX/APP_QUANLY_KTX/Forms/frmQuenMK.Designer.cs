@@ -52,14 +52,14 @@
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(72, 22);
+            this.pictureEdit1.Location = new System.Drawing.Point(12, 8);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Azure;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.ZoomPercent = 15D;
-            this.pictureEdit1.Size = new System.Drawing.Size(93, 81);
+            this.pictureEdit1.Properties.ZoomPercent = 70D;
+            this.pictureEdit1.Size = new System.Drawing.Size(170, 81);
             this.pictureEdit1.TabIndex = 74;
             // 
             // label1
@@ -80,7 +80,7 @@
             this.lbQuaylaiDN.AutoSize = true;
             this.lbQuaylaiDN.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbQuaylaiDN.ForeColor = System.Drawing.Color.Blue;
-            this.lbQuaylaiDN.Location = new System.Drawing.Point(254, 304);
+            this.lbQuaylaiDN.Location = new System.Drawing.Point(250, 287);
             this.lbQuaylaiDN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbQuaylaiDN.Name = "lbQuaylaiDN";
             this.lbQuaylaiDN.Size = new System.Drawing.Size(147, 19);
@@ -96,18 +96,17 @@
             this.btnLaylaiMk.Appearance.Options.UseBackColor = true;
             this.btnLaylaiMk.Appearance.Options.UseFont = true;
             this.btnLaylaiMk.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLaylaiMk.ImageOptions.SvgImage")));
-            this.btnLaylaiMk.Location = new System.Drawing.Point(236, 241);
+            this.btnLaylaiMk.Location = new System.Drawing.Point(235, 231);
             this.btnLaylaiMk.Name = "btnLaylaiMk";
             this.btnLaylaiMk.Size = new System.Drawing.Size(183, 40);
             this.btnLaylaiMk.TabIndex = 71;
             this.btnLaylaiMk.Text = "Lấy lại mật khẩu";
-            this.btnLaylaiMk.CheckedChanged += new System.EventHandler(this.btnLaylaiMk_CheckedChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(64, 182);
+            this.label6.Location = new System.Drawing.Point(75, 126);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 19);
@@ -118,39 +117,39 @@
             // pictureEdit5
             // 
             this.pictureEdit5.EditValue = ((object)(resources.GetObject("pictureEdit5.EditValue")));
-            this.pictureEdit5.Location = new System.Drawing.Point(20, 175);
+            this.pictureEdit5.Location = new System.Drawing.Point(29, 114);
             this.pictureEdit5.Name = "pictureEdit5";
             this.pictureEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Azure;
             this.pictureEdit5.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit5.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit5.Properties.ZoomPercent = 5D;
-            this.pictureEdit5.Size = new System.Drawing.Size(37, 30);
+            this.pictureEdit5.Size = new System.Drawing.Size(39, 44);
             this.pictureEdit5.TabIndex = 66;
             // 
             // pictureEdit6
             // 
             this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
-            this.pictureEdit6.Location = new System.Drawing.Point(22, 120);
+            this.pictureEdit6.Location = new System.Drawing.Point(29, 164);
             this.pictureEdit6.Name = "pictureEdit6";
             this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.Azure;
             this.pictureEdit6.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit6.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit6.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit6.Properties.ZoomPercent = 5D;
-            this.pictureEdit6.Size = new System.Drawing.Size(37, 30);
+            this.pictureEdit6.Properties.ZoomPercent = 10D;
+            this.pictureEdit6.Size = new System.Drawing.Size(39, 43);
             this.pictureEdit6.TabIndex = 64;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(60, 126);
+            this.label7.Location = new System.Drawing.Point(75, 175);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 19);
+            this.label7.Size = new System.Drawing.Size(106, 19);
             this.label7.TabIndex = 65;
-            this.label7.Text = "Tên đăng nhập:";
+            this.label7.Text = "CCCD/CMND:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel2
@@ -218,7 +217,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 339);
+            this.ClientSize = new System.Drawing.Size(489, 319);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.label1);
@@ -230,9 +229,9 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuenMK";
             this.Text = "QuenMatKhau";
-            this.Load += new System.EventHandler(this.frmQuenMK_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();

@@ -925,7 +925,7 @@
             this.OTOIDA.VisibleIndex = 9;
             this.OTOIDA.Width = 120;
             // 
-            // SinhVienCungPhong
+            // frmSinhVienCungPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -936,9 +936,10 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SinhVienCungPhong";
+            this.Name = "frmSinhVienCungPhong";
             this.Text = "SienVienCungPhong";
             this.Load += new System.EventHandler(this.SienVienCungPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

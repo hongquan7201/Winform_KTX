@@ -1,0 +1,18 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/APP_QUANLY_KTX/.vs/APP_QUANLY_KTX/FileContentIndex
+/APP_QUANLY_KTX/.vs/APP_QUANLY_KTX/v17/.suo
+/APP_QUANLY_KTX/APP_QUANLY_KTX/bin/Debug/net6.0-windows
+/APP_QUANLY_KTX/APP_QUANLY_KTX/obj/Debug/net6.0-windows/ref
+/APP_QUANLY_KTX/APP_QUANLY_KTX/obj/Debug/net6.0-windows/refint
+/APP_QUANLY_KTX/APP_QUANLY_KTX/obj/Debug/net6.0-windows/ProjectQLKTX.csproj.CopyComplete
+*.pdb
+*.cache
+/APP_QUANLY_KTX/APP_QUANLY_KTX/obj/Debug/net6.0-windows/ProjectQLKTX.frmDangNhap.resources
+/APP_QUANLY_KTX/APP_QUANLY_KTX/obj/Debug/net6.0-windows/ProjectQLKTX.csproj.CoreCompileInputs.cache
+/APP_QUANLY_KTX/APP_QUANLY_KTX/obj/Debug/net6.0-windows/ProjectQLKTX.csproj.FileListAbsolute.txt
+/APP_QUANLY_KTX/APP_QUANLY_KTX/obj/Debug/net6.0-windows/ProjectQLKTX.csproj.GenerateResource.cache
+*.dll
+/APP_QUANLY_KTX/.vs/APP_QUANLY_KTX/DesignTimeBuild/.dtbcache.v2

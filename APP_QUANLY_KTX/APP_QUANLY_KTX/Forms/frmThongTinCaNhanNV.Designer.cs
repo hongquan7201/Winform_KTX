@@ -1002,6 +1002,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmThongTinCaNhanNV";
             this.Text = "ThongTinCaNhanNV";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

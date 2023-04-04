@@ -22,5 +22,10 @@ namespace ProjectQLKTX
         {
 
         }
+
+        private void img_Click(object sender, EventArgs e)
+        {
+
+        }
     }     
 }

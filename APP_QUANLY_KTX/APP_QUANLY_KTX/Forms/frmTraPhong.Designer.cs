@@ -693,7 +693,7 @@
             this.cb_Toanha.Properties.Appearance.Options.UseFont = true;
             this.cb_Toanha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_Toanha.Size = new System.Drawing.Size(74, 22);
+            this.cb_Toanha.Size = new System.Drawing.Size(100, 22);
             this.cb_Toanha.TabIndex = 43;
             // 
             // dt_Ngayra
@@ -1033,7 +1033,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 460);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(811, 154);
+            this.gridControl2.Size = new System.Drawing.Size(807, 154);
             this.gridControl2.TabIndex = 83;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -1170,7 +1170,7 @@
             this.NGAYRA.VisibleIndex = 7;
             this.NGAYRA.Width = 150;
             // 
-            // TraPhong
+            // frmTraPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1183,9 +1183,10 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "TraPhong";
+            this.Name = "frmTraPhong";
             this.Text = "TraPhong";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
