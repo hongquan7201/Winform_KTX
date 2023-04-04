@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyProjet\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj": {}
+    "D:\\DOAN_TN\\Winform_KTX\\WinformKTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj": {}
   },
   "projects": {
-    "D:\\MyProjet\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj": {
+    "D:\\DOAN_TN\\Winform_KTX\\WinformKTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProjet\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj",
+        "projectUniqueName": "D:\\DOAN_TN\\Winform_KTX\\WinformKTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj",
         "projectName": "ProjectQLKTX",
-        "projectPath": "D:\\MyProjet\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj",
-        "packagesPath": "C:\\Users\\levot\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProjet\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\obj\\",
+        "projectPath": "D:\\DOAN_TN\\Winform_KTX\\WinformKTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj",
+        "packagesPath": "C:\\Users\\QUAN\\.nuget\\packages\\",
+        "outputPath": "D:\\DOAN_TN\\Winform_KTX\\WinformKTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\app\\Components\\Offline Packages",
+          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\levot\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\QUAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -28,7 +28,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\app\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -95,7 +96,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

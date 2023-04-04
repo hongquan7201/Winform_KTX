@@ -27,5 +27,10 @@ namespace ProjectQLKTX
         {
 
         }
+
+        private void btn_Sua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

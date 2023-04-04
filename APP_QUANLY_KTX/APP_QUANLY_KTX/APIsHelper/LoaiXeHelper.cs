@@ -5,6 +5,7 @@ using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Net.Http;
 
 namespace ProjectQLKTX.APIsHelper
 {

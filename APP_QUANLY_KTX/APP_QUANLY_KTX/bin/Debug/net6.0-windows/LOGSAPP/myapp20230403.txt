@@ -1,0 +1,116 @@
+2023-04-03 21:25:29.660 +07:00 [INF] Application start
+2023-04-03 21:28:55.878 +07:00 [INF] Application start
+2023-04-03 21:28:56.013 +07:00 [ERR] No service for type 'ProjectQLKTX.frmDangNhap' has been registered.
+2023-04-03 21:28:56.141 +07:00 [ERR] System.InvalidOperationException: No service for type 'ProjectQLKTX.frmDangNhap' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at ProjectQLKTX.Program.Main() in D:\DOAN_TN\Winform_KTX\WinformKTX\Winform\APP_QUANLY_KTX\APP_QUANLY_KTX\Program.cs:line 36
+2023-04-03 21:29:14.339 +07:00 [INF] Application start
+2023-04-03 21:29:14.604 +07:00 [ERR] No service for type 'ProjectQLKTX.frmDangNhap' has been registered.
+2023-04-03 21:29:14.731 +07:00 [ERR] System.InvalidOperationException: No service for type 'ProjectQLKTX.frmDangNhap' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at ProjectQLKTX.Program.Main() in D:\DOAN_TN\Winform_KTX\WinformKTX\Winform\APP_QUANLY_KTX\APP_QUANLY_KTX\Program.cs:line 36
+2023-04-03 21:37:18.695 +07:00 [INF] Application start
+2023-04-03 21:37:19.089 +07:00 [ERR] No service for type 'ProjectQLKTX.frmDangNhap' has been registered.
+2023-04-03 21:37:19.244 +07:00 [ERR] System.InvalidOperationException: No service for type 'ProjectQLKTX.frmDangNhap' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at ProjectQLKTX.Program.Main() in D:\DOAN_TN\Winform_KTX\WinformKTX\Winform\APP_QUANLY_KTX\APP_QUANLY_KTX\Program.cs:line 36
+2023-04-03 21:58:22.671 +07:00 [INF] Application start
+2023-04-03 22:00:15.756 +07:00 [INF] Application start
+2023-04-03 22:02:09.230 +07:00 [ERR] Exception has been thrown by the target of an invocation.
+2023-04-03 22:02:09.675 +07:00 [ERR] System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:7102)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(HttpRequestMessage request)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ProjectQLKTX.APIsHelper.NhanVienHelper.GetNhanVien(Guid id) in D:\DOAN_TN\Winform_KTX\WinformKTX\Winform\APP_QUANLY_KTX\APP_QUANLY_KTX\APIsHelper\NhanVienHelper.cs:line 68
+   at ProjectQLKTX.frmDangNhap.btn_Dangnhap_CheckedChanged(Object sender, EventArgs e) in D:\DOAN_TN\Winform_KTX\WinformKTX\Winform\APP_QUANLY_KTX\APP_QUANLY_KTX\Forms\frmDangNhap.cs:line 28
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Delegate.DynamicInvokeImpl(Object[] args)
+   at System.Delegate.DynamicInvoke(Object[] args)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackDo(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallback(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbacks()
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, WM msg, IntPtr wparam, IntPtr lparam)
+   at Interop.User32.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.Interop.Mso.IMsoComponentManager.FPushMessageLoop(UIntPtr dwComponentID, msoloop uReason, Void* pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(msoloop reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(msoloop reason, ApplicationContext context)
+   at System.Windows.Forms.Application.Run(Form mainForm)
+   at ProjectQLKTX.Program.Main() in D:\DOAN_TN\Winform_KTX\WinformKTX\Winform\APP_QUANLY_KTX\APP_QUANLY_KTX\Program.cs:line 39
+2023-04-03 22:02:09.710 +07:00 [ERR] System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation.
+ ---> System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:7102)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(HttpRequestMessage request)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.GetHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at ProjectQLKTX.APIsHelper.NhanVienHelper.GetNhanVien(Guid id) in D:\DOAN_TN\Winform_KTX\WinformKTX\Winform\APP_QUANLY_KTX\APP_QUANLY_KTX\APIsHelper\NhanVienHelper.cs:line 68
+   at ProjectQLKTX.frmDangNhap.btn_Dangnhap_CheckedChanged(Object sender, EventArgs e) in D:\DOAN_TN\Winform_KTX\WinformKTX\Winform\APP_QUANLY_KTX\APP_QUANLY_KTX\Forms\frmDangNhap.cs:line 28
+   at System.Threading.Tasks.Task.<>c.<ThrowAsync>b__128_0(Object state)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Span`1& arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Delegate.DynamicInvokeImpl(Object[] args)
+   at System.Delegate.DynamicInvoke(Object[] args)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackDo(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbackHelper(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Windows.Forms.Control.InvokeMarshaledCallback(ThreadMethodEntry tme)
+   at System.Windows.Forms.Control.InvokeMarshaledCallbacks()
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, WM msg, IntPtr wparam, IntPtr lparam)
+   at Interop.User32.DispatchMessageW(MSG& msg)
+   at System.Windows.Forms.Application.ComponentManager.Interop.Mso.IMsoComponentManager.FPushMessageLoop(UIntPtr dwComponentID, msoloop uReason, Void* pvLoopData)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(msoloop reason, ApplicationContext context)
+   at System.Windows.Forms.Application.ThreadContext.RunMessageLoop(msoloop reason, ApplicationContext context)
+   at System.Windows.Forms.Application.Run(Form mainForm)
+   at ProjectQLKTX.Program.Main() in D:\DOAN_TN\Winform_KTX\WinformKTX\Winform\APP_QUANLY_KTX\APP_QUANLY_KTX\Program.cs:line 39
+2023-04-03 22:02:09.710 +07:00 [ERR] No connection could be made because the target machine actively refused it. (localhost:7102)
+2023-04-03 22:04:57.556 +07:00 [INF] Application start
+2023-04-03 22:05:31.573 +07:00 [INF] Application start
+2023-04-03 22:06:54.752 +07:00 [INF] Application start
+2023-04-03 22:18:43.350 +07:00 [INF] Application start
+2023-04-03 23:28:10.918 +07:00 [INF] Application start
+2023-04-03 23:41:19.863 +07:00 [INF] Application start
+2023-04-03 23:42:42.653 +07:00 [INF] Application start

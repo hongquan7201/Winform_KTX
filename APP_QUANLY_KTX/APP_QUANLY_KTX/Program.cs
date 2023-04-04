@@ -25,7 +25,7 @@ namespace ProjectQLKTX
             {
                 _host.Start();
                 Log.Information("Application start");
-                //Đoạn này mặc định của winform kệ nó thôi.
+                //Đoạn này mặc định của winform
                 Application.SetHighDpiMode(HighDpiMode.SystemAware);
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
@@ -50,7 +50,7 @@ namespace ProjectQLKTX
                     }
                 }
 
-                //Khi form chính (form1) bị đóng <==> chương trình kết thúc ấy
+                //Khi form chính (form1) bị đóng <==> chương trình kết thúc
                 //thì dừng host
                 _host.StopAsync().GetAwaiter().GetResult();
                 //và giải phóng tài nguyên host đã sử dụng.

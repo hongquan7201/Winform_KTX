@@ -13,31 +13,31 @@
     <Compile Update="Forms\frmDangKyPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\frmQuanLyHopDong.cs">
+    <Compile Update="Forms\frmQLHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\frmDanhSachKyLuat.cs">
+    <Compile Update="Forms\frmDSKyLuat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\frmDanhSachPhong.cs">
+    <Compile Update="Forms\frmDSPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\frmDanhSachTrangThietBi.cs">
+    <Compile Update="Forms\frmDSTrangThietBi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\frmQuanLyHoaDon.cs">
+    <Compile Update="Forms\frmQLHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\frmDanhSachNhanVien.cs">
+    <Compile Update="Forms\frmDSNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\frmQuanLyDienNuoc.cs">
+    <Compile Update="Forms\frmQLDienNuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\frmQuanLyPhong.cs">
+    <Compile Update="Forms\frmQLPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\frmDanhSachSinhVien.cs">
+    <Compile Update="Forms\frmDSSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\frmGiaHan.cs">
@@ -55,13 +55,25 @@
     <Compile Update="Forms\frmTraPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmHome.cs">
+    <Compile Update="Forms\frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\frmQuanLyNhaXe.cs">
+    <Compile Update="Forms\frmQLNhaXe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\frmThongTinCaNhan.cs">
+    <Compile Update="Forms\frmThongTinCaNhanSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmDoiMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmQLDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmQuenMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\frmThongTinCaNhanNV.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

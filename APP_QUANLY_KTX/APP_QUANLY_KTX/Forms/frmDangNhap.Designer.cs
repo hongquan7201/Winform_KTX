@@ -29,323 +29,250 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDangNhap));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_Quenmk = new System.Windows.Forms.Label();
-            this.btn_Dangnhap = new DevExpress.XtraEditors.CheckButton();
-            this.btn_Thoat = new DevExpress.XtraEditors.CheckButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
-            this.btn_Load = new DevExpress.XtraEditors.CheckButton();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbQuenMK = new System.Windows.Forms.Label();
+            this.btnDangnhap = new DevExpress.XtraEditors.CheckButton();
+            this.btnThoat = new DevExpress.XtraEditors.CheckButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureEdit5 = new DevExpress.XtraEditors.PictureEdit();
+            this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtTendangnhap = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.cbHienthi = new DevExpress.XtraEditors.CheckEdit();
+            this.txtMatkhau = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txt_login = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txt_ngongu = new System.Windows.Forms.TextBox();
-            this.lb_quenmk = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cb_Hienthi = new DevExpress.XtraEditors.CheckEdit();
-            this.txt_password = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbHienthi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Hienthi.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // lbQuenMK
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Azure;
-            this.groupBox1.Controls.Add(this.txt_Quenmk);
-            this.groupBox1.Controls.Add(this.btn_Dangnhap);
-            this.groupBox1.Controls.Add(this.btn_Thoat);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.pictureEdit4);
-            this.groupBox1.Controls.Add(this.btn_Load);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.pictureEdit1);
-            this.groupBox1.Controls.Add(this.pictureEdit2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.panel4);
-            this.groupBox1.Controls.Add(this.panel3);
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Location = new System.Drawing.Point(2, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(499, 259);
-            this.groupBox1.TabIndex = 37;
-            this.groupBox1.TabStop = false;
+            this.lbQuenMK.AutoSize = true;
+            this.lbQuenMK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbQuenMK.Location = new System.Drawing.Point(380, 270);
+            this.lbQuenMK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbQuenMK.Name = "lbQuenMK";
+            this.lbQuenMK.Size = new System.Drawing.Size(104, 19);
+            this.lbQuenMK.TabIndex = 57;
+            this.lbQuenMK.Text = "Quên mật khẩu:";
+            this.lbQuenMK.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbQuenMK.Click += new System.EventHandler(this.lbQuenMK_Click);
             // 
-            // txt_Quenmk
+            // btnDangnhap
             // 
-            this.txt_Quenmk.AutoSize = true;
-            this.txt_Quenmk.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Quenmk.Location = new System.Drawing.Point(388, 234);
-            this.txt_Quenmk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txt_Quenmk.Name = "txt_Quenmk";
-            this.txt_Quenmk.Size = new System.Drawing.Size(104, 19);
-            this.txt_Quenmk.TabIndex = 44;
-            this.txt_Quenmk.Text = "Quên mật khẩu:";
-            this.txt_Quenmk.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDangnhap.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnDangnhap.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDangnhap.Appearance.Options.UseBackColor = true;
+            this.btnDangnhap.Appearance.Options.UseFont = true;
+            this.btnDangnhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangnhap.ImageOptions.Image")));
+            this.btnDangnhap.Location = new System.Drawing.Point(202, 220);
+            this.btnDangnhap.Name = "btnDangnhap";
+            this.btnDangnhap.Size = new System.Drawing.Size(135, 34);
+            this.btnDangnhap.TabIndex = 56;
+            this.btnDangnhap.Text = "Đăng nhập";
+            this.btnDangnhap.CheckedChanged += new System.EventHandler(this.btn_Dangnhap_CheckedChanged);
             // 
-            // btn_Dangnhap
+            // btnThoat
             // 
-            this.btn_Dangnhap.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btn_Dangnhap.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Dangnhap.Appearance.Options.UseBackColor = true;
-            this.btn_Dangnhap.Appearance.Options.UseFont = true;
-            this.btn_Dangnhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Dangnhap.ImageOptions.Image")));
-            this.btn_Dangnhap.Location = new System.Drawing.Point(199, 191);
-            this.btn_Dangnhap.Name = "btn_Dangnhap";
-            this.btn_Dangnhap.Size = new System.Drawing.Size(135, 34);
-            this.btn_Dangnhap.TabIndex = 43;
-            this.btn_Dangnhap.Text = "Đăng nhập";
-            this.btn_Dangnhap.CheckedChanged += new System.EventHandler(this.btn_Dangnhap_CheckedChanged);
+            this.btnThoat.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnThoat.Appearance.Options.UseBackColor = true;
+            this.btnThoat.Appearance.Options.UseFont = true;
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(338, 220);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(133, 34);
+            this.btnThoat.TabIndex = 55;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.CheckedChanged += new System.EventHandler(this.btnThoat_CheckedChanged);
             // 
-            // btn_Thoat
+            // label6
             // 
-            this.btn_Thoat.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btn_Thoat.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Thoat.Appearance.Options.UseBackColor = true;
-            this.btn_Thoat.Appearance.Options.UseFont = true;
-            this.btn_Thoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Thoat.ImageOptions.Image")));
-            this.btn_Thoat.Location = new System.Drawing.Point(335, 191);
-            this.btn_Thoat.Name = "btn_Thoat";
-            this.btn_Thoat.Size = new System.Drawing.Size(133, 34);
-            this.btn_Thoat.TabIndex = 42;
-            this.btn_Thoat.Text = "Thoát";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(53, 148);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 21);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "Mật khẩu:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label4
+            // pictureEdit5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(62, 130);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 21);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "Ngôn ngữ:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pictureEdit5.EditValue = ((object)(resources.GetObject("pictureEdit5.EditValue")));
+            this.pictureEdit5.Location = new System.Drawing.Point(15, 144);
+            this.pictureEdit5.Name = "pictureEdit5";
+            this.pictureEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Azure;
+            this.pictureEdit5.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit5.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit5.Properties.ZoomPercent = 5D;
+            this.pictureEdit5.Size = new System.Drawing.Size(37, 30);
+            this.pictureEdit5.TabIndex = 51;
             // 
-            // pictureEdit4
+            // pictureEdit6
             // 
-            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
-            this.pictureEdit4.Location = new System.Drawing.Point(25, 125);
-            this.pictureEdit4.Name = "pictureEdit4";
-            this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Azure;
-            this.pictureEdit4.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit4.Properties.ZoomPercent = 5D;
-            this.pictureEdit4.Size = new System.Drawing.Size(37, 30);
-            this.pictureEdit4.TabIndex = 40;
+            this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
+            this.pictureEdit6.Location = new System.Drawing.Point(15, 95);
+            this.pictureEdit6.Name = "pictureEdit6";
+            this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.Azure;
+            this.pictureEdit6.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit6.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pictureEdit6.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit6.Properties.ZoomPercent = 5D;
+            this.pictureEdit6.Size = new System.Drawing.Size(37, 30);
+            this.pictureEdit6.TabIndex = 49;
             // 
-            // btn_Load
+            // label7
             // 
-            this.btn_Load.Appearance.BackColor = System.Drawing.Color.White;
-            this.btn_Load.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Load.Appearance.Options.UseBackColor = true;
-            this.btn_Load.Appearance.Options.UseFont = true;
-            this.btn_Load.Checked = true;
-            this.btn_Load.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Load.ImageOptions.Image")));
-            this.btn_Load.Location = new System.Drawing.Point(431, 126);
-            this.btn_Load.Name = "btn_Load";
-            this.btn_Load.Size = new System.Drawing.Size(43, 41);
-            this.btn_Load.TabIndex = 31;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(53, 101);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(125, 21);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "Tên đăng nhập:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label3
+            // panel2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(62, 77);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 21);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Mật khẩu:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.txtTendangnhap);
+            this.panel2.Location = new System.Drawing.Point(202, 99);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(264, 41);
+            this.panel2.TabIndex = 46;
+            // 
+            // txtTendangnhap
+            // 
+            this.txtTendangnhap.BackColor = System.Drawing.Color.White;
+            this.txtTendangnhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTendangnhap.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTendangnhap.ForeColor = System.Drawing.Color.Black;
+            this.txtTendangnhap.Location = new System.Drawing.Point(4, 9);
+            this.txtTendangnhap.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTendangnhap.Multiline = true;
+            this.txtTendangnhap.Name = "txtTendangnhap";
+            this.txtTendangnhap.Size = new System.Drawing.Size(253, 23);
+            this.txtTendangnhap.TabIndex = 5;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.cbHienthi);
+            this.panel6.Controls.Add(this.txtMatkhau);
+            this.panel6.Location = new System.Drawing.Point(202, 148);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(264, 41);
+            this.panel6.TabIndex = 45;
+            // 
+            // cbHienthi
+            // 
+            this.cbHienthi.Location = new System.Drawing.Point(244, 12);
+            this.cbHienthi.Name = "cbHienthi";
+            this.cbHienthi.Properties.Caption = "";
+            this.cbHienthi.Size = new System.Drawing.Size(19, 20);
+            this.cbHienthi.TabIndex = 45;
+            // 
+            // txtMatkhau
+            // 
+            this.txtMatkhau.BackColor = System.Drawing.Color.White;
+            this.txtMatkhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMatkhau.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMatkhau.ForeColor = System.Drawing.Color.Black;
+            this.txtMatkhau.Location = new System.Drawing.Point(4, 9);
+            this.txtMatkhau.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMatkhau.Multiline = true;
+            this.txtMatkhau.Name = "txtMatkhau";
+            this.txtMatkhau.PasswordChar = '*';
+            this.txtMatkhau.Size = new System.Drawing.Size(233, 23);
+            this.txtMatkhau.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label1.Location = new System.Drawing.Point(238, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(155, 26);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "ĐĂNG NHẬP";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(24, 73);
+            this.pictureEdit1.Location = new System.Drawing.Point(108, 2);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Azure;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.ZoomPercent = 5D;
-            this.pictureEdit1.Size = new System.Drawing.Size(37, 30);
-            this.pictureEdit1.TabIndex = 38;
-            // 
-            // pictureEdit2
-            // 
-            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-            this.pictureEdit2.Location = new System.Drawing.Point(24, 24);
-            this.pictureEdit2.Name = "pictureEdit2";
-            this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Azure;
-            this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit2.Properties.ZoomPercent = 5D;
-            this.pictureEdit2.Size = new System.Drawing.Size(37, 30);
-            this.pictureEdit2.TabIndex = 32;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(62, 30);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 21);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Tên đăng nhập:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.txt_login);
-            this.panel4.Location = new System.Drawing.Point(211, 28);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(264, 41);
-            this.panel4.TabIndex = 23;
-            // 
-            // txt_login
-            // 
-            this.txt_login.BackColor = System.Drawing.Color.White;
-            this.txt_login.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_login.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_login.ForeColor = System.Drawing.Color.Black;
-            this.txt_login.Location = new System.Drawing.Point(4, 9);
-            this.txt_login.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_login.Multiline = true;
-            this.txt_login.Name = "txt_login";
-            this.txt_login.Size = new System.Drawing.Size(253, 23);
-            this.txt_login.TabIndex = 5;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.txt_ngongu);
-            this.panel3.Controls.Add(this.lb_quenmk);
-            this.panel3.Location = new System.Drawing.Point(211, 126);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(226, 41);
-            this.panel3.TabIndex = 23;
-            // 
-            // txt_ngongu
-            // 
-            this.txt_ngongu.BackColor = System.Drawing.Color.White;
-            this.txt_ngongu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_ngongu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_ngongu.ForeColor = System.Drawing.Color.Black;
-            this.txt_ngongu.Location = new System.Drawing.Point(4, 9);
-            this.txt_ngongu.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_ngongu.Multiline = true;
-            this.txt_ngongu.Name = "txt_ngongu";
-            this.txt_ngongu.Size = new System.Drawing.Size(209, 23);
-            this.txt_ngongu.TabIndex = 5;
-            // 
-            // lb_quenmk
-            // 
-            this.lb_quenmk.AutoSize = true;
-            this.lb_quenmk.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_quenmk.Location = new System.Drawing.Point(299, 130);
-            this.lb_quenmk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_quenmk.Name = "lb_quenmk";
-            this.lb_quenmk.Size = new System.Drawing.Size(116, 17);
-            this.lb_quenmk.TabIndex = 28;
-            this.lb_quenmk.Text = "Fofgot Password ?";
-            this.lb_quenmk.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.cb_Hienthi);
-            this.panel1.Controls.Add(this.txt_password);
-            this.panel1.Location = new System.Drawing.Point(211, 77);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(264, 41);
-            this.panel1.TabIndex = 22;
-            // 
-            // cb_Hienthi
-            // 
-            this.cb_Hienthi.Location = new System.Drawing.Point(244, 12);
-            this.cb_Hienthi.Name = "cb_Hienthi";
-            this.cb_Hienthi.Properties.Caption = "";
-            this.cb_Hienthi.Size = new System.Drawing.Size(19, 20);
-            this.cb_Hienthi.TabIndex = 45;
-            this.cb_Hienthi.CheckedChanged += new System.EventHandler(this.cb_Hienthi_CheckedChanged);
-            // 
-            // txt_password
-            // 
-            this.txt_password.BackColor = System.Drawing.Color.White;
-            this.txt_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_password.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_password.ForeColor = System.Drawing.Color.Black;
-            this.txt_password.Location = new System.Drawing.Point(4, 9);
-            this.txt_password.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_password.Multiline = true;
-            this.txt_password.Name = "txt_password";
-            this.txt_password.PasswordChar = '*';
-            this.txt_password.Size = new System.Drawing.Size(233, 23);
-            this.txt_password.TabIndex = 5;
+            this.pictureEdit1.Properties.ZoomPercent = 15D;
+            this.pictureEdit1.Size = new System.Drawing.Size(93, 81);
+            this.pictureEdit1.TabIndex = 59;
             // 
             // frmDangNhap
             // 
+            this.Appearance.BackColor = System.Drawing.Color.Azure;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(503, 270);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(488, 301);
+            this.Controls.Add(this.pictureEdit1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbQuenMK);
+            this.Controls.Add(this.btnDangnhap);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.pictureEdit5);
+            this.Controls.Add(this.pictureEdit6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDangNhap";
             this.Text = "DangNhap";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbHienthi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Hienthi.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private GroupBox groupBox1;
-        private DevExpress.XtraEditors.CheckButton btn_Dangnhap;
-        private DevExpress.XtraEditors.CheckButton btn_Thoat;
-        private Label label4;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit4;
-        private DevExpress.XtraEditors.CheckButton btn_Load;
-        private Label label3;
+        private Label lbQuenMK;
+        private DevExpress.XtraEditors.CheckButton btnDangnhap;
+        private DevExpress.XtraEditors.CheckButton btnThoat;
+        private Label label6;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit5;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit6;
+        private Label label7;
+        private Panel panel2;
+        private TextBox txtTendangnhap;
+        private Panel panel6;
+        private DevExpress.XtraEditors.CheckEdit cbHienthi;
+        private TextBox txtMatkhau;
+        private Label label1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit2;
-        private Label label2;
-        private Panel panel4;
-        private TextBox txt_login;
-        private Panel panel3;
-        private TextBox txt_ngongu;
-        private Label lb_quenmk;
-        private Panel panel1;
-        private TextBox txt_password;
-        private Label txt_Quenmk;
-        private DevExpress.XtraEditors.CheckEdit cb_Hienthi;
     }
 }

@@ -42,45 +42,45 @@
             this.CHUYENTOIKHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CHUYENTOIPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.btn_Import = new DevExpress.XtraEditors.SimpleButton();
+            this.btnImport = new DevExpress.XtraEditors.SimpleButton();
             this.img = new System.Windows.Forms.PictureBox();
-            this.txt_Lido = new System.Windows.Forms.TextBox();
-            this.cb_CTkhu = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtLido = new System.Windows.Forms.TextBox();
+            this.cbCTkhu = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_Truong = new DevExpress.XtraEditors.TextEdit();
+            this.txtTruong = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_MSSV = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbMSSV = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_CTphong = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbCTphong = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_Hoten = new DevExpress.XtraEditors.TextEdit();
-            this.txt_Quequan = new DevExpress.XtraEditors.TextEdit();
+            this.txtHoten = new DevExpress.XtraEditors.TextEdit();
+            this.txtQuequan = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_SĐT = new DevExpress.XtraEditors.TextEdit();
+            this.txtSĐT = new DevExpress.XtraEditors.TextEdit();
             this.stackPanel1 = new DevExpress.Utils.Layout.StackPanel();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.radio_GTnam = new System.Windows.Forms.RadioButton();
-            this.txt_CCCD = new DevExpress.XtraEditors.TextEdit();
-            this.radioGTnu = new System.Windows.Forms.RadioButton();
-            this.dt_Ngaysinh = new System.Windows.Forms.DateTimePicker();
+            this.radioNam = new System.Windows.Forms.RadioButton();
+            this.txtCCCD = new DevExpress.XtraEditors.TextEdit();
+            this.radioNu = new System.Windows.Forms.RadioButton();
+            this.dtNgaysinh = new System.Windows.Forms.DateTimePicker();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.btn_Chuyenphong = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Sua = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Xoa = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Reload = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Xuatfile = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_SVcungphong = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Tim = new DevExpress.XtraBars.BarButtonItem();
-            this.txt_Tim = new DevExpress.XtraBars.BarEditItem();
+            this.btnChuyenphong = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReload = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuatfile = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSVcungphong = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTim = new DevExpress.XtraBars.BarButtonItem();
+            this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.btn_Thoat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -114,17 +114,17 @@
             this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
             this.barEditItem10 = new DevExpress.XtraBars.BarEditItem();
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
-            this.dt_Ngaychuyen = new System.Windows.Forms.DateTimePicker();
+            this.dtNgaychuyen = new System.Windows.Forms.DateTimePicker();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.dt_Ngayhethan = new System.Windows.Forms.DateTimePicker();
+            this.dtNgayhethan = new System.Windows.Forms.DateTimePicker();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_Nhanvienlap = new DevExpress.XtraEditors.TextEdit();
+            this.txtNhanvienlap = new DevExpress.XtraEditors.TextEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_MSNV = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbMSNV = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.radio_Khongduyet = new System.Windows.Forms.RadioButton();
-            this.radio_Duyet = new System.Windows.Forms.RadioButton();
+            this.radioKhongduyet = new System.Windows.Forms.RadioButton();
+            this.radioDuyet = new System.Windows.Forms.RadioButton();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -132,15 +132,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_CTkhu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_MSSV.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_CTphong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Hoten.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Quequan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_SĐT.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbCTkhu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTruong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMSSV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbCTphong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHoten.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuequan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSĐT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_CCCD.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCCCD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -151,8 +151,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Nhanvienlap.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_MSNV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNhanvienlap.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMSNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.SuspendLayout();
@@ -314,50 +314,50 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.btn_Import);
+            this.groupControl2.Controls.Add(this.btnImport);
             this.groupControl2.Controls.Add(this.img);
-            this.groupControl2.Controls.Add(this.txt_Lido);
-            this.groupControl2.Controls.Add(this.cb_CTkhu);
+            this.groupControl2.Controls.Add(this.txtLido);
+            this.groupControl2.Controls.Add(this.cbCTkhu);
             this.groupControl2.Controls.Add(this.labelControl9);
             this.groupControl2.Controls.Add(this.labelControl8);
             this.groupControl2.Controls.Add(this.labelControl5);
-            this.groupControl2.Controls.Add(this.txt_Truong);
+            this.groupControl2.Controls.Add(this.txtTruong);
             this.groupControl2.Controls.Add(this.labelControl1);
-            this.groupControl2.Controls.Add(this.cb_MSSV);
+            this.groupControl2.Controls.Add(this.cbMSSV);
             this.groupControl2.Controls.Add(this.labelControl7);
-            this.groupControl2.Controls.Add(this.cb_CTphong);
+            this.groupControl2.Controls.Add(this.cbCTphong);
             this.groupControl2.Controls.Add(this.labelControl6);
-            this.groupControl2.Controls.Add(this.txt_Hoten);
-            this.groupControl2.Controls.Add(this.txt_Quequan);
+            this.groupControl2.Controls.Add(this.txtHoten);
+            this.groupControl2.Controls.Add(this.txtQuequan);
             this.groupControl2.Controls.Add(this.labelControl3);
             this.groupControl2.Controls.Add(this.labelControl11);
             this.groupControl2.Controls.Add(this.labelControl4);
-            this.groupControl2.Controls.Add(this.txt_SĐT);
+            this.groupControl2.Controls.Add(this.txtSĐT);
             this.groupControl2.Controls.Add(this.stackPanel1);
             this.groupControl2.Controls.Add(this.labelControl10);
             this.groupControl2.Controls.Add(this.labelControl2);
-            this.groupControl2.Controls.Add(this.radio_GTnam);
-            this.groupControl2.Controls.Add(this.txt_CCCD);
-            this.groupControl2.Controls.Add(this.radioGTnu);
-            this.groupControl2.Controls.Add(this.dt_Ngaysinh);
+            this.groupControl2.Controls.Add(this.radioNam);
+            this.groupControl2.Controls.Add(this.txtCCCD);
+            this.groupControl2.Controls.Add(this.radioNu);
+            this.groupControl2.Controls.Add(this.dtNgaysinh);
             this.groupControl2.Location = new System.Drawing.Point(7, 30);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(716, 309);
             this.groupControl2.TabIndex = 80;
             this.groupControl2.Text = "Thông Tin Chuyển Phòng";
             // 
-            // btn_Import
+            // btnImport
             // 
-            this.btn_Import.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_Import.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Import.Appearance.Options.UseBackColor = true;
-            this.btn_Import.Appearance.Options.UseFont = true;
-            this.btn_Import.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Import.ImageOptions.Image")));
-            this.btn_Import.Location = new System.Drawing.Point(23, 179);
-            this.btn_Import.Name = "btn_Import";
-            this.btn_Import.Size = new System.Drawing.Size(80, 36);
-            this.btn_Import.TabIndex = 1;
-            this.btn_Import.Text = "Import";
+            this.btnImport.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnImport.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnImport.Appearance.Options.UseBackColor = true;
+            this.btnImport.Appearance.Options.UseFont = true;
+            this.btnImport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Import.ImageOptions.Image")));
+            this.btnImport.Location = new System.Drawing.Point(23, 179);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(80, 36);
+            this.btnImport.TabIndex = 1;
+            this.btnImport.Text = "Import";
             // 
             // img
             // 
@@ -369,22 +369,22 @@
             this.img.TabIndex = 2;
             this.img.TabStop = false;
             // 
-            // txt_Lido
+            // txtLido
             // 
-            this.txt_Lido.Location = new System.Drawing.Point(534, 118);
-            this.txt_Lido.Multiline = true;
-            this.txt_Lido.Name = "txt_Lido";
-            this.txt_Lido.Size = new System.Drawing.Size(164, 61);
-            this.txt_Lido.TabIndex = 61;
+            this.txtLido.Location = new System.Drawing.Point(534, 118);
+            this.txtLido.Multiline = true;
+            this.txtLido.Name = "txtLido";
+            this.txtLido.Size = new System.Drawing.Size(164, 61);
+            this.txtLido.TabIndex = 61;
             // 
-            // cb_CTkhu
+            // cbCTkhu
             // 
-            this.cb_CTkhu.Location = new System.Drawing.Point(534, 40);
-            this.cb_CTkhu.Name = "cb_CTkhu";
-            this.cb_CTkhu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbCTkhu.Location = new System.Drawing.Point(534, 40);
+            this.cbCTkhu.Name = "cbCTkhu";
+            this.cbCTkhu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_CTkhu.Size = new System.Drawing.Size(164, 20);
-            this.cb_CTkhu.TabIndex = 60;
+            this.cbCTkhu.Size = new System.Drawing.Size(164, 20);
+            this.cbCTkhu.TabIndex = 60;
             // 
             // labelControl9
             // 
@@ -416,12 +416,12 @@
             this.labelControl5.TabIndex = 50;
             this.labelControl5.Text = "Trường";
             // 
-            // txt_Truong
+            // txtTruong
             // 
-            this.txt_Truong.Location = new System.Drawing.Point(233, 236);
-            this.txt_Truong.Name = "txt_Truong";
-            this.txt_Truong.Size = new System.Drawing.Size(164, 20);
-            this.txt_Truong.TabIndex = 49;
+            this.txtTruong.Location = new System.Drawing.Point(233, 236);
+            this.txtTruong.Name = "txtTruong";
+            this.txtTruong.Size = new System.Drawing.Size(164, 20);
+            this.txtTruong.TabIndex = 49;
             // 
             // labelControl1
             // 
@@ -433,14 +433,14 @@
             this.labelControl1.TabIndex = 47;
             this.labelControl1.Text = "Mã SSV";
             // 
-            // cb_MSSV
+            // cbMSSV
             // 
-            this.cb_MSSV.Location = new System.Drawing.Point(233, 38);
-            this.cb_MSSV.Name = "cb_MSSV";
-            this.cb_MSSV.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbMSSV.Location = new System.Drawing.Point(233, 38);
+            this.cbMSSV.Name = "cbMSSV";
+            this.cbMSSV.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_MSSV.Size = new System.Drawing.Size(164, 20);
-            this.cb_MSSV.TabIndex = 48;
+            this.cbMSSV.Size = new System.Drawing.Size(164, 20);
+            this.cbMSSV.TabIndex = 48;
             // 
             // labelControl7
             // 
@@ -452,14 +452,14 @@
             this.labelControl7.TabIndex = 43;
             this.labelControl7.Text = "Chuyển Tới Phòng";
             // 
-            // cb_CTphong
+            // cbCTphong
             // 
-            this.cb_CTphong.Location = new System.Drawing.Point(534, 78);
-            this.cb_CTphong.Name = "cb_CTphong";
-            this.cb_CTphong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbCTphong.Location = new System.Drawing.Point(534, 78);
+            this.cbCTphong.Name = "cbCTphong";
+            this.cbCTphong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_CTphong.Size = new System.Drawing.Size(164, 20);
-            this.cb_CTphong.TabIndex = 45;
+            this.cbCTphong.Size = new System.Drawing.Size(164, 20);
+            this.cbCTphong.TabIndex = 45;
             // 
             // labelControl6
             // 
@@ -471,19 +471,19 @@
             this.labelControl6.TabIndex = 41;
             this.labelControl6.Text = "CCCD/CMND";
             // 
-            // txt_Hoten
+            // txtHoten
             // 
-            this.txt_Hoten.Location = new System.Drawing.Point(233, 70);
-            this.txt_Hoten.Name = "txt_Hoten";
-            this.txt_Hoten.Size = new System.Drawing.Size(164, 20);
-            this.txt_Hoten.TabIndex = 8;
+            this.txtHoten.Location = new System.Drawing.Point(233, 70);
+            this.txtHoten.Name = "txtHoten";
+            this.txtHoten.Size = new System.Drawing.Size(164, 20);
+            this.txtHoten.TabIndex = 8;
             // 
-            // txt_Quequan
+            // txtQuequan
             // 
-            this.txt_Quequan.Location = new System.Drawing.Point(233, 274);
-            this.txt_Quequan.Name = "txt_Quequan";
-            this.txt_Quequan.Size = new System.Drawing.Size(164, 20);
-            this.txt_Quequan.TabIndex = 40;
+            this.txtQuequan.Location = new System.Drawing.Point(233, 274);
+            this.txtQuequan.Name = "txtQuequan";
+            this.txtQuequan.Size = new System.Drawing.Size(164, 20);
+            this.txtQuequan.TabIndex = 40;
             // 
             // labelControl3
             // 
@@ -515,12 +515,12 @@
             this.labelControl4.TabIndex = 13;
             this.labelControl4.Text = "Ngày Sinh";
             // 
-            // txt_SĐT
+            // txtSĐT
             // 
-            this.txt_SĐT.Location = new System.Drawing.Point(233, 199);
-            this.txt_SĐT.Name = "txt_SĐT";
-            this.txt_SĐT.Size = new System.Drawing.Size(164, 20);
-            this.txt_SĐT.TabIndex = 38;
+            this.txtSĐT.Location = new System.Drawing.Point(233, 199);
+            this.txtSĐT.Name = "txtSĐT";
+            this.txtSĐT.Size = new System.Drawing.Size(164, 20);
+            this.txtSĐT.TabIndex = 38;
             // 
             // stackPanel1
             // 
@@ -550,44 +550,44 @@
             this.labelControl2.TabIndex = 15;
             this.labelControl2.Text = "Giới Tính";
             // 
-            // radio_GTnam
+            // radioNam
             // 
-            this.radio_GTnam.AutoSize = true;
-            this.radio_GTnam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radio_GTnam.Location = new System.Drawing.Point(253, 101);
-            this.radio_GTnam.Name = "radio_GTnam";
-            this.radio_GTnam.Size = new System.Drawing.Size(51, 20);
-            this.radio_GTnam.TabIndex = 16;
-            this.radio_GTnam.TabStop = true;
-            this.radio_GTnam.Text = "Nam";
-            this.radio_GTnam.UseVisualStyleBackColor = true;
+            this.radioNam.AutoSize = true;
+            this.radioNam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioNam.Location = new System.Drawing.Point(253, 101);
+            this.radioNam.Name = "radioNam";
+            this.radioNam.Size = new System.Drawing.Size(51, 20);
+            this.radioNam.TabIndex = 16;
+            this.radioNam.TabStop = true;
+            this.radioNam.Text = "Nam";
+            this.radioNam.UseVisualStyleBackColor = true;
             // 
-            // txt_CCCD
+            // txtCCCD
             // 
-            this.txt_CCCD.Location = new System.Drawing.Point(233, 164);
-            this.txt_CCCD.Name = "txt_CCCD";
-            this.txt_CCCD.Size = new System.Drawing.Size(164, 20);
-            this.txt_CCCD.TabIndex = 27;
+            this.txtCCCD.Location = new System.Drawing.Point(233, 164);
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Size = new System.Drawing.Size(164, 20);
+            this.txtCCCD.TabIndex = 27;
             // 
-            // radioGTnu
+            // radioNu
             // 
-            this.radioGTnu.AutoSize = true;
-            this.radioGTnu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioGTnu.Location = new System.Drawing.Point(316, 100);
-            this.radioGTnu.Name = "radioGTnu";
-            this.radioGTnu.Size = new System.Drawing.Size(41, 20);
-            this.radioGTnu.TabIndex = 17;
-            this.radioGTnu.TabStop = true;
-            this.radioGTnu.Text = "Nữ";
-            this.radioGTnu.UseVisualStyleBackColor = true;
+            this.radioNu.AutoSize = true;
+            this.radioNu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioNu.Location = new System.Drawing.Point(316, 100);
+            this.radioNu.Name = "radioNu";
+            this.radioNu.Size = new System.Drawing.Size(41, 20);
+            this.radioNu.TabIndex = 17;
+            this.radioNu.TabStop = true;
+            this.radioNu.Text = "Nữ";
+            this.radioNu.UseVisualStyleBackColor = true;
             // 
-            // dt_Ngaysinh
+            // dtNgaysinh
             // 
-            this.dt_Ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_Ngaysinh.Location = new System.Drawing.Point(233, 127);
-            this.dt_Ngaysinh.Name = "dt_Ngaysinh";
-            this.dt_Ngaysinh.Size = new System.Drawing.Size(164, 21);
-            this.dt_Ngaysinh.TabIndex = 18;
+            this.dtNgaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgaysinh.Location = new System.Drawing.Point(233, 127);
+            this.dtNgaysinh.Name = "dtNgaysinh";
+            this.dtNgaysinh.Size = new System.Drawing.Size(164, 21);
+            this.dtNgaysinh.TabIndex = 18;
             // 
             // barDockControlTop
             // 
@@ -607,23 +607,23 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.btn_Chuyenphong,
-            this.btn_Sua,
-            this.btn_Xoa,
-            this.btn_Reload,
+            this.btnChuyenphong,
+            this.btnSua,
+            this.btnXoa,
+            this.btnReload,
             this.barButtonItem5,
-            this.btn_SVcungphong,
+            this.btnSVcungphong,
             this.barButtonItem7,
             this.barButtonItem8,
             this.barButtonItem9,
             this.barEditItem1,
             this.barButtonItem10,
-            this.btn_Tim,
+            this.btnTim,
             this.barEditItem2,
             this.barButtonItem12,
             this.barEditItem3,
-            this.txt_Tim,
-            this.btn_Thoat,
+            this.txtTim,
+            this.btnThoat,
             this.barButtonItem14,
             this.barButtonItem15,
             this.barEditItem5,
@@ -636,7 +636,7 @@
             this.barButtonItem17,
             this.barEditItem10,
             this.barButtonItem18,
-            this.btn_Xuatfile});
+            this.btnXuatfile});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 30;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -656,91 +656,92 @@
             this.bar2.DockCol = 0;
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.FloatLocation = new System.Drawing.Point(43, 115);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Chuyenphong, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Sua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Xoa, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Reload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Xuatfile, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_SVcungphong, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Tim, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.txt_Tim),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Thoat, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnChuyenphong, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfile, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSVcungphong, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.txtTim, true),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
             // 
-            // btn_Chuyenphong
+            // btnChuyenphong
             // 
-            this.btn_Chuyenphong.Caption = "Chuyển Phòng";
-            this.btn_Chuyenphong.Id = 0;
-            this.btn_Chuyenphong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Chuyenphong.ImageOptions.Image")));
-            this.btn_Chuyenphong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Chuyenphong.ImageOptions.LargeImage")));
-            this.btn_Chuyenphong.Name = "btn_Chuyenphong";
+            this.btnChuyenphong.Caption = "Chuyển Phòng";
+            this.btnChuyenphong.Id = 0;
+            this.btnChuyenphong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Chuyenphong.ImageOptions.Image")));
+            this.btnChuyenphong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Chuyenphong.ImageOptions.LargeImage")));
+            this.btnChuyenphong.Name = "btnChuyenphong";
             // 
-            // btn_Sua
+            // btnSua
             // 
-            this.btn_Sua.Caption = "Sửa";
-            this.btn_Sua.Id = 1;
-            this.btn_Sua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Sua.ImageOptions.SvgImage")));
-            this.btn_Sua.Name = "btn_Sua";
+            this.btnSua.Caption = "Sửa";
+            this.btnSua.Id = 1;
+            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Sua.ImageOptions.SvgImage")));
+            this.btnSua.Name = "btnSua";
             // 
-            // btn_Xoa
+            // btnXoa
             // 
-            this.btn_Xoa.Caption = "Xóa";
-            this.btn_Xoa.Id = 2;
-            this.btn_Xoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.ImageOptions.Image")));
-            this.btn_Xoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.ImageOptions.LargeImage")));
-            this.btn_Xoa.Name = "btn_Xoa";
+            this.btnXoa.Caption = "Xóa";
+            this.btnXoa.Id = 2;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.ImageOptions.Image")));
+            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.ImageOptions.LargeImage")));
+            this.btnXoa.Name = "btnXoa";
             // 
-            // btn_Reload
+            // btnReload
             // 
-            this.btn_Reload.Caption = "Reload";
-            this.btn_Reload.Id = 3;
-            this.btn_Reload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Reload.ImageOptions.Image")));
-            this.btn_Reload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Reload.ImageOptions.LargeImage")));
-            this.btn_Reload.Name = "btn_Reload";
+            this.btnReload.Caption = "Reload";
+            this.btnReload.Id = 3;
+            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Reload.ImageOptions.Image")));
+            this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Reload.ImageOptions.LargeImage")));
+            this.btnReload.Name = "btnReload";
             // 
-            // btn_Xuatfile
+            // btnXuatfile
             // 
-            this.btn_Xuatfile.Caption = "Xuất File";
-            this.btn_Xuatfile.Id = 29;
-            this.btn_Xuatfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Xuatfile.ImageOptions.SvgImage")));
-            this.btn_Xuatfile.Name = "btn_Xuatfile";
+            this.btnXuatfile.Caption = "Xuất File";
+            this.btnXuatfile.Id = 29;
+            this.btnXuatfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Xuatfile.ImageOptions.SvgImage")));
+            this.btnXuatfile.Name = "btnXuatfile";
             // 
-            // btn_SVcungphong
+            // btnSVcungphong
             // 
-            this.btn_SVcungphong.Caption = "DSSV Cùng Phòng";
-            this.btn_SVcungphong.Id = 5;
-            this.btn_SVcungphong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_SVcungphong.ImageOptions.Image")));
-            this.btn_SVcungphong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_SVcungphong.ImageOptions.LargeImage")));
-            this.btn_SVcungphong.Name = "btn_SVcungphong";
+            this.btnSVcungphong.Caption = "DSSV Cùng Phòng";
+            this.btnSVcungphong.Id = 5;
+            this.btnSVcungphong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_SVcungphong.ImageOptions.Image")));
+            this.btnSVcungphong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_SVcungphong.ImageOptions.LargeImage")));
+            this.btnSVcungphong.Name = "btnSVcungphong";
             // 
-            // btn_Tim
+            // btnTim
             // 
-            this.btn_Tim.Caption = "Tìm";
-            this.btn_Tim.Id = 11;
-            this.btn_Tim.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Tim.ImageOptions.SvgImage")));
-            this.btn_Tim.Name = "btn_Tim";
+            this.btnTim.Caption = "Tìm";
+            this.btnTim.Id = 11;
+            this.btnTim.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Tim.ImageOptions.SvgImage")));
+            this.btnTim.Name = "btnTim";
             // 
-            // txt_Tim
+            // txtTim
             // 
-            this.txt_Tim.Caption = "barEditItem4";
-            this.txt_Tim.Edit = this.repositoryItemTextEdit4;
-            this.txt_Tim.Id = 15;
-            this.txt_Tim.Name = "txt_Tim";
+            this.txtTim.Caption = "barEditItem4";
+            this.txtTim.Edit = this.repositoryItemTextEdit4;
+            this.txtTim.Id = 15;
+            this.txtTim.Name = "txtTim";
             // 
             // repositoryItemTextEdit4
             // 
             this.repositoryItemTextEdit4.AutoHeight = false;
             this.repositoryItemTextEdit4.Name = "repositoryItemTextEdit4";
             // 
-            // btn_Thoat
+            // btnThoat
             // 
-            this.btn_Thoat.Caption = "Thoát";
-            this.btn_Thoat.Id = 16;
-            this.btn_Thoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Thoat.ImageOptions.SvgImage")));
-            this.btn_Thoat.Name = "btn_Thoat";
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 16;
+            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Thoat.ImageOptions.SvgImage")));
+            this.btnThoat.Name = "btnThoat";
             // 
             // barDockControl1
             // 
@@ -962,13 +963,13 @@
             this.barButtonItem18.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.LargeImage")));
             this.barButtonItem18.Name = "barButtonItem18";
             // 
-            // dt_Ngaychuyen
+            // dtNgaychuyen
             // 
-            this.dt_Ngaychuyen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_Ngaychuyen.Location = new System.Drawing.Point(101, 64);
-            this.dt_Ngaychuyen.Name = "dt_Ngaychuyen";
-            this.dt_Ngaychuyen.Size = new System.Drawing.Size(181, 21);
-            this.dt_Ngaychuyen.TabIndex = 60;
+            this.dtNgaychuyen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgaychuyen.Location = new System.Drawing.Point(101, 64);
+            this.dtNgaychuyen.Name = "dtNgaychuyen";
+            this.dtNgaychuyen.Size = new System.Drawing.Size(181, 21);
+            this.dtNgaychuyen.TabIndex = 60;
             // 
             // labelControl15
             // 
@@ -980,13 +981,13 @@
             this.labelControl15.TabIndex = 59;
             this.labelControl15.Text = "Ngày Chuyển";
             // 
-            // dt_Ngayhethan
+            // dtNgayhethan
             // 
-            this.dt_Ngayhethan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_Ngayhethan.Location = new System.Drawing.Point(101, 103);
-            this.dt_Ngayhethan.Name = "dt_Ngayhethan";
-            this.dt_Ngayhethan.Size = new System.Drawing.Size(181, 21);
-            this.dt_Ngayhethan.TabIndex = 62;
+            this.dtNgayhethan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayhethan.Location = new System.Drawing.Point(101, 103);
+            this.dtNgayhethan.Name = "dtNgayhethan";
+            this.dtNgayhethan.Size = new System.Drawing.Size(181, 21);
+            this.dtNgayhethan.TabIndex = 62;
             // 
             // labelControl16
             // 
@@ -1008,12 +1009,12 @@
             this.labelControl18.TabIndex = 59;
             this.labelControl18.Text = "Nhân Viên Lập";
             // 
-            // txt_Nhanvienlap
+            // txtNhanvienlap
             // 
-            this.txt_Nhanvienlap.Location = new System.Drawing.Point(101, 177);
-            this.txt_Nhanvienlap.Name = "txt_Nhanvienlap";
-            this.txt_Nhanvienlap.Size = new System.Drawing.Size(181, 20);
-            this.txt_Nhanvienlap.TabIndex = 60;
+            this.txtNhanvienlap.Location = new System.Drawing.Point(101, 177);
+            this.txtNhanvienlap.Name = "txtNhanvienlap";
+            this.txtNhanvienlap.Size = new System.Drawing.Size(181, 20);
+            this.txtNhanvienlap.TabIndex = 60;
             // 
             // labelControl19
             // 
@@ -1025,69 +1026,71 @@
             this.labelControl19.TabIndex = 65;
             this.labelControl19.Text = "MSNV";
             // 
-            // cb_MSNV
+            // cbMSNV
             // 
-            this.cb_MSNV.Location = new System.Drawing.Point(101, 139);
-            this.cb_MSNV.Name = "cb_MSNV";
-            this.cb_MSNV.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbMSNV.Location = new System.Drawing.Point(101, 139);
+            this.cbMSNV.Name = "cbMSNV";
+            this.cbMSNV.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_MSNV.Size = new System.Drawing.Size(181, 20);
-            this.cb_MSNV.TabIndex = 66;
+            this.cbMSNV.Size = new System.Drawing.Size(181, 20);
+            this.cbMSNV.TabIndex = 66;
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.radio_Khongduyet);
-            this.groupControl1.Controls.Add(this.radio_Duyet);
+            this.groupControl1.Controls.Add(this.radioKhongduyet);
+            this.groupControl1.Controls.Add(this.radioDuyet);
             this.groupControl1.Controls.Add(this.labelControl12);
-            this.groupControl1.Controls.Add(this.cb_MSNV);
+            this.groupControl1.Controls.Add(this.cbMSNV);
             this.groupControl1.Controls.Add(this.labelControl19);
-            this.groupControl1.Controls.Add(this.txt_Nhanvienlap);
+            this.groupControl1.Controls.Add(this.txtNhanvienlap);
             this.groupControl1.Controls.Add(this.labelControl18);
             this.groupControl1.Controls.Add(this.labelControl16);
-            this.groupControl1.Controls.Add(this.dt_Ngayhethan);
+            this.groupControl1.Controls.Add(this.dtNgayhethan);
             this.groupControl1.Controls.Add(this.labelControl15);
-            this.groupControl1.Controls.Add(this.dt_Ngaychuyen);
+            this.groupControl1.Controls.Add(this.dtNgaychuyen);
             this.groupControl1.Location = new System.Drawing.Point(729, 30);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(290, 309);
             this.groupControl1.TabIndex = 81;
             this.groupControl1.Text = "Hợp Đồng";
             // 
-            // radio_Khongduyet
+            // radioKhongduyet
             // 
-            this.radio_Khongduyet.AutoSize = true;
-            this.radio_Khongduyet.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radio_Khongduyet.Location = new System.Drawing.Point(169, 219);
-            this.radio_Khongduyet.Name = "radio_Khongduyet";
-            this.radio_Khongduyet.Size = new System.Drawing.Size(96, 20);
-            this.radio_Khongduyet.TabIndex = 69;
-            this.radio_Khongduyet.TabStop = true;
-            this.radio_Khongduyet.Text = "Không Duyệt";
-            this.radio_Khongduyet.UseVisualStyleBackColor = true;
+            this.radioKhongduyet.AutoSize = true;
+            this.radioKhongduyet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.radioKhongduyet.ForeColor = System.Drawing.Color.Red;
+            this.radioKhongduyet.Location = new System.Drawing.Point(169, 219);
+            this.radioKhongduyet.Name = "radioKhongduyet";
+            this.radioKhongduyet.Size = new System.Drawing.Size(116, 23);
+            this.radioKhongduyet.TabIndex = 69;
+            this.radioKhongduyet.TabStop = true;
+            this.radioKhongduyet.Text = "Không Duyệt";
+            this.radioKhongduyet.UseVisualStyleBackColor = true;
             // 
-            // radio_Duyet
+            // radioDuyet
             // 
-            this.radio_Duyet.AutoSize = true;
-            this.radio_Duyet.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radio_Duyet.Location = new System.Drawing.Point(101, 219);
-            this.radio_Duyet.Name = "radio_Duyet";
-            this.radio_Duyet.Size = new System.Drawing.Size(57, 20);
-            this.radio_Duyet.TabIndex = 68;
-            this.radio_Duyet.TabStop = true;
-            this.radio_Duyet.Text = "Duyệt";
-            this.radio_Duyet.UseVisualStyleBackColor = true;
+            this.radioDuyet.AutoSize = true;
+            this.radioDuyet.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.radioDuyet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.radioDuyet.Location = new System.Drawing.Point(95, 219);
+            this.radioDuyet.Name = "radioDuyet";
+            this.radioDuyet.Size = new System.Drawing.Size(68, 23);
+            this.radioDuyet.TabIndex = 68;
+            this.radioDuyet.TabStop = true;
+            this.radioDuyet.Text = "Duyệt";
+            this.radioDuyet.UseVisualStyleBackColor = true;
             // 
             // labelControl12
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(27, 221);
+            this.labelControl12.Location = new System.Drawing.Point(10, 219);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(57, 16);
             this.labelControl12.TabIndex = 67;
             this.labelControl12.Text = "Phê Duyệt";
             // 
-            // ChuyenPhong
+            // frmChuyenPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1102,7 +1105,7 @@
             this.Controls.Add(this.barDockControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ChuyenPhong";
+            this.Name = "frmChuyenPhong";
             this.Text = "ChuyenPhong";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -1111,15 +1114,15 @@
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_CTkhu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Truong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_MSSV.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_CTphong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Hoten.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Quequan.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_SĐT.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbCTkhu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTruong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMSSV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbCTphong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHoten.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuequan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSĐT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stackPanel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_CCCD.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCCCD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -1130,8 +1133,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Nhanvienlap.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_MSNV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNhanvienlap.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMSNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
@@ -1155,44 +1158,44 @@
         private DevExpress.XtraGrid.Columns.GridColumn CHUYENTOIPHONG;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private PictureBox img;
-        private DevExpress.XtraEditors.SimpleButton btn_Import;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_CTkhu;
+        private DevExpress.XtraEditors.SimpleButton btnImport;
+        private DevExpress.XtraEditors.ComboBoxEdit cbCTkhu;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txt_Truong;
+        private DevExpress.XtraEditors.TextEdit txtTruong;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_MSSV;
+        private DevExpress.XtraEditors.ComboBoxEdit cbMSSV;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_CTphong;
+        private DevExpress.XtraEditors.ComboBoxEdit cbCTphong;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.TextEdit txt_Hoten;
-        private DevExpress.XtraEditors.TextEdit txt_Quequan;
+        private DevExpress.XtraEditors.TextEdit txtHoten;
+        private DevExpress.XtraEditors.TextEdit txtQuequan;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit txt_SĐT;
+        private DevExpress.XtraEditors.TextEdit txtSĐT;
         private DevExpress.Utils.Layout.StackPanel stackPanel1;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private RadioButton radio_GTnam;
-        private DevExpress.XtraEditors.TextEdit txt_CCCD;
-        private RadioButton radioGTnu;
-        private DateTimePicker dt_Ngaysinh;
+        private RadioButton radioNam;
+        private DevExpress.XtraEditors.TextEdit txtCCCD;
+        private RadioButton radioNu;
+        private DateTimePicker dtNgaysinh;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private TextBox txt_Lido;
+        private TextBox txtLido;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarButtonItem btn_Chuyenphong;
-        private DevExpress.XtraBars.BarButtonItem btn_Sua;
-        private DevExpress.XtraBars.BarButtonItem btn_Xoa;
-        private DevExpress.XtraBars.BarButtonItem btn_Reload;
-        private DevExpress.XtraBars.BarButtonItem btn_Xuatfile;
-        private DevExpress.XtraBars.BarButtonItem btn_SVcungphong;
-        private DevExpress.XtraBars.BarButtonItem btn_Tim;
-        private DevExpress.XtraBars.BarEditItem txt_Tim;
+        private DevExpress.XtraBars.BarButtonItem btnChuyenphong;
+        private DevExpress.XtraBars.BarButtonItem btnSua;
+        private DevExpress.XtraBars.BarButtonItem btnXoa;
+        private DevExpress.XtraBars.BarButtonItem btnReload;
+        private DevExpress.XtraBars.BarButtonItem btnXuatfile;
+        private DevExpress.XtraBars.BarButtonItem btnSVcungphong;
+        private DevExpress.XtraBars.BarButtonItem btnTim;
+        private DevExpress.XtraBars.BarEditItem txtTim;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit4;
-        private DevExpress.XtraBars.BarButtonItem btn_Thoat;
+        private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
@@ -1227,16 +1230,16 @@
         private DevExpress.XtraBars.BarEditItem barEditItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_MSNV;
+        private DevExpress.XtraEditors.ComboBoxEdit cbMSNV;
         private DevExpress.XtraEditors.LabelControl labelControl19;
-        private DevExpress.XtraEditors.TextEdit txt_Nhanvienlap;
+        private DevExpress.XtraEditors.TextEdit txtNhanvienlap;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.LabelControl labelControl16;
-        private DateTimePicker dt_Ngayhethan;
+        private DateTimePicker dtNgayhethan;
         private DevExpress.XtraEditors.LabelControl labelControl15;
-        private DateTimePicker dt_Ngaychuyen;
-        private RadioButton radio_Khongduyet;
-        private RadioButton radio_Duyet;
+        private DateTimePicker dtNgaychuyen;
+        private RadioButton radioKhongduyet;
+        private RadioButton radioDuyet;
         private DevExpress.XtraEditors.LabelControl labelControl12;
     }
 }

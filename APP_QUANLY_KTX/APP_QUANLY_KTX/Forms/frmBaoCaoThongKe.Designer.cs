@@ -32,16 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoThongKe));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.btn_Them = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Sua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Reload = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Xuatfile = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Thongke = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Tim = new DevExpress.XtraBars.BarButtonItem();
-            this.txt_Tim = new DevExpress.XtraBars.BarEditItem();
+            this.btnReload = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuatfile = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThongke = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTim = new DevExpress.XtraBars.BarButtonItem();
+            this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.btn_Thoat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -59,21 +59,21 @@
             this.barEditItem3 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.cb_TKSLnhanvien = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbTKSLnhanvien = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_TKSLsinhvien = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbTKSLsinhvien = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_Tongsophong = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbTongsophong = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_TKtinhtrangphong = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbTKTinhTrangphong = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_Svtheogioitinh = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cb_Baocaodoanhthu = new DevExpress.XtraEditors.TextEdit();
+            this.cbTKSVtheogioitinh = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbBCdoanhthu = new DevExpress.XtraEditors.TextEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_Svtheotoanha = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbTKSVtheotoanha = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cb_ThongkeHD = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbTKHopDong = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -92,14 +92,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_TKSLnhanvien.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_TKSLsinhvien.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Tongsophong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_TKtinhtrangphong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Svtheogioitinh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Baocaodoanhthu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Svtheotoanha.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_ThongkeHD.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTKSLnhanvien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTKSLsinhvien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTongsophong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTKTinhTrangphong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTKSVtheogioitinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbBCdoanhthu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTKSVtheotoanha.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTKHopDong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
@@ -114,24 +114,24 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.btn_Them,
-            this.btn_Sua,
+            this.btnThem,
+            this.btnSua,
             this.btnXoa,
-            this.btn_Reload,
+            this.btnReload,
             this.barButtonItem5,
-            this.btn_Xuatfile,
+            this.btnXuatfile,
             this.barButtonItem7,
             this.barButtonItem8,
             this.barButtonItem9,
             this.barEditItem1,
             this.barButtonItem10,
-            this.btn_Tim,
+            this.btnTim,
             this.barEditItem2,
             this.barButtonItem12,
             this.barEditItem3,
-            this.txt_Tim,
-            this.btn_Thoat,
-            this.btn_Thongke});
+            this.txtTim,
+            this.btnThoat,
+            this.btnThongke});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 18;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -147,33 +147,34 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Them, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Sua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Reload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Xuatfile, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Thongke, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Tim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.txt_Tim),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Thoat, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfile, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThongke, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.txtTim),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThoat, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
             // 
-            // btn_Them
+            // btnThem
             // 
-            this.btn_Them.Caption = "Thêm";
-            this.btn_Them.Id = 0;
-            this.btn_Them.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Them.ImageOptions.Image")));
-            this.btn_Them.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Them.ImageOptions.LargeImage")));
-            this.btn_Them.Name = "btn_Them";
+            this.btnThem.Caption = "Thêm";
+            this.btnThem.Id = 0;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
+            this.btnThem.Name = "btnThem";
             // 
-            // btn_Sua
+            // btnSua
             // 
-            this.btn_Sua.Caption = "Sửa";
-            this.btn_Sua.Id = 1;
-            this.btn_Sua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Sua.ImageOptions.SvgImage")));
-            this.btn_Sua.Name = "btn_Sua";
+            this.btnSua.Caption = "Sửa";
+            this.btnSua.Id = 1;
+            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
+            this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Sua_ItemClick);
             // 
             // btnXoa
             // 
@@ -183,54 +184,54 @@
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
             // 
-            // btn_Reload
+            // btnReload
             // 
-            this.btn_Reload.Caption = "Reload";
-            this.btn_Reload.Id = 3;
-            this.btn_Reload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Reload.ImageOptions.Image")));
-            this.btn_Reload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Reload.ImageOptions.LargeImage")));
-            this.btn_Reload.Name = "btn_Reload";
+            this.btnReload.Caption = "Reload";
+            this.btnReload.Id = 3;
+            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
+            this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
+            this.btnReload.Name = "btnReload";
             // 
-            // btn_Xuatfile
+            // btnXuatfile
             // 
-            this.btn_Xuatfile.Caption = "Xuất File";
-            this.btn_Xuatfile.Id = 5;
-            this.btn_Xuatfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Xuatfile.ImageOptions.SvgImage")));
-            this.btn_Xuatfile.Name = "btn_Xuatfile";
+            this.btnXuatfile.Caption = "Xuất File";
+            this.btnXuatfile.Id = 5;
+            this.btnXuatfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXuatfile.ImageOptions.SvgImage")));
+            this.btnXuatfile.Name = "btnXuatfile";
             // 
-            // btn_Thongke
+            // btnThongke
             // 
-            this.btn_Thongke.Caption = "Thống Kê";
-            this.btn_Thongke.Id = 17;
-            this.btn_Thongke.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Thongke.ImageOptions.Image")));
-            this.btn_Thongke.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Thongke.ImageOptions.LargeImage")));
-            this.btn_Thongke.Name = "btn_Thongke";
+            this.btnThongke.Caption = "Thống Kê";
+            this.btnThongke.Id = 17;
+            this.btnThongke.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThongke.ImageOptions.Image")));
+            this.btnThongke.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThongke.ImageOptions.LargeImage")));
+            this.btnThongke.Name = "btnThongke";
             // 
-            // btn_Tim
+            // btnTim
             // 
-            this.btn_Tim.Caption = "Tìm";
-            this.btn_Tim.Id = 11;
-            this.btn_Tim.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Tim.ImageOptions.SvgImage")));
-            this.btn_Tim.Name = "btn_Tim";
+            this.btnTim.Caption = "Tìm";
+            this.btnTim.Id = 11;
+            this.btnTim.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTim.ImageOptions.SvgImage")));
+            this.btnTim.Name = "btnTim";
             // 
-            // txt_Tim
+            // txtTim
             // 
-            this.txt_Tim.Caption = "barEditItem4";
-            this.txt_Tim.Edit = this.repositoryItemTextEdit4;
-            this.txt_Tim.Id = 15;
-            this.txt_Tim.Name = "txt_Tim";
+            this.txtTim.Caption = "barEditItem4";
+            this.txtTim.Edit = this.repositoryItemTextEdit4;
+            this.txtTim.Id = 15;
+            this.txtTim.Name = "txtTim";
             // 
             // repositoryItemTextEdit4
             // 
             this.repositoryItemTextEdit4.AutoHeight = false;
             this.repositoryItemTextEdit4.Name = "repositoryItemTextEdit4";
             // 
-            // btn_Thoat
+            // btnThoat
             // 
-            this.btn_Thoat.Caption = "Thoát";
-            this.btn_Thoat.Id = 16;
-            this.btn_Thoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Thoat.ImageOptions.SvgImage")));
-            this.btn_Thoat.Name = "btn_Thoat";
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 16;
+            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
+            this.btnThoat.Name = "btnThoat";
             // 
             // barDockControlTop
             // 
@@ -339,21 +340,21 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.cb_TKSLnhanvien);
+            this.groupControl2.Controls.Add(this.cbTKSLnhanvien);
             this.groupControl2.Controls.Add(this.labelControl10);
-            this.groupControl2.Controls.Add(this.cb_TKSLsinhvien);
+            this.groupControl2.Controls.Add(this.cbTKSLsinhvien);
             this.groupControl2.Controls.Add(this.labelControl9);
-            this.groupControl2.Controls.Add(this.cb_Tongsophong);
+            this.groupControl2.Controls.Add(this.cbTongsophong);
             this.groupControl2.Controls.Add(this.labelControl7);
-            this.groupControl2.Controls.Add(this.cb_TKtinhtrangphong);
+            this.groupControl2.Controls.Add(this.cbTKTinhTrangphong);
             this.groupControl2.Controls.Add(this.labelControl13);
-            this.groupControl2.Controls.Add(this.cb_Svtheogioitinh);
-            this.groupControl2.Controls.Add(this.cb_Baocaodoanhthu);
+            this.groupControl2.Controls.Add(this.cbTKSVtheogioitinh);
+            this.groupControl2.Controls.Add(this.cbBCdoanhthu);
             this.groupControl2.Controls.Add(this.labelControl14);
-            this.groupControl2.Controls.Add(this.cb_Svtheotoanha);
+            this.groupControl2.Controls.Add(this.cbTKSVtheotoanha);
             this.groupControl2.Controls.Add(this.labelControl3);
             this.groupControl2.Controls.Add(this.labelControl1);
-            this.groupControl2.Controls.Add(this.cb_ThongkeHD);
+            this.groupControl2.Controls.Add(this.cbTKHopDong);
             this.groupControl2.Controls.Add(this.labelControl8);
             this.groupControl2.Location = new System.Drawing.Point(0, 30);
             this.groupControl2.Name = "groupControl2";
@@ -361,15 +362,15 @@
             this.groupControl2.TabIndex = 12;
             this.groupControl2.Text = "Thông Tin Chung";
             // 
-            // cb_TKSLnhanvien
+            // cbTKSLnhanvien
             // 
-            this.cb_TKSLnhanvien.Location = new System.Drawing.Point(580, 106);
-            this.cb_TKSLnhanvien.MenuManager = this.barManager1;
-            this.cb_TKSLnhanvien.Name = "cb_TKSLnhanvien";
-            this.cb_TKSLnhanvien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbTKSLnhanvien.Location = new System.Drawing.Point(580, 106);
+            this.cbTKSLnhanvien.MenuManager = this.barManager1;
+            this.cbTKSLnhanvien.Name = "cbTKSLnhanvien";
+            this.cbTKSLnhanvien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_TKSLnhanvien.Size = new System.Drawing.Size(206, 20);
-            this.cb_TKSLnhanvien.TabIndex = 58;
+            this.cbTKSLnhanvien.Size = new System.Drawing.Size(206, 20);
+            this.cbTKSLnhanvien.TabIndex = 58;
             // 
             // labelControl10
             // 
@@ -381,15 +382,15 @@
             this.labelControl10.TabIndex = 57;
             this.labelControl10.Text = "Thống Kê Số Lượng Nhân Viên";
             // 
-            // cb_TKSLsinhvien
+            // cbTKSLsinhvien
             // 
-            this.cb_TKSLsinhvien.Location = new System.Drawing.Point(580, 61);
-            this.cb_TKSLsinhvien.MenuManager = this.barManager1;
-            this.cb_TKSLsinhvien.Name = "cb_TKSLsinhvien";
-            this.cb_TKSLsinhvien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbTKSLsinhvien.Location = new System.Drawing.Point(580, 61);
+            this.cbTKSLsinhvien.MenuManager = this.barManager1;
+            this.cbTKSLsinhvien.Name = "cbTKSLsinhvien";
+            this.cbTKSLsinhvien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_TKSLsinhvien.Size = new System.Drawing.Size(206, 20);
-            this.cb_TKSLsinhvien.TabIndex = 56;
+            this.cbTKSLsinhvien.Size = new System.Drawing.Size(206, 20);
+            this.cbTKSLsinhvien.TabIndex = 56;
             // 
             // labelControl9
             // 
@@ -401,15 +402,15 @@
             this.labelControl9.TabIndex = 55;
             this.labelControl9.Text = "Thống Kê Số Lượng Sinh Viên";
             // 
-            // cb_Tongsophong
+            // cbTongsophong
             // 
-            this.cb_Tongsophong.Location = new System.Drawing.Point(582, 150);
-            this.cb_Tongsophong.MenuManager = this.barManager1;
-            this.cb_Tongsophong.Name = "cb_Tongsophong";
-            this.cb_Tongsophong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbTongsophong.Location = new System.Drawing.Point(582, 150);
+            this.cbTongsophong.MenuManager = this.barManager1;
+            this.cbTongsophong.Name = "cbTongsophong";
+            this.cbTongsophong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_Tongsophong.Size = new System.Drawing.Size(204, 20);
-            this.cb_Tongsophong.TabIndex = 54;
+            this.cbTongsophong.Size = new System.Drawing.Size(204, 20);
+            this.cbTongsophong.TabIndex = 54;
             // 
             // labelControl7
             // 
@@ -421,16 +422,16 @@
             this.labelControl7.TabIndex = 53;
             this.labelControl7.Text = "Tổng Số Phòng";
             // 
-            // cb_TKtinhtrangphong
+            // cbTKTinhTrangphong
             // 
-            this.cb_TKtinhtrangphong.Location = new System.Drawing.Point(208, 192);
-            this.cb_TKtinhtrangphong.MenuManager = this.barManager1;
-            this.cb_TKtinhtrangphong.Name = "cb_TKtinhtrangphong";
-            this.cb_TKtinhtrangphong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbTKTinhTrangphong.Location = new System.Drawing.Point(208, 192);
+            this.cbTKTinhTrangphong.MenuManager = this.barManager1;
+            this.cbTKTinhTrangphong.Name = "cbTKTinhTrangphong";
+            this.cbTKTinhTrangphong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_TKtinhtrangphong.Size = new System.Drawing.Size(163, 20);
-            this.cb_TKtinhtrangphong.TabIndex = 52;
-            this.cb_TKtinhtrangphong.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit3_SelectedIndexChanged);
+            this.cbTKTinhTrangphong.Size = new System.Drawing.Size(163, 20);
+            this.cbTKTinhTrangphong.TabIndex = 52;
+            this.cbTKTinhTrangphong.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit3_SelectedIndexChanged);
             // 
             // labelControl13
             // 
@@ -442,23 +443,23 @@
             this.labelControl13.TabIndex = 51;
             this.labelControl13.Text = "Thống Kê Số Tình Trạng Phòng";
             // 
-            // cb_Svtheogioitinh
+            // cbTKSVtheogioitinh
             // 
-            this.cb_Svtheogioitinh.Location = new System.Drawing.Point(208, 103);
-            this.cb_Svtheogioitinh.MenuManager = this.barManager1;
-            this.cb_Svtheogioitinh.Name = "cb_Svtheogioitinh";
-            this.cb_Svtheogioitinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbTKSVtheogioitinh.Location = new System.Drawing.Point(208, 103);
+            this.cbTKSVtheogioitinh.MenuManager = this.barManager1;
+            this.cbTKSVtheogioitinh.Name = "cbTKSVtheogioitinh";
+            this.cbTKSVtheogioitinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_Svtheogioitinh.Size = new System.Drawing.Size(165, 20);
-            this.cb_Svtheogioitinh.TabIndex = 50;
+            this.cbTKSVtheogioitinh.Size = new System.Drawing.Size(165, 20);
+            this.cbTKSVtheogioitinh.TabIndex = 50;
             // 
-            // cb_Baocaodoanhthu
+            // cbBCdoanhthu
             // 
-            this.cb_Baocaodoanhthu.Location = new System.Drawing.Point(582, 193);
-            this.cb_Baocaodoanhthu.MenuManager = this.barManager1;
-            this.cb_Baocaodoanhthu.Name = "cb_Baocaodoanhthu";
-            this.cb_Baocaodoanhthu.Size = new System.Drawing.Size(204, 20);
-            this.cb_Baocaodoanhthu.TabIndex = 8;
+            this.cbBCdoanhthu.Location = new System.Drawing.Point(582, 193);
+            this.cbBCdoanhthu.MenuManager = this.barManager1;
+            this.cbBCdoanhthu.Name = "cbBCdoanhthu";
+            this.cbBCdoanhthu.Size = new System.Drawing.Size(204, 20);
+            this.cbBCdoanhthu.TabIndex = 8;
             // 
             // labelControl14
             // 
@@ -470,15 +471,15 @@
             this.labelControl14.TabIndex = 49;
             this.labelControl14.Text = "Thống Kê SV Theo Giới Tính";
             // 
-            // cb_Svtheotoanha
+            // cbTKSVtheotoanha
             // 
-            this.cb_Svtheotoanha.Location = new System.Drawing.Point(208, 61);
-            this.cb_Svtheotoanha.MenuManager = this.barManager1;
-            this.cb_Svtheotoanha.Name = "cb_Svtheotoanha";
-            this.cb_Svtheotoanha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbTKSVtheotoanha.Location = new System.Drawing.Point(208, 61);
+            this.cbTKSVtheotoanha.MenuManager = this.barManager1;
+            this.cbTKSVtheotoanha.Name = "cbTKSVtheotoanha";
+            this.cbTKSVtheotoanha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_Svtheotoanha.Size = new System.Drawing.Size(165, 20);
-            this.cb_Svtheotoanha.TabIndex = 34;
+            this.cbTKSVtheotoanha.Size = new System.Drawing.Size(165, 20);
+            this.cbTKSVtheotoanha.TabIndex = 34;
             // 
             // labelControl3
             // 
@@ -500,15 +501,15 @@
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Thống Kê SV Theo Tòa Nhà";
             // 
-            // cb_ThongkeHD
+            // cbTKHopDong
             // 
-            this.cb_ThongkeHD.Location = new System.Drawing.Point(210, 148);
-            this.cb_ThongkeHD.MenuManager = this.barManager1;
-            this.cb_ThongkeHD.Name = "cb_ThongkeHD";
-            this.cb_ThongkeHD.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbTKHopDong.Location = new System.Drawing.Point(210, 148);
+            this.cbTKHopDong.MenuManager = this.barManager1;
+            this.cbTKHopDong.Name = "cbTKHopDong";
+            this.cbTKHopDong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cb_ThongkeHD.Size = new System.Drawing.Size(163, 20);
-            this.cb_ThongkeHD.TabIndex = 37;
+            this.cbTKHopDong.Size = new System.Drawing.Size(163, 20);
+            this.cbTKHopDong.TabIndex = 37;
             // 
             // labelControl8
             // 
@@ -665,7 +666,7 @@
             this.BAOCAODOANHTHU.VisibleIndex = 7;
             this.BAOCAODOANHTHU.Width = 150;
             // 
-            // BaoCaoThongKe
+            // frmBaoCaoThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -678,7 +679,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "BaoCaoThongKe";
+            this.Name = "frmBaoCaoThongKe";
             this.Text = "BaoCaoThongKe";
             this.Load += new System.EventHandler(this.BaoCaoThongKe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -689,14 +690,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_TKSLnhanvien.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_TKSLsinhvien.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Tongsophong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_TKtinhtrangphong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Svtheogioitinh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Baocaodoanhthu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Svtheotoanha.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_ThongkeHD.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTKSLnhanvien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTKSLsinhvien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTongsophong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTKTinhTrangphong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTKSVtheogioitinh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbBCdoanhthu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTKSVtheotoanha.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTKHopDong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
@@ -708,15 +709,15 @@
 
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarButtonItem btn_Them;
-        private DevExpress.XtraBars.BarButtonItem btn_Sua;
+        private DevExpress.XtraBars.BarButtonItem btnThem;
+        private DevExpress.XtraBars.BarButtonItem btnSua;
         private DevExpress.XtraBars.BarButtonItem btnXoa;
-        private DevExpress.XtraBars.BarButtonItem btn_Reload;
-        private DevExpress.XtraBars.BarButtonItem btn_Xuatfile;
-        private DevExpress.XtraBars.BarButtonItem btn_Tim;
-        private DevExpress.XtraBars.BarEditItem txt_Tim;
+        private DevExpress.XtraBars.BarButtonItem btnReload;
+        private DevExpress.XtraBars.BarButtonItem btnXuatfile;
+        private DevExpress.XtraBars.BarButtonItem btnTim;
+        private DevExpress.XtraBars.BarEditItem txtTim;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit4;
-        private DevExpress.XtraBars.BarButtonItem btn_Thoat;
+        private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
@@ -734,22 +735,22 @@
         private DevExpress.XtraBars.BarEditItem barEditItem3;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_Svtheotoanha;
+        private DevExpress.XtraEditors.ComboBoxEdit cbTKSVtheotoanha;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit cb_Baocaodoanhthu;
+        private DevExpress.XtraEditors.TextEdit cbBCdoanhthu;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_ThongkeHD;
+        private DevExpress.XtraEditors.ComboBoxEdit cbTKHopDong;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraBars.BarButtonItem btn_Thongke;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_TKSLnhanvien;
+        private DevExpress.XtraBars.BarButtonItem btnThongke;
+        private DevExpress.XtraEditors.ComboBoxEdit cbTKSLnhanvien;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_TKSLsinhvien;
+        private DevExpress.XtraEditors.ComboBoxEdit cbTKSLsinhvien;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_Tongsophong;
+        private DevExpress.XtraEditors.ComboBoxEdit cbTongsophong;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_TKtinhtrangphong;
+        private DevExpress.XtraEditors.ComboBoxEdit cbTKTinhTrangphong;
         private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.ComboBoxEdit cb_Svtheogioitinh;
+        private DevExpress.XtraEditors.ComboBoxEdit cbTKSVtheogioitinh;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;

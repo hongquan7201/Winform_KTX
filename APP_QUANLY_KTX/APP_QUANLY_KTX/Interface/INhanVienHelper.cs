@@ -1,5 +1,4 @@
 ﻿using ProjectQLKTX.APIsHelper.API;
-using ProjectQLKTX.APIsHelper.BienLaiHelper;
 using ProjectQLKTX.Models;
 
 namespace ProjectQLKTX.Interface

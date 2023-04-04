@@ -17,5 +17,20 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
+
+        private void txt_Hoten_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Thoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void gridControl2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
