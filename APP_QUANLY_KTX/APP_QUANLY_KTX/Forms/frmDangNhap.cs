@@ -70,7 +70,7 @@ namespace ProjectQLKTX
         }     
         private void lbQuenMK_Click(object sender, EventArgs e)
         {
-            frmQuenMK QuenMatKhau = new frmQuenMK();
+            frmQuenMK QuenMatKhau = new frmQuenMK(); 
             QuenMatKhau.ShowDialog();
         }
     }

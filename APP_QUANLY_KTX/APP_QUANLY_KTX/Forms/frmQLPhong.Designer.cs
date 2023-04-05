@@ -2721,6 +2721,7 @@
             this.btn_Thoat.Id = 16;
             this.btn_Thoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_Thoat.ImageOptions.SvgImage")));
             this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Thoat_ItemClick);
             // 
             // barDockControlTop
             // 

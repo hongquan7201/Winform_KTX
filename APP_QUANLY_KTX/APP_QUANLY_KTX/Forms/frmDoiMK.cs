@@ -22,5 +22,10 @@ namespace ProjectQLKTX
         {
 
         }
+
+        private void btnThoat_CheckedChanged(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

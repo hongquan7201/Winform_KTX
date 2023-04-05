@@ -488,7 +488,7 @@
             // 
             this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Location = new System.Drawing.Point(15, 208);
+            this.labelControl16.Location = new System.Drawing.Point(14, 208);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(77, 16);
             this.labelControl16.TabIndex = 61;
@@ -1155,6 +1155,7 @@
             this.MinimizeBox = false;
             this.Name = "frmDangKyPhong";
             this.Text = "DangKyPhong";
+            this.Load += new System.EventHandler(this.frmDangKyPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();

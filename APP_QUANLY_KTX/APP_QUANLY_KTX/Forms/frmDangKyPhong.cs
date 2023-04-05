@@ -32,5 +32,10 @@ namespace ProjectQLKTX
         {
 
         }
+
+        private void frmDangKyPhong_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

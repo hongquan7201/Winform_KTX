@@ -214,6 +214,7 @@
             this.btnThoat.Size = new System.Drawing.Size(139, 34);
             this.btnThoat.TabIndex = 56;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.CheckedChanged += new System.EventHandler(this.btnThoat_CheckedChanged);
             // 
             // btnDongY
             // 

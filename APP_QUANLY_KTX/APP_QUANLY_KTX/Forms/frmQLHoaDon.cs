@@ -20,7 +20,7 @@ namespace ProjectQLKTX
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Application.Exit();
+             Application.Exit();
         }
     }
 }
