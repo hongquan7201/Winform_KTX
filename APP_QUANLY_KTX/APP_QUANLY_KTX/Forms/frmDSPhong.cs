@@ -17,10 +17,14 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
-
-        private void DanhSachPhong_Load(object sender, EventArgs e)
+        private void btnSVcungphong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            frmSinhVienCungPhong frmSinhVienCungPhong = new frmSinhVienCungPhong();
+            frmSinhVienCungPhong.ShowDialog();
+        }
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

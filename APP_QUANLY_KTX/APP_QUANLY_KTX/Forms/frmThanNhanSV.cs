@@ -17,13 +17,12 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
-
-        private void ThanNhanSV_Load(object sender, EventArgs e)
+        private void btn_Thoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void gridControl2_Click(object sender, EventArgs e)
+        private void btn_Xoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }

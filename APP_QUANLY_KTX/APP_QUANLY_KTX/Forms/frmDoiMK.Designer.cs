@@ -141,15 +141,16 @@
             // pictureEdit2
             // 
             this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-            this.pictureEdit2.Location = new System.Drawing.Point(44, 117);
+            this.pictureEdit2.Location = new System.Drawing.Point(34, 117);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Azure;
             this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit2.Properties.ZoomPercent = 5D;
-            this.pictureEdit2.Size = new System.Drawing.Size(31, 33);
+            this.pictureEdit2.Properties.ZoomPercent = 6D;
+            this.pictureEdit2.Size = new System.Drawing.Size(41, 33);
             this.pictureEdit2.TabIndex = 49;
+            this.pictureEdit2.EditValueChanged += new System.EventHandler(this.pictureEdit2_EditValueChanged);
             // 
             // pictureEdit1
             // 

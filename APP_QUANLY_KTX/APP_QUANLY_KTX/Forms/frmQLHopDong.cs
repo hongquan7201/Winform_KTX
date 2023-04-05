@@ -17,15 +17,9 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
-
-        private void groupControl2_Paint(object sender, PaintEventArgs e)
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-        }
-
-        private void frmQLHopDong_Load(object sender, EventArgs e)
-        {
-
+            Application.Exit();
         }
     }
 }

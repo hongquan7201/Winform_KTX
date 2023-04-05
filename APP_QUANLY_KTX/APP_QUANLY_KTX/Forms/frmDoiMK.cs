@@ -17,5 +17,10 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
+
+        private void pictureEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -17,5 +17,15 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
+
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Application.Exit();
+        }
+        private void btnLaphoadon_CheckedChanged(object sender, EventArgs e)
+        {
+            frmQLHoaDon frmQLHoaDon = new frmQLHoaDon();
+            frmQLHoaDon.ShowDialog();
+        }
     }
 }

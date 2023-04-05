@@ -17,6 +17,9 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
-
+        private void btn_Thoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -16,6 +16,10 @@ namespace ProjectQLKTX
         public frmChuyenPhong()
         {
             InitializeComponent();
-        }    
+        }
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

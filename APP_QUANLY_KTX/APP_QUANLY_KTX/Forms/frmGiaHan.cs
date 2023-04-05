@@ -17,13 +17,12 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
-
-        private void textEdit5_EditValueChanged(object sender, EventArgs e)
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void img_Click(object sender, EventArgs e)
+        private void groupControl3_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -19,8 +19,8 @@ namespace ProjectQLKTX
         }
         private void lbQuaylaiDN_Click(object sender, EventArgs e)
         {
-            //frmDangNhap DangNhap = new frmDangNhap();
-            //DangNhap.ShowDialog();
+           // frmDangNhap frmDangNhap = new frmDangNhap();
+            //frmDangNhap.ShowDialog();
         }
     }
 }

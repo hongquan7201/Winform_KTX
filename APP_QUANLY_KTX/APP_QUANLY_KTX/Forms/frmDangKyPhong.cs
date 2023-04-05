@@ -18,17 +18,17 @@ namespace ProjectQLKTX
             InitializeComponent();
         }
 
-        private void txt_Hoten_EditValueChanged(object sender, EventArgs e)
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void labelControl19_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btn_Thoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void gridControl2_Click(object sender, EventArgs e)
+        private void cbMSNhanvien_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

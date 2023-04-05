@@ -17,20 +17,9 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
-
-        private void comboBoxEdit4_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-        }
-
-        private void groupControl3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void labelControl12_Click(object sender, EventArgs e)
-        {
-
+            Application.Exit();
         }
     } 
 }

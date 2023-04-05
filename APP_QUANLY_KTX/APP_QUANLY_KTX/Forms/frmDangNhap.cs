@@ -12,6 +12,11 @@ namespace ProjectQLKTX
             InitializeComponent();
             _loginHelper = loginHelper;
         }
+
+        public frmDangNhap()
+        {
+        }
+
         private void cb_Hienthi_CheckedChanged(object sender, EventArgs e)
         {
             if (cbHienthi.Checked)
@@ -33,27 +38,27 @@ namespace ProjectQLKTX
             // x.data.cccd = "123456789";
             //var edit = await _nhanVienHelper.EditNhanVien(x.data.id, x.data);
             //var result = await _nhanVienHelper.GetNhanVien(x.data.id);
-            Account account = new Account();
-            account.email = txtEmail.Text;
-            account.password = txtMatkhau.Text;
-            if (!string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtMatkhau.Text))
-            {
-                var login = await _loginHelper.Login(account);
-                if (login.status == 200)
-                {
-                    Home home = new Home();
-                    home.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show(login.message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui Lòng Kiểm Tra Thông Tin Đăng Nhập!");
-            }
+            //Account account = new Account();
+            //account.email = txtEmail.Text;
+            //account.password = txtMatkhau.Text;
+            //if (!string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtMatkhau.Text))
+            //{
+            //    var login = await _loginHelper.Login(account);
+            //    if (login.status == 200)
+            //    {
+            Home home = new Home();
+            home.Show();
+            this.Hide();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show(login.message);
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Vui Lòng Kiểm Tra Thông Tin Đăng Nhập!");
+            //}
         }
         private void btnThoat_CheckedChanged(object sender, EventArgs e)
         {
