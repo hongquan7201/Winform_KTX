@@ -78,6 +78,7 @@ namespace ProjectQLKTX
                 .ConfigureServices((context, services) =>
                 {
                     services.AddSingleton<frmDangNhap>();
+                    services.AddSingleton<Home>();
                     services.AddTransient<ILoginHelper, LoginHelper>();
 
 

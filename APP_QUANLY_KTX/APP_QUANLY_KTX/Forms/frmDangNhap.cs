@@ -7,10 +7,12 @@ namespace ProjectQLKTX
     public partial class frmDangNhap : DevExpress.XtraEditors.XtraForm
     {
         private readonly ILoginHelper _loginHelper;
-        public frmDangNhap(ILoginHelper loginHelper)
+        private readonly Home _home;
+        public frmDangNhap(ILoginHelper loginHelper, Home home)
         {
             InitializeComponent();
             _loginHelper = loginHelper;
+            _home = home;
         }
 
         public frmDangNhap()
@@ -32,33 +34,27 @@ namespace ProjectQLKTX
         }
         private async void btn_Dangnhap_CheckedChanged(object sender, EventArgs e)
         {
-            //var s = await _nhanVienHelper.GetListNhanVien();
-            //var x = await _nhanVienHelper.GetNhanVien(Guid.Parse("b991f15c-1e25-4b5c-9a2b-efd846c37c76"));
-            //x.data.name = "LamLe03001";
-            // x.data.cccd = "123456789";
-            //var edit = await _nhanVienHelper.EditNhanVien(x.data.id, x.data);
-            //var result = await _nhanVienHelper.GetNhanVien(x.data.id);
-            //Account account = new Account();
-            //account.email = txtEmail.Text;
-            //account.password = txtMatkhau.Text;
-            //if (!string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtMatkhau.Text))
-            //{
-            //    var login = await _loginHelper.Login(account);
-            //    if (login.status == 200)
-            //    {
-            Home home = new Home();
-            home.Show();
-            this.Hide();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show(login.message);
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Vui Lòng Kiểm Tra Thông Tin Đăng Nhập!");
-            //}
+            Account account = new Account();
+            account.email = txtEmail.Text;
+            account.password = txtMatkhau.Text;
+            if (!string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtMatkhau.Text))
+            {
+                var login = await _loginHelper.Login(account);
+                if (login.status == 200)
+                {
+
+                    _home.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(login.message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui Lòng Kiểm Tra Thông Tin Đăng Nhập!");
+            }
         }
         private void btnThoat_CheckedChanged(object sender, EventArgs e)
         {

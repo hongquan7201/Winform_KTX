@@ -16,10 +16,15 @@ namespace ProjectQLKTX
         public frmSinhVienCungPhong()
         {
             InitializeComponent();
-        }     
+        }
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-             Application.Exit();
-        }  
+           this.Hide();
+        }
+
+        private void frmSinhVienCungPhong_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

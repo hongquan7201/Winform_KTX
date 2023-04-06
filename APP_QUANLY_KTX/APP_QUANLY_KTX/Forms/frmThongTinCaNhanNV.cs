@@ -20,10 +20,15 @@ namespace ProjectQLKTX
 
         private void btn_Thoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-             Application.Exit();
+            this.Hide();
         }
 
         private void txt_Tim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void frmThongTinCaNhanNV_Load(object sender, EventArgs e)
         {
 
         }

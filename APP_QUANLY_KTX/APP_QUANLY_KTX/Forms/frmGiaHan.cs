@@ -19,12 +19,17 @@ namespace ProjectQLKTX
         }
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-             Application.Exit();
+           this.Hide();
         }
 
         private void groupControl3_Paint(object sender, PaintEventArgs e)
         {
 
         }
-    }     
+
+        private void frmGiaHan_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

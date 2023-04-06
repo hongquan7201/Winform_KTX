@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using ProjectQLKTX.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,10 +18,9 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
-
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Application.Exit();
+            this.Hide();
         }
 
         private void labelControl19_Click(object sender, EventArgs e)

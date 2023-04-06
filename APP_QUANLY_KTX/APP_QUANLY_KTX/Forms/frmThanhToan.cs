@@ -20,12 +20,17 @@ namespace ProjectQLKTX
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-             Application.Exit();
+            this.Hide();
         }
         private void btnLaphoadon_CheckedChanged(object sender, EventArgs e)
         {
             frmQLHoaDon frmQLHoaDon = new frmQLHoaDon();
             frmQLHoaDon.ShowDialog();
+        }
+
+        private void frmThanhToan_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

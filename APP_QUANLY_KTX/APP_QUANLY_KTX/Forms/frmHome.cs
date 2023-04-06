@@ -35,8 +35,8 @@ namespace ProjectQLKTX
         }
         private void btnQLHDong_ItemClick(object sender, ItemClickEventArgs e)
         {
-           frmQLHopDong frmDSHopDong = new frmQLHopDong();
-           frmDSHopDong.ShowDialog();
+            frmQLHopDong frmDSHopDong = new frmQLHopDong();
+            frmDSHopDong.ShowDialog();
         }
         private void btnQLHDon_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -60,7 +60,7 @@ namespace ProjectQLKTX
         }
         private void btnQLPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-           frmQLPhong frmQLPhong = new frmQLPhong();
+            frmQLPhong frmQLPhong = new frmQLPhong();
             frmQLPhong.ShowDialog();
         }
         private void btnDangkyphong_ItemClick(object sender, ItemClickEventArgs e)
