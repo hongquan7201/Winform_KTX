@@ -1,12 +1,15 @@
 ﻿using DevExpress.XtraBars;
+using ProjectQLKTX.Interface;
 
 namespace ProjectQLKTX
 {
     public partial class Home : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public Home()
+        private readonly INhanVienHelper _nhanVienHelper;
+        public Home(INhanVienHelper nhanVienHelper)
         {
             InitializeComponent();
+            _nhanVienHelper = nhanVienHelper;
         }
         private void btnDSSV_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -30,7 +33,7 @@ namespace ProjectQLKTX
         }
         private void btnDSNV_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmDSNhanVien frmDSNhanVien = new frmDSNhanVien();
+            frmDSNhanVien frmDSNhanVien = new frmDSNhanVien(_nhanVienHelper);
             frmDSNhanVien.ShowDialog();
         }
         private void btnQLHDong_ItemClick(object sender, ItemClickEventArgs e)
@@ -120,7 +123,7 @@ namespace ProjectQLKTX
         }
         private void btnDangxuat1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Home home = new Home();
+            Home home = new Home(_nhanVienHelper);
             home.ShowDialog();
 
         }
