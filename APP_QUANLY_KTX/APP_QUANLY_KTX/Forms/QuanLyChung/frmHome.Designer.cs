@@ -325,7 +325,6 @@
             this.btnThongKeSV.Id = 24;
             this.btnThongKeSV.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThongKeSV.ImageOptions.SvgImage")));
             this.btnThongKeSV.Name = "btnThongKeSV";
-            this.btnThongKeSV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeSV_ItemClick);
             // 
             // btnThongKePhong
             // 
@@ -333,7 +332,6 @@
             this.btnThongKePhong.Id = 25;
             this.btnThongKePhong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThongKePhong.ImageOptions.SvgImage")));
             this.btnThongKePhong.Name = "btnThongKePhong";
-            this.btnThongKePhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKePhong_ItemClick);
             // 
             // btnTKSLuong
             // 

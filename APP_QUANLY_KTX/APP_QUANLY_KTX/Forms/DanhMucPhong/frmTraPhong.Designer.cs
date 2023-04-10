@@ -242,6 +242,7 @@
             // bar2
             // 
             this.bar2.BarName = "Main menu";
+            this.bar2.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Top;
             this.bar2.DockCol = 0;
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
@@ -1310,7 +1311,7 @@
             this.NGAYVAO.MinWidth = 130;
             this.NGAYVAO.Name = "NGAYVAO";
             this.NGAYVAO.Visible = true;
-            this.NGAYVAO.VisibleIndex = 10;
+            this.NGAYVAO.VisibleIndex = 6;
             this.NGAYVAO.Width = 130;
             // 
             // NGAYRA
@@ -1329,7 +1330,7 @@
             this.NGAYRA.MinWidth = 150;
             this.NGAYRA.Name = "NGAYRA";
             this.NGAYRA.Visible = true;
-            this.NGAYRA.VisibleIndex = 11;
+            this.NGAYRA.VisibleIndex = 7;
             this.NGAYRA.Width = 150;
             // 
             // TINHTRANG
@@ -1348,7 +1349,7 @@
             this.TINHTRANG.MinWidth = 100;
             this.TINHTRANG.Name = "TINHTRANG";
             this.TINHTRANG.Visible = true;
-            this.TINHTRANG.VisibleIndex = 12;
+            this.TINHTRANG.VisibleIndex = 8;
             this.TINHTRANG.Width = 100;
             // 
             // MATHIETBI
@@ -1384,7 +1385,7 @@
             this.TENTHIETBI.MinWidth = 100;
             this.TENTHIETBI.Name = "TENTHIETBI";
             this.TENTHIETBI.Visible = true;
-            this.TENTHIETBI.VisibleIndex = 14;
+            this.TENTHIETBI.VisibleIndex = 9;
             this.TENTHIETBI.Width = 100;
             // 
             // SOLUONG
@@ -1403,7 +1404,7 @@
             this.SOLUONG.MinWidth = 100;
             this.SOLUONG.Name = "SOLUONG";
             this.SOLUONG.Visible = true;
-            this.SOLUONG.VisibleIndex = 15;
+            this.SOLUONG.VisibleIndex = 10;
             this.SOLUONG.Width = 100;
             // 
             // TIENCOC
@@ -1473,7 +1474,7 @@
             this.CHONPHONG.MinWidth = 120;
             this.CHONPHONG.Name = "CHONPHONG";
             this.CHONPHONG.Visible = true;
-            this.CHONPHONG.VisibleIndex = 19;
+            this.CHONPHONG.VisibleIndex = 11;
             this.CHONPHONG.Width = 120;
             // 
             // LOAIPHONG
@@ -1492,7 +1493,7 @@
             this.LOAIPHONG.MinWidth = 120;
             this.LOAIPHONG.Name = "LOAIPHONG";
             this.LOAIPHONG.Visible = true;
-            this.LOAIPHONG.VisibleIndex = 20;
+            this.LOAIPHONG.VisibleIndex = 12;
             this.LOAIPHONG.Width = 120;
             // 
             // frmTraPhong

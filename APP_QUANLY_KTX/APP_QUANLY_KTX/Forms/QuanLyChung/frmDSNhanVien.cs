@@ -38,5 +38,7 @@ namespace ProjectQLKTX
                 Log.Error(ex, ex.Message);
             }
         }
+
+        
     }
 }

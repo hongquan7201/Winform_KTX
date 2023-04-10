@@ -16,6 +16,8 @@ namespace ProjectQLKTX
         public frmQLDienNuoc()
         {
             InitializeComponent();
-        }   
+        }
+
+        
     }
 }

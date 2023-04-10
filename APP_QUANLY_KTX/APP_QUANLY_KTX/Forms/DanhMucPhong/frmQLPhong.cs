@@ -22,5 +22,7 @@ namespace ProjectQLKTX
             frmSinhVienCungPhong frmSinhVienCungPhong = new frmSinhVienCungPhong();
             frmSinhVienCungPhong.ShowDialog();
         }
+
+
     }
 }

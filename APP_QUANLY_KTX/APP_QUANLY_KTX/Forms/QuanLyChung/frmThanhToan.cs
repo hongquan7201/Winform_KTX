@@ -22,5 +22,7 @@ namespace ProjectQLKTX
             frmQLHoaDon frmQLHoaDon = new frmQLHoaDon();
             frmQLHoaDon.ShowDialog();
         }
+
+        
     }
 }

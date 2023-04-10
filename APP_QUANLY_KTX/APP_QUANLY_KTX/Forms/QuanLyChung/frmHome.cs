@@ -146,15 +146,5 @@ namespace ProjectQLKTX
             frmQLHoaDon frmQLHoaDon = new frmQLHoaDon();
             frmQLHoaDon.ShowDialog();
         }
-
-        private void btnThongKeSV_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
-        private void btnThongKePhong_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
     }
 }

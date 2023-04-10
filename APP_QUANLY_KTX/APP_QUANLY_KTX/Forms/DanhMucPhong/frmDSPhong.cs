@@ -18,9 +18,6 @@ namespace ProjectQLKTX
             InitializeComponent();
         }
 
-        private void navBarControl5_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

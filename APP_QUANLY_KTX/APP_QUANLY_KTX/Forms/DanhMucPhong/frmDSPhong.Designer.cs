@@ -636,7 +636,6 @@
             this.navBarControl5.OptionsNavPane.ExpandedWidth = 206;
             this.navBarControl5.Size = new System.Drawing.Size(206, 542);
             this.navBarControl5.TabIndex = 0;
-            this.navBarControl5.Click += new System.EventHandler(this.navBarControl5_Click);
             // 
             // nvbQuanLyKhu
             // 
@@ -2710,6 +2709,7 @@
             // bar2
             // 
             this.bar2.BarName = "Main menu";
+            this.bar2.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Top;
             this.bar2.DockCol = 0;
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
