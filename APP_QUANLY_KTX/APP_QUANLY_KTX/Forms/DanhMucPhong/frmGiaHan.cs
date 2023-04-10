@@ -17,11 +17,5 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
-
-        private void btnImport_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
     }
 }

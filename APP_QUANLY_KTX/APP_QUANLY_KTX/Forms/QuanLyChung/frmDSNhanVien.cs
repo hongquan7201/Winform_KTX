@@ -13,7 +13,6 @@ namespace ProjectQLKTX
             _nhanVienHelper = nhanVienHelper;
         }
         List<Nhanvien> listNhanVien = new List<Nhanvien>();
-       
         private async void frmDSNhanVien_Load(object sender, EventArgs e)
         {
             var result = await _nhanVienHelper.GetListNhanVien();
@@ -38,7 +37,5 @@ namespace ProjectQLKTX
                 Log.Error(ex, ex.Message);
             }
         }
-
-        
     }
 }

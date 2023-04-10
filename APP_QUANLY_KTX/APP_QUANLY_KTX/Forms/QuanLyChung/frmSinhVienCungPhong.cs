@@ -17,10 +17,5 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
-
-        private void cbChonPhong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

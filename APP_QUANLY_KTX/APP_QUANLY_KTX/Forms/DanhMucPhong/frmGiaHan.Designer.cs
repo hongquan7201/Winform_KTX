@@ -638,7 +638,6 @@
             this.btnImport.Size = new System.Drawing.Size(84, 33);
             this.btnImport.TabIndex = 5;
             this.btnImport.Text = "Import";
-            this.btnImport.CheckedChanged += new System.EventHandler(this.btnImport_CheckedChanged);
             // 
             // labelControl7
             // 

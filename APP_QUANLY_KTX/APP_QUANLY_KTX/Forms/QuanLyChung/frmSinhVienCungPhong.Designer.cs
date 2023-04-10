@@ -684,7 +684,6 @@
             "Phòng Ghép"});
             this.cbChonPhong.Size = new System.Drawing.Size(221, 20);
             this.cbChonPhong.TabIndex = 79;
-            this.cbChonPhong.SelectedIndexChanged += new System.EventHandler(this.cbChonPhong_SelectedIndexChanged);
             // 
             // labelControl13
             // 

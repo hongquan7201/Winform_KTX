@@ -478,7 +478,6 @@
             this.btnImport.Size = new System.Drawing.Size(80, 36);
             this.btnImport.TabIndex = 1;
             this.btnImport.Text = "Import";
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // dtNgayVao
             // 
