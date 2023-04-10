@@ -17,5 +17,16 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
+
+        private void btnImport_CheckedChanged(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "Picture file (.png,.jpg)|*.png;*.jpg";
+            if (openFile.ShowDialog() == DialogResult.OK )
+            {
+              //  picHinhAnh.Image = Image.FormFile(openFile.FileName);
+
+            }
+        }
     }
 }

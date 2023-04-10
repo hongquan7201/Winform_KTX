@@ -15,7 +15,7 @@ namespace ProjectQLKTX
         private static readonly IHost _host = CreateHostBuilder();
         [STAThread]
         static void Main()
-         {
+        {
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .WriteTo.File("LOGSAPP/myapp.txt", rollingInterval: RollingInterval.Day)
@@ -80,8 +80,6 @@ namespace ProjectQLKTX
                     services.AddSingleton<frmDangNhap>();
                     services.AddSingleton<Home>();
                     services.AddTransient<ILoginHelper, LoginHelper>();
-
-
                     services.AddTransient<IBienLaiHelper, BienLaiHelper>();
                     services.AddTransient<INhanVienHelper, NhanVienHelper>();
                 }).Build();

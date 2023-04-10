@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\working\\MyProject\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj": {}
+    "D:\\DOAN_TN\\Winform_KTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj": {}
   },
   "projects": {
-    "D:\\working\\MyProject\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj": {
+    "D:\\DOAN_TN\\Winform_KTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\working\\MyProject\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj",
+        "projectUniqueName": "D:\\DOAN_TN\\Winform_KTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj",
         "projectName": "ProjectQLKTX",
-        "projectPath": "D:\\working\\MyProject\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\working\\MyProject\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\obj\\",
+        "projectPath": "D:\\DOAN_TN\\Winform_KTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\ProjectQLKTX.csproj",
+        "packagesPath": "C:\\Users\\QUAN\\.nuget\\packages\\",
+        "outputPath": "D:\\DOAN_TN\\Winform_KTX\\Winform\\APP_QUANLY_KTX\\APP_QUANLY_KTX\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\QUAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -97,7 +96,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.300-preview.23122.5\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

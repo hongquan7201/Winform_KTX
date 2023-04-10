@@ -53,8 +53,8 @@
             this.btnDKSDDVu = new DevExpress.XtraBars.BarButtonItem();
             this.btnLHDDVu = new DevExpress.XtraBars.BarButtonItem();
             this.btnBCDThu = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTKSLHDong = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTKTTPhong = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThongKeSV = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThongKePhong = new DevExpress.XtraBars.BarButtonItem();
             this.btnTKSLuong = new DevExpress.XtraBars.BarButtonItem();
             this.TKTYeuCau = new DevExpress.XtraBars.BarButtonItem();
             this.btnDSPhong = new DevExpress.XtraBars.BarButtonItem();
@@ -70,8 +70,6 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.DICHVU = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.BAOCAOTHONGKE = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -107,8 +105,8 @@
             this.btnDKSDDVu,
             this.btnLHDDVu,
             this.btnBCDThu,
-            this.btnTKSLHDong,
-            this.btnTKTTPhong,
+            this.btnThongKeSV,
+            this.btnThongKePhong,
             this.btnTKSLuong,
             this.TKTYeuCau,
             this.btnDSPhong,
@@ -123,7 +121,6 @@
             this.HETHONG,
             this.DANHMUC,
             this.QUANLY,
-            this.DICHVU,
             this.BAOCAOTHONGKE});
             this.ribbon.Size = new System.Drawing.Size(953, 177);
             this.ribbon.StatusBar = this.ribbonStatusBar;
@@ -322,19 +319,21 @@
             this.btnBCDThu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBCDThu.ImageOptions.SvgImage")));
             this.btnBCDThu.Name = "btnBCDThu";
             // 
-            // btnTKSLHDong
+            // btnThongKeSV
             // 
-            this.btnTKSLHDong.Caption = "Thống Kê Số Lượng Hợp Đồng";
-            this.btnTKSLHDong.Id = 24;
-            this.btnTKSLHDong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTKSLHDong.ImageOptions.SvgImage")));
-            this.btnTKSLHDong.Name = "btnTKSLHDong";
+            this.btnThongKeSV.Caption = "Thống Kê Sinh Viên";
+            this.btnThongKeSV.Id = 24;
+            this.btnThongKeSV.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThongKeSV.ImageOptions.SvgImage")));
+            this.btnThongKeSV.Name = "btnThongKeSV";
+            this.btnThongKeSV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeSV_ItemClick);
             // 
-            // btnTKTTPhong
+            // btnThongKePhong
             // 
-            this.btnTKTTPhong.Caption = "Thống Kê Tình Trạng Phòng";
-            this.btnTKTTPhong.Id = 25;
-            this.btnTKTTPhong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTKTTPhong.ImageOptions.SvgImage")));
-            this.btnTKTTPhong.Name = "btnTKTTPhong";
+            this.btnThongKePhong.Caption = "Thống Kê Phòng";
+            this.btnThongKePhong.Id = 25;
+            this.btnThongKePhong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThongKePhong.ImageOptions.SvgImage")));
+            this.btnThongKePhong.Name = "btnThongKePhong";
+            this.btnThongKePhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKePhong_ItemClick);
             // 
             // btnTKSLuong
             // 
@@ -461,20 +460,6 @@
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Quản lý chung";
             // 
-            // DICHVU
-            // 
-            this.DICHVU.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup8});
-            this.DICHVU.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("DICHVU.ImageOptions.Image")));
-            this.DICHVU.Name = "DICHVU";
-            this.DICHVU.Text = "Dịch Vụ";
-            // 
-            // ribbonPageGroup8
-            // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnDKSDDVu);
-            this.ribbonPageGroup8.ItemLinks.Add(this.btnLHDDVu);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            // 
             // BAOCAOTHONGKE
             // 
             this.BAOCAOTHONGKE.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -486,10 +471,8 @@
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btnBCDThu);
-            this.ribbonPageGroup9.ItemLinks.Add(this.btnTKSLHDong);
-            this.ribbonPageGroup9.ItemLinks.Add(this.btnTKTTPhong);
-            this.ribbonPageGroup9.ItemLinks.Add(this.btnTKSLuong);
-            this.ribbonPageGroup9.ItemLinks.Add(this.TKTYeuCau);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnThongKeSV);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnThongKePhong);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             // 
             // ribbonStatusBar
@@ -528,7 +511,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPage QUANLY;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.Ribbon.RibbonPage DICHVU;
         private DevExpress.XtraBars.Ribbon.RibbonPage BAOCAOTHONGKE;
         private DevExpress.XtraBars.BarButtonItem btnDangxuat;
         private DevExpress.XtraBars.BarButtonItem btnDoiMK;
@@ -553,12 +535,11 @@
         private DevExpress.XtraBars.BarButtonItem btnQLPhong1;
         private DevExpress.XtraBars.BarButtonItem btnQLiNhaXe;
         private DevExpress.XtraBars.BarButtonItem btnDKSDDVu;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem btnLHDDVu;
         private DevExpress.XtraBars.BarButtonItem btnBCDThu;
-        private DevExpress.XtraBars.BarButtonItem btnTKSLHDong;
+        private DevExpress.XtraBars.BarButtonItem btnThongKeSV;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
-        private DevExpress.XtraBars.BarButtonItem btnTKTTPhong;
+        private DevExpress.XtraBars.BarButtonItem btnThongKePhong;
         private DevExpress.XtraBars.BarButtonItem btnTKSLuong;
         private DevExpress.XtraBars.BarButtonItem TKTYeuCau;
         private DevExpress.XtraBars.BarButtonItem btnDSPhong;
