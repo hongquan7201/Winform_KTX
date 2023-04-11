@@ -1392,7 +1392,7 @@
             this.MinimizeBox = false;
             this.Name = "frmChuyenPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ChuyenPhong";
+            this.Text = "Chuyển Phòng";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();

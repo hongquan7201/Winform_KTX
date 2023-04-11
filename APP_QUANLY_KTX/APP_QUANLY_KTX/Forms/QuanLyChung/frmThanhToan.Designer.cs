@@ -468,7 +468,9 @@
             // labelControl26
             // 
             this.labelControl26.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelControl26.Appearance.ForeColor = System.Drawing.Color.Fuchsia;
             this.labelControl26.Appearance.Options.UseFont = true;
+            this.labelControl26.Appearance.Options.UseForeColor = true;
             this.labelControl26.Location = new System.Drawing.Point(468, 238);
             this.labelControl26.Name = "labelControl26";
             this.labelControl26.Size = new System.Drawing.Size(25, 16);
@@ -482,6 +484,7 @@
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTongTien.Properties.Appearance.Options.UseFont = true;
+            this.txtTongTien.Properties.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(150, 22);
             this.txtTongTien.TabIndex = 75;
             // 
@@ -1601,7 +1604,7 @@
             this.MinimizeBox = false;
             this.Name = "frmThanhToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ThanhToan";
+            this.Text = "Thanh Toán";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

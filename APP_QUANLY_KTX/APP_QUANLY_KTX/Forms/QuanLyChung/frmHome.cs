@@ -40,16 +40,6 @@ namespace ProjectQLKTX
             frmDoiMK frmDoiMK = new frmDoiMK();
             frmDoiMK.ShowDialog();
         }
-        private void btnDSSinhVien_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            frmDSSinhVien frmDSSinhVien = new frmDSSinhVien();
-            frmDSSinhVien.ShowDialog();
-        }
-        private void btnDSSVCungPhong_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            frmSinhVienCungPhong frmSinhVienCungPhong = new frmSinhVienCungPhong();
-            frmSinhVienCungPhong.ShowDialog();
-        }
         private void btnThoat_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogResult thongbao;
@@ -83,16 +73,6 @@ namespace ProjectQLKTX
             frmThongTinSV frmThongTinCaNhanSV = new frmThongTinSV();
             frmThongTinCaNhanSV.ShowDialog();
         }
-        private void btDSThanNhanSinhVien_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            frmThanNhanSV frmThanNhanSV = new frmThanNhanSV();
-            frmThanNhanSV.ShowDialog();
-        }
-        private void btnDSSVKyLuat_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            frmDSKyLuat frmDSKyLuat = new frmDSKyLuat();
-            frmDSKyLuat.ShowDialog();
-        }
         private void btnDSNhanVien_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmDSNhanVien frmDSNhanVien = new frmDSNhanVien(_nhanVienHelper);
@@ -123,28 +103,25 @@ namespace ProjectQLKTX
             frmQLNhaXe frmQLNhaXe = new frmQLNhaXe();
             frmQLNhaXe.ShowDialog();
         }
-        private void btnQLPhong_ItemClick_1(object sender, ItemClickEventArgs e)
-        {
-            frmDSPhong frmDSPhong = new frmDSPhong();
-            frmDSPhong.ShowDialog();
-        }
-
         private void btnQLPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmQLPhong frmQLPhong = new frmQLPhong();
             frmQLPhong.ShowDialog();
         }
-
         private void btnThanhToan_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmThanhToan frmThanhToan = new frmThanhToan();
             frmThanhToan.ShowDialog();
         }
-
         private void btnQLiHoaDon_ItemClick_1(object sender, ItemClickEventArgs e)
         {
             frmQLHoaDon frmQLHoaDon = new frmQLHoaDon();
             frmQLHoaDon.ShowDialog();
+        }
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmThongTinNV frmThongTinCaNhanNV = new frmThongTinNV();
+            frmThongTinCaNhanNV.ShowDialog();
         }
     }
 }

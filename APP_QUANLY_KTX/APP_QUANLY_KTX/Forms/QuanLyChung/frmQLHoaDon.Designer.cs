@@ -64,8 +64,6 @@
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.cbGiaTien = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cbTenHoaDon = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtHoTen = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
@@ -107,7 +105,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbGiaTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTenHoaDon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMaSV.Properties)).BeginInit();
@@ -395,8 +392,6 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.cbGiaTien);
-            this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.cbTenHoaDon);
             this.groupControl1.Controls.Add(this.txtHoTen);
             this.groupControl1.Controls.Add(this.labelControl12);
@@ -423,26 +418,6 @@
             this.groupControl1.TabIndex = 46;
             this.groupControl1.Text = "Thông Tin  Chung";
             // 
-            // cbGiaTien
-            // 
-            this.cbGiaTien.Location = new System.Drawing.Point(500, 196);
-            this.cbGiaTien.MenuManager = this.barManager1;
-            this.cbGiaTien.Name = "cbGiaTien";
-            this.cbGiaTien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbGiaTien.Size = new System.Drawing.Size(294, 20);
-            this.cbGiaTien.TabIndex = 101;
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(408, 197);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(47, 16);
-            this.labelControl2.TabIndex = 99;
-            this.labelControl2.Text = "Giá Tiền";
-            // 
             // cbTenHoaDon
             // 
             this.cbTenHoaDon.Location = new System.Drawing.Point(500, 157);
@@ -459,6 +434,7 @@
             "Chi Phi Khác"});
             this.cbTenHoaDon.Size = new System.Drawing.Size(294, 20);
             this.cbTenHoaDon.TabIndex = 98;
+            this.cbTenHoaDon.SelectedIndexChanged += new System.EventHandler(this.cbTenHoaDon_SelectedIndexChanged);
             // 
             // txtHoTen
             // 
@@ -901,7 +877,7 @@
             this.MinimizeBox = false;
             this.Name = "frmQLHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QuanLyHoaDon";
+            this.Text = "Quản Lý Hóa Đơn";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -911,7 +887,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbGiaTien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTenHoaDon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMaSV.Properties)).EndInit();
@@ -996,8 +971,6 @@
         private DevExpress.XtraEditors.ComboBoxEdit cbMaSV;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.ComboBoxEdit cbTenHoaDon;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraGrid.Columns.GridColumn GIATIEN;
-        private DevExpress.XtraEditors.ComboBoxEdit cbGiaTien;
     }
 }

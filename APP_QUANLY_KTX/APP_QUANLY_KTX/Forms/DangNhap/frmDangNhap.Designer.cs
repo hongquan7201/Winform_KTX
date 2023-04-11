@@ -69,11 +69,11 @@
             // lbQuenMK
             // 
             this.lbQuenMK.AutoSize = true;
-            this.lbQuenMK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbQuenMK.Location = new System.Drawing.Point(366, 273);
+            this.lbQuenMK.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbQuenMK.Location = new System.Drawing.Point(346, 271);
             this.lbQuenMK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbQuenMK.Name = "lbQuenMK";
-            this.lbQuenMK.Size = new System.Drawing.Size(104, 19);
+            this.lbQuenMK.Size = new System.Drawing.Size(126, 21);
             this.lbQuenMK.TabIndex = 4;
             this.lbQuenMK.Text = "Quên mật khẩu:";
             this.lbQuenMK.TextAlign = System.Drawing.ContentAlignment.TopCenter;

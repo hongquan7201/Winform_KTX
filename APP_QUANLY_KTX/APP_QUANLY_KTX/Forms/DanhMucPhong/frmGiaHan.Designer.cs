@@ -1388,7 +1388,7 @@
             this.MinimizeBox = false;
             this.Name = "frmGiaHan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GiaHan";
+            this.Text = "Gia Hạn";
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();

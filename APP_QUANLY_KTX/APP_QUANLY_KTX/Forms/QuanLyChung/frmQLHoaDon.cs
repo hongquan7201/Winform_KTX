@@ -17,5 +17,10 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
+
+        private void cbTenHoaDon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

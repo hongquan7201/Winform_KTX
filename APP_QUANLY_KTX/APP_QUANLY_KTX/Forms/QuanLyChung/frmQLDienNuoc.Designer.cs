@@ -535,7 +535,9 @@
             // labelControl12
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelControl12.Appearance.ForeColor = System.Drawing.Color.Fuchsia;
             this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Appearance.Options.UseForeColor = true;
             this.labelControl12.Location = new System.Drawing.Point(537, 190);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(25, 16);
@@ -559,6 +561,7 @@
             this.cbTongTien.Location = new System.Drawing.Point(277, 189);
             this.cbTongTien.MenuManager = this.barManager1;
             this.cbTongTien.Name = "cbTongTien";
+            this.cbTongTien.Properties.ReadOnly = true;
             this.cbTongTien.Size = new System.Drawing.Size(254, 20);
             this.cbTongTien.TabIndex = 77;
             // 
@@ -1003,7 +1006,7 @@
             this.MinimizeBox = false;
             this.Name = "frmQLDienNuoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QuanLyDienNuoc";
+            this.Text = "Quản Lý Điện Nước";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

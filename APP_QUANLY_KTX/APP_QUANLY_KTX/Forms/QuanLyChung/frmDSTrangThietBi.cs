@@ -17,5 +17,10 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
+
+        private void groupControl2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

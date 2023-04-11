@@ -712,7 +712,7 @@
             this.MinimizeBox = false;
             this.Name = "frmBaoCaoThongKe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BaoCaoThongKe";
+            this.Text = "Báo Cáo Thống Kê";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();

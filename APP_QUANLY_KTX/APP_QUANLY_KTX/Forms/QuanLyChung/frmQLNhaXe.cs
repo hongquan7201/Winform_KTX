@@ -17,5 +17,10 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
+
+        private void frmQLNhaXe_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
