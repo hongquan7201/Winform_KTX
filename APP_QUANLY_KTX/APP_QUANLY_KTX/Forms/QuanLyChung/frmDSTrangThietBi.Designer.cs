@@ -454,11 +454,11 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(26, 168);
+            this.labelControl8.Location = new System.Drawing.Point(49, 168);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(77, 16);
+            this.labelControl8.Size = new System.Drawing.Size(54, 16);
             this.labelControl8.TabIndex = 58;
-            this.labelControl8.Text = "Số Lượng/Cái";
+            this.labelControl8.Text = "Số Lượng";
             // 
             // groupControl2
             // 

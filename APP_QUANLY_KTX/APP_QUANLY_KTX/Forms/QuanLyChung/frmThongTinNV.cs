@@ -17,5 +17,6 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
+
     }
 }

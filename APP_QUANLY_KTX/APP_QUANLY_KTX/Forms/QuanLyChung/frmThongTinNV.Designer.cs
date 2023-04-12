@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongTinNV));
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.txtGioiTinh = new DevExpress.XtraEditors.TextEdit();
+            this.dtNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.cbGioiTinh = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.dtNgayDangKy = new System.Windows.Forms.DateTimePicker();
             this.imgNo = new System.Windows.Forms.PictureBox();
             this.imgNVNam = new System.Windows.Forms.PictureBox();
-            this.txtEmailNV = new DevExpress.XtraEditors.TextEdit();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
             this.txtThongTin = new System.Windows.Forms.TextBox();
-            this.txtNgayVao = new DevExpress.XtraEditors.TextEdit();
-            this.txtNgaySinh = new DevExpress.XtraEditors.TextEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.imgNVNu = new System.Windows.Forms.PictureBox();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -46,14 +46,13 @@
             this.txtSDT = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txtQueQuan = new DevExpress.XtraEditors.TextEdit();
+            this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.txtHoTen = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.btnReload = new DevExpress.XtraBars.BarButtonItem();
             this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnTim = new DevExpress.XtraBars.BarButtonItem();
@@ -64,6 +63,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReload = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btnXuatfile = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -82,16 +82,14 @@
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGioiTinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNVNam)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmailNV.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNVNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCCCD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtQueQuan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
@@ -104,13 +102,13 @@
             // 
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
-            this.groupControl2.Controls.Add(this.txtGioiTinh);
+            this.groupControl2.Controls.Add(this.dtNgaySinh);
+            this.groupControl2.Controls.Add(this.cbGioiTinh);
+            this.groupControl2.Controls.Add(this.dtNgayDangKy);
             this.groupControl2.Controls.Add(this.imgNo);
             this.groupControl2.Controls.Add(this.imgNVNam);
-            this.groupControl2.Controls.Add(this.txtEmailNV);
+            this.groupControl2.Controls.Add(this.txtEmail);
             this.groupControl2.Controls.Add(this.txtThongTin);
-            this.groupControl2.Controls.Add(this.txtNgayVao);
-            this.groupControl2.Controls.Add(this.txtNgaySinh);
             this.groupControl2.Controls.Add(this.labelControl14);
             this.groupControl2.Controls.Add(this.imgNVNu);
             this.groupControl2.Controls.Add(this.labelControl1);
@@ -119,7 +117,7 @@
             this.groupControl2.Controls.Add(this.txtSDT);
             this.groupControl2.Controls.Add(this.labelControl5);
             this.groupControl2.Controls.Add(this.labelControl6);
-            this.groupControl2.Controls.Add(this.txtQueQuan);
+            this.groupControl2.Controls.Add(this.txtDiaChi);
             this.groupControl2.Controls.Add(this.txtHoTen);
             this.groupControl2.Controls.Add(this.labelControl3);
             this.groupControl2.Controls.Add(this.labelControl4);
@@ -130,14 +128,39 @@
             this.groupControl2.TabIndex = 56;
             this.groupControl2.Text = "Thông Tin Cá Nhân";
             // 
-            // txtGioiTinh
+            // dtNgaySinh
             // 
-            this.txtGioiTinh.Location = new System.Drawing.Point(447, 108);
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtGioiTinh.Properties.Appearance.Options.UseFont = true;
-            this.txtGioiTinh.Size = new System.Drawing.Size(123, 26);
-            this.txtGioiTinh.TabIndex = 99;
+            this.dtNgaySinh.CalendarFont = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtNgaySinh.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgaySinh.Location = new System.Drawing.Point(256, 153);
+            this.dtNgaySinh.Name = "dtNgaySinh";
+            this.dtNgaySinh.Size = new System.Drawing.Size(124, 26);
+            this.dtNgaySinh.TabIndex = 102;
+            // 
+            // cbGioiTinh
+            // 
+            this.cbGioiTinh.Location = new System.Drawing.Point(447, 108);
+            this.cbGioiTinh.Name = "cbGioiTinh";
+            this.cbGioiTinh.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbGioiTinh.Properties.Appearance.Options.UseFont = true;
+            this.cbGioiTinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbGioiTinh.Properties.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbGioiTinh.Size = new System.Drawing.Size(123, 24);
+            this.cbGioiTinh.TabIndex = 101;
+            // 
+            // dtNgayDangKy
+            // 
+            this.dtNgayDangKy.CalendarFont = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtNgayDangKy.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtNgayDangKy.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayDangKy.Location = new System.Drawing.Point(257, 310);
+            this.dtNgayDangKy.Name = "dtNgayDangKy";
+            this.dtNgayDangKy.Size = new System.Drawing.Size(313, 26);
+            this.dtNgayDangKy.TabIndex = 100;
             // 
             // imgNo
             // 
@@ -159,14 +182,14 @@
             this.imgNVNam.TabIndex = 97;
             this.imgNVNam.TabStop = false;
             // 
-            // txtEmailNV
+            // txtEmail
             // 
-            this.txtEmailNV.Location = new System.Drawing.Point(257, 205);
-            this.txtEmailNV.Name = "txtEmailNV";
-            this.txtEmailNV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmailNV.Properties.Appearance.Options.UseFont = true;
-            this.txtEmailNV.Size = new System.Drawing.Size(313, 26);
-            this.txtEmailNV.TabIndex = 96;
+            this.txtEmail.Location = new System.Drawing.Point(257, 205);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Properties.Appearance.Options.UseFont = true;
+            this.txtEmail.Size = new System.Drawing.Size(313, 26);
+            this.txtEmail.TabIndex = 96;
             // 
             // txtThongTin
             // 
@@ -179,33 +202,15 @@
             this.txtThongTin.Size = new System.Drawing.Size(388, 343);
             this.txtThongTin.TabIndex = 95;
             // 
-            // txtNgayVao
-            // 
-            this.txtNgayVao.Location = new System.Drawing.Point(257, 307);
-            this.txtNgayVao.Name = "txtNgayVao";
-            this.txtNgayVao.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNgayVao.Properties.Appearance.Options.UseFont = true;
-            this.txtNgayVao.Size = new System.Drawing.Size(313, 26);
-            this.txtNgayVao.TabIndex = 94;
-            // 
-            // txtNgaySinh
-            // 
-            this.txtNgaySinh.Location = new System.Drawing.Point(257, 155);
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNgaySinh.Properties.Appearance.Options.UseFont = true;
-            this.txtNgaySinh.Size = new System.Drawing.Size(123, 26);
-            this.txtNgaySinh.TabIndex = 93;
-            // 
             // labelControl14
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(180, 308);
+            this.labelControl14.Location = new System.Drawing.Point(158, 310);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(54, 16);
+            this.labelControl14.Size = new System.Drawing.Size(79, 16);
             this.labelControl14.TabIndex = 90;
-            this.labelControl14.Text = "Ngày Vào";
+            this.labelControl14.Text = "Ngày Đăng Ký";
             // 
             // imgNVNu
             // 
@@ -221,11 +226,11 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(183, 206);
+            this.labelControl1.Location = new System.Drawing.Point(202, 208);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(51, 16);
+            this.labelControl1.Size = new System.Drawing.Size(31, 16);
             this.labelControl1.TabIndex = 63;
-            this.labelControl1.Text = "Email NV";
+            this.labelControl1.Text = "Email";
             // 
             // labelControl12
             // 
@@ -259,11 +264,11 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(180, 256);
+            this.labelControl5.Location = new System.Drawing.Point(193, 258);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(57, 16);
+            this.labelControl5.Size = new System.Drawing.Size(41, 16);
             this.labelControl5.TabIndex = 72;
-            this.labelControl5.Text = "Quê Quán";
+            this.labelControl5.Text = "Địa Chỉ";
             // 
             // labelControl6
             // 
@@ -275,14 +280,14 @@
             this.labelControl6.TabIndex = 75;
             this.labelControl6.Text = "CCCD";
             // 
-            // txtQueQuan
+            // txtDiaChi
             // 
-            this.txtQueQuan.Location = new System.Drawing.Point(257, 255);
-            this.txtQueQuan.Name = "txtQueQuan";
-            this.txtQueQuan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtQueQuan.Properties.Appearance.Options.UseFont = true;
-            this.txtQueQuan.Size = new System.Drawing.Size(313, 26);
-            this.txtQueQuan.TabIndex = 71;
+            this.txtDiaChi.Location = new System.Drawing.Point(257, 255);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDiaChi.Properties.Appearance.Options.UseFont = true;
+            this.txtDiaChi.Size = new System.Drawing.Size(313, 26);
+            this.txtDiaChi.TabIndex = 71;
             // 
             // txtHoTen
             // 
@@ -371,20 +376,11 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.FloatLocation = new System.Drawing.Point(611, 197);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.txtTim, true),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
-            // 
-            // btnReload
-            // 
-            this.btnReload.Caption = "Reload";
-            this.btnReload.Id = 3;
-            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
-            this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
-            this.btnReload.Name = "btnReload";
             // 
             // txtTim
             // 
@@ -459,6 +455,14 @@
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
+            // 
+            // btnReload
+            // 
+            this.btnReload.Caption = "Reload";
+            this.btnReload.Id = 3;
+            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
+            this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
+            this.btnReload.Name = "btnReload";
             // 
             // barButtonItem5
             // 
@@ -581,16 +585,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGioiTinh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNVNam)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmailNV.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNVNu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCCCD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtQueQuan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
@@ -607,10 +609,8 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private PictureBox imgNo;
         private PictureBox imgNVNam;
-        private DevExpress.XtraEditors.TextEdit txtEmailNV;
+        private DevExpress.XtraEditors.TextEdit txtEmail;
         private TextBox txtThongTin;
-        private DevExpress.XtraEditors.TextEdit txtNgayVao;
-        private DevExpress.XtraEditors.TextEdit txtNgaySinh;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private PictureBox imgNVNu;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -619,7 +619,7 @@
         private DevExpress.XtraEditors.TextEdit txtSDT;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.TextEdit txtQueQuan;
+        private DevExpress.XtraEditors.TextEdit txtDiaChi;
         private DevExpress.XtraEditors.TextEdit txtHoTen;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
@@ -653,6 +653,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
         private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
-        private DevExpress.XtraEditors.TextEdit txtGioiTinh;
+        private DateTimePicker dtNgayDangKy;
+        private DateTimePicker dtNgaySinh;
+        private DevExpress.XtraEditors.ComboBoxEdit cbGioiTinh;
     }
 }

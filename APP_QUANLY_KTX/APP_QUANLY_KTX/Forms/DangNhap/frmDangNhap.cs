@@ -32,11 +32,11 @@ namespace ProjectQLKTX
         {
             if (cbHienthi.Checked)
             {
-                txtMatKhau.PasswordChar = (char)0;
+                txtPassword.PasswordChar = (char)0;
             }
             else
             {
-                txtMatKhau.PasswordChar = '*';
+                txtPassword.PasswordChar = '*';
             }
         }
 

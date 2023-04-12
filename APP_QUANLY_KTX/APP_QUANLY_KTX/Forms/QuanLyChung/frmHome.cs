@@ -110,18 +110,25 @@ namespace ProjectQLKTX
         }
         private void btnThanhToan_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmThanhToan frmThanhToan = new frmThanhToan();
-            frmThanhToan.ShowDialog();
+            frmBienLai frmBienLai = new frmBienLai();
+            frmBienLai.ShowDialog();
         }
         private void btnQLiHoaDon_ItemClick_1(object sender, ItemClickEventArgs e)
         {
             frmQLHoaDon frmQLHoaDon = new frmQLHoaDon();
             frmQLHoaDon.ShowDialog();
         }
-        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+
+        private void btnQLiKho_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmThongTinNV frmThongTinCaNhanNV = new frmThongTinNV();
-            frmThongTinCaNhanNV.ShowDialog();
+            frmQLiKho frmQLiKho = new frmQLiKho();
+            frmQLiKho.ShowDialog();
+        }
+
+        private void btnQLiTaiSan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmQLiTaiSan frmQLiTaiSan = new frmQLiTaiSan();
+            frmQLiTaiSan.ShowDialog();
         }
     }
 }

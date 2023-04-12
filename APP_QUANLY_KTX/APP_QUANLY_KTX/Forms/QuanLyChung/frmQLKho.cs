@@ -11,16 +11,11 @@ using System.Windows.Forms;
 
 namespace ProjectQLKTX
 {
-    public partial class frmThanhToan : DevExpress.XtraEditors.XtraForm
+    public partial class frmQLiKho : DevExpress.XtraEditors.XtraForm
     {
-        public frmThanhToan()
+        public frmQLiKho()
         {
             InitializeComponent();
-        }     
-        private void btnLaphoadon_CheckedChanged(object sender, EventArgs e)
-        {
-            frmQLHoaDon frmQLHoaDon = new frmQLHoaDon();
-            frmQLHoaDon.ShowDialog();
         }
     }
 }

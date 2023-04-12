@@ -11,11 +11,12 @@ using System.Windows.Forms;
 
 namespace ProjectQLKTX
 {
-    public partial class frmQLNhaXe : DevExpress.XtraEditors.XtraForm
+    public partial class frmBienLai : DevExpress.XtraEditors.XtraForm
     {
-        public frmQLNhaXe()
+        public frmBienLai()
         {
             InitializeComponent();
-        }
+        }     
+      
     }
 }

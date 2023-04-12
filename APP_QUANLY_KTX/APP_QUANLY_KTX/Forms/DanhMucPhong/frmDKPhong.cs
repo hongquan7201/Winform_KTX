@@ -58,5 +58,16 @@ namespace ProjectQLKTX
         {
 
         }
+
+        private void labelControl10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbXe_CheckedChanged(object sender, EventArgs e)
+        {
+            frmQLNhaXe frm = new frmQLNhaXe();
+            frm.ShowDialog();
+        }
     }
 }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDoiMK));
-            this.txtMatKhauMoi = new System.Windows.Forms.TextBox();
+            this.txtPasswordMoi = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbHienthi2 = new DevExpress.XtraEditors.CheckEdit();
-            this.txtNhapLaiMK = new System.Windows.Forms.TextBox();
+            this.txtNhapLaiPassword = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbHienthi3 = new DevExpress.XtraEditors.CheckEdit();
-            this.txtMatKhauCu = new System.Windows.Forms.TextBox();
+            this.txtPasswordCu = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.cbHienthi1 = new DevExpress.XtraEditors.CheckEdit();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,25 +60,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtMatKhauMoi
+            // txtPasswordMoi
             // 
-            this.txtMatKhauMoi.BackColor = System.Drawing.Color.White;
-            this.txtMatKhauMoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMatKhauMoi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMatKhauMoi.ForeColor = System.Drawing.Color.Black;
-            this.txtMatKhauMoi.Location = new System.Drawing.Point(4, 9);
-            this.txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMatKhauMoi.Multiline = true;
-            this.txtMatKhauMoi.Name = "txtMatKhauMoi";
-            this.txtMatKhauMoi.PasswordChar = '*';
-            this.txtMatKhauMoi.Size = new System.Drawing.Size(240, 23);
-            this.txtMatKhauMoi.TabIndex = 5;
+            this.txtPasswordMoi.BackColor = System.Drawing.Color.White;
+            this.txtPasswordMoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPasswordMoi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPasswordMoi.ForeColor = System.Drawing.Color.Black;
+            this.txtPasswordMoi.Location = new System.Drawing.Point(4, 9);
+            this.txtPasswordMoi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPasswordMoi.Multiline = true;
+            this.txtPasswordMoi.Name = "txtPasswordMoi";
+            this.txtPasswordMoi.PasswordChar = '*';
+            this.txtPasswordMoi.Size = new System.Drawing.Size(240, 23);
+            this.txtPasswordMoi.TabIndex = 5;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.cbHienthi2);
-            this.panel1.Controls.Add(this.txtMatKhauMoi);
+            this.panel1.Controls.Add(this.txtPasswordMoi);
             this.panel1.Location = new System.Drawing.Point(221, 164);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -94,25 +94,25 @@
             this.cbHienthi2.TabIndex = 60;
             this.cbHienthi2.CheckedChanged += new System.EventHandler(this.cbHienthi2_CheckedChanged);
             // 
-            // txtNhapLaiMK
+            // txtNhapLaiPassword
             // 
-            this.txtNhapLaiMK.BackColor = System.Drawing.Color.White;
-            this.txtNhapLaiMK.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNhapLaiMK.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNhapLaiMK.ForeColor = System.Drawing.Color.Black;
-            this.txtNhapLaiMK.Location = new System.Drawing.Point(4, 9);
-            this.txtNhapLaiMK.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNhapLaiMK.Multiline = true;
-            this.txtNhapLaiMK.Name = "txtNhapLaiMK";
-            this.txtNhapLaiMK.PasswordChar = '*';
-            this.txtNhapLaiMK.Size = new System.Drawing.Size(240, 23);
-            this.txtNhapLaiMK.TabIndex = 5;
+            this.txtNhapLaiPassword.BackColor = System.Drawing.Color.White;
+            this.txtNhapLaiPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNhapLaiPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNhapLaiPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtNhapLaiPassword.Location = new System.Drawing.Point(4, 9);
+            this.txtNhapLaiPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNhapLaiPassword.Multiline = true;
+            this.txtNhapLaiPassword.Name = "txtNhapLaiPassword";
+            this.txtNhapLaiPassword.PasswordChar = '*';
+            this.txtNhapLaiPassword.Size = new System.Drawing.Size(240, 23);
+            this.txtNhapLaiPassword.TabIndex = 5;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.cbHienthi3);
-            this.panel3.Controls.Add(this.txtNhapLaiMK);
+            this.panel3.Controls.Add(this.txtNhapLaiPassword);
             this.panel3.Location = new System.Drawing.Point(221, 213);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
@@ -128,26 +128,25 @@
             this.cbHienthi3.TabIndex = 59;
             this.cbHienthi3.CheckedChanged += new System.EventHandler(this.cbHienthi3_CheckedChanged);
             // 
-            // txtMatKhauCu
+            // txtPasswordCu
             // 
-            this.txtMatKhauCu.BackColor = System.Drawing.Color.White;
-            this.txtMatKhauCu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMatKhauCu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMatKhauCu.ForeColor = System.Drawing.Color.Black;
-            this.txtMatKhauCu.Location = new System.Drawing.Point(4, 9);
-            this.txtMatKhauCu.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMatKhauCu.Multiline = true;
-            this.txtMatKhauCu.Name = "txtMatKhauCu";
-            this.txtMatKhauCu.PasswordChar = '*';
-            this.txtMatKhauCu.Size = new System.Drawing.Size(240, 23);
-            this.txtMatKhauCu.TabIndex = 5;
-            this.txtMatKhauCu.TextChanged += new System.EventHandler(this.txtMatKhauCu_TextChanged);
+            this.txtPasswordCu.BackColor = System.Drawing.Color.White;
+            this.txtPasswordCu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPasswordCu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPasswordCu.ForeColor = System.Drawing.Color.Black;
+            this.txtPasswordCu.Location = new System.Drawing.Point(4, 9);
+            this.txtPasswordCu.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPasswordCu.Multiline = true;
+            this.txtPasswordCu.Name = "txtPasswordCu";
+            this.txtPasswordCu.PasswordChar = '*';
+            this.txtPasswordCu.Size = new System.Drawing.Size(240, 23);
+            this.txtPasswordCu.TabIndex = 5;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.cbHienthi1);
-            this.panel4.Controls.Add(this.txtMatKhauCu);
+            this.panel4.Controls.Add(this.txtPasswordCu);
             this.panel4.Location = new System.Drawing.Point(221, 115);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
@@ -316,7 +315,7 @@
             this.MinimizeBox = false;
             this.Name = "frmDoiMK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ThayDoiMatKhau";
+            this.Text = "Thay Đổi Mật Khẩu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbHienthi2.Properties)).EndInit();
@@ -337,11 +336,11 @@
 
         #endregion
 
-        private TextBox txtMatKhauMoi;
+        private TextBox txtPasswordMoi;
         private Panel panel1;
-        private TextBox txtNhapLaiMK;
+        private TextBox txtNhapLaiPassword;
         private Panel panel3;
-        private TextBox txtMatKhauCu;
+        private TextBox txtPasswordCu;
         private Panel panel4;
         private Label label2;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;

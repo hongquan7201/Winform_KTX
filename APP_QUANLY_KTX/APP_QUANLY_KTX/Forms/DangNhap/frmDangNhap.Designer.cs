@@ -37,22 +37,20 @@
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtMail = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.cbHienthi = new DevExpress.XtraEditors.CheckEdit();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txt_ngongu = new System.Windows.Forms.TextBox();
             this.lb_quenmk = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cb_Hienthi = new DevExpress.XtraEditors.CheckEdit();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             this.panel2.SuspendLayout();
@@ -60,7 +58,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbHienthi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cb_Hienthi.Properties)).BeginInit();
@@ -160,31 +157,31 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.txtMail);
+            this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Location = new System.Drawing.Point(187, 102);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(264, 41);
             this.panel2.TabIndex = 46;
             // 
-            // txtMail
+            // txtEmail
             // 
-            this.txtMail.BackColor = System.Drawing.Color.White;
-            this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMail.ForeColor = System.Drawing.Color.Black;
-            this.txtMail.Location = new System.Drawing.Point(4, 9);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMail.Multiline = true;
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(253, 23);
-            this.txtMail.TabIndex = 1;
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.Location = new System.Drawing.Point(4, 9);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(253, 23);
+            this.txtEmail.TabIndex = 1;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.cbHienthi);
-            this.panel6.Controls.Add(this.txtMatKhau);
+            this.panel6.Controls.Add(this.txtPassword);
             this.panel6.Location = new System.Drawing.Point(187, 151);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
@@ -200,19 +197,19 @@
             this.cbHienthi.TabIndex = 45;
             this.cbHienthi.CheckedChanged += new System.EventHandler(this.cbHienthi_CheckedChanged);
             // 
-            // txtMatKhau
+            // txtPassword
             // 
-            this.txtMatKhau.BackColor = System.Drawing.Color.White;
-            this.txtMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMatKhau.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMatKhau.ForeColor = System.Drawing.Color.Black;
-            this.txtMatKhau.Location = new System.Drawing.Point(4, 9);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMatKhau.Multiline = true;
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.PasswordChar = '*';
-            this.txtMatKhau.Size = new System.Drawing.Size(233, 23);
-            this.txtMatKhau.TabIndex = 2;
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtPassword.Location = new System.Drawing.Point(4, 9);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(233, 23);
+            this.txtPassword.TabIndex = 2;
             // 
             // label1
             // 
@@ -267,25 +264,11 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.txtEmail);
             this.panel4.Location = new System.Drawing.Point(211, 28);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(264, 41);
             this.panel4.TabIndex = 23;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(4, 9);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmail.Multiline = true;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(253, 23);
-            this.txtEmail.TabIndex = 5;
             // 
             // panel3
             // 
@@ -297,20 +280,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(226, 41);
             this.panel3.TabIndex = 23;
-            // 
-            // txt_ngongu
-            // 
-            this.txt_ngongu.BackColor = System.Drawing.Color.White;
-            this.txt_ngongu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_ngongu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_ngongu.ForeColor = System.Drawing.Color.Black;
-            this.txt_ngongu.Location = new System.Drawing.Point(4, 9);
-            this.txt_ngongu.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_ngongu.Multiline = true;
-            this.txt_ngongu.Name = "txt_ngongu";
-            this.txt_ngongu.Size = new System.Drawing.Size(209, 23);
-            this.txt_ngongu.TabIndex = 5;
-            // 
+            //            
             // lb_quenmk
             // 
             this.lb_quenmk.AutoSize = true;
@@ -327,7 +297,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.cb_Hienthi);
-            this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Location = new System.Drawing.Point(211, 77);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -341,20 +310,6 @@
             this.cb_Hienthi.Properties.Caption = "";
             this.cb_Hienthi.Size = new System.Drawing.Size(19, 20);
             this.cb_Hienthi.TabIndex = 45;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.Color.White;
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(4, 9);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPassword.Multiline = true;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(233, 23);
-            this.txtPassword.TabIndex = 5;
             // 
             // frmDangNhap
             // 
@@ -379,7 +334,7 @@
             this.MinimizeBox = false;
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DangNhap";
+            this.Text = "Đăng Nhập";
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -389,12 +344,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbHienthi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cb_Hienthi.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -410,21 +362,19 @@
         private DevExpress.XtraEditors.PictureEdit pictureEdit6;
         private Label label7;
         private Panel panel2;
-        private TextBox txtMail;
+        private TextBox txtEmail;
         private Panel panel6;
         private DevExpress.XtraEditors.CheckEdit cbHienthi;
-        private TextBox txtMatKhau;
+        private TextBox txtPassword;
         private Label label1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit2;
         private Label label2;
         private Panel panel4;
-        private TextBox txtEmail;
         private Panel panel3;
         private TextBox txt_ngongu;
         private Label lb_quenmk;
         private Panel panel1;
-        private TextBox txtPassword;
         private Label txt_Quenmk;
         private DevExpress.XtraEditors.CheckEdit cb_Hienthi;
     }

@@ -23,7 +23,7 @@ namespace ProjectQLKTX
                     listNhanVien = result.data;
                     txtHoTen.Text = listNhanVien[0].name;
                     txtCCCD.Text = listNhanVien[0].cccd;
-                    txtQueQuan.Text = listNhanVien[0].address;
+                    txtDiaChi.Text = listNhanVien[0].address;
                     txtSDT.Text = listNhanVien[0].sdt;
                 }
                 else

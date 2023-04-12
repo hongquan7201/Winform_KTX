@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuenMK));
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbQLDangNhap = new System.Windows.Forms.Label();
+            this.lbQLaiDN = new System.Windows.Forms.Label();
             this.btnLayLaiMK = new DevExpress.XtraEditors.CheckButton();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureEdit5 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtMail = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -75,18 +75,18 @@
             this.label1.Text = "QUÊN MẬT KHẨU?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lbQLDangNhap
+            // lbQLaiDN
             // 
-            this.lbQLDangNhap.AutoSize = true;
-            this.lbQLDangNhap.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbQLDangNhap.ForeColor = System.Drawing.Color.Blue;
-            this.lbQLDangNhap.Location = new System.Drawing.Point(250, 287);
-            this.lbQLDangNhap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbQLDangNhap.Name = "lbQLDangNhap";
-            this.lbQLDangNhap.Size = new System.Drawing.Size(147, 19);
-            this.lbQLDangNhap.TabIndex = 72;
-            this.lbQLDangNhap.Text = "Quay lại đăng nhập";
-            this.lbQLDangNhap.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbQLaiDN.AutoSize = true;
+            this.lbQLaiDN.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbQLaiDN.ForeColor = System.Drawing.Color.Blue;
+            this.lbQLaiDN.Location = new System.Drawing.Point(250, 287);
+            this.lbQLaiDN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbQLaiDN.Name = "lbQLaiDN";
+            this.lbQLaiDN.Size = new System.Drawing.Size(147, 19);
+            this.lbQLaiDN.TabIndex = 72;
+            this.lbQLaiDN.Text = "Quay lại đăng nhập";
+            this.lbQLaiDN.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnLayLaiMK
             // 
@@ -154,25 +154,25 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.txtMail);
+            this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Location = new System.Drawing.Point(209, 117);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(264, 41);
             this.panel2.TabIndex = 61;
             // 
-            // txtMail
+            // txtEmail
             // 
-            this.txtMail.BackColor = System.Drawing.Color.White;
-            this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMail.ForeColor = System.Drawing.Color.Black;
-            this.txtMail.Location = new System.Drawing.Point(4, 9);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMail.Multiline = true;
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(253, 23);
-            this.txtMail.TabIndex = 5;
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.Location = new System.Drawing.Point(4, 9);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(253, 23);
+            this.txtEmail.TabIndex = 5;
             // 
             // panel6
             // 
@@ -220,7 +220,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbQLDangNhap);
+            this.Controls.Add(this.lbQLaiDN);
             this.Controls.Add(this.btnLayLaiMK);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureEdit5);
@@ -233,7 +233,7 @@
             this.MinimizeBox = false;
             this.Name = "frmQuenMK";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QuenMatKhau";
+            this.Text = "Quên Mật Khẩu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
@@ -250,14 +250,14 @@
 
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private Label label1;
-        private Label lbQLDangNhap;
+        private Label lbQLaiDN;
         private DevExpress.XtraEditors.CheckButton btnLayLaiMK;
         private Label label6;
         private DevExpress.XtraEditors.PictureEdit pictureEdit5;
         private DevExpress.XtraEditors.PictureEdit pictureEdit6;
         private Label label7;
         private Panel panel2;
-        private TextBox txtMail;
+        private TextBox txtEmail;
         private Panel panel6;
         private TextBox txtCCCD;
         private Label label2;

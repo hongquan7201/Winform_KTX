@@ -26,11 +26,11 @@ namespace ProjectQLKTX
         {
             if (cbHienthi1.Checked)
             {
-                txtMatKhauCu.PasswordChar = (char)0;
+                txtPasswordCu.PasswordChar = (char)0;
             }
             else
             {
-                txtMatKhauCu.PasswordChar = '*';
+                txtPasswordCu.PasswordChar = '*';
             }
         }
 
@@ -38,11 +38,11 @@ namespace ProjectQLKTX
         {
             if (cbHienthi2.Checked)
             {
-                txtMatKhauMoi.PasswordChar = (char)0;
+                txtPasswordMoi.PasswordChar = (char)0;
             }
             else
             {
-                txtMatKhauMoi.PasswordChar = '*';
+                txtPasswordMoi.PasswordChar = '*';
             }
         }
 
@@ -50,17 +50,12 @@ namespace ProjectQLKTX
         {
             if (cbHienthi3.Checked)
             {
-                txtNhapLaiMK.PasswordChar = (char)0;
+                txtNhapLaiPassword.PasswordChar = (char)0;
             }
             else
             {
-                txtNhapLaiMK.PasswordChar = '*';
+                txtNhapLaiPassword.PasswordChar = '*';
             }
-        }
-
-        private void txtMatKhauCu_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
