@@ -36,7 +36,6 @@
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXuatfile = new DevExpress.XtraBars.BarButtonItem();
             this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnTim = new DevExpress.XtraBars.BarButtonItem();
@@ -45,6 +44,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuatfile = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
@@ -162,7 +162,6 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfile, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.txtTim, true),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
@@ -200,13 +199,6 @@
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
             // 
-            // btnXuatfile
-            // 
-            this.btnXuatfile.Caption = "Xuất File";
-            this.btnXuatfile.Id = 5;
-            this.btnXuatfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXuatfile.ImageOptions.SvgImage")));
-            this.btnXuatfile.Name = "btnXuatfile";
-            // 
             // txtTim
             // 
             this.txtTim.Caption = "barEditItem4";
@@ -238,7 +230,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 544);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 531);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(752, 0);
             // 
@@ -248,7 +240,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 520);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 507);
             // 
             // barDockControlRight
             // 
@@ -256,7 +248,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(752, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 520);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 507);
             // 
             // barButtonItem5
             // 
@@ -264,6 +256,13 @@
             this.barButtonItem5.Id = 4;
             this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
             this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // btnXuatfile
+            // 
+            this.btnXuatfile.Caption = "Xuất File";
+            this.btnXuatfile.Id = 5;
+            this.btnXuatfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXuatfile.ImageOptions.SvgImage")));
+            this.btnXuatfile.Name = "btnXuatfile";
             // 
             // barButtonItem7
             // 
@@ -455,7 +454,7 @@
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(480, 145);
+            this.labelControl12.Location = new System.Drawing.Point(482, 146);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(25, 16);
             this.labelControl12.TabIndex = 46;
@@ -475,7 +474,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(254, 95);
+            this.labelControl1.Location = new System.Drawing.Point(254, 97);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(31, 16);
             this.labelControl1.TabIndex = 5;
@@ -505,7 +504,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(229, 144);
+            this.labelControl4.Location = new System.Drawing.Point(229, 147);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(57, 16);
             this.labelControl4.TabIndex = 13;
@@ -515,7 +514,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(457, 95);
+            this.labelControl2.Location = new System.Drawing.Point(459, 100);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(50, 16);
             this.labelControl2.TabIndex = 15;
@@ -535,7 +534,7 @@
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(254, 189);
+            this.labelControl6.Location = new System.Drawing.Point(254, 192);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(32, 16);
             this.labelControl6.TabIndex = 26;
@@ -595,7 +594,9 @@
             this.TENNV.AppearanceCell.Options.UseFont = true;
             this.TENNV.AppearanceCell.Options.UseTextOptions = true;
             this.TENNV.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TENNV.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.TENNV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TENNV.AppearanceHeader.Options.UseBackColor = true;
             this.TENNV.AppearanceHeader.Options.UseFont = true;
             this.TENNV.AppearanceHeader.Options.UseTextOptions = true;
             this.TENNV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -615,7 +616,9 @@
             this.EMAIL.AppearanceCell.Options.UseFont = true;
             this.EMAIL.AppearanceCell.Options.UseTextOptions = true;
             this.EMAIL.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.EMAIL.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.EMAIL.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EMAIL.AppearanceHeader.Options.UseBackColor = true;
             this.EMAIL.AppearanceHeader.Options.UseFont = true;
             this.EMAIL.AppearanceHeader.Options.UseTextOptions = true;
             this.EMAIL.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -635,7 +638,9 @@
             this.GIOITINH.AppearanceCell.Options.UseFont = true;
             this.GIOITINH.AppearanceCell.Options.UseTextOptions = true;
             this.GIOITINH.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.GIOITINH.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.GIOITINH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.GIOITINH.AppearanceHeader.Options.UseBackColor = true;
             this.GIOITINH.AppearanceHeader.Options.UseFont = true;
             this.GIOITINH.AppearanceHeader.Options.UseTextOptions = true;
             this.GIOITINH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -654,7 +659,9 @@
             this.NGAYSINH.AppearanceCell.Options.UseFont = true;
             this.NGAYSINH.AppearanceCell.Options.UseTextOptions = true;
             this.NGAYSINH.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAYSINH.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.NGAYSINH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NGAYSINH.AppearanceHeader.Options.UseBackColor = true;
             this.NGAYSINH.AppearanceHeader.Options.UseFont = true;
             this.NGAYSINH.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAYSINH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -673,7 +680,9 @@
             this.SDT.AppearanceCell.Options.UseFont = true;
             this.SDT.AppearanceCell.Options.UseTextOptions = true;
             this.SDT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SDT.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.SDT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SDT.AppearanceHeader.Options.UseBackColor = true;
             this.SDT.AppearanceHeader.Options.UseFont = true;
             this.SDT.AppearanceHeader.Options.UseTextOptions = true;
             this.SDT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -692,7 +701,9 @@
             this.CCCD.AppearanceCell.Options.UseFont = true;
             this.CCCD.AppearanceCell.Options.UseTextOptions = true;
             this.CCCD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CCCD.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.CCCD.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CCCD.AppearanceHeader.Options.UseBackColor = true;
             this.CCCD.AppearanceHeader.Options.UseFont = true;
             this.CCCD.AppearanceHeader.Options.UseTextOptions = true;
             this.CCCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -712,7 +723,9 @@
             this.NGAYDANGKY.AppearanceCell.Options.UseFont = true;
             this.NGAYDANGKY.AppearanceCell.Options.UseTextOptions = true;
             this.NGAYDANGKY.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAYDANGKY.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.NGAYDANGKY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NGAYDANGKY.AppearanceHeader.Options.UseBackColor = true;
             this.NGAYDANGKY.AppearanceHeader.Options.UseFont = true;
             this.NGAYDANGKY.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAYDANGKY.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -731,7 +744,9 @@
             this.DIACHI.AppearanceCell.Options.UseFont = true;
             this.DIACHI.AppearanceCell.Options.UseTextOptions = true;
             this.DIACHI.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.DIACHI.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.DIACHI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DIACHI.AppearanceHeader.Options.UseBackColor = true;
             this.DIACHI.AppearanceHeader.Options.UseFont = true;
             this.DIACHI.AppearanceHeader.Options.UseTextOptions = true;
             this.DIACHI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -750,7 +765,9 @@
             this.HINHANH.AppearanceCell.Options.UseFont = true;
             this.HINHANH.AppearanceCell.Options.UseTextOptions = true;
             this.HINHANH.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.HINHANH.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.HINHANH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.HINHANH.AppearanceHeader.Options.UseBackColor = true;
             this.HINHANH.AppearanceHeader.Options.UseFont = true;
             this.HINHANH.AppearanceHeader.Options.UseTextOptions = true;
             this.HINHANH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -775,7 +792,7 @@
             this.groupControl1.Controls.Add(this.gcDanhSach);
             this.groupControl1.Location = new System.Drawing.Point(6, 307);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(745, 232);
+            this.groupControl1.Size = new System.Drawing.Size(745, 225);
             this.groupControl1.TabIndex = 59;
             this.groupControl1.Text = "Danh Sách";
             // 
@@ -783,7 +800,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 544);
+            this.ClientSize = new System.Drawing.Size(752, 531);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.barDockControlLeft);

@@ -32,11 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBienLai));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXuatFile = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuatfile = new DevExpress.XtraBars.BarButtonItem();
             this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnTim = new DevExpress.XtraBars.BarButtonItem();
@@ -44,6 +43,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
@@ -166,7 +166,7 @@
             this.btnXoa,
             this.btnReload,
             this.barButtonItem5,
-            this.btnXuatFile,
+            this.btnXuatfile,
             this.barButtonItem7,
             this.barButtonItem8,
             this.barButtonItem9,
@@ -197,24 +197,15 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.FloatLocation = new System.Drawing.Point(204, 141);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnThem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatFile, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfile, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.txtTim, true),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
-            // 
-            // btnThem
-            // 
-            this.btnThem.Caption = "Thêm";
-            this.btnThem.Id = 0;
-            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
-            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
-            this.btnThem.Name = "btnThem";
             // 
             // btnSua
             // 
@@ -239,12 +230,13 @@
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
             // 
-            // btnXuatFile
+            // btnXuatfile
             // 
-            this.btnXuatFile.Caption = "Xuất File";
-            this.btnXuatFile.Id = 5;
-            this.btnXuatFile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXuatFile.ImageOptions.SvgImage")));
-            this.btnXuatFile.Name = "btnXuatFile";
+            this.btnXuatfile.Caption = "Xuất File";
+            this.btnXuatfile.Id = 5;
+            this.btnXuatfile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.Image")));
+            this.btnXuatfile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.LargeImage")));
+            this.btnXuatfile.Name = "btnXuatfile";
             // 
             // txtTim
             // 
@@ -296,6 +288,14 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1151, 24);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 534);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Caption = "Thêm";
+            this.btnThem.Id = 0;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
+            this.btnThem.Name = "btnThem";
             // 
             // barButtonItem5
             // 
@@ -855,8 +855,8 @@
             this.MASV,
             this.TENSV,
             this.GIOITINH,
-            this.SDT,
             this.NGAYSINH,
+            this.SDT,
             this.EMAIL,
             this.CCCD,
             this.PHONG,
@@ -880,19 +880,21 @@
             this.MASV.AppearanceCell.Options.UseFont = true;
             this.MASV.AppearanceCell.Options.UseTextOptions = true;
             this.MASV.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MASV.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.MASV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MASV.AppearanceHeader.Options.UseBackColor = true;
             this.MASV.AppearanceHeader.Options.UseFont = true;
             this.MASV.AppearanceHeader.Options.UseTextOptions = true;
             this.MASV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MASV.Caption = "MÃ SV";
             this.MASV.FieldName = "MASV";
             this.MASV.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.MASV.MaxWidth = 120;
-            this.MASV.MinWidth = 120;
+            this.MASV.MaxWidth = 90;
+            this.MASV.MinWidth = 90;
             this.MASV.Name = "MASV";
             this.MASV.Visible = true;
             this.MASV.VisibleIndex = 0;
-            this.MASV.Width = 120;
+            this.MASV.Width = 90;
             // 
             // TENSV
             // 
@@ -900,19 +902,21 @@
             this.TENSV.AppearanceCell.Options.UseFont = true;
             this.TENSV.AppearanceCell.Options.UseTextOptions = true;
             this.TENSV.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TENSV.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.TENSV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TENSV.AppearanceHeader.Options.UseBackColor = true;
             this.TENSV.AppearanceHeader.Options.UseFont = true;
             this.TENSV.AppearanceHeader.Options.UseTextOptions = true;
             this.TENSV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TENSV.Caption = "TÊN SINH VIÊN";
             this.TENSV.FieldName = "TENSV";
             this.TENSV.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.TENSV.MaxWidth = 120;
-            this.TENSV.MinWidth = 120;
+            this.TENSV.MaxWidth = 150;
+            this.TENSV.MinWidth = 150;
             this.TENSV.Name = "TENSV";
             this.TENSV.Visible = true;
             this.TENSV.VisibleIndex = 1;
-            this.TENSV.Width = 120;
+            this.TENSV.Width = 150;
             // 
             // GIOITINH
             // 
@@ -920,19 +924,21 @@
             this.GIOITINH.AppearanceCell.Options.UseFont = true;
             this.GIOITINH.AppearanceCell.Options.UseTextOptions = true;
             this.GIOITINH.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.GIOITINH.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.GIOITINH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.GIOITINH.AppearanceHeader.Options.UseBackColor = true;
             this.GIOITINH.AppearanceHeader.Options.UseFont = true;
             this.GIOITINH.AppearanceHeader.Options.UseTextOptions = true;
             this.GIOITINH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.GIOITINH.Caption = "GIỚI TÍNH";
             this.GIOITINH.FieldName = "GIOITINH";
             this.GIOITINH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.GIOITINH.MaxWidth = 120;
-            this.GIOITINH.MinWidth = 120;
+            this.GIOITINH.MaxWidth = 90;
+            this.GIOITINH.MinWidth = 90;
             this.GIOITINH.Name = "GIOITINH";
             this.GIOITINH.Visible = true;
             this.GIOITINH.VisibleIndex = 2;
-            this.GIOITINH.Width = 120;
+            this.GIOITINH.Width = 90;
             // 
             // SDT
             // 
@@ -940,7 +946,9 @@
             this.SDT.AppearanceCell.Options.UseFont = true;
             this.SDT.AppearanceCell.Options.UseTextOptions = true;
             this.SDT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SDT.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.SDT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SDT.AppearanceHeader.Options.UseBackColor = true;
             this.SDT.AppearanceHeader.Options.UseFont = true;
             this.SDT.AppearanceHeader.Options.UseTextOptions = true;
             this.SDT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -950,7 +958,7 @@
             this.SDT.MinWidth = 130;
             this.SDT.Name = "SDT";
             this.SDT.Visible = true;
-            this.SDT.VisibleIndex = 3;
+            this.SDT.VisibleIndex = 4;
             this.SDT.Width = 130;
             // 
             // NGAYSINH
@@ -959,18 +967,20 @@
             this.NGAYSINH.AppearanceCell.Options.UseFont = true;
             this.NGAYSINH.AppearanceCell.Options.UseTextOptions = true;
             this.NGAYSINH.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAYSINH.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.NGAYSINH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NGAYSINH.AppearanceHeader.Options.UseBackColor = true;
             this.NGAYSINH.AppearanceHeader.Options.UseFont = true;
             this.NGAYSINH.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAYSINH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NGAYSINH.Caption = "NGÀY SINH";
             this.NGAYSINH.FieldName = "NGAYSINH";
-            this.NGAYSINH.MaxWidth = 130;
-            this.NGAYSINH.MinWidth = 130;
+            this.NGAYSINH.MaxWidth = 150;
+            this.NGAYSINH.MinWidth = 150;
             this.NGAYSINH.Name = "NGAYSINH";
             this.NGAYSINH.Visible = true;
-            this.NGAYSINH.VisibleIndex = 4;
-            this.NGAYSINH.Width = 130;
+            this.NGAYSINH.VisibleIndex = 3;
+            this.NGAYSINH.Width = 150;
             // 
             // EMAIL
             // 
@@ -978,7 +988,9 @@
             this.EMAIL.AppearanceCell.Options.UseFont = true;
             this.EMAIL.AppearanceCell.Options.UseTextOptions = true;
             this.EMAIL.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.EMAIL.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.EMAIL.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EMAIL.AppearanceHeader.Options.UseBackColor = true;
             this.EMAIL.AppearanceHeader.Options.UseFont = true;
             this.EMAIL.AppearanceHeader.Options.UseTextOptions = true;
             this.EMAIL.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -987,8 +999,6 @@
             this.EMAIL.MaxWidth = 150;
             this.EMAIL.MinWidth = 150;
             this.EMAIL.Name = "EMAIL";
-            this.EMAIL.Visible = true;
-            this.EMAIL.VisibleIndex = 5;
             this.EMAIL.Width = 150;
             // 
             // CCCD
@@ -997,17 +1007,19 @@
             this.CCCD.AppearanceCell.Options.UseFont = true;
             this.CCCD.AppearanceCell.Options.UseTextOptions = true;
             this.CCCD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CCCD.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.CCCD.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CCCD.AppearanceHeader.Options.UseBackColor = true;
             this.CCCD.AppearanceHeader.Options.UseFont = true;
             this.CCCD.AppearanceHeader.Options.UseTextOptions = true;
             this.CCCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CCCD.Caption = "CCCD/CMND";
+            this.CCCD.Caption = "CCCD";
             this.CCCD.FieldName = "CCCD";
             this.CCCD.MaxWidth = 130;
             this.CCCD.MinWidth = 130;
             this.CCCD.Name = "CCCD";
             this.CCCD.Visible = true;
-            this.CCCD.VisibleIndex = 6;
+            this.CCCD.VisibleIndex = 5;
             this.CCCD.Width = 130;
             // 
             // PHONG
@@ -1016,18 +1028,20 @@
             this.PHONG.AppearanceCell.Options.UseFont = true;
             this.PHONG.AppearanceCell.Options.UseTextOptions = true;
             this.PHONG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PHONG.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.PHONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PHONG.AppearanceHeader.Options.UseBackColor = true;
             this.PHONG.AppearanceHeader.Options.UseFont = true;
             this.PHONG.AppearanceHeader.Options.UseTextOptions = true;
             this.PHONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.PHONG.Caption = "PHÒNG";
             this.PHONG.FieldName = "PHONG";
-            this.PHONG.MaxWidth = 120;
-            this.PHONG.MinWidth = 120;
+            this.PHONG.MaxWidth = 90;
+            this.PHONG.MinWidth = 90;
             this.PHONG.Name = "PHONG";
             this.PHONG.Visible = true;
-            this.PHONG.VisibleIndex = 7;
-            this.PHONG.Width = 120;
+            this.PHONG.VisibleIndex = 6;
+            this.PHONG.Width = 90;
             // 
             // NGAYDONG
             // 
@@ -1035,7 +1049,9 @@
             this.NGAYDONG.AppearanceCell.Options.UseFont = true;
             this.NGAYDONG.AppearanceCell.Options.UseTextOptions = true;
             this.NGAYDONG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAYDONG.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.NGAYDONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NGAYDONG.AppearanceHeader.Options.UseBackColor = true;
             this.NGAYDONG.AppearanceHeader.Options.UseFont = true;
             this.NGAYDONG.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAYDONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1044,8 +1060,6 @@
             this.NGAYDONG.MaxWidth = 140;
             this.NGAYDONG.MinWidth = 140;
             this.NGAYDONG.Name = "NGAYDONG";
-            this.NGAYDONG.Visible = true;
-            this.NGAYDONG.VisibleIndex = 8;
             this.NGAYDONG.Width = 140;
             // 
             // NGAYBATDAU
@@ -1054,7 +1068,9 @@
             this.NGAYBATDAU.AppearanceCell.Options.UseFont = true;
             this.NGAYBATDAU.AppearanceCell.Options.UseTextOptions = true;
             this.NGAYBATDAU.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAYBATDAU.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.NGAYBATDAU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NGAYBATDAU.AppearanceHeader.Options.UseBackColor = true;
             this.NGAYBATDAU.AppearanceHeader.Options.UseFont = true;
             this.NGAYBATDAU.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAYBATDAU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1064,7 +1080,7 @@
             this.NGAYBATDAU.MinWidth = 140;
             this.NGAYBATDAU.Name = "NGAYBATDAU";
             this.NGAYBATDAU.Visible = true;
-            this.NGAYBATDAU.VisibleIndex = 9;
+            this.NGAYBATDAU.VisibleIndex = 7;
             this.NGAYBATDAU.Width = 140;
             // 
             // NGAYKETTHUC
@@ -1073,7 +1089,9 @@
             this.NGAYKETTHUC.AppearanceCell.Options.UseFont = true;
             this.NGAYKETTHUC.AppearanceCell.Options.UseTextOptions = true;
             this.NGAYKETTHUC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAYKETTHUC.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.NGAYKETTHUC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NGAYKETTHUC.AppearanceHeader.Options.UseBackColor = true;
             this.NGAYKETTHUC.AppearanceHeader.Options.UseFont = true;
             this.NGAYKETTHUC.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAYKETTHUC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1083,7 +1101,7 @@
             this.NGAYKETTHUC.MinWidth = 140;
             this.NGAYKETTHUC.Name = "NGAYKETTHUC";
             this.NGAYKETTHUC.Visible = true;
-            this.NGAYKETTHUC.VisibleIndex = 10;
+            this.NGAYKETTHUC.VisibleIndex = 8;
             this.NGAYKETTHUC.Width = 140;
             // 
             // TENNHANVIEN
@@ -1092,18 +1110,20 @@
             this.TENNHANVIEN.AppearanceCell.Options.UseFont = true;
             this.TENNHANVIEN.AppearanceCell.Options.UseTextOptions = true;
             this.TENNHANVIEN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TENNHANVIEN.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.TENNHANVIEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TENNHANVIEN.AppearanceHeader.Options.UseBackColor = true;
             this.TENNHANVIEN.AppearanceHeader.Options.UseFont = true;
             this.TENNHANVIEN.AppearanceHeader.Options.UseTextOptions = true;
             this.TENNHANVIEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TENNHANVIEN.Caption = "TÊN NHÂN VIÊN";
             this.TENNHANVIEN.FieldName = "TENNHANVIEN";
-            this.TENNHANVIEN.MaxWidth = 120;
-            this.TENNHANVIEN.MinWidth = 120;
+            this.TENNHANVIEN.MaxWidth = 150;
+            this.TENNHANVIEN.MinWidth = 150;
             this.TENNHANVIEN.Name = "TENNHANVIEN";
             this.TENNHANVIEN.Visible = true;
-            this.TENNHANVIEN.VisibleIndex = 11;
-            this.TENNHANVIEN.Width = 120;
+            this.TENNHANVIEN.VisibleIndex = 9;
+            this.TENNHANVIEN.Width = 150;
             // 
             // TRANGTHAI
             // 
@@ -1111,7 +1131,9 @@
             this.TRANGTHAI.AppearanceCell.Options.UseFont = true;
             this.TRANGTHAI.AppearanceCell.Options.UseTextOptions = true;
             this.TRANGTHAI.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TRANGTHAI.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.TRANGTHAI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TRANGTHAI.AppearanceHeader.Options.UseBackColor = true;
             this.TRANGTHAI.AppearanceHeader.Options.UseFont = true;
             this.TRANGTHAI.AppearanceHeader.Options.UseTextOptions = true;
             this.TRANGTHAI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1121,7 +1143,7 @@
             this.TRANGTHAI.MinWidth = 130;
             this.TRANGTHAI.Name = "TRANGTHAI";
             this.TRANGTHAI.Visible = true;
-            this.TRANGTHAI.VisibleIndex = 12;
+            this.TRANGTHAI.VisibleIndex = 10;
             this.TRANGTHAI.Width = 130;
             // 
             // TIENPHONG
@@ -1130,7 +1152,9 @@
             this.TIENPHONG.AppearanceCell.Options.UseFont = true;
             this.TIENPHONG.AppearanceCell.Options.UseTextOptions = true;
             this.TIENPHONG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TIENPHONG.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.TIENPHONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TIENPHONG.AppearanceHeader.Options.UseBackColor = true;
             this.TIENPHONG.AppearanceHeader.Options.UseFont = true;
             this.TIENPHONG.AppearanceHeader.Options.UseTextOptions = true;
             this.TIENPHONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1139,8 +1163,6 @@
             this.TIENPHONG.MaxWidth = 120;
             this.TIENPHONG.MinWidth = 120;
             this.TIENPHONG.Name = "TIENPHONG";
-            this.TIENPHONG.Visible = true;
-            this.TIENPHONG.VisibleIndex = 13;
             this.TIENPHONG.Width = 120;
             // 
             // TIENDIEN
@@ -1149,7 +1171,9 @@
             this.TIENDIEN.AppearanceCell.Options.UseFont = true;
             this.TIENDIEN.AppearanceCell.Options.UseTextOptions = true;
             this.TIENDIEN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TIENDIEN.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.TIENDIEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TIENDIEN.AppearanceHeader.Options.UseBackColor = true;
             this.TIENDIEN.AppearanceHeader.Options.UseFont = true;
             this.TIENDIEN.AppearanceHeader.Options.UseTextOptions = true;
             this.TIENDIEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1158,8 +1182,6 @@
             this.TIENDIEN.MaxWidth = 120;
             this.TIENDIEN.MinWidth = 120;
             this.TIENDIEN.Name = "TIENDIEN";
-            this.TIENDIEN.Visible = true;
-            this.TIENDIEN.VisibleIndex = 14;
             this.TIENDIEN.Width = 120;
             // 
             // TIENNUOC
@@ -1168,7 +1190,9 @@
             this.TIENNUOC.AppearanceCell.Options.UseFont = true;
             this.TIENNUOC.AppearanceCell.Options.UseTextOptions = true;
             this.TIENNUOC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TIENNUOC.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.TIENNUOC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TIENNUOC.AppearanceHeader.Options.UseBackColor = true;
             this.TIENNUOC.AppearanceHeader.Options.UseFont = true;
             this.TIENNUOC.AppearanceHeader.Options.UseTextOptions = true;
             this.TIENNUOC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1177,8 +1201,6 @@
             this.TIENNUOC.MaxWidth = 120;
             this.TIENNUOC.MinWidth = 120;
             this.TIENNUOC.Name = "TIENNUOC";
-            this.TIENNUOC.Visible = true;
-            this.TIENNUOC.VisibleIndex = 15;
             this.TIENNUOC.Width = 120;
             // 
             // TIENXE
@@ -1187,7 +1209,9 @@
             this.TIENXE.AppearanceCell.Options.UseFont = true;
             this.TIENXE.AppearanceCell.Options.UseTextOptions = true;
             this.TIENXE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TIENXE.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.TIENXE.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TIENXE.AppearanceHeader.Options.UseBackColor = true;
             this.TIENXE.AppearanceHeader.Options.UseFont = true;
             this.TIENXE.AppearanceHeader.Options.UseTextOptions = true;
             this.TIENXE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -1196,8 +1220,6 @@
             this.TIENXE.MaxWidth = 120;
             this.TIENXE.MinWidth = 120;
             this.TIENXE.Name = "TIENXE";
-            this.TIENXE.Visible = true;
-            this.TIENXE.VisibleIndex = 16;
             this.TIENXE.Width = 120;
             // 
             // TONGCONG
@@ -1206,18 +1228,20 @@
             this.TONGCONG.AppearanceCell.Options.UseFont = true;
             this.TONGCONG.AppearanceCell.Options.UseTextOptions = true;
             this.TONGCONG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TONGCONG.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.TONGCONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TONGCONG.AppearanceHeader.Options.UseBackColor = true;
             this.TONGCONG.AppearanceHeader.Options.UseFont = true;
             this.TONGCONG.AppearanceHeader.Options.UseTextOptions = true;
             this.TONGCONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TONGCONG.Caption = "TỔNG CỘNG";
             this.TONGCONG.FieldName = "TONGCONG";
-            this.TONGCONG.MaxWidth = 130;
-            this.TONGCONG.MinWidth = 130;
+            this.TONGCONG.MaxWidth = 150;
+            this.TONGCONG.MinWidth = 150;
             this.TONGCONG.Name = "TONGCONG";
             this.TONGCONG.Visible = true;
-            this.TONGCONG.VisibleIndex = 17;
-            this.TONGCONG.Width = 130;
+            this.TONGCONG.VisibleIndex = 11;
+            this.TONGCONG.Width = 150;
             // 
             // repositoryItemLookUpEdit2
             // 
@@ -1306,7 +1330,7 @@
         private DevExpress.XtraBars.BarButtonItem btnSua;
         private DevExpress.XtraBars.BarButtonItem btnXoa;
         private DevExpress.XtraBars.BarButtonItem btnReload;
-        private DevExpress.XtraBars.BarButtonItem btnXuatFile;
+        private DevExpress.XtraBars.BarButtonItem btnXuatfile;
         private DevExpress.XtraBars.BarButtonItem btnTim;
         private DevExpress.XtraBars.BarEditItem txtTim;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit4;

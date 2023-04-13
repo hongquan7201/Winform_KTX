@@ -18,55 +18,9 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
-
-        private void imgNo_Click(object sender, EventArgs e)
+        private void btnDangKyXe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
-        }
-
-        private void imgSVNu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelControl5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelControl6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbSoPhong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelControl7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmDKPhong_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelControl16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelControl10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbXe_CheckedChanged(object sender, EventArgs e)
-        {
-            frmQLNhaXe frm = new frmQLNhaXe();
+            frmQLXe frm = new frmQLXe();
             frm.ShowDialog();
         }
     }

@@ -11,16 +11,11 @@ using System.Windows.Forms;
 
 namespace ProjectQLKTX
 {
-    public partial class frmDSTrangThietBi : DevExpress.XtraEditors.XtraForm
+    public partial class frmQLXe : DevExpress.XtraEditors.XtraForm
     {
-        public frmDSTrangThietBi()
+        public frmQLXe()
         {
             InitializeComponent();
-        }
-
-        private void groupControl2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

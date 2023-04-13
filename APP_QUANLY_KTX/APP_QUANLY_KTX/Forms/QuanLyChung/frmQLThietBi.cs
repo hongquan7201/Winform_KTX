@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ProjectQLKTX
 {
-    public partial class frmQLNhaXe : DevExpress.XtraEditors.XtraForm
+    public partial class frmQLThietBi : DevExpress.XtraEditors.XtraForm
     {
-        public frmQLNhaXe()
+        public frmQLThietBi()
         {
             InitializeComponent();
         }

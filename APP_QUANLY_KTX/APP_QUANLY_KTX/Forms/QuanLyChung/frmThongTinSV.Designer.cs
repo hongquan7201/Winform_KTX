@@ -98,7 +98,6 @@
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXuatfile = new DevExpress.XtraBars.BarButtonItem();
             this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnTim = new DevExpress.XtraBars.BarButtonItem();
@@ -107,6 +106,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuatfile = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
@@ -611,10 +611,12 @@
             this.MASV,
             this.TENSV,
             this.GIOITINH,
-            this.SDT,
             this.NGAYSINH,
+            this.SDT,
             this.EMAIL,
             this.CCCD,
+            this.KHU,
+            this.PHONG,
             this.TRUONG,
             this.DIACHI,
             this.NGAYDANGKY,
@@ -623,8 +625,6 @@
             this.QUANHE,
             this.SDTTHANNHAN,
             this.DIACHITHANNHAN,
-            this.KHU,
-            this.PHONG,
             this.HINHANH});
             this.gvDanhSach.GridControl = this.gcDanhSach;
             this.gvDanhSach.Name = "gvDanhSach";
@@ -636,19 +636,21 @@
             this.MASV.AppearanceCell.Options.UseFont = true;
             this.MASV.AppearanceCell.Options.UseTextOptions = true;
             this.MASV.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MASV.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.MASV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MASV.AppearanceHeader.Options.UseBackColor = true;
             this.MASV.AppearanceHeader.Options.UseFont = true;
             this.MASV.AppearanceHeader.Options.UseTextOptions = true;
             this.MASV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MASV.Caption = "MÃ SV";
             this.MASV.FieldName = "MASV";
             this.MASV.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.MASV.MaxWidth = 100;
-            this.MASV.MinWidth = 100;
+            this.MASV.MaxWidth = 90;
+            this.MASV.MinWidth = 90;
             this.MASV.Name = "MASV";
             this.MASV.Visible = true;
             this.MASV.VisibleIndex = 0;
-            this.MASV.Width = 100;
+            this.MASV.Width = 90;
             // 
             // TENSV
             // 
@@ -656,7 +658,9 @@
             this.TENSV.AppearanceCell.Options.UseFont = true;
             this.TENSV.AppearanceCell.Options.UseTextOptions = true;
             this.TENSV.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TENSV.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.TENSV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TENSV.AppearanceHeader.Options.UseBackColor = true;
             this.TENSV.AppearanceHeader.Options.UseFont = true;
             this.TENSV.AppearanceHeader.Options.UseTextOptions = true;
             this.TENSV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -676,7 +680,9 @@
             this.GIOITINH.AppearanceCell.Options.UseFont = true;
             this.GIOITINH.AppearanceCell.Options.UseTextOptions = true;
             this.GIOITINH.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.GIOITINH.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.GIOITINH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.GIOITINH.AppearanceHeader.Options.UseBackColor = true;
             this.GIOITINH.AppearanceHeader.Options.UseFont = true;
             this.GIOITINH.AppearanceHeader.Options.UseTextOptions = true;
             this.GIOITINH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -696,18 +702,20 @@
             this.SDT.AppearanceCell.Options.UseFont = true;
             this.SDT.AppearanceCell.Options.UseTextOptions = true;
             this.SDT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SDT.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.SDT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SDT.AppearanceHeader.Options.UseBackColor = true;
             this.SDT.AppearanceHeader.Options.UseFont = true;
             this.SDT.AppearanceHeader.Options.UseTextOptions = true;
             this.SDT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SDT.Caption = "SĐT";
             this.SDT.FieldName = "SDT";
-            this.SDT.MaxWidth = 150;
-            this.SDT.MinWidth = 150;
+            this.SDT.MaxWidth = 120;
+            this.SDT.MinWidth = 120;
             this.SDT.Name = "SDT";
             this.SDT.Visible = true;
-            this.SDT.VisibleIndex = 3;
-            this.SDT.Width = 150;
+            this.SDT.VisibleIndex = 4;
+            this.SDT.Width = 120;
             // 
             // NGAYSINH
             // 
@@ -715,7 +723,9 @@
             this.NGAYSINH.AppearanceCell.Options.UseFont = true;
             this.NGAYSINH.AppearanceCell.Options.UseTextOptions = true;
             this.NGAYSINH.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAYSINH.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.NGAYSINH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NGAYSINH.AppearanceHeader.Options.UseBackColor = true;
             this.NGAYSINH.AppearanceHeader.Options.UseFont = true;
             this.NGAYSINH.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAYSINH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -725,7 +735,7 @@
             this.NGAYSINH.MinWidth = 130;
             this.NGAYSINH.Name = "NGAYSINH";
             this.NGAYSINH.Visible = true;
-            this.NGAYSINH.VisibleIndex = 4;
+            this.NGAYSINH.VisibleIndex = 3;
             this.NGAYSINH.Width = 130;
             // 
             // EMAIL
@@ -734,7 +744,9 @@
             this.EMAIL.AppearanceCell.Options.UseFont = true;
             this.EMAIL.AppearanceCell.Options.UseTextOptions = true;
             this.EMAIL.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.EMAIL.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.EMAIL.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EMAIL.AppearanceHeader.Options.UseBackColor = true;
             this.EMAIL.AppearanceHeader.Options.UseFont = true;
             this.EMAIL.AppearanceHeader.Options.UseTextOptions = true;
             this.EMAIL.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -743,8 +755,6 @@
             this.EMAIL.MaxWidth = 150;
             this.EMAIL.MinWidth = 150;
             this.EMAIL.Name = "EMAIL";
-            this.EMAIL.Visible = true;
-            this.EMAIL.VisibleIndex = 5;
             this.EMAIL.Width = 150;
             // 
             // CCCD
@@ -753,18 +763,20 @@
             this.CCCD.AppearanceCell.Options.UseFont = true;
             this.CCCD.AppearanceCell.Options.UseTextOptions = true;
             this.CCCD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CCCD.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.CCCD.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.CCCD.AppearanceHeader.Options.UseBackColor = true;
             this.CCCD.AppearanceHeader.Options.UseFont = true;
             this.CCCD.AppearanceHeader.Options.UseTextOptions = true;
             this.CCCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CCCD.Caption = "CCCD/CMND";
+            this.CCCD.Caption = "CCCD";
             this.CCCD.FieldName = "CCCD";
-            this.CCCD.MaxWidth = 120;
-            this.CCCD.MinWidth = 120;
+            this.CCCD.MaxWidth = 140;
+            this.CCCD.MinWidth = 140;
             this.CCCD.Name = "CCCD";
             this.CCCD.Visible = true;
-            this.CCCD.VisibleIndex = 6;
-            this.CCCD.Width = 120;
+            this.CCCD.VisibleIndex = 5;
+            this.CCCD.Width = 140;
             // 
             // TRUONG
             // 
@@ -772,7 +784,9 @@
             this.TRUONG.AppearanceCell.Options.UseFont = true;
             this.TRUONG.AppearanceCell.Options.UseTextOptions = true;
             this.TRUONG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TRUONG.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.TRUONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TRUONG.AppearanceHeader.Options.UseBackColor = true;
             this.TRUONG.AppearanceHeader.Options.UseFont = true;
             this.TRUONG.AppearanceHeader.Options.UseTextOptions = true;
             this.TRUONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -781,8 +795,6 @@
             this.TRUONG.MaxWidth = 150;
             this.TRUONG.MinWidth = 150;
             this.TRUONG.Name = "TRUONG";
-            this.TRUONG.Visible = true;
-            this.TRUONG.VisibleIndex = 7;
             this.TRUONG.Width = 150;
             // 
             // DIACHI
@@ -791,7 +803,9 @@
             this.DIACHI.AppearanceCell.Options.UseFont = true;
             this.DIACHI.AppearanceCell.Options.UseTextOptions = true;
             this.DIACHI.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.DIACHI.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.DIACHI.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DIACHI.AppearanceHeader.Options.UseBackColor = true;
             this.DIACHI.AppearanceHeader.Options.UseFont = true;
             this.DIACHI.AppearanceHeader.Options.UseTextOptions = true;
             this.DIACHI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -800,8 +814,6 @@
             this.DIACHI.MaxWidth = 150;
             this.DIACHI.MinWidth = 150;
             this.DIACHI.Name = "DIACHI";
-            this.DIACHI.Visible = true;
-            this.DIACHI.VisibleIndex = 8;
             this.DIACHI.Width = 150;
             // 
             // NGAYDANGKY
@@ -810,7 +822,9 @@
             this.NGAYDANGKY.AppearanceCell.Options.UseFont = true;
             this.NGAYDANGKY.AppearanceCell.Options.UseTextOptions = true;
             this.NGAYDANGKY.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NGAYDANGKY.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.NGAYDANGKY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.NGAYDANGKY.AppearanceHeader.Options.UseBackColor = true;
             this.NGAYDANGKY.AppearanceHeader.Options.UseFont = true;
             this.NGAYDANGKY.AppearanceHeader.Options.UseTextOptions = true;
             this.NGAYDANGKY.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -820,7 +834,7 @@
             this.NGAYDANGKY.MinWidth = 130;
             this.NGAYDANGKY.Name = "NGAYDANGKY";
             this.NGAYDANGKY.Visible = true;
-            this.NGAYDANGKY.VisibleIndex = 9;
+            this.NGAYDANGKY.VisibleIndex = 8;
             this.NGAYDANGKY.Width = 130;
             // 
             // TENTHANNHAN
@@ -829,7 +843,9 @@
             this.TENTHANNHAN.AppearanceCell.Options.UseFont = true;
             this.TENTHANNHAN.AppearanceCell.Options.UseTextOptions = true;
             this.TENTHANNHAN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TENTHANNHAN.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.TENTHANNHAN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TENTHANNHAN.AppearanceHeader.Options.UseBackColor = true;
             this.TENTHANNHAN.AppearanceHeader.Options.UseFont = true;
             this.TENTHANNHAN.AppearanceHeader.Options.UseTextOptions = true;
             this.TENTHANNHAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -839,14 +855,16 @@
             this.TENTHANNHAN.MinWidth = 150;
             this.TENTHANNHAN.Name = "TENTHANNHAN";
             this.TENTHANNHAN.Visible = true;
-            this.TENTHANNHAN.VisibleIndex = 10;
+            this.TENTHANNHAN.VisibleIndex = 9;
             this.TENTHANNHAN.Width = 150;
             // 
             // GIOITINHTN
             // 
             this.GIOITINHTN.AppearanceCell.Options.UseTextOptions = true;
             this.GIOITINHTN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.GIOITINHTN.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.GIOITINHTN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.GIOITINHTN.AppearanceHeader.Options.UseBackColor = true;
             this.GIOITINHTN.AppearanceHeader.Options.UseFont = true;
             this.GIOITINHTN.AppearanceHeader.Options.UseTextOptions = true;
             this.GIOITINHTN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -855,8 +873,6 @@
             this.GIOITINHTN.MaxWidth = 130;
             this.GIOITINHTN.MinWidth = 130;
             this.GIOITINHTN.Name = "GIOITINHTN";
-            this.GIOITINHTN.Visible = true;
-            this.GIOITINHTN.VisibleIndex = 11;
             this.GIOITINHTN.Width = 130;
             // 
             // QUANHE
@@ -865,7 +881,9 @@
             this.QUANHE.AppearanceCell.Options.UseFont = true;
             this.QUANHE.AppearanceCell.Options.UseTextOptions = true;
             this.QUANHE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.QUANHE.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.QUANHE.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.QUANHE.AppearanceHeader.Options.UseBackColor = true;
             this.QUANHE.AppearanceHeader.Options.UseFont = true;
             this.QUANHE.AppearanceHeader.Options.UseTextOptions = true;
             this.QUANHE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -875,7 +893,7 @@
             this.QUANHE.MinWidth = 120;
             this.QUANHE.Name = "QUANHE";
             this.QUANHE.Visible = true;
-            this.QUANHE.VisibleIndex = 12;
+            this.QUANHE.VisibleIndex = 10;
             this.QUANHE.Width = 120;
             // 
             // SDTTHANNHAN
@@ -884,7 +902,9 @@
             this.SDTTHANNHAN.AppearanceCell.Options.UseFont = true;
             this.SDTTHANNHAN.AppearanceCell.Options.UseTextOptions = true;
             this.SDTTHANNHAN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SDTTHANNHAN.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.SDTTHANNHAN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SDTTHANNHAN.AppearanceHeader.Options.UseBackColor = true;
             this.SDTTHANNHAN.AppearanceHeader.Options.UseFont = true;
             this.SDTTHANNHAN.AppearanceHeader.Options.UseTextOptions = true;
             this.SDTTHANNHAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -894,7 +914,7 @@
             this.SDTTHANNHAN.MinWidth = 120;
             this.SDTTHANNHAN.Name = "SDTTHANNHAN";
             this.SDTTHANNHAN.Visible = true;
-            this.SDTTHANNHAN.VisibleIndex = 14;
+            this.SDTTHANNHAN.VisibleIndex = 11;
             this.SDTTHANNHAN.Width = 120;
             // 
             // DIACHITHANNHAN
@@ -903,7 +923,9 @@
             this.DIACHITHANNHAN.AppearanceCell.Options.UseFont = true;
             this.DIACHITHANNHAN.AppearanceCell.Options.UseTextOptions = true;
             this.DIACHITHANNHAN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.DIACHITHANNHAN.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.DIACHITHANNHAN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DIACHITHANNHAN.AppearanceHeader.Options.UseBackColor = true;
             this.DIACHITHANNHAN.AppearanceHeader.Options.UseFont = true;
             this.DIACHITHANNHAN.AppearanceHeader.Options.UseTextOptions = true;
             this.DIACHITHANNHAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -912,8 +934,6 @@
             this.DIACHITHANNHAN.MaxWidth = 150;
             this.DIACHITHANNHAN.MinWidth = 150;
             this.DIACHITHANNHAN.Name = "DIACHITHANNHAN";
-            this.DIACHITHANNHAN.Visible = true;
-            this.DIACHITHANNHAN.VisibleIndex = 16;
             this.DIACHITHANNHAN.Width = 150;
             // 
             // KHU
@@ -922,18 +942,20 @@
             this.KHU.AppearanceCell.Options.UseFont = true;
             this.KHU.AppearanceCell.Options.UseTextOptions = true;
             this.KHU.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.KHU.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.KHU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.KHU.AppearanceHeader.Options.UseBackColor = true;
             this.KHU.AppearanceHeader.Options.UseFont = true;
             this.KHU.AppearanceHeader.Options.UseTextOptions = true;
             this.KHU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.KHU.Caption = "KHU";
             this.KHU.FieldName = "KHU";
-            this.KHU.MaxWidth = 130;
-            this.KHU.MinWidth = 130;
+            this.KHU.MaxWidth = 100;
+            this.KHU.MinWidth = 100;
             this.KHU.Name = "KHU";
             this.KHU.Visible = true;
-            this.KHU.VisibleIndex = 13;
-            this.KHU.Width = 130;
+            this.KHU.VisibleIndex = 6;
+            this.KHU.Width = 100;
             // 
             // PHONG
             // 
@@ -941,18 +963,20 @@
             this.PHONG.AppearanceCell.Options.UseFont = true;
             this.PHONG.AppearanceCell.Options.UseTextOptions = true;
             this.PHONG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.PHONG.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
             this.PHONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PHONG.AppearanceHeader.Options.UseBackColor = true;
             this.PHONG.AppearanceHeader.Options.UseFont = true;
             this.PHONG.AppearanceHeader.Options.UseTextOptions = true;
             this.PHONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.PHONG.Caption = "PHÒNG";
             this.PHONG.FieldName = "PHONG";
-            this.PHONG.MaxWidth = 130;
-            this.PHONG.MinWidth = 130;
+            this.PHONG.MaxWidth = 100;
+            this.PHONG.MinWidth = 100;
             this.PHONG.Name = "PHONG";
             this.PHONG.Visible = true;
-            this.PHONG.VisibleIndex = 15;
-            this.PHONG.Width = 130;
+            this.PHONG.VisibleIndex = 7;
+            this.PHONG.Width = 100;
             // 
             // HINHANH
             // 
@@ -1076,13 +1100,6 @@
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
             // 
-            // btnXuatfile
-            // 
-            this.btnXuatfile.Caption = "Xuất File";
-            this.btnXuatfile.Id = 5;
-            this.btnXuatfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXuatfile.ImageOptions.SvgImage")));
-            this.btnXuatfile.Name = "btnXuatfile";
-            // 
             // txtTim
             // 
             this.txtTim.Caption = "barEditItem4";
@@ -1140,6 +1157,13 @@
             this.barButtonItem5.Id = 4;
             this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
             this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // btnXuatfile
+            // 
+            this.btnXuatfile.Caption = "Xuất File";
+            this.btnXuatfile.Id = 5;
+            this.btnXuatfile.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXuatfile.ImageOptions.SvgImage")));
+            this.btnXuatfile.Name = "btnXuatfile";
             // 
             // barButtonItem7
             // 

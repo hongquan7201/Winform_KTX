@@ -58,11 +58,6 @@ namespace ProjectQLKTX
             frmChuyenPhong frmChuyenPhong = new frmChuyenPhong();
             frmChuyenPhong.ShowDialog();
         }
-        private void btnGiaHan_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            frmGiaHan frmGiaHan = new frmGiaHan();
-            frmGiaHan.ShowDialog();
-        }
         private void btnTraPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmTraPhong frmTraPhong = new frmTraPhong();
@@ -93,15 +88,15 @@ namespace ProjectQLKTX
             frmQLDienNuoc frmQLDienNuoc = new frmQLDienNuoc();
             frmQLDienNuoc.ShowDialog();
         }
-        private void btnQLTrangThietBi_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnQLThietBi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmDSTrangThietBi frmDSTrangThietBi = new frmDSTrangThietBi();
-            frmDSTrangThietBi.ShowDialog();
+            frmQLThietBi frmQLThietBi = new frmQLThietBi();
+            frmQLThietBi.ShowDialog();
         }
-        private void btnQLNhaXe_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnQLXe_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLNhaXe frmQLNhaXe = new frmQLNhaXe();
-            frmQLNhaXe.ShowDialog();
+            frmQLXe frmQLXe = new frmQLXe();
+            frmQLXe.ShowDialog();
         }
         private void btnQLPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
