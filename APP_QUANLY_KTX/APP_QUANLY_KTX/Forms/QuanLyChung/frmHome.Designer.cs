@@ -102,7 +102,7 @@
             this.btnQLiKho,
             this.btnQLiTaiSan});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 42;
+            this.ribbon.MaxItemId = 43;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.HETHONG,
@@ -221,19 +221,15 @@
             // 
             // btnQLiTTBi
             // 
-            this.btnQLiTTBi.Caption = "Quản Lý Thiết Bị";
-            this.btnQLiTTBi.Id = 18;
-            this.btnQLiTTBi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQLiTTBi.ImageOptions.Image")));
-            this.btnQLiTTBi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQLiTTBi.ImageOptions.LargeImage")));
+            this.btnQLiTTBi.Id = 42;
             this.btnQLiTTBi.Name = "btnQLiTTBi";
-            this.btnQLiTTBi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLThietBi_ItemClick);
             // 
             // btnQLiXe
             // 
             this.btnQLiXe.Caption = "Quản Lý Xe";
             this.btnQLiXe.Id = 20;
-            this.btnQLiXe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQLiNhaXe.ImageOptions.Image")));
-            this.btnQLiXe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQLiNhaXe.ImageOptions.LargeImage")));
+            this.btnQLiXe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQLiXe.ImageOptions.Image")));
+            this.btnQLiXe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQLiXe.ImageOptions.LargeImage")));
             this.btnQLiXe.Name = "btnQLiXe";
             this.btnQLiXe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLXe_ItemClick);
             // 
@@ -380,7 +376,6 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.btnQLiHopDong);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnQLiHoaDon);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnQLiDienNuoc);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnQLiTTBi);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnQLiXe);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnQLiKho);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnQLiTaiSan);

@@ -16,7 +16,6 @@ namespace ProjectQLKTX
         public frmBienLai()
         {
             InitializeComponent();
-        }     
-      
+        }
     }
 }

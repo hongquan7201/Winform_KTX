@@ -119,7 +119,7 @@
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(608, 368);
             this.groupControl2.TabIndex = 56;
-            this.groupControl2.Text = "Thông Tin Cá Nhân";
+            this.groupControl2.Text = "Thông Tin";
             // 
             // dtNgaySinh
             // 
@@ -537,7 +537,7 @@
             this.MinimizeBox = false;
             this.Name = "frmThongTinNV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thông Tin Nhân Viên";
+            this.Text = "Thông Tin Cá Nhân";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();

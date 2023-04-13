@@ -88,11 +88,6 @@ namespace ProjectQLKTX
             frmQLDienNuoc frmQLDienNuoc = new frmQLDienNuoc();
             frmQLDienNuoc.ShowDialog();
         }
-        private void btnQLThietBi_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            frmQLThietBi frmQLThietBi = new frmQLThietBi();
-            frmQLThietBi.ShowDialog();
-        }
         private void btnQLXe_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmQLXe frmQLXe = new frmQLXe();
