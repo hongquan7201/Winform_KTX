@@ -18,6 +18,9 @@ namespace ProjectQLKTX
             InitializeComponent();
         }
 
-      
+        private void cbPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

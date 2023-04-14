@@ -22,6 +22,7 @@ namespace ProjectQLKTX
                 {
                     listNhanVien = result.data;
                     txtHoTen.Text = listNhanVien[0].name;
+                    txtEmail.Text = listNhanVien[0].email;
                     txtCCCD.Text = listNhanVien[0].cccd;
                     txtDiaChi.Text = listNhanVien[0].address;
                     txtSDT.Text = listNhanVien[0].sdt;

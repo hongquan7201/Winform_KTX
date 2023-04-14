@@ -229,6 +229,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQuenMK.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmQuenMK";

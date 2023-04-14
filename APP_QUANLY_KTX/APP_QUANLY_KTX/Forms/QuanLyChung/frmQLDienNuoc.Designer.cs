@@ -75,10 +75,10 @@
             this.CHISODIENDAU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CHISODIENCUOI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SODIENTIEUTHU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TIENDIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CHISONUOCDAU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CHISONUOCCUOI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SONUOCTIEUTHU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TIENDIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TIENNUOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TONGTIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtTongTien = new DevExpress.XtraEditors.TextEdit();
@@ -189,7 +189,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfile, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.txtTim, true),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.txtTim, "", true, true, true, 140),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
@@ -243,6 +243,8 @@
             // 
             // repositoryItemTextEdit5
             // 
+            this.repositoryItemTextEdit5.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.repositoryItemTextEdit5.Appearance.Options.UseFont = true;
             this.repositoryItemTextEdit5.AutoHeight = false;
             this.repositoryItemTextEdit5.Name = "repositoryItemTextEdit5";
             // 
@@ -413,7 +415,6 @@
             this.groupControl1.Size = new System.Drawing.Size(342, 209);
             this.groupControl1.TabIndex = 45;
             this.groupControl1.Text = "Thông Tin Phòng";
-            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // dtThangThu
             // 
@@ -598,27 +599,6 @@
             this.SODIENTIEUTHU.VisibleIndex = 2;
             this.SODIENTIEUTHU.Width = 130;
             // 
-            // TIENDIEN
-            // 
-            this.TIENDIEN.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TIENDIEN.AppearanceCell.Options.UseFont = true;
-            this.TIENDIEN.AppearanceCell.Options.UseTextOptions = true;
-            this.TIENDIEN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.TIENDIEN.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
-            this.TIENDIEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TIENDIEN.AppearanceHeader.Options.UseBackColor = true;
-            this.TIENDIEN.AppearanceHeader.Options.UseFont = true;
-            this.TIENDIEN.AppearanceHeader.Options.UseTextOptions = true;
-            this.TIENDIEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.TIENDIEN.Caption = "TIỀN ĐIỆN";
-            this.TIENDIEN.FieldName = "TIENDIEN";
-            this.TIENDIEN.MaxWidth = 150;
-            this.TIENDIEN.MinWidth = 150;
-            this.TIENDIEN.Name = "TIENDIEN";
-            this.TIENDIEN.Visible = true;
-            this.TIENDIEN.VisibleIndex = 4;
-            this.TIENDIEN.Width = 150;
-            // 
             // CHISONUOCDAU
             // 
             this.CHISONUOCDAU.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -677,6 +657,27 @@
             this.SONUOCTIEUTHU.Visible = true;
             this.SONUOCTIEUTHU.VisibleIndex = 3;
             this.SONUOCTIEUTHU.Width = 130;
+            // 
+            // TIENDIEN
+            // 
+            this.TIENDIEN.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TIENDIEN.AppearanceCell.Options.UseFont = true;
+            this.TIENDIEN.AppearanceCell.Options.UseTextOptions = true;
+            this.TIENDIEN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TIENDIEN.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
+            this.TIENDIEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TIENDIEN.AppearanceHeader.Options.UseBackColor = true;
+            this.TIENDIEN.AppearanceHeader.Options.UseFont = true;
+            this.TIENDIEN.AppearanceHeader.Options.UseTextOptions = true;
+            this.TIENDIEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TIENDIEN.Caption = "TIỀN ĐIỆN";
+            this.TIENDIEN.FieldName = "TIENDIEN";
+            this.TIENDIEN.MaxWidth = 150;
+            this.TIENDIEN.MinWidth = 150;
+            this.TIENDIEN.Name = "TIENDIEN";
+            this.TIENDIEN.Visible = true;
+            this.TIENDIEN.VisibleIndex = 4;
+            this.TIENDIEN.Width = 150;
             // 
             // TIENNUOC
             // 
@@ -779,6 +780,7 @@
             this.txtTienDien.Name = "txtTienDien";
             this.txtTienDien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTienDien.Properties.Appearance.Options.UseFont = true;
+            this.txtTienDien.Properties.ReadOnly = true;
             this.txtTienDien.Size = new System.Drawing.Size(166, 24);
             this.txtTienDien.TabIndex = 107;
             // 
@@ -890,6 +892,7 @@
             this.txtTienNuoc.Name = "txtTienNuoc";
             this.txtTienNuoc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTienNuoc.Properties.Appearance.Options.UseFont = true;
+            this.txtTienNuoc.Properties.ReadOnly = true;
             this.txtTienNuoc.Size = new System.Drawing.Size(174, 24);
             this.txtTienNuoc.TabIndex = 115;
             // 
@@ -1005,6 +1008,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLDienNuoc.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmQLDienNuoc";

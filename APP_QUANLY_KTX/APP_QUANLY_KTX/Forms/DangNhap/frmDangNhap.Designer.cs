@@ -67,12 +67,12 @@
             // 
             this.lbQuenMK.AutoSize = true;
             this.lbQuenMK.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbQuenMK.Location = new System.Drawing.Point(346, 271);
+            this.lbQuenMK.Location = new System.Drawing.Point(343, 271);
             this.lbQuenMK.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbQuenMK.Name = "lbQuenMK";
-            this.lbQuenMK.Size = new System.Drawing.Size(126, 21);
+            this.lbQuenMK.Size = new System.Drawing.Size(130, 21);
             this.lbQuenMK.TabIndex = 4;
-            this.lbQuenMK.Text = "Quên mật khẩu:";
+            this.lbQuenMK.Text = "Quên mật khẩu?";
             this.lbQuenMK.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lbQuenMK.Click += new System.EventHandler(this.lbQuenMK_Click);
             // 
@@ -227,7 +227,7 @@
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(0, 4);
+            this.pictureEdit1.Location = new System.Drawing.Point(3, 4);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Azure;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
@@ -280,7 +280,14 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(226, 41);
             this.panel3.TabIndex = 23;
-            //            
+            // 
+            // txt_ngongu
+            // 
+            this.txt_ngongu.Location = new System.Drawing.Point(0, 0);
+            this.txt_ngongu.Name = "txt_ngongu";
+            this.txt_ngongu.Size = new System.Drawing.Size(100, 23);
+            this.txt_ngongu.TabIndex = 0;
+            // 
             // lb_quenmk
             // 
             this.lb_quenmk.AutoSize = true;
@@ -330,6 +337,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmDangNhap.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDangNhap";

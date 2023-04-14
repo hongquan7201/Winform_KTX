@@ -73,6 +73,7 @@
             // ribbon
             // 
             this.ribbon.ExpandCollapseItem.Id = 0;
+            this.ribbon.HeaderAreaImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbon.HeaderAreaImageOptions.Image")));
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.ribbon.SearchEditItem,
@@ -104,6 +105,7 @@
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 43;
             this.ribbon.Name = "ribbon";
+            this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.HETHONG,
             this.DANHMUC,
@@ -412,9 +414,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
             this.ClientSize = new System.Drawing.Size(953, 657);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("Home.IconOptions.Icon")));
             this.Name = "Home";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
