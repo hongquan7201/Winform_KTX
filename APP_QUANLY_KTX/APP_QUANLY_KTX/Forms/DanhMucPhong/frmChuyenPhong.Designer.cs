@@ -597,6 +597,8 @@
             // 
             // bar2
             // 
+            this.bar2.BarAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bar2.BarAppearance.Normal.Options.UseFont = true;
             this.bar2.BarName = "Main menu";
             this.bar2.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Top;
             this.bar2.DockCol = 0;
@@ -656,7 +658,7 @@
             // 
             // txtTim
             // 
-            this.txtTim.Caption = "barEditItem4";
+            this.txtTim.Caption = "Tìm";
             this.txtTim.Edit = this.repositoryItemTextEdit4;
             this.txtTim.Id = 15;
             this.txtTim.Name = "txtTim";

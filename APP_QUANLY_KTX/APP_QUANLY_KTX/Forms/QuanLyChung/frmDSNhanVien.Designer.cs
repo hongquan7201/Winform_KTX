@@ -201,7 +201,7 @@
             // 
             // txtTim
             // 
-            this.txtTim.Caption = "barEditItem4";
+            this.txtTim.Caption = "Tìm";
             this.txtTim.Edit = this.repositoryItemTextEdit4;
             this.txtTim.Id = 15;
             this.txtTim.Name = "txtTim";
