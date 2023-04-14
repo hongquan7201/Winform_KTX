@@ -1,6 +1,6 @@
 ﻿namespace ProjectQLKTX
 {
-    partial class frmQLXe
+    partial class frmQLiXe
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLXe));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLiXe));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -1054,7 +1054,7 @@
             this.groupControl1.TabIndex = 68;
             this.groupControl1.Text = "Danh Sách ";
             // 
-            // frmQLXe
+            // frmQLiXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1070,7 +1070,7 @@
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLXe.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmQLXe";
+            this.Name = "frmQLiXe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Xe";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

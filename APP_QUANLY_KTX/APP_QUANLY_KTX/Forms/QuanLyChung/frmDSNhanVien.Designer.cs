@@ -709,7 +709,7 @@
             this.CCCD.AppearanceHeader.Options.UseFont = true;
             this.CCCD.AppearanceHeader.Options.UseTextOptions = true;
             this.CCCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.CCCD.Caption = "CCCD/CMND";
+            this.CCCD.Caption = "CCCD";
             this.CCCD.FieldName = "CCCD";
             this.CCCD.MaxWidth = 130;
             this.CCCD.MinWidth = 130;

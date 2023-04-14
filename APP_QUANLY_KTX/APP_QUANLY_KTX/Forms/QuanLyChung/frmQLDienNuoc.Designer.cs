@@ -1,6 +1,6 @@
 ﻿namespace ProjectQLKTX
 {
-    partial class frmQLDienNuoc
+    partial class frmQLiDienNuoc
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLDienNuoc));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLiDienNuoc));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -991,7 +991,7 @@
             this.labelControl20.TabIndex = 99;
             this.labelControl20.Text = "đ";
             // 
-            // frmQLDienNuoc
+            // frmQLiDienNuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1011,7 +1011,7 @@
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLDienNuoc.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmQLDienNuoc";
+            this.Name = "frmQLiDienNuoc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Điện Nước";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

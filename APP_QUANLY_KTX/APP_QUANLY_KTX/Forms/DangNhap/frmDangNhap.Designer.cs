@@ -47,10 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txt_ngongu = new System.Windows.Forms.TextBox();
-            this.lb_quenmk = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cb_Hienthi = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
             this.panel2.SuspendLayout();
@@ -60,7 +57,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Hienthi.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lbQuenMK
@@ -273,51 +269,12 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.txt_ngongu);
-            this.panel3.Controls.Add(this.lb_quenmk);
             this.panel3.Location = new System.Drawing.Point(211, 126);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(226, 41);
             this.panel3.TabIndex = 23;
-            // 
-            // txt_ngongu
-            // 
-            this.txt_ngongu.Location = new System.Drawing.Point(0, 0);
-            this.txt_ngongu.Name = "txt_ngongu";
-            this.txt_ngongu.Size = new System.Drawing.Size(100, 23);
-            this.txt_ngongu.TabIndex = 0;
-            // 
-            // lb_quenmk
-            // 
-            this.lb_quenmk.AutoSize = true;
-            this.lb_quenmk.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_quenmk.Location = new System.Drawing.Point(299, 130);
-            this.lb_quenmk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lb_quenmk.Name = "lb_quenmk";
-            this.lb_quenmk.Size = new System.Drawing.Size(116, 17);
-            this.lb_quenmk.TabIndex = 28;
-            this.lb_quenmk.Text = "Fofgot Password ?";
-            this.lb_quenmk.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.cb_Hienthi);
-            this.panel1.Location = new System.Drawing.Point(211, 77);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(264, 41);
-            this.panel1.TabIndex = 22;
-            // 
-            // cb_Hienthi
-            // 
-            this.cb_Hienthi.Location = new System.Drawing.Point(244, 12);
-            this.cb_Hienthi.Name = "cb_Hienthi";
-            this.cb_Hienthi.Properties.Caption = "";
-            this.cb_Hienthi.Size = new System.Drawing.Size(19, 20);
-            this.cb_Hienthi.TabIndex = 45;
-            // 
+            //           
             // frmDangNhap
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -355,7 +312,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cb_Hienthi.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,10 +336,6 @@
         private Label label2;
         private Panel panel4;
         private Panel panel3;
-        private TextBox txt_ngongu;
-        private Label lb_quenmk;
         private Panel panel1;
-        private Label txt_Quenmk;
-        private DevExpress.XtraEditors.CheckEdit cb_Hienthi;
     }
 }

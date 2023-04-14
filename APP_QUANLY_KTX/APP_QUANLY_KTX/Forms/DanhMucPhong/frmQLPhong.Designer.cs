@@ -1,6 +1,6 @@
 ﻿namespace ProjectQLKTX
 {
-    partial class frmQLPhong
+    partial class frmQLiPhong
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLPhong));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLiPhong));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -748,7 +748,7 @@
             this.groupControl1.TabIndex = 102;
             this.groupControl1.Text = "Danh Sách";
             // 
-            // frmQLPhong
+            // frmQLiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -763,7 +763,7 @@
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLPhong.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmQLPhong";
+            this.Name = "frmQLiPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Phòng";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

@@ -78,25 +78,25 @@ namespace ProjectQLKTX
             frmThongTinNV frmThongTinCaNhanNV = new frmThongTinNV();
             frmThongTinCaNhanNV.ShowDialog();
         }
-        private void btnQLHopDong_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnQLiHopDong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLHopDong frmQLHopDong = new frmQLHopDong();
-            frmQLHopDong.ShowDialog();
+            frmQLiHopDong frmQLiHopDong = new frmQLiHopDong();
+            frmQLiHopDong.ShowDialog();
         }
-        private void btnQLDienNuoc_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnQLiDienNuoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLDienNuoc frmQLDienNuoc = new frmQLDienNuoc();
+            frmQLiDienNuoc frmQLDienNuoc = new frmQLiDienNuoc();
             frmQLDienNuoc.ShowDialog();
         }
-        private void btnQLXe_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnQLiXe_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLXe frmQLXe = new frmQLXe();
+            frmQLiXe frmQLXe = new frmQLiXe();
             frmQLXe.ShowDialog();
         }
-        private void btnQLPhong_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnQLiPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLPhong frmQLPhong = new frmQLPhong();
-            frmQLPhong.ShowDialog();
+           frmQLiPhong frmQLiPhong = new frmQLiPhong();
+            frmQLiPhong.ShowDialog();
         }
         private void btnThanhToan_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -105,7 +105,7 @@ namespace ProjectQLKTX
         }
         private void btnQLiHoaDon_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-            frmQLHoaDon frmQLHoaDon = new frmQLHoaDon();
+            frmQLiHoaDon frmQLHoaDon = new frmQLiHoaDon();
             frmQLHoaDon.ShowDialog();
         }
 

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ProjectQLKTX
 {
-    public partial class frmQLHopDong : DevExpress.XtraEditors.XtraForm
+    public partial class frmQLiHopDong : DevExpress.XtraEditors.XtraForm
     {
-        public frmQLHopDong()
+        public frmQLiHopDong()
         {
             InitializeComponent();
         }

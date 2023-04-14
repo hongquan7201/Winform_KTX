@@ -1,6 +1,6 @@
 ﻿namespace ProjectQLKTX
 {
-    partial class frmQLHoaDon
+    partial class frmQLiHoaDon
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLHoaDon));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLiHoaDon));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -777,7 +777,7 @@
             this.groupControl2.TabIndex = 106;
             this.groupControl2.Text = "Danh Sách";
             // 
-            // frmQLHoaDon
+            // frmQLiHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -792,7 +792,7 @@
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLHoaDon.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmQLHoaDon";
+            this.Name = "frmQLiHoaDon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Hóa Đơn";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

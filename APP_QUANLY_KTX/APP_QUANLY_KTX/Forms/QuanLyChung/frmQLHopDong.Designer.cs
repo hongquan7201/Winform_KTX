@@ -1,6 +1,6 @@
 ﻿namespace ProjectQLKTX
 {
-    partial class frmQLHopDong
+    partial class frmQLiHopDong
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLHopDong));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLiHopDong));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -734,7 +734,7 @@
             this.groupControl1.TabIndex = 62;
             this.groupControl1.Text = "Danh Sách ";
             // 
-            // frmQLHopDong
+            // frmQLiHopDong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -749,7 +749,7 @@
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLHopDong.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmQLHopDong";
+            this.Name = "frmQLiHopDong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Hợp Đồng";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
