@@ -649,6 +649,7 @@
             this.KHU.MaxWidth = 150;
             this.KHU.MinWidth = 150;
             this.KHU.Name = "KHU";
+            this.KHU.OptionsColumn.ReadOnly = true;
             this.KHU.Visible = true;
             this.KHU.VisibleIndex = 0;
             this.KHU.Width = 150;
@@ -667,12 +668,13 @@
             this.PHONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.PHONG.Caption = "PHÒNG";
             this.PHONG.FieldName = "PHONG";
-            this.PHONG.MaxWidth = 150;
-            this.PHONG.MinWidth = 150;
+            this.PHONG.MaxWidth = 140;
+            this.PHONG.MinWidth = 140;
             this.PHONG.Name = "PHONG";
+            this.PHONG.OptionsColumn.ReadOnly = true;
             this.PHONG.Visible = true;
             this.PHONG.VisibleIndex = 1;
-            this.PHONG.Width = 150;
+            this.PHONG.Width = 140;
             // 
             // OHIENTAI
             // 
@@ -691,6 +693,7 @@
             this.OHIENTAI.MaxWidth = 160;
             this.OHIENTAI.MinWidth = 160;
             this.OHIENTAI.Name = "OHIENTAI";
+            this.OHIENTAI.OptionsColumn.ReadOnly = true;
             this.OHIENTAI.Visible = true;
             this.OHIENTAI.VisibleIndex = 2;
             this.OHIENTAI.Width = 160;
@@ -712,6 +715,7 @@
             this.OTOIDA.MaxWidth = 160;
             this.OTOIDA.MinWidth = 160;
             this.OTOIDA.Name = "OTOIDA";
+            this.OTOIDA.OptionsColumn.ReadOnly = true;
             this.OTOIDA.Visible = true;
             this.OTOIDA.VisibleIndex = 3;
             this.OTOIDA.Width = 160;
@@ -733,6 +737,7 @@
             this.NGAYDANGKY.MaxWidth = 150;
             this.NGAYDANGKY.MinWidth = 150;
             this.NGAYDANGKY.Name = "NGAYDANGKY";
+            this.NGAYDANGKY.OptionsColumn.ReadOnly = true;
             this.NGAYDANGKY.Visible = true;
             this.NGAYDANGKY.VisibleIndex = 4;
             this.NGAYDANGKY.Width = 150;
@@ -760,7 +765,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLPhong.IconOptions.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLiPhong.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmQLiPhong";

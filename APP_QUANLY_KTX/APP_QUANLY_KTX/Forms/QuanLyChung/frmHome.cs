@@ -120,5 +120,17 @@ namespace ProjectQLKTX
             frmQLiTaiSan frmQLiTaiSan = new frmQLiTaiSan();
             frmQLiTaiSan.ShowDialog();
         }
+
+        private void btnBCDThu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //frmBaoCaoDoanhThu frmBaoCaoDoanhThu = new frmBaoCaoDoanhThu();
+            //frmBaoCaoDoanhThu.ShowDialog();
+        }
+
+        private void btnThongKeSV_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //frmThongKeSinhVien frmThongKeSinhVien = new frmThongKeSinhVien();
+            //frmThongKeSinhVien.ShowDialog();
+        }
     }
 }

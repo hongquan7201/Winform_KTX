@@ -515,6 +515,7 @@
             this.PHONG.MaxWidth = 90;
             this.PHONG.MinWidth = 90;
             this.PHONG.Name = "PHONG";
+            this.PHONG.OptionsColumn.ReadOnly = true;
             this.PHONG.Visible = true;
             this.PHONG.VisibleIndex = 0;
             this.PHONG.Width = 90;
@@ -536,6 +537,7 @@
             this.THANGTHU.MaxWidth = 140;
             this.THANGTHU.MinWidth = 140;
             this.THANGTHU.Name = "THANGTHU";
+            this.THANGTHU.OptionsColumn.ReadOnly = true;
             this.THANGTHU.Visible = true;
             this.THANGTHU.VisibleIndex = 1;
             this.THANGTHU.Width = 140;
@@ -557,6 +559,7 @@
             this.CHISODIENDAU.MaxWidth = 130;
             this.CHISODIENDAU.MinWidth = 130;
             this.CHISODIENDAU.Name = "CHISODIENDAU";
+            this.CHISODIENDAU.OptionsColumn.ReadOnly = true;
             this.CHISODIENDAU.Width = 130;
             // 
             // CHISODIENCUOI
@@ -576,6 +579,7 @@
             this.CHISODIENCUOI.MaxWidth = 130;
             this.CHISODIENCUOI.MinWidth = 130;
             this.CHISODIENCUOI.Name = "CHISODIENCUOI";
+            this.CHISODIENCUOI.OptionsColumn.ReadOnly = true;
             this.CHISODIENCUOI.Width = 130;
             // 
             // SODIENTIEUTHU
@@ -595,6 +599,7 @@
             this.SODIENTIEUTHU.MaxWidth = 130;
             this.SODIENTIEUTHU.MinWidth = 130;
             this.SODIENTIEUTHU.Name = "SODIENTIEUTHU";
+            this.SODIENTIEUTHU.OptionsColumn.ReadOnly = true;
             this.SODIENTIEUTHU.Visible = true;
             this.SODIENTIEUTHU.VisibleIndex = 2;
             this.SODIENTIEUTHU.Width = 130;
@@ -616,6 +621,7 @@
             this.CHISONUOCDAU.MaxWidth = 130;
             this.CHISONUOCDAU.MinWidth = 130;
             this.CHISONUOCDAU.Name = "CHISONUOCDAU";
+            this.CHISONUOCDAU.OptionsColumn.ReadOnly = true;
             this.CHISONUOCDAU.Width = 130;
             // 
             // CHISONUOCCUOI
@@ -635,6 +641,7 @@
             this.CHISONUOCCUOI.MaxWidth = 130;
             this.CHISONUOCCUOI.MinWidth = 130;
             this.CHISONUOCCUOI.Name = "CHISONUOCCUOI";
+            this.CHISONUOCCUOI.OptionsColumn.ReadOnly = true;
             this.CHISONUOCCUOI.Width = 130;
             // 
             // SONUOCTIEUTHU
@@ -654,6 +661,7 @@
             this.SONUOCTIEUTHU.MaxWidth = 130;
             this.SONUOCTIEUTHU.MinWidth = 130;
             this.SONUOCTIEUTHU.Name = "SONUOCTIEUTHU";
+            this.SONUOCTIEUTHU.OptionsColumn.ReadOnly = true;
             this.SONUOCTIEUTHU.Visible = true;
             this.SONUOCTIEUTHU.VisibleIndex = 3;
             this.SONUOCTIEUTHU.Width = 130;
@@ -675,6 +683,7 @@
             this.TIENDIEN.MaxWidth = 150;
             this.TIENDIEN.MinWidth = 150;
             this.TIENDIEN.Name = "TIENDIEN";
+            this.TIENDIEN.OptionsColumn.ReadOnly = true;
             this.TIENDIEN.Visible = true;
             this.TIENDIEN.VisibleIndex = 4;
             this.TIENDIEN.Width = 150;
@@ -696,6 +705,7 @@
             this.TIENNUOC.MaxWidth = 150;
             this.TIENNUOC.MinWidth = 150;
             this.TIENNUOC.Name = "TIENNUOC";
+            this.TIENNUOC.OptionsColumn.ReadOnly = true;
             this.TIENNUOC.Visible = true;
             this.TIENNUOC.VisibleIndex = 5;
             this.TIENNUOC.Width = 150;
@@ -717,6 +727,7 @@
             this.TONGTIEN.MaxWidth = 240;
             this.TONGTIEN.MinWidth = 240;
             this.TONGTIEN.Name = "TONGTIEN";
+            this.TONGTIEN.OptionsColumn.ReadOnly = true;
             this.TONGTIEN.Visible = true;
             this.TONGTIEN.VisibleIndex = 6;
             this.TONGTIEN.Width = 240;
@@ -1008,7 +1019,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLDienNuoc.IconOptions.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLiDienNuoc.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmQLiDienNuoc";

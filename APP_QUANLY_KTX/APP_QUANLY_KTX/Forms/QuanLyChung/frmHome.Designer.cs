@@ -68,7 +68,6 @@
             // ribbon
             // 
             this.ribbon.ExpandCollapseItem.Id = 0;
-            this.ribbon.HeaderAreaImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbon.HeaderAreaImageOptions.Image")));
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.ribbon.SearchEditItem,
@@ -162,7 +161,8 @@
             // 
             this.btnDSNV.Caption = "Danh Sách Nhân Viên";
             this.btnDSNV.Id = 13;
-            this.btnDSNV.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDSNV.ImageOptions.SvgImage")));
+            this.btnDSNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDSNV.ImageOptions.Image")));
+            this.btnDSNV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDSNV.ImageOptions.LargeImage")));
             this.btnDSNV.Name = "btnDSNV";
             this.btnDSNV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSNhanVien_ItemClick);
             // 
@@ -206,15 +206,19 @@
             // 
             this.btnBCDThu.Caption = "Báo Cáo Doanh Thu";
             this.btnBCDThu.Id = 23;
-            this.btnBCDThu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBCDThu.ImageOptions.SvgImage")));
+            this.btnBCDThu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBCDThu.ImageOptions.Image")));
+            this.btnBCDThu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBCDThu.ImageOptions.LargeImage")));
             this.btnBCDThu.Name = "btnBCDThu";
+            this.btnBCDThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBCDThu_ItemClick);
             // 
             // btnThongKeSV
             // 
             this.btnThongKeSV.Caption = "Thống Kê Sinh Viên";
             this.btnThongKeSV.Id = 24;
-            this.btnThongKeSV.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThongKeSV.ImageOptions.SvgImage")));
+            this.btnThongKeSV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKeSV.ImageOptions.Image")));
+            this.btnThongKeSV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThongKeSV.ImageOptions.LargeImage")));
             this.btnThongKeSV.Name = "btnThongKeSV";
+            this.btnThongKeSV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeSV_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -252,7 +256,8 @@
             // 
             this.btnQLiPhong.Caption = "Quản Lý Phòng";
             this.btnQLiPhong.Id = 34;
-            this.btnQLiPhong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnQLiPhong.ImageOptions.SvgImage")));
+            this.btnQLiPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQLiPhong.ImageOptions.Image")));
+            this.btnQLiPhong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQLiPhong.ImageOptions.LargeImage")));
             this.btnQLiPhong.Name = "btnQLiPhong";
             this.btnQLiPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLiPhong_ItemClick);
             // 

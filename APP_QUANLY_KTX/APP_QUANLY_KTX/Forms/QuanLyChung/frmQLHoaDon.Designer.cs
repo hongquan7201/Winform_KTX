@@ -616,12 +616,13 @@
             this.MASV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MASV.Caption = "MÃ SV";
             this.MASV.FieldName = "MASV";
-            this.MASV.MaxWidth = 90;
-            this.MASV.MinWidth = 90;
+            this.MASV.MaxWidth = 88;
+            this.MASV.MinWidth = 88;
             this.MASV.Name = "MASV";
+            this.MASV.OptionsColumn.ReadOnly = true;
             this.MASV.Visible = true;
             this.MASV.VisibleIndex = 0;
-            this.MASV.Width = 90;
+            this.MASV.Width = 88;
             // 
             // HOTEN
             // 
@@ -640,6 +641,7 @@
             this.HOTEN.MaxWidth = 150;
             this.HOTEN.MinWidth = 150;
             this.HOTEN.Name = "HOTEN";
+            this.HOTEN.OptionsColumn.ReadOnly = true;
             this.HOTEN.Visible = true;
             this.HOTEN.VisibleIndex = 1;
             this.HOTEN.Width = 150;
@@ -661,6 +663,7 @@
             this.EMAIL.MaxWidth = 150;
             this.EMAIL.MinWidth = 150;
             this.EMAIL.Name = "EMAIL";
+            this.EMAIL.OptionsColumn.ReadOnly = true;
             this.EMAIL.Width = 150;
             // 
             // PHONG
@@ -680,6 +683,7 @@
             this.PHONG.MaxWidth = 90;
             this.PHONG.MinWidth = 90;
             this.PHONG.Name = "PHONG";
+            this.PHONG.OptionsColumn.ReadOnly = true;
             this.PHONG.Visible = true;
             this.PHONG.VisibleIndex = 2;
             this.PHONG.Width = 90;
@@ -701,6 +705,7 @@
             this.TENNHANVIEN.MaxWidth = 150;
             this.TENNHANVIEN.MinWidth = 150;
             this.TENNHANVIEN.Name = "TENNHANVIEN";
+            this.TENNHANVIEN.OptionsColumn.ReadOnly = true;
             this.TENNHANVIEN.Visible = true;
             this.TENNHANVIEN.VisibleIndex = 3;
             this.TENNHANVIEN.Width = 150;
@@ -722,6 +727,7 @@
             this.EMAILNV.MaxWidth = 150;
             this.EMAILNV.MinWidth = 150;
             this.EMAILNV.Name = "EMAILNV";
+            this.EMAILNV.OptionsColumn.ReadOnly = true;
             this.EMAILNV.Width = 150;
             // 
             // NGAYTHU
@@ -741,6 +747,7 @@
             this.NGAYTHU.MaxWidth = 150;
             this.NGAYTHU.MinWidth = 150;
             this.NGAYTHU.Name = "NGAYTHU";
+            this.NGAYTHU.OptionsColumn.ReadOnly = true;
             this.NGAYTHU.Visible = true;
             this.NGAYTHU.VisibleIndex = 4;
             this.NGAYTHU.Width = 150;
@@ -762,6 +769,7 @@
             this.TONGTIEN.MaxWidth = 150;
             this.TONGTIEN.MinWidth = 150;
             this.TONGTIEN.Name = "TONGTIEN";
+            this.TONGTIEN.OptionsColumn.ReadOnly = true;
             this.TONGTIEN.Visible = true;
             this.TONGTIEN.VisibleIndex = 5;
             this.TONGTIEN.Width = 150;
@@ -789,7 +797,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLHoaDon.IconOptions.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLiHoaDon.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmQLiHoaDon";

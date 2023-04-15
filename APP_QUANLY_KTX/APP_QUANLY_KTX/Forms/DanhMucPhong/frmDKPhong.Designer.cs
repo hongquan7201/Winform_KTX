@@ -191,9 +191,6 @@
             this.cbTruong.Properties.Appearance.Options.UseFont = true;
             this.cbTruong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbTruong.Properties.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
             this.cbTruong.Size = new System.Drawing.Size(312, 24);
             this.cbTruong.TabIndex = 77;
             // 
@@ -855,7 +852,7 @@
             this.gcDanhSach.EmbeddedNavigator.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.gcDanhSach.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
             this.gcDanhSach.EmbeddedNavigator.Appearance.Options.UseForeColor = true;
-            this.gcDanhSach.Location = new System.Drawing.Point(0, 26);
+            this.gcDanhSach.Location = new System.Drawing.Point(0, 23);
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.Name = "gcDanhSach";
             this.gcDanhSach.Size = new System.Drawing.Size(578, 461);
@@ -905,6 +902,7 @@
             this.MASV.MaxWidth = 100;
             this.MASV.MinWidth = 100;
             this.MASV.Name = "MASV";
+            this.MASV.OptionsColumn.ReadOnly = true;
             this.MASV.Visible = true;
             this.MASV.VisibleIndex = 0;
             this.MASV.Width = 100;
@@ -927,6 +925,7 @@
             this.HOTEN.MaxWidth = 170;
             this.HOTEN.MinWidth = 170;
             this.HOTEN.Name = "HOTEN";
+            this.HOTEN.OptionsColumn.ReadOnly = true;
             this.HOTEN.Visible = true;
             this.HOTEN.VisibleIndex = 1;
             this.HOTEN.Width = 170;
@@ -948,6 +947,7 @@
             this.NGAYSINH.MaxWidth = 120;
             this.NGAYSINH.MinWidth = 120;
             this.NGAYSINH.Name = "NGAYSINH";
+            this.NGAYSINH.OptionsColumn.ReadOnly = true;
             this.NGAYSINH.Visible = true;
             this.NGAYSINH.VisibleIndex = 2;
             this.NGAYSINH.Width = 120;
@@ -969,6 +969,7 @@
             this.GIOITINH.MaxWidth = 100;
             this.GIOITINH.MinWidth = 100;
             this.GIOITINH.Name = "GIOITINH";
+            this.GIOITINH.OptionsColumn.ReadOnly = true;
             this.GIOITINH.Visible = true;
             this.GIOITINH.VisibleIndex = 3;
             this.GIOITINH.Width = 100;
@@ -990,6 +991,7 @@
             this.SDT.MaxWidth = 130;
             this.SDT.MinWidth = 130;
             this.SDT.Name = "SDT";
+            this.SDT.OptionsColumn.ReadOnly = true;
             this.SDT.Visible = true;
             this.SDT.VisibleIndex = 4;
             this.SDT.Width = 130;
@@ -1011,6 +1013,7 @@
             this.CCCD.MaxWidth = 130;
             this.CCCD.MinWidth = 130;
             this.CCCD.Name = "CCCD";
+            this.CCCD.OptionsColumn.ReadOnly = true;
             this.CCCD.Visible = true;
             this.CCCD.VisibleIndex = 5;
             this.CCCD.Width = 130;
@@ -1032,6 +1035,7 @@
             this.HINHANH.MaxWidth = 140;
             this.HINHANH.MinWidth = 140;
             this.HINHANH.Name = "HINHANH";
+            this.HINHANH.OptionsColumn.ReadOnly = true;
             this.HINHANH.Width = 100;
             // 
             // TRUONG
@@ -1051,6 +1055,7 @@
             this.TRUONG.MaxWidth = 150;
             this.TRUONG.MinWidth = 150;
             this.TRUONG.Name = "TRUONG";
+            this.TRUONG.OptionsColumn.ReadOnly = true;
             this.TRUONG.Width = 150;
             // 
             // DIACHI
@@ -1070,6 +1075,7 @@
             this.DIACHI.MaxWidth = 150;
             this.DIACHI.MinWidth = 150;
             this.DIACHI.Name = "DIACHI";
+            this.DIACHI.OptionsColumn.ReadOnly = true;
             this.DIACHI.Visible = true;
             this.DIACHI.VisibleIndex = 6;
             this.DIACHI.Width = 150;
@@ -1091,6 +1097,7 @@
             this.EMAIL.MaxWidth = 150;
             this.EMAIL.MinWidth = 150;
             this.EMAIL.Name = "EMAIL";
+            this.EMAIL.OptionsColumn.ReadOnly = true;
             this.EMAIL.Width = 150;
             // 
             // KHU
@@ -1110,6 +1117,7 @@
             this.KHU.MaxWidth = 120;
             this.KHU.MinWidth = 120;
             this.KHU.Name = "KHU";
+            this.KHU.OptionsColumn.ReadOnly = true;
             this.KHU.Visible = true;
             this.KHU.VisibleIndex = 7;
             this.KHU.Width = 120;
@@ -1131,6 +1139,7 @@
             this.PHONG.MaxWidth = 120;
             this.PHONG.MinWidth = 120;
             this.PHONG.Name = "PHONG";
+            this.PHONG.OptionsColumn.ReadOnly = true;
             this.PHONG.Visible = true;
             this.PHONG.VisibleIndex = 8;
             this.PHONG.Width = 120;
@@ -1152,6 +1161,7 @@
             this.TENNHANVIEN.MaxWidth = 130;
             this.TENNHANVIEN.MinWidth = 130;
             this.TENNHANVIEN.Name = "TENNHANVIEN";
+            this.TENNHANVIEN.OptionsColumn.ReadOnly = true;
             this.TENNHANVIEN.Visible = true;
             this.TENNHANVIEN.VisibleIndex = 9;
             this.TENNHANVIEN.Width = 130;
@@ -1173,6 +1183,7 @@
             this.EMAILNV.MaxWidth = 150;
             this.EMAILNV.MinWidth = 150;
             this.EMAILNV.Name = "EMAILNV";
+            this.EMAILNV.OptionsColumn.ReadOnly = true;
             this.EMAILNV.Width = 150;
             // 
             // NGAYDANGKY
@@ -1192,6 +1203,7 @@
             this.NGAYDANGKY.MaxWidth = 130;
             this.NGAYDANGKY.MinWidth = 130;
             this.NGAYDANGKY.Name = "NGAYDANGKY";
+            this.NGAYDANGKY.OptionsColumn.ReadOnly = true;
             this.NGAYDANGKY.Visible = true;
             this.NGAYDANGKY.VisibleIndex = 10;
             this.NGAYDANGKY.Width = 130;
@@ -1213,6 +1225,7 @@
             this.NGAYHETHAN.MaxWidth = 130;
             this.NGAYHETHAN.MinWidth = 130;
             this.NGAYHETHAN.Name = "NGAYHETHAN";
+            this.NGAYHETHAN.OptionsColumn.ReadOnly = true;
             this.NGAYHETHAN.Visible = true;
             this.NGAYHETHAN.VisibleIndex = 11;
             this.NGAYHETHAN.Width = 130;

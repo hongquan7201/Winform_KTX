@@ -110,7 +110,7 @@
             this.groupControl3.Controls.Add(this.txtSoLuong);
             this.groupControl3.Controls.Add(this.labelControl14);
             this.groupControl3.Controls.Add(this.labelControl12);
-            this.groupControl3.Location = new System.Drawing.Point(2, 30);
+            this.groupControl3.Location = new System.Drawing.Point(1, 30);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(807, 168);
             this.groupControl3.TabIndex = 44;
@@ -499,6 +499,7 @@
             this.TENTAISAN.MaxWidth = 160;
             this.TENTAISAN.MinWidth = 160;
             this.TENTAISAN.Name = "TENTAISAN";
+            this.TENTAISAN.OptionsColumn.ReadOnly = true;
             this.TENTAISAN.Visible = true;
             this.TENTAISAN.VisibleIndex = 0;
             this.TENTAISAN.Width = 160;
@@ -517,12 +518,13 @@
             this.PHONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.PHONG.Caption = "PHÒNG";
             this.PHONG.FieldName = "PHONG";
-            this.PHONG.MaxWidth = 150;
-            this.PHONG.MinWidth = 150;
+            this.PHONG.MaxWidth = 147;
+            this.PHONG.MinWidth = 147;
             this.PHONG.Name = "PHONG";
+            this.PHONG.OptionsColumn.ReadOnly = true;
             this.PHONG.Visible = true;
             this.PHONG.VisibleIndex = 1;
-            this.PHONG.Width = 150;
+            this.PHONG.Width = 147;
             // 
             // TENNHANVIEN
             // 
@@ -541,6 +543,7 @@
             this.TENNHANVIEN.MaxWidth = 150;
             this.TENNHANVIEN.MinWidth = 150;
             this.TENNHANVIEN.Name = "TENNHANVIEN";
+            this.TENNHANVIEN.OptionsColumn.ReadOnly = true;
             this.TENNHANVIEN.Visible = true;
             this.TENNHANVIEN.VisibleIndex = 2;
             this.TENNHANVIEN.Width = 150;
@@ -562,6 +565,7 @@
             this.SOLUONG.MaxWidth = 150;
             this.SOLUONG.MinWidth = 150;
             this.SOLUONG.Name = "SOLUONG";
+            this.SOLUONG.OptionsColumn.ReadOnly = true;
             this.SOLUONG.Visible = true;
             this.SOLUONG.VisibleIndex = 3;
             this.SOLUONG.Width = 150;
@@ -583,6 +587,7 @@
             this.TINHTRANG.MaxWidth = 170;
             this.TINHTRANG.MinWidth = 170;
             this.TINHTRANG.Name = "TINHTRANG";
+            this.TINHTRANG.OptionsColumn.ReadOnly = true;
             this.TINHTRANG.Visible = true;
             this.TINHTRANG.VisibleIndex = 4;
             this.TINHTRANG.Width = 170;
@@ -609,6 +614,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLiTaiSan.IconOptions.Icon")));
             this.Name = "frmQLiTaiSan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

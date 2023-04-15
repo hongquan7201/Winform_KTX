@@ -895,6 +895,7 @@
             this.MASV.MaxWidth = 90;
             this.MASV.MinWidth = 90;
             this.MASV.Name = "MASV";
+            this.MASV.OptionsColumn.ReadOnly = true;
             this.MASV.Visible = true;
             this.MASV.VisibleIndex = 0;
             this.MASV.Width = 90;
@@ -917,6 +918,7 @@
             this.TENSV.MaxWidth = 150;
             this.TENSV.MinWidth = 150;
             this.TENSV.Name = "TENSV";
+            this.TENSV.OptionsColumn.ReadOnly = true;
             this.TENSV.Visible = true;
             this.TENSV.VisibleIndex = 1;
             this.TENSV.Width = 150;
@@ -939,6 +941,7 @@
             this.GIOITINH.MaxWidth = 90;
             this.GIOITINH.MinWidth = 90;
             this.GIOITINH.Name = "GIOITINH";
+            this.GIOITINH.OptionsColumn.ReadOnly = true;
             this.GIOITINH.Visible = true;
             this.GIOITINH.VisibleIndex = 2;
             this.GIOITINH.Width = 90;
@@ -960,6 +963,7 @@
             this.NGAYSINH.MaxWidth = 150;
             this.NGAYSINH.MinWidth = 150;
             this.NGAYSINH.Name = "NGAYSINH";
+            this.NGAYSINH.OptionsColumn.ReadOnly = true;
             this.NGAYSINH.Visible = true;
             this.NGAYSINH.VisibleIndex = 3;
             this.NGAYSINH.Width = 150;
@@ -981,6 +985,7 @@
             this.SDT.MaxWidth = 130;
             this.SDT.MinWidth = 130;
             this.SDT.Name = "SDT";
+            this.SDT.OptionsColumn.ReadOnly = true;
             this.SDT.Visible = true;
             this.SDT.VisibleIndex = 4;
             this.SDT.Width = 130;
@@ -1002,6 +1007,7 @@
             this.EMAIL.MaxWidth = 150;
             this.EMAIL.MinWidth = 150;
             this.EMAIL.Name = "EMAIL";
+            this.EMAIL.OptionsColumn.ReadOnly = true;
             this.EMAIL.Width = 150;
             // 
             // CCCD
@@ -1021,6 +1027,7 @@
             this.CCCD.MaxWidth = 130;
             this.CCCD.MinWidth = 130;
             this.CCCD.Name = "CCCD";
+            this.CCCD.OptionsColumn.ReadOnly = true;
             this.CCCD.Visible = true;
             this.CCCD.VisibleIndex = 5;
             this.CCCD.Width = 130;
@@ -1042,6 +1049,7 @@
             this.PHONG.MaxWidth = 90;
             this.PHONG.MinWidth = 90;
             this.PHONG.Name = "PHONG";
+            this.PHONG.OptionsColumn.ReadOnly = true;
             this.PHONG.Visible = true;
             this.PHONG.VisibleIndex = 6;
             this.PHONG.Width = 90;
@@ -1063,6 +1071,7 @@
             this.NGAYDONG.MaxWidth = 140;
             this.NGAYDONG.MinWidth = 140;
             this.NGAYDONG.Name = "NGAYDONG";
+            this.NGAYDONG.OptionsColumn.ReadOnly = true;
             this.NGAYDONG.Width = 140;
             // 
             // NGAYBATDAU
@@ -1082,6 +1091,7 @@
             this.NGAYBATDAU.MaxWidth = 140;
             this.NGAYBATDAU.MinWidth = 140;
             this.NGAYBATDAU.Name = "NGAYBATDAU";
+            this.NGAYBATDAU.OptionsColumn.ReadOnly = true;
             this.NGAYBATDAU.Visible = true;
             this.NGAYBATDAU.VisibleIndex = 7;
             this.NGAYBATDAU.Width = 140;
@@ -1103,6 +1113,7 @@
             this.NGAYKETTHUC.MaxWidth = 140;
             this.NGAYKETTHUC.MinWidth = 140;
             this.NGAYKETTHUC.Name = "NGAYKETTHUC";
+            this.NGAYKETTHUC.OptionsColumn.ReadOnly = true;
             this.NGAYKETTHUC.Visible = true;
             this.NGAYKETTHUC.VisibleIndex = 8;
             this.NGAYKETTHUC.Width = 140;
@@ -1124,6 +1135,7 @@
             this.TENNHANVIEN.MaxWidth = 150;
             this.TENNHANVIEN.MinWidth = 150;
             this.TENNHANVIEN.Name = "TENNHANVIEN";
+            this.TENNHANVIEN.OptionsColumn.ReadOnly = true;
             this.TENNHANVIEN.Visible = true;
             this.TENNHANVIEN.VisibleIndex = 9;
             this.TENNHANVIEN.Width = 150;
@@ -1145,6 +1157,7 @@
             this.TRANGTHAI.MaxWidth = 130;
             this.TRANGTHAI.MinWidth = 130;
             this.TRANGTHAI.Name = "TRANGTHAI";
+            this.TRANGTHAI.OptionsColumn.ReadOnly = true;
             this.TRANGTHAI.Visible = true;
             this.TRANGTHAI.VisibleIndex = 10;
             this.TRANGTHAI.Width = 130;
@@ -1166,6 +1179,7 @@
             this.TIENPHONG.MaxWidth = 120;
             this.TIENPHONG.MinWidth = 120;
             this.TIENPHONG.Name = "TIENPHONG";
+            this.TIENPHONG.OptionsColumn.ReadOnly = true;
             this.TIENPHONG.Width = 120;
             // 
             // TIENDIEN
@@ -1185,6 +1199,7 @@
             this.TIENDIEN.MaxWidth = 120;
             this.TIENDIEN.MinWidth = 120;
             this.TIENDIEN.Name = "TIENDIEN";
+            this.TIENDIEN.OptionsColumn.ReadOnly = true;
             this.TIENDIEN.Width = 120;
             // 
             // TIENNUOC
@@ -1204,6 +1219,7 @@
             this.TIENNUOC.MaxWidth = 120;
             this.TIENNUOC.MinWidth = 120;
             this.TIENNUOC.Name = "TIENNUOC";
+            this.TIENNUOC.OptionsColumn.ReadOnly = true;
             this.TIENNUOC.Width = 120;
             // 
             // TIENXE
@@ -1223,6 +1239,7 @@
             this.TIENXE.MaxWidth = 120;
             this.TIENXE.MinWidth = 120;
             this.TIENXE.Name = "TIENXE";
+            this.TIENXE.OptionsColumn.ReadOnly = true;
             this.TIENXE.Width = 120;
             // 
             // TONGCONG
@@ -1242,6 +1259,7 @@
             this.TONGCONG.MaxWidth = 150;
             this.TONGCONG.MinWidth = 150;
             this.TONGCONG.Name = "TONGCONG";
+            this.TONGCONG.OptionsColumn.ReadOnly = true;
             this.TONGCONG.Visible = true;
             this.TONGCONG.VisibleIndex = 11;
             this.TONGCONG.Width = 150;

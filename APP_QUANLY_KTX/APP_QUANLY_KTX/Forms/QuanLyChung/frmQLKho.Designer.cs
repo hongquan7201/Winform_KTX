@@ -511,6 +511,7 @@
             this.TENVATDUNG.MaxWidth = 150;
             this.TENVATDUNG.MinWidth = 150;
             this.TENVATDUNG.Name = "TENVATDUNG";
+            this.TENVATDUNG.OptionsColumn.ReadOnly = true;
             this.TENVATDUNG.Visible = true;
             this.TENVATDUNG.VisibleIndex = 0;
             this.TENVATDUNG.Width = 150;
@@ -532,6 +533,7 @@
             this.PHONG.MaxWidth = 130;
             this.PHONG.MinWidth = 130;
             this.PHONG.Name = "PHONG";
+            this.PHONG.OptionsColumn.ReadOnly = true;
             this.PHONG.Visible = true;
             this.PHONG.VisibleIndex = 1;
             this.PHONG.Width = 130;
@@ -550,12 +552,13 @@
             this.TENNHANVIEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TENNHANVIEN.Caption = "TÊN NHÂN VIÊN";
             this.TENNHANVIEN.FieldName = "TENNHANVIEN";
-            this.TENNHANVIEN.MaxWidth = 150;
-            this.TENNHANVIEN.MinWidth = 150;
+            this.TENNHANVIEN.MaxWidth = 170;
+            this.TENNHANVIEN.MinWidth = 170;
             this.TENNHANVIEN.Name = "TENNHANVIEN";
+            this.TENNHANVIEN.OptionsColumn.ReadOnly = true;
             this.TENNHANVIEN.Visible = true;
             this.TENNHANVIEN.VisibleIndex = 2;
-            this.TENNHANVIEN.Width = 150;
+            this.TENNHANVIEN.Width = 170;
             // 
             // SOLUONG
             // 
@@ -574,6 +577,7 @@
             this.SOLUONG.MaxWidth = 150;
             this.SOLUONG.MinWidth = 150;
             this.SOLUONG.Name = "SOLUONG";
+            this.SOLUONG.OptionsColumn.ReadOnly = true;
             this.SOLUONG.Visible = true;
             this.SOLUONG.VisibleIndex = 3;
             this.SOLUONG.Width = 150;
@@ -595,6 +599,7 @@
             this.TINHTRANG.MaxWidth = 200;
             this.TINHTRANG.MinWidth = 200;
             this.TINHTRANG.Name = "TINHTRANG";
+            this.TINHTRANG.OptionsColumn.ReadOnly = true;
             this.TINHTRANG.Visible = true;
             this.TINHTRANG.VisibleIndex = 4;
             this.TINHTRANG.Width = 200;
@@ -610,6 +615,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLiKho.IconOptions.Icon")));
             this.Name = "frmQLiKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

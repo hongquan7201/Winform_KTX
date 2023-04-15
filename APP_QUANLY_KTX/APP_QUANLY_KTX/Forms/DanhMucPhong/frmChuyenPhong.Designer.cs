@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChuyenPhong));
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.cbPheDuyet = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.txtNhanVienLap = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
@@ -132,7 +130,6 @@
             this.PHEDUYET = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbPheDuyet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhanVienLap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMaNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbChuyenToiKhu.Properties)).BeginInit();
@@ -165,8 +162,6 @@
             // 
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
-            this.groupControl2.Controls.Add(this.cbPheDuyet);
-            this.groupControl2.Controls.Add(this.labelControl12);
             this.groupControl2.Controls.Add(this.txtNhanVienLap);
             this.groupControl2.Controls.Add(this.labelControl18);
             this.groupControl2.Controls.Add(this.labelControl15);
@@ -204,33 +199,9 @@
             this.groupControl2.TabIndex = 80;
             this.groupControl2.Text = "Thông Tin";
             // 
-            // cbPheDuyet
-            // 
-            this.cbPheDuyet.Location = new System.Drawing.Point(651, 266);
-            this.cbPheDuyet.Name = "cbPheDuyet";
-            this.cbPheDuyet.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbPheDuyet.Properties.Appearance.Options.UseFont = true;
-            this.cbPheDuyet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbPheDuyet.Properties.Items.AddRange(new object[] {
-            "Duyệt",
-            "Không Duyệt"});
-            this.cbPheDuyet.Size = new System.Drawing.Size(303, 24);
-            this.cbPheDuyet.TabIndex = 70;
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(581, 268);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(57, 16);
-            this.labelControl12.TabIndex = 67;
-            this.labelControl12.Text = "Phê Duyệt";
-            // 
             // txtNhanVienLap
             // 
-            this.txtNhanVienLap.Location = new System.Drawing.Point(651, 127);
+            this.txtNhanVienLap.Location = new System.Drawing.Point(642, 146);
             this.txtNhanVienLap.Name = "txtNhanVienLap";
             this.txtNhanVienLap.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNhanVienLap.Properties.Appearance.Options.UseFont = true;
@@ -241,7 +212,7 @@
             // 
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl18.Appearance.Options.UseFont = true;
-            this.labelControl18.Location = new System.Drawing.Point(555, 130);
+            this.labelControl18.Location = new System.Drawing.Point(546, 149);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(84, 16);
             this.labelControl18.TabIndex = 59;
@@ -251,7 +222,7 @@
             // 
             this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl15.Appearance.Options.UseFont = true;
-            this.labelControl15.Location = new System.Drawing.Point(565, 222);
+            this.labelControl15.Location = new System.Drawing.Point(556, 241);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(74, 16);
             this.labelControl15.TabIndex = 59;
@@ -259,7 +230,7 @@
             // 
             // cbMaNV
             // 
-            this.cbMaNV.Location = new System.Drawing.Point(651, 171);
+            this.cbMaNV.Location = new System.Drawing.Point(642, 190);
             this.cbMaNV.Name = "cbMaNV";
             this.cbMaNV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbMaNV.Properties.Appearance.Options.UseFont = true;
@@ -272,7 +243,7 @@
             // 
             this.dtNgayChuyen.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtNgayChuyen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayChuyen.Location = new System.Drawing.Point(653, 218);
+            this.dtNgayChuyen.Location = new System.Drawing.Point(644, 237);
             this.dtNgayChuyen.Name = "dtNgayChuyen";
             this.dtNgayChuyen.Size = new System.Drawing.Size(302, 26);
             this.dtNgayChuyen.TabIndex = 60;
@@ -281,7 +252,7 @@
             // 
             this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl19.Appearance.Options.UseFont = true;
-            this.labelControl19.Location = new System.Drawing.Point(596, 174);
+            this.labelControl19.Location = new System.Drawing.Point(587, 193);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(31, 16);
             this.labelControl19.TabIndex = 65;
@@ -289,7 +260,7 @@
             // 
             // cbChuyenToiKhu
             // 
-            this.cbChuyenToiKhu.Location = new System.Drawing.Point(652, 86);
+            this.cbChuyenToiKhu.Location = new System.Drawing.Point(643, 105);
             this.cbChuyenToiKhu.Name = "cbChuyenToiKhu";
             this.cbChuyenToiKhu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbChuyenToiKhu.Properties.Appearance.Options.UseFont = true;
@@ -302,7 +273,7 @@
             // 
             this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Location = new System.Drawing.Point(768, 44);
+            this.labelControl13.Location = new System.Drawing.Point(759, 63);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(93, 16);
             this.labelControl13.TabIndex = 65;
@@ -312,7 +283,7 @@
             // 
             this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl14.Appearance.Options.UseFont = true;
-            this.labelControl14.Location = new System.Drawing.Point(553, 88);
+            this.labelControl14.Location = new System.Drawing.Point(544, 107);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(86, 16);
             this.labelControl14.TabIndex = 63;
@@ -320,7 +291,7 @@
             // 
             // cbPhongHienTai
             // 
-            this.cbPhongHienTai.Location = new System.Drawing.Point(867, 39);
+            this.cbPhongHienTai.Location = new System.Drawing.Point(858, 58);
             this.cbPhongHienTai.Name = "cbPhongHienTai";
             this.cbPhongHienTai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbPhongHienTai.Properties.Appearance.Options.UseFont = true;
@@ -339,8 +310,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbGioiTinh.Properties.Items.AddRange(new object[] {
             "Nam",
-            "Nữ",
-            "Khác"});
+            "Nữ"});
             this.cbGioiTinh.Size = new System.Drawing.Size(108, 24);
             this.cbGioiTinh.TabIndex = 62;
             // 
@@ -356,7 +326,7 @@
             // 
             // cbKhuHienTai
             // 
-            this.cbKhuHienTai.Location = new System.Drawing.Point(652, 39);
+            this.cbKhuHienTai.Location = new System.Drawing.Point(643, 58);
             this.cbKhuHienTai.Name = "cbKhuHienTai";
             this.cbKhuHienTai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbKhuHienTai.Properties.Appearance.Options.UseFont = true;
@@ -369,7 +339,7 @@
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(568, 39);
+            this.labelControl9.Location = new System.Drawing.Point(559, 58);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(72, 16);
             this.labelControl9.TabIndex = 59;
@@ -419,7 +389,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(759, 87);
+            this.labelControl7.Location = new System.Drawing.Point(750, 106);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(103, 16);
             this.labelControl7.TabIndex = 43;
@@ -427,7 +397,7 @@
             // 
             // cbChuyenToiPhong
             // 
-            this.cbChuyenToiPhong.Location = new System.Drawing.Point(867, 85);
+            this.cbChuyenToiPhong.Location = new System.Drawing.Point(858, 104);
             this.cbChuyenToiPhong.Name = "cbChuyenToiPhong";
             this.cbChuyenToiPhong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbChuyenToiPhong.Properties.Appearance.Options.UseFont = true;
@@ -985,6 +955,7 @@
             this.MASV.MaxWidth = 70;
             this.MASV.MinWidth = 70;
             this.MASV.Name = "MASV";
+            this.MASV.OptionsColumn.ReadOnly = true;
             this.MASV.Visible = true;
             this.MASV.VisibleIndex = 0;
             this.MASV.Width = 70;
@@ -1007,6 +978,7 @@
             this.HOTEN.MaxWidth = 150;
             this.HOTEN.MinWidth = 150;
             this.HOTEN.Name = "HOTEN";
+            this.HOTEN.OptionsColumn.ReadOnly = true;
             this.HOTEN.Visible = true;
             this.HOTEN.VisibleIndex = 1;
             this.HOTEN.Width = 150;
@@ -1029,6 +1001,7 @@
             this.GIOITINH.MaxWidth = 100;
             this.GIOITINH.MinWidth = 100;
             this.GIOITINH.Name = "GIOITINH";
+            this.GIOITINH.OptionsColumn.ReadOnly = true;
             this.GIOITINH.Visible = true;
             this.GIOITINH.VisibleIndex = 2;
             this.GIOITINH.Width = 100;
@@ -1051,6 +1024,7 @@
             this.HINHANH.MaxWidth = 100;
             this.HINHANH.MinWidth = 100;
             this.HINHANH.Name = "HINHANH";
+            this.HINHANH.OptionsColumn.ReadOnly = true;
             this.HINHANH.Width = 100;
             // 
             // NGAYSINH
@@ -1071,6 +1045,7 @@
             this.NGAYSINH.MaxWidth = 150;
             this.NGAYSINH.MinWidth = 150;
             this.NGAYSINH.Name = "NGAYSINH";
+            this.NGAYSINH.OptionsColumn.ReadOnly = true;
             this.NGAYSINH.Visible = true;
             this.NGAYSINH.VisibleIndex = 3;
             this.NGAYSINH.Width = 150;
@@ -1093,6 +1068,7 @@
             this.CCCD.MaxWidth = 120;
             this.CCCD.MinWidth = 120;
             this.CCCD.Name = "CCCD";
+            this.CCCD.OptionsColumn.ReadOnly = true;
             this.CCCD.Visible = true;
             this.CCCD.VisibleIndex = 4;
             this.CCCD.Width = 120;
@@ -1115,6 +1091,7 @@
             this.SDT.MaxWidth = 100;
             this.SDT.MinWidth = 100;
             this.SDT.Name = "SDT";
+            this.SDT.OptionsColumn.ReadOnly = true;
             this.SDT.Visible = true;
             this.SDT.VisibleIndex = 5;
             this.SDT.Width = 100;
@@ -1137,6 +1114,7 @@
             this.QUEQUAN.MaxWidth = 150;
             this.QUEQUAN.MinWidth = 150;
             this.QUEQUAN.Name = "QUEQUAN";
+            this.QUEQUAN.OptionsColumn.ReadOnly = true;
             this.QUEQUAN.Width = 150;
             // 
             // TRUONG
@@ -1157,6 +1135,7 @@
             this.TRUONG.MaxWidth = 150;
             this.TRUONG.MinWidth = 150;
             this.TRUONG.Name = "TRUONG";
+            this.TRUONG.OptionsColumn.ReadOnly = true;
             this.TRUONG.Width = 150;
             // 
             // KHUHIENTAI
@@ -1175,6 +1154,7 @@
             this.KHUHIENTAI.MaxWidth = 120;
             this.KHUHIENTAI.MinWidth = 120;
             this.KHUHIENTAI.Name = "KHUHIENTAI";
+            this.KHUHIENTAI.OptionsColumn.ReadOnly = true;
             this.KHUHIENTAI.Width = 120;
             // 
             // PHONGHIENTAI
@@ -1194,6 +1174,7 @@
             this.PHONGHIENTAI.MaxWidth = 120;
             this.PHONGHIENTAI.MinWidth = 120;
             this.PHONGHIENTAI.Name = "PHONGHIENTAI";
+            this.PHONGHIENTAI.OptionsColumn.ReadOnly = true;
             this.PHONGHIENTAI.Width = 120;
             // 
             // CHUYENTOIKHU
@@ -1213,6 +1194,7 @@
             this.CHUYENTOIKHU.MaxWidth = 120;
             this.CHUYENTOIKHU.MinWidth = 120;
             this.CHUYENTOIKHU.Name = "CHUYENTOIKHU";
+            this.CHUYENTOIKHU.OptionsColumn.ReadOnly = true;
             this.CHUYENTOIKHU.Width = 120;
             // 
             // CHUYENTOIPHONG
@@ -1232,6 +1214,7 @@
             this.CHUYENTOIPHONG.MaxWidth = 120;
             this.CHUYENTOIPHONG.MinWidth = 120;
             this.CHUYENTOIPHONG.Name = "CHUYENTOIPHONG";
+            this.CHUYENTOIPHONG.OptionsColumn.ReadOnly = true;
             this.CHUYENTOIPHONG.Width = 120;
             // 
             // NGAYCHUYEN
@@ -1251,6 +1234,7 @@
             this.NGAYCHUYEN.MaxWidth = 130;
             this.NGAYCHUYEN.MinWidth = 130;
             this.NGAYCHUYEN.Name = "NGAYCHUYEN";
+            this.NGAYCHUYEN.OptionsColumn.ReadOnly = true;
             this.NGAYCHUYEN.Visible = true;
             this.NGAYCHUYEN.VisibleIndex = 6;
             this.NGAYCHUYEN.Width = 130;
@@ -1272,6 +1256,7 @@
             this.MANV.MaxWidth = 100;
             this.MANV.MinWidth = 100;
             this.MANV.Name = "MANV";
+            this.MANV.OptionsColumn.ReadOnly = true;
             this.MANV.Width = 100;
             // 
             // NHANVIENLAP
@@ -1291,6 +1276,7 @@
             this.NHANVIENLAP.MaxWidth = 130;
             this.NHANVIENLAP.MinWidth = 130;
             this.NHANVIENLAP.Name = "NHANVIENLAP";
+            this.NHANVIENLAP.OptionsColumn.ReadOnly = true;
             this.NHANVIENLAP.Visible = true;
             this.NHANVIENLAP.VisibleIndex = 7;
             this.NHANVIENLAP.Width = 130;
@@ -1312,6 +1298,7 @@
             this.PHEDUYET.MaxWidth = 130;
             this.PHEDUYET.MinWidth = 130;
             this.PHEDUYET.Name = "PHEDUYET";
+            this.PHEDUYET.OptionsColumn.ReadOnly = true;
             this.PHEDUYET.Visible = true;
             this.PHEDUYET.VisibleIndex = 8;
             this.PHEDUYET.Width = 130;
@@ -1338,7 +1325,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbPheDuyet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhanVienLap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbMaNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbChuyenToiKhu.Properties)).EndInit();
@@ -1444,8 +1430,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DateTimePicker dtNgayChuyen;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.ComboBoxEdit cbPheDuyet;
         private DevExpress.XtraEditors.ComboBoxEdit cbGioiTinh;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;

@@ -608,6 +608,7 @@
             this.TENNV.MaxWidth = 150;
             this.TENNV.MinWidth = 150;
             this.TENNV.Name = "TENNV";
+            this.TENNV.OptionsColumn.ReadOnly = true;
             this.TENNV.Visible = true;
             this.TENNV.VisibleIndex = 0;
             this.TENNV.Width = 150;
@@ -630,6 +631,7 @@
             this.EMAIL.MaxWidth = 150;
             this.EMAIL.MinWidth = 150;
             this.EMAIL.Name = "EMAIL";
+            this.EMAIL.OptionsColumn.ReadOnly = true;
             this.EMAIL.Visible = true;
             this.EMAIL.VisibleIndex = 1;
             this.EMAIL.Width = 150;
@@ -651,6 +653,7 @@
             this.GIOITINH.MaxWidth = 120;
             this.GIOITINH.MinWidth = 120;
             this.GIOITINH.Name = "GIOITINH";
+            this.GIOITINH.OptionsColumn.ReadOnly = true;
             this.GIOITINH.Visible = true;
             this.GIOITINH.VisibleIndex = 2;
             this.GIOITINH.Width = 120;
@@ -672,6 +675,7 @@
             this.NGAYSINH.MaxWidth = 130;
             this.NGAYSINH.MinWidth = 130;
             this.NGAYSINH.Name = "NGAYSINH";
+            this.NGAYSINH.OptionsColumn.ReadOnly = true;
             this.NGAYSINH.Visible = true;
             this.NGAYSINH.VisibleIndex = 3;
             this.NGAYSINH.Width = 130;
@@ -693,6 +697,7 @@
             this.SDT.MaxWidth = 130;
             this.SDT.MinWidth = 130;
             this.SDT.Name = "SDT";
+            this.SDT.OptionsColumn.ReadOnly = true;
             this.SDT.Visible = true;
             this.SDT.VisibleIndex = 4;
             this.SDT.Width = 130;
@@ -714,6 +719,7 @@
             this.CCCD.MaxWidth = 130;
             this.CCCD.MinWidth = 130;
             this.CCCD.Name = "CCCD";
+            this.CCCD.OptionsColumn.ReadOnly = true;
             this.CCCD.Visible = true;
             this.CCCD.VisibleIndex = 5;
             this.CCCD.Width = 130;
@@ -736,6 +742,7 @@
             this.NGAYDANGKY.MaxWidth = 130;
             this.NGAYDANGKY.MinWidth = 130;
             this.NGAYDANGKY.Name = "NGAYDANGKY";
+            this.NGAYDANGKY.OptionsColumn.ReadOnly = true;
             this.NGAYDANGKY.Visible = true;
             this.NGAYDANGKY.VisibleIndex = 6;
             this.NGAYDANGKY.Width = 130;
@@ -757,6 +764,7 @@
             this.DIACHI.MaxWidth = 150;
             this.DIACHI.MinWidth = 150;
             this.DIACHI.Name = "DIACHI";
+            this.DIACHI.OptionsColumn.ReadOnly = true;
             this.DIACHI.Visible = true;
             this.DIACHI.VisibleIndex = 7;
             this.DIACHI.Width = 150;
@@ -778,6 +786,7 @@
             this.HINHANH.MaxWidth = 150;
             this.HINHANH.MinWidth = 150;
             this.HINHANH.Name = "HINHANH";
+            this.HINHANH.OptionsColumn.ReadOnly = true;
             this.HINHANH.Width = 150;
             // 
             // repositoryItemLookUpEdit2

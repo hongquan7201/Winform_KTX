@@ -566,12 +566,13 @@
             this.MASV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MASV.Caption = "MÃ SV";
             this.MASV.FieldName = "MASV";
-            this.MASV.MaxWidth = 100;
-            this.MASV.MinWidth = 100;
+            this.MASV.MaxWidth = 90;
+            this.MASV.MinWidth = 90;
             this.MASV.Name = "MASV";
+            this.MASV.OptionsColumn.ReadOnly = true;
             this.MASV.Visible = true;
             this.MASV.VisibleIndex = 0;
-            this.MASV.Width = 100;
+            this.MASV.Width = 90;
             // 
             // TENSV
             // 
@@ -587,12 +588,13 @@
             this.TENSV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TENSV.Caption = "TÊN SINH VIÊN";
             this.TENSV.FieldName = "TENSV";
-            this.TENSV.MaxWidth = 130;
-            this.TENSV.MinWidth = 130;
+            this.TENSV.MaxWidth = 135;
+            this.TENSV.MinWidth = 135;
             this.TENSV.Name = "TENSV";
+            this.TENSV.OptionsColumn.ReadOnly = true;
             this.TENSV.Visible = true;
             this.TENSV.VisibleIndex = 1;
-            this.TENSV.Width = 130;
+            this.TENSV.Width = 135;
             // 
             // EMAIL
             // 
@@ -611,6 +613,7 @@
             this.EMAIL.MaxWidth = 150;
             this.EMAIL.MinWidth = 150;
             this.EMAIL.Name = "EMAIL";
+            this.EMAIL.OptionsColumn.ReadOnly = true;
             this.EMAIL.Width = 150;
             // 
             // PHONG
@@ -630,6 +633,7 @@
             this.PHONG.MaxWidth = 120;
             this.PHONG.MinWidth = 120;
             this.PHONG.Name = "PHONG";
+            this.PHONG.OptionsColumn.ReadOnly = true;
             this.PHONG.Visible = true;
             this.PHONG.VisibleIndex = 2;
             this.PHONG.Width = 120;
@@ -651,6 +655,7 @@
             this.EMAILNV.MaxWidth = 150;
             this.EMAILNV.MinWidth = 150;
             this.EMAILNV.Name = "EMAILNV";
+            this.EMAILNV.OptionsColumn.ReadOnly = true;
             this.EMAILNV.Width = 150;
             // 
             // NHANVIENLAP
@@ -670,6 +675,7 @@
             this.NHANVIENLAP.MaxWidth = 130;
             this.NHANVIENLAP.MinWidth = 130;
             this.NHANVIENLAP.Name = "NHANVIENLAP";
+            this.NHANVIENLAP.OptionsColumn.ReadOnly = true;
             this.NHANVIENLAP.Visible = true;
             this.NHANVIENLAP.VisibleIndex = 3;
             this.NHANVIENLAP.Width = 130;
@@ -691,6 +697,7 @@
             this.NGAYBATDAU.MaxWidth = 150;
             this.NGAYBATDAU.MinWidth = 150;
             this.NGAYBATDAU.Name = "NGAYBATDAU";
+            this.NGAYBATDAU.OptionsColumn.ReadOnly = true;
             this.NGAYBATDAU.Visible = true;
             this.NGAYBATDAU.VisibleIndex = 4;
             this.NGAYBATDAU.Width = 150;
@@ -712,6 +719,7 @@
             this.NGAYKETTHUC.MaxWidth = 150;
             this.NGAYKETTHUC.MinWidth = 150;
             this.NGAYKETTHUC.Name = "NGAYKETTHUC";
+            this.NGAYKETTHUC.OptionsColumn.ReadOnly = true;
             this.NGAYKETTHUC.Visible = true;
             this.NGAYKETTHUC.VisibleIndex = 5;
             this.NGAYKETTHUC.Width = 150;
@@ -746,7 +754,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLHopDong.IconOptions.Icon")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmQLiHopDong.IconOptions.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmQLiHopDong";
