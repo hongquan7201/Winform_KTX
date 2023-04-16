@@ -65,7 +65,7 @@ namespace ProjectQLKTX
             txtEmail.Text = nhanvien.Email;
             txtDiaChi.Text = nhanvien.Address;
             dtNgayDangKy.Text = nhanvien.CreateAt.ToString();
-            dtNgaySinh.Text = nhanvien.Birthday;
+            dtNgaySinh.Text = nhanvien.Birthday.ToString();
             txtCCCD.Text = nhanvien.Cccd;
             txtSDT.Text = nhanvien.Sdt;
             cbGioiTinh.Text = nhanvien.GioiTinh;

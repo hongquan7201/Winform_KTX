@@ -563,11 +563,18 @@
             // 
             // STT
             // 
+            STT.AppearanceCell.Options.UseTextOptions = true;
+            STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            STT.AppearanceHeader.Options.UseTextOptions = true;
+            STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             STT.Caption = "STT";
             STT.FieldName = "STT";
+            STT.MaxWidth = 30;
+            STT.MinWidth = 30;
             STT.Name = "STT";
             STT.Visible = true;
-            STT.VisibleIndex = 8;
+            STT.VisibleIndex = 0;
+            STT.Width = 30;
             // 
             // EMAIL
             // 
@@ -582,8 +589,7 @@
             EMAIL.AppearanceHeader.Options.UseTextOptions = true;
             EMAIL.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             EMAIL.Caption = "EMAIL";
-            EMAIL.FieldName = "email";
-            EMAIL.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            EMAIL.FieldName = "Email";
             EMAIL.MaxWidth = 150;
             EMAIL.MinWidth = 150;
             EMAIL.Name = "EMAIL";
@@ -605,14 +611,13 @@
             TENNV.AppearanceHeader.Options.UseTextOptions = true;
             TENNV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             TENNV.Caption = "TÊN NHÂN VIÊN";
-            TENNV.FieldName = "name";
-            TENNV.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            TENNV.FieldName = "Name";
             TENNV.MaxWidth = 150;
             TENNV.MinWidth = 150;
             TENNV.Name = "TENNV";
             TENNV.OptionsColumn.ReadOnly = true;
             TENNV.Visible = true;
-            TENNV.VisibleIndex = 0;
+            TENNV.VisibleIndex = 2;
             TENNV.Width = 150;
             // 
             // GIOITINH
@@ -634,7 +639,7 @@
             GIOITINH.Name = "GIOITINH";
             GIOITINH.OptionsColumn.ReadOnly = true;
             GIOITINH.Visible = true;
-            GIOITINH.VisibleIndex = 2;
+            GIOITINH.VisibleIndex = 3;
             GIOITINH.Width = 120;
             // 
             // NGAYSINH
@@ -656,7 +661,7 @@
             NGAYSINH.Name = "NGAYSINH";
             NGAYSINH.OptionsColumn.ReadOnly = true;
             NGAYSINH.Visible = true;
-            NGAYSINH.VisibleIndex = 3;
+            NGAYSINH.VisibleIndex = 4;
             NGAYSINH.Width = 130;
             // 
             // SDT
@@ -678,7 +683,7 @@
             SDT.Name = "SDT";
             SDT.OptionsColumn.ReadOnly = true;
             SDT.Visible = true;
-            SDT.VisibleIndex = 4;
+            SDT.VisibleIndex = 5;
             SDT.Width = 130;
             // 
             // CCCD
@@ -700,7 +705,7 @@
             CCCD.Name = "CCCD";
             CCCD.OptionsColumn.ReadOnly = true;
             CCCD.Visible = true;
-            CCCD.VisibleIndex = 5;
+            CCCD.VisibleIndex = 6;
             CCCD.Width = 130;
             // 
             // NGAYDANGKY
@@ -723,7 +728,7 @@
             NGAYDANGKY.Name = "NGAYDANGKY";
             NGAYDANGKY.OptionsColumn.ReadOnly = true;
             NGAYDANGKY.Visible = true;
-            NGAYDANGKY.VisibleIndex = 6;
+            NGAYDANGKY.VisibleIndex = 7;
             NGAYDANGKY.Width = 130;
             // 
             // DIACHI
@@ -745,7 +750,7 @@
             DIACHI.Name = "DIACHI";
             DIACHI.OptionsColumn.ReadOnly = true;
             DIACHI.Visible = true;
-            DIACHI.VisibleIndex = 7;
+            DIACHI.VisibleIndex = 8;
             DIACHI.Width = 150;
             // 
             // HINHANH
