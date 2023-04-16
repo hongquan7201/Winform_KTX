@@ -8,7 +8,7 @@ namespace ProjectQLKTX.Interface
         Task<APIRespone<List<Phong>>> GetListPhong();
         Task<APIRespone<List<Phong>>> GetPhong(Guid? id);
         Task<APIRespone<string>> AddPhong(Phong phong);
-        Task<APIRespone<string>> EditPhong(Guid id,Phong phong);
+        Task<APIRespone<string>> EditPhong(Phong phong);
         Task<APIRespone<string>> DeletePhong(Guid id);
     }
 }
