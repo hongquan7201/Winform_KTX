@@ -2,6 +2,7 @@
 using DevExpress.Utils.Extensions;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using ProjectQLKTX.APIsHelper;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
@@ -17,6 +18,10 @@ namespace ProjectQLKTX
         private readonly IKhuHelper _khuHelper;
         private readonly ITruongHelper _truongHelper;
         List<Sinhvien> _listSinhVien;
+        List<Quanhe> _listQuanhe;
+        List<Phong> _listPhong;
+        List<Khu> _listKhu;
+        private Thannhan _thanNhan { get; set; }
         public frmThongTinSV(ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper)
         {
             InitializeComponent();
@@ -27,6 +32,9 @@ namespace ProjectQLKTX
             _khuHelper = khuHelper;
             _truongHelper = truongHelper;
             _listSinhVien = new List<Sinhvien>();
+            _listKhu = new List<Khu>();
+            _listPhong = new List<Phong>();
+            _listQuanhe = new List<Quanhe>();
         }
 
         private Sinhvien _sinhVien { get; set; }
@@ -130,7 +138,9 @@ namespace ProjectQLKTX
                 foreach (var item in listKhu.data)
                 {
                     cbKhu.Properties.Items.Add(item.Name);
+                    _listKhu.Add(item);
                 }
+
             }
             var listPhong = await _phongHelper.GetListPhong();
             if (listPhong.status == 200)
@@ -138,6 +148,7 @@ namespace ProjectQLKTX
                 foreach (var item in listPhong.data)
                 {
                     cbPhong.Properties.Items.Add(item.Name);
+                    _listPhong.Add(item);
                 }
             }
             var listTruong = await _truongHelper.GetListTruong();
@@ -146,6 +157,7 @@ namespace ProjectQLKTX
                 foreach (var item in listTruong.data)
                 {
                     cbTruong.Properties.Items.Add(item.Name);
+
                 }
             }
 
@@ -226,9 +238,36 @@ namespace ProjectQLKTX
             }
         }
 
-        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private async void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            _sinhVien.Name = txtHoTen.Text;
+            _sinhVien.Email = txtEmail.Text;
+            _sinhVien.Address = txtDiaChi.Text;
+            _sinhVien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
+            _sinhVien.BirthDay = dtNgaySinh.Text;
+            _sinhVien.Cccd = txtCCCD.Text;
+            _sinhVien.Sdt = txtSDT.Text;
+            _sinhVien.MaSv = txtMaSV.Text;
+            _sinhVien.
+            if (cbGioiTinh.Text == "Nam")
+            {
+                _sinhVien.Gender = true;
+            }
+            else
+            {
+                _sinhVien.Gender = false;
+            }
+            var result = await _nhanVienHelper.EditNhanVien(account);
+            try
+            {
+                await LoadSinhVien(_listSinhVien);
+                MessageBox.Show(result.message);
+            }
+            catch (Exception ex)
+            {
+                Log.Error("frmDSNhanVien " + result);
+                Log.Error(ex, ex.Message);
+            }
         }
     }
 }
