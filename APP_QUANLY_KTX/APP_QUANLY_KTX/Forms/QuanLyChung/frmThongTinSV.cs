@@ -21,6 +21,7 @@ namespace ProjectQLKTX
         List<Quanhe> _listQuanhe;
         List<Phong> _listPhong;
         List<Khu> _listKhu;
+        List<Truong> _listTruong;
         private Thannhan _thanNhan { get; set; }
         public frmThongTinSV(ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper)
         {
@@ -35,6 +36,7 @@ namespace ProjectQLKTX
             _listKhu = new List<Khu>();
             _listPhong = new List<Phong>();
             _listQuanhe = new List<Quanhe>();
+            _listTruong = new List<Truong>();
         }
 
         private Sinhvien _sinhVien { get; set; }
@@ -157,10 +159,18 @@ namespace ProjectQLKTX
                 foreach (var item in listTruong.data)
                 {
                     cbTruong.Properties.Items.Add(item.Name);
-
+                    _listTruong.Add(item);
                 }
             }
-
+            var listQuanHe = await _quanHeHelper.GetListQuanHe();
+            if (listQuanHe.status == 200)
+            {
+                foreach (var item in listQuanHe.data)
+                {
+                    cbQuanHe.Properties.Items.Add(item.Name);
+                    _listQuanhe.Add(item);
+                }
+            }
         }
         private async void frmThongTinSV_Load(object sender, EventArgs e)
         {
@@ -202,7 +212,7 @@ namespace ProjectQLKTX
             txtEmail.Text = sinhVien.Email;
             txtDiaChi.Text = sinhVien.Address;
             txtDiaChiTN.Text = sinhVien.AddressThanNha;
-            txtQuanHe.Text = sinhVien.QuanHe;
+            cbQuanHe.Text = sinhVien.QuanHe;
             txtSDTTN.Text = sinhVien.SDTThanNhan;
             txtTenTN.Text = sinhVien.TenThanNhan;
             cbKhu.Text = sinhVien.Khu;
@@ -248,7 +258,7 @@ namespace ProjectQLKTX
             _sinhVien.Cccd = txtCCCD.Text;
             _sinhVien.Sdt = txtSDT.Text;
             _sinhVien.MaSv = txtMaSV.Text;
-            _sinhVien.
+            // _sinhVien.
             if (cbGioiTinh.Text == "Nam")
             {
                 _sinhVien.Gender = true;
@@ -257,17 +267,33 @@ namespace ProjectQLKTX
             {
                 _sinhVien.Gender = false;
             }
-            var result = await _nhanVienHelper.EditNhanVien(account);
+            //  var result = await _sinhVienHelper.EditSinhVien()
+            //try
+            //{
+            //    await LoadSinhVien(_listSinhVien);
+            //    MessageBox.Show(result.message);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Log.Error("frmDSNhanVien " + result);
+            //    Log.Error(ex, ex.Message);
+            //}
+        }
+
+        private async void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var deleteById = await _sinhVienHelper.DeleteSinhVien(_sinhVien.Id);
             try
             {
-                await LoadSinhVien(_listSinhVien);
-                MessageBox.Show(result.message);
-            }
-            catch (Exception ex)
+                if (deleteById.status == 200)
+                {
+                    MessageBox.Show(deleteById.message);
+                }
+            }catch (Exception ex)
             {
-                Log.Error("frmDSNhanVien " + result);
-                Log.Error(ex, ex.Message);
+                Log.Error(ex,ex.Message,ex.StackTrace);
             }
+           
         }
     }
 }

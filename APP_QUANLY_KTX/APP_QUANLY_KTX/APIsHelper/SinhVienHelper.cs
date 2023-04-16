@@ -27,10 +27,11 @@ namespace ProjectQLKTX.APIsHelper
 
         public async Task<APIRespone<string>> DeleteSinhVien(Guid id)
         {
+
             HttpClient httpClient = new HttpClient();
             string url = Constant.Domain + "/api/user/delete"; // Thay đổi đường dẫn API của bạn
             var request = new HttpRequestMessage(HttpMethod.Delete, url);
-            request.Content = new StringContent(id.ToString(), System.Text.Encoding.UTF8, "application/json");
+            request.Content = new StringContent(JsonConvert.SerializeObject(id), System.Text.Encoding.UTF8, "application/json"); // Chuyển đối tượng id thành chuỗi JSON và đặt nội dung của request là chuỗi JSON này
             var response = await httpClient.SendAsync(request);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
@@ -45,7 +46,7 @@ namespace ProjectQLKTX.APIsHelper
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(sinhVien, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/user/edit/{id}", content);
+            var response = await httpClient.PutAsync($"api/user/edit?id={id}", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
