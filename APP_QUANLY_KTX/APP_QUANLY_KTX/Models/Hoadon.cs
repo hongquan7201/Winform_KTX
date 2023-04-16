@@ -1,4 +1,5 @@
-﻿using DevExpress.CodeParser;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ProjectQLKTX.Models;
 
@@ -6,11 +7,13 @@ public partial class Hoadon
 {
     public Guid Id { get; set; }
 
+    public Guid? IdSinhVien { get; set; }
+
+    public Guid? IdNhanVien { get; set; }
+
     public Guid? IdPhong { get; set; }
 
     public Guid? IdLoai { get; set; }
-
-    public Guid? IdCongTo { get; set; }
 
     public DateTime? CreateAt { get; set; }
 
@@ -18,9 +21,11 @@ public partial class Hoadon
 
     public bool? Status { get; set; }
 
-    public virtual Const? IdCongToNavigation { get; set; }
-
     public virtual Loaihoadon? IdLoaiNavigation { get; set; }
 
+    public virtual Nhanvien? IdNhanVienNavigation { get; set; }
+
     public virtual Phong? IdPhongNavigation { get; set; }
+
+    public virtual Sinhvien? IdSinhVienNavigation { get; set; }
 }

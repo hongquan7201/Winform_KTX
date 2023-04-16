@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace ProjectQLKTX.Models;
 
-public  class Xe
+public partial class Xe
 {
     public Guid Id { get; set; }
 
-    public string Name { get; set; } = null!;
+    public string? Name { get; set; }
 
-    public string Color { get; set; } = null!;
+    public string? Color { get; set; }
 
-    public string Code { get; set; } = null!;
+    public string? Code { get; set; }
 
     public DateTime? CreateAt { get; set; }
 
@@ -21,9 +21,9 @@ public  class Xe
 
     public Guid? IdLoaiXe { get; set; }
 
-    public  Khu? IdKhuNavigation { get; set; }
+    public virtual Khu? IdKhuNavigation { get; set; }
 
-    public  Loaixe? IdLoaiXeNavigation { get; set; }
+    public virtual Loaixe? IdLoaiXeNavigation { get; set; }
 
-    public  Sinhvien? IdUserNavigation { get; set; }
+    public virtual Sinhvien? IdUserNavigation { get; set; }
 }

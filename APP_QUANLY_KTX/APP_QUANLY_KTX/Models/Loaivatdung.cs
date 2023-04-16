@@ -1,10 +1,13 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public  class Loaivatdung
+namespace ProjectQLKTX.Models;
+
+public partial class Loaivatdung
 {
     public Guid Id { get; set; }
 
     public string Name { get; set; } = null!;
 
-    public  ICollection<Vatdung> Vatdungs { get; } = new List<Vatdung>();
+    public virtual ICollection<Vatdung> Vatdungs { get; } = new List<Vatdung>();
 }

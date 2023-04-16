@@ -1,6 +1,9 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public class Khu
+namespace ProjectQLKTX.Models;
+
+public partial class Khu
 {
     public Guid Id { get; set; }
 
@@ -10,9 +13,9 @@ public class Khu
 
     public Guid? IdLoaiKhu { get; set; }
 
-    public  Loaikhu? IdLoaiKhuNavigation { get; set; }
+    public virtual Loaikhu? IdLoaiKhuNavigation { get; set; }
 
-    public  ICollection<Phong> Phongs { get; } = new List<Phong>();
+    public virtual ICollection<Phong> Phongs { get; } = new List<Phong>();
 
-    public  ICollection<Xe> Xes { get; } = new List<Xe>();
+    public virtual ICollection<Xe> Xes { get; } = new List<Xe>();
 }

@@ -1,14 +1,21 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public class Taisan
+namespace ProjectQLKTX.Models;
+
+public partial class Taisan
 {
     public Guid Id { get; set; }
 
-    public int? Quatity { get; set; }
+    public int? Quantity { get; set; }
 
     public bool? Status { get; set; }
 
     public Guid? IdVatDung { get; set; }
 
-    public  Vatdung? IdVatDungNavigation { get; set; }
+    public Guid IdPhong { get; set; }
+
+    public virtual Phong IdPhongNavigation { get; set; } = null!;
+
+    public virtual Vatdung? IdVatDungNavigation { get; set; }
 }

@@ -1,16 +1,27 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public  class Hopdong
+namespace ProjectQLKTX.Models;
+
+public partial class Hopdong
 {
     public Guid Id { get; set; }
 
-    public DateTime? CreateAt { get; set; }
-
     public Guid? IdNhanVien { get; set; }
 
-    public  Nhanvien? IdNhanVienNavigation { get; set; }
+    public Guid? IdSinhVien { get; set; }
 
-    public  ICollection<Phieugiahan> Phieugiahans { get; } = new List<Phieugiahan>();
+    public Guid? IdPhong { get; set; }
 
-    public  ICollection<Sinhvien> Sinhviens { get; } = new List<Sinhvien>();
+    public DateTime? NgayBatDau { get; set; }
+
+    public DateTime? NgayKetThuc { get; set; }
+
+    public DateTime? CreateAt { get; set; }
+
+    public virtual Nhanvien? IdNhanVienNavigation { get; set; }
+
+    public virtual Phong? IdPhongNavigation { get; set; }
+
+    public virtual Sinhvien? IdSinhVienNavigation { get; set; }
 }

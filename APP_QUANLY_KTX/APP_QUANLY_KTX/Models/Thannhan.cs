@@ -1,22 +1,27 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public  class Thannhan
+namespace ProjectQLKTX.Models;
+
+public partial class Thannhan
 {
     public Guid Id { get; set; }
 
     public string Name { get; set; } = null!;
 
-    public string Address { get; set; } = null!;
+    public string? Address { get; set; }
 
-    public string Sdt { get; set; } = null!;
+    public string? Sdt { get; set; }
 
     public bool? Gender { get; set; }
+
+    public string? Birthday { get; set; }
 
     public Guid? IdUser { get; set; }
 
     public Guid? IdQuanHe { get; set; }
 
-    public  Quanhe? IdQuanHeNavigation { get; set; }
+    public virtual Quanhe? IdQuanHeNavigation { get; set; }
 
-    public  Sinhvien? IdUserNavigation { get; set; }
+    public virtual Sinhvien? IdUserNavigation { get; set; }
 }

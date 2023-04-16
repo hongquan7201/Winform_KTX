@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace ProjectQLKTX.Models;
 
-public class Chitietphieukho
+public partial class Chitietphieukho
 {
     public Guid Id { get; set; }
 
-    public int? Quatity { get; set; }
+    public int? Quantity { get; set; }
 
     public bool? Status { get; set; }
 
@@ -17,9 +17,9 @@ public class Chitietphieukho
 
     public Guid? IdNhanVien { get; set; }
 
-    public  Nhanvien? IdNhanVienNavigation { get; set; }
+    public virtual Nhanvien? IdNhanVienNavigation { get; set; }
 
-    public  Phieukho? IdPhieuKhoNavigation { get; set; }
+    public virtual Phieukho? IdPhieuKhoNavigation { get; set; }
 
-    public  Vatdung? IdVatDungNavigation { get; set; }
+    public virtual Vatdung? IdVatDungNavigation { get; set; }
 }

@@ -1,6 +1,9 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public class Phieukho
+namespace ProjectQLKTX.Models;
+
+public partial class Phieukho
 {
     public Guid Id { get; set; }
 
@@ -10,7 +13,7 @@ public class Phieukho
 
     public Guid? IdKho { get; set; }
 
-    public  ICollection<Chitietphieukho> Chitietphieukhos { get; } = new List<Chitietphieukho>();
+    public virtual ICollection<Chitietphieukho> Chitietphieukhos { get; } = new List<Chitietphieukho>();
 
-    public  Kho? IdKhoNavigation { get; set; }
+    public virtual Kho? IdKhoNavigation { get; set; }
 }

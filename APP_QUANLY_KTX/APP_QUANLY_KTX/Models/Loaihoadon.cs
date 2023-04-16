@@ -1,10 +1,13 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public class Loaihoadon
+namespace ProjectQLKTX.Models;
+
+public partial class Loaihoadon
 {
     public Guid Id { get; set; }
 
     public string Name { get; set; } = null!;
 
-    public  ICollection<Hoadon> Hoadons { get; } = new List<Hoadon>();
+    public virtual ICollection<Hoadon> Hoadons { get; } = new List<Hoadon>();
 }

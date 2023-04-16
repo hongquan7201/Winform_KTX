@@ -1,18 +1,27 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public class Bienlai
+namespace ProjectQLKTX.Models;
+
+public partial class Bienlai
 {
     public Guid Id { get; set; }
 
-    public decimal? Total { get; set; }
-
     public Guid? IdNhanVien { get; set; }
 
-    public Guid? IdPhieuGiaHan { get; set; }
+    public Guid? IdSinhVien { get; set; }
 
-    public DateTime? CreateAt { get; set; }
+    public DateTime? NgayDong { get; set; }
 
-    public  Nhanvien? IdNhanVienNavigation { get; set; }
+    public DateTime NgayBatDau { get; set; }
 
-    public  Phieugiahan? IdPhieuGiaHanNavigation { get; set; }
+    public DateTime? NgayHetHan { get; set; }
+
+    public decimal? Total { get; set; }
+
+    public bool? Status { get; set; }
+
+    public virtual Nhanvien? IdNhanVienNavigation { get; set; }
+
+    public virtual Sinhvien? IdSinhVienNavigation { get; set; }
 }

@@ -8,7 +8,7 @@ namespace ProjectQLKTX.Interface
         Task<APIRespone<List<Nhanvien>>> GetListNhanVien();
         Task< APIRespone<Nhanvien>> GetNhanVien(Guid id);
         Task<APIRespone<string>> AddNhanVien(Nhanvien nhanVien);
-        Task <APIRespone<string>> EditNhanVien(Guid id,Nhanvien nhanVien);
+        Task <APIRespone<string>> EditNhanVien(Nhanvien nhanVien);
         Task<APIRespone<string>> DeleteNhanVien(Guid id);
     }
 }

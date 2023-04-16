@@ -1,12 +1,15 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public  class Vatdung
+namespace ProjectQLKTX.Models;
+
+public partial class Vatdung
 {
     public Guid Id { get; set; }
 
     public string Name { get; set; } = null!;
 
-    public int? Quatity { get; set; }
+    public int? Quantity { get; set; }
 
     public bool? Status { get; set; }
 
@@ -14,11 +17,11 @@ public  class Vatdung
 
     public Guid? IdKho { get; set; }
 
-    public  ICollection<Chitietphieukho> Chitietphieukhos { get; } = new List<Chitietphieukho>();
+    public virtual ICollection<Chitietphieukho> Chitietphieukhos { get; } = new List<Chitietphieukho>();
 
-    public  Kho? IdKhoNavigation { get; set; }
+    public virtual Kho? IdKhoNavigation { get; set; }
 
-    public  Loaivatdung? IdLoaiVatDungNavigation { get; set; }
+    public virtual Loaivatdung? IdLoaiVatDungNavigation { get; set; }
 
-    public  ICollection<Taisan> Taisans { get; } = new List<Taisan>();
+    public virtual ICollection<Taisan> Taisans { get; } = new List<Taisan>();
 }

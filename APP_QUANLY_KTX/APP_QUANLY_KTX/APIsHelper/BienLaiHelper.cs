@@ -29,8 +29,8 @@ namespace ProjectQLKTX.APIsHelper
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/bienlai/delete/{0}";
-            var response = await httpClient.GetAsync(string.Format(query, id));
+            string query = "/api/bienlai/delete";
+            var response = await httpClient.DeleteAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;

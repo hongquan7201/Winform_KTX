@@ -61,7 +61,7 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Phong>> GetPhong(Guid id)
+        public async Task<APIRespone<Phong>> GetPhong(Guid? id)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);

@@ -1,10 +1,13 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public  class Truong
+namespace ProjectQLKTX.Models;
+
+public partial class Truong
 {
     public Guid Id { get; set; }
 
     public string Name { get; set; } = null!;
 
-    public  ICollection<Sinhvien> Sinhviens { get; } = new List<Sinhvien>();
+    public virtual ICollection<Sinhvien> Sinhviens { get; } = new List<Sinhvien>();
 }

@@ -1,14 +1,25 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public class Congto
+namespace ProjectQLKTX.Models;
+
+public partial class Congto
 {
     public Guid Id { get; set; }
 
     public string Name { get; set; } = null!;
 
-    public  ICollection<Chitietcongto> Chitietcongtos { get; } = new List<Chitietcongto>();
+    public int ChiSoDauThang { get; set; }
 
-    public  ICollection<Congto> Congtos { get; } = new List<Congto>();
+    public int ChiSoCuoiThang { get; set; }
 
-    public  ICollection<Phong> Phongs { get; } = new List<Phong>();
+    public Guid? IdLoaiCongTo { get; set; }
+
+    public Guid? IdPhong { get; set; }
+
+    public string? NgayUpdate { get; set; }
+
+    public virtual Loaicongto? IdLoaiCongToNavigation { get; set; }
+
+    public virtual Phong? IdPhongNavigation { get; set; }
 }

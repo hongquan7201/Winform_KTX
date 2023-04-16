@@ -1,12 +1,15 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public class Phieugiahan
+namespace ProjectQLKTX.Models;
+
+public partial class Phieugiahan
 {
     public Guid Id { get; set; }
 
-    public DateTime? DayStart { get; set; }
+    public string? DayStart { get; set; }
 
-    public DateTime? DayEnd { get; set; }
+    public string? DayEnd { get; set; }
 
     public bool? Status { get; set; }
 
@@ -14,9 +17,9 @@ public class Phieugiahan
 
     public Guid? IdHopDong { get; set; }
 
-    public  ICollection<Congto> HoaDons { get; } = new List<Congto>();
+    public virtual ICollection<Bienlai> Bienlais { get; } = new List<Bienlai>();
 
-    public  Hopdong? IdHopDongNavigation { get; set; }
+    public virtual Hopdong? IdHopDongNavigation { get; set; }
 
-    public  Sinhvien? IdUserNavigation { get; set; }
+    public virtual Sinhvien? IdUserNavigation { get; set; }
 }

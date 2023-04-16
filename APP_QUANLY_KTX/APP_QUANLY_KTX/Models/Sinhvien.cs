@@ -1,10 +1,15 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public class Sinhvien
+namespace ProjectQLKTX.Models;
+
+public partial class Sinhvien
 {
     public Guid Id { get; set; }
+    public string? Email { get; set; }
+    public string? GioiTinh { get; set; }
 
-    public string Email { get; set; } = null!;
+    public string MaSv { get; set; } = null!;
 
     public string Password { get; set; } = null!;
 
@@ -22,27 +27,40 @@ public class Sinhvien
 
     public Guid? IdTruong { get; set; }
 
-    public int? Warning { get; set; }
-
-    public DateTime? BirthDay { get; set; }
-
-    public Guid? IdHopDong { get; set; }
+    public string? BirthDay { get; set; }
 
     public bool? Status { get; set; }
 
     public string? Code { get; set; }
 
     public DateTime? CreateAt { get; set; }
+    /// <summary>
+    /// //////////////////
+    /// </summary>
+    public string? TenThanNhan { get;set; }
+    public string? BirthDayThanNhan { get; set; }
+    public string? GioiTinhThanNhan { get; set; }
+    public string? AddressThanNha { get; set; }
+    public string? SDTThanNhan { get; set; }
+    public string? QuanHe { get;set; }
+/// <summary>
+/// ////////
+/// </summary>
+    public string? Truong { get; set; }
+    public string? Phong { get; set; }
+    public string? Khu { get;set; }
 
-    public  Hopdong? IdHopDongNavigation { get; set; }
+    public virtual ICollection<Bienlai> Bienlais { get; } = new List<Bienlai>();
 
-    public  Phong? IdPhongNavigation { get; set; }
+    public virtual ICollection<Hoadon> Hoadons { get; } = new List<Hoadon>();
 
-    public  Truong? IdTruongNavigation { get; set; }
+    public virtual ICollection<Hopdong> Hopdongs { get; } = new List<Hopdong>();
 
-    public  ICollection<Phieugiahan> Phieugiahans { get; } = new List<Phieugiahan>();
+    public virtual Phong? IdPhongNavigation { get; set; }
 
-    public  ICollection<Thannhan> Thannhans { get; } = new List<Thannhan>();
+    public virtual Truong? IdTruongNavigation { get; set; }
 
-    public  ICollection<Xe> Xes { get; } = new List<Xe>();
+    public virtual ICollection<Thannhan> Thannhans { get; } = new List<Thannhan>();
+
+    public virtual ICollection<Xe> Xes { get; } = new List<Xe>();
 }

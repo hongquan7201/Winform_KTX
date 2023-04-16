@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Forms\DanhMucPhong\frmDSPhong.cs">
+    <Compile Update="Forms\QuanLyChung\frmBaoCaoDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\QuanLyChung\frmSinhVienCungPhong.cs">
+    <Compile Update="Forms\QuanLyChung\frmBienLai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\QuanLyChung\frmBaoCaoThongKe.cs">
+    <Compile Update="Forms\QuanLyChung\frmQLKho.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\DanhMucPhong\frmChuyenPhong.cs">
@@ -25,12 +25,6 @@
     <Compile Update="Forms\QuanLyChung\frmQLHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\QuanLyChung\frmDSKyLuat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\QuanLyChung\frmDSTrangThietBi.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\QuanLyChung\frmQLHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -40,22 +34,16 @@
     <Compile Update="Forms\DanhMucPhong\frmQLPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\QuanLyChung\frmDSSinhVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\DanhMucPhong\frmGiaHan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\QuanLyChung\frmThanhToan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\QuanLyChung\frmThanNhanSV.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\DanhMucPhong\frmTraPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\QuanLyChung\frmQLNhaXe.cs">
+    <Compile Update="Forms\QuanLyChung\frmQLTaiSan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\QuanLyChung\frmQLXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\QuanLyChung\frmThongKeSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\QuanLyChung\frmThongTinSV.cs">

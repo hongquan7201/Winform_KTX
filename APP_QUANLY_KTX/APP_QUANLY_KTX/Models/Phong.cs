@@ -1,6 +1,9 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public  class Phong
+namespace ProjectQLKTX.Models;
+
+public partial class Phong
 {
     public Guid Id { get; set; }
 
@@ -8,17 +11,19 @@ public  class Phong
 
     public bool? Status { get; set; }
 
-    public int? QuatityPeople { get; set; }
-
-    public Guid? IdHoaDon { get; set; }
+    public int? QuantityPeople { get; set; }
 
     public Guid? IdKhu { get; set; }
 
-    public  ICollection<Hoadon> Hoadons { get; } = new List<Hoadon>();
+    public virtual ICollection<Congto> Congtos { get; } = new List<Congto>();
 
-    public  Congto? IdHoaDonNavigation { get; set; }
+    public virtual ICollection<Hoadon> Hoadons { get; } = new List<Hoadon>();
 
-    public  Khu? IdKhuNavigation { get; set; }
+    public virtual ICollection<Hopdong> Hopdongs { get; } = new List<Hopdong>();
 
-    public  ICollection<Sinhvien> Sinhviens { get; } = new List<Sinhvien>();
+    public virtual Khu? IdKhuNavigation { get; set; }
+
+    public virtual ICollection<Sinhvien> Sinhviens { get; } = new List<Sinhvien>();
+
+    public virtual ICollection<Taisan> Taisans { get; } = new List<Taisan>();
 }

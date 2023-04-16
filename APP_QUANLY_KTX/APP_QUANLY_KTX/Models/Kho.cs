@@ -1,6 +1,9 @@
-﻿namespace ProjectQLKTX.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public class Kho
+namespace ProjectQLKTX.Models;
+
+public partial class Kho
 {
     public Guid Id { get; set; }
 
@@ -8,7 +11,7 @@ public class Kho
 
     public bool? Status { get; set; }
 
-    public  ICollection<Phieukho> Phieukhos { get; } = new List<Phieukho>();
+    public virtual ICollection<Phieukho> Phieukhos { get; } = new List<Phieukho>();
 
-    public  ICollection<Vatdung> Vatdungs { get; } = new List<Vatdung>();
+    public virtual ICollection<Vatdung> Vatdungs { get; } = new List<Vatdung>();
 }
