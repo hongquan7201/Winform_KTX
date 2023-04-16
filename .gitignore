@@ -56,3 +56,5 @@
 *.targets
 /APP_QUANLY_KTX/.vs/APP_QUANLY_KTX/DesignTimeBuild/.dtbcache.v2
 /APP_QUANLY_KTX/.vs/APP_QUANLY_KTX/v17/.suo
+/APP_QUANLY_KTX/APP_QUANLY_KTX/Forms/QuanLyChung/frmThongTinSV.Designer.cs
+/APP_QUANLY_KTX/APP_QUANLY_KTX/Forms/QuanLyChung/frmThongTinSV.resx
