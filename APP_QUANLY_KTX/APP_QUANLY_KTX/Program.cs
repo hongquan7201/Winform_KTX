@@ -82,6 +82,12 @@ namespace ProjectQLKTX
                     services.AddTransient<ILoginHelper, LoginHelper>();
                     services.AddTransient<IBienLaiHelper, BienLaiHelper>();
                     services.AddTransient<INhanVienHelper, NhanVienHelper>();
+                    services.AddTransient<ISinhVienHelper, SinhVienHelper>();
+                    services.AddTransient<IThanNhanHelper, ThanNhanHelper>();
+                    services.AddTransient<IPhongHelper, PhongHelper>();
+                    services.AddTransient<IKhuHelper, KhuHelper>();
+                    services.AddTransient<ITruongHelper, TruongHelper>();
+                    services.AddTransient<IQuanHeHelper, QuanHeHelper>();
                 }).Build();
         }
     }

@@ -26,6 +26,8 @@ public partial class Sinhvien
     public Guid? IdPhong { get; set; }
 
     public Guid? IdTruong { get; set; }
+    public Guid? idXe { get; set; }
+    public Guid? idThanNhan { get; set; }
 
     public string? BirthDay { get; set; }
 

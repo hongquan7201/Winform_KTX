@@ -37,19 +37,40 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public Task<APIRespone<string>> EditTruong(Truong truong)
+        public async Task<APIRespone<string>> EditTruong(Truong truong)
         {
-            throw new NotImplementedException();
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+            var json = JsonConvert.SerializeObject(truong, jsonSerializerSettings);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await httpClient.PutAsync($"api/truong/edit", content);
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
+            return data;
         }
 
-        public Task<APIRespone<List<Truong>>> GetListTruong()
+        public async Task<APIRespone<List<Truong>>> GetListTruong()
         {
-            throw new NotImplementedException();
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            string query = "/api/truong";
+            var response = await httpClient.GetAsync(query);
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<List<Truong>> data = JsonConvert.DeserializeObject<APIRespone<List<Truong>>>(body);
+            return data;
         }
 
-        public Task<APIRespone<Truong>> GetTruong(Guid id)
+        public async Task<APIRespone<List<Truong>>> GetTruong(Guid? id)
         {
-            throw new NotImplementedException();
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            string query = "/api/truong/id?id={0}";
+            var response = await httpClient.GetAsync(string.Format(query, id));
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<List<Truong>> data = JsonConvert.DeserializeObject<APIRespone<List<Truong>>>(body);
+            return data;
         }
     }
 }

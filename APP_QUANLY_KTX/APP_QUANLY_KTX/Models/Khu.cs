@@ -9,8 +9,6 @@ public partial class Khu
 
     public string Name { get; set; } = null!;
 
-    public bool? Status { get; set; }
-
     public Guid? IdLoaiKhu { get; set; }
 
     public virtual Loaikhu? IdLoaiKhuNavigation { get; set; }

@@ -62,14 +62,14 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Quanhe>> GetQuanHe(Guid id)
+        public async Task<APIRespone<List<Quanhe>>> GetQuanHe(Guid? id)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/quanhe/{0}";
+            string query = "/api/quanhe/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<Quanhe> data = JsonConvert.DeserializeObject<APIRespone<Quanhe>>(body);
+            APIRespone<List<Quanhe>> data = JsonConvert.DeserializeObject<APIRespone<List<Quanhe>>>(body);
             return data;
         }
     }

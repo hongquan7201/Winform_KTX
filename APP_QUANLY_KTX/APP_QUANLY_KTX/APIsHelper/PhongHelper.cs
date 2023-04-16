@@ -62,14 +62,14 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Phong>> GetPhong(Guid? id)
+        public async Task<APIRespone<List<Phong>>> GetPhong(Guid? id)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/phong/{0}";
+            string query = "/api/phong/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<Phong> data = JsonConvert.DeserializeObject<APIRespone<Phong>>(body);
+            APIRespone<List<Phong>> data = JsonConvert.DeserializeObject<APIRespone<List<Phong>>>(body);
             return data;
         }
     }

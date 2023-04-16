@@ -71,6 +71,7 @@
             labelControl15 = new DevExpress.XtraEditors.LabelControl();
             txtSDTTN = new DevExpress.XtraEditors.TextEdit();
             gcDanhSach = new DevExpress.XtraGrid.GridControl();
+            sinhvienBindingSource = new BindingSource(components);
             gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             MASV = new DevExpress.XtraGrid.Columns.GridColumn();
             TENSV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -144,6 +145,7 @@
             ((System.ComponentModel.ISupportInitialize)txtTenTN.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtSDTTN.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gcDanhSach).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)sinhvienBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gvDanhSach).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemLookUpEdit2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
@@ -586,13 +588,20 @@
             // 
             // gcDanhSach
             // 
-            gcDanhSach.Location = new Point(3, 24);
+            gcDanhSach.DataSource = sinhvienBindingSource;
+            gcDanhSach.Dock = DockStyle.Fill;
+            gcDanhSach.Location = new Point(2, 23);
             gcDanhSach.MainView = gvDanhSach;
             gcDanhSach.Name = "gcDanhSach";
             gcDanhSach.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repositoryItemLookUpEdit2 });
-            gcDanhSach.Size = new Size(980, 196);
+            gcDanhSach.Size = new Size(981, 200);
             gcDanhSach.TabIndex = 54;
             gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gvDanhSach });
+            gcDanhSach.DoubleClick += gcDanhSach_DoubleClick;
+            // 
+            // sinhvienBindingSource
+            // 
+            sinhvienBindingSource.DataSource = typeof(Models.Sinhvien);
             // 
             // gvDanhSach
             // 
@@ -614,7 +623,7 @@
             MASV.AppearanceHeader.Options.UseTextOptions = true;
             MASV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             MASV.Caption = "MÃ SV";
-            MASV.FieldName = "MASV";
+            MASV.FieldName = "MaSv";
             MASV.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             MASV.MaxWidth = 90;
             MASV.MinWidth = 90;
@@ -637,7 +646,7 @@
             TENSV.AppearanceHeader.Options.UseTextOptions = true;
             TENSV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             TENSV.Caption = "TÊN SINH VIÊN";
-            TENSV.FieldName = "TENSV";
+            TENSV.FieldName = "Name";
             TENSV.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             TENSV.MaxWidth = 150;
             TENSV.MinWidth = 150;
@@ -660,7 +669,7 @@
             GIOITINH.AppearanceHeader.Options.UseTextOptions = true;
             GIOITINH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             GIOITINH.Caption = "GIỚI TÍNH";
-            GIOITINH.FieldName = "GIOITINH";
+            GIOITINH.FieldName = "GioiTinh";
             GIOITINH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             GIOITINH.MaxWidth = 100;
             GIOITINH.MinWidth = 100;
@@ -683,7 +692,7 @@
             NGAYSINH.AppearanceHeader.Options.UseTextOptions = true;
             NGAYSINH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             NGAYSINH.Caption = "NGÀY SINH";
-            NGAYSINH.FieldName = "NGAYSINH";
+            NGAYSINH.FieldName = "BirthDay";
             NGAYSINH.MaxWidth = 130;
             NGAYSINH.MinWidth = 130;
             NGAYSINH.Name = "NGAYSINH";
@@ -705,7 +714,7 @@
             SDT.AppearanceHeader.Options.UseTextOptions = true;
             SDT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             SDT.Caption = "SĐT";
-            SDT.FieldName = "SDT";
+            SDT.FieldName = "Sdt";
             SDT.MaxWidth = 120;
             SDT.MinWidth = 120;
             SDT.Name = "SDT";
@@ -727,7 +736,7 @@
             EMAIL.AppearanceHeader.Options.UseTextOptions = true;
             EMAIL.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             EMAIL.Caption = "EMAIL";
-            EMAIL.FieldName = "EMAIL";
+            EMAIL.FieldName = "Email";
             EMAIL.MaxWidth = 150;
             EMAIL.MinWidth = 150;
             EMAIL.Name = "EMAIL";
@@ -747,7 +756,7 @@
             CCCD.AppearanceHeader.Options.UseTextOptions = true;
             CCCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             CCCD.Caption = "CCCD";
-            CCCD.FieldName = "CCCD";
+            CCCD.FieldName = "Cccd";
             CCCD.MaxWidth = 140;
             CCCD.MinWidth = 140;
             CCCD.Name = "CCCD";
@@ -769,7 +778,7 @@
             KHU.AppearanceHeader.Options.UseTextOptions = true;
             KHU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             KHU.Caption = "KHU";
-            KHU.FieldName = "KHU";
+            KHU.FieldName = "Khu";
             KHU.MaxWidth = 100;
             KHU.MinWidth = 100;
             KHU.Name = "KHU";
@@ -791,7 +800,7 @@
             PHONG.AppearanceHeader.Options.UseTextOptions = true;
             PHONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             PHONG.Caption = "PHÒNG";
-            PHONG.FieldName = "PHONG";
+            PHONG.FieldName = "Phong";
             PHONG.MaxWidth = 100;
             PHONG.MinWidth = 100;
             PHONG.Name = "PHONG";
@@ -813,7 +822,7 @@
             TRUONG.AppearanceHeader.Options.UseTextOptions = true;
             TRUONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             TRUONG.Caption = "TRƯỜNG";
-            TRUONG.FieldName = "TRUONG";
+            TRUONG.FieldName = "Truong";
             TRUONG.MaxWidth = 150;
             TRUONG.MinWidth = 150;
             TRUONG.Name = "TRUONG";
@@ -833,7 +842,7 @@
             DIACHI.AppearanceHeader.Options.UseTextOptions = true;
             DIACHI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             DIACHI.Caption = "ĐỊA CHỈ";
-            DIACHI.FieldName = "DIACHI";
+            DIACHI.FieldName = "Address";
             DIACHI.MaxWidth = 150;
             DIACHI.MinWidth = 150;
             DIACHI.Name = "DIACHI";
@@ -853,7 +862,7 @@
             NGAYDANGKY.AppearanceHeader.Options.UseTextOptions = true;
             NGAYDANGKY.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             NGAYDANGKY.Caption = "NGÀY ĐĂNG KÝ";
-            NGAYDANGKY.FieldName = "NGAYDANGKY";
+            NGAYDANGKY.FieldName = "CreateAt";
             NGAYDANGKY.MaxWidth = 130;
             NGAYDANGKY.MinWidth = 130;
             NGAYDANGKY.Name = "NGAYDANGKY";
@@ -875,7 +884,7 @@
             TENTHANNHAN.AppearanceHeader.Options.UseTextOptions = true;
             TENTHANNHAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             TENTHANNHAN.Caption = "TÊN THÂN NHÂN";
-            TENTHANNHAN.FieldName = "TENTHANNHAN";
+            TENTHANNHAN.FieldName = "TenThanNhan";
             TENTHANNHAN.MaxWidth = 150;
             TENTHANNHAN.MinWidth = 150;
             TENTHANNHAN.Name = "TENTHANNHAN";
@@ -895,7 +904,7 @@
             GIOITINHTN.AppearanceHeader.Options.UseTextOptions = true;
             GIOITINHTN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             GIOITINHTN.Caption = "GIỚI TÍNH";
-            GIOITINHTN.FieldName = "GIOITINHTN";
+            GIOITINHTN.FieldName = "GioiTinhThanNhan";
             GIOITINHTN.MaxWidth = 130;
             GIOITINHTN.MinWidth = 130;
             GIOITINHTN.Name = "GIOITINHTN";
@@ -915,7 +924,7 @@
             QUANHE.AppearanceHeader.Options.UseTextOptions = true;
             QUANHE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             QUANHE.Caption = "QUAN HỆ";
-            QUANHE.FieldName = "QUANHE";
+            QUANHE.FieldName = "QuanHe";
             QUANHE.MaxWidth = 120;
             QUANHE.MinWidth = 120;
             QUANHE.Name = "QUANHE";
@@ -937,7 +946,7 @@
             SDTTHANNHAN.AppearanceHeader.Options.UseTextOptions = true;
             SDTTHANNHAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             SDTTHANNHAN.Caption = "SĐT THÂN NHÂN";
-            SDTTHANNHAN.FieldName = "SDTTHANNHAN";
+            SDTTHANNHAN.FieldName = "SDTThanNhan";
             SDTTHANNHAN.MaxWidth = 120;
             SDTTHANNHAN.MinWidth = 120;
             SDTTHANNHAN.Name = "SDTTHANNHAN";
@@ -959,7 +968,7 @@
             DIACHITHANNHAN.AppearanceHeader.Options.UseTextOptions = true;
             DIACHITHANNHAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             DIACHITHANNHAN.Caption = "ĐỊA CHỈ THÂN NHÂN";
-            DIACHITHANNHAN.FieldName = "DIACHITHANNHAN";
+            DIACHITHANNHAN.FieldName = "AddressThanNha";
             DIACHITHANNHAN.MaxWidth = 150;
             DIACHITHANNHAN.MinWidth = 150;
             DIACHITHANNHAN.Name = "DIACHITHANNHAN";
@@ -1036,6 +1045,7 @@
             btnThem.ImageOptions.Image = (Image)resources.GetObject("btnThem.ImageOptions.Image");
             btnThem.ImageOptions.LargeImage = (Image)resources.GetObject("btnThem.ImageOptions.LargeImage");
             btnThem.Name = "btnThem";
+            btnThem.ItemClick += btnThem_ItemClick;
             // 
             // btnSua
             // 
@@ -1249,6 +1259,7 @@
             ((System.ComponentModel.ISupportInitialize)txtTenTN.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtSDTTN.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)gcDanhSach).EndInit();
+            ((System.ComponentModel.ISupportInitialize)sinhvienBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)gvDanhSach).EndInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemLookUpEdit2).EndInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
@@ -1352,5 +1363,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraGrid.Columns.GridColumn EMAIL;
         private DevExpress.XtraGrid.Columns.GridColumn GIOITINHTN;
+        private BindingSource sinhvienBindingSource;
     }
 }

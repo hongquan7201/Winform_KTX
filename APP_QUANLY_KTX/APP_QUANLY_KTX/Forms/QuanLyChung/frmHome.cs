@@ -15,11 +15,23 @@ namespace ProjectQLKTX
     public partial class Home : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private readonly INhanVienHelper _nhanVienHelper;
+        private readonly ISinhVienHelper _sinhVienHelper;
+        private readonly IThanNhanHelper _thanNhanHelper;
+        private readonly IQuanHeHelper _quanHeHelper;
+        private readonly IPhongHelper _phongHelper;
+        private readonly IKhuHelper _khuHelper;
+        private readonly ITruongHelper _truongHelper;
 
-        public Home(INhanVienHelper nhanVienHelper)
+        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper)
         {
             InitializeComponent();
             _nhanVienHelper = nhanVienHelper;
+            _sinhVienHelper = sinhVienHelper;
+            _thanNhanHelper = thanNhanHelper;
+            _quanHeHelper = quanHeHelper;
+            _phongHelper = phongHelper;
+            _khuHelper = khuHelper;
+            _truongHelper = truongHelper;
         }
         //void OpenForm(Type typeForm)
         //{
@@ -65,7 +77,7 @@ namespace ProjectQLKTX
         }
         private void btnThongTinSinhVien_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmThongTinSV frmThongTinCaNhanSV = new frmThongTinSV();
+            frmThongTinSV frmThongTinCaNhanSV = new frmThongTinSV(_sinhVienHelper,_thanNhanHelper,_quanHeHelper,_phongHelper,_khuHelper,_truongHelper);
             frmThongTinCaNhanSV.ShowDialog();
         }
         private void btnDSNhanVien_ItemClick(object sender, ItemClickEventArgs e)

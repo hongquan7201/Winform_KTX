@@ -1,19 +1,31 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 
 namespace ProjectQLKTX.APIsHelper
 {
     public class ThanNhanHelper : IThanNhanHelper
     {
-        public Task<APIRespone<string>> AddThanNhan(Thannhan thanNhan)
+        public async Task<APIRespone<string>> AddThanNhan(Thannhan thanNhan)
         {
-            throw new NotImplementedException();
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+            var json = JsonConvert.SerializeObject(thanNhan, jsonSerializerSettings);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync($"/api/thannhan/add", content);
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
+            return data;
         }
 
-        public async Task<APIRespone<string>> DeleteThanNhan(Guid id)
+        public async Task<APIRespone<string>> DeleteThanNhan(Guid? id)
         {
             HttpClient httpClient = new HttpClient();
             string url = Constant.Domain + "/api/thannhan/delete"; // Thay đổi đường dẫn API của bạn
@@ -25,19 +37,40 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public Task<APIRespone<string>> EditThanNhan(Thannhan thanNhan)
+        public async Task<APIRespone<string>> EditThanNhan(Thannhan thanNhan)
         {
-            throw new NotImplementedException();
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+            var json = JsonConvert.SerializeObject(thanNhan, jsonSerializerSettings);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await httpClient.PutAsync($"api/thannhan/edit", content);
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
+            return data;
         }
 
-        public Task<APIRespone<List<Thannhan>>> GetListThanNhan()
+        public async Task<APIRespone<List<Thannhan>>> GetListThanNhan()
         {
-            throw new NotImplementedException();
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            string query = "/api/thannhan";
+            var response = await httpClient.GetAsync(query);
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<List<Thannhan>> data = JsonConvert.DeserializeObject<APIRespone<List<Thannhan>>>(body);
+            return data;
         }
 
-        public Task<APIRespone<Bienlai>> GetThanNhan(Guid id)
+        public async Task<APIRespone<List<Thannhan>>> GetThanNhan(Guid? id)
         {
-            throw new NotImplementedException();
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            string query = "/api/thannhan/id?id={0}";
+            var response = await httpClient.GetAsync(string.Format(query, id));
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<List<Thannhan>> data = JsonConvert.DeserializeObject<APIRespone<List<Thannhan>>>(body);
+            return data;
         }
     }
 }

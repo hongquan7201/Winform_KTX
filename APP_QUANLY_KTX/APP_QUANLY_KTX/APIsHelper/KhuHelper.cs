@@ -51,14 +51,14 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Khu>> GetKhu(Guid id)
+        public async Task<APIRespone<List<Khu>>> GetKhu(Guid? id)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/khu/{0}";
+            string query = "/api/khu/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<Khu> data = JsonConvert.DeserializeObject<APIRespone<Khu>>(body);
+            APIRespone<List<Khu>> data = JsonConvert.DeserializeObject<APIRespone<List<Khu>>>(body);
             return data;
         }
 
