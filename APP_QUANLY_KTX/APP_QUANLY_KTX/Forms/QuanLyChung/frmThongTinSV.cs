@@ -28,7 +28,7 @@ namespace ProjectQLKTX
             _truongHelper = truongHelper;
             _listSinhVien = new List<Sinhvien>();
         }
-    
+
         private Sinhvien _sinhVien { get; set; }
         private async Task LoadSinhVien(List<Sinhvien> listAccount)
         {
@@ -39,7 +39,7 @@ namespace ProjectQLKTX
                 {
                     int i = 1;
                     listAccount.Clear();
-                   var lstData = listSinhVien.data;
+                    var lstData = listSinhVien.data;
                     foreach (var item in lstData)
                     {
                         if (item.idThanNhan != null)
@@ -69,7 +69,7 @@ namespace ProjectQLKTX
                                 }
 
                             }
-                          
+
                         }
                         if (item.IdTruong != null)
                         {
@@ -141,7 +141,7 @@ namespace ProjectQLKTX
                 }
             }
             var listTruong = await _truongHelper.GetListTruong();
-            if(listTruong.status == 200)
+            if (listTruong.status == 200)
             {
                 foreach (var item in listTruong.data)
                 {
@@ -193,7 +193,7 @@ namespace ProjectQLKTX
             txtQuanHe.Text = sinhVien.QuanHe;
             txtSDTTN.Text = sinhVien.SDTThanNhan;
             txtTenTN.Text = sinhVien.TenThanNhan;
-           cbKhu.Text = sinhVien.Khu;
+            cbKhu.Text = sinhVien.Khu;
             cbPhong.Text = sinhVien.Phong;
             cbGioiTinhTN.Text = sinhVien.GioiTinhThanNhan;
             try
@@ -224,6 +224,11 @@ namespace ProjectQLKTX
                 imgSVNam.Visible = false;
                 imgSVNu.Visible = true;
             }
+        }
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }
