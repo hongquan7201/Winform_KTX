@@ -64,8 +64,15 @@ namespace ProjectQLKTX
             txtHoTen.Text = nhanvien.Name;
             txtEmail.Text = nhanvien.Email;
             txtDiaChi.Text = nhanvien.Address;
-            dtNgayDangKy.Text = nhanvien.CreateAt.ToString();
-            dtNgaySinh.Text = nhanvien.Birthday.ToString();
+            try
+            {
+                dtNgayDangKy.Text = nhanvien.CreateAt.ToString();
+                dtNgaySinh.Text = nhanvien.Birthday.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui Lòng Định Dạng Lại dd/mm/yyyy");
+            }
             txtCCCD.Text = nhanvien.Cccd;
             txtSDT.Text = nhanvien.Sdt;
             cbGioiTinh.Text = nhanvien.GioiTinh;

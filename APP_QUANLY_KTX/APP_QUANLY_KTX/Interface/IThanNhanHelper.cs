@@ -1,13 +1,14 @@
-﻿using ProjectQLKTX.Models;
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Models;
 
 namespace ProjectQLKTX.Interface
 {
     public interface IThanNhanHelper
     {
-        Task GetListThanNhan();
-        Task GetThanNhan(Guid id);
-        Task AddThanNhan(Thannhan thanNhan);
-        Task EditThanNhan(Thannhan thanNhan);
-        Task DeleteThanNhan(Guid id);
+        Task<APIRespone<List<Thannhan>>> GetListThanNhan();
+        Task<APIRespone<Bienlai>> GetThanNhan(Guid id);
+        Task<APIRespone<string>> AddThanNhan(Thannhan thanNhan);
+        Task<APIRespone<string>> EditThanNhan(Thannhan thanNhan);
+        Task<APIRespone<string>> DeleteThanNhan(Guid id);
     }
 }

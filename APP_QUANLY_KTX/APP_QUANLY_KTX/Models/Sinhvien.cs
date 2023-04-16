@@ -8,7 +8,7 @@ public partial class Sinhvien
     public Guid Id { get; set; }
     public string? Email { get; set; }
     public string? GioiTinh { get; set; }
-
+    public int? STT { get;set; }
     public string MaSv { get; set; } = null!;
 
     public string Password { get; set; } = null!;

@@ -28,7 +28,7 @@ namespace ProjectQLKTX.APIsHelper
         public async Task<APIRespone<string>> DeleteTruong(Guid id)
         {
             HttpClient httpClient = new HttpClient();
-            string url = Constant.Domain+"/api/truong/delete"; // Thay đổi đường dẫn API của bạn
+            string url = Constant.Domain + "/api/truong/delete"; // Thay đổi đường dẫn API của bạn
             var request = new HttpRequestMessage(HttpMethod.Delete, url);
             request.Content = new StringContent(id.ToString(), System.Text.Encoding.UTF8, "application/json");
             var response = await httpClient.SendAsync(request);

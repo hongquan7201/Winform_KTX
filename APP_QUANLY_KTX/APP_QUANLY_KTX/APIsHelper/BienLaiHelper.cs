@@ -28,9 +28,10 @@ namespace ProjectQLKTX.APIsHelper
         public async Task<APIRespone<string>> DeleteBienLai(Guid id)
         {
             HttpClient httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/bienlai/delete";
-            var response = await httpClient.DeleteAsync(string.Format(query, id));
+            string url = Constant.Domain + "/api/bienlai/delete"; // Thay đổi đường dẫn API của bạn
+            var request = new HttpRequestMessage(HttpMethod.Delete, url);
+            request.Content = new StringContent(id.ToString(), System.Text.Encoding.UTF8, "application/json");
+            var response = await httpClient.SendAsync(request);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;

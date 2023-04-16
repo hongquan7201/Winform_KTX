@@ -28,9 +28,10 @@ namespace ProjectQLKTX.APIsHelper
         public async Task<APIRespone<string>> DeleteHopDong(Guid id)
         {
             HttpClient httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/hopdong/delete/{0}";
-            var response = await httpClient.GetAsync(string.Format(query, id));
+            string url = Constant.Domain + "/api/hopdong/delete"; // Thay đổi đường dẫn API của bạn
+            var request = new HttpRequestMessage(HttpMethod.Delete, url);
+            request.Content = new StringContent(id.ToString(), System.Text.Encoding.UTF8, "application/json");
+            var response = await httpClient.SendAsync(request);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
