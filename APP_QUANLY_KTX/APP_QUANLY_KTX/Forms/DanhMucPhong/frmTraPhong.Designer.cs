@@ -132,6 +132,7 @@
             this.TIENCOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CHIPHIKHAC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -949,6 +950,7 @@
             // gridView2
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.STT,
             this.TOANHA,
             this.SOPHONG,
             this.MSSV,
@@ -991,7 +993,7 @@
             this.TOANHA.Name = "TOANHA";
             this.TOANHA.OptionsColumn.ReadOnly = true;
             this.TOANHA.Visible = true;
-            this.TOANHA.VisibleIndex = 4;
+            this.TOANHA.VisibleIndex = 1;
             this.TOANHA.Width = 70;
             // 
             // SOPHONG
@@ -1013,7 +1015,7 @@
             this.SOPHONG.Name = "SOPHONG";
             this.SOPHONG.OptionsColumn.ReadOnly = true;
             this.SOPHONG.Visible = true;
-            this.SOPHONG.VisibleIndex = 5;
+            this.SOPHONG.VisibleIndex = 2;
             this.SOPHONG.Width = 70;
             // 
             // MSSV
@@ -1030,13 +1032,12 @@
             this.MSSV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MSSV.Caption = "MÃ SV";
             this.MSSV.FieldName = "MSSV";
-            this.MSSV.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.MSSV.MaxWidth = 70;
             this.MSSV.MinWidth = 70;
             this.MSSV.Name = "MSSV";
             this.MSSV.OptionsColumn.ReadOnly = true;
             this.MSSV.Visible = true;
-            this.MSSV.VisibleIndex = 0;
+            this.MSSV.VisibleIndex = 3;
             this.MSSV.Width = 70;
             // 
             // HOTEN
@@ -1053,13 +1054,12 @@
             this.HOTEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.HOTEN.Caption = "HỌ TÊN";
             this.HOTEN.FieldName = "HOTEN";
-            this.HOTEN.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.HOTEN.MaxWidth = 120;
             this.HOTEN.MinWidth = 120;
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.OptionsColumn.ReadOnly = true;
             this.HOTEN.Visible = true;
-            this.HOTEN.VisibleIndex = 1;
+            this.HOTEN.VisibleIndex = 4;
             this.HOTEN.Width = 120;
             // 
             // GIOITINH
@@ -1076,13 +1076,12 @@
             this.GIOITINH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.GIOITINH.Caption = "GIỚI TÍNH";
             this.GIOITINH.FieldName = "GIOITINH";
-            this.GIOITINH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.GIOITINH.MaxWidth = 70;
             this.GIOITINH.MinWidth = 70;
             this.GIOITINH.Name = "GIOITINH";
             this.GIOITINH.OptionsColumn.ReadOnly = true;
             this.GIOITINH.Visible = true;
-            this.GIOITINH.VisibleIndex = 2;
+            this.GIOITINH.VisibleIndex = 5;
             this.GIOITINH.Width = 70;
             // 
             // NGAYSINH
@@ -1099,13 +1098,12 @@
             this.NGAYSINH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NGAYSINH.Caption = "NGÀY SINH";
             this.NGAYSINH.FieldName = "NGAYSINH";
-            this.NGAYSINH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.NGAYSINH.MaxWidth = 100;
             this.NGAYSINH.MinWidth = 100;
             this.NGAYSINH.Name = "NGAYSINH";
             this.NGAYSINH.OptionsColumn.ReadOnly = true;
             this.NGAYSINH.Visible = true;
-            this.NGAYSINH.VisibleIndex = 3;
+            this.NGAYSINH.VisibleIndex = 6;
             this.NGAYSINH.Width = 100;
             // 
             // SDT
@@ -1207,7 +1205,7 @@
             this.NGAYVAO.Name = "NGAYVAO";
             this.NGAYVAO.OptionsColumn.ReadOnly = true;
             this.NGAYVAO.Visible = true;
-            this.NGAYVAO.VisibleIndex = 6;
+            this.NGAYVAO.VisibleIndex = 7;
             this.NGAYVAO.Width = 130;
             // 
             // NGAYRA
@@ -1229,7 +1227,7 @@
             this.NGAYRA.Name = "NGAYRA";
             this.NGAYRA.OptionsColumn.ReadOnly = true;
             this.NGAYRA.Visible = true;
-            this.NGAYRA.VisibleIndex = 7;
+            this.NGAYRA.VisibleIndex = 8;
             this.NGAYRA.Width = 150;
             // 
             // TINHTRANG
@@ -1251,7 +1249,7 @@
             this.TINHTRANG.Name = "TINHTRANG";
             this.TINHTRANG.OptionsColumn.ReadOnly = true;
             this.TINHTRANG.Visible = true;
-            this.TINHTRANG.VisibleIndex = 8;
+            this.TINHTRANG.VisibleIndex = 9;
             this.TINHTRANG.Width = 100;
             // 
             // MATHIETBI
@@ -1293,7 +1291,7 @@
             this.TENTHIETBI.Name = "TENTHIETBI";
             this.TENTHIETBI.OptionsColumn.ReadOnly = true;
             this.TENTHIETBI.Visible = true;
-            this.TENTHIETBI.VisibleIndex = 9;
+            this.TENTHIETBI.VisibleIndex = 10;
             this.TENTHIETBI.Width = 100;
             // 
             // SOLUONG
@@ -1315,7 +1313,7 @@
             this.SOLUONG.Name = "SOLUONG";
             this.SOLUONG.OptionsColumn.ReadOnly = true;
             this.SOLUONG.Visible = true;
-            this.SOLUONG.VisibleIndex = 10;
+            this.SOLUONG.VisibleIndex = 11;
             this.SOLUONG.Width = 100;
             // 
             // TIENCOC
@@ -1377,6 +1375,28 @@
             this.CHIPHIKHAC.Name = "CHIPHIKHAC";
             this.CHIPHIKHAC.OptionsColumn.ReadOnly = true;
             this.CHIPHIKHAC.Width = 100;
+            // 
+            // STT
+            // 
+            this.STT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceCell.Options.UseFont = true;
+            this.STT.AppearanceCell.Options.UseTextOptions = true;
+            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
+            this.STT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceHeader.Options.UseBackColor = true;
+            this.STT.AppearanceHeader.Options.UseFont = true;
+            this.STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.Caption = "STT";
+            this.STT.FieldName = "STT";
+            this.STT.MaxWidth = 30;
+            this.STT.MinWidth = 30;
+            this.STT.Name = "STT";
+            this.STT.OptionsColumn.ReadOnly = true;
+            this.STT.Visible = true;
+            this.STT.VisibleIndex = 0;
+            this.STT.Width = 30;
             // 
             // frmTraPhong
             // 
@@ -1542,5 +1562,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraBars.BarButtonItem btnTraPhong;
+        private DevExpress.XtraGrid.Columns.GridColumn STT;
     }
 }

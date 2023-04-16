@@ -28,14 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongKeSinhVien));
+            this.chartDoanhThu = new DevExpress.XtraCharts.ChartControl();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // chartDoanhThu
+            // 
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartDoanhThu.Diagram = xyDiagram1;
+            this.chartDoanhThu.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
+            this.chartDoanhThu.Location = new System.Drawing.Point(2, 11);
+            this.chartDoanhThu.Name = "chartDoanhThu";
+            series1.Name = "Tổng Doanh Thu";
+            sideBySideBarSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            sideBySideBarSeriesView1.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Gradient;
+            series1.View = sideBySideBarSeriesView1;
+            this.chartDoanhThu.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartDoanhThu.Size = new System.Drawing.Size(883, 526);
+            this.chartDoanhThu.TabIndex = 2;
+            chartTitle1.Text = "Thống Kê Sinh Viên";
+            this.chartDoanhThu.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
+            chartTitle1});
             // 
             // frmThongKeSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 453);
+            this.ClientSize = new System.Drawing.Size(887, 538);
+            this.Controls.Add(this.chartDoanhThu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmThongKeSinhVien.IconOptions.Icon")));
             this.MaximizeBox = false;
@@ -43,10 +73,16 @@
             this.Name = "frmThongKeSinhVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thống Kê Sinh Viên";
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private DevExpress.XtraCharts.ChartControl chartDoanhThu;
     }
 }

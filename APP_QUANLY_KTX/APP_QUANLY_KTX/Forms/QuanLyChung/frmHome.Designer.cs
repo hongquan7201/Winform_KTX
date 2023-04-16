@@ -51,6 +51,7 @@
             this.btnTraPhong = new DevExpress.XtraBars.BarButtonItem();
             this.btnQLiKho = new DevExpress.XtraBars.BarButtonItem();
             this.btnQLiTaiSan = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDSTruong = new DevExpress.XtraBars.BarButtonItem();
             this.HETHONG = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.DANHMUC = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -91,9 +92,10 @@
             this.btnQLiPhong,
             this.btnTraPhong,
             this.btnQLiKho,
-            this.btnQLiTaiSan});
+            this.btnQLiTaiSan,
+            this.btnDSTruong});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 43;
+            this.ribbon.MaxItemId = 44;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -288,6 +290,15 @@
             this.btnQLiTaiSan.Name = "btnQLiTaiSan";
             this.btnQLiTaiSan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLiTaiSan_ItemClick);
             // 
+            // btnDSTruong
+            // 
+            this.btnDSTruong.Caption = "Danh Sách Trường";
+            this.btnDSTruong.Id = 43;
+            this.btnDSTruong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDSTruong.ImageOptions.Image")));
+            this.btnDSTruong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDSTruong.ImageOptions.LargeImage")));
+            this.btnDSTruong.Name = "btnDSTruong";
+            this.btnDSTruong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSTruong_ItemClick);
+            // 
             // HETHONG
             // 
             this.HETHONG.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -353,6 +364,7 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.btnQLiXe);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnQLiKho);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnQLiTaiSan);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnDSTruong);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "QL Chung";
             // 
@@ -435,5 +447,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem btnQLiKho;
         private DevExpress.XtraBars.BarButtonItem btnQLiTaiSan;
+        private DevExpress.XtraBars.BarButtonItem btnDSTruong;
     }
 }

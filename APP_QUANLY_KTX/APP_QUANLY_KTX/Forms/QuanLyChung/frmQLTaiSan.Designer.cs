@@ -78,6 +78,7 @@
             this.SOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhanVien.Properties)).BeginInit();
@@ -473,6 +474,7 @@
             // gvDanhSach
             // 
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.STT,
             this.TENTAISAN,
             this.PHONG,
             this.TENNHANVIEN,
@@ -501,7 +503,7 @@
             this.TENTAISAN.Name = "TENTAISAN";
             this.TENTAISAN.OptionsColumn.ReadOnly = true;
             this.TENTAISAN.Visible = true;
-            this.TENTAISAN.VisibleIndex = 0;
+            this.TENTAISAN.VisibleIndex = 1;
             this.TENTAISAN.Width = 160;
             // 
             // PHONG
@@ -523,7 +525,7 @@
             this.PHONG.Name = "PHONG";
             this.PHONG.OptionsColumn.ReadOnly = true;
             this.PHONG.Visible = true;
-            this.PHONG.VisibleIndex = 1;
+            this.PHONG.VisibleIndex = 2;
             this.PHONG.Width = 147;
             // 
             // TENNHANVIEN
@@ -545,7 +547,7 @@
             this.TENNHANVIEN.Name = "TENNHANVIEN";
             this.TENNHANVIEN.OptionsColumn.ReadOnly = true;
             this.TENNHANVIEN.Visible = true;
-            this.TENNHANVIEN.VisibleIndex = 2;
+            this.TENNHANVIEN.VisibleIndex = 3;
             this.TENNHANVIEN.Width = 150;
             // 
             // SOLUONG
@@ -567,7 +569,7 @@
             this.SOLUONG.Name = "SOLUONG";
             this.SOLUONG.OptionsColumn.ReadOnly = true;
             this.SOLUONG.Visible = true;
-            this.SOLUONG.VisibleIndex = 3;
+            this.SOLUONG.VisibleIndex = 4;
             this.SOLUONG.Width = 150;
             // 
             // TINHTRANG
@@ -589,7 +591,7 @@
             this.TINHTRANG.Name = "TINHTRANG";
             this.TINHTRANG.OptionsColumn.ReadOnly = true;
             this.TINHTRANG.Visible = true;
-            this.TINHTRANG.VisibleIndex = 4;
+            this.TINHTRANG.VisibleIndex = 5;
             this.TINHTRANG.Width = 170;
             // 
             // groupControl1
@@ -602,6 +604,28 @@
             this.groupControl1.Size = new System.Drawing.Size(809, 214);
             this.groupControl1.TabIndex = 96;
             this.groupControl1.Text = "Danh Sách";
+            // 
+            // STT
+            // 
+            this.STT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceCell.Options.UseFont = true;
+            this.STT.AppearanceCell.Options.UseTextOptions = true;
+            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
+            this.STT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceHeader.Options.UseBackColor = true;
+            this.STT.AppearanceHeader.Options.UseFont = true;
+            this.STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.Caption = "STT";
+            this.STT.FieldName = "STT";
+            this.STT.MaxWidth = 30;
+            this.STT.MinWidth = 30;
+            this.STT.Name = "STT";
+            this.STT.OptionsColumn.ReadOnly = true;
+            this.STT.Visible = true;
+            this.STT.VisibleIndex = 0;
+            this.STT.Width = 30;
             // 
             // frmQLiTaiSan
             // 
@@ -691,5 +715,6 @@
         private DevExpress.XtraEditors.TextEdit txtNhanVien;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraGrid.Columns.GridColumn TENNHANVIEN;
+        private DevExpress.XtraGrid.Columns.GridColumn STT;
     }
 }

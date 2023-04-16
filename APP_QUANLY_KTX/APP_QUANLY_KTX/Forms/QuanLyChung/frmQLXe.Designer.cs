@@ -107,6 +107,7 @@
             this.NGAYDANGKY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HINHANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -741,6 +742,7 @@
             // gvDanhSach
             // 
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.STT,
             this.MASV,
             this.TENSV,
             this.GIOITINH,
@@ -779,7 +781,7 @@
             this.MASV.Name = "MASV";
             this.MASV.OptionsColumn.ReadOnly = true;
             this.MASV.Visible = true;
-            this.MASV.VisibleIndex = 0;
+            this.MASV.VisibleIndex = 1;
             this.MASV.Width = 87;
             // 
             // TENSV
@@ -801,7 +803,7 @@
             this.TENSV.Name = "TENSV";
             this.TENSV.OptionsColumn.ReadOnly = true;
             this.TENSV.Visible = true;
-            this.TENSV.VisibleIndex = 1;
+            this.TENSV.VisibleIndex = 2;
             this.TENSV.Width = 130;
             // 
             // GIOITINH
@@ -823,7 +825,7 @@
             this.GIOITINH.Name = "GIOITINH";
             this.GIOITINH.OptionsColumn.ReadOnly = true;
             this.GIOITINH.Visible = true;
-            this.GIOITINH.VisibleIndex = 2;
+            this.GIOITINH.VisibleIndex = 3;
             this.GIOITINH.Width = 90;
             // 
             // NGAYSINH
@@ -865,7 +867,7 @@
             this.SDT.Name = "SDT";
             this.SDT.OptionsColumn.ReadOnly = true;
             this.SDT.Visible = true;
-            this.SDT.VisibleIndex = 3;
+            this.SDT.VisibleIndex = 4;
             this.SDT.Width = 130;
             // 
             // CCCD
@@ -887,7 +889,7 @@
             this.CCCD.Name = "CCCD";
             this.CCCD.OptionsColumn.ReadOnly = true;
             this.CCCD.Visible = true;
-            this.CCCD.VisibleIndex = 4;
+            this.CCCD.VisibleIndex = 5;
             this.CCCD.Width = 130;
             // 
             // DIACHI
@@ -949,7 +951,7 @@
             this.TENXE.Name = "TENXE";
             this.TENXE.OptionsColumn.ReadOnly = true;
             this.TENXE.Visible = true;
-            this.TENXE.VisibleIndex = 5;
+            this.TENXE.VisibleIndex = 6;
             this.TENXE.Width = 120;
             // 
             // BIENSO
@@ -971,7 +973,7 @@
             this.BIENSO.Name = "BIENSO";
             this.BIENSO.OptionsColumn.ReadOnly = true;
             this.BIENSO.Visible = true;
-            this.BIENSO.VisibleIndex = 6;
+            this.BIENSO.VisibleIndex = 7;
             this.BIENSO.Width = 120;
             // 
             // MAUXE
@@ -1013,7 +1015,7 @@
             this.KHU.Name = "KHU";
             this.KHU.OptionsColumn.ReadOnly = true;
             this.KHU.Visible = true;
-            this.KHU.VisibleIndex = 7;
+            this.KHU.VisibleIndex = 8;
             this.KHU.Width = 87;
             // 
             // NGAYDANGKY
@@ -1035,7 +1037,7 @@
             this.NGAYDANGKY.Name = "NGAYDANGKY";
             this.NGAYDANGKY.OptionsColumn.ReadOnly = true;
             this.NGAYDANGKY.Visible = true;
-            this.NGAYDANGKY.VisibleIndex = 8;
+            this.NGAYDANGKY.VisibleIndex = 9;
             this.NGAYDANGKY.Width = 130;
             // 
             // HINHANH
@@ -1064,6 +1066,28 @@
             this.groupControl1.Size = new System.Drawing.Size(1053, 226);
             this.groupControl1.TabIndex = 68;
             this.groupControl1.Text = "Danh Sách ";
+            // 
+            // STT
+            // 
+            this.STT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceCell.Options.UseFont = true;
+            this.STT.AppearanceCell.Options.UseTextOptions = true;
+            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
+            this.STT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceHeader.Options.UseBackColor = true;
+            this.STT.AppearanceHeader.Options.UseFont = true;
+            this.STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.Caption = "STT";
+            this.STT.FieldName = "STT";
+            this.STT.MaxWidth = 30;
+            this.STT.MinWidth = 30;
+            this.STT.Name = "STT";
+            this.STT.OptionsColumn.ReadOnly = true;
+            this.STT.Visible = true;
+            this.STT.VisibleIndex = 0;
+            this.STT.Width = 30;
             // 
             // frmQLiXe
             // 
@@ -1197,5 +1221,6 @@
         private PictureBox imgSVNam;
         private PictureBox imgNo;
         private DevExpress.XtraGrid.Columns.GridColumn HINHANH;
+        private DevExpress.XtraGrid.Columns.GridColumn STT;
     }
 }

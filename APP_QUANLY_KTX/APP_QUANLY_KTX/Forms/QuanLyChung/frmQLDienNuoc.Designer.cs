@@ -105,6 +105,7 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -267,7 +268,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 502);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 496);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1063, 0);
             // 
@@ -277,7 +278,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 478);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 472);
             // 
             // barDockControlRight
             // 
@@ -285,7 +286,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1063, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 478);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 472);
             // 
             // barButtonItem1
             // 
@@ -472,7 +473,7 @@
             // 
             // gcDanhSach
             // 
-            this.gcDanhSach.Location = new System.Drawing.Point(3, 26);
+            this.gcDanhSach.Location = new System.Drawing.Point(3, 24);
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.Name = "gcDanhSach";
             this.gcDanhSach.Size = new System.Drawing.Size(1056, 204);
@@ -483,6 +484,7 @@
             // gvDanhSach
             // 
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.STT,
             this.PHONG,
             this.THANGTHU,
             this.CHISODIENDAU,
@@ -517,7 +519,7 @@
             this.PHONG.Name = "PHONG";
             this.PHONG.OptionsColumn.ReadOnly = true;
             this.PHONG.Visible = true;
-            this.PHONG.VisibleIndex = 0;
+            this.PHONG.VisibleIndex = 1;
             this.PHONG.Width = 90;
             // 
             // THANGTHU
@@ -539,7 +541,7 @@
             this.THANGTHU.Name = "THANGTHU";
             this.THANGTHU.OptionsColumn.ReadOnly = true;
             this.THANGTHU.Visible = true;
-            this.THANGTHU.VisibleIndex = 1;
+            this.THANGTHU.VisibleIndex = 2;
             this.THANGTHU.Width = 140;
             // 
             // CHISODIENDAU
@@ -601,7 +603,7 @@
             this.SODIENTIEUTHU.Name = "SODIENTIEUTHU";
             this.SODIENTIEUTHU.OptionsColumn.ReadOnly = true;
             this.SODIENTIEUTHU.Visible = true;
-            this.SODIENTIEUTHU.VisibleIndex = 2;
+            this.SODIENTIEUTHU.VisibleIndex = 3;
             this.SODIENTIEUTHU.Width = 130;
             // 
             // CHISONUOCDAU
@@ -663,7 +665,7 @@
             this.SONUOCTIEUTHU.Name = "SONUOCTIEUTHU";
             this.SONUOCTIEUTHU.OptionsColumn.ReadOnly = true;
             this.SONUOCTIEUTHU.Visible = true;
-            this.SONUOCTIEUTHU.VisibleIndex = 3;
+            this.SONUOCTIEUTHU.VisibleIndex = 4;
             this.SONUOCTIEUTHU.Width = 130;
             // 
             // TIENDIEN
@@ -685,7 +687,7 @@
             this.TIENDIEN.Name = "TIENDIEN";
             this.TIENDIEN.OptionsColumn.ReadOnly = true;
             this.TIENDIEN.Visible = true;
-            this.TIENDIEN.VisibleIndex = 4;
+            this.TIENDIEN.VisibleIndex = 5;
             this.TIENDIEN.Width = 150;
             // 
             // TIENNUOC
@@ -707,7 +709,7 @@
             this.TIENNUOC.Name = "TIENNUOC";
             this.TIENNUOC.OptionsColumn.ReadOnly = true;
             this.TIENNUOC.Visible = true;
-            this.TIENNUOC.VisibleIndex = 5;
+            this.TIENNUOC.VisibleIndex = 6;
             this.TIENNUOC.Width = 150;
             // 
             // TONGTIEN
@@ -729,7 +731,7 @@
             this.TONGTIEN.Name = "TONGTIEN";
             this.TONGTIEN.OptionsColumn.ReadOnly = true;
             this.TONGTIEN.Visible = true;
-            this.TONGTIEN.VisibleIndex = 6;
+            this.TONGTIEN.VisibleIndex = 7;
             this.TONGTIEN.Width = 240;
             // 
             // txtTongTien
@@ -1002,11 +1004,32 @@
             this.labelControl20.TabIndex = 99;
             this.labelControl20.Text = "đ";
             // 
+            // STT
+            // 
+            this.STT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceCell.Options.UseFont = true;
+            this.STT.AppearanceCell.Options.UseTextOptions = true;
+            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
+            this.STT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceHeader.Options.UseBackColor = true;
+            this.STT.AppearanceHeader.Options.UseFont = true;
+            this.STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.Caption = "STT";
+            this.STT.FieldName = "STT";
+            this.STT.MaxWidth = 30;
+            this.STT.MinWidth = 30;
+            this.STT.Name = "STT";
+            this.STT.Visible = true;
+            this.STT.VisibleIndex = 0;
+            this.STT.Width = 30;
+            // 
             // frmQLiDienNuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 502);
+            this.ClientSize = new System.Drawing.Size(1063, 496);
             this.Controls.Add(this.groupControl4);
             this.Controls.Add(this.labelControl20);
             this.Controls.Add(this.groupControl2);
@@ -1136,5 +1159,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private DevExpress.XtraEditors.LabelControl labelControl20;
+        private DevExpress.XtraGrid.Columns.GridColumn STT;
     }
 }

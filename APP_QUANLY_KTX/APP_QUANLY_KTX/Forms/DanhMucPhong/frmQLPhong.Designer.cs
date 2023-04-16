@@ -94,6 +94,7 @@
             this.OTOIDA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAYDANGKY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -249,15 +250,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(804, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(803, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 489);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 486);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(804, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(803, 0);
             // 
             // barDockControlLeft
             // 
@@ -265,15 +266,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 465);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 462);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(804, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(803, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 465);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 462);
             // 
             // barButtonItem5
             // 
@@ -499,9 +500,9 @@
             this.groupControl3.Controls.Add(this.labelControl6);
             this.groupControl3.Controls.Add(this.labelControl1);
             this.groupControl3.Controls.Add(this.labelControl4);
-            this.groupControl3.Location = new System.Drawing.Point(5, 30);
+            this.groupControl3.Location = new System.Drawing.Point(3, 30);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(795, 218);
+            this.groupControl3.Size = new System.Drawing.Size(800, 218);
             this.groupControl3.TabIndex = 76;
             this.groupControl3.Text = "Thông tin Phòng";
             // 
@@ -611,10 +612,10 @@
             // 
             // gcDanhSach
             // 
-            this.gcDanhSach.Location = new System.Drawing.Point(5, 26);
+            this.gcDanhSach.Location = new System.Drawing.Point(0, 24);
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(785, 204);
+            this.gcDanhSach.Size = new System.Drawing.Size(795, 211);
             this.gcDanhSach.TabIndex = 82;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -623,6 +624,7 @@
             // 
             this.gvDanhSach.AccessibleDescription = "";
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.STT,
             this.KHU,
             this.PHONG,
             this.OHIENTAI,
@@ -651,7 +653,7 @@
             this.KHU.Name = "KHU";
             this.KHU.OptionsColumn.ReadOnly = true;
             this.KHU.Visible = true;
-            this.KHU.VisibleIndex = 0;
+            this.KHU.VisibleIndex = 1;
             this.KHU.Width = 150;
             // 
             // PHONG
@@ -673,7 +675,7 @@
             this.PHONG.Name = "PHONG";
             this.PHONG.OptionsColumn.ReadOnly = true;
             this.PHONG.Visible = true;
-            this.PHONG.VisibleIndex = 1;
+            this.PHONG.VisibleIndex = 2;
             this.PHONG.Width = 140;
             // 
             // OHIENTAI
@@ -695,7 +697,7 @@
             this.OHIENTAI.Name = "OHIENTAI";
             this.OHIENTAI.OptionsColumn.ReadOnly = true;
             this.OHIENTAI.Visible = true;
-            this.OHIENTAI.VisibleIndex = 2;
+            this.OHIENTAI.VisibleIndex = 3;
             this.OHIENTAI.Width = 160;
             // 
             // OTOIDA
@@ -717,7 +719,7 @@
             this.OTOIDA.Name = "OTOIDA";
             this.OTOIDA.OptionsColumn.ReadOnly = true;
             this.OTOIDA.Visible = true;
-            this.OTOIDA.VisibleIndex = 3;
+            this.OTOIDA.VisibleIndex = 4;
             this.OTOIDA.Width = 160;
             // 
             // NGAYDANGKY
@@ -739,7 +741,7 @@
             this.NGAYDANGKY.Name = "NGAYDANGKY";
             this.NGAYDANGKY.OptionsColumn.ReadOnly = true;
             this.NGAYDANGKY.Visible = true;
-            this.NGAYDANGKY.VisibleIndex = 4;
+            this.NGAYDANGKY.VisibleIndex = 5;
             this.NGAYDANGKY.Width = 150;
             // 
             // groupControl1
@@ -753,11 +755,33 @@
             this.groupControl1.TabIndex = 102;
             this.groupControl1.Text = "Danh Sách";
             // 
+            // STT
+            // 
+            this.STT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceCell.Options.UseFont = true;
+            this.STT.AppearanceCell.Options.UseTextOptions = true;
+            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
+            this.STT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceHeader.Options.UseBackColor = true;
+            this.STT.AppearanceHeader.Options.UseFont = true;
+            this.STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.Caption = "STT";
+            this.STT.FieldName = "STT";
+            this.STT.MaxWidth = 30;
+            this.STT.MinWidth = 30;
+            this.STT.Name = "STT";
+            this.STT.OptionsColumn.ReadOnly = true;
+            this.STT.Visible = true;
+            this.STT.VisibleIndex = 0;
+            this.STT.Width = 30;
+            // 
             // frmQLiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 489);
+            this.ClientSize = new System.Drawing.Size(803, 486);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.barDockControlLeft);
@@ -863,5 +887,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.ComboBoxEdit cbPhong;
         private DateTimePicker dtNgayDangKy;
+        private DevExpress.XtraGrid.Columns.GridColumn STT;
     }
 }

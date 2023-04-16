@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="Forms\ohxyoyva.k10~" />
     <None Remove="Forms\QuanLyChung\frmHome.cs~RF87b02fd.TMP" />
+    <None Remove="Forms\QuanLyChung\gdu3esgj.wko~" />
     <None Remove="Forms\QuanLyChung\n1e3pejh.er4~" />
   </ItemGroup>
 

@@ -86,6 +86,7 @@
             this.NGAYKETTHUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -356,9 +357,9 @@
             this.groupControl2.Controls.Add(this.txtTenNV);
             this.groupControl2.Controls.Add(this.dtNgayBatDau);
             this.groupControl2.Controls.Add(this.labelControl3);
-            this.groupControl2.Location = new System.Drawing.Point(4, 30);
+            this.groupControl2.Location = new System.Drawing.Point(0, 30);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(812, 246);
+            this.groupControl2.Size = new System.Drawing.Size(816, 246);
             this.groupControl2.TabIndex = 49;
             this.groupControl2.Text = "Thông Tin Dịch Vụ";
             // 
@@ -532,7 +533,7 @@
             this.gcDanhSach.Name = "gcDanhSach";
             this.gcDanhSach.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit2});
-            this.gcDanhSach.Size = new System.Drawing.Size(803, 184);
+            this.gcDanhSach.Size = new System.Drawing.Size(808, 184);
             this.gcDanhSach.TabIndex = 56;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -540,6 +541,7 @@
             // gvDanhSach
             // 
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.STT,
             this.MASV,
             this.TENSV,
             this.EMAIL,
@@ -571,7 +573,7 @@
             this.MASV.Name = "MASV";
             this.MASV.OptionsColumn.ReadOnly = true;
             this.MASV.Visible = true;
-            this.MASV.VisibleIndex = 0;
+            this.MASV.VisibleIndex = 1;
             this.MASV.Width = 90;
             // 
             // TENSV
@@ -593,7 +595,7 @@
             this.TENSV.Name = "TENSV";
             this.TENSV.OptionsColumn.ReadOnly = true;
             this.TENSV.Visible = true;
-            this.TENSV.VisibleIndex = 1;
+            this.TENSV.VisibleIndex = 2;
             this.TENSV.Width = 135;
             // 
             // EMAIL
@@ -635,7 +637,7 @@
             this.PHONG.Name = "PHONG";
             this.PHONG.OptionsColumn.ReadOnly = true;
             this.PHONG.Visible = true;
-            this.PHONG.VisibleIndex = 2;
+            this.PHONG.VisibleIndex = 3;
             this.PHONG.Width = 120;
             // 
             // EMAILNV
@@ -677,7 +679,7 @@
             this.NHANVIENLAP.Name = "NHANVIENLAP";
             this.NHANVIENLAP.OptionsColumn.ReadOnly = true;
             this.NHANVIENLAP.Visible = true;
-            this.NHANVIENLAP.VisibleIndex = 3;
+            this.NHANVIENLAP.VisibleIndex = 4;
             this.NHANVIENLAP.Width = 130;
             // 
             // NGAYBATDAU
@@ -699,7 +701,7 @@
             this.NGAYBATDAU.Name = "NGAYBATDAU";
             this.NGAYBATDAU.OptionsColumn.ReadOnly = true;
             this.NGAYBATDAU.Visible = true;
-            this.NGAYBATDAU.VisibleIndex = 4;
+            this.NGAYBATDAU.VisibleIndex = 5;
             this.NGAYBATDAU.Width = 150;
             // 
             // NGAYKETTHUC
@@ -721,7 +723,7 @@
             this.NGAYKETTHUC.Name = "NGAYKETTHUC";
             this.NGAYKETTHUC.OptionsColumn.ReadOnly = true;
             this.NGAYKETTHUC.Visible = true;
-            this.NGAYKETTHUC.VisibleIndex = 5;
+            this.NGAYKETTHUC.VisibleIndex = 6;
             this.NGAYKETTHUC.Width = 150;
             // 
             // repositoryItemLookUpEdit2
@@ -736,11 +738,33 @@
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.gcDanhSach);
-            this.groupControl1.Location = new System.Drawing.Point(4, 278);
+            this.groupControl1.Location = new System.Drawing.Point(0, 278);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(812, 209);
+            this.groupControl1.Size = new System.Drawing.Size(816, 209);
             this.groupControl1.TabIndex = 62;
             this.groupControl1.Text = "Danh Sách ";
+            // 
+            // STT
+            // 
+            this.STT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceCell.Options.UseFont = true;
+            this.STT.AppearanceCell.Options.UseTextOptions = true;
+            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
+            this.STT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceHeader.Options.UseBackColor = true;
+            this.STT.AppearanceHeader.Options.UseFont = true;
+            this.STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.Caption = "STT";
+            this.STT.FieldName = "STT";
+            this.STT.MaxWidth = 30;
+            this.STT.MinWidth = 30;
+            this.STT.Name = "STT";
+            this.STT.OptionsColumn.ReadOnly = true;
+            this.STT.Visible = true;
+            this.STT.VisibleIndex = 0;
+            this.STT.Width = 30;
             // 
             // frmQLiHopDong
             // 
@@ -842,5 +866,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraGrid.Columns.GridColumn EMAILNV;
         private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn STT;
     }
 }

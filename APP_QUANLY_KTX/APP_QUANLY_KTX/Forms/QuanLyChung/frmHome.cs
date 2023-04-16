@@ -144,5 +144,11 @@ namespace ProjectQLKTX
             frmThongKeSinhVien frmThongKeSinhVien = new frmThongKeSinhVien();
             frmThongKeSinhVien.ShowDialog();
         }
+
+        private void btnDSTruong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmDSTruong frmDSTruong = new frmDSTruong();
+            frmDSTruong.ShowDialog();
+        }
     }
 }

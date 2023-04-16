@@ -91,6 +91,7 @@
             this.NGAYTHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TONGTIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -590,6 +591,7 @@
             // gvDanhSach
             // 
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.STT,
             this.MASV,
             this.HOTEN,
             this.EMAIL,
@@ -621,7 +623,7 @@
             this.MASV.Name = "MASV";
             this.MASV.OptionsColumn.ReadOnly = true;
             this.MASV.Visible = true;
-            this.MASV.VisibleIndex = 0;
+            this.MASV.VisibleIndex = 1;
             this.MASV.Width = 88;
             // 
             // HOTEN
@@ -643,7 +645,7 @@
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.OptionsColumn.ReadOnly = true;
             this.HOTEN.Visible = true;
-            this.HOTEN.VisibleIndex = 1;
+            this.HOTEN.VisibleIndex = 2;
             this.HOTEN.Width = 150;
             // 
             // EMAIL
@@ -685,7 +687,7 @@
             this.PHONG.Name = "PHONG";
             this.PHONG.OptionsColumn.ReadOnly = true;
             this.PHONG.Visible = true;
-            this.PHONG.VisibleIndex = 2;
+            this.PHONG.VisibleIndex = 3;
             this.PHONG.Width = 90;
             // 
             // TENNHANVIEN
@@ -707,7 +709,7 @@
             this.TENNHANVIEN.Name = "TENNHANVIEN";
             this.TENNHANVIEN.OptionsColumn.ReadOnly = true;
             this.TENNHANVIEN.Visible = true;
-            this.TENNHANVIEN.VisibleIndex = 3;
+            this.TENNHANVIEN.VisibleIndex = 4;
             this.TENNHANVIEN.Width = 150;
             // 
             // EMAILNV
@@ -749,7 +751,7 @@
             this.NGAYTHU.Name = "NGAYTHU";
             this.NGAYTHU.OptionsColumn.ReadOnly = true;
             this.NGAYTHU.Visible = true;
-            this.NGAYTHU.VisibleIndex = 4;
+            this.NGAYTHU.VisibleIndex = 5;
             this.NGAYTHU.Width = 150;
             // 
             // TONGTIEN
@@ -771,7 +773,7 @@
             this.TONGTIEN.Name = "TONGTIEN";
             this.TONGTIEN.OptionsColumn.ReadOnly = true;
             this.TONGTIEN.Visible = true;
-            this.TONGTIEN.VisibleIndex = 5;
+            this.TONGTIEN.VisibleIndex = 6;
             this.TONGTIEN.Width = 150;
             // 
             // groupControl2
@@ -784,6 +786,28 @@
             this.groupControl2.Size = new System.Drawing.Size(809, 212);
             this.groupControl2.TabIndex = 106;
             this.groupControl2.Text = "Danh Sách";
+            // 
+            // STT
+            // 
+            this.STT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceCell.Options.UseFont = true;
+            this.STT.AppearanceCell.Options.UseTextOptions = true;
+            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
+            this.STT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceHeader.Options.UseBackColor = true;
+            this.STT.AppearanceHeader.Options.UseFont = true;
+            this.STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.Caption = "STT";
+            this.STT.FieldName = "STT";
+            this.STT.MaxWidth = 30;
+            this.STT.MinWidth = 30;
+            this.STT.Name = "STT";
+            this.STT.OptionsColumn.ReadOnly = true;
+            this.STT.Visible = true;
+            this.STT.VisibleIndex = 0;
+            this.STT.Width = 30;
             // 
             // frmQLiHoaDon
             // 
@@ -891,5 +915,6 @@
         private DevExpress.XtraEditors.TextEdit txtTongTien;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraGrid.Columns.GridColumn STT;
     }
 }
