@@ -22,7 +22,7 @@ namespace ProjectQLKTX
         List<Phong> _listPhong;
         List<Khu> _listKhu;
         List<Truong> _listTruong;
-        private Thannhan _thanNhan { get; set; }
+        private Thannhan _thanNhan;
         public frmThongTinSV(ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper)
         {
             InitializeComponent();
@@ -37,6 +37,7 @@ namespace ProjectQLKTX
             _listPhong = new List<Phong>();
             _listQuanhe = new List<Quanhe>();
             _listTruong = new List<Truong>();
+            _thanNhan = new Thannhan();
         }
 
         private Sinhvien _sinhVien { get; set; }
@@ -258,7 +259,41 @@ namespace ProjectQLKTX
             _sinhVien.Cccd = txtCCCD.Text;
             _sinhVien.Sdt = txtSDT.Text;
             _sinhVien.MaSv = txtMaSV.Text;
-            // _sinhVien.
+            if(txtTenTN!=null)
+            {
+                _thanNhan.IdUser = _sinhVien.Id;
+                if(_sinhVien.idThanNhan != null)
+                {
+                    _thanNhan.Id = _sinhVien.idThanNhan;
+                }
+                else
+                {
+                    _thanNhan.Id = Guid.NewGuid();
+                }
+                _thanNhan.Address = txtDiaChiTN.Text;
+                if (cbQuanHe.Text != null)
+                {
+                    foreach (var item in _listQuanhe)
+                    {
+                        if (cbQuanHe.Text == item.Name)
+                        {
+                            _thanNhan.IdQuanHe = item.Id;
+                        }
+
+                    }
+                }
+                _thanNhan.Sdt = txtSDT.Text;
+                _thanNhan.Name = txtTenTN.Text;
+                if (cbGioiTinhTN.Text == "Nam")
+                {
+                    _thanNhan.Gender = true;
+                }
+                else
+                {
+                    _thanNhan.Gender = false;
+                }
+             var s = await  _thanNhanHelper.EditThanNhan( _thanNhan );
+            }
             if (cbGioiTinh.Text == "Nam")
             {
                 _sinhVien.Gender = true;
@@ -267,17 +302,35 @@ namespace ProjectQLKTX
             {
                 _sinhVien.Gender = false;
             }
-            //  var result = await _sinhVienHelper.EditSinhVien()
-            //try
-            //{
-            //    await LoadSinhVien(_listSinhVien);
-            //    MessageBox.Show(result.message);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Log.Error("frmDSNhanVien " + result);
-            //    Log.Error(ex, ex.Message);
-            //}
+            if(cbPhong.Text != _sinhVien.Phong|| cbKhu.Text != _sinhVien.Khu)
+            {
+                foreach (var phong in _listPhong)
+                {
+                    if(phong.Name == cbPhong.Text)
+                    {
+                        foreach(var khu in _listKhu)
+                        {
+                            if(khu.Name == cbKhu.Text)
+                            {
+                                var s = await _phongHelper.EditPhong(phong);
+                            }
+                        }
+
+                       _sinhVien.IdPhong = phong.Id;
+                    }
+                }
+            }
+            var result = await _sinhVienHelper.EditSinhVien(_sinhVien.Id, _sinhVien);
+            try
+            {
+                await LoadSinhVien(_listSinhVien);
+                MessageBox.Show(result.message);
+            }
+            catch (Exception ex)
+            {
+                Log.Error("frmDSNhanVien " + result);
+                Log.Error(ex, ex.Message);
+            }
         }
 
         private async void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -289,11 +342,17 @@ namespace ProjectQLKTX
                 {
                     MessageBox.Show(deleteById.message);
                 }
-            }catch (Exception ex)
-            {
-                Log.Error(ex,ex.Message,ex.StackTrace);
             }
-           
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message, ex.StackTrace);
+            }
+
+        }
+
+        private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadSinhVien(_listSinhVien);
         }
     }
 }
