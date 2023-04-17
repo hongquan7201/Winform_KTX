@@ -40,7 +40,7 @@ namespace ProjectQLKTX
         }
         private void btnDangKyXe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmQLiXe frm = new frmQLiXe(_xeHelper, _sinhVienHelper, _phongHelper);
+            frmQLiXe frm = new frmQLiXe(_xeHelper, _sinhVienHelper, _phongHelper,_khuHelper,_truongHelper);
             frm.ShowDialog();
         }
 

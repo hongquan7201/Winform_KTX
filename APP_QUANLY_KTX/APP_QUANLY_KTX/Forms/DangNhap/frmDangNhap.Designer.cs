@@ -55,8 +55,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbHienthi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
-            this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbQuenMK
@@ -85,6 +83,7 @@
             this.btnDangNhap.TabIndex = 3;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.CheckedChanged += new System.EventHandler(this.btnDangNhap_CheckedChanged_1);
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_CheckedChanged_1);
             // 
             // btnThoat
             // 
@@ -274,7 +273,14 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(226, 41);
             this.panel3.TabIndex = 23;
-            //           
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 0;
+            // 
             // frmDangNhap
             // 
             this.Appearance.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -309,9 +315,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbHienthi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -6,7 +6,7 @@ namespace ProjectQLKTX.Models;
 public partial class Xe
 {
     public Guid Id { get; set; }
-
+    public int STT { get; set; }
     public string? Name { get; set; }
 
     public string? Color { get; set; }

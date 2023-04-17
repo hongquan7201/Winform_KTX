@@ -56,7 +56,7 @@ namespace ProjectQLKTX.APIsHelper
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/user/search/name?name={0}";
+            string query = "/api/user/search/cccd?cccd={0}";
             var response = await httpClient.GetAsync(string.Format(query, cccd));
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<List<Sinhvien>> data = JsonConvert.DeserializeObject<APIRespone<List<Sinhvien>>>(body);
@@ -67,7 +67,7 @@ namespace ProjectQLKTX.APIsHelper
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/user/search/cccd?cccd={0}";
+            string query = "/api/user/search/name?name={0}";
             var response = await httpClient.GetAsync(string.Format(query, name));
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<List<Sinhvien>> data = JsonConvert.DeserializeObject<APIRespone<List<Sinhvien>>>(body);

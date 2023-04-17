@@ -20,6 +20,7 @@ public partial class Nhanvien
     public string? Sdt { get; set; }
 
     public bool? Gender { get; set; }
+    public bool? IsAdmin { get; set; }  
 
     public string? Birthday { get; set; }
 

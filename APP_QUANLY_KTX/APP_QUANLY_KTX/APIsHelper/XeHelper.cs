@@ -6,6 +6,7 @@ using ProjectQLKTX.Models;
 using System.Net.Http.Headers;
 using System.Net.Http;
 using System.Text;
+using DevExpress.ClipboardSource.SpreadsheetML;
 
 namespace ProjectQLKTX.APIsHelper
 {
@@ -66,14 +67,14 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Xe>> GetXe(Guid id)
+        public async Task<APIRespone<List<Xe>>> GetXe(Guid? id)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             string query = "/api/xe/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<Xe> data = JsonConvert.DeserializeObject<APIRespone<Xe>>(body);
+            APIRespone<List<Xe>> data = JsonConvert.DeserializeObject<APIRespone<List<Xe>>>(body);
             return data;
         }
     }

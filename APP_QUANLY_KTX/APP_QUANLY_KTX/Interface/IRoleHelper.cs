@@ -1,13 +1,14 @@
-﻿using ProjectQLKTX.Models;
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Models;
 
 namespace ProjectQLKTX.Interface
 {
     public interface IRoleHelper
     {
-        Task GetListRole();
-        Task GetRole(Guid id);
-        Task AddRole(Role rle);
-        Task EditRole(Role role);
-        Task DeleteRole(Guid id);
+        Task<APIRespone<List<Role>>> GetListRole();
+        Task<APIRespone<List<Role>>> GetRole(Guid? id);
+        Task<APIRespone<List<Role>>> AddRole(Role role);
+        Task<APIRespone<string>> EditRole(Role role);
+        Task<APIRespone<string>> DeleteRole(Guid id);
     }
 }

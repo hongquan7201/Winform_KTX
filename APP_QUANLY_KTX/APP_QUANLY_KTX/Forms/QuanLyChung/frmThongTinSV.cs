@@ -360,5 +360,10 @@ namespace ProjectQLKTX
         {
            
         }
+
+        private void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
