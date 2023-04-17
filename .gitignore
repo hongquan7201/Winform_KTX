@@ -58,3 +58,15 @@
 /APP_QUANLY_KTX/.vs/APP_QUANLY_KTX/v17/.suo
 /APP_QUANLY_KTX/APP_QUANLY_KTX/Forms/QuanLyChung/frmThongTinSV.Designer.cs
 /APP_QUANLY_KTX/APP_QUANLY_KTX/Forms/QuanLyChung/frmThongTinSV.resx
+/APP_QUANLY_KTX/APP_QUANLY_KTX/bin/Debug/net6.0-windows/runtimes/linux/lib/netcoreapp2.0/System.Data.Odbc.dll
+/APP_QUANLY_KTX/APP_QUANLY_KTX/bin/Debug/net6.0-windows/runtimes/osx/lib/netcoreapp2.0/System.Data.Odbc.dll
+/APP_QUANLY_KTX/APP_QUANLY_KTX/bin/Debug/net6.0-windows/runtimes/unix/lib/netstandard2.0/System.Private.ServiceModel.dll
+/APP_QUANLY_KTX/APP_QUANLY_KTX/bin/Debug/net6.0-windows/runtimes/win/lib/net6.0/System.Diagnostics.EventLog.Messages.dll
+/APP_QUANLY_KTX/APP_QUANLY_KTX/bin/Debug/net6.0-windows/runtimes/win-arm64/native/sni.dll
+/APP_QUANLY_KTX/APP_QUANLY_KTX/bin/Debug/net6.0-windows/runtimes/win-x64/native/sni.dll
+/APP_QUANLY_KTX/APP_QUANLY_KTX/bin/Debug/net6.0-windows/runtimes/win-x86/native/sni.dll
+*.resources
+/APP_QUANLY_KTX/APP_QUANLY_KTX/ProjectQLKTX.csproj.user
+/APP_QUANLY_KTX/.vs/APP_QUANLY_KTX/v17/.futdcache.v2
+/APP_QUANLY_KTX/.vs/ProjectEvaluation/app_quanly_ktx.metadata.v6.1
+/APP_QUANLY_KTX/.vs/ProjectEvaluation/app_quanly_ktx.projects.v6.1

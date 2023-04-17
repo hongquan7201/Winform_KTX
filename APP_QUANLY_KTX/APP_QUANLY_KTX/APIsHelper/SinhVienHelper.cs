@@ -52,6 +52,28 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
+        public async Task<APIRespone<List<Sinhvien>>> GetSinhVienByCCCD(string cccd)
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            string query = "/api/user/search/name?name={0}";
+            var response = await httpClient.GetAsync(string.Format(query, cccd));
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<List<Sinhvien>> data = JsonConvert.DeserializeObject<APIRespone<List<Sinhvien>>>(body);
+            return data;
+        }
+
+        public async Task<APIRespone<List<Sinhvien>>> GetSinhVienByName(string name)
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            string query = "/api/user/search/cccd?cccd={0}";
+            var response = await httpClient.GetAsync(string.Format(query, name));
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<List<Sinhvien>> data = JsonConvert.DeserializeObject<APIRespone<List<Sinhvien>>>(body);
+            return data;
+        }
+
         public async Task<APIRespone<List<Sinhvien>>> GetListSinhVien()
         {
             HttpClient httpClient = new HttpClient();
@@ -63,14 +85,14 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Sinhvien>> GetSinhVien(Guid id)
+        public async Task<APIRespone<List<Sinhvien>>> GetSinhVienById(Guid? id)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/user/{0}";
+            string query = "/api/user/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<Sinhvien> data = JsonConvert.DeserializeObject<APIRespone<Sinhvien>>(body);
+            APIRespone<List<Sinhvien>> data = JsonConvert.DeserializeObject < APIRespone<List<Sinhvien>>>(body);
             return data;
         }
     }

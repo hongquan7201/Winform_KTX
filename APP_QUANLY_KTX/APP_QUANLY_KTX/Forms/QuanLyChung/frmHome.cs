@@ -21,8 +21,9 @@ namespace ProjectQLKTX
         private readonly IPhongHelper _phongHelper;
         private readonly IKhuHelper _khuHelper;
         private readonly ITruongHelper _truongHelper;
-
-        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper)
+        private readonly IHopDongHelper _hopDongHelper;
+        private readonly IXeHelper _xeHelper;
+        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper)
         {
             InitializeComponent();
             _nhanVienHelper = nhanVienHelper;
@@ -32,21 +33,9 @@ namespace ProjectQLKTX
             _phongHelper = phongHelper;
             _khuHelper = khuHelper;
             _truongHelper = truongHelper;
+            _hopDongHelper = hopDongHelper;
+            _xeHelper = xeHelper;
         }
-        //void OpenForm(Type typeForm)
-        //{
-        //    foreach (Form frm in MdiChildren)
-        //    {
-        //        if (frm.GetType()== typeForm)
-        //        {
-        //            frm.Activate();
-        //            return;
-        //        }
-        //    }
-        //    Form f =(Form) Activator.CreateInstance(typeForm);
-        //    f.MdiParent = this;
-        //    f.Show();
-        //}
         private void btnDoiMK_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmDoiMK frmDoiMK = new frmDoiMK();
@@ -61,8 +50,7 @@ namespace ProjectQLKTX
         }
         private void btnDangKyPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //OpenForm(typeof(frmDKPhong));
-            frmDKPhong frmDangKyPhong = new frmDKPhong();
+            frmDKPhong frmDangKyPhong = new frmDKPhong(_sinhVienHelper,_phongHelper,_khuHelper,_truongHelper, _hopDongHelper,_xeHelper);
             frmDangKyPhong.ShowDialog();
         }
         private void btnChuyenPhong_ItemClick(object sender, ItemClickEventArgs e)
@@ -102,7 +90,7 @@ namespace ProjectQLKTX
         }
         private void btnQLiXe_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLiXe frmQLXe = new frmQLiXe();
+            frmQLiXe frmQLXe = new frmQLiXe(_xeHelper,_sinhVienHelper,_phongHelper);
             frmQLXe.ShowDialog();
         }
         private void btnQLiPhong_ItemClick(object sender, ItemClickEventArgs e)

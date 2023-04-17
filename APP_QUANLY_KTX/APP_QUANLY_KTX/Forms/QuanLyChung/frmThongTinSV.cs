@@ -166,6 +166,7 @@ namespace ProjectQLKTX
             var listQuanHe = await _quanHeHelper.GetListQuanHe();
             if (listQuanHe.status == 200)
             {
+                cbQuanHe.Properties.Items.Clear();
                 foreach (var item in listQuanHe.data)
                 {
                     cbQuanHe.Properties.Items.Add(item.Name);
@@ -259,10 +260,10 @@ namespace ProjectQLKTX
             _sinhVien.Cccd = txtCCCD.Text;
             _sinhVien.Sdt = txtSDT.Text;
             _sinhVien.MaSv = txtMaSV.Text;
-            if(txtTenTN!=null)
+            if (txtTenTN != null)
             {
                 _thanNhan.IdUser = _sinhVien.Id;
-                if(_sinhVien.idThanNhan != null)
+                if (_sinhVien.idThanNhan != null)
                 {
                     _thanNhan.Id = _sinhVien.idThanNhan;
                 }
@@ -292,7 +293,7 @@ namespace ProjectQLKTX
                 {
                     _thanNhan.Gender = false;
                 }
-             var s = await  _thanNhanHelper.EditThanNhan( _thanNhan );
+                var s = await _thanNhanHelper.EditThanNhan(_thanNhan);
             }
             if (cbGioiTinh.Text == "Nam")
             {
@@ -302,21 +303,21 @@ namespace ProjectQLKTX
             {
                 _sinhVien.Gender = false;
             }
-            if(cbPhong.Text != _sinhVien.Phong|| cbKhu.Text != _sinhVien.Khu)
+            if (cbPhong.Text != _sinhVien.Phong || cbKhu.Text != _sinhVien.Khu)
             {
                 foreach (var phong in _listPhong)
                 {
-                    if(phong.Name == cbPhong.Text)
+                    if (phong.Name == cbPhong.Text)
                     {
-                        foreach(var khu in _listKhu)
+                        foreach (var khu in _listKhu)
                         {
-                            if(khu.Name == cbKhu.Text)
+                            if (khu.Name == cbKhu.Text)
                             {
                                 var s = await _phongHelper.EditPhong(phong);
                             }
                         }
 
-                       _sinhVien.IdPhong = phong.Id;
+                        _sinhVien.IdPhong = phong.Id;
                     }
                 }
             }
@@ -353,6 +354,11 @@ namespace ProjectQLKTX
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadSinhVien(_listSinhVien);
+        }
+
+        private void cbKhu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

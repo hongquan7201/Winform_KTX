@@ -88,6 +88,7 @@ namespace ProjectQLKTX
                     services.AddTransient<IKhuHelper, KhuHelper>();
                     services.AddTransient<ITruongHelper, TruongHelper>();
                     services.AddTransient<IQuanHeHelper, QuanHeHelper>();
+                    services.AddTransient<IHopDongHelper, HopDongHelper>();
                 }).Build();
         }
     }

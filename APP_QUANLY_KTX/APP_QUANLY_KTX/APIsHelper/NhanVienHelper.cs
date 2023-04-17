@@ -27,9 +27,10 @@ namespace ProjectQLKTX.APIsHelper
         public async Task<APIRespone<string>> DeleteNhanVien(Guid id)
         {
             HttpClient httpClient = new HttpClient();
-            string url = Constant.Domain + "/api/nhanvien/delete"; // Thay đổi đường dẫn API của bạn
-            var request = new HttpRequestMessage(HttpMethod.Delete, url);
-            request.Content = new StringContent(id.ToString(), System.Text.Encoding.UTF8, "application/json");
+            var url = Constant.Domain + "api/nhanvien/delete";
+            var jsonId = Newtonsoft.Json.JsonConvert.SerializeObject(id);
+            var content = new StringContent(jsonId, System.Text.Encoding.UTF8, "application/json");
+            var request = new HttpRequestMessage(HttpMethod.Delete, url) { Content = content };
             var response = await httpClient.SendAsync(request);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
