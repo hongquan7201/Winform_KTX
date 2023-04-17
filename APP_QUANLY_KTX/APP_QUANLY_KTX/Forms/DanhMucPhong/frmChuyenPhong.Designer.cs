@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChuyenPhong));
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
             this.cbTruong = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtTenNV = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
@@ -47,7 +48,6 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cbMaSV = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.cbChuyenToiPhong = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -127,9 +127,10 @@
             this.NGAYCHUYEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NHANVIENLAP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
+            this.txtMaSV = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTruong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbChuyenToiKhu.Properties)).BeginInit();
@@ -137,7 +138,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbKhuHienTai.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbMaSV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbChuyenToiPhong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
@@ -155,13 +155,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl2
             // 
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.Controls.Add(this.txtMaSV);
             this.groupControl2.Controls.Add(this.txtEmail);
             this.groupControl2.Controls.Add(this.cbTruong);
             this.groupControl2.Controls.Add(this.txtTenNV);
@@ -179,7 +180,6 @@
             this.groupControl2.Controls.Add(this.labelControl9);
             this.groupControl2.Controls.Add(this.labelControl5);
             this.groupControl2.Controls.Add(this.labelControl1);
-            this.groupControl2.Controls.Add(this.cbMaSV);
             this.groupControl2.Controls.Add(this.labelControl7);
             this.groupControl2.Controls.Add(this.cbChuyenToiPhong);
             this.groupControl2.Controls.Add(this.labelControl6);
@@ -199,6 +199,15 @@
             this.groupControl2.TabIndex = 80;
             this.groupControl2.Text = "Thông Tin";
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(642, 190);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Properties.Appearance.Options.UseFont = true;
+            this.txtEmail.Size = new System.Drawing.Size(303, 24);
+            this.txtEmail.TabIndex = 68;
+            // 
             // cbTruong
             // 
             this.cbTruong.Location = new System.Drawing.Point(233, 219);
@@ -207,9 +216,7 @@
             this.cbTruong.Properties.Appearance.Options.UseFont = true;
             this.cbTruong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbTruong.Properties.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
+            this.cbTruong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbTruong.Size = new System.Drawing.Size(300, 24);
             this.cbTruong.TabIndex = 67;
             // 
@@ -269,6 +276,7 @@
             this.cbChuyenToiKhu.Properties.Appearance.Options.UseFont = true;
             this.cbChuyenToiKhu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbChuyenToiKhu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbChuyenToiKhu.Size = new System.Drawing.Size(101, 24);
             this.cbChuyenToiKhu.TabIndex = 66;
             // 
@@ -300,6 +308,7 @@
             this.cbPhongHienTai.Properties.Appearance.Options.UseFont = true;
             this.cbPhongHienTai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbPhongHienTai.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbPhongHienTai.Size = new System.Drawing.Size(87, 24);
             this.cbPhongHienTai.TabIndex = 64;
             // 
@@ -314,6 +323,7 @@
             this.cbGioiTinh.Properties.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
+            this.cbGioiTinh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbGioiTinh.Size = new System.Drawing.Size(108, 24);
             this.cbGioiTinh.TabIndex = 62;
             // 
@@ -335,6 +345,7 @@
             this.cbKhuHienTai.Properties.Appearance.Options.UseFont = true;
             this.cbKhuHienTai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbKhuHienTai.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbKhuHienTai.Size = new System.Drawing.Size(101, 24);
             this.cbKhuHienTai.TabIndex = 60;
             // 
@@ -368,17 +379,6 @@
             this.labelControl1.TabIndex = 47;
             this.labelControl1.Text = "Mã SV";
             // 
-            // cbMaSV
-            // 
-            this.cbMaSV.Location = new System.Drawing.Point(234, 85);
-            this.cbMaSV.Name = "cbMaSV";
-            this.cbMaSV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbMaSV.Properties.Appearance.Options.UseFont = true;
-            this.cbMaSV.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbMaSV.Size = new System.Drawing.Size(107, 24);
-            this.cbMaSV.TabIndex = 48;
-            // 
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -397,6 +397,7 @@
             this.cbChuyenToiPhong.Properties.Appearance.Options.UseFont = true;
             this.cbChuyenToiPhong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbChuyenToiPhong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbChuyenToiPhong.Size = new System.Drawing.Size(87, 24);
             this.cbChuyenToiPhong.TabIndex = 45;
             // 
@@ -1287,14 +1288,14 @@
             this.NHANVIENLAP.VisibleIndex = 8;
             this.NHANVIENLAP.Width = 130;
             // 
-            // txtEmail
+            // txtMaSV
             // 
-            this.txtEmail.Location = new System.Drawing.Point(642, 190);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEmail.Properties.Appearance.Options.UseFont = true;
-            this.txtEmail.Size = new System.Drawing.Size(303, 24);
-            this.txtEmail.TabIndex = 68;
+            this.txtMaSV.Location = new System.Drawing.Point(233, 86);
+            this.txtMaSV.Name = "txtMaSV";
+            this.txtMaSV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMaSV.Properties.Appearance.Options.UseFont = true;
+            this.txtMaSV.Size = new System.Drawing.Size(109, 24);
+            this.txtMaSV.TabIndex = 69;
             // 
             // frmChuyenPhong
             // 
@@ -1318,6 +1319,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTruong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbChuyenToiKhu.Properties)).EndInit();
@@ -1325,7 +1327,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbKhuHienTai.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbMaSV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbChuyenToiPhong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
@@ -1343,7 +1344,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1356,7 +1357,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.ComboBoxEdit cbMaSV;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.ComboBoxEdit cbChuyenToiPhong;
         private DevExpress.XtraEditors.LabelControl labelControl6;
@@ -1448,5 +1448,6 @@
         private DevExpress.XtraEditors.ComboBoxEdit cbTruong;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
         private DevExpress.XtraEditors.TextEdit txtEmail;
+        private DevExpress.XtraEditors.TextEdit txtMaSV;
     }
 }

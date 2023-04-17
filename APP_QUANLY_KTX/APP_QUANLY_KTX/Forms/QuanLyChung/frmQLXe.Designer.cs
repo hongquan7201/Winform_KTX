@@ -1228,7 +1228,6 @@
         private DevExpress.XtraEditors.ComboBoxEdit cbGioiTinh;
         private DateTimePicker dtNgayDangKy;
         private DevExpress.XtraEditors.ComboBoxEdit cbTruong;
-        private DevExpress.XtraEditors.TextEdit txtMaSV;
         private DateTimePicker dtNgaySinh;
         private PictureBox imgSVNu;
         private PictureBox imgSVNam;

@@ -94,7 +94,6 @@
             this.img = new System.Windows.Forms.PictureBox();
             this.dtNgayRa = new System.Windows.Forms.DateTimePicker();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.cbMaSV = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.dtNgayVao = new System.Windows.Forms.DateTimePicker();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -113,6 +112,7 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TOANHA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SOPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MSSV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -132,7 +132,7 @@
             this.TIENCOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CHIPHIKHAC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtMaSV = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -157,7 +157,6 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbMaSV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCCCD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTruong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).BeginInit();
@@ -165,6 +164,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -617,6 +617,7 @@
             this.cbMaThietBi.Properties.Appearance.Options.UseFont = true;
             this.cbMaThietBi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbMaThietBi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbMaThietBi.Size = new System.Drawing.Size(140, 24);
             this.cbMaThietBi.TabIndex = 88;
             // 
@@ -629,6 +630,7 @@
             this.cbTenThietBi.Properties.Appearance.Options.UseFont = true;
             this.cbTenThietBi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbTenThietBi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbTenThietBi.Size = new System.Drawing.Size(140, 24);
             this.cbTenThietBi.TabIndex = 87;
             // 
@@ -651,6 +653,7 @@
             this.cbTinhTrang.Properties.Appearance.Options.UseFont = true;
             this.cbTinhTrang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbTinhTrang.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbTinhTrang.Size = new System.Drawing.Size(143, 24);
             this.cbTinhTrang.TabIndex = 47;
             // 
@@ -696,11 +699,11 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.txtMaSV);
             this.groupControl1.Controls.Add(this.cbGioiTinh);
             this.groupControl1.Controls.Add(this.img);
             this.groupControl1.Controls.Add(this.dtNgayRa);
             this.groupControl1.Controls.Add(this.labelControl16);
-            this.groupControl1.Controls.Add(this.cbMaSV);
             this.groupControl1.Controls.Add(this.dtNgaySinh);
             this.groupControl1.Controls.Add(this.dtNgayVao);
             this.groupControl1.Controls.Add(this.labelControl3);
@@ -735,6 +738,7 @@
             this.cbGioiTinh.Properties.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
+            this.cbGioiTinh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbGioiTinh.Size = new System.Drawing.Size(115, 24);
             this.cbGioiTinh.TabIndex = 45;
             // 
@@ -766,18 +770,6 @@
             this.labelControl16.Size = new System.Drawing.Size(47, 16);
             this.labelControl16.TabIndex = 41;
             this.labelControl16.Text = "Ngày Ra";
-            // 
-            // cbMaSV
-            // 
-            this.cbMaSV.Location = new System.Drawing.Point(244, 91);
-            this.cbMaSV.MenuManager = this.barManager1;
-            this.cbMaSV.Name = "cbMaSV";
-            this.cbMaSV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbMaSV.Properties.Appearance.Options.UseFont = true;
-            this.cbMaSV.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbMaSV.Size = new System.Drawing.Size(112, 24);
-            this.cbMaSV.TabIndex = 34;
             // 
             // dtNgaySinh
             // 
@@ -973,6 +965,28 @@
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // STT
+            // 
+            this.STT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceCell.Options.UseFont = true;
+            this.STT.AppearanceCell.Options.UseTextOptions = true;
+            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
+            this.STT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.STT.AppearanceHeader.Options.UseBackColor = true;
+            this.STT.AppearanceHeader.Options.UseFont = true;
+            this.STT.AppearanceHeader.Options.UseTextOptions = true;
+            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.STT.Caption = "STT";
+            this.STT.FieldName = "STT";
+            this.STT.MaxWidth = 30;
+            this.STT.MinWidth = 30;
+            this.STT.Name = "STT";
+            this.STT.OptionsColumn.ReadOnly = true;
+            this.STT.Visible = true;
+            this.STT.VisibleIndex = 0;
+            this.STT.Width = 30;
             // 
             // TOANHA
             // 
@@ -1376,27 +1390,15 @@
             this.CHIPHIKHAC.OptionsColumn.ReadOnly = true;
             this.CHIPHIKHAC.Width = 100;
             // 
-            // STT
+            // txtMaSV
             // 
-            this.STT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.STT.AppearanceCell.Options.UseFont = true;
-            this.STT.AppearanceCell.Options.UseTextOptions = true;
-            this.STT.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.STT.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
-            this.STT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.STT.AppearanceHeader.Options.UseBackColor = true;
-            this.STT.AppearanceHeader.Options.UseFont = true;
-            this.STT.AppearanceHeader.Options.UseTextOptions = true;
-            this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.STT.Caption = "STT";
-            this.STT.FieldName = "STT";
-            this.STT.MaxWidth = 30;
-            this.STT.MinWidth = 30;
-            this.STT.Name = "STT";
-            this.STT.OptionsColumn.ReadOnly = true;
-            this.STT.Visible = true;
-            this.STT.VisibleIndex = 0;
-            this.STT.Width = 30;
+            this.txtMaSV.Location = new System.Drawing.Point(244, 89);
+            this.txtMaSV.MenuManager = this.barManager1;
+            this.txtMaSV.Name = "txtMaSV";
+            this.txtMaSV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMaSV.Properties.Appearance.Options.UseFont = true;
+            this.txtMaSV.Size = new System.Drawing.Size(112, 24);
+            this.txtMaSV.TabIndex = 46;
             // 
             // frmTraPhong
             // 
@@ -1445,7 +1447,6 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbMaSV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCCCD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTruong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).EndInit();
@@ -1453,6 +1454,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1544,7 +1546,6 @@
         private PictureBox img;
         private DateTimePicker dtNgayRa;
         private DevExpress.XtraEditors.LabelControl labelControl16;
-        private DevExpress.XtraEditors.ComboBoxEdit cbMaSV;
         private DateTimePicker dtNgaySinh;
         private DateTimePicker dtNgayVao;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -1563,5 +1564,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraBars.BarButtonItem btnTraPhong;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
+        private DevExpress.XtraEditors.TextEdit txtMaSV;
     }
 }
