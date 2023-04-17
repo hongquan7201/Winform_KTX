@@ -139,7 +139,7 @@ namespace ProjectQLKTX
                 txtHoTen.Text = GlobalModel.SinhVien.Name;
                 txtDiaChi.Text = GlobalModel.SinhVien.Address;
                 txtCCCD.Text = GlobalModel.SinhVien.Cccd;
-                txtMaSV.Text = GlobalModel.SinhVien.MaSv;
+                //txtMaSV.Text = GlobalModel.SinhVien.MaSv;
                 dtNgaySinh.Text = GlobalModel.SinhVien.BirthDay;
                 txtSDT.Text = GlobalModel.SinhVien.Sdt;
                 cbTruong.Text = GlobalModel.SinhVien.Truong;

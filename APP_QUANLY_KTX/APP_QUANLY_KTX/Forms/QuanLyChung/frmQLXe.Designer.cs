@@ -64,7 +64,6 @@
             this.imgSVNam = new System.Windows.Forms.PictureBox();
             this.imgSVNu = new System.Windows.Forms.PictureBox();
             this.cbTruong = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.txtMaSV = new DevExpress.XtraEditors.TextEdit();
             this.dtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.cbGioiTinh = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -109,6 +108,7 @@
             this.NGAYDANGKY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HINHANH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtMaSV = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -120,7 +120,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgSVNam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSVNu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTruong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
@@ -137,6 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -390,11 +390,11 @@
             // 
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.Controls.Add(this.txtMaSV);
             this.groupControl2.Controls.Add(this.imgNo);
             this.groupControl2.Controls.Add(this.imgSVNam);
             this.groupControl2.Controls.Add(this.imgSVNu);
             this.groupControl2.Controls.Add(this.cbTruong);
-            this.groupControl2.Controls.Add(this.txtMaSV);
             this.groupControl2.Controls.Add(this.dtNgaySinh);
             this.groupControl2.Controls.Add(this.cbGioiTinh);
             this.groupControl2.Controls.Add(this.labelControl13);
@@ -456,16 +456,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbTruong.Size = new System.Drawing.Size(305, 26);
             this.cbTruong.TabIndex = 105;
-            // 
-            // txtMaSV
-            // 
-            this.txtMaSV.Location = new System.Drawing.Point(252, 76);
-            this.txtMaSV.MenuManager = this.barManager1;
-            this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaSV.Properties.Appearance.Options.UseFont = true;
-            this.txtMaSV.Size = new System.Drawing.Size(115, 26);
-            this.txtMaSV.TabIndex = 104;
             // 
             // dtNgaySinh
             // 
@@ -745,10 +735,6 @@
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
             this.gcDanhSach.DoubleClick += new System.EventHandler(this.gcDanhSach_DoubleClick);
-            // 
-            // xeBindingSource
-            // 
-            this.xeBindingSource.DataSource = typeof(ProjectQLKTX.Models.Xe);
             // 
             // gvDanhSach
             // 
@@ -1100,6 +1086,16 @@
             this.groupControl1.TabIndex = 68;
             this.groupControl1.Text = "Danh Sách ";
             // 
+            // txtMaSV
+            // 
+            this.txtMaSV.Location = new System.Drawing.Point(252, 79);
+            this.txtMaSV.MenuManager = this.barManager1;
+            this.txtMaSV.Name = "txtMaSV";
+            this.txtMaSV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMaSV.Properties.Appearance.Options.UseFont = true;
+            this.txtMaSV.Size = new System.Drawing.Size(115, 26);
+            this.txtMaSV.TabIndex = 109;
+            // 
             // frmQLiXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1132,7 +1128,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgSVNam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSVNu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTruong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
@@ -1150,6 +1145,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1235,5 +1231,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn HINHANH;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
         private BindingSource xeBindingSource;
+        private DevExpress.XtraEditors.TextEdit txtMaSV;
     }
 }
