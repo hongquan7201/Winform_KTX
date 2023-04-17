@@ -356,9 +356,9 @@ namespace ProjectQLKTX
             LoadSinhVien(_listSinhVien);
         }
 
-        private void cbKhu_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtEmail_EditValueChanged(object sender, EventArgs e)
         {
-           
+
         }
     }
 }

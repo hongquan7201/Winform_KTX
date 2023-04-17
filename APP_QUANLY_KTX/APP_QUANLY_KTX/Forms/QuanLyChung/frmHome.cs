@@ -90,7 +90,7 @@ namespace ProjectQLKTX
         }
         private void btnQLiXe_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLiXe frmQLXe = new frmQLiXe(_xeHelper,_sinhVienHelper,_phongHelper);
+            frmQLiXe frmQLXe = new frmQLiXe(_xeHelper,_sinhVienHelper,_phongHelper, _khuHelper, _truongHelper);
             frmQLXe.ShowDialog();
         }
         private void btnQLiPhong_ItemClick(object sender, ItemClickEventArgs e)
