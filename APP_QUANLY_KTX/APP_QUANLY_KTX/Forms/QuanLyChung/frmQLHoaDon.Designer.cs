@@ -36,7 +36,7 @@
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXuatfile = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuatfilePDF = new DevExpress.XtraBars.BarButtonItem();
             this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnTim = new DevExpress.XtraBars.BarButtonItem();
@@ -64,6 +64,7 @@
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtMaSV = new DevExpress.XtraEditors.TextEdit();
             this.txtTongTien = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtEmailNV = new DevExpress.XtraEditors.TextEdit();
@@ -91,7 +92,6 @@
             this.NGAYTHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TONGTIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.txtMaSV = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -100,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmailNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
@@ -110,7 +111,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -128,7 +128,7 @@
             this.btnXoa,
             this.btnReload,
             this.barButtonItem5,
-            this.btnXuatfile,
+            this.btnXuatfilePDF,
             this.barButtonItem7,
             this.barButtonItem8,
             this.barButtonItem9,
@@ -169,7 +169,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfile, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfilePDF, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.txtTim, "", true, true, true, 151),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
@@ -207,13 +207,13 @@
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
             // 
-            // btnXuatfile
+            // btnXuatfilePDF
             // 
-            this.btnXuatfile.Caption = "Xuất File";
-            this.btnXuatfile.Id = 5;
-            this.btnXuatfile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.Image")));
-            this.btnXuatfile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.LargeImage")));
-            this.btnXuatfile.Name = "btnXuatfile";
+            this.btnXuatfilePDF.Caption = "Xuất file PDF";
+            this.btnXuatfilePDF.Id = 5;
+            this.btnXuatfilePDF.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.Image")));
+            this.btnXuatfilePDF.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.LargeImage")));
+            this.btnXuatfilePDF.Name = "btnXuatfilePDF";
             // 
             // txtTim
             // 
@@ -415,6 +415,16 @@
             this.groupControl1.Size = new System.Drawing.Size(810, 236);
             this.groupControl1.TabIndex = 46;
             this.groupControl1.Text = "Thông Tin  Chung";
+            // 
+            // txtMaSV
+            // 
+            this.txtMaSV.Location = new System.Drawing.Point(114, 41);
+            this.txtMaSV.MenuManager = this.barManager1;
+            this.txtMaSV.Name = "txtMaSV";
+            this.txtMaSV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMaSV.Properties.Appearance.Options.UseFont = true;
+            this.txtMaSV.Size = new System.Drawing.Size(241, 24);
+            this.txtMaSV.TabIndex = 106;
             // 
             // txtTongTien
             // 
@@ -798,16 +808,6 @@
             this.groupControl2.TabIndex = 106;
             this.groupControl2.Text = "Danh Sách";
             // 
-            // txtMaSV
-            // 
-            this.txtMaSV.Location = new System.Drawing.Point(114, 41);
-            this.txtMaSV.MenuManager = this.barManager1;
-            this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaSV.Properties.Appearance.Options.UseFont = true;
-            this.txtMaSV.Size = new System.Drawing.Size(241, 24);
-            this.txtMaSV.TabIndex = 106;
-            // 
             // frmQLiHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -835,6 +835,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmailNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
@@ -845,7 +846,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -859,7 +859,7 @@
         private DevExpress.XtraBars.BarButtonItem btnSua;
         private DevExpress.XtraBars.BarButtonItem btnXoa;
         private DevExpress.XtraBars.BarButtonItem btnReload;
-        private DevExpress.XtraBars.BarButtonItem btnXuatfile;
+        private DevExpress.XtraBars.BarButtonItem btnXuatfilePDF;
         private DevExpress.XtraBars.BarButtonItem btnTim;
         private DevExpress.XtraBars.BarEditItem txtTim;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit5;

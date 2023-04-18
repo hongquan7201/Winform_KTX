@@ -36,7 +36,7 @@
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXuatfile = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuatfilePDF = new DevExpress.XtraBars.BarButtonItem();
             this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnTim = new DevExpress.XtraBars.BarButtonItem();
@@ -74,7 +74,6 @@
             this.gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENVATDUNG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.PHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENNHANVIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -124,7 +123,7 @@
             this.btnThoat,
             this.btnThem,
             this.barButtonItem15,
-            this.btnXuatfile});
+            this.btnXuatfilePDF});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 20;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -147,7 +146,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfile, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfilePDF, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.txtTim, "", true, true, true, 152),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
@@ -186,13 +185,13 @@
             this.btnReload.Name = "btnReload";
             this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
-            // btnXuatfile
+            // btnXuatfilePDF
             // 
-            this.btnXuatfile.Caption = "Xuất File";
-            this.btnXuatfile.Id = 19;
-            this.btnXuatfile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.Image")));
-            this.btnXuatfile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.LargeImage")));
-            this.btnXuatfile.Name = "btnXuatfile";
+            this.btnXuatfilePDF.Caption = "Xuất file PDF";
+            this.btnXuatfilePDF.Id = 19;
+            this.btnXuatfilePDF.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatfilePDF.ImageOptions.Image")));
+            this.btnXuatfilePDF.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatfilePDF.ImageOptions.LargeImage")));
+            this.btnXuatfilePDF.Name = "btnXuatfilePDF";
             // 
             // txtTim
             // 
@@ -222,15 +221,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(727, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(804, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 478);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 419);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(727, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(804, 0);
             // 
             // barDockControlLeft
             // 
@@ -238,15 +237,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 454);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 395);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(727, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(804, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 454);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 395);
             // 
             // barButtonItem1
             // 
@@ -355,9 +354,9 @@
             this.groupControl3.Controls.Add(this.labelControl2);
             this.groupControl3.Controls.Add(this.txtTinhTrang);
             this.groupControl3.Controls.Add(this.labelControl14);
-            this.groupControl3.Location = new System.Drawing.Point(0, 30);
+            this.groupControl3.Location = new System.Drawing.Point(0, 33);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(731, 149);
+            this.groupControl3.Size = new System.Drawing.Size(802, 149);
             this.groupControl3.TabIndex = 45;
             this.groupControl3.Text = "Thông Tin Kho";
             // 
@@ -449,7 +448,7 @@
             this.groupControl1.Controls.Add(this.gcDanhSach);
             this.groupControl1.Location = new System.Drawing.Point(0, 185);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(727, 292);
+            this.groupControl1.Size = new System.Drawing.Size(802, 235);
             this.groupControl1.TabIndex = 97;
             this.groupControl1.Text = "Danh Sách";
             // 
@@ -459,7 +458,7 @@
             this.gcDanhSach.Location = new System.Drawing.Point(2, 23);
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(725, 209);
+            this.gcDanhSach.Size = new System.Drawing.Size(800, 209);
             this.gcDanhSach.TabIndex = 49;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -474,7 +473,6 @@
             this.gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.STT,
             this.TENVATDUNG,
-            this.PHONG,
             this.TENNHANVIEN,
             this.SOLUONG,
             this.TINHTRANG});
@@ -496,13 +494,13 @@
             this.STT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.STT.Caption = "STT";
             this.STT.FieldName = "STT";
-            this.STT.MaxWidth = 30;
-            this.STT.MinWidth = 30;
+            this.STT.MaxWidth = 50;
+            this.STT.MinWidth = 50;
             this.STT.Name = "STT";
             this.STT.OptionsColumn.ReadOnly = true;
             this.STT.Visible = true;
             this.STT.VisibleIndex = 0;
-            this.STT.Width = 30;
+            this.STT.Width = 50;
             // 
             // TENVATDUNG
             // 
@@ -518,33 +516,13 @@
             this.TENVATDUNG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TENVATDUNG.Caption = "TÊN VẬT DỤNG";
             this.TENVATDUNG.FieldName = "NameVatDung";
-            this.TENVATDUNG.MaxWidth = 150;
-            this.TENVATDUNG.MinWidth = 150;
+            this.TENVATDUNG.MaxWidth = 170;
+            this.TENVATDUNG.MinWidth = 170;
             this.TENVATDUNG.Name = "TENVATDUNG";
             this.TENVATDUNG.OptionsColumn.ReadOnly = true;
             this.TENVATDUNG.Visible = true;
             this.TENVATDUNG.VisibleIndex = 1;
-            this.TENVATDUNG.Width = 150;
-            // 
-            // PHONG
-            // 
-            this.PHONG.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.PHONG.AppearanceCell.Options.UseFont = true;
-            this.PHONG.AppearanceCell.Options.UseTextOptions = true;
-            this.PHONG.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.PHONG.AppearanceHeader.BackColor = System.Drawing.Color.LightCyan;
-            this.PHONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.PHONG.AppearanceHeader.Options.UseBackColor = true;
-            this.PHONG.AppearanceHeader.Options.UseFont = true;
-            this.PHONG.AppearanceHeader.Options.UseTextOptions = true;
-            this.PHONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.PHONG.Caption = "PHÒNG";
-            this.PHONG.FieldName = "PHONG";
-            this.PHONG.MaxWidth = 130;
-            this.PHONG.MinWidth = 130;
-            this.PHONG.Name = "PHONG";
-            this.PHONG.OptionsColumn.ReadOnly = true;
-            this.PHONG.Width = 130;
+            this.TENVATDUNG.Width = 170;
             // 
             // TENNHANVIEN
             // 
@@ -582,13 +560,13 @@
             this.SOLUONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SOLUONG.Caption = "SỐ LƯỢNG";
             this.SOLUONG.FieldName = "Quantity";
-            this.SOLUONG.MaxWidth = 150;
-            this.SOLUONG.MinWidth = 150;
+            this.SOLUONG.MaxWidth = 170;
+            this.SOLUONG.MinWidth = 170;
             this.SOLUONG.Name = "SOLUONG";
             this.SOLUONG.OptionsColumn.ReadOnly = true;
             this.SOLUONG.Visible = true;
             this.SOLUONG.VisibleIndex = 3;
-            this.SOLUONG.Width = 150;
+            this.SOLUONG.Width = 170;
             // 
             // TINHTRANG
             // 
@@ -604,19 +582,19 @@
             this.TINHTRANG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TINHTRANG.Caption = "TÌNH TRẠNG";
             this.TINHTRANG.FieldName = "TinhTrang";
-            this.TINHTRANG.MaxWidth = 200;
-            this.TINHTRANG.MinWidth = 200;
+            this.TINHTRANG.MaxWidth = 210;
+            this.TINHTRANG.MinWidth = 210;
             this.TINHTRANG.Name = "TINHTRANG";
             this.TINHTRANG.OptionsColumn.ReadOnly = true;
             this.TINHTRANG.Visible = true;
             this.TINHTRANG.VisibleIndex = 4;
-            this.TINHTRANG.Width = 200;
+            this.TINHTRANG.Width = 210;
             // 
             // frmQLiKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 478);
+            this.ClientSize = new System.Drawing.Size(804, 419);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.barDockControlLeft);
@@ -691,13 +669,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn TINHTRANG;
         private DevExpress.XtraEditors.TextEdit txtTenNV;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraBars.BarButtonItem btnXuatfile;
+        private DevExpress.XtraBars.BarButtonItem btnXuatfilePDF;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtSoLuong;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.ComboBoxEdit cbTenVatDung;
         private DevExpress.XtraGrid.Columns.GridColumn TENVATDUNG;
-        private DevExpress.XtraGrid.Columns.GridColumn PHONG;
         private DevExpress.XtraGrid.Columns.GridColumn TENNHANVIEN;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
         private BindingSource chitietphieukhoBindingSource;

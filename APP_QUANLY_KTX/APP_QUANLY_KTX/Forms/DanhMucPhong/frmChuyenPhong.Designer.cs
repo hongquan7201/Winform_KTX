@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChuyenPhong));
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtMaSV = new DevExpress.XtraEditors.TextEdit();
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
             this.cbTruong = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtTenNV = new DevExpress.XtraEditors.TextEdit();
@@ -67,7 +68,7 @@
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXuatfile = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuatfilepdf = new DevExpress.XtraBars.BarButtonItem();
             this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnTim = new DevExpress.XtraBars.BarButtonItem();
@@ -127,9 +128,9 @@
             this.NGAYCHUYEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NHANVIENLAP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtMaSV = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTruong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).BeginInit();
@@ -155,7 +156,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl2
@@ -198,6 +198,15 @@
             this.groupControl2.Size = new System.Drawing.Size(974, 309);
             this.groupControl2.TabIndex = 80;
             this.groupControl2.Text = "Thông Tin";
+            // 
+            // txtMaSV
+            // 
+            this.txtMaSV.Location = new System.Drawing.Point(233, 86);
+            this.txtMaSV.Name = "txtMaSV";
+            this.txtMaSV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMaSV.Properties.Appearance.Options.UseFont = true;
+            this.txtMaSV.Size = new System.Drawing.Size(109, 24);
+            this.txtMaSV.TabIndex = 69;
             // 
             // txtEmail
             // 
@@ -545,7 +554,7 @@
             this.barButtonItem17,
             this.barEditItem10,
             this.barButtonItem18,
-            this.btnXuatfile,
+            this.btnXuatfilepdf,
             this.btnChuyenPhong});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 31;
@@ -575,7 +584,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfile, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfilepdf, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.txtTim, "", true, true, true, 139),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
@@ -613,13 +622,13 @@
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
             // 
-            // btnXuatfile
+            // btnXuatfilepdf
             // 
-            this.btnXuatfile.Caption = "Xuất File";
-            this.btnXuatfile.Id = 29;
-            this.btnXuatfile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.Image")));
-            this.btnXuatfile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.LargeImage")));
-            this.btnXuatfile.Name = "btnXuatfile";
+            this.btnXuatfilepdf.Caption = "Xuất file PDF";
+            this.btnXuatfilepdf.Id = 29;
+            this.btnXuatfilepdf.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatfilepdf.ImageOptions.Image")));
+            this.btnXuatfilepdf.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatfilepdf.ImageOptions.LargeImage")));
+            this.btnXuatfilepdf.Name = "btnXuatfilepdf";
             // 
             // txtTim
             // 
@@ -1288,15 +1297,6 @@
             this.NHANVIENLAP.VisibleIndex = 8;
             this.NHANVIENLAP.Width = 130;
             // 
-            // txtMaSV
-            // 
-            this.txtMaSV.Location = new System.Drawing.Point(233, 86);
-            this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaSV.Properties.Appearance.Options.UseFont = true;
-            this.txtMaSV.Size = new System.Drawing.Size(109, 24);
-            this.txtMaSV.TabIndex = 69;
-            // 
             // frmChuyenPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1319,6 +1319,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTruong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).EndInit();
@@ -1344,7 +1345,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1377,7 +1377,7 @@
         private DevExpress.XtraBars.BarButtonItem btnSua;
         private DevExpress.XtraBars.BarButtonItem btnXoa;
         private DevExpress.XtraBars.BarButtonItem btnReload;
-        private DevExpress.XtraBars.BarButtonItem btnXuatfile;
+        private DevExpress.XtraBars.BarButtonItem btnXuatfilepdf;
         private DevExpress.XtraBars.BarButtonItem btnSVCungPhong;
         private DevExpress.XtraBars.BarButtonItem btnTim;
         private DevExpress.XtraBars.BarEditItem txtTim;

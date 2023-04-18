@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDKPhong));
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtMaSV = new DevExpress.XtraEditors.TextEdit();
             this.cbTruong = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.cbGioiTinh = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -102,9 +103,9 @@
             this.cbKhu = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.txtMaSV = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTruong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
@@ -128,7 +129,6 @@
             this.groupControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbPhong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbKhu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl2
@@ -162,9 +162,18 @@
             this.groupControl2.TabIndex = 43;
             this.groupControl2.Text = "Thông Tin Đăng Ký";
             // 
+            // txtMaSV
+            // 
+            this.txtMaSV.Location = new System.Drawing.Point(269, 100);
+            this.txtMaSV.Name = "txtMaSV";
+            this.txtMaSV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMaSV.Properties.Appearance.Options.UseFont = true;
+            this.txtMaSV.Size = new System.Drawing.Size(120, 24);
+            this.txtMaSV.TabIndex = 78;
+            // 
             // cbTruong
             // 
-            this.cbTruong.Location = new System.Drawing.Point(268, 194);
+            this.cbTruong.Location = new System.Drawing.Point(269, 218);
             this.cbTruong.Name = "cbTruong";
             this.cbTruong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbTruong.Properties.Appearance.Options.UseFont = true;
@@ -179,14 +188,14 @@
             this.dtNgaySinh.CalendarFont = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtNgaySinh.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgaySinh.Location = new System.Drawing.Point(457, 73);
+            this.dtNgaySinh.Location = new System.Drawing.Point(458, 97);
             this.dtNgaySinh.Name = "dtNgaySinh";
             this.dtNgaySinh.Size = new System.Drawing.Size(124, 26);
             this.dtNgaySinh.TabIndex = 76;
             // 
             // cbGioiTinh
             // 
-            this.cbGioiTinh.Location = new System.Drawing.Point(268, 114);
+            this.cbGioiTinh.Location = new System.Drawing.Point(269, 138);
             this.cbGioiTinh.Name = "cbGioiTinh";
             this.cbGioiTinh.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbGioiTinh.Properties.Appearance.Options.UseFont = true;
@@ -203,7 +212,7 @@
             // 
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl12.Appearance.Options.UseFont = true;
-            this.labelControl12.Location = new System.Drawing.Point(195, 119);
+            this.labelControl12.Location = new System.Drawing.Point(196, 143);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(50, 16);
             this.labelControl12.TabIndex = 74;
@@ -211,7 +220,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(268, 275);
+            this.txtEmail.Location = new System.Drawing.Point(269, 299);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtEmail.Properties.Appearance.Options.UseFont = true;
@@ -222,7 +231,7 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(213, 278);
+            this.labelControl8.Location = new System.Drawing.Point(214, 302);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(31, 16);
             this.labelControl8.TabIndex = 72;
@@ -231,7 +240,7 @@
             // imgSVNu
             // 
             this.imgSVNu.Image = ((System.Drawing.Image)(resources.GetObject("imgSVNu.Image")));
-            this.imgSVNu.Location = new System.Drawing.Point(21, 55);
+            this.imgSVNu.Location = new System.Drawing.Point(40, 69);
             this.imgSVNu.Name = "imgSVNu";
             this.imgSVNu.Size = new System.Drawing.Size(122, 124);
             this.imgSVNu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -241,7 +250,7 @@
             // imgSVNam
             // 
             this.imgSVNam.Image = ((System.Drawing.Image)(resources.GetObject("imgSVNam.Image")));
-            this.imgSVNam.Location = new System.Drawing.Point(21, 55);
+            this.imgSVNam.Location = new System.Drawing.Point(40, 69);
             this.imgSVNam.Name = "imgSVNam";
             this.imgSVNam.Size = new System.Drawing.Size(122, 124);
             this.imgSVNam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -251,7 +260,7 @@
             // imgNo
             // 
             this.imgNo.Image = global::ProjectQLKTX.Properties.Resources.noimage;
-            this.imgNo.Location = new System.Drawing.Point(21, 55);
+            this.imgNo.Location = new System.Drawing.Point(40, 69);
             this.imgNo.Name = "imgNo";
             this.imgNo.Size = new System.Drawing.Size(122, 124);
             this.imgNo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -262,7 +271,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(202, 199);
+            this.labelControl5.Location = new System.Drawing.Point(203, 223);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(42, 16);
             this.labelControl5.TabIndex = 50;
@@ -272,7 +281,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(207, 77);
+            this.labelControl1.Location = new System.Drawing.Point(208, 101);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(37, 16);
             this.labelControl1.TabIndex = 47;
@@ -282,7 +291,7 @@
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(212, 156);
+            this.labelControl6.Location = new System.Drawing.Point(213, 180);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(32, 16);
             this.labelControl6.TabIndex = 41;
@@ -290,7 +299,7 @@
             // 
             // txtHoTen
             // 
-            this.txtHoTen.Location = new System.Drawing.Point(271, 37);
+            this.txtHoTen.Location = new System.Drawing.Point(272, 61);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtHoTen.Properties.Appearance.Options.UseFont = true;
@@ -299,7 +308,7 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(269, 233);
+            this.txtDiaChi.Location = new System.Drawing.Point(270, 257);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDiaChi.Properties.Appearance.Options.UseFont = true;
@@ -310,7 +319,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(204, 38);
+            this.labelControl3.Location = new System.Drawing.Point(205, 62);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(41, 16);
             this.labelControl3.TabIndex = 9;
@@ -320,7 +329,7 @@
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(422, 115);
+            this.labelControl11.Location = new System.Drawing.Point(423, 139);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(25, 16);
             this.labelControl11.TabIndex = 39;
@@ -330,7 +339,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(394, 77);
+            this.labelControl4.Location = new System.Drawing.Point(395, 101);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(57, 16);
             this.labelControl4.TabIndex = 13;
@@ -338,7 +347,7 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(457, 114);
+            this.txtSDT.Location = new System.Drawing.Point(458, 138);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSDT.Properties.Appearance.Options.UseFont = true;
@@ -349,7 +358,7 @@
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(203, 236);
+            this.labelControl10.Location = new System.Drawing.Point(204, 260);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(41, 16);
             this.labelControl10.TabIndex = 37;
@@ -357,7 +366,7 @@
             // 
             // txtCCCD
             // 
-            this.txtCCCD.Location = new System.Drawing.Point(269, 155);
+            this.txtCCCD.Location = new System.Drawing.Point(270, 179);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCCCD.Properties.Appearance.Options.UseFont = true;
@@ -828,15 +837,6 @@
             this.labelControl7.TabIndex = 43;
             this.labelControl7.Text = "Phòng";
             // 
-            // txtMaSV
-            // 
-            this.txtMaSV.Location = new System.Drawing.Point(268, 76);
-            this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaSV.Properties.Appearance.Options.UseFont = true;
-            this.txtMaSV.Size = new System.Drawing.Size(120, 24);
-            this.txtMaSV.TabIndex = 78;
-            // 
             // frmDKPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -859,6 +859,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTruong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
@@ -884,7 +885,6 @@
             this.groupControl5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbPhong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbKhu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaSV.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
