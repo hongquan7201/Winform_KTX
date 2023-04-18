@@ -1,13 +1,14 @@
-﻿using ProjectQLKTX.Models;
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Models;
 
 namespace ProjectQLKTX.Interface
 {
     public interface ITaiSanHelper
     {
-        Task GetListTaiSan();
-        Task GetTaiSan(Guid id);
-        Task AddTaiSan(Taisan taiSan);
-        Task EditTaiSan(Taisan taiSan);
-        Task DeleteTaiSan(Guid id);
+        Task<APIRespone<List<Taisan>>> GetListTaiSan();
+        Task<APIRespone<List<Taisan>>> GetTaiSan(Guid id);
+        Task<APIRespone<string>> AddTaiSan(Taisan taiSan);
+        Task<APIRespone<string>> EditTaiSan(Taisan taiSan);
+        Task<APIRespone<string>> DeleteTaiSan(Guid id);
     }
 }

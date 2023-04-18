@@ -23,7 +23,9 @@ namespace ProjectQLKTX
         private readonly ITruongHelper _truongHelper;
         private readonly IHopDongHelper _hopDongHelper;
         private readonly IXeHelper _xeHelper;
-        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper)
+        private readonly ITaiSanHelper _taiSanHelper;
+        private readonly IVatDungHelper _vatDungHelper;
+        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper)
         {
             InitializeComponent();
             _nhanVienHelper = nhanVienHelper;
@@ -35,6 +37,8 @@ namespace ProjectQLKTX
             _truongHelper = truongHelper;
             _hopDongHelper = hopDongHelper;
             _xeHelper = xeHelper;
+            _taiSanHelper = taiSanHelper;
+            _vatDungHelper = vatDungHelper;
         }
         private void btnDoiMK_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -117,7 +121,7 @@ namespace ProjectQLKTX
 
         private void btnQLiTaiSan_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLiTaiSan frmQLiTaiSan = new frmQLiTaiSan();
+            frmQLiTaiSan frmQLiTaiSan = new frmQLiTaiSan(_taiSanHelper,_phongHelper,_vatDungHelper);
             frmQLiTaiSan.ShowDialog();
         }
 

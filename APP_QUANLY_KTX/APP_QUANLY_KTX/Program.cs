@@ -91,6 +91,8 @@ namespace ProjectQLKTX
                     services.AddTransient<IHopDongHelper, HopDongHelper>();
                     services.AddTransient<IXeHelper, XeHelper>();
                     services.AddTransient<IRoleHelper, RoleHelper>();
+                    services.AddTransient<IVatDungHelper, VatDungHelper>();
+                    services.AddTransient<ITaiSanHelper, TaiSanHelper>();
                 }).Build();
         }
     }

@@ -71,6 +71,7 @@
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.gcDanhSach = new DevExpress.XtraGrid.GridControl();
+            this.taisanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gvDanhSach = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENTAISAN = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -92,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taisanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -119,7 +121,7 @@
             // 
             // txtNhanVien
             // 
-            this.txtNhanVien.Location = new System.Drawing.Point(135, 129);
+            this.txtNhanVien.Location = new System.Drawing.Point(135, 127);
             this.txtNhanVien.Name = "txtNhanVien";
             this.txtNhanVien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNhanVien.Properties.Appearance.Options.UseFont = true;
@@ -130,7 +132,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(21, 131);
+            this.labelControl3.Location = new System.Drawing.Point(21, 132);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(84, 16);
             this.labelControl3.TabIndex = 97;
@@ -147,6 +149,7 @@
             this.cbVatDung.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbVatDung.Size = new System.Drawing.Size(244, 24);
             this.cbVatDung.TabIndex = 96;
+            this.cbVatDung.SelectedIndexChanged += new System.EventHandler(this.cbVatDung_SelectedIndexChanged);
             // 
             // labelControl2
             // 
@@ -283,6 +286,7 @@
             this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
             this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnSua
             // 
@@ -290,6 +294,7 @@
             this.btnSua.Id = 1;
             this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
             this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnXoa
             // 
@@ -298,6 +303,7 @@
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnReload
             // 
@@ -306,6 +312,7 @@
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnXuatfile
             // 
@@ -314,6 +321,7 @@
             this.btnXuatfile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.Image")));
             this.btnXuatfile.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.LargeImage")));
             this.btnXuatfile.Name = "btnXuatfile";
+            this.btnXuatfile.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXuatfile_ItemClick);
             // 
             // txtTim
             // 
@@ -335,6 +343,7 @@
             this.btnTim.Id = 11;
             this.btnTim.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTim.ImageOptions.SvgImage")));
             this.btnTim.Name = "btnTim";
+            this.btnTim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTim_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -465,6 +474,7 @@
             // 
             // gcDanhSach
             // 
+            this.gcDanhSach.DataSource = this.taisanBindingSource;
             this.gcDanhSach.Location = new System.Drawing.Point(2, 23);
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.Name = "gcDanhSach";
@@ -472,6 +482,11 @@
             this.gcDanhSach.TabIndex = 49;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
+            this.gcDanhSach.DoubleClick += new System.EventHandler(this.gcDanhSach_DoubleClick);
+            // 
+            // taisanBindingSource
+            // 
+            this.taisanBindingSource.DataSource = typeof(ProjectQLKTX.Models.Taisan);
             // 
             // gvDanhSach
             // 
@@ -521,7 +536,7 @@
             this.TENTAISAN.AppearanceHeader.Options.UseTextOptions = true;
             this.TENTAISAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TENTAISAN.Caption = "TÊN TÀI SẢN";
-            this.TENTAISAN.FieldName = "TENTAISAN";
+            this.TENTAISAN.FieldName = "NameVatDung";
             this.TENTAISAN.MaxWidth = 160;
             this.TENTAISAN.MinWidth = 160;
             this.TENTAISAN.Name = "TENTAISAN";
@@ -543,7 +558,7 @@
             this.PHONG.AppearanceHeader.Options.UseTextOptions = true;
             this.PHONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.PHONG.Caption = "PHÒNG";
-            this.PHONG.FieldName = "PHONG";
+            this.PHONG.FieldName = "NamePhong";
             this.PHONG.MaxWidth = 147;
             this.PHONG.MinWidth = 147;
             this.PHONG.Name = "PHONG";
@@ -570,8 +585,6 @@
             this.TENNHANVIEN.MinWidth = 150;
             this.TENNHANVIEN.Name = "TENNHANVIEN";
             this.TENNHANVIEN.OptionsColumn.ReadOnly = true;
-            this.TENNHANVIEN.Visible = true;
-            this.TENNHANVIEN.VisibleIndex = 3;
             this.TENNHANVIEN.Width = 150;
             // 
             // SOLUONG
@@ -587,13 +600,13 @@
             this.SOLUONG.AppearanceHeader.Options.UseTextOptions = true;
             this.SOLUONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SOLUONG.Caption = "SỐ LƯỢNG";
-            this.SOLUONG.FieldName = "SOLUONG";
+            this.SOLUONG.FieldName = "Quantity";
             this.SOLUONG.MaxWidth = 150;
             this.SOLUONG.MinWidth = 150;
             this.SOLUONG.Name = "SOLUONG";
             this.SOLUONG.OptionsColumn.ReadOnly = true;
             this.SOLUONG.Visible = true;
-            this.SOLUONG.VisibleIndex = 4;
+            this.SOLUONG.VisibleIndex = 3;
             this.SOLUONG.Width = 150;
             // 
             // TINHTRANG
@@ -609,13 +622,13 @@
             this.TINHTRANG.AppearanceHeader.Options.UseTextOptions = true;
             this.TINHTRANG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.TINHTRANG.Caption = "TÌNH TRẠNG";
-            this.TINHTRANG.FieldName = "TINHTRANG";
+            this.TINHTRANG.FieldName = "TinhTrang";
             this.TINHTRANG.MaxWidth = 170;
             this.TINHTRANG.MinWidth = 170;
             this.TINHTRANG.Name = "TINHTRANG";
             this.TINHTRANG.OptionsColumn.ReadOnly = true;
             this.TINHTRANG.Visible = true;
-            this.TINHTRANG.VisibleIndex = 5;
+            this.TINHTRANG.VisibleIndex = 4;
             this.TINHTRANG.Width = 170;
             // 
             // groupControl1
@@ -645,6 +658,7 @@
             this.Name = "frmQLiTaiSan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Tài Sản";
+            this.Load += new System.EventHandler(this.frmQLiTaiSan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
@@ -659,6 +673,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taisanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -670,7 +685,6 @@
         #endregion
 
         private DevExpress.XtraEditors.GroupControl groupControl3;
-        private DevExpress.XtraEditors.TextEdit txtTinhTrang;
         private DevExpress.XtraEditors.TextEdit txtSoLuong;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl12;
@@ -718,5 +732,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraGrid.Columns.GridColumn TENNHANVIEN;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
+        private BindingSource taisanBindingSource;
+        private DevExpress.XtraEditors.TextEdit txtTinhTrang;
     }
 }

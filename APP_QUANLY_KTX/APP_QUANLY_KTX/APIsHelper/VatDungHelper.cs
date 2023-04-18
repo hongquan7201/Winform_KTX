@@ -1,34 +1,33 @@
-﻿using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
-using System.Net.Http.Headers;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
-using DevExpress.ClipboardSource.SpreadsheetML;
 
 namespace ProjectQLKTX.APIsHelper
 {
-    public class XeHelper : IXeHelper
+    public class VatDungHelper : IVatDungHelper
     {
-        public async Task<APIRespone<string>> AddXe(Xe xe)
+        public async Task<APIRespone<string>> AddVatDung(Vatdung vatDung)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var json = JsonConvert.SerializeObject(xe, jsonSerializerSettings);
+            var json = JsonConvert.SerializeObject(vatDung, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PostAsync($"api/xe/add", content);
+            var response = await httpClient.PostAsync($"api/vatdung/add", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
         }
 
-        public async Task<APIRespone<string>> DeleteXe(Guid id)
+        public async Task<APIRespone<string>> DeleteVatDung(Guid id)
         {
-            string url = Constant.Domain + "api/xe/delete";// Thay đổi đường dẫn API của bạn
+            string url = Constant.Domain + "api/vatdung/delete";// Thay đổi đường dẫn API của bạn
             var httpClient = new HttpClient();
             var jsonId = JsonConvert.SerializeObject(id);
             var content = new StringContent(jsonId, Encoding.UTF8, "application/json");
@@ -42,39 +41,39 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> EditXe(Xe xe)
+        public async Task<APIRespone<string>> EditVatDung(Vatdung vatDung)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var json = JsonConvert.SerializeObject(xe, jsonSerializerSettings);
+            var json = JsonConvert.SerializeObject(vatDung, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/xe/edit", content);
+            var response = await httpClient.PutAsync($"api/vatdung/edit", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
         }
 
-        public async Task<APIRespone<List<Xe>>> GetListXe()
+        public async Task<APIRespone<List<Vatdung>>> GetListVatDung()
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/xe";
+            string query = "/api/vatdung";
             var response = await httpClient.GetAsync(query);
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<List<Xe>> data = JsonConvert.DeserializeObject<APIRespone<List<Xe>>>(body);
+            APIRespone<List<Vatdung>> data = JsonConvert.DeserializeObject<APIRespone<List<Vatdung>>>(body);
             return data;
         }
 
-        public async Task<APIRespone<List<Xe>>> GetXe(Guid? id)
+        public async Task<APIRespone<List<Vatdung>>> GetVatDung(Guid? id)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/xe/id?id={0}";
+            string query = "/api/vatdung/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<List<Xe>> data = JsonConvert.DeserializeObject<APIRespone<List<Xe>>>(body);
+            APIRespone<List<Vatdung>> data = JsonConvert.DeserializeObject<APIRespone<List<Vatdung>>>(body);
             return data;
         }
     }

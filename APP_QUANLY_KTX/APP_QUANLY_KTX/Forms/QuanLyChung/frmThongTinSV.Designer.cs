@@ -676,6 +676,7 @@
             this.btnReload.Caption = "Reload";
             this.btnReload.Id = 3;
             this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick_1);
             // 
             // txtTim
             // 
