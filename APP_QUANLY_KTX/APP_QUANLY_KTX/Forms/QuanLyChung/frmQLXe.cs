@@ -139,7 +139,7 @@ namespace ProjectQLKTX
                 txtHoTen.Text = GlobalModel.SinhVien.Name;
                 txtDiaChi.Text = GlobalModel.SinhVien.Address;
                 txtCCCD.Text = GlobalModel.SinhVien.Cccd;
-                //txtMaSV.Text = GlobalModel.SinhVien.MaSv;
+                txtMaSV.Text = GlobalModel.SinhVien.MaSv;
                 dtNgaySinh.Text = GlobalModel.SinhVien.BirthDay;
                 txtSDT.Text = GlobalModel.SinhVien.Sdt;
                 cbTruong.Text = GlobalModel.SinhVien.Truong;
@@ -308,6 +308,25 @@ namespace ProjectQLKTX
             }
           
             MessageBox.Show(resultDelete.message);
+        }
+
+        private async void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Xe xe = new Xe();
+            xe.Id = account.Id;
+            xe.IdUser= account.IdUser;
+            xe.Name = txtTenXe.Text;
+            xe.Color = txtMauXe.Text;
+            xe.Code = txtBSoXe.Text;
+            xe.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
+            var resultEdit = await _xeHelper.EditXe(xe);
+            if(resultEdit.status == 200)
+            {
+                await LoadXe(_listXe);
+            }
+            MessageBox.Show(resultEdit.message);
+           
+
         }
     }
 }

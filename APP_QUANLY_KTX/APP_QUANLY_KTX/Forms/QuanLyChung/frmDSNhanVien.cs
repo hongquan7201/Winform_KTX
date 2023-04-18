@@ -185,5 +185,10 @@ namespace ProjectQLKTX
                 Log.Error(ex, ex.Message);
             }
         }
+
+        private void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

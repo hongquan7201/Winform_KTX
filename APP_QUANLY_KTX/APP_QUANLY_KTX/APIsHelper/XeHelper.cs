@@ -20,7 +20,7 @@ namespace ProjectQLKTX.APIsHelper
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(xe, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/xe/add", content);
+            var response = await httpClient.PostAsync($"api/xe/add", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;

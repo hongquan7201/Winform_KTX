@@ -65,14 +65,36 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Nhanvien>> GetNhanVien(Guid id)
+        public async Task<APIRespone<List<Nhanvien>>> GetNhanVienByEmail(string? email)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/nhanvien/{0}";
+            string query = "/api/nhanvien/search/email?email={0}";
+            var response = await httpClient.GetAsync(string.Format(query, email));
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<List<Nhanvien>> data = JsonConvert.DeserializeObject<APIRespone<List<Nhanvien>>>(body);
+            return data;
+        }
+
+        public async Task<APIRespone<List<Nhanvien>>> GetNhanVienById(Guid? id)
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            string query = "/api/nhanvien/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<Nhanvien> data = JsonConvert.DeserializeObject<APIRespone<Nhanvien>>(body);
+            APIRespone<List<Nhanvien>> data = JsonConvert.DeserializeObject<APIRespone<List<Nhanvien>>>(body);
+            return data;
+        }
+
+        public async Task<APIRespone<List<Nhanvien>>> GetNhanVienByName(string? name)
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            string query = "/api/nhanvien/search/name?name={0}";
+            var response = await httpClient.GetAsync(string.Format(query, name));
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<List<Nhanvien>> data = JsonConvert.DeserializeObject<APIRespone<List<Nhanvien>>>(body);
             return data;
         }
     }

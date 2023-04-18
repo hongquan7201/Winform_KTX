@@ -9,26 +9,25 @@ using System.Text;
 
 namespace ProjectQLKTX.APIsHelper
 {
-    public class ChiTietPhieuKhoHelper : IChietTietPhieuKhoHelper
+    public class VatDungHelper : IVatDungHelper
     {
-        public async Task<APIRespone<string>> AddChietTietPhieuKho(Chitietphieukho chitietphieukho)
+        public async Task<APIRespone<string>> AddVatDung(Vatdung vatDung)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var json = JsonConvert.SerializeObject(chitietphieukho, jsonSerializerSettings);
+            var json = JsonConvert.SerializeObject(vatDung, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PostAsync($"api/chitietphieukho/add", content);
+            var response = await httpClient.PostAsync($"api/vatdung/add", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
         }
 
-        public async Task<APIRespone<string>> DeleteChietTietPhieuKho(Guid id)
+        public async Task<APIRespone<string>> DeleteVatDung(Guid id)
         {
-
-            string url = Constant.Domain + "api/chitietphieukho/delete";// Thay đổi đường dẫn API của bạn
+            string url = Constant.Domain + "api/vatdung/delete";// Thay đổi đường dẫn API của bạn
             var httpClient = new HttpClient();
             var jsonId = JsonConvert.SerializeObject(id);
             var content = new StringContent(jsonId, Encoding.UTF8, "application/json");
@@ -42,39 +41,39 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> EditChietTietPhieuKho(Guid id,Chitietphieukho chitietphieukho)
+        public async Task<APIRespone<string>> EditVatDung(Vatdung vatDung)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var json = JsonConvert.SerializeObject(chitietphieukho, jsonSerializerSettings);
+            var json = JsonConvert.SerializeObject(vatDung, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/chitietphieukho/edit/{id}", content);
+            var response = await httpClient.PutAsync($"api/vatdung/edit", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
         }
 
-        public async Task<APIRespone<Chitietphieukho>> GetChietTietPhieuKho(Guid id)
+        public async Task<APIRespone<List<Vatdung>>> GetListVatDung()
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/chitietphieukho/id?id={0}";
-            var response = await httpClient.GetAsync(string.Format(query, id));
+            string query = "/api/vatdung";
+            var response = await httpClient.GetAsync(query);
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<Chitietphieukho> data = JsonConvert.DeserializeObject<APIRespone<Chitietphieukho>>(body);
+            APIRespone<List<Vatdung>> data = JsonConvert.DeserializeObject<APIRespone<List<Vatdung>>>(body);
             return data;
         }
 
-        public async Task<APIRespone<List<Chitietphieukho>>> GetListChietTietPhieuKho()
+        public async Task<APIRespone<List<Vatdung>>> GetVatDung(Guid? id)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/chitietphieukho";
-            var response = await httpClient.GetAsync(query);
+            string query = "/api/vatdung/id?id={0}";
+            var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<List<Chitietphieukho>> data = JsonConvert.DeserializeObject<APIRespone<List<Chitietphieukho>>>(body);
+            APIRespone<List<Vatdung>> data = JsonConvert.DeserializeObject<APIRespone<List<Vatdung>>>(body);
             return data;
         }
     }

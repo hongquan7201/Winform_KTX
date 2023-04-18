@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuenMK));
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtQuayLaiDN = new System.Windows.Forms.Label();
+            this.lbQLaiDN = new System.Windows.Forms.Label();
             this.btnLayLaiMK = new DevExpress.XtraEditors.CheckButton();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureEdit5 = new DevExpress.XtraEditors.PictureEdit();
@@ -75,18 +75,18 @@
             this.label1.Text = "QUÊN MẬT KHẨU?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtQuayLaiDN
+            // lbQLaiDN
             // 
-            this.txtQuayLaiDN.AutoSize = true;
-            this.txtQuayLaiDN.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtQuayLaiDN.ForeColor = System.Drawing.Color.Blue;
-            this.txtQuayLaiDN.Location = new System.Drawing.Point(250, 287);
-            this.txtQuayLaiDN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.txtQuayLaiDN.Name = "txtQuayLaiDN";
-            this.txtQuayLaiDN.Size = new System.Drawing.Size(147, 19);
-            this.txtQuayLaiDN.TabIndex = 72;
-            this.txtQuayLaiDN.Text = "Quay lại đăng nhập";
-            this.txtQuayLaiDN.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbQLaiDN.AutoSize = true;
+            this.lbQLaiDN.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbQLaiDN.ForeColor = System.Drawing.Color.Blue;
+            this.lbQLaiDN.Location = new System.Drawing.Point(250, 287);
+            this.lbQLaiDN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbQLaiDN.Name = "lbQLaiDN";
+            this.lbQLaiDN.Size = new System.Drawing.Size(147, 19);
+            this.lbQLaiDN.TabIndex = 72;
+            this.lbQLaiDN.Text = "Quay lại đăng nhập";
+            this.lbQLaiDN.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnLayLaiMK
             // 
@@ -220,7 +220,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtQuayLaiDN);
+            this.Controls.Add(this.lbQLaiDN);
             this.Controls.Add(this.btnLayLaiMK);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureEdit5);
@@ -251,7 +251,7 @@
 
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private Label label1;
-        private Label txtQuayLaiDN;
+        private Label lbQLaiDN;
         private DevExpress.XtraEditors.CheckButton btnLayLaiMK;
         private Label label6;
         private DevExpress.XtraEditors.PictureEdit pictureEdit5;

@@ -365,5 +365,10 @@ namespace ProjectQLKTX
         {
 
         }
+
+        private void btnReload_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

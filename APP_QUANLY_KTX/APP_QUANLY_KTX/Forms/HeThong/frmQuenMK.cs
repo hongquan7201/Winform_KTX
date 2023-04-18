@@ -1,8 +1,4 @@
-﻿using ProjectQLKTX.APIsHelper;
-using ProjectQLKTX.Interface;
-using ProjectQLKTX.Logins;
-
-namespace ProjectQLKTX
+﻿namespace ProjectQLKTX
 {
     public partial class frmQuenMK : DevExpress.XtraEditors.XtraForm
     {
@@ -10,5 +6,7 @@ namespace ProjectQLKTX
         {
             InitializeComponent();
         }
+
+        
     }
 }

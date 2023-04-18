@@ -1,13 +1,14 @@
-﻿using ProjectQLKTX.Models;
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Models;
 
 namespace ProjectQLKTX.Interface
 {
     public interface IVatDungHelper
     {
-        Task GetListVatDung();
-        Task GetVatDung(Guid id);
-        Task AddVatDung(Vatdung vatDung);
-        Task EditVatDung(Vatdung vatDung);
-        Task DeleteVatDung(Guid id);
+        Task<APIRespone<List<Vatdung>>> GetListVatDung();
+        Task<APIRespone<List<Vatdung>>> GetVatDung(Guid? id);
+        Task<APIRespone<string>> AddVatDung(Vatdung vatDung);
+        Task<APIRespone<string>> EditVatDung(Vatdung vatDung);
+        Task<APIRespone<string>> DeleteVatDung(Guid id);
     }
 }

@@ -24,7 +24,7 @@ namespace ProjectQLKTX
             DialogResult thongbao;
             thongbao = (MessageBox.Show("Bạn có muốn Thoát ?", "Chú ý", MessageBoxButtons.YesNo, MessageBoxIcon.Warning));
             if (thongbao == DialogResult.Yes)
-                Application.Exit();
+                this.Close();
         }
         private void lbQuenMK_Click(object sender, EventArgs e)
         {

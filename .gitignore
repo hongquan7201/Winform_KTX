@@ -56,6 +56,7 @@
 *.targets
 /APP_QUANLY_KTX/.vs/APP_QUANLY_KTX/DesignTimeBuild/.dtbcache.v2
 /APP_QUANLY_KTX/.vs/APP_QUANLY_KTX/v17/.suo
+
 /APP_QUANLY_KTX/APP_QUANLY_KTX/bin/Debug/net6.0-windows/runtimes/linux/lib/netcoreapp2.0/System.Data.Odbc.dll
 /APP_QUANLY_KTX/APP_QUANLY_KTX/bin/Debug/net6.0-windows/runtimes/osx/lib/netcoreapp2.0/System.Data.Odbc.dll
 /APP_QUANLY_KTX/APP_QUANLY_KTX/bin/Debug/net6.0-windows/runtimes/unix/lib/netstandard2.0/System.Private.ServiceModel.dll
@@ -70,3 +71,5 @@
 /APP_QUANLY_KTX/.vs/ProjectEvaluation/app_quanly_ktx.projects.v6.1
 /APP_QUANLY_KTX/APP_QUANLY_KTX/obj/Debug/net6.0-windows/_IsIncrementalBuild
 /APP_QUANLY_KTX/APP_QUANLY_KTX/obj/Debug/net6.0-windows/TempPE/Properties.Resources.Designer.cs.dll
+/APP_QUANLY_KTX/.vs/ProjectEvaluation/app_quanly_ktx.metadata.v5.2
+/APP_QUANLY_KTX/.vs/ProjectEvaluation/app_quanly_ktx.projects.v5.2

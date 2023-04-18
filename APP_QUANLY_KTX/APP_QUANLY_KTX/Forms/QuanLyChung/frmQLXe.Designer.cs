@@ -210,6 +210,7 @@
             this.btnSua.Id = 1;
             this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
             this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnXoa
             // 
@@ -464,7 +465,6 @@
             this.cbTruong.Properties.Appearance.Options.UseFont = true;
             this.cbTruong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbTruong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbTruong.Size = new System.Drawing.Size(305, 26);
             this.cbTruong.TabIndex = 105;
             // 
@@ -490,8 +490,6 @@
             this.cbGioiTinh.Properties.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbGioiTinh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbGioiTinh.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
             this.cbGioiTinh.Size = new System.Drawing.Size(115, 26);
             this.cbGioiTinh.TabIndex = 69;
             // 
@@ -644,7 +642,6 @@
             this.cbKhu.Properties.Appearance.Options.UseFont = true;
             this.cbKhu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbKhu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbKhu.Size = new System.Drawing.Size(317, 26);
             this.cbKhu.TabIndex = 46;
             // 

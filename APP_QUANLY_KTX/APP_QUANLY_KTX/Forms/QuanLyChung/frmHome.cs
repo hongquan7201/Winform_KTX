@@ -1,7 +1,5 @@
 ﻿using DevExpress.XtraBars;
-using ProjectQLKTX.APIsHelper;
 using ProjectQLKTX.Interface;
-using ProjectQLKTX.Logins;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +23,10 @@ namespace ProjectQLKTX
         private readonly ITruongHelper _truongHelper;
         private readonly IHopDongHelper _hopDongHelper;
         private readonly IXeHelper _xeHelper;
-        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper)
+        private readonly ITaiSanHelper _taiSanHelper;
+        private readonly IVatDungHelper _vatDungHelper;
+        private readonly IChietTietPhieuKhoHelper _chietTietPhieuKhoHelper;
+        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper, IChietTietPhieuKhoHelper chietTietPhieuKhoHelper)
         {
             InitializeComponent();
             _nhanVienHelper = nhanVienHelper;
@@ -37,11 +38,21 @@ namespace ProjectQLKTX
             _truongHelper = truongHelper;
             _hopDongHelper = hopDongHelper;
             _xeHelper = xeHelper;
+            _taiSanHelper = taiSanHelper;
+            _vatDungHelper = vatDungHelper;
+            _chietTietPhieuKhoHelper = chietTietPhieuKhoHelper;
         }
         private void btnDoiMK_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmDoiMK frmDoiMK = new frmDoiMK();
             frmDoiMK.ShowDialog();
+        }
+        private void btnThoat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogResult thongbao;
+            thongbao = (MessageBox.Show("Bạn có muốn Thoát ?", "Chú ý", MessageBoxButtons.YesNo, MessageBoxIcon.Warning));
+            if (thongbao == DialogResult.Yes)
+                Application.Exit();
         }
         private void btnDangKyPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -106,13 +117,13 @@ namespace ProjectQLKTX
 
         private void btnQLiKho_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLiKho frmQLiKho = new frmQLiKho();
+            frmQLiKho frmQLiKho = new frmQLiKho(_chietTietPhieuKhoHelper,_vatDungHelper,_nhanVienHelper);
             frmQLiKho.ShowDialog();
         }
 
         private void btnQLiTaiSan_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLiTaiSan frmQLiTaiSan = new frmQLiTaiSan();
+            frmQLiTaiSan frmQLiTaiSan = new frmQLiTaiSan(_taiSanHelper,_phongHelper,_vatDungHelper);
             frmQLiTaiSan.ShowDialog();
         }
 
@@ -132,16 +143,6 @@ namespace ProjectQLKTX
         {
             frmDSTruong frmDSTruong = new frmDSTruong();
             frmDSTruong.ShowDialog();
-        }
-
-        private void btnDangxuat_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ILoginHelper loginHelper = new LoginHelper(); // tạo đối tượng LoginHelper
-            IRoleHelper roleHelper = new RoleHelper();
-            Home _home = new Home(_nhanVienHelper, _sinhVienHelper, _thanNhanHelper, _quanHeHelper, _phongHelper, _khuHelper, _truongHelper, _hopDongHelper, _xeHelper);
-            frmDangNhap frmDangNhap = new frmDangNhap(loginHelper, _home, roleHelper);
-            this.Hide();
-            frmDangNhap.Show();
         }
     }
 }
