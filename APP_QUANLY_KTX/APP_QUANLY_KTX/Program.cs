@@ -93,6 +93,7 @@ namespace ProjectQLKTX
                     services.AddTransient<IRoleHelper, RoleHelper>();
                     services.AddTransient<IVatDungHelper, VatDungHelper>();
                     services.AddTransient<ITaiSanHelper, TaiSanHelper>();
+                    services.AddTransient<IChietTietPhieuKhoHelper, ChiTietPhieuKhoHelper>();
                 }).Build();
         }
     }

@@ -19,7 +19,7 @@ namespace ProjectQLKTX.APIsHelper
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(chitietphieukho, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/chitietphieukho/add", content);
+            var response = await httpClient.PostAsync($"api/chitietphieukho/add", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
@@ -27,10 +27,15 @@ namespace ProjectQLKTX.APIsHelper
 
         public async Task<APIRespone<string>> DeleteChietTietPhieuKho(Guid id)
         {
-            HttpClient httpClient = new HttpClient();
-            string url = Constant.Domain + "/api/chitietphieukho/delete"; // Thay đổi đường dẫn API của bạn
-            var request = new HttpRequestMessage(HttpMethod.Delete, url);
-            request.Content = new StringContent(id.ToString(), System.Text.Encoding.UTF8, "application/json");
+
+            string url = Constant.Domain + "api/chitietphieukho/delete";// Thay đổi đường dẫn API của bạn
+            var httpClient = new HttpClient();
+            var jsonId = JsonConvert.SerializeObject(id);
+            var content = new StringContent(jsonId, Encoding.UTF8, "application/json");
+            var request = new HttpRequestMessage(HttpMethod.Delete, url)
+            {
+                Content = content
+            };
             var response = await httpClient.SendAsync(request);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
@@ -55,7 +60,7 @@ namespace ProjectQLKTX.APIsHelper
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            string query = "/api/chitietphieukho/{0}";
+            string query = "/api/chitietphieukho/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<Chitietphieukho> data = JsonConvert.DeserializeObject<APIRespone<Chitietphieukho>>(body);
