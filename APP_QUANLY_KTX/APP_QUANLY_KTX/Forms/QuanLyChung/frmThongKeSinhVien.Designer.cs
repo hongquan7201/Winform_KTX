@@ -45,8 +45,9 @@
             xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             this.chartDoanhThu.Diagram = xyDiagram1;
+            this.chartDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartDoanhThu.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Right;
-            this.chartDoanhThu.Location = new System.Drawing.Point(2, 11);
+            this.chartDoanhThu.Location = new System.Drawing.Point(0, 0);
             this.chartDoanhThu.Name = "chartDoanhThu";
             series1.Name = "Tổng Doanh Thu";
             sideBySideBarSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
@@ -54,7 +55,7 @@
             series1.View = sideBySideBarSeriesView1;
             this.chartDoanhThu.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartDoanhThu.Size = new System.Drawing.Size(883, 526);
+            this.chartDoanhThu.Size = new System.Drawing.Size(887, 538);
             this.chartDoanhThu.TabIndex = 2;
             chartTitle1.Text = "Thống Kê Sinh Viên";
             this.chartDoanhThu.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
@@ -73,6 +74,7 @@
             this.Name = "frmThongKeSinhVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thống Kê Sinh Viên";
+            this.Load += new System.EventHandler(this.frmThongKeSinhVien_Load);
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();

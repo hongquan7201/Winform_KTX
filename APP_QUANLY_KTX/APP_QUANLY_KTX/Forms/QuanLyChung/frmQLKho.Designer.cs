@@ -357,7 +357,7 @@
             this.groupControl3.Controls.Add(this.labelControl14);
             this.groupControl3.Location = new System.Drawing.Point(0, 30);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(731, 213);
+            this.groupControl3.Size = new System.Drawing.Size(731, 149);
             this.groupControl3.TabIndex = 45;
             this.groupControl3.Text = "Thông Tin Kho";
             // 
@@ -447,9 +447,9 @@
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.Controls.Add(this.gcDanhSach);
-            this.groupControl1.Location = new System.Drawing.Point(0, 245);
+            this.groupControl1.Location = new System.Drawing.Point(0, 185);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(830, 232);
+            this.groupControl1.Size = new System.Drawing.Size(727, 292);
             this.groupControl1.TabIndex = 97;
             this.groupControl1.Text = "Danh Sách";
             // 
@@ -459,7 +459,7 @@
             this.gcDanhSach.Location = new System.Drawing.Point(2, 23);
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(828, 209);
+            this.gcDanhSach.Size = new System.Drawing.Size(725, 209);
             this.gcDanhSach.TabIndex = 49;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
