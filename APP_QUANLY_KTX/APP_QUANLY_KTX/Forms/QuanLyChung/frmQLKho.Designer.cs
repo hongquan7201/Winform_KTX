@@ -61,8 +61,6 @@
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.cbTenVatDung = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cbPhong = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtTenNV = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -87,7 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTenVatDung.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbPhong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTinhTrang.Properties)).BeginInit();
@@ -347,8 +344,6 @@
             this.groupControl3.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
             this.groupControl3.Controls.Add(this.cbTenVatDung);
-            this.groupControl3.Controls.Add(this.cbPhong);
-            this.groupControl3.Controls.Add(this.labelControl3);
             this.groupControl3.Controls.Add(this.txtTenNV);
             this.groupControl3.Controls.Add(this.labelControl1);
             this.groupControl3.Controls.Add(this.labelControl4);
@@ -364,7 +359,7 @@
             // 
             // cbTenVatDung
             // 
-            this.cbTenVatDung.Location = new System.Drawing.Point(137, 54);
+            this.cbTenVatDung.Location = new System.Drawing.Point(150, 79);
             this.cbTenVatDung.Name = "cbTenVatDung";
             this.cbTenVatDung.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbTenVatDung.Properties.Appearance.Options.UseFont = true;
@@ -374,32 +369,10 @@
             this.cbTenVatDung.Size = new System.Drawing.Size(244, 24);
             this.cbTenVatDung.TabIndex = 106;
             // 
-            // cbPhong
-            // 
-            this.cbPhong.Location = new System.Drawing.Point(137, 104);
-            this.cbPhong.Name = "cbPhong";
-            this.cbPhong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbPhong.Properties.Appearance.Options.UseFont = true;
-            this.cbPhong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbPhong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbPhong.Size = new System.Drawing.Size(244, 24);
-            this.cbPhong.TabIndex = 105;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(81, 108);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(35, 16);
-            this.labelControl3.TabIndex = 103;
-            this.labelControl3.Text = "Phòng";
-            // 
             // txtTenNV
             // 
             this.txtTenNV.AllowDrop = true;
-            this.txtTenNV.Location = new System.Drawing.Point(137, 155);
+            this.txtTenNV.Location = new System.Drawing.Point(150, 130);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTenNV.Properties.Appearance.Options.UseFont = true;
@@ -410,7 +383,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(38, 58);
+            this.labelControl1.Location = new System.Drawing.Point(51, 83);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(78, 16);
             this.labelControl1.TabIndex = 99;
@@ -420,7 +393,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(32, 160);
+            this.labelControl4.Location = new System.Drawing.Point(45, 135);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(84, 16);
             this.labelControl4.TabIndex = 98;
@@ -655,7 +628,6 @@
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTenVatDung.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbPhong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTinhTrang.Properties)).EndInit();
@@ -712,9 +684,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtSoLuong;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.ComboBoxEdit cbTenVatDung;
-        private DevExpress.XtraEditors.ComboBoxEdit cbPhong;
         private DevExpress.XtraGrid.Columns.GridColumn TENVATDUNG;
         private DevExpress.XtraGrid.Columns.GridColumn PHONG;
         private DevExpress.XtraGrid.Columns.GridColumn TENNHANVIEN;
