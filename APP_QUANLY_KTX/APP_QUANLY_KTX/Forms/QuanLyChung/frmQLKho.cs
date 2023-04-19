@@ -22,7 +22,6 @@ namespace ProjectQLKTX
             _vatDungHelper = vatDungHelper;
             _nhanVienHelper = nhanVienHelper;
         }
-        List<Chitietphieukho> _listChiTietPhieuKho = new List<Chitietphieukho>();
         private async Task LoadKho(List<Chitietphieukho> chitietphieukhos)
         {
             var resultChiTietPhieuKho = await _chietPhieuKhoHelper.GetListChietTietPhieuKho();
@@ -63,6 +62,12 @@ namespace ProjectQLKTX
                 gcDanhSach.DataSource = chitietphieukhos;
                 gcDanhSach.RefreshDataSource();
             }
+          
+        }
+        private async void frmQLiKho_Load(object sender, EventArgs e)
+        {
+            gcDanhSach.DataSource = GlobalModel.ListChiTietPhieuKho;
+            gcDanhSach.RefreshDataSource();
             var resulListtVatDung = await _vatDungHelper.GetListVatDung();
             if (resulListtVatDung.status == 200)
             {
@@ -73,10 +78,6 @@ namespace ProjectQLKTX
                     _vatdungList.Add(item);
                 }
             }
-        }
-        private async void frmQLiKho_Load(object sender, EventArgs e)
-        {
-            await LoadKho(_listChiTietPhieuKho);
         }
         private void GetAccount(Chitietphieukho chitietphieukho)
         {
@@ -108,7 +109,7 @@ namespace ProjectQLKTX
                 {
                     var hittest = gridView.CalcHitInfo(args.Location);
                     var s = hittest.RowHandle;
-                    _chitietphieukho = _listChiTietPhieuKho[s];
+                    _chitietphieukho = GlobalModel.ListChiTietPhieuKho[s];
                     GetAccount(_chitietphieukho);
                     IsCheck = false;
                 }
@@ -123,35 +124,35 @@ namespace ProjectQLKTX
         private void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var lstKho = new List<Chitietphieukho>();
-            foreach (var item in _listChiTietPhieuKho)
+            foreach (var item in GlobalModel.ListChiTietPhieuKho)
             {
                 lstKho.Add(item);
             }
             int i = 1;
-            _listChiTietPhieuKho.Clear();
+            GlobalModel.ListChiTietPhieuKho.Clear();
             foreach (var item in lstKho)
             {
                 if (txtTim.EditValue.ToString() == item.NameVatDung)
                 {
                     item.STT = i;
-                    _listChiTietPhieuKho.Add(item);
+                    GlobalModel.ListChiTietPhieuKho.Add(item);
                     i++;
                 }
             }
-            gcDanhSach.DataSource = _listChiTietPhieuKho;
+            gcDanhSach.DataSource = GlobalModel.ListChiTietPhieuKho;
             gcDanhSach.RefreshDataSource();
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadKho(_listChiTietPhieuKho);
+            LoadKho(GlobalModel.ListChiTietPhieuKho);
         }
 
         private void cbTenVatDung_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (IsCheck == false)
             {
-                foreach (var item in _listChiTietPhieuKho)
+                foreach (var item in GlobalModel.ListChiTietPhieuKho)
                 {
                     if (item.NameVatDung == cbTenVatDung.Text)
                     {
@@ -179,6 +180,11 @@ namespace ProjectQLKTX
                     }
                 }
             }
+
+        }
+
+        private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
 
         }
     }

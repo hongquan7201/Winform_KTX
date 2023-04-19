@@ -2,15 +2,9 @@
 using ProjectQLKTX.APIsHelper;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Logins;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using ProjectQLKTX.Models;
+using Serilog;
+using System.Runtime.CompilerServices;
 
 namespace ProjectQLKTX
 {
@@ -28,7 +22,10 @@ namespace ProjectQLKTX
         private readonly ITaiSanHelper _taiSanHelper;
         private readonly IVatDungHelper _vatDungHelper;
         private readonly IChietTietPhieuKhoHelper _chietTietPhieuKhoHelper;
-        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper, IChietTietPhieuKhoHelper chietTietPhieuKhoHelper)
+        private readonly frmDangNhap _frmDangNhap;
+        private readonly frmLoading _frmLoading;
+        private readonly frmQLiXe _frmQLiXe;
+        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper, IChietTietPhieuKhoHelper chietTietPhieuKhoHelper, frmDangNhap frmDangNhap, frmLoading frmLoading, frmQLiXe frmQLiXe)
         {
             InitializeComponent();
             _nhanVienHelper = nhanVienHelper;
@@ -43,6 +40,9 @@ namespace ProjectQLKTX
             _taiSanHelper = taiSanHelper;
             _vatDungHelper = vatDungHelper;
             _chietTietPhieuKhoHelper = chietTietPhieuKhoHelper;
+            _frmDangNhap = frmDangNhap;
+            _frmLoading = frmLoading;
+            _frmQLiXe = frmQLiXe;
         }
         private void btnDoiMK_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -51,7 +51,7 @@ namespace ProjectQLKTX
         }
         private void btnDangKyPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmDKPhong frmDangKyPhong = new frmDKPhong(_sinhVienHelper,_phongHelper,_khuHelper,_truongHelper, _hopDongHelper,_xeHelper);
+            frmDKPhong frmDangKyPhong = new frmDKPhong(_sinhVienHelper, _phongHelper, _khuHelper, _truongHelper, _hopDongHelper, _xeHelper);
             frmDangKyPhong.ShowDialog();
         }
         private void btnChuyenPhong_ItemClick(object sender, ItemClickEventArgs e)
@@ -64,18 +64,25 @@ namespace ProjectQLKTX
             frmTraPhong frmTraPhong = new frmTraPhong();
             frmTraPhong.ShowDialog();
         }
-        private void btnThongTinSinhVien_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnThongTinSinhVien_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmThongTinSV frmThongTinCaNhanSV = new frmThongTinSV(_sinhVienHelper,_thanNhanHelper,_quanHeHelper,_phongHelper,_khuHelper,_truongHelper);
+            _frmLoading.Show();
+            await LoadSinhVien(GlobalModel.ListSinhVien);
+            _frmLoading.Hide();
+            frmThongTinSV frmThongTinCaNhanSV = new frmThongTinSV(_sinhVienHelper, _thanNhanHelper, _quanHeHelper, _phongHelper, _khuHelper, _truongHelper);
             frmThongTinCaNhanSV.ShowDialog();
         }
-        private void btnDSNhanVien_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnDSNhanVien_ItemClick(object sender, ItemClickEventArgs e)
         {
+            _frmLoading.Show();
+            await LoadListNhanVien(GlobalModel.ListNhanVien);
+            _frmLoading.Hide();
             frmDSNhanVien frmDSNhanVien = new frmDSNhanVien(_nhanVienHelper);
             frmDSNhanVien.ShowDialog();
         }
-        private void btnTTNhanVien_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnTTNhanVien_ItemClick(object sender, ItemClickEventArgs e)
         {
+          
             frmThongTinNV frmThongTinCaNhanNV = new frmThongTinNV();
             frmThongTinCaNhanNV.ShowDialog();
         }
@@ -89,14 +96,16 @@ namespace ProjectQLKTX
             frmQLiDienNuoc frmQLDienNuoc = new frmQLiDienNuoc();
             frmQLDienNuoc.ShowDialog();
         }
-        private void btnQLiXe_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnQLiXe_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLiXe frmQLXe = new frmQLiXe(_xeHelper,_sinhVienHelper,_phongHelper,_khuHelper,_truongHelper);
-            frmQLXe.ShowDialog();
+            _frmLoading.Show();
+            await LoadListXe(GlobalModel._listXe);
+            _frmLoading.Hide();
+            _frmQLiXe.ShowDialog();
         }
         private void btnQLiPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-           frmQLiPhong frmQLiPhong = new frmQLiPhong();
+            frmQLiPhong frmQLiPhong = new frmQLiPhong();
             frmQLiPhong.ShowDialog();
         }
         private void btnThanhToan_ItemClick(object sender, ItemClickEventArgs e)
@@ -110,15 +119,21 @@ namespace ProjectQLKTX
             frmQLHoaDon.ShowDialog();
         }
 
-        private void btnQLiKho_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnQLiKho_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLiKho frmQLiKho = new frmQLiKho(_chietTietPhieuKhoHelper,_vatDungHelper,_nhanVienHelper);
+            _frmLoading.Show();
+            await LoadListKho(GlobalModel.ListChiTietPhieuKho);
+            _frmLoading.Hide();
+            frmQLiKho frmQLiKho = new frmQLiKho(_chietTietPhieuKhoHelper, _vatDungHelper, _nhanVienHelper);
             frmQLiKho.ShowDialog();
         }
 
-        private void btnQLiTaiSan_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnQLiTaiSan_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLiTaiSan frmQLiTaiSan = new frmQLiTaiSan(_taiSanHelper,_phongHelper,_vatDungHelper);
+            _frmLoading.Show();
+          await  LoadListTaiSan(GlobalModel.ListTaiSan);
+            _frmLoading.Hide();
+            frmQLiTaiSan frmQLiTaiSan = new frmQLiTaiSan(_taiSanHelper, _phongHelper, _vatDungHelper);
             frmQLiTaiSan.ShowDialog();
         }
 
@@ -142,12 +157,341 @@ namespace ProjectQLKTX
 
         private void btnDangxuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ILoginHelper loginHelper = new LoginHelper(); // tạo đối tượng LoginHelper
-            IRoleHelper roleHelper = new RoleHelper();
-            Home _home = new Home(_nhanVienHelper, _sinhVienHelper, _thanNhanHelper, _quanHeHelper, _phongHelper, _khuHelper, _truongHelper, _hopDongHelper, _xeHelper, _taiSanHelper, _vatDungHelper, _chietTietPhieuKhoHelper);
-            frmDangNhap frmDangNhap = new frmDangNhap(loginHelper, _home, roleHelper);
-            this.Hide();
-            frmDangNhap.Show();
+            if (btnDangxuat.Caption == "Đăng Nhập")
+            {
+                DANHMUC.Visible = true;
+                QUANLY.Visible = true;
+            }
+            else
+            {
+                DANHMUC.Visible = false;
+                QUANLY.Visible = false;
+            }
+            _frmDangNhap.ShowDialog();
+            check();
+        }
+        private async void check()
+        {
+            while (true)
+            {
+                if (GlobalModel.Nhanvien != null)
+                {
+                    DANHMUC.Visible = true;
+                    QUANLY.Visible = true;
+                    if (GlobalModel.Nhanvien.IsAdmin == true)
+                    {
+                        btnDSNV.Enabled = true;
+                        btnDSTruong.Enabled = true;
+                    }
+                    else
+                    {
+                        btnDSNV.Enabled = false;
+                        btnDSTruong.Enabled = false;
+                    }
+                    btnDangxuat.Caption = "Đăng Xuất";
+                    break;
+                }
+            }
+        }
+        private void ribbon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            btnDangxuat.Caption = "Đăng Nhập";
+            DANHMUC.Visible = false;
+            QUANLY.Visible = false;
+        }
+        private async Task LoadListXe(List<Xe> listXe)
+        {
+            var list = await _xeHelper.GetListXe();
+            if (list.status == 200)
+            {
+                listXe.Clear();
+                int i = 1;
+                foreach (var item in list.data)
+                {
+                    if (item.IdUser != null)
+                    {
+                        var user = await _sinhVienHelper.GetSinhVienById(item.IdUser);
+                        if (user.status == 200)
+                        {
+                            item.NameUser = user.data.FirstOrDefault().Name;
+                            item.Address = user.data.FirstOrDefault().Address;
+                            item.Cccd = user.data.FirstOrDefault().Cccd;
+                            item.Sdt = user.data.FirstOrDefault().Sdt;
+                            item.Gender = user.data.FirstOrDefault().Gender;
+                            if (item.Gender == true)
+                            {
+                                item.GioiTinh = "Nam";
+                            }
+                            else
+                            {
+                                item.GioiTinh = "Nữ";
+                            }
+                            item.BirthDay = user.data.FirstOrDefault().BirthDay;
+                            item.IdPhong = user.data.FirstOrDefault().IdPhong;
+                            if (item.IdPhong != null)
+                            {
+                                var resultPhong = await _phongHelper.GetPhong(item.IdPhong);
+                                if (resultPhong.status == 200)
+                                {
+                                    item.IdKhu = resultPhong.data.FirstOrDefault().IdKhu;
+                                    if (item.IdKhu != null)
+                                    {
+                                        var resultKhu = await _khuHelper.GetKhu(item.IdKhu);
+                                        if (resultKhu.status == 200)
+                                        {
+                                            item.NameKhu = resultKhu.data.FirstOrDefault().Name;
+                                        }
+                                    }
+                                }
+                            }
+                            if (user.data.FirstOrDefault().IdTruong != null)
+                            {
+                                var resultTruong = await _truongHelper.GetTruong(user.data.FirstOrDefault().IdTruong);
+                                if (resultTruong.status == 200)
+                                {
+                                    item.Truong = resultTruong.data.FirstOrDefault().Name;
+                                }
+                            }
+                        }
+                        item.STT = i;
+                        listXe.Add(item);
+                        i++;
+                    }
+                }
+            }
+        }
+        private async Task LoadListKho(List<Chitietphieukho> chitietphieukhos)
+        {
+            var resultChiTietPhieuKho = await _chietTietPhieuKhoHelper.GetListChietTietPhieuKho();
+            if (resultChiTietPhieuKho.status == 200)
+            {
+                int i = 1;
+                chitietphieukhos.Clear();
+                foreach (var item in resultChiTietPhieuKho.data)
+                {
+                    if (item.IdVatDung != null)
+                    {
+                        var resultVatDung = await _vatDungHelper.GetVatDung(item.IdVatDung);
+                        if (resultVatDung.status == 200)
+                        {
+                            item.NameVatDung = resultVatDung.data.FirstOrDefault().Name;
+                        }
+                    }
+                    if (item.IdNhanVien != null)
+                    {
+                        var resultNhanVien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien);
+                        if (resultNhanVien.status == 200)
+                        {
+                            item.NameNhanVien = resultNhanVien.data.FirstOrDefault().Name;
+                        }
+                    }
+                    if (item.Status == true)
+                    {
+                        item.TinhTrang = "Còn";
+                    }
+                    else
+                    {
+                        item.TinhTrang = "Hư";
+                    }
+                    item.STT = i;
+                    chitietphieukhos.Add(item);
+                    i++;
+                }
+            }
+
+        }
+        private async Task LoadListTaiSan(List<Taisan> listTaiSan)
+        {
+            var taiSans = await _taiSanHelper.GetListTaiSan();
+            if (taiSans.status == 200)
+            {
+                int i = 1;
+                listTaiSan.Clear();
+                foreach (var item in taiSans.data)
+                {
+                    if (item.IdVatDung != null)
+                    {
+                        var vatDungs = await _vatDungHelper.GetVatDung(item.IdVatDung);
+                        if (vatDungs.status == 200)
+                        {
+                            item.NameVatDung = vatDungs.data.FirstOrDefault().Name;
+                        }
+                    }
+                    if (item.IdPhong != null)
+                    {
+                        var phongs = await _phongHelper.GetPhong(item.IdPhong);
+                        if (phongs.status == 200)
+                        {
+                            item.NamePhong = phongs.data.FirstOrDefault().Name;
+                        }
+                    }
+                    if (item.Status == true)
+                    {
+                        item.TinhTrang = "Đang Sử Dụng";
+                    }
+                    else if (item.Status == false && item.Quantity > 0)
+                    {
+                        item.TinhTrang = "Hư";
+                    }
+                    else
+                    {
+                        item.TinhTrang = "Chưa Có";
+                    }
+                    item.STT = i;
+                    listTaiSan.Add(item);
+                    i++;
+                }
+
+                var listPhong = await _phongHelper.GetListPhong();
+                if (listPhong.status == 200)
+                {
+                    GlobalModel.ListPhong.Clear();
+                    foreach (var item in listPhong.data)
+                    {
+                        GlobalModel.ListPhong.Add(item);
+                    }
+                }
+                var listVatDung = await _vatDungHelper.GetListVatDung();
+                if (listVatDung.status == 200)
+                {
+                    GlobalModel.ListVatDung.Clear();
+                    foreach (var item in listVatDung.data)
+                    {
+                        GlobalModel.ListVatDung.Add(item);
+                    }
+                }
+            }
+        }
+        private async Task LoadListNhanVien(List<Nhanvien> listNhanVien)
+        {
+            var result = await _nhanVienHelper.GetListNhanVien();
+            try
+            {
+                if (result != null && result.status == 200)
+                {
+
+                    int i = 1;
+                    listNhanVien.Clear();
+                    listNhanVien = result.data;
+                    foreach (var item in listNhanVien)
+                    {
+                        item.STT = i;
+                        if (item.Gender == true)
+                        {
+
+                            item.GioiTinh = "Nam";
+                        }
+                        else
+                        {
+                            item.GioiTinh = "Nữ";
+                        }
+                        i++;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(result.message);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error("frmDSNhanVien " + result);
+                Log.Error(ex, ex.Message);
+            }
+        }
+        private async Task LoadSinhVien(List<Sinhvien> listAccount)
+        {
+            var listSinhVien = await _sinhVienHelper.GetListSinhVien();
+            try
+            {
+                if (listSinhVien != null && listSinhVien.status == 200)
+                {
+                    int i = 1;
+                    listAccount.Clear();
+                    var lstData = listSinhVien.data;
+                    foreach (var item in lstData)
+                    {
+                        if (item.idThanNhan != null)
+                        {
+                            var nhanNhan = await _thanNhanHelper.GetThanNhan(item.idThanNhan);
+                            if (nhanNhan.status == 200)
+                            {
+                                item.TenThanNhan = nhanNhan.data.FirstOrDefault().Name;
+                                item.SDTThanNhan = nhanNhan.data.FirstOrDefault().Sdt;
+                                item.AddressThanNha = nhanNhan.data.FirstOrDefault().Address;
+                                if (nhanNhan.data.FirstOrDefault().Gender == true)
+                                {
+
+                                    item.GioiTinhThanNhan = "Nam";
+                                }
+                                else
+                                {
+                                    item.GioiTinhThanNhan = "Nữ";
+                                }
+                                if (nhanNhan.data.FirstOrDefault().IdQuanHe != null)
+                                {
+                                    var quanHe = await _quanHeHelper.GetQuanHe(nhanNhan.data.FirstOrDefault().IdQuanHe);
+                                    if (quanHe.status == 200)
+                                    {
+                                        item.QuanHe = quanHe.data.FirstOrDefault().Name;
+                                    }
+                                }
+
+                            }
+
+                        }
+                        if (item.IdTruong != null)
+                        {
+                            var truong = await _truongHelper.GetTruong(item.IdTruong);
+                            if (truong.status == 200)
+                            {
+                                item.Truong = truong.data.FirstOrDefault().Name;
+                            }
+
+                        }
+                        if (item.IdPhong != null)
+                        {
+                            var phong = await _phongHelper.GetPhong(item.IdPhong);
+                            if (phong.status == 200)
+                            {
+                                item.Phong = phong.data.FirstOrDefault().Name;
+                                if (phong.data.FirstOrDefault().IdKhu != null)
+                                {
+                                    var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu);
+                                    if (khu.status == 200)
+                                    {
+                                        item.Khu = khu.data.FirstOrDefault().Name;
+                                    }
+
+                                }
+                            }
+                        }
+
+                        item.STT = i;
+                        if (item.Gender == true)
+                        {
+
+                            item.GioiTinh = "Nam";
+                        }
+                        else
+                        {
+                            item.GioiTinh = "Nữ";
+                        }
+                        listAccount.Add(item);
+                        i++;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error("frmDSNhanVien " + listSinhVien);
+                Log.Error(ex, ex.Message);
+            }
         }
     }
 }

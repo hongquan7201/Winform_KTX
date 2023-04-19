@@ -8,16 +8,17 @@ namespace ProjectQLKTX
     public partial class frmDangNhap : DevExpress.XtraEditors.XtraForm
     {
         private readonly ILoginHelper _loginHelper;
-        private readonly Home _home;
         private readonly IRoleHelper _roleHelper;
-        public frmDangNhap(ILoginHelper loginHelper, Home home, IRoleHelper roleHelper)
+        private readonly frmLoading _frmLoading;
+        private string message = "";
+        public frmDangNhap(ILoginHelper loginHelper, IRoleHelper roleHelper, frmLoading frmLoading)
         {
             InitializeComponent();
             _loginHelper = loginHelper;
-            _home = home;
             _roleHelper = roleHelper;
-          txtEmail.Text = (string)Properties.Settings.Default["Email"];
-          txtPassword.Text = (string) Properties.Settings.Default["Password"] ;
+            txtEmail.Text = (string)Properties.Settings.Default["Email"];
+            txtPassword.Text = (string)Properties.Settings.Default["Password"];
+            _frmLoading = frmLoading;
         }
         private void btnThoat_CheckedChanged(object sender, EventArgs e)
         {
@@ -47,61 +48,66 @@ namespace ProjectQLKTX
 
         private async void btnDangNhap_CheckedChanged_1(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtPassword.Text))
+            {
+                _frmLoading.Show();
+                await  Login();
+                _frmLoading.Hide();
+                MessageBox.Show(message);
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Vui Lòng Kiểm Tra Thông Tin Đăng Nhập!");
+            }
+        }
+        private async Task Login()
+        {
             try
             {
-                //Account account = new Account();
-                //account.email = txtEmail.Text;
-                //account.password = txtPassword.Text;
-                //if (!string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtPassword.Text))
-                //{
-                //    var login = await _loginHelper.Login(account);
-                //    if (login.status == 200)
-                //    {
-                //        Properties.Settings.Default["Email"] = txtEmail.Text;
-                //        Properties.Settings.Default["Password"] = txtPassword.Text;
-                //        Properties.Settings.Default.Save();
-                //        if (login.data.IdRole != null)
-                //        {
-                //            var checkRole = await _roleHelper.GetRole(login.data.IdRole);
-                //            if (checkRole.status == 200)
-                //            {
-                //                if (checkRole.data.FirstOrDefault().Name == "Admin")
-                //                {
-                //                    GlobalModel.Nhanvien.IsAdmin = true;
-                //                }
-                //                else
-                //                {
-                //                    GlobalModel.Nhanvien.IsAdmin = false;
-                //                    GlobalModel.Nhanvien.Name = login.data.Name;
-                //                    GlobalModel.Nhanvien.Address = login.data.Address;
-                //                    GlobalModel.Nhanvien.Birthday = login.data.Birthday;
-                //                    GlobalModel.Nhanvien.Email = login.data.Email;
-                //                    GlobalModel.Nhanvien.Cccd = login.data.Cccd;
-                //                    GlobalModel.Nhanvien.Gender = login.data.Gender;
-                //                    GlobalModel.Nhanvien.Sdt = login.data.Sdt;
-                //                    GlobalModel.Nhanvien.CreateAt = login.data.CreateAt;
-                //                }
-                //            }
-                _home.Show();
-                this.Hide();
-                //        }
-                //    }
-                //    else
-                //    {
-                //        MessageBox.Show(login.message);
-                //    }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Vui Lòng Kiểm Tra Thông Tin Đăng Nhập!");
-                //}
+                Account account = new Account();
+                account.email = txtEmail.Text;
+                account.password = txtPassword.Text;
+                var login = await _loginHelper.Login(account);
+                if (login.status == 200)
+                {
+                    Properties.Settings.Default["Email"] = txtEmail.Text;
+                    Properties.Settings.Default["Password"] = txtPassword.Text;
+                    Properties.Settings.Default.Save();
+                    if (login.data.FirstOrDefault().IdRole != null)
+                    {
+                        var checkRole = await _roleHelper.GetRole(login.data.FirstOrDefault().IdRole);
+                        if (checkRole.status == 200)
+                        {
+                            if (checkRole.data.FirstOrDefault().Name == "Admin")
+                            {
+                                GlobalModel.Nhanvien.IsAdmin = true;
+                            }
+                            else
+                            {
+                                GlobalModel.Nhanvien.IsAdmin = false;
+                            }
+                            GlobalModel.Nhanvien.Name = login.data.FirstOrDefault().Name;
+                            GlobalModel.Nhanvien.Address = login.data.FirstOrDefault().Address;
+                            GlobalModel.Nhanvien.Birthday = login.data.FirstOrDefault().Birthday;
+                            GlobalModel.Nhanvien.Email = login.data.FirstOrDefault().Email;
+                            GlobalModel.Nhanvien.Cccd = login.data.FirstOrDefault().Cccd;
+                            GlobalModel.Nhanvien.Gender = login.data.FirstOrDefault().Gender;
+                            GlobalModel.Nhanvien.Sdt = login.data.FirstOrDefault().Sdt;
+                            GlobalModel.Nhanvien.CreateAt = login.data.FirstOrDefault().CreateAt;
+                        }
+                    }
+                }
+                else
+                {
+                }
+                message = login.message;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Log.Error(ex,ex.Message);
+                Log.Error(ex, ex.Message);
                 MessageBox.Show(ex.Message);
             }
-         
         }
     }
 }

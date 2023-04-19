@@ -34,7 +34,7 @@ namespace ProjectQLKTX
                 //var form1 = _host.Services.GetRequiredService<frmAuto>();
                 try
                 {
-                    var form1 = _host.Services.GetRequiredService<frmDangNhap>();
+                    var form1 = _host.Services.GetRequiredService<Home>();
                     //Lệnh chạy gốc là: Application.Run(new Form1);
                     //Đã được thay thế bằng lệnh sử dụng service khai báo trong host
                     Application.Run(form1);
@@ -79,6 +79,9 @@ namespace ProjectQLKTX
                 {
                     services.AddSingleton<frmDangNhap>();
                     services.AddSingleton<Home>();
+                    services.AddSingleton<frmLoading>();
+                    services.AddSingleton<frmQLiXe>();
+
                     services.AddTransient<ILoginHelper, LoginHelper>();
                     services.AddTransient<IBienLaiHelper, BienLaiHelper>();
                     services.AddTransient<INhanVienHelper, NhanVienHelper>();

@@ -14,7 +14,6 @@ namespace ProjectQLKTX
         private readonly IPhongHelper _phongHelper;
         private readonly IVatDungHelper _vatDungHelper;
         private bool IsCheck = false;
-        private List<Vatdung> _listVatDung = new List<Vatdung>();
         private Taisan _taiSan { get; set; }
         public frmQLiTaiSan(ITaiSanHelper taiSanHelper, IPhongHelper phongHelper, IVatDungHelper vatDungHelper)
         {
@@ -23,7 +22,6 @@ namespace ProjectQLKTX
             _phongHelper = phongHelper;
             _vatDungHelper = vatDungHelper;
         }
-        List<Taisan> _listTaiSan = new List<Taisan>();
         private async Task LoadListTaiSan(List<Taisan> listTaiSan)
         {
             var taiSans = await _taiSanHelper.GetListTaiSan();
@@ -78,11 +76,12 @@ namespace ProjectQLKTX
                 var listVatDung = await _vatDungHelper.GetListVatDung();
                 if (listVatDung.status == 200)
                 {
+                    GlobalModel.ListVatDung.Clear();
                     cbVatDung.Properties.Items.Clear();
                     foreach (var item in listVatDung.data)
                     {
                         cbVatDung.Properties.Items.Add(item.Name);
-                        _listVatDung.Add(item);
+                         GlobalModel.ListVatDung.Add(item);
                     }
                 }
                 gcDanhSach.DataSource = listTaiSan;
@@ -91,7 +90,16 @@ namespace ProjectQLKTX
         }
         private async void frmQLiTaiSan_Load(object sender, EventArgs e)
         {
-            await LoadListTaiSan(_listTaiSan);
+            gcDanhSach.DataSource = GlobalModel.ListTaiSan;
+            gcDanhSach.RefreshDataSource();
+            foreach(var item in GlobalModel.ListPhong)
+            {
+                cbPhong.Properties.Items.Add(item);
+            }
+            foreach(var item in GlobalModel.ListVatDung)
+            {
+                cbVatDung.Properties.Items.Add(item);
+            }
         }
 
         private void btnXuatfile_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -101,7 +109,7 @@ namespace ProjectQLKTX
 
         private async void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            await LoadListTaiSan(_listTaiSan);
+            await LoadListTaiSan( GlobalModel.ListTaiSan);
         }
         private async Task GetAccount(Taisan taiSan)
         {
@@ -133,7 +141,7 @@ namespace ProjectQLKTX
                 {
                     var hittest = gridView.CalcHitInfo(args.Location);
                     var s = hittest.RowHandle;
-                    _taiSan = _listTaiSan[s];
+                    _taiSan =  GlobalModel.ListTaiSan[s];
                     GetAccount(_taiSan);
                     IsCheck = false;
                 }
@@ -147,14 +155,14 @@ namespace ProjectQLKTX
         private async void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Taisan taisan = new Taisan();
-            foreach (var item in _listVatDung)
+            foreach (var item in  GlobalModel.ListVatDung)
             {
                 if (cbVatDung.Text == item.Name)
                 {
                     taisan.IdVatDung = item.Id;
                 }
             }
-            foreach (var item in _listTaiSan)
+            foreach (var item in  GlobalModel.ListTaiSan)
             {
                 if (cbPhong.Text == item.NamePhong)
                 {
@@ -165,7 +173,7 @@ namespace ProjectQLKTX
             taisan.Quantity = int.Parse(txtSoLuong.Text);
             taisan.Status = true;
             var resultTaiSan = await _taiSanHelper.AddTaiSan(taisan);
-            await LoadListTaiSan(_listTaiSan);
+            await LoadListTaiSan( GlobalModel.ListTaiSan);
             MessageBox.Show(resultTaiSan.message);
         }
 
@@ -174,7 +182,7 @@ namespace ProjectQLKTX
 
             if (_taiSan != null && IsCheck == false)
             {
-                foreach (var item in _listTaiSan)
+                foreach (var item in  GlobalModel.ListTaiSan)
                 {
                     if (cbPhong.Text == item.NamePhong && cbVatDung.Text == item.NameVatDung)
                     {
@@ -194,19 +202,19 @@ namespace ProjectQLKTX
         private void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var lstTaiSan = new List<Taisan>();
-            foreach (var item in _listTaiSan)
+            foreach (var item in  GlobalModel.ListTaiSan)
             {
                 lstTaiSan.Add(item);
             }
-            _listTaiSan.Clear();
+             GlobalModel.ListTaiSan.Clear();
             foreach (var item in lstTaiSan)
             {
                 if (txtTim.EditValue.ToString() == item.NamePhong)
                 {
-                    _listTaiSan.Add(item);
+                     GlobalModel.ListTaiSan.Add(item);
                 }
             }
-            gcDanhSach.DataSource = _listTaiSan;
+            gcDanhSach.DataSource =  GlobalModel.ListTaiSan;
             gcDanhSach.RefreshDataSource();
         }
 
@@ -214,14 +222,14 @@ namespace ProjectQLKTX
         {
             Taisan taisan = new Taisan();
             taisan.Id = _taiSan.Id;
-            foreach (var item in _listVatDung)
+            foreach (var item in  GlobalModel.ListVatDung)
             {
                 if (cbVatDung.Text == item.Name)
                 {
                     taisan.IdVatDung = item.Id;
                 }
             }
-            foreach (var item in _listTaiSan)
+            foreach (var item in  GlobalModel.ListTaiSan)
             {
                 if (cbPhong.Text == item.NamePhong)
                 {
@@ -240,14 +248,14 @@ namespace ProjectQLKTX
             }
 
             var resultTaiSan = await _taiSanHelper.EditTaiSan(taisan);
-            await LoadListTaiSan(_listTaiSan);
+            await LoadListTaiSan( GlobalModel.ListTaiSan);
             MessageBox.Show(resultTaiSan.message);
         }
 
         private async void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             var resultDelete = await _taiSanHelper.DeleteTaiSan(_taiSan.Id);
-            await LoadListTaiSan(_listTaiSan);
+            await LoadListTaiSan( GlobalModel.ListTaiSan);
             MessageBox.Show(resultDelete.message);
         }
     }

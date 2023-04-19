@@ -16,19 +16,19 @@ namespace ProjectQLKTX
             InitializeComponent();
             _nhanVienHelper = nhanVienHelper;
         }
-        List<Nhanvien> listNhanVien = new List<Nhanvien>();
         private Nhanvien account { get; set; }
-        private async void LoadAccount()
+        private async Task LoadAccount()
         {
             var result = await _nhanVienHelper.GetListNhanVien();
             try
             {
                 if (result != null && result.status == 200)
                 {
+
                     int i = 1;
-                    listNhanVien.Clear();
-                    listNhanVien = result.data;
-                    foreach (var item in listNhanVien)
+                    GlobalModel.ListNhanVien.Clear();
+                    GlobalModel.ListNhanVien = result.data;
+                    foreach (var item in GlobalModel.ListNhanVien)
                     {
                         item.STT = i;
                         if (item.Gender == true)
@@ -42,7 +42,7 @@ namespace ProjectQLKTX
                         }
                         i++;
                     }
-                    gcDanhSach.DataSource = listNhanVien;
+                    gcDanhSach.DataSource = GlobalModel.ListNhanVien;
                     gcDanhSach.RefreshDataSource();
                 }
                 else
@@ -58,7 +58,8 @@ namespace ProjectQLKTX
         }
         private async void frmDSNhanVien_Load(object sender, EventArgs e)
         {
-            LoadAccount();
+            gcDanhSach.DataSource = GlobalModel.ListNhanVien;
+            gcDanhSach.RefreshDataSource();
         }
         private async void GetAccount(Nhanvien nhanvien)
         {
@@ -134,7 +135,7 @@ namespace ProjectQLKTX
             var result = await _nhanVienHelper.EditNhanVien(account);
             try
             {
-                LoadAccount();
+                await LoadAccount();
                 MessageBox.Show(result.message);
             }
             catch (Exception ex)
@@ -149,7 +150,7 @@ namespace ProjectQLKTX
             var result = await _nhanVienHelper.DeleteNhanVien(account.Id);
             try
             {
-                gcDanhSach.DataSource = listNhanVien;
+                gcDanhSach.DataSource = GlobalModel.ListNhanVien;
                 gcDanhSach.RefreshDataSource();
                 MessageBox.Show(result.message);
             }
@@ -160,9 +161,9 @@ namespace ProjectQLKTX
             }
         }
 
-        private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private async void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadAccount();
+            await LoadAccount();
         }
 
         private void gcDanhSach_DoubleClick(object sender, EventArgs e)
@@ -176,7 +177,7 @@ namespace ProjectQLKTX
                 {
                     var hittest = gridView.CalcHitInfo(args.Location);
                     var s = hittest.RowHandle;
-                    account = listNhanVien[s];
+                    account = GlobalModel.ListNhanVien[s];
                     GetAccount(account);
                 }
             }
@@ -187,6 +188,11 @@ namespace ProjectQLKTX
         }
 
         private void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnThem_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }

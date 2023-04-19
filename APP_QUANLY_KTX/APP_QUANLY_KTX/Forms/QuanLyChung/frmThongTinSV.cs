@@ -1,8 +1,6 @@
 ﻿using DevExpress.Utils;
-using DevExpress.Utils.Extensions;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
-using ProjectQLKTX.APIsHelper;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
@@ -17,7 +15,6 @@ namespace ProjectQLKTX
         private readonly IPhongHelper _phongHelper;
         private readonly IKhuHelper _khuHelper;
         private readonly ITruongHelper _truongHelper;
-        List<Sinhvien> _listSinhVien;
         List<Quanhe> _listQuanhe;
         List<Phong> _listPhong;
         List<Khu> _listKhu;
@@ -32,7 +29,6 @@ namespace ProjectQLKTX
             _phongHelper = phongHelper;
             _khuHelper = khuHelper;
             _truongHelper = truongHelper;
-            _listSinhVien = new List<Sinhvien>();
             _listKhu = new List<Khu>();
             _listPhong = new List<Phong>();
             _listQuanhe = new List<Quanhe>();
@@ -176,9 +172,11 @@ namespace ProjectQLKTX
         }
         private async void frmThongTinSV_Load(object sender, EventArgs e)
         {
-            await LoadSinhVien(_listSinhVien);
+      
             imgSVNu.Visible = false;
             imgSVNam.Visible = false;
+            gcDanhSach.DataSource = GlobalModel.ListSinhVien;
+            gcDanhSach.RefreshDataSource();
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -197,7 +195,7 @@ namespace ProjectQLKTX
                 {
                     var hittest = gridView.CalcHitInfo(args.Location);
                     var s = hittest.RowHandle;
-                    _sinhVien = _listSinhVien[s];
+                    _sinhVien = GlobalModel.ListSinhVien[s];
                     GetAccount(_sinhVien);
                 }
             }
@@ -324,7 +322,7 @@ namespace ProjectQLKTX
             var result = await _sinhVienHelper.EditSinhVien(_sinhVien.Id, _sinhVien);
             try
             {
-                await LoadSinhVien(_listSinhVien);
+                await LoadSinhVien(GlobalModel.ListSinhVien);
                 MessageBox.Show(result.message);
             }
             catch (Exception ex)
@@ -353,7 +351,7 @@ namespace ProjectQLKTX
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadSinhVien(_listSinhVien);
+            LoadSinhVien(GlobalModel.ListSinhVien);
         }
 
         private void txtEmail_EditValueChanged(object sender, EventArgs e)
@@ -367,6 +365,11 @@ namespace ProjectQLKTX
         }
 
         private void btnReload_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnXoa_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }

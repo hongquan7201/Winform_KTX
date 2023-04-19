@@ -5,6 +5,6 @@ namespace ProjectQLKTX.Logins
 {
     public interface ILoginHelper
     {
-        Task<APIRespone<Nhanvien>> Login(Account account);
+        Task<APIRespone<List<Nhanvien>>> Login(Account account);
     }
 }

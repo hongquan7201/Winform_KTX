@@ -15,7 +15,6 @@ namespace ProjectQLKTX
         private readonly IPhongHelper _phongHelper;
         private readonly IKhuHelper _khuHelper;
         private readonly ITruongHelper _truongHelper;
-        List<Xe> _listXe = new List<Xe>();
         private Xe account;
         private List<Truong> _listTruong = new List<Truong>();
         private async void GetAccount(Xe xe)
@@ -168,7 +167,8 @@ namespace ProjectQLKTX
                     _listTruong.Add(item);
                 }
             }
-          await  LoadXe(_listXe);
+            gcDanhSach.DataSource = GlobalModel._listXe;
+            gcDanhSach.RefreshDataSource();
         }
 
         private void gcDanhSach_DoubleClick(object sender, EventArgs e)
@@ -182,7 +182,7 @@ namespace ProjectQLKTX
                 {
                     var hittest = gridView.CalcHitInfo(args.Location);
                     var s = hittest.RowHandle;
-                    account = _listXe[s];
+                    account =  GlobalModel._listXe[s];
                     GetAccount(account);
                 }
             }
@@ -272,14 +272,14 @@ namespace ProjectQLKTX
 
         private async void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            await SearchSinhVien(_listXe, txtTim.EditValue.ToString());
-            gcDanhSach.DataSource = _listXe;
+            await SearchSinhVien( GlobalModel._listXe, txtTim.EditValue.ToString());
+            gcDanhSach.DataSource =  GlobalModel._listXe;
             gcDanhSach.RefreshDataSource();
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadXe(_listXe);
+            LoadXe( GlobalModel._listXe);
         }
 
         private async void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -287,7 +287,7 @@ namespace ProjectQLKTX
             var resultDelete = await _xeHelper.DeleteXe(account.Id);
             if (resultDelete.status == 200)
             {
-                await LoadXe(_listXe);
+                await LoadXe( GlobalModel._listXe);
                 txtTenXe.Text = string.Empty;
                 cbTruong.Text = _listTruong[0].Name;
                 txtMaSV.Text = string.Empty;
@@ -322,7 +322,7 @@ namespace ProjectQLKTX
             var resultEdit = await _xeHelper.EditXe(xe);
             if(resultEdit.status == 200)
             {
-                await LoadXe(_listXe);
+                await LoadXe( GlobalModel._listXe);
             }
             MessageBox.Show(resultEdit.message);
            
