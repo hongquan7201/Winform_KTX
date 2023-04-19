@@ -169,6 +169,7 @@ namespace ProjectQLKTX
             }
             _frmDangNhap.ShowDialog();
             check();
+           
         }
         private async void check()
         {
@@ -377,8 +378,8 @@ namespace ProjectQLKTX
 
                     int i = 1;
                     listNhanVien.Clear();
-                    listNhanVien = result.data;
-                    foreach (var item in listNhanVien)
+                    var list = result.data;
+                    foreach (var item in list)
                     {
                         item.STT = i;
                         if (item.Gender == true)
@@ -390,6 +391,7 @@ namespace ProjectQLKTX
                         {
                             item.GioiTinh = "Nữ";
                         }
+                        listNhanVien.Add(item);
                         i++;
                     }
                 }
@@ -490,6 +492,18 @@ namespace ProjectQLKTX
             catch (Exception ex)
             {
                 Log.Error("frmDSNhanVien " + listSinhVien);
+                Log.Error(ex, ex.Message);
+            }
+        }
+        private async Task LoadListDienNuoc(List<Sinhvien> listAccount)
+        {
+            var listSinhVien = await _sinhVienHelper.GetListSinhVien();
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
                 Log.Error(ex, ex.Message);
             }
         }

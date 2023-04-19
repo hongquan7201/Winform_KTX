@@ -46,7 +46,7 @@ namespace ProjectQLKTX
             }
         }
 
-        private async void btnDangNhap_CheckedChanged_1(object sender, EventArgs e)
+        private async void btnDangNhap_CheckedChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtPassword.Text))
             {

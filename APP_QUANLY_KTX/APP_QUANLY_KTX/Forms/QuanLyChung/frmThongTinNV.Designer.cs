@@ -539,6 +539,7 @@
             this.Name = "frmThongTinNV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông Tin Cá Nhân";
+            this.Load += new System.EventHandler(this.frmThongTinNV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
