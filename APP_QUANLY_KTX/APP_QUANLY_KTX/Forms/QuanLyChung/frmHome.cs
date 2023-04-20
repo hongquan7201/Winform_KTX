@@ -1,10 +1,7 @@
 ﻿using DevExpress.XtraBars;
-using ProjectQLKTX.APIsHelper;
 using ProjectQLKTX.Interface;
-using ProjectQLKTX.Logins;
 using ProjectQLKTX.Models;
 using Serilog;
-using System.Runtime.CompilerServices;
 
 namespace ProjectQLKTX
 {
@@ -154,7 +151,7 @@ namespace ProjectQLKTX
 
         private void btnDSTruong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmDSTruong frmDSTruong = new frmDSTruong();
+            frmDSTruong frmDSTruong = new frmDSTruong(_truongHelper);
             frmDSTruong.ShowDialog();
         }
 
