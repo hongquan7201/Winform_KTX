@@ -19,7 +19,7 @@ namespace ProjectQLKTX.APIsHelper
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(hopDong, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/hopdong/add", content);
+            var response = await httpClient.PostAsync($"api/hopdong/add", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
@@ -27,10 +27,14 @@ namespace ProjectQLKTX.APIsHelper
 
         public async Task<APIRespone<string>> DeleteHopDong(Guid id)
         {
-            HttpClient httpClient = new HttpClient();
-            string url = Constant.Domain + "/api/hopdong/delete"; // Thay đổi đường dẫn API của bạn
-            var request = new HttpRequestMessage(HttpMethod.Delete, url);
-            request.Content = new StringContent(id.ToString(), System.Text.Encoding.UTF8, "application/json");
+            string url = Constant.Domain + "api/hopdong/delete";// Thay đổi đường dẫn API của bạn
+            var httpClient = new HttpClient();
+            var jsonId = JsonConvert.SerializeObject(id);
+            var content = new StringContent(jsonId, Encoding.UTF8, "application/json");
+            var request = new HttpRequestMessage(HttpMethod.Delete, url)
+            {
+                Content = content
+            };
             var response = await httpClient.SendAsync(request);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);

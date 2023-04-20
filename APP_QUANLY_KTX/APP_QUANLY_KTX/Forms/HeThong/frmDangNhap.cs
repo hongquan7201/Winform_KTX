@@ -11,6 +11,7 @@ namespace ProjectQLKTX
         private readonly IRoleHelper _roleHelper;
         private readonly frmLoading _frmLoading;
         private string message = "";
+        bool IsCheck = false;
         public frmDangNhap(ILoginHelper loginHelper, IRoleHelper roleHelper, frmLoading frmLoading)
         {
             InitializeComponent();
@@ -54,7 +55,10 @@ namespace ProjectQLKTX
                 await  Login();
                 _frmLoading.Hide();
                 MessageBox.Show(message);
-                this.Hide();
+                if(IsCheck ==true)
+                {
+                    this.Hide();
+                }
             }
             else
             {
@@ -95,11 +99,15 @@ namespace ProjectQLKTX
                             GlobalModel.Nhanvien.Gender = login.data.FirstOrDefault().Gender;
                             GlobalModel.Nhanvien.Sdt = login.data.FirstOrDefault().Sdt;
                             GlobalModel.Nhanvien.CreateAt = login.data.FirstOrDefault().CreateAt;
+                            GlobalModel.Nhanvien.Id = login.data.FirstOrDefault().Id;
                         }
                     }
+                    IsCheck = true;
+                    GlobalModel.IsLogin = true;
                 }
                 else
                 {
+                    IsCheck = false;
                 }
                 message = login.message;
             }

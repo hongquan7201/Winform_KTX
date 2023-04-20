@@ -82,13 +82,16 @@ namespace ProjectQLKTX
         }
         private async void btnTTNhanVien_ItemClick(object sender, ItemClickEventArgs e)
         {
-          
+
             frmThongTinNV frmThongTinCaNhanNV = new frmThongTinNV();
             frmThongTinCaNhanNV.ShowDialog();
         }
-        private void btnQLiHopDong_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnQLiHopDong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLiHopDong frmQLiHopDong = new frmQLiHopDong();
+            _frmLoading.Show();
+            await LoadListHopDong(GlobalModel.ListHopDong);
+            _frmLoading.Hide();
+            frmQLiHopDong frmQLiHopDong = new frmQLiHopDong(_hopDongHelper, _nhanVienHelper, _sinhVienHelper, _phongHelper, _frmLoading);
             frmQLiHopDong.ShowDialog();
         }
         private void btnQLiDienNuoc_ItemClick(object sender, ItemClickEventArgs e)
@@ -131,7 +134,7 @@ namespace ProjectQLKTX
         private async void btnQLiTaiSan_ItemClick(object sender, ItemClickEventArgs e)
         {
             _frmLoading.Show();
-          await  LoadListTaiSan(GlobalModel.ListTaiSan);
+            await LoadListTaiSan(GlobalModel.ListTaiSan);
             _frmLoading.Hide();
             frmQLiTaiSan frmQLiTaiSan = new frmQLiTaiSan(_taiSanHelper, _phongHelper, _vatDungHelper);
             frmQLiTaiSan.ShowDialog();
@@ -157,25 +160,19 @@ namespace ProjectQLKTX
 
         private void btnDangxuat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            if (btnDangxuat.Caption == "Đăng Nhập")
-            {
-                DANHMUC.Visible = true;
-                QUANLY.Visible = true;
-            }
-            else
-            {
-                DANHMUC.Visible = false;
-                QUANLY.Visible = false;
-            }
+            GlobalModel.IsLogin = false;
+            DANHMUC.Visible = false;
+            QUANLY.Visible = false;
             _frmDangNhap.ShowDialog();
-            check();
-           
+            Thread thread = new Thread(check);
+            thread.IsBackground = true;
+            thread.Start();
         }
-        private async void check()
+        private void check()
         {
             while (true)
             {
-                if (GlobalModel.Nhanvien != null)
+                if (GlobalModel.Nhanvien != null && GlobalModel.IsLogin == true)
                 {
                     DANHMUC.Visible = true;
                     QUANLY.Visible = true;
@@ -500,12 +497,64 @@ namespace ProjectQLKTX
             var listSinhVien = await _sinhVienHelper.GetListSinhVien();
             try
             {
-                
+
             }
             catch (Exception ex)
             {
                 Log.Error(ex, ex.Message);
             }
         }
+        private async Task LoadListHopDong(List<Hopdong> listHopDong)
+        {
+            var resultListHopDong = await _hopDongHelper.GetListHopDong();
+            if (resultListHopDong.status == 200)
+            {
+                int i = 1;
+                listHopDong.Clear();
+                foreach (var item in resultListHopDong.data)
+                {
+                    if (item.IdNhanVien != null)
+                    {
+                        var resultNhanVien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien);
+                        if (resultNhanVien.status == 200)
+                        {
+                            item.NameNhanVien = resultNhanVien.data.FirstOrDefault().Name;
+                            item.EmailNhanVien = resultNhanVien.data.FirstOrDefault().Email;
+                        }
+                    }
+                    if (item.IdSinhVien != null)
+                    {
+                        var resultSinhVien = await _sinhVienHelper.GetSinhVienById(item.IdSinhVien);
+                        if (resultSinhVien.status == 200)
+                        {
+                            item.MaSinhVien = resultSinhVien.data.FirstOrDefault().MaSv;
+                            item.NameSinhVien = resultSinhVien.data.FirstOrDefault().Name;
+                            item.EmailSinhVien = resultSinhVien.data.FirstOrDefault().Email;
+                        }
+                    }
+                    if (item.IdPhong != null)
+                    {
+                        var resultPhong = await _phongHelper.GetPhong(item.IdPhong);
+                        if (resultPhong.status == 200)
+                        {
+                            item.Phong = resultPhong.data.FirstOrDefault().Name;
+                        }
+                    }
+                    item.STT = i;
+                    listHopDong.Add(item);
+                    i++;
+                }
+            }
+            var listPhong = await _phongHelper.GetListPhong();
+            if (listPhong.status == 200)
+            {
+                GlobalModel.ListPhong.Clear();
+                foreach (var item in listPhong.data)
+                {
+                    GlobalModel.ListPhong.Add(item);
+                }
+            }
+        }
+
     }
 }

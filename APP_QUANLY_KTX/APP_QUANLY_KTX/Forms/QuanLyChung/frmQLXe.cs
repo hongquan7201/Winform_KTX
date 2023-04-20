@@ -182,7 +182,7 @@ namespace ProjectQLKTX
                 {
                     var hittest = gridView.CalcHitInfo(args.Location);
                     var s = hittest.RowHandle;
-                    account =  GlobalModel._listXe[s];
+                    account = GlobalModel._listXe[s];
                     GetAccount(account);
                 }
             }
@@ -272,14 +272,14 @@ namespace ProjectQLKTX
 
         private async void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            await SearchSinhVien( GlobalModel._listXe, txtTim.EditValue.ToString());
-            gcDanhSach.DataSource =  GlobalModel._listXe;
+            await SearchSinhVien(GlobalModel._listXe, txtTim.EditValue.ToString());
+            gcDanhSach.DataSource = GlobalModel._listXe;
             gcDanhSach.RefreshDataSource();
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadXe( GlobalModel._listXe);
+            LoadXe(GlobalModel._listXe);
         }
 
         private async void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -287,7 +287,7 @@ namespace ProjectQLKTX
             var resultDelete = await _xeHelper.DeleteXe(account.Id);
             if (resultDelete.status == 200)
             {
-                await LoadXe( GlobalModel._listXe);
+                await LoadXe(GlobalModel._listXe);
                 txtTenXe.Text = string.Empty;
                 cbTruong.Text = _listTruong[0].Name;
                 txtMaSV.Text = string.Empty;
@@ -306,7 +306,7 @@ namespace ProjectQLKTX
                 txtMauXe.Text = string.Empty;
                 txtTenXe.Text = string.Empty;
             }
-          
+
             MessageBox.Show(resultDelete.message);
         }
 
@@ -314,18 +314,23 @@ namespace ProjectQLKTX
         {
             Xe xe = new Xe();
             xe.Id = account.Id;
-            xe.IdUser= account.IdUser;
+            xe.IdUser = account.IdUser;
             xe.Name = txtTenXe.Text;
             xe.Color = txtMauXe.Text;
             xe.Code = txtBSoXe.Text;
             xe.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
             var resultEdit = await _xeHelper.EditXe(xe);
-            if(resultEdit.status == 200)
+            if (resultEdit.status == 200)
             {
-                await LoadXe( GlobalModel._listXe);
+                await LoadXe(GlobalModel._listXe);
             }
             MessageBox.Show(resultEdit.message);
-           
+
+
+        }
+
+        private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
 
         }
     }

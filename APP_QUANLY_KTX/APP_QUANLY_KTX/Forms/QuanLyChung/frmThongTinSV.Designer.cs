@@ -1152,6 +1152,7 @@
             btnTim.Id = 11;
             btnTim.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnTim.ImageOptions.SvgImage");
             btnTim.Name = "btnTim";
+            btnTim.ItemClick += btnTim_ItemClick_1;
             // 
             // barDockControlTop
             // 

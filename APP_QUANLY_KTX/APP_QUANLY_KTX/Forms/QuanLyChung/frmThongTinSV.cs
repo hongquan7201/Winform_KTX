@@ -172,7 +172,7 @@ namespace ProjectQLKTX
         }
         private async void frmThongTinSV_Load(object sender, EventArgs e)
         {
-      
+
             imgSVNu.Visible = false;
             imgSVNam.Visible = false;
             gcDanhSach.DataSource = GlobalModel.ListSinhVien;
@@ -370,6 +370,11 @@ namespace ProjectQLKTX
         }
 
         private void btnXoa_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnTim_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }
