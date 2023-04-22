@@ -117,5 +117,10 @@ namespace ProjectQLKTX
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cbHienthi_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

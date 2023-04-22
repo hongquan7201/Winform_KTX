@@ -102,6 +102,7 @@
             this.SOTIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NOIDUNG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAYTHANHTOAN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaGiaoDich.Properties)).BeginInit();
@@ -130,6 +131,7 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.labelControl20);
             this.groupControl2.Controls.Add(this.txtMaGiaoDich);
             this.groupControl2.Controls.Add(this.txtNoiDung);
             this.groupControl2.Controls.Add(this.labelControl9);
@@ -929,6 +931,18 @@
             this.NGAYTHANHTOAN.VisibleIndex = 7;
             this.NGAYTHANHTOAN.Width = 150;
             // 
+            // labelControl20
+            // 
+            this.labelControl20.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelControl20.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl20.Appearance.Options.UseFont = true;
+            this.labelControl20.Appearance.Options.UseForeColor = true;
+            this.labelControl20.Location = new System.Drawing.Point(396, 144);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(8, 18);
+            this.labelControl20.TabIndex = 112;
+            this.labelControl20.Text = "đ";
+            // 
             // frmLichSuGiaoDich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1053,5 +1067,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit repositoryItemImageEdit2;
         private DevExpress.XtraEditors.TextEdit txtMaGiaoDich;
         private DevExpress.XtraEditors.TextEdit txtHoTen;
+        private DevExpress.XtraEditors.LabelControl labelControl20;
     }
 }

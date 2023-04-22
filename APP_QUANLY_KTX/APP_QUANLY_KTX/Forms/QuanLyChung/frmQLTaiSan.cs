@@ -77,10 +77,10 @@ namespace ProjectQLKTX
                 if (listVatDung.status == 200)
                 {
                     GlobalModel.ListVatDung.Clear();
-                    cbVatDung.Properties.Items.Clear();
+                    cbTenTaiSan.Properties.Items.Clear();
                     foreach (var item in listVatDung.data)
                     {
-                        cbVatDung.Properties.Items.Add(item.Name);
+                        cbTenTaiSan.Properties.Items.Add(item.Name);
                          GlobalModel.ListVatDung.Add(item);
                     }
                 }
@@ -98,7 +98,7 @@ namespace ProjectQLKTX
             }
             foreach(var item in GlobalModel.ListVatDung)
             {
-                cbVatDung.Properties.Items.Add(item);
+                cbTenTaiSan.Properties.Items.Add(item);
             }
         }
 
@@ -127,7 +127,7 @@ namespace ProjectQLKTX
                 taiSan.TinhTrang = "Chưa Có";
             }
             cbPhong.Text = taiSan.NamePhong;
-            cbVatDung.Text = taiSan.NameVatDung;
+            cbTenTaiSan.Text = taiSan.NameVatDung;
         }
         private void gcDanhSach_DoubleClick(object sender, EventArgs e)
         {
@@ -157,7 +157,7 @@ namespace ProjectQLKTX
             Taisan taisan = new Taisan();
             foreach (var item in  GlobalModel.ListVatDung)
             {
-                if (cbVatDung.Text == item.Name)
+                if (cbTenTaiSan.Text == item.Name)
                 {
                     taisan.IdVatDung = item.Id;
                 }
@@ -184,7 +184,7 @@ namespace ProjectQLKTX
             {
                 foreach (var item in  GlobalModel.ListTaiSan)
                 {
-                    if (cbPhong.Text == item.NamePhong && cbVatDung.Text == item.NameVatDung)
+                    if (cbPhong.Text == item.NamePhong && cbTenTaiSan.Text == item.NameVatDung)
                     {
                         txtSoLuong.Text = item.Quantity.ToString();
                         txtTinhTrang.Text = item.TinhTrang;
@@ -224,7 +224,7 @@ namespace ProjectQLKTX
             taisan.Id = _taiSan.Id;
             foreach (var item in  GlobalModel.ListVatDung)
             {
-                if (cbVatDung.Text == item.Name)
+                if (cbTenTaiSan.Text == item.Name)
                 {
                     taisan.IdVatDung = item.Id;
                 }
