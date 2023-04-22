@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQLiTaiSan));
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.cbVatDung = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbTenTaiSan = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cbPhong = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -45,7 +45,7 @@
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXuatfilePDF = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXuatfileExcel = new DevExpress.XtraBars.BarButtonItem();
             this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnTim = new DevExpress.XtraBars.BarButtonItem();
@@ -79,7 +79,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbVatDung.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTenTaiSan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbPhong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTinhTrang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).BeginInit();
@@ -99,7 +99,7 @@
             // 
             this.groupControl3.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupControl3.AppearanceCaption.Options.UseFont = true;
-            this.groupControl3.Controls.Add(this.cbVatDung);
+            this.groupControl3.Controls.Add(this.cbTenTaiSan);
             this.groupControl3.Controls.Add(this.labelControl2);
             this.groupControl3.Controls.Add(this.cbPhong);
             this.groupControl3.Controls.Add(this.labelControl1);
@@ -113,18 +113,18 @@
             this.groupControl3.TabIndex = 44;
             this.groupControl3.Text = "Thông Tin Tài Sản";
             // 
-            // cbVatDung
+            // cbTenTaiSan
             // 
-            this.cbVatDung.Location = new System.Drawing.Point(135, 57);
-            this.cbVatDung.Name = "cbVatDung";
-            this.cbVatDung.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbVatDung.Properties.Appearance.Options.UseFont = true;
-            this.cbVatDung.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbTenTaiSan.Location = new System.Drawing.Point(135, 57);
+            this.cbTenTaiSan.Name = "cbTenTaiSan";
+            this.cbTenTaiSan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbTenTaiSan.Properties.Appearance.Options.UseFont = true;
+            this.cbTenTaiSan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbVatDung.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbVatDung.Size = new System.Drawing.Size(244, 24);
-            this.cbVatDung.TabIndex = 96;
-            this.cbVatDung.SelectedIndexChanged += new System.EventHandler(this.cbVatDung_SelectedIndexChanged);
+            this.cbTenTaiSan.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbTenTaiSan.Size = new System.Drawing.Size(244, 24);
+            this.cbTenTaiSan.TabIndex = 96;
+            this.cbTenTaiSan.SelectedIndexChanged += new System.EventHandler(this.cbVatDung_SelectedIndexChanged);
             // 
             // labelControl2
             // 
@@ -224,7 +224,7 @@
             this.btnThoat,
             this.btnThem,
             this.barButtonItem15,
-            this.btnXuatfilePDF});
+            this.btnXuatfileExcel});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 20;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -247,7 +247,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfilePDF, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfileExcel, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.txtTim, "", true, true, true, 153),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
@@ -289,14 +289,14 @@
             this.btnReload.Name = "btnReload";
             this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
-            // btnXuatfilePDF
+            // btnXuatfileExcel
             // 
-            this.btnXuatfilePDF.Caption = "Xuất file PDF";
-            this.btnXuatfilePDF.Id = 19;
-            this.btnXuatfilePDF.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.Image")));
-            this.btnXuatfilePDF.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatfile.ImageOptions.LargeImage")));
-            this.btnXuatfilePDF.Name = "btnXuatfilePDF";
-            this.btnXuatfilePDF.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXuatfile_ItemClick);
+            this.btnXuatfileExcel.Caption = "Xuất file Excel";
+            this.btnXuatfileExcel.Id = 19;
+            this.btnXuatfileExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatfilePDF.ImageOptions.Image")));
+            this.btnXuatfileExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatfilePDF.ImageOptions.LargeImage")));
+            this.btnXuatfileExcel.Name = "btnXuatfileExcel";
+            this.btnXuatfileExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXuatfile_ItemClick);
             // 
             // txtTim
             // 
@@ -616,7 +616,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbVatDung.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbTenTaiSan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbPhong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTinhTrang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).EndInit();
@@ -675,12 +675,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn PHONG;
         private DevExpress.XtraGrid.Columns.GridColumn SOLUONG;
         private DevExpress.XtraGrid.Columns.GridColumn TINHTRANG;
-        private DevExpress.XtraEditors.ComboBoxEdit cbVatDung;
+        private DevExpress.XtraEditors.ComboBoxEdit cbTenTaiSan;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.ComboBoxEdit cbPhong;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraBars.BarButtonItem btnXuatfilePDF;
+        private DevExpress.XtraBars.BarButtonItem btnXuatfileExcel;
         private DevExpress.XtraGrid.Columns.GridColumn STT;
         private BindingSource taisanBindingSource;
         private DevExpress.XtraEditors.TextEdit txtTinhTrang;

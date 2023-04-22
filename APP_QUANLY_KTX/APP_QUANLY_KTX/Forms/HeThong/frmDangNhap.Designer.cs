@@ -68,6 +68,7 @@
             this.lbQuenMK.TabIndex = 4;
             this.lbQuenMK.Text = "Quên mật khẩu?";
             this.lbQuenMK.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbQuenMK.Click += new System.EventHandler(this.lbQuenMK_Click);
             // 
             // btnDangNhap
             // 
@@ -95,6 +96,7 @@
             this.btnThoat.Size = new System.Drawing.Size(133, 34);
             this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_CheckedChanged);
             // 
             // label6
             // 
@@ -160,7 +162,7 @@
             // 
             this.txtEmail.BackColor = System.Drawing.Color.White;
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtEmail.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(4, 9);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
@@ -187,12 +189,13 @@
             this.cbHienthi.Properties.Caption = "";
             this.cbHienthi.Size = new System.Drawing.Size(19, 20);
             this.cbHienthi.TabIndex = 45;
+            this.cbHienthi.CheckedChanged += new System.EventHandler(this.cbHienthi_CheckedChanged);
             // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.White;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPassword.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.Location = new System.Drawing.Point(4, 9);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);

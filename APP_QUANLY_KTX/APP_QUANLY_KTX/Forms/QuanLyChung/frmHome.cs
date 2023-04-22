@@ -553,5 +553,10 @@ namespace ProjectQLKTX
             }
         }
 
+        private void btnLichSuGiaoDich_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmLichSuGiaoDich frmLichSuGiaoDich = new frmLichSuGiaoDich();
+            frmLichSuGiaoDich.ShowDialog();
+        }
     }
 }

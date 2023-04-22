@@ -36,7 +36,7 @@
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXuatfilePDF = new DevExpress.XtraBars.BarButtonItem();
+            this.btnInfilePDF = new DevExpress.XtraBars.BarButtonItem();
             this.btnXuatfileExcel = new DevExpress.XtraBars.BarButtonItem();
             this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
@@ -148,7 +148,7 @@
             this.barEditItem3,
             this.txtTim,
             this.btnThoat,
-            this.btnXuatfilePDF,
+            this.btnInfilePDF,
             this.barButtonItem2,
             this.btnXuatfileExcel});
             this.barManager1.MainMenu = this.bar2;
@@ -173,7 +173,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSua, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXoa, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfilePDF, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnInfilePDF, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXuatfileExcel, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.txtTim, "", true, true, true, 147),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
@@ -212,13 +212,13 @@
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
             // 
-            // btnXuatfilePDF
+            // btnInfilePDF
             // 
-            this.btnXuatfilePDF.Caption = "Xuất file PDF";
-            this.btnXuatfilePDF.Id = 17;
-            this.btnXuatfilePDF.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatfilePDF.ImageOptions.Image")));
-            this.btnXuatfilePDF.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatfilePDF.ImageOptions.LargeImage")));
-            this.btnXuatfilePDF.Name = "btnXuatfilePDF";
+            this.btnInfilePDF.Caption = "In file PDF";
+            this.btnInfilePDF.Id = 17;
+            this.btnInfilePDF.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatfilePDF.ImageOptions.Image")));
+            this.btnInfilePDF.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatfilePDF.ImageOptions.LargeImage")));
+            this.btnInfilePDF.Name = "btnInfilePDF";
             // 
             // btnXuatfileExcel
             // 
@@ -1003,7 +1003,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn STT;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.LabelControl lbDem;
-        private DevExpress.XtraBars.BarButtonItem btnXuatfilePDF;
+        private DevExpress.XtraBars.BarButtonItem btnInfilePDF;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btnXuatfileExcel;
     }
