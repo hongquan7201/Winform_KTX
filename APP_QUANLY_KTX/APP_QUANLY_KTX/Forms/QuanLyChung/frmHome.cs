@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraBars;
+﻿using DevExpress.Mvvm.Native;
+using DevExpress.XtraBars;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
@@ -19,10 +20,11 @@ namespace ProjectQLKTX
         private readonly ITaiSanHelper _taiSanHelper;
         private readonly IVatDungHelper _vatDungHelper;
         private readonly IChietTietPhieuKhoHelper _chietTietPhieuKhoHelper;
+        private readonly IBankingHelper _bankingHelper;
         private readonly frmDangNhap _frmDangNhap;
         private readonly frmLoading _frmLoading;
         private readonly frmQLiXe _frmQLiXe;
-        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper, IChietTietPhieuKhoHelper chietTietPhieuKhoHelper, frmDangNhap frmDangNhap, frmLoading frmLoading, frmQLiXe frmQLiXe)
+        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper, IChietTietPhieuKhoHelper chietTietPhieuKhoHelper, frmDangNhap frmDangNhap, frmLoading frmLoading, frmQLiXe frmQLiXe, IBankingHelper bankingHelper)
         {
             InitializeComponent();
             _nhanVienHelper = nhanVienHelper;
@@ -40,6 +42,7 @@ namespace ProjectQLKTX
             _frmDangNhap = frmDangNhap;
             _frmLoading = frmLoading;
             _frmQLiXe = frmQLiXe;
+            _bankingHelper = bankingHelper;
         }
         private void btnDoiMK_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -553,10 +556,64 @@ namespace ProjectQLKTX
             }
         }
 
-        private void btnLichSuGiaoDich_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnLichSuGiaoDich_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmLichSuGiaoDich frmLichSuGiaoDich = new frmLichSuGiaoDich();
+            _frmLoading.Show();
+            await LoadListBanking(GlobalModel.ListBanking);
+            _frmLoading.Hide();
+            frmLichSuGiaoDich frmLichSuGiaoDich = new frmLichSuGiaoDich(_bankingHelper,_sinhVienHelper,_khuHelper,_phongHelper,_frmLoading);
             frmLichSuGiaoDich.ShowDialog();
+        }
+        private async Task LoadListBanking(List<Banking> listBanking)
+        {
+            var lstBanking = await _bankingHelper.GetListBanking();
+            if (lstBanking.status == 200)
+            {
+                listBanking.Clear();
+                int i = 1;
+                foreach (var item in lstBanking.data)
+                {
+                    Banking banking = new Banking();
+                    banking.type = item.type;
+                    banking.idSinhVien = item.idSinhVien;
+                    banking.amount = item.amount;
+                    banking.code = item.code;
+                    banking.Id = item.Id;
+                    banking.cmt = item.cmt;
+                    banking.creatAt = item.creatAt;
+                    banking.STT = i;
+                    if (banking.idSinhVien != null)
+                    {
+                        var sinhvien = await _sinhVienHelper.GetSinhVienById(banking.idSinhVien);
+                        if(sinhvien.status == 200)
+                        {
+                            banking.Name = sinhvien.data.FirstOrDefault().Name;
+                            banking.Email = sinhvien.data.FirstOrDefault().Email;
+                            banking.Sdt = sinhvien.data.FirstOrDefault().Sdt;
+                            if (sinhvien.data.FirstOrDefault().IdPhong != null)
+                            {
+                                var phong = await _phongHelper.GetPhong(sinhvien.data.FirstOrDefault().IdPhong);
+                                if(phong.status == 200)
+                                {
+                                    banking.NamePhong = phong.data.FirstOrDefault().Name;
+                                    if (phong.data.FirstOrDefault().IdKhu!= null)
+                                    {
+                                        var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu);
+                                        if(khu.status == 200)
+                                        {
+                                            banking.NameKhu = khu.data.FirstOrDefault().Name;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                         
+                    }
+                    listBanking.Add(banking);
+                    i++;
+                }
+            }
+
         }
     }
 }

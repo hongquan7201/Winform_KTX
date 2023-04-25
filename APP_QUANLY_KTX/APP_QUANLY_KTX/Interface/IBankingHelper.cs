@@ -1,0 +1,12 @@
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Models;
+
+namespace ProjectQLKTX.Interface
+{
+    public interface IBankingHelper
+    {
+        Task<APIRespone<List<Banking>>> GetListBanking();
+        Task<APIRespone<string>> AddBanking(Banking banking);
+        Task<APIRespone<Banking>> GetBankingByCode(string code);
+    }
+}

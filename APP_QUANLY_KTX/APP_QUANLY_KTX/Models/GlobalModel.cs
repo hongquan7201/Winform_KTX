@@ -14,6 +14,6 @@
         public static List<Nhanvien> ListNhanVien = new List<Nhanvien>();
         public static List<Sinhvien> ListSinhVien = new List<Sinhvien>();
         public static List<Hopdong> ListHopDong = new List<Hopdong>();
-
+        public static List<Banking> ListBanking = new List<Banking>();
     }
 }

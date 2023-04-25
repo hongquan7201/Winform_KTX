@@ -378,5 +378,10 @@ namespace ProjectQLKTX
         {
 
         }
+
+        private void btnXoa_ItemClick_2(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
