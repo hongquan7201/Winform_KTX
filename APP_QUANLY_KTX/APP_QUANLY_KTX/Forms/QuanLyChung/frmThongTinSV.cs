@@ -383,5 +383,15 @@ namespace ProjectQLKTX
         {
 
         }
+
+        private void cbKhu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl19_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

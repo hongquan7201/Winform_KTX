@@ -56,8 +56,6 @@
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.btnLapPhieu = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangKyXe = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
-            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
             this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
@@ -66,6 +64,8 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
+            this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btnXuatfile = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -422,9 +422,7 @@
             this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnLapPhieu, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnDangKyXe, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, this.txtTim, "", false, true, true, 140),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTim, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnReload, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar3.OptionsBar.MultiLine = true;
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Main menu";
@@ -443,21 +441,6 @@
             this.btnDangKyXe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangKyXe.ImageOptions.Image")));
             this.btnDangKyXe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDangKyXe.ImageOptions.LargeImage")));
             this.btnDangKyXe.Name = "btnDangKyXe";
-            // 
-            // btnSua
-            // 
-            this.btnSua.Caption = "Sửa";
-            this.btnSua.Id = 1;
-            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
-            this.btnSua.Name = "btnSua";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Caption = "Xóa";
-            this.btnXoa.Id = 2;
-            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
-            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
-            this.btnXoa.Name = "btnXoa";
             // 
             // btnReload
             // 
@@ -494,7 +477,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(967, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(917, 24);
             // 
             // barDockControlBottom
             // 
@@ -502,7 +485,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 403);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(967, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(917, 0);
             // 
             // barDockControlLeft
             // 
@@ -516,9 +499,24 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(967, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(917, 24);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 379);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Caption = "Sửa";
+            this.btnSua.Id = 1;
+            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
+            this.btnSua.Name = "btnSua";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Caption = "Xóa";
+            this.btnXoa.Id = 2;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
+            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
+            this.btnXoa.Name = "btnXoa";
             // 
             // barButtonItem5
             // 
@@ -599,22 +597,7 @@
             // 
             this.repositoryItemTextEdit3.AutoHeight = false;
             this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Caption = "Thoát";
-            this.btnThoat.Id = 16;
-            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
-            this.btnThoat.Name = "btnThoat";
-            // 
-            // btn_Thongke
-            // 
-            this.btn_Thongke.Caption = "Thống Kê";
-            this.btn_Thongke.Id = 17;
-            this.btn_Thongke.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Thongke.ImageOptions.Image")));
-            this.btn_Thongke.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Thongke.ImageOptions.LargeImage")));
-            this.btn_Thongke.Name = "btn_Thongke";
-            // 
+            //            
             // navBarGroup4
             // 
             this.navBarGroup4.Caption = "navBarGroup4";
@@ -675,7 +658,7 @@
             this.groupControl1.Controls.Add(this.labelControl15);
             this.groupControl1.Location = new System.Drawing.Point(582, 33);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(385, 218);
+            this.groupControl1.Size = new System.Drawing.Size(333, 218);
             this.groupControl1.TabIndex = 74;
             this.groupControl1.Text = "Hợp Đồng";
             // 
@@ -787,39 +770,39 @@
             this.groupControl5.Controls.Add(this.labelControl7);
             this.groupControl5.Location = new System.Drawing.Point(582, 253);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(385, 147);
+            this.groupControl5.Size = new System.Drawing.Size(333, 147);
             this.groupControl5.TabIndex = 75;
             this.groupControl5.Text = "Thông Tin Phòng";
             // 
             // cbPhong
             // 
-            this.cbPhong.Location = new System.Drawing.Point(71, 101);
+            this.cbPhong.Location = new System.Drawing.Point(107, 98);
             this.cbPhong.Name = "cbPhong";
             this.cbPhong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbPhong.Properties.Appearance.Options.UseFont = true;
             this.cbPhong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbPhong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbPhong.Size = new System.Drawing.Size(185, 24);
+            this.cbPhong.Size = new System.Drawing.Size(190, 24);
             this.cbPhong.TabIndex = 71;
             // 
             // cbKhu
             // 
-            this.cbKhu.Location = new System.Drawing.Point(71, 53);
+            this.cbKhu.Location = new System.Drawing.Point(107, 53);
             this.cbKhu.Name = "cbKhu";
             this.cbKhu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbKhu.Properties.Appearance.Options.UseFont = true;
             this.cbKhu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbKhu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbKhu.Size = new System.Drawing.Size(185, 24);
+            this.cbKhu.Size = new System.Drawing.Size(190, 24);
             this.cbKhu.TabIndex = 60;
             // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(35, 56);
+            this.labelControl9.Location = new System.Drawing.Point(64, 56);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(21, 16);
             this.labelControl9.TabIndex = 59;
@@ -829,7 +812,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(21, 101);
+            this.labelControl7.Location = new System.Drawing.Point(50, 101);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(35, 16);
             this.labelControl7.TabIndex = 43;
@@ -839,7 +822,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 403);
+            this.ClientSize = new System.Drawing.Size(917, 403);
             this.Controls.Add(this.groupControl5);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.groupControl2);
