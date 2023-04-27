@@ -18,9 +18,4 @@ public partial class Chitietphieukho
 
     public Guid? IdNhanVien { get; set; }
     public string? TinhTrang { get; set; }
-    public virtual Nhanvien? IdNhanVienNavigation { get; set; }
-
-    public virtual Phieukho? IdPhieuKhoNavigation { get; set; }
-
-    public virtual Vatdung? IdVatDungNavigation { get; set; }
 }

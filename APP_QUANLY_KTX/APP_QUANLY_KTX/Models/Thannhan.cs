@@ -20,8 +20,4 @@ public partial class Thannhan
     public Guid? IdUser { get; set; }
 
     public Guid? IdQuanHe { get; set; }
-
-    public virtual Quanhe? IdQuanHeNavigation { get; set; }
-
-    public virtual Sinhvien? IdUserNavigation { get; set; }
 }

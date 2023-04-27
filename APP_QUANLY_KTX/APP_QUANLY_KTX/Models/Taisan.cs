@@ -15,7 +15,4 @@ public partial class Taisan
     public string? TinhTrang { get; set; }
     public Guid IdPhong { get; set; }
 
-    public virtual Phong IdPhongNavigation { get; set; } = null!;
-
-    public virtual Vatdung? IdVatDungNavigation { get; set; }
 }

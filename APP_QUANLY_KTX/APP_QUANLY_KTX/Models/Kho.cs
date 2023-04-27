@@ -11,7 +11,4 @@ public partial class Kho
 
     public bool? Status { get; set; }
 
-    public virtual ICollection<Phieukho> Phieukhos { get; } = new List<Phieukho>();
-
-    public virtual ICollection<Vatdung> Vatdungs { get; } = new List<Vatdung>();
 }

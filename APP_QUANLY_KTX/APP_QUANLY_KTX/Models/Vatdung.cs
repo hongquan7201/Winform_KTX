@@ -16,12 +16,4 @@ public partial class Vatdung
     public Guid? IdLoaiVatDung { get; set; }
 
     public Guid? IdKho { get; set; }
-
-    public virtual ICollection<Chitietphieukho> Chitietphieukhos { get; } = new List<Chitietphieukho>();
-
-    public virtual Kho? IdKhoNavigation { get; set; }
-
-    public virtual Loaivatdung? IdLoaiVatDungNavigation { get; set; }
-
-    public virtual ICollection<Taisan> Taisans { get; } = new List<Taisan>();
 }

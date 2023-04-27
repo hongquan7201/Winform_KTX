@@ -23,10 +23,4 @@ public partial class Hopdong
     public DateTime? NgayKetThuc { get; set; }
 
     public DateTime? CreateAt { get; set; }
-
-    public virtual Nhanvien? IdNhanVienNavigation { get; set; }
-
-    public virtual Phong? IdPhongNavigation { get; set; }
-
-    public virtual Sinhvien? IdSinhVienNavigation { get; set; }
 }

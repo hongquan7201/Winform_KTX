@@ -30,13 +30,4 @@ public partial class Nhanvien
 
     public Guid? IdRole { get; set; }
 
-    public virtual ICollection<Bienlai> Bienlais { get; } = new List<Bienlai>();
-
-    public virtual ICollection<Chitietphieukho> Chitietphieukhos { get; } = new List<Chitietphieukho>();
-
-    public virtual ICollection<Hoadon> Hoadons { get; } = new List<Hoadon>();
-
-    public virtual ICollection<Hopdong> Hopdongs { get; } = new List<Hopdong>();
-
-    public virtual Role? IdRoleNavigation { get; set; }
 }

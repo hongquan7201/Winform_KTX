@@ -21,11 +21,4 @@ public partial class Hoadon
 
     public bool? Status { get; set; }
 
-    public virtual Loaihoadon? IdLoaiNavigation { get; set; }
-
-    public virtual Nhanvien? IdNhanVienNavigation { get; set; }
-
-    public virtual Phong? IdPhongNavigation { get; set; }
-
-    public virtual Sinhvien? IdSinhVienNavigation { get; set; }
 }

@@ -88,7 +88,7 @@ namespace ProjectQLKTX
         private async void btnTTNhanVien_ItemClick(object sender, ItemClickEventArgs e)
         {
 
-            frmThongTinNV frmThongTinCaNhanNV = new frmThongTinNV();
+            frmThongTinNV frmThongTinCaNhanNV = new frmThongTinNV(_frmLoading,_nhanVienHelper);
             frmThongTinCaNhanNV.ShowDialog();
         }
         private async void btnQLiHopDong_ItemClick(object sender, ItemClickEventArgs e)

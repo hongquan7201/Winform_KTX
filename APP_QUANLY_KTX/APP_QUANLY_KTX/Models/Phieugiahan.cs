@@ -17,9 +17,4 @@ public partial class Phieugiahan
 
     public Guid? IdHopDong { get; set; }
 
-    public virtual ICollection<Bienlai> Bienlais { get; } = new List<Bienlai>();
-
-    public virtual Hopdong? IdHopDongNavigation { get; set; }
-
-    public virtual Sinhvien? IdUserNavigation { get; set; }
 }

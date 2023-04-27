@@ -1,22 +1,19 @@
-﻿using DevExpress.XtraEditors;
+﻿using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using Serilog;
 
 namespace ProjectQLKTX
 {
     public partial class frmThongTinNV : DevExpress.XtraEditors.XtraForm
     {
-        public frmThongTinNV()
+        private readonly frmLoading _frmLoading;
+        private readonly INhanVienHelper _nhanVienHelper;
+        private string messager = "Vui Lòng Thử Lại!";
+        public frmThongTinNV(frmLoading frmLoading, INhanVienHelper nhanVienHelper)
         {
             InitializeComponent();
+            _frmLoading = frmLoading;
+            _nhanVienHelper = nhanVienHelper;
         }
         private async void GetAccount(Nhanvien nhanvien)
         {
@@ -47,11 +44,38 @@ namespace ProjectQLKTX
             {
                 MessageBox.Show("Vui Lòng Định Dạng Lại dd/mm/yyyy");
             }
-          
+
         }
         private void frmThongTinNV_Load(object sender, EventArgs e)
         {
             GetAccount(GlobalModel.Nhanvien);
+        }
+
+        private async void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _frmLoading.Show();
+            await Edit();
+            _frmLoading.Hide();
+            MessageBox.Show(messager);
+        }
+        private async Task Edit()
+        {
+            try
+            {
+                GlobalModel.Nhanvien.Name = txtHoTen.Text;
+                GlobalModel.Nhanvien.Email = txtEmail.Text;
+                GlobalModel.Nhanvien.Birthday = dtNgaySinh.Text;
+                GlobalModel.Nhanvien.Cccd = txtCCCD.Text;
+                GlobalModel.Nhanvien.Address = txtDiaChi.Text;
+                GlobalModel.Nhanvien.Sdt = txtSDT.Text;
+                GlobalModel.Nhanvien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
+                var result = await _nhanVienHelper.EditNhanVien(GlobalModel.Nhanvien);
+                messager = result.message;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+            }
         }
     }
 }

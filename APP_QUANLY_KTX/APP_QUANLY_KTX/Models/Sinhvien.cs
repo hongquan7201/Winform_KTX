@@ -51,18 +51,4 @@ public partial class Sinhvien
     public string? Truong { get; set; }
     public string? Phong { get; set; }
     public string? Khu { get;set; }
-
-    public virtual ICollection<Bienlai> Bienlais { get; } = new List<Bienlai>();
-
-    public virtual ICollection<Hoadon> Hoadons { get; } = new List<Hoadon>();
-
-    public virtual ICollection<Hopdong> Hopdongs { get; } = new List<Hopdong>();
-
-    public virtual Phong? IdPhongNavigation { get; set; }
-
-    public virtual Truong? IdTruongNavigation { get; set; }
-
-    public virtual ICollection<Thannhan> Thannhans { get; } = new List<Thannhan>();
-
-    public virtual ICollection<Xe> Xes { get; } = new List<Xe>();
 }

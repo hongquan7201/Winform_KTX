@@ -20,8 +20,4 @@ public partial class Bienlai
     public decimal? Total { get; set; }
 
     public bool? Status { get; set; }
-
-    public virtual Nhanvien? IdNhanVienNavigation { get; set; }
-
-    public virtual Sinhvien? IdSinhVienNavigation { get; set; }
 }

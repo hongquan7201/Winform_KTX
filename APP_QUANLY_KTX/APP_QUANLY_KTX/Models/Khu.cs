@@ -10,10 +10,4 @@ public partial class Khu
     public string Name { get; set; } = null!;
 
     public Guid? IdLoaiKhu { get; set; }
-
-    public virtual Loaikhu? IdLoaiKhuNavigation { get; set; }
-
-    public virtual ICollection<Phong> Phongs { get; } = new List<Phong>();
-
-    public virtual ICollection<Xe> Xes { get; } = new List<Xe>();
 }
