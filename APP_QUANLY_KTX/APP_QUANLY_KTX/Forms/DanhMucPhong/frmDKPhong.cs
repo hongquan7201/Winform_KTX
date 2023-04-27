@@ -1,7 +1,9 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.DataAccess.Native.Json;
+using DevExpress.XtraEditors;
 using ProjectQLKTX.APIsHelper;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,145 +24,226 @@ namespace ProjectQLKTX
         private readonly ITruongHelper _truongHelper;
         private readonly IHopDongHelper _hopDongHelper;
         private readonly IXeHelper _xeHelper;
-        List<Phong> _listPhong;
-        List<Khu> _listKhu;
-        List<Truong> _listTruong;
-        public frmDKPhong(ISinhVienHelper sinhVienHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper)
+        private readonly frmLoading _frmLoading;
+        private string messager = "Vui Lòng Thử Lại!";
+        public frmDKPhong(ISinhVienHelper sinhVienHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, frmLoading frmLoading)
         {
             InitializeComponent();
             _sinhVienHelper = sinhVienHelper;
             _phongHelper = phongHelper;
             _khuHelper = khuHelper;
             _truongHelper = truongHelper;
-            _listPhong = new List<Phong>();
-            _listTruong = new List<Truong>();
-            _listKhu = new List<Khu>();
             _hopDongHelper = hopDongHelper;
             _xeHelper = xeHelper;
+            _frmLoading = frmLoading;
+
+        }
+        private void GetAccount(Sinhvien sinhvien)
+        {
+            txtCCCD.Text = sinhvien.Cccd;
+            txtDiaChi.Text = sinhvien.Address;
+            txtEmail.Text = sinhvien.Email;
+            txtHoTen.Text = sinhvien.Name;
+            dtNgaySinh.Text = sinhvien.BirthDay;
+            if (sinhvien.Gender == true)
+            {
+                cbGioiTinh.Text = "Nam";
+                imgSVNu.Visible = false;
+                imgNo.Visible = false;
+                imgSVNam.Visible = true;
+            }
+            else
+            {
+                cbGioiTinh.Text = "Nữ";
+                imgSVNu.Visible = true;
+                imgNo.Visible = false;
+                imgSVNam.Visible = false;
+            }
+            txtMaSV.Text = sinhvien.MaSv;
+            cbTruong.Text = sinhvien.Truong;
+            txtSDT.Text = sinhvien.Sdt;
         }
         private void btnDangKyXe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frmQLiXe frm = new frmQLiXe(_xeHelper, _sinhVienHelper, _phongHelper,_khuHelper,_truongHelper);
+            GlobalModel.IsAddXe = true;
+            frmQLiXe frm = new frmQLiXe(_xeHelper, _sinhVienHelper, _phongHelper, _khuHelper, _truongHelper);
             frm.ShowDialog();
         }
 
         private async void btnLapPhieu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            GlobalModel.SinhVien.Id = Guid.NewGuid();
-            GlobalModel.SinhVien.Name = txtHoTen.Text;
-            GlobalModel.SinhVien.Cccd = txtCCCD.Text;
-            GlobalModel.SinhVien.Sdt = txtSDT.Text;
-            GlobalModel.SinhVien.Address = txtDiaChi.Text;
-            GlobalModel.SinhVien.BirthDay = dtNgaySinh.Text;
-            GlobalModel.SinhVien.Password = txtEmail.Text;
-            GlobalModel.SinhVien.Email = txtEmail.Text;
-            if (cbGioiTinh.Text == "Nam")
-            {
-                GlobalModel.SinhVien.Gender = true;
-            }
-            else
-            {
-                GlobalModel.SinhVien.Gender = false;
-            }
-            foreach (var phong in _listPhong)
-            {
-                if (cbPhong.Text == phong.Name)
-                {
-                    GlobalModel.SinhVien.IdPhong = phong.Id;
-                }
-            }
-            var addSinhVien = await _sinhVienHelper.AddSinhVien(GlobalModel.SinhVien);
-            if (addSinhVien.status == 200)
-            {
-                Hopdong hopdong = new Hopdong();
-                hopdong.Id = Guid.NewGuid();
-                hopdong.IdSinhVien = GlobalModel.SinhVien.Id;
-                hopdong.IdPhong = GlobalModel.SinhVien.IdPhong;
-                hopdong.NgayBatDau = DateTime.Parse(dtNgayVao.Text);
-                hopdong.NgayKetThuc = DateTime.Parse(dtNgayHetHan.Text);
-                hopdong.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
-                hopdong.IdNhanVien = GlobalModel.Nhanvien.Id;
-                var newHopDong = await _hopDongHelper.AddHopDong(hopdong);
-                MessageBox.Show(newHopDong.message);
-            }
+            _frmLoading.Show();
+            await Add();
+            _frmLoading.Hide();
+            MessageBox.Show(messager);
         }
 
         private async void frmDKPhong_Load(object sender, EventArgs e)
         {
-            var listKhu = await _khuHelper.GetListKhu();
-            if (listKhu.status == 200)
+            cbKhu.Properties.Items.Clear();
+            cbPhong.Properties.Items.Clear();
+            cbTruong.Properties.Items.Clear();
+            foreach (var item in GlobalModel.ListPhong)
             {
-                cbKhu.Properties.Items.Clear();
-                foreach (var item in listKhu.data)
+                if (item.QuantityPeople < 8)
                 {
-                    cbKhu.Properties.Items.Add(item.Name);
-                    _listKhu.Add(item);
-                }
-
-            }
-            var listPhong = await _phongHelper.GetListPhong();
-            if (listPhong.status == 200)
-            {
-                cbPhong.Properties.Items.Clear();
-                foreach (var item in listPhong.data)
-                {
-                    if (item.QuantityPeople < 8)
-                    {
-                        cbPhong.Properties.Items.Add(item.Name);
-                        _listPhong.Add(item);
-                    }
+                    cbPhong.Properties.Items.Add(item.Name);
+                    cbKhu.Properties.Items.Add(item.NameKhu);
                 }
             }
-            var listTruong = await _truongHelper.GetListTruong();
-            if (listTruong.status == 200)
+            foreach (var item in GlobalModel.ListTruong)
             {
-                cbTruong.Properties.Items.Clear();
-                foreach (var item in listTruong.data)
-                {
-                    cbTruong.Properties.Items.Add(item.Name);
-                    _listTruong.Add(item);
-                }
+                cbTruong.Properties.Items.Add(item.Name);
             }
+            cbGioiTinh.Text = "Nam";
+            txtEmailNV.Text = GlobalModel.Nhanvien.Email;
+            txtTenNV.Text = GlobalModel.Nhanvien.Name;
+            imgSVNu.Visible = false;
+            imgNo.Visible = false;
+            imgSVNam.Visible = true;
         }
-
-        //private void cbKhu_Click(object sender, EventArgs e)
-        //{
-        //    cbPhong.Properties.Items.Clear();
-        //    foreach (var khu in _listKhu)
-        //    {
-        //        if (cbKhu.Text == khu.Name)
-        //        {
-        //            foreach (var phong in _listPhong)
-        //            {
-        //                if (khu.Id == phong.IdKhu && phong.QuantityPeople < 8)
-        //                {
-        //                    cbPhong.Properties.Items.Add(phong.Name);
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
 
         private void cbKhu_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbPhong.Properties.Items.Clear();
-            foreach (var khu in _listKhu)
+            foreach (var item in GlobalModel.ListPhong)
             {
-                if (cbKhu.Text == khu.Name)
+                if (cbKhu.Text == item.NameKhu && item.QuantityPeople < 8)
                 {
-                    foreach (var phong in _listPhong)
-                    {
-                        if (khu.Id == phong.IdKhu)
-                        {
-                            if(phong.QuantityPeople < 8)
-                            {
-                                cbPhong.Properties.Items.Add(phong.Name);
-                            }
-                           
-                        }
-                    }
+                    cbPhong.Properties.Items.Add(item.Name);
                 }
             }
+        }
+
+        private void cbPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            cbKhu.Properties.Items.Clear();
+            cbPhong.Properties.Items.Clear();
+            cbTruong.Properties.Items.Clear();
+            foreach (var item in GlobalModel.ListPhong)
+            {
+                if (item.QuantityPeople < 8)
+                {
+                    cbPhong.Properties.Items.Add(item.Name);
+                    cbKhu.Properties.Items.Add(item.NameKhu);
+                }
+            }
+            foreach (var item in GlobalModel.ListTruong)
+            {
+                cbTruong.Properties.Items.Add(item.Name);
+            }
+            cbGioiTinh.Text = "Nam";
+            imgSVNu.Visible = false;
+            imgNo.Visible = false;
+            imgSVNam.Visible = true;
+            txtEmailNV.Text = GlobalModel.Nhanvien.Email;
+            txtTenNV.Text = GlobalModel.Nhanvien.Name;
+            txtCCCD.Text = string.Empty;
+            txtDiaChi.Text = string.Empty;
+            txtEmail.Text = string.Empty;
+            txtHoTen.Text = string.Empty;
+            txtMaSV.Text = string.Empty;
+            txtSDT.Text = string.Empty;
+        }
+        private void cbGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbGioiTinh.Text == "Nam")
+            {
+                imgSVNu.Visible = false;
+                imgNo.Visible = false;
+                imgSVNam.Visible = true;
+            }
+            else
+            {
+                imgSVNu.Visible = true;
+                imgNo.Visible = false;
+                imgSVNam.Visible = false;
+            }
+        }
+
+        private async void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            long intValue;
+            if (long.TryParse(txtTim.EditValue.ToString(), out intValue))
+            {
+                _frmLoading.Show();
+                await Search(txtTim.EditValue.ToString());
+                _frmLoading.Hide();
+                MessageBox.Show(messager);
+            }
+            else
+            {
+                MessageBox.Show("Vui Lòng Nhập Đúng CCCD!");
+            }
+        }
+        private async Task Search(string nameSearch)
+        {
+            try
+            {
+                var resultSinhVien = await _sinhVienHelper.GetSinhVienByCCCD(nameSearch);
+                if (resultSinhVien.status == 200)
+                {
+                    GlobalModel.SinhVien.Id = resultSinhVien.data.FirstOrDefault().Id;
+                    GlobalModel.SinhVien.Cccd = resultSinhVien.data.FirstOrDefault().Cccd;
+                    GlobalModel.SinhVien.Address = resultSinhVien.data.FirstOrDefault().Address;
+                    GlobalModel.SinhVien.Email = resultSinhVien.data.FirstOrDefault().Email;
+                    GlobalModel.SinhVien.Name = resultSinhVien.data.FirstOrDefault().Name;
+                    GlobalModel.SinhVien.BirthDay = resultSinhVien.data.FirstOrDefault().BirthDay;
+                    if (resultSinhVien.data.FirstOrDefault().IdTruong != null)
+                    {
+                        var truong = await _truongHelper.GetTruong(resultSinhVien.data.FirstOrDefault().IdTruong);
+                        GlobalModel.SinhVien.Truong = truong.data.FirstOrDefault().Name;
+                    }
+                    GlobalModel.SinhVien.Sdt = resultSinhVien.data.FirstOrDefault().Sdt;
+                    GetAccount(GlobalModel.SinhVien);
+                }
+                messager = resultSinhVien.message;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+            }
+        }
+        private async Task Add()
+        {
+            try
+            {
+                SVP sVP = new SVP();
+                sVP.idSV = GlobalModel.SinhVien.Id;
+                foreach (var item in GlobalModel.ListPhong)
+                {
+                    if (cbTruong.Text == item.Name)
+                    {
+                        sVP.idPhong = item.Id;
+                        GlobalModel.SinhVien.IdPhong = item.Id;
+                        break;
+                    }
+                }
+                var result = await _phongHelper.AddSinhVien(sVP);
+                messager = result.message;
+                if (result.status == 200)
+                {
+                    Hopdong hopdong = new Hopdong();
+                    hopdong.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
+                    hopdong.IdNhanVien = GlobalModel.Nhanvien.Id;
+                    hopdong.IdSinhVien = GlobalModel.SinhVien.Id;
+                    hopdong.NgayBatDau = DateTime.Parse(dtNgayVao.Text);
+                    hopdong.NgayKetThuc = DateTime.Parse(dtNgayHetHan.Text);
+                    hopdong.IdPhong = GlobalModel.SinhVien.IdPhong;
+                    var resultHopDong = await _hopDongHelper.AddHopDong(hopdong);
+                    messager = resultHopDong.message;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+            }
+
         }
     }
 }

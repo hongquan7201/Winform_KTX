@@ -1,4 +1,5 @@
-﻿using DevExpress.Mvvm.Native;
+﻿using DevExpress.CodeParser;
+using DevExpress.Mvvm.Native;
 using DevExpress.XtraBars;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
@@ -21,10 +22,12 @@ namespace ProjectQLKTX
         private readonly IVatDungHelper _vatDungHelper;
         private readonly IChietTietPhieuKhoHelper _chietTietPhieuKhoHelper;
         private readonly IBankingHelper _bankingHelper;
+        private readonly IChiTietCongToHelper _chiTietCongToHelper;
+        private readonly ICongToHelper _congToHelper;
         private readonly frmDangNhap _frmDangNhap;
         private readonly frmLoading _frmLoading;
         private readonly frmQLiXe _frmQLiXe;
-        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper, IChietTietPhieuKhoHelper chietTietPhieuKhoHelper, frmDangNhap frmDangNhap, frmLoading frmLoading, frmQLiXe frmQLiXe, IBankingHelper bankingHelper)
+        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper, IChietTietPhieuKhoHelper chietTietPhieuKhoHelper, frmDangNhap frmDangNhap, frmLoading frmLoading, frmQLiXe frmQLiXe, IBankingHelper bankingHelper, IChiTietCongToHelper chiTietCongToHelper, ICongToHelper congToHelper)
         {
             InitializeComponent();
             _nhanVienHelper = nhanVienHelper;
@@ -43,6 +46,8 @@ namespace ProjectQLKTX
             _frmLoading = frmLoading;
             _frmQLiXe = frmQLiXe;
             _bankingHelper = bankingHelper;
+            _chiTietCongToHelper = chiTietCongToHelper;
+            _congToHelper = congToHelper;
         }
         private void btnDoiMK_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -51,7 +56,7 @@ namespace ProjectQLKTX
         }
         private void btnDangKyPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmDKPhong frmDangKyPhong = new frmDKPhong(_sinhVienHelper, _phongHelper, _khuHelper, _truongHelper, _hopDongHelper, _xeHelper);
+            frmDKPhong frmDangKyPhong = new frmDKPhong(_sinhVienHelper, _phongHelper, _khuHelper, _truongHelper, _hopDongHelper, _xeHelper,_frmLoading);
             frmDangKyPhong.ShowDialog();
         }
         private void btnChuyenPhong_ItemClick(object sender, ItemClickEventArgs e)
@@ -94,9 +99,13 @@ namespace ProjectQLKTX
             frmQLiHopDong frmQLiHopDong = new frmQLiHopDong(_hopDongHelper, _nhanVienHelper, _sinhVienHelper, _phongHelper, _frmLoading);
             frmQLiHopDong.ShowDialog();
         }
-        private void btnQLiDienNuoc_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnQLiDienNuoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLiDienNuoc frmQLDienNuoc = new frmQLiDienNuoc();
+            _frmLoading.Show();
+            await LoadListDienNuoc(GlobalModel.ListChitietcongto);
+            await LoadListPhong(GlobalModel.ListPhong);
+            _frmLoading.Hide();
+            frmQLiDienNuoc frmQLDienNuoc = new frmQLiDienNuoc(_frmLoading, _chiTietCongToHelper, _khuHelper, _phongHelper);
             frmQLDienNuoc.ShowDialog();
         }
         private async void btnQLiXe_ItemClick(object sender, ItemClickEventArgs e)
@@ -106,9 +115,12 @@ namespace ProjectQLKTX
             _frmLoading.Hide();
             _frmQLiXe.ShowDialog();
         }
-        private void btnQLiPhong_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnQLiPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmQLiPhong frmQLiPhong = new frmQLiPhong();
+            _frmLoading.Show();
+            await LoadListPhong(GlobalModel.ListPhong);
+            _frmLoading.Hide();
+            frmQLiPhong frmQLiPhong = new frmQLiPhong(_frmLoading,_phongHelper,_khuHelper);
             frmQLiPhong.ShowDialog();
         }
         private void btnThanhToan_ItemClick(object sender, ItemClickEventArgs e)
@@ -492,12 +504,55 @@ namespace ProjectQLKTX
                 Log.Error(ex, ex.Message);
             }
         }
-        private async Task LoadListDienNuoc(List<Sinhvien> listAccount)
+        private async Task LoadListDienNuoc(List<Chitietcongto> listChiTietCongTo)
         {
-            var listSinhVien = await _sinhVienHelper.GetListSinhVien();
+            var chiTietCongTos = await _chiTietCongToHelper.GetListChiTietCongTo();
             try
             {
-
+                if (chiTietCongTos.status == 200)
+                {
+                    listChiTietCongTo.Clear();
+                    int i = 1;
+                    foreach (var item in chiTietCongTos.data)
+                    {
+                        Chitietcongto chitietcongto = new Chitietcongto();
+                        chitietcongto.ChiSoDienCuoiThang = item.ChiSoDienCuoiThang;
+                        chitietcongto.ChiSoDienDauThang = item.ChiSoDienDauThang;
+                        chitietcongto.ChiSoNuocCuoiThang = item.ChiSoNuocCuoiThang;
+                        chitietcongto.ChiSoNuocDauThang = item.ChiSoNuocDauThang;
+                        chitietcongto.SoDienTieuThu = (chitietcongto.ChiSoDienCuoiThang - chitietcongto.ChiSoDienDauThang);
+                        chitietcongto.SoNuocTieuThu = (chitietcongto.ChiSoNuocCuoiThang - chitietcongto.ChiSoNuocDauThang);
+                        chitietcongto.CreateAt = item.CreateAt;
+                        chitietcongto.Id = item.Id;
+                        chitietcongto.TienDien = item.TienDien;
+                        chitietcongto.TienNuoc = item.TienNuoc;
+                        chitietcongto.Total = item.Total;
+                        chitietcongto.IdPhong = item.IdPhong;
+                        if (chitietcongto.IdPhong != null)
+                        {
+                            if (chitietcongto.IdPhong != null)
+                            {
+                                var phong = await _phongHelper.GetPhong(chitietcongto.IdPhong);
+                                if (phong.status == 200)
+                                {
+                                    chitietcongto.NamePhong = phong.data.FirstOrDefault().Name;
+                                    chitietcongto.IdKhu = phong.data.FirstOrDefault().IdKhu;
+                                    if (chitietcongto.IdKhu != null)
+                                    {
+                                        var khu = await _khuHelper.GetKhu(chitietcongto.IdKhu);
+                                        if (khu.status == 200)
+                                        {
+                                            chitietcongto.NameKhu = khu.data.FirstOrDefault().Name;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        chitietcongto.STT = i;
+                        listChiTietCongTo.Add(chitietcongto);
+                        i++;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -555,13 +610,12 @@ namespace ProjectQLKTX
                 }
             }
         }
-
         private async void btnLichSuGiaoDich_ItemClick(object sender, ItemClickEventArgs e)
         {
             _frmLoading.Show();
             await LoadListBanking(GlobalModel.ListBanking);
             _frmLoading.Hide();
-            frmLichSuGiaoDich frmLichSuGiaoDich = new frmLichSuGiaoDich(_bankingHelper,_sinhVienHelper,_khuHelper,_phongHelper,_frmLoading);
+            frmLichSuGiaoDich frmLichSuGiaoDich = new frmLichSuGiaoDich(_bankingHelper, _sinhVienHelper, _khuHelper, _phongHelper, _frmLoading);
             frmLichSuGiaoDich.ShowDialog();
         }
         private async Task LoadListBanking(List<Banking> listBanking)
@@ -585,7 +639,7 @@ namespace ProjectQLKTX
                     if (banking.idSinhVien != null)
                     {
                         var sinhvien = await _sinhVienHelper.GetSinhVienById(banking.idSinhVien);
-                        if(sinhvien.status == 200)
+                        if (sinhvien.status == 200)
                         {
                             banking.Name = sinhvien.data.FirstOrDefault().Name;
                             banking.Email = sinhvien.data.FirstOrDefault().Email;
@@ -593,13 +647,13 @@ namespace ProjectQLKTX
                             if (sinhvien.data.FirstOrDefault().IdPhong != null)
                             {
                                 var phong = await _phongHelper.GetPhong(sinhvien.data.FirstOrDefault().IdPhong);
-                                if(phong.status == 200)
+                                if (phong.status == 200)
                                 {
                                     banking.NamePhong = phong.data.FirstOrDefault().Name;
-                                    if (phong.data.FirstOrDefault().IdKhu!= null)
+                                    if (phong.data.FirstOrDefault().IdKhu != null)
                                     {
                                         var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu);
-                                        if(khu.status == 200)
+                                        if (khu.status == 200)
                                         {
                                             banking.NameKhu = khu.data.FirstOrDefault().Name;
                                         }
@@ -607,13 +661,54 @@ namespace ProjectQLKTX
                                 }
                             }
                         }
-                         
+
                     }
                     listBanking.Add(banking);
                     i++;
                 }
             }
 
+        }
+        private async Task LoadListPhong(List<Phong> listPhong)
+        {
+            var phongs = await _phongHelper.GetListPhong();
+            if (phongs.data.Count > 0)
+            {
+                int i = 1;
+                listPhong.Clear();
+                foreach (var item in phongs.data)
+                {
+                    Phong phong = new Phong();
+                    phong.STT = i;
+                    phong.Id = item.Id;
+                    phong.Name = item.Name;
+                    phong.QuantityPeople = item.QuantityPeople;
+                    phong.MaxPeople = 8;
+                    phong.IdKhu = item.IdKhu;
+                    if (phong.IdKhu != null)
+                    {
+                        var khu = await _khuHelper.GetKhu(phong.IdKhu);
+                        if (khu.status == 200)
+                        {
+                            phong.NameKhu = khu.data.FirstOrDefault().Name;
+                        }
+                    }
+                    listPhong.Add(phong);
+                    i++;
+                }
+            }
+        }
+        private async Task LoadListTruong(List<Truong> listTruong)
+        {
+            var result = await _truongHelper.GetListTruong();
+            if(result.status == 200)
+            {
+                listTruong.Clear();
+                foreach(var item in result.data)
+                {
+                    listTruong.Add(item);
+                }
+            }
         }
     }
 }

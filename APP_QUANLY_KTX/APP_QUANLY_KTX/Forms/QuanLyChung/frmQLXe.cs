@@ -169,6 +169,7 @@ namespace ProjectQLKTX
             }
             gcDanhSach.DataSource = GlobalModel._listXe;
             gcDanhSach.RefreshDataSource();
+            GlobalModel.IsAddXe = false;
         }
 
         private void gcDanhSach_DoubleClick(object sender, EventArgs e)

@@ -264,34 +264,57 @@ namespace ProjectQLKTX
                 if (_sinhVien.idThanNhan != null)
                 {
                     _thanNhan.Id = _sinhVien.idThanNhan;
-                }
-                else
-                {
-                    _thanNhan.Id = Guid.NewGuid();
-                }
-                _thanNhan.Address = txtDiaChiTN.Text;
-                if (cbQuanHe.Text != null)
-                {
-                    foreach (var item in _listQuanhe)
+                    _thanNhan.Address = txtDiaChiTN.Text;
+                    if (cbQuanHe.Text != null)
                     {
-                        if (cbQuanHe.Text == item.Name)
+                        foreach (var item in _listQuanhe)
                         {
-                            _thanNhan.IdQuanHe = item.Id;
-                        }
+                            if (cbQuanHe.Text == item.Name)
+                            {
+                                _thanNhan.IdQuanHe = item.Id;
+                            }
 
+                        }
                     }
-                }
-                _thanNhan.Sdt = txtSDT.Text;
-                _thanNhan.Name = txtTenTN.Text;
-                if (cbGioiTinhTN.Text == "Nam")
-                {
-                    _thanNhan.Gender = true;
+                    _thanNhan.Sdt = txtSDT.Text;
+                    _thanNhan.Name = txtTenTN.Text;
+                    if (cbGioiTinhTN.Text == "Nam")
+                    {
+                        _thanNhan.Gender = true;
+                    }
+                    else
+                    {
+                        _thanNhan.Gender = false;
+                    }
+                    var s = await _thanNhanHelper.EditThanNhan(_thanNhan);
                 }
                 else
                 {
-                    _thanNhan.Gender = false;
+                    _thanNhan.Address = txtDiaChiTN.Text;
+                    if (cbQuanHe.Text != null)
+                    {
+                        foreach (var item in _listQuanhe)
+                        {
+                            if (cbQuanHe.Text == item.Name)
+                            {
+                                _thanNhan.IdQuanHe = item.Id;
+                            }
+
+                        }
+                    }
+                    _thanNhan.Sdt = txtSDT.Text;
+                    _thanNhan.Name = txtTenTN.Text;
+                    if (cbGioiTinhTN.Text == "Nam")
+                    {
+                        _thanNhan.Gender = true;
+                    }
+                    else
+                    {
+                        _thanNhan.Gender = false;
+                    }
+                    var s = await _thanNhanHelper.AddThanNhan(_thanNhan);
                 }
-                var s = await _thanNhanHelper.EditThanNhan(_thanNhan);
+              
             }
             if (cbGioiTinh.Text == "Nam")
             {
@@ -384,12 +407,7 @@ namespace ProjectQLKTX
 
         }
 
-        private void cbKhu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelControl19_Click(object sender, EventArgs e)
+        private void btnSua_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }

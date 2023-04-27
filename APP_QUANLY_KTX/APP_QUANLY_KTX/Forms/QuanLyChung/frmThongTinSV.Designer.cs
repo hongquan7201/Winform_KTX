@@ -1074,7 +1074,6 @@
             this.labelControl19.Size = new System.Drawing.Size(35, 16);
             this.labelControl19.TabIndex = 43;
             this.labelControl19.Text = "Phòng";
-            this.labelControl19.Click += new System.EventHandler(this.labelControl19_Click);
             // 
             // cbKhu
             // 
@@ -1087,7 +1086,6 @@
             this.cbKhu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbKhu.Size = new System.Drawing.Size(203, 24);
             this.cbKhu.TabIndex = 46;
-            this.cbKhu.SelectedIndexChanged += new System.EventHandler(this.cbKhu_SelectedIndexChanged);
             // 
             // labelControl20
             // 
@@ -1161,10 +1159,11 @@
             // 
             // btnSua
             // 
-            this.btnSua.Caption = "Sửa";
-            this.btnSua.Id = 1;
-            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
-            this.btnSua.Name = "btnSua";
+            btnSua.Caption = "Sửa";
+            btnSua.Id = 1;
+            btnSua.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnSua.ImageOptions.SvgImage");
+            btnSua.Name = "btnSua";
+            btnSua.ItemClick += btnSua_ItemClick_1;
             // 
             // btnXoa
             // 

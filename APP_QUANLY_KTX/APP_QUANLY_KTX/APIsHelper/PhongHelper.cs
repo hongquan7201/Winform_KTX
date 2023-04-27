@@ -19,7 +19,21 @@ namespace ProjectQLKTX.APIsHelper
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(phong, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/phong/add", content);
+            var response = await httpClient.PostAsync($"api/phong/add", content);
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
+            return data;
+        }
+
+        public async Task<APIRespone<string>> AddSinhVien(SVP sVP)
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+            var json = JsonConvert.SerializeObject(sVP, jsonSerializerSettings);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync($"api/phong/addSinhVien", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
@@ -27,10 +41,14 @@ namespace ProjectQLKTX.APIsHelper
 
         public async Task<APIRespone<string>> DeletePhong(Guid id)
         {
-            HttpClient httpClient = new HttpClient();
-            string url = Constant.Domain + "/api/phong/delete"; // Thay đổi đường dẫn API của bạn
-            var request = new HttpRequestMessage(HttpMethod.Delete, url);
-            request.Content = new StringContent(id.ToString(), System.Text.Encoding.UTF8, "application/json");
+            string url = Constant.Domain + "api/phong/delete";// Thay đổi đường dẫn API của bạn
+            var httpClient = new HttpClient();
+            var jsonId = JsonConvert.SerializeObject(id);
+            var content = new StringContent(jsonId, Encoding.UTF8, "application/json");
+            var request = new HttpRequestMessage(HttpMethod.Delete, url)
+            {
+                Content = content
+            };
             var response = await httpClient.SendAsync(request);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);

@@ -1,21 +1,15 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace ProjectQLKTX
+﻿namespace ProjectQLKTX
 {
     public partial class frmQLiHoaDon : DevExpress.XtraEditors.XtraForm
     {
         public frmQLiHoaDon()
         {
             InitializeComponent();
+        }
+
+        private void frmQLiHoaDon_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,11 +10,12 @@ public partial class Phong
     public string Name { get; set; } = null!;
 
     public bool? Status { get; set; }
-
     public int? QuantityPeople { get; set; }
 
     public Guid? IdKhu { get; set; }
-
+    public string? NameKhu { get; set; }
+    public int? MaxPeople { get;set; }
+    public int? STT { get; set; }
     public virtual ICollection<Congto> Congtos { get; } = new List<Congto>();
 
     public virtual ICollection<Hoadon> Hoadons { get; } = new List<Hoadon>();

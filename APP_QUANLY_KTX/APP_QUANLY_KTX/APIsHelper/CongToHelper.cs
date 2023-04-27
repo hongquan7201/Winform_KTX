@@ -51,14 +51,14 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Bienlai>> GetCongTo(Guid id)
+        public async Task<APIRespone<List<Congto>>> GetCongTo(Guid? id)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             string query = "/api/congto/{0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<Bienlai> data = JsonConvert.DeserializeObject<APIRespone<Bienlai>>(body);
+            APIRespone<List<Congto>> data = JsonConvert.DeserializeObject<APIRespone<List<Congto>>>(body);
             return data;
         }
 
