@@ -29,310 +29,310 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDoiMK));
-            this.txtPasswordMoi = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cbHienthi2 = new DevExpress.XtraEditors.CheckEdit();
-            this.txtNhapLaiPassword = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.cbHienthi3 = new DevExpress.XtraEditors.CheckEdit();
-            this.txtPasswordCu = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.cbHienthi1 = new DevExpress.XtraEditors.CheckEdit();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnThoat = new DevExpress.XtraEditors.CheckButton();
-            this.btnDongY = new DevExpress.XtraEditors.CheckButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbHienthi2.Properties)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbHienthi3.Properties)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbHienthi1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
-            this.SuspendLayout();
+            txtPasswordMoi = new TextBox();
+            panel1 = new Panel();
+            cbHienthi2 = new DevExpress.XtraEditors.CheckEdit();
+            txtNhapLaiPassword = new TextBox();
+            panel3 = new Panel();
+            cbHienthi3 = new DevExpress.XtraEditors.CheckEdit();
+            txtPasswordCu = new TextBox();
+            panel4 = new Panel();
+            cbHienthi1 = new DevExpress.XtraEditors.CheckEdit();
+            label2 = new Label();
+            pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
+            pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            label3 = new Label();
+            pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
+            label4 = new Label();
+            btnThoat = new DevExpress.XtraEditors.CheckButton();
+            btnDongY = new DevExpress.XtraEditors.CheckButton();
+            label1 = new Label();
+            pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cbHienthi2.Properties).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cbHienthi3.Properties).BeginInit();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cbHienthi1.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureEdit2.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureEdit1.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureEdit4.Properties).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureEdit3.Properties).BeginInit();
+            SuspendLayout();
             // 
             // txtPasswordMoi
             // 
-            this.txtPasswordMoi.BackColor = System.Drawing.Color.White;
-            this.txtPasswordMoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPasswordMoi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPasswordMoi.ForeColor = System.Drawing.Color.Black;
-            this.txtPasswordMoi.Location = new System.Drawing.Point(4, 9);
-            this.txtPasswordMoi.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPasswordMoi.Multiline = true;
-            this.txtPasswordMoi.Name = "txtPasswordMoi";
-            this.txtPasswordMoi.PasswordChar = '*';
-            this.txtPasswordMoi.Size = new System.Drawing.Size(240, 23);
-            this.txtPasswordMoi.TabIndex = 5;
+            txtPasswordMoi.BackColor = Color.White;
+            txtPasswordMoi.BorderStyle = BorderStyle.None;
+            txtPasswordMoi.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPasswordMoi.ForeColor = Color.Black;
+            txtPasswordMoi.Location = new Point(4, 9);
+            txtPasswordMoi.Margin = new Padding(4);
+            txtPasswordMoi.Multiline = true;
+            txtPasswordMoi.Name = "txtPasswordMoi";
+            txtPasswordMoi.PasswordChar = '*';
+            txtPasswordMoi.Size = new Size(240, 23);
+            txtPasswordMoi.TabIndex = 5;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.cbHienthi2);
-            this.panel1.Controls.Add(this.txtPasswordMoi);
-            this.panel1.Location = new System.Drawing.Point(221, 164);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(264, 41);
-            this.panel1.TabIndex = 45;
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(cbHienthi2);
+            panel1.Controls.Add(txtPasswordMoi);
+            panel1.Location = new Point(221, 164);
+            panel1.Margin = new Padding(4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(264, 41);
+            panel1.TabIndex = 45;
             // 
             // cbHienthi2
             // 
-            this.cbHienthi2.Location = new System.Drawing.Point(244, 10);
-            this.cbHienthi2.Name = "cbHienthi2";
-            this.cbHienthi2.Properties.Caption = "";
-            this.cbHienthi2.Size = new System.Drawing.Size(19, 20);
-            this.cbHienthi2.TabIndex = 60;
-            this.cbHienthi2.CheckedChanged += new System.EventHandler(this.cbHienthi2_CheckedChanged);
+            cbHienthi2.Location = new Point(244, 10);
+            cbHienthi2.Name = "cbHienthi2";
+            cbHienthi2.Properties.Caption = "";
+            cbHienthi2.Size = new Size(19, 20);
+            cbHienthi2.TabIndex = 60;
+            cbHienthi2.CheckedChanged += cbHienthi2_CheckedChanged;
             // 
             // txtNhapLaiPassword
             // 
-            this.txtNhapLaiPassword.BackColor = System.Drawing.Color.White;
-            this.txtNhapLaiPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNhapLaiPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNhapLaiPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtNhapLaiPassword.Location = new System.Drawing.Point(4, 9);
-            this.txtNhapLaiPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNhapLaiPassword.Multiline = true;
-            this.txtNhapLaiPassword.Name = "txtNhapLaiPassword";
-            this.txtNhapLaiPassword.PasswordChar = '*';
-            this.txtNhapLaiPassword.Size = new System.Drawing.Size(240, 23);
-            this.txtNhapLaiPassword.TabIndex = 5;
+            txtNhapLaiPassword.BackColor = Color.White;
+            txtNhapLaiPassword.BorderStyle = BorderStyle.None;
+            txtNhapLaiPassword.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNhapLaiPassword.ForeColor = Color.Black;
+            txtNhapLaiPassword.Location = new Point(4, 9);
+            txtNhapLaiPassword.Margin = new Padding(4);
+            txtNhapLaiPassword.Multiline = true;
+            txtNhapLaiPassword.Name = "txtNhapLaiPassword";
+            txtNhapLaiPassword.PasswordChar = '*';
+            txtNhapLaiPassword.Size = new Size(240, 23);
+            txtNhapLaiPassword.TabIndex = 5;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.cbHienthi3);
-            this.panel3.Controls.Add(this.txtNhapLaiPassword);
-            this.panel3.Location = new System.Drawing.Point(221, 213);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(263, 41);
-            this.panel3.TabIndex = 47;
+            panel3.BackColor = Color.White;
+            panel3.Controls.Add(cbHienthi3);
+            panel3.Controls.Add(txtNhapLaiPassword);
+            panel3.Location = new Point(221, 213);
+            panel3.Margin = new Padding(4);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(263, 41);
+            panel3.TabIndex = 47;
             // 
             // cbHienthi3
             // 
-            this.cbHienthi3.Location = new System.Drawing.Point(242, 12);
-            this.cbHienthi3.Name = "cbHienthi3";
-            this.cbHienthi3.Properties.Caption = "";
-            this.cbHienthi3.Size = new System.Drawing.Size(19, 20);
-            this.cbHienthi3.TabIndex = 59;
-            this.cbHienthi3.CheckedChanged += new System.EventHandler(this.cbHienthi3_CheckedChanged);
+            cbHienthi3.Location = new Point(242, 12);
+            cbHienthi3.Name = "cbHienthi3";
+            cbHienthi3.Properties.Caption = "";
+            cbHienthi3.Size = new Size(19, 20);
+            cbHienthi3.TabIndex = 59;
+            cbHienthi3.CheckedChanged += cbHienthi3_CheckedChanged;
             // 
             // txtPasswordCu
             // 
-            this.txtPasswordCu.BackColor = System.Drawing.Color.White;
-            this.txtPasswordCu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPasswordCu.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPasswordCu.ForeColor = System.Drawing.Color.Black;
-            this.txtPasswordCu.Location = new System.Drawing.Point(4, 9);
-            this.txtPasswordCu.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPasswordCu.Multiline = true;
-            this.txtPasswordCu.Name = "txtPasswordCu";
-            this.txtPasswordCu.PasswordChar = '*';
-            this.txtPasswordCu.Size = new System.Drawing.Size(240, 23);
-            this.txtPasswordCu.TabIndex = 5;
+            txtPasswordCu.BackColor = Color.White;
+            txtPasswordCu.BorderStyle = BorderStyle.None;
+            txtPasswordCu.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPasswordCu.ForeColor = Color.Black;
+            txtPasswordCu.Location = new Point(4, 9);
+            txtPasswordCu.Margin = new Padding(4);
+            txtPasswordCu.Multiline = true;
+            txtPasswordCu.Name = "txtPasswordCu";
+            txtPasswordCu.PasswordChar = '*';
+            txtPasswordCu.Size = new Size(240, 23);
+            txtPasswordCu.TabIndex = 5;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.cbHienthi1);
-            this.panel4.Controls.Add(this.txtPasswordCu);
-            this.panel4.Location = new System.Drawing.Point(221, 115);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(264, 41);
-            this.panel4.TabIndex = 46;
+            panel4.BackColor = Color.White;
+            panel4.Controls.Add(cbHienthi1);
+            panel4.Controls.Add(txtPasswordCu);
+            panel4.Location = new Point(221, 115);
+            panel4.Margin = new Padding(4);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(264, 41);
+            panel4.TabIndex = 46;
             // 
             // cbHienthi1
             // 
-            this.cbHienthi1.Location = new System.Drawing.Point(244, 11);
-            this.cbHienthi1.Name = "cbHienthi1";
-            this.cbHienthi1.Properties.Caption = "";
-            this.cbHienthi1.Size = new System.Drawing.Size(19, 20);
-            this.cbHienthi1.TabIndex = 61;
-            this.cbHienthi1.CheckedChanged += new System.EventHandler(this.cbHienthi1_CheckedChanged);
+            cbHienthi1.Location = new Point(244, 11);
+            cbHienthi1.Name = "cbHienthi1";
+            cbHienthi1.Properties.Caption = "";
+            cbHienthi1.Size = new Size(19, 20);
+            cbHienthi1.TabIndex = 61;
+            cbHienthi1.CheckedChanged += cbHienthi1_CheckedChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(82, 124);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 21);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "Mật khẩu cũ:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label2.AutoSize = true;
+            label2.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(82, 124);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(106, 21);
+            label2.TabIndex = 50;
+            label2.Text = "Mật khẩu cũ:";
+            label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // pictureEdit2
             // 
-            this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-            this.pictureEdit2.Location = new System.Drawing.Point(34, 117);
-            this.pictureEdit2.Name = "pictureEdit2";
-            this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit2.Properties.ZoomPercent = 6D;
-            this.pictureEdit2.Size = new System.Drawing.Size(41, 33);
-            this.pictureEdit2.TabIndex = 49;
+            pictureEdit2.EditValue = resources.GetObject("pictureEdit2.EditValue");
+            pictureEdit2.Location = new Point(34, 117);
+            pictureEdit2.Name = "pictureEdit2";
+            pictureEdit2.Properties.Appearance.BackColor = SystemColors.GradientActiveCaption;
+            pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
+            pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            pictureEdit2.Properties.ZoomPercent = 6D;
+            pictureEdit2.Size = new Size(41, 33);
+            pictureEdit2.TabIndex = 49;
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(34, 156);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.ZoomPercent = 5D;
-            this.pictureEdit1.Size = new System.Drawing.Size(37, 43);
-            this.pictureEdit1.TabIndex = 51;
+            pictureEdit1.EditValue = resources.GetObject("pictureEdit1.EditValue");
+            pictureEdit1.Location = new Point(34, 156);
+            pictureEdit1.Name = "pictureEdit1";
+            pictureEdit1.Properties.Appearance.BackColor = SystemColors.GradientActiveCaption;
+            pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            pictureEdit1.Properties.ZoomPercent = 5D;
+            pictureEdit1.Size = new Size(37, 43);
+            pictureEdit1.TabIndex = 51;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(72, 173);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 21);
-            this.label3.TabIndex = 52;
-            this.label3.Text = "Mật khẩu mới:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(72, 173);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(116, 21);
+            label3.TabIndex = 52;
+            label3.Text = "Mật khẩu mới:";
+            label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // pictureEdit4
             // 
-            this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
-            this.pictureEdit4.Location = new System.Drawing.Point(27, 205);
-            this.pictureEdit4.Name = "pictureEdit4";
-            this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pictureEdit4.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit4.Properties.ZoomPercent = 6D;
-            this.pictureEdit4.Size = new System.Drawing.Size(44, 46);
-            this.pictureEdit4.TabIndex = 53;
+            pictureEdit4.EditValue = resources.GetObject("pictureEdit4.EditValue");
+            pictureEdit4.Location = new Point(27, 205);
+            pictureEdit4.Name = "pictureEdit4";
+            pictureEdit4.Properties.Appearance.BackColor = SystemColors.GradientActiveCaption;
+            pictureEdit4.Properties.Appearance.Options.UseBackColor = true;
+            pictureEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            pictureEdit4.Properties.ZoomPercent = 6D;
+            pictureEdit4.Size = new Size(44, 46);
+            pictureEdit4.TabIndex = 53;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(66, 224);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 21);
-            this.label4.TabIndex = 54;
-            this.label4.Text = "Nhập lại mật khẩu:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label4.AutoSize = true;
+            label4.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(66, 224);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(147, 21);
+            label4.TabIndex = 54;
+            label4.Text = "Nhập lại mật khẩu:";
+            label4.TextAlign = ContentAlignment.TopCenter;
             // 
             // btnThoat
             // 
-            this.btnThoat.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnThoat.Appearance.Options.UseBackColor = true;
-            this.btnThoat.Appearance.Options.UseFont = true;
-            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(345, 278);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(139, 34);
-            this.btnThoat.TabIndex = 56;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.CheckedChanged += new System.EventHandler(this.btnThoat_CheckedChanged);
+            btnThoat.Appearance.BackColor = SystemColors.Highlight;
+            btnThoat.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnThoat.Appearance.Options.UseBackColor = true;
+            btnThoat.Appearance.Options.UseFont = true;
+            btnThoat.ImageOptions.Image = (Image)resources.GetObject("btnThoat.ImageOptions.Image");
+            btnThoat.Location = new Point(345, 278);
+            btnThoat.Name = "btnThoat";
+            btnThoat.Size = new Size(139, 34);
+            btnThoat.TabIndex = 56;
+            btnThoat.Text = "Thoát";
+            btnThoat.CheckedChanged += btnThoat_CheckedChanged;
             // 
             // btnDongY
             // 
-            this.btnDongY.Appearance.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnDongY.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDongY.Appearance.Options.UseBackColor = true;
-            this.btnDongY.Appearance.Options.UseFont = true;
-            this.btnDongY.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDongY.ImageOptions.Image")));
-            this.btnDongY.Location = new System.Drawing.Point(209, 278);
-            this.btnDongY.Name = "btnDongY";
-            this.btnDongY.Size = new System.Drawing.Size(135, 34);
-            this.btnDongY.TabIndex = 56;
-            this.btnDongY.Text = "Đồng Ý";
+            btnDongY.Appearance.BackColor = SystemColors.Highlight;
+            btnDongY.Appearance.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDongY.Appearance.Options.UseBackColor = true;
+            btnDongY.Appearance.Options.UseFont = true;
+            btnDongY.ImageOptions.Image = (Image)resources.GetObject("btnDongY.ImageOptions.Image");
+            btnDongY.Location = new Point(209, 278);
+            btnDongY.Name = "btnDongY";
+            btnDongY.Size = new Size(135, 34);
+            btnDongY.TabIndex = 56;
+            btnDongY.Text = "Đồng Ý";
+            btnDongY.CheckedChanged += btnDongY_CheckedChanged;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(217, 36);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 26);
-            this.label1.TabIndex = 57;
-            this.label1.Text = "THAY ĐỔI MẬT KHẨU";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.DarkOrange;
+            label1.Location = new Point(217, 36);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(267, 26);
+            label1.TabIndex = 57;
+            label1.Text = "THAY ĐỔI MẬT KHẨU";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // pictureEdit3
             // 
-            this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
-            this.pictureEdit3.Location = new System.Drawing.Point(34, 3);
-            this.pictureEdit3.Name = "pictureEdit3";
-            this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pictureEdit3.Properties.Appearance.Options.UseBackColor = true;
-            this.pictureEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pictureEdit3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit3.Properties.ZoomPercent = 70D;
-            this.pictureEdit3.Size = new System.Drawing.Size(168, 89);
-            this.pictureEdit3.TabIndex = 58;
+            pictureEdit3.EditValue = resources.GetObject("pictureEdit3.EditValue");
+            pictureEdit3.Location = new Point(34, 3);
+            pictureEdit3.Name = "pictureEdit3";
+            pictureEdit3.Properties.Appearance.BackColor = SystemColors.GradientActiveCaption;
+            pictureEdit3.Properties.Appearance.Options.UseBackColor = true;
+            pictureEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            pictureEdit3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            pictureEdit3.Properties.ZoomPercent = 70D;
+            pictureEdit3.Size = new Size(168, 89);
+            pictureEdit3.TabIndex = 58;
             // 
             // frmDoiMK
             // 
-            this.Appearance.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(503, 326);
-            this.Controls.Add(this.pictureEdit3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnDongY);
-            this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.pictureEdit4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureEdit1);
-            this.Controls.Add(this.pictureEdit2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("frmDoiMK.IconOptions.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "frmDoiMK";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thay Đổi Mật Khẩu";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbHienthi2.Properties)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbHienthi3.Properties)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbHienthi1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            Appearance.BackColor = SystemColors.GradientActiveCaption;
+            Appearance.Options.UseBackColor = true;
+            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(503, 326);
+            Controls.Add(pictureEdit3);
+            Controls.Add(label1);
+            Controls.Add(btnDongY);
+            Controls.Add(btnThoat);
+            Controls.Add(label4);
+            Controls.Add(pictureEdit4);
+            Controls.Add(label3);
+            Controls.Add(pictureEdit1);
+            Controls.Add(pictureEdit2);
+            Controls.Add(label2);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            IconOptions.Icon = (Icon)resources.GetObject("frmDoiMK.IconOptions.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "frmDoiMK";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Thay Đổi Mật Khẩu";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cbHienthi2.Properties).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cbHienthi3.Properties).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cbHienthi1.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureEdit2.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureEdit1.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureEdit4.Properties).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureEdit3.Properties).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

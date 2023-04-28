@@ -8,7 +8,9 @@
         public string cmt { get; set; }
         public DateTime creatAt { get; set; }
         public string amount { get; set; }
-        public Guid? idSinhVien { get; set; }
+        public Guid? IdUser { get; set; }
+        public Guid? IdHoaDon { get; set; }
+        public Guid? IdBienLai { get; set; }
         public string? Name { get;set; }
         public string? Sdt { get; set; }
         public string? Email { get;set; }

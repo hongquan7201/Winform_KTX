@@ -1,5 +1,6 @@
 ﻿using DevExpress.CodeParser;
 using DevExpress.Mvvm.Native;
+using DevExpress.Mvvm.POCO;
 using DevExpress.XtraBars;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
@@ -24,10 +25,12 @@ namespace ProjectQLKTX
         private readonly IBankingHelper _bankingHelper;
         private readonly IChiTietCongToHelper _chiTietCongToHelper;
         private readonly ICongToHelper _congToHelper;
+        private readonly IBienLaiHelper _bienLaiHelper;
+        private readonly IHoaDonHelper _hoaDonHelper;
         private readonly frmDangNhap _frmDangNhap;
         private readonly frmLoading _frmLoading;
         private readonly frmQLiXe _frmQLiXe;
-        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper, IChietTietPhieuKhoHelper chietTietPhieuKhoHelper, frmDangNhap frmDangNhap, frmLoading frmLoading, frmQLiXe frmQLiXe, IBankingHelper bankingHelper, IChiTietCongToHelper chiTietCongToHelper, ICongToHelper congToHelper)
+        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper, IChietTietPhieuKhoHelper chietTietPhieuKhoHelper, frmDangNhap frmDangNhap, frmLoading frmLoading, frmQLiXe frmQLiXe, IBankingHelper bankingHelper, IChiTietCongToHelper chiTietCongToHelper, ICongToHelper congToHelper, IBienLaiHelper bienLaiHelper, IHoaDonHelper hoaDonHelper)
         {
             InitializeComponent();
             _nhanVienHelper = nhanVienHelper;
@@ -48,25 +51,30 @@ namespace ProjectQLKTX
             _bankingHelper = bankingHelper;
             _chiTietCongToHelper = chiTietCongToHelper;
             _congToHelper = congToHelper;
+            _bienLaiHelper = bienLaiHelper;
+            _hoaDonHelper = hoaDonHelper;
         }
         private void btnDoiMK_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmDoiMK frmDoiMK = new frmDoiMK();
+            frmDoiMK frmDoiMK = new frmDoiMK(_frmLoading, _nhanVienHelper);
             frmDoiMK.ShowDialog();
         }
         private void btnDangKyPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmDKPhong frmDangKyPhong = new frmDKPhong(_sinhVienHelper, _phongHelper, _khuHelper, _truongHelper, _hopDongHelper, _xeHelper,_frmLoading);
+            frmDKPhong frmDangKyPhong = new frmDKPhong(_sinhVienHelper, _phongHelper, _khuHelper, _truongHelper, _hopDongHelper, _xeHelper, _frmLoading);
             frmDangKyPhong.ShowDialog();
         }
-        private void btnChuyenPhong_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnChuyenPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmChuyenPhong frmChuyenPhong = new frmChuyenPhong();
+            _frmLoading.Show();
+            await LoadListPhong(GlobalModel.ListPhong);
+            _frmLoading.Hide();
+            frmChuyenPhong frmChuyenPhong = new frmChuyenPhong(_frmLoading, _sinhVienHelper, _truongHelper, _phongHelper, _khuHelper);
             frmChuyenPhong.ShowDialog();
         }
         private void btnTraPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmTraPhong frmTraPhong = new frmTraPhong();
+            frmTraPhong frmTraPhong = new frmTraPhong(_frmLoading, _sinhVienHelper, _phongHelper, _khuHelper, _truongHelper);
             frmTraPhong.ShowDialog();
         }
         private async void btnThongTinSinhVien_ItemClick(object sender, ItemClickEventArgs e)
@@ -88,7 +96,7 @@ namespace ProjectQLKTX
         private async void btnTTNhanVien_ItemClick(object sender, ItemClickEventArgs e)
         {
 
-            frmThongTinNV frmThongTinCaNhanNV = new frmThongTinNV(_frmLoading,_nhanVienHelper);
+            frmThongTinNV frmThongTinCaNhanNV = new frmThongTinNV(_frmLoading, _nhanVienHelper);
             frmThongTinCaNhanNV.ShowDialog();
         }
         private async void btnQLiHopDong_ItemClick(object sender, ItemClickEventArgs e)
@@ -120,12 +128,15 @@ namespace ProjectQLKTX
             _frmLoading.Show();
             await LoadListPhong(GlobalModel.ListPhong);
             _frmLoading.Hide();
-            frmQLiPhong frmQLiPhong = new frmQLiPhong(_frmLoading,_phongHelper,_khuHelper);
+            frmQLiPhong frmQLiPhong = new frmQLiPhong(_frmLoading, _phongHelper, _khuHelper);
             frmQLiPhong.ShowDialog();
         }
-        private void btnThanhToan_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnThanhToan_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmBienLai frmBienLai = new frmBienLai();
+            _frmLoading.Show();
+            await LoadListBienLai(GlobalModel.ListBienLai);
+            _frmLoading.Hide();
+            frmBienLai frmBienLai = new frmBienLai(_frmLoading,_bienLaiHelper,_sinhVienHelper,_nhanVienHelper,_khuHelper,_phongHelper,_bankingHelper);
             frmBienLai.ShowDialog();
         }
         private void btnQLiHoaDon_ItemClick_1(object sender, ItemClickEventArgs e)
@@ -629,16 +640,16 @@ namespace ProjectQLKTX
                 {
                     Banking banking = new Banking();
                     banking.type = item.type;
-                    banking.idSinhVien = item.idSinhVien;
+                    banking.IdUser = item.IdUser;
                     banking.amount = item.amount;
                     banking.code = item.code;
                     banking.Id = item.Id;
                     banking.cmt = item.cmt;
                     banking.creatAt = item.creatAt;
                     banking.STT = i;
-                    if (banking.idSinhVien != null)
+                    if (banking.IdUser != null)
                     {
-                        var sinhvien = await _sinhVienHelper.GetSinhVienById(banking.idSinhVien);
+                        var sinhvien = await _sinhVienHelper.GetSinhVienById(banking.IdUser);
                         if (sinhvien.status == 200)
                         {
                             banking.Name = sinhvien.data.FirstOrDefault().Name;
@@ -701,12 +712,91 @@ namespace ProjectQLKTX
         private async Task LoadListTruong(List<Truong> listTruong)
         {
             var result = await _truongHelper.GetListTruong();
-            if(result.status == 200)
+            if (result.status == 200)
             {
                 listTruong.Clear();
-                foreach(var item in result.data)
+                foreach (var item in result.data)
                 {
                     listTruong.Add(item);
+                }
+            }
+        }
+        private async Task LoadListBienLai(List<Bienlai> listBienLai)
+        {
+            var bienLais = await _bienLaiHelper.GetListBienLai();
+            if (bienLais.status == 200)
+            {
+                int i = 1;
+                listBienLai.Clear();
+                foreach (var item in bienLais.data)
+                {
+                    Bienlai bienlai = new Bienlai();
+                    bienlai.Id = item.Id;
+                    bienlai.NgayBatDau = item.NgayBatDau;
+                    bienlai.NgayDong = item.NgayDong;
+                    bienlai.NgayHetHan = item.NgayHetHan;
+                    bienlai.TienPhong = item.TienPhong;
+                    bienlai.TienXe = item.TienXe;
+                    bienlai.Total = item.TienPhong + item.TienXe;
+                    bienlai.Status = item.Status;
+                    if (bienlai.Status == true)
+                    {
+                        bienlai.TrangThai = "Đã Thanh Toán";
+                    }
+                    else
+                    {
+                        bienlai.TrangThai = "Chưa Thanh Toán";
+                    }
+                    bienlai.STT = i;
+                    bienlai.IdNhanVien = item.IdNhanVien;
+                    bienlai.IdSinhVien = item.IdSinhVien;
+                    if (bienlai.IdSinhVien != null)
+                    {
+                        var sinhvien = await _sinhVienHelper.GetSinhVienById(bienlai.IdSinhVien);
+                        if (sinhvien.status == 200)
+                        {
+                            bienlai.NameSinhVien = sinhvien.data.FirstOrDefault().Name;
+                            bienlai.CCCD = sinhvien.data.FirstOrDefault().Cccd;
+                            bienlai.EmailSV = sinhvien.data.FirstOrDefault().Email;
+                            bienlai.NgaySinhSV = sinhvien.data.FirstOrDefault().BirthDay;
+                            bienlai.MaSinhVien = sinhvien.data.FirstOrDefault().MaSv;
+                            if (sinhvien.data.FirstOrDefault().Gender == true)
+                            {
+                                bienlai.GioiTinhSV = "Nam";
+                            }
+                            else
+                            {
+                                bienlai.GioiTinhSV = "Nữ";
+                            }
+                            if (sinhvien.data.FirstOrDefault().IdPhong!=null)
+                            {
+                                var phong = await _phongHelper.GetPhong(sinhvien.data.FirstOrDefault().IdPhong);
+                                if(phong.status ==200)
+                                {
+                                    bienlai.Phong = phong.data.FirstOrDefault().Name;
+                                    if (phong.data.FirstOrDefault().IdKhu != null)
+                                    {
+                                        var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu);
+                                        if(khu.status == 200)
+                                        {
+                                            bienlai.Khu = khu.data.FirstOrDefault().Name;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (item.IdNhanVien!=null)
+                    {
+                        var nhanvien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien);
+                        if(nhanvien.status == 200)
+                        {
+                            bienlai.NameNhanVien = nhanvien.data.FirstOrDefault().Name;
+                            bienlai.EmailNV = nhanvien.data.FirstOrDefault().Email;
+                        }
+                    }
+                    listBienLai.Add(bienlai);
+                    i++;
                 }
             }
         }

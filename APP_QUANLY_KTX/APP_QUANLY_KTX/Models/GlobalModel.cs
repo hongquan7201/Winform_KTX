@@ -17,5 +17,6 @@
         public static List<Banking> ListBanking = new List<Banking>();
         public static List<Chitietcongto> ListChitietcongto = new List<Chitietcongto>();
         public static List<Truong> ListTruong = new List<Truong>();
+        public static List<Bienlai> ListBienLai = new List<Bienlai>();
     }
 }

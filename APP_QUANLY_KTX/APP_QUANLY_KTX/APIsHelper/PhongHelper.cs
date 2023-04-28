@@ -55,6 +55,22 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
+        public async Task<APIRespone<string>> DeleteSinhVien(Guid id)
+        {
+            string url = Constant.Domain + "api/phong/deleteSinhVien";// Thay đổi đường dẫn API của bạn
+            var httpClient = new HttpClient();
+            var jsonId = JsonConvert.SerializeObject(id);
+            var content = new StringContent(jsonId, Encoding.UTF8, "application/json");
+            var request = new HttpRequestMessage(HttpMethod.Delete, url)
+            {
+                Content = content
+            };
+            var response = await httpClient.SendAsync(request);
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
+            return data;
+        }
+
         public async Task<APIRespone<string>> EditPhong(Phong phong)
         {
             HttpClient httpClient = new HttpClient();

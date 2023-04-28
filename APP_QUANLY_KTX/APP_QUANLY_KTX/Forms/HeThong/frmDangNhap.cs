@@ -10,9 +10,10 @@ namespace ProjectQLKTX
         private readonly ILoginHelper _loginHelper;
         private readonly IRoleHelper _roleHelper;
         private readonly frmLoading _frmLoading;
+        private readonly INhanVienHelper _nhanVienHelper;
         private string message = "";
         bool IsCheck = false;
-        public frmDangNhap(ILoginHelper loginHelper, IRoleHelper roleHelper, frmLoading frmLoading)
+        public frmDangNhap(ILoginHelper loginHelper, IRoleHelper roleHelper, frmLoading frmLoading, INhanVienHelper nhanVienHelper)
         {
             InitializeComponent();
             _loginHelper = loginHelper;
@@ -20,6 +21,7 @@ namespace ProjectQLKTX
             txtEmail.Text = (string)Properties.Settings.Default["Email"];
             txtPassword.Text = (string)Properties.Settings.Default["Password"];
             _frmLoading = frmLoading;
+            _nhanVienHelper = nhanVienHelper;
         }
         private void btnThoat_CheckedChanged(object sender, EventArgs e)
         {
@@ -30,7 +32,7 @@ namespace ProjectQLKTX
         }
         private void lbQuenMK_Click(object sender, EventArgs e)
         {
-            frmQuenMK QuenMatKhau = new frmQuenMK();
+            frmQuenMK QuenMatKhau = new frmQuenMK(_frmLoading,_nhanVienHelper);
             QuenMatKhau.Show();
             this.Hide();
         }

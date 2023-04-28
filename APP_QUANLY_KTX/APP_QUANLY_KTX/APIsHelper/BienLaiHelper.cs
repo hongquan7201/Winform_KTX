@@ -37,7 +37,7 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> EditBienLai(Guid id, Bienlai bienLai)
+        public async Task<APIRespone<string>> EditBienLai(Bienlai bienLai)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
@@ -45,7 +45,7 @@ namespace ProjectQLKTX.APIsHelper
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(bienLai, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/bienlai/edit/{id}", content);
+            var response = await httpClient.PutAsync($"api/bienlai/edit", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;

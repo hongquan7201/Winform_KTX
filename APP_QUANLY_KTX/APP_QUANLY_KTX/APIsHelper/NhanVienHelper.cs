@@ -97,5 +97,19 @@ namespace ProjectQLKTX.APIsHelper
             APIRespone<List<Nhanvien>> data = JsonConvert.DeserializeObject<APIRespone<List<Nhanvien>>>(body);
             return data;
         }
+
+        public async Task<APIRespone<string>> ResetPassword(string email)
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+            var json = JsonConvert.SerializeObject(email, jsonSerializerSettings);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync($"api/nhanvien/reset", content);
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
+            return data;
+        }
     }
 }

@@ -54,15 +54,15 @@ namespace ProjectQLKTX
                 if (result.status == 200)
                 {
                     banking.type = result.data.type;
-                    banking.idSinhVien = result.data.idSinhVien;
+                    banking.IdUser = result.data.IdUser;
                     banking.amount = result.data.amount;
                     banking.code = result.data.code;
                     banking.Id = result.data.Id;
                     banking.cmt = result.data.cmt;
                     banking.creatAt = result.data.creatAt;
-                    if (banking.idSinhVien != null)
+                    if (banking.IdUser != null)
                     {
-                        var sinhvien = await _sinhVienHelper.GetSinhVienById(banking.idSinhVien);
+                        var sinhvien = await _sinhVienHelper.GetSinhVienById(banking.IdUser);
                         if (sinhvien.status == 200)
                         {
                             banking.Name = sinhvien.data.FirstOrDefault().Name;
@@ -142,16 +142,16 @@ namespace ProjectQLKTX
                 {
                     Banking banking = new Banking();
                     banking.type = item.type;
-                    banking.idSinhVien = item.idSinhVien;
+                    banking.IdUser = item.IdUser;
                     banking.amount = item.amount;
                     banking.code = item.code;
                     banking.Id = item.Id;
                     banking.cmt = item.cmt;
                     banking.creatAt = item.creatAt;
                     banking.STT = i;
-                    if (banking.idSinhVien != null)
+                    if (banking.IdUser != null)
                     {
-                        var sinhvien = await _sinhVienHelper.GetSinhVienById(banking.idSinhVien);
+                        var sinhvien = await _sinhVienHelper.GetSinhVienById(banking.IdUser);
                         if (sinhvien.status == 200)
                         {
                             banking.Name = sinhvien.data.FirstOrDefault().Name;

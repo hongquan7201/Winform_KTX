@@ -12,5 +12,6 @@ namespace ProjectQLKTX.Interface
         Task<APIRespone<string>> DeleteNhanVien(Guid id);
         Task<APIRespone<List<Nhanvien>>> GetNhanVienByName(string? name);
         Task<APIRespone<List<Nhanvien>>> GetNhanVienByEmail(string? email);
+        Task<APIRespone<string>> ResetPassword(string email);
     }
 }

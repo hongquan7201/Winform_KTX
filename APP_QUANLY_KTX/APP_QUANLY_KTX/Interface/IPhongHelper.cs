@@ -11,5 +11,6 @@ namespace ProjectQLKTX.Interface
         Task<APIRespone<string>> EditPhong(Phong phong);
         Task<APIRespone<string>> DeletePhong(Guid id);
         Task<APIRespone<string>> AddSinhVien(SVP sVP);
+        Task<APIRespone<string>> DeleteSinhVien(Guid id);
     }
 }
