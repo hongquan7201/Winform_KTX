@@ -52,6 +52,7 @@
             this.btnQLiKho = new DevExpress.XtraBars.BarButtonItem();
             this.btnQLiTaiSan = new DevExpress.XtraBars.BarButtonItem();
             this.btnDSTruong = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLichSuGiaoDich = new DevExpress.XtraBars.BarButtonItem();
             this.HETHONG = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.DANHMUC = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -63,7 +64,6 @@
             this.BAOCAOTHONGKE = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.btnLichSuGiaoDich = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -272,7 +272,7 @@
             // 
             // btnQLiKho
             // 
-            this.btnQLiKho.Caption = "Quản Lí Kho";
+            this.btnQLiKho.Caption = "Quản Lý Kho";
             this.btnQLiKho.Id = 39;
             this.btnQLiKho.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQLiKho.ImageOptions.Image")));
             this.btnQLiKho.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQLiKho.ImageOptions.LargeImage")));
@@ -296,6 +296,15 @@
             this.btnDSTruong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDSTruong.ImageOptions.LargeImage")));
             this.btnDSTruong.Name = "btnDSTruong";
             this.btnDSTruong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSTruong_ItemClick);
+            // 
+            // btnLichSuGiaoDich
+            // 
+            this.btnLichSuGiaoDich.Caption = "Lịch Sử Giao Dịch";
+            this.btnLichSuGiaoDich.Id = 45;
+            this.btnLichSuGiaoDich.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLichSuGiaoDich.ImageOptions.Image")));
+            this.btnLichSuGiaoDich.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLichSuGiaoDich.ImageOptions.LargeImage")));
+            this.btnLichSuGiaoDich.Name = "btnLichSuGiaoDich";
+            this.btnLichSuGiaoDich.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLichSuGiaoDich_ItemClick);
             // 
             // HETHONG
             // 
@@ -387,15 +396,6 @@
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(953, 24);
-            // 
-            // btnLichSuGiaoDich
-            // 
-            this.btnLichSuGiaoDich.Caption = "Lịch Sử Giao Dịch";
-            this.btnLichSuGiaoDich.Id = 45;
-            this.btnLichSuGiaoDich.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLichSuGiaoDich.ImageOptions.Image")));
-            this.btnLichSuGiaoDich.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLichSuGiaoDich.ImageOptions.LargeImage")));
-            this.btnLichSuGiaoDich.Name = "btnLichSuGiaoDich";
-            this.btnLichSuGiaoDich.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLichSuGiaoDich_ItemClick);
             // 
             // Home
             // 
