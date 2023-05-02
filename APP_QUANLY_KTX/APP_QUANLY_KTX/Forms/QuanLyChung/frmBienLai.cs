@@ -71,7 +71,6 @@ namespace ProjectQLKTX
         {
 
         }
-
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
@@ -81,7 +80,6 @@ namespace ProjectQLKTX
         {
 
         }
-
         private void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
@@ -117,8 +115,10 @@ namespace ProjectQLKTX
         }
         private async Task ThanhToan()
         {
-            _bienLai.Status = true;
-            var result = await _bienLaiHelper.EditBienLai(_bienLai);
+            Bienlai bienlai = new Bienlai();
+            bienlai.Id = _bienLai.Id;
+            bienlai.Status = true;
+            var result = await _bienLaiHelper.EditBienLai(bienlai);
             if (result.status == 200)
             {
                 Banking banking = new Banking();
@@ -219,6 +219,18 @@ namespace ProjectQLKTX
                     }
                     listBienLai.Add(bienlai);
                     i++;
+                }
+            }
+        }
+
+        private void cbKhu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbPhong.Properties.Items.Clear();
+            foreach (var item in GlobalModel.ListPhong)
+            {
+                if (cbKhu.Text == item.NameKhu && item.QuantityPeople < 8)
+                {
+                    cbPhong.Properties.Items.Add(item.Name);
                 }
             }
         }

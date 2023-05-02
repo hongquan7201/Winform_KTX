@@ -19,7 +19,7 @@ namespace ProjectQLKTX.APIsHelper
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(hoaDon, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/hoadon/add", content);
+            var response = await httpClient.PostAsync($"api/hoadon/add", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
@@ -27,17 +27,21 @@ namespace ProjectQLKTX.APIsHelper
 
         public async Task<APIRespone<string>> DeleteHoaDon(Guid id)
         {
-            HttpClient httpClient = new HttpClient();
-            string url = Constant.Domain + "/api/hoadon/delete"; // Thay đổi đường dẫn API của bạn
-            var request = new HttpRequestMessage(HttpMethod.Delete, url);
-            request.Content = new StringContent(id.ToString(), System.Text.Encoding.UTF8, "application/json");
+            string url = Constant.Domain + "api/hoadon/delete";// Thay đổi đường dẫn API của bạn
+            var httpClient = new HttpClient();
+            var jsonId = JsonConvert.SerializeObject(id);
+            var content = new StringContent(jsonId, Encoding.UTF8, "application/json");
+            var request = new HttpRequestMessage(HttpMethod.Delete, url)
+            {
+                Content = content
+            };
             var response = await httpClient.SendAsync(request);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
         }
 
-        public async Task<APIRespone<string>> EditHoaDon(Guid id, Hoadon hoaDon)
+        public async Task<APIRespone<string>> EditHoaDon(Hoadon hoaDon)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
@@ -45,7 +49,7 @@ namespace ProjectQLKTX.APIsHelper
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(hoaDon, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/hoadon/edit/{id}", content);
+            var response = await httpClient.PutAsync($"api/hoadon/edit", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;

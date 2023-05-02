@@ -12,5 +12,6 @@ namespace ProjectQLKTX.Interface
         Task<APIRespone<string>> DeleteSinhVien(Guid? id);
         Task<APIRespone<List<Sinhvien>>> GetSinhVienByName(string name);
         Task<APIRespone<List<Sinhvien>>> GetSinhVienByCCCD(string cccd);
+        Task<APIRespone<List<Sinhvien>>> GetSinhVienByEmail(string email);
     }
 }

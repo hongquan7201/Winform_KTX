@@ -84,7 +84,7 @@ namespace ProjectQLKTX
             await LoadListTruong(GlobalModel.ListTruong);
             await LoadListQuanHe(GlobalModel.ListQuanhe);
             _frmLoading.Hide();
-            frmThongTinSV frmThongTinCaNhanSV = new frmThongTinSV(_sinhVienHelper, _thanNhanHelper, _quanHeHelper, _phongHelper, _khuHelper, _truongHelper,_frmLoading);
+            frmThongTinSV frmThongTinCaNhanSV = new frmThongTinSV(_sinhVienHelper, _thanNhanHelper, _quanHeHelper, _phongHelper, _khuHelper, _truongHelper, _frmLoading);
             frmThongTinCaNhanSV.ShowDialog();
         }
         private async void btnDSNhanVien_ItemClick(object sender, ItemClickEventArgs e)
@@ -135,15 +135,19 @@ namespace ProjectQLKTX
         }
         private async void btnThanhToan_ItemClick(object sender, ItemClickEventArgs e)
         {
-            _frmLoading.ShowDialog();
+            _frmLoading.Show();
             await LoadListBienLai(GlobalModel.ListBienLai);
             _frmLoading.Hide();
-            frmBienLai frmBienLai = new frmBienLai(_frmLoading,_bienLaiHelper,_sinhVienHelper,_nhanVienHelper,_khuHelper,_phongHelper,_bankingHelper);
+            frmBienLai frmBienLai = new frmBienLai(_frmLoading, _bienLaiHelper, _sinhVienHelper, _nhanVienHelper, _khuHelper, _phongHelper, _bankingHelper);
             frmBienLai.ShowDialog();
         }
-        private void btnQLiHoaDon_ItemClick_1(object sender, ItemClickEventArgs e)
+        private async void btnQLiHoaDon_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-            frmQLiHoaDon frmQLHoaDon = new frmQLiHoaDon();
+            _frmLoading.Show();
+            await LoadListHoaDon(GlobalModel.ListHoaDon);
+            await LoadListPhong(GlobalModel.ListPhong);
+            _frmLoading.Hide();
+            frmQLiHoaDon frmQLHoaDon = new frmQLiHoaDon(_hoaDonHelper,_frmLoading,_phongHelper,_khuHelper,_nhanVienHelper,_sinhVienHelper);
             frmQLHoaDon.ShowDialog();
         }
 
@@ -724,92 +728,165 @@ namespace ProjectQLKTX
         }
         private async Task LoadListBienLai(List<Bienlai> listBienLai)
         {
-            var bienLais = await _bienLaiHelper.GetListBienLai();
-            if (bienLais.status == 200)
+            try
             {
-                int i = 1;
-                listBienLai.Clear();
-                foreach (var item in bienLais.data)
+                var bienLais = await _bienLaiHelper.GetListBienLai();
+                if (bienLais.status == 200)
                 {
-                    Bienlai bienlai = new Bienlai();
-                    bienlai.Id = item.Id;
-                    bienlai.NgayBatDau = item.NgayBatDau;
-                    bienlai.NgayDong = item.NgayDong;
-                    bienlai.NgayHetHan = item.NgayHetHan;
-                    bienlai.TienPhong = item.TienPhong;
-                    bienlai.TienXe = item.TienXe;
-                    bienlai.Total = item.TienPhong + item.TienXe;
-                    bienlai.Status = item.Status;
-                    if (bienlai.Status == true)
+                    int i = 1;
+                    listBienLai.Clear();
+                    foreach (var item in bienLais.data)
                     {
-                        bienlai.TrangThai = "Đã Thanh Toán";
-                    }
-                    else
-                    {
-                        bienlai.TrangThai = "Chưa Thanh Toán";
-                    }
-                    bienlai.STT = i;
-                    bienlai.IdNhanVien = item.IdNhanVien;
-                    bienlai.IdSinhVien = item.IdSinhVien;
-                    if (bienlai.IdSinhVien != null)
-                    {
-                        var sinhvien = await _sinhVienHelper.GetSinhVienById(bienlai.IdSinhVien);
-                        if (sinhvien.status == 200)
+                        Bienlai bienlai = new Bienlai();
+                        bienlai.Id = item.Id;
+                        bienlai.NgayBatDau = item.NgayBatDau;
+                        bienlai.NgayDong = item.NgayDong;
+                        bienlai.NgayHetHan = item.NgayHetHan;
+                        bienlai.TienPhong = item.TienPhong;
+                        bienlai.TienXe = item.TienXe;
+                        bienlai.Total = item.TienPhong + item.TienXe;
+                        bienlai.Status = item.Status;
+                        if (bienlai.Status == true)
                         {
-                            bienlai.NameSinhVien = sinhvien.data.FirstOrDefault().Name;
-                            bienlai.CCCD = sinhvien.data.FirstOrDefault().Cccd;
-                            bienlai.EmailSV = sinhvien.data.FirstOrDefault().Email;
-                            bienlai.NgaySinhSV = sinhvien.data.FirstOrDefault().BirthDay;
-                            bienlai.MaSinhVien = sinhvien.data.FirstOrDefault().MaSv;
-                            if (sinhvien.data.FirstOrDefault().Gender == true)
+                            bienlai.TrangThai = "Đã Thanh Toán";
+                        }
+                        else
+                        {
+                            bienlai.TrangThai = "Chưa Thanh Toán";
+                        }
+                        bienlai.STT = i;
+                        bienlai.IdNhanVien = item.IdNhanVien;
+                        bienlai.IdSinhVien = item.IdSinhVien;
+                        if (bienlai.IdSinhVien != null)
+                        {
+                            var sinhvien = await _sinhVienHelper.GetSinhVienById(bienlai.IdSinhVien);
+                            if (sinhvien.status == 200)
                             {
-                                bienlai.GioiTinhSV = "Nam";
-                            }
-                            else
-                            {
-                                bienlai.GioiTinhSV = "Nữ";
-                            }
-                            if (sinhvien.data.FirstOrDefault().IdPhong!=null)
-                            {
-                                var phong = await _phongHelper.GetPhong(sinhvien.data.FirstOrDefault().IdPhong);
-                                if(phong.status ==200)
+                                bienlai.NameSinhVien = sinhvien.data.FirstOrDefault().Name;
+                                bienlai.CCCD = sinhvien.data.FirstOrDefault().Cccd;
+                                bienlai.EmailSV = sinhvien.data.FirstOrDefault().Email;
+                                bienlai.NgaySinhSV = sinhvien.data.FirstOrDefault().BirthDay;
+                                bienlai.MaSinhVien = sinhvien.data.FirstOrDefault().MaSv;
+                                if (sinhvien.data.FirstOrDefault().Gender == true)
                                 {
-                                    bienlai.Phong = phong.data.FirstOrDefault().Name;
-                                    if (phong.data.FirstOrDefault().IdKhu != null)
+                                    bienlai.GioiTinhSV = "Nam";
+                                }
+                                else
+                                {
+                                    bienlai.GioiTinhSV = "Nữ";
+                                }
+                                if (sinhvien.data.FirstOrDefault().IdPhong != null)
+                                {
+                                    var phong = await _phongHelper.GetPhong(sinhvien.data.FirstOrDefault().IdPhong);
+                                    if (phong.status == 200)
                                     {
-                                        var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu);
-                                        if(khu.status == 200)
+                                        bienlai.Phong = phong.data.FirstOrDefault().Name;
+                                        if (phong.data.FirstOrDefault().IdKhu != null)
                                         {
-                                            bienlai.Khu = khu.data.FirstOrDefault().Name;
+                                            var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu);
+                                            if (khu.status == 200)
+                                            {
+                                                bienlai.Khu = khu.data.FirstOrDefault().Name;
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
-                    }
-                    if (item.IdNhanVien!=null)
-                    {
-                        var nhanvien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien);
-                        if(nhanvien.status == 200)
+                        if (item.IdNhanVien != null)
                         {
-                            bienlai.NameNhanVien = nhanvien.data.FirstOrDefault().Name;
-                            bienlai.EmailNV = nhanvien.data.FirstOrDefault().Email;
+                            var nhanvien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien);
+                            if (nhanvien.status == 200)
+                            {
+                                bienlai.NameNhanVien = nhanvien.data.FirstOrDefault().Name;
+                                bienlai.EmailNV = nhanvien.data.FirstOrDefault().Email;
+                            }
                         }
+                        listBienLai.Add(bienlai);
+                        i++;
                     }
-                    listBienLai.Add(bienlai);
-                    i++;
                 }
             }
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+            }
+
         }
         private async Task LoadListQuanHe(List<Quanhe> listQuanHe)
         {
             var result = await _quanHeHelper.GetListQuanHe();
-            if(result.status== 200)
+            if (result.status == 200)
             {
                 listQuanHe.Clear();
-                foreach(var item in result.data)
+                foreach (var item in result.data)
                 {
                     listQuanHe.Add(item);
+                }
+            }
+        }
+        private async Task LoadListHoaDon(List<Hoadon> listHoaDon)
+        {
+            var hoaDons = await _hoaDonHelper.GetListHoaDon();
+            if (hoaDons.status == 200)
+            {
+                int i = 1;
+                listHoaDon.Clear();
+                foreach (var item in hoaDons.data)
+                {
+                    Hoadon hoadon = new Hoadon();
+                    hoadon.Total = item.Total;
+                    hoadon.Status = item.Status;
+                    if(hoadon.Status == true)
+                    {
+                        hoadon.TrangThai = "Đã Thanh Toán";
+                    }
+                    else
+                    {
+                        hoadon.TrangThai = "Chưa Thanh Toán";
+                    }
+                    hoadon.CreateAt = item.CreateAt;
+                    if (item.IdPhong != null)
+                    {
+                        hoadon.IdPhong = item.Id;
+                        var phong = await _phongHelper.GetPhong(item.IdPhong);
+                        if (phong.status == 200)
+                        {
+                            hoadon.NamePhong = phong.data.FirstOrDefault().Name;
+                            if (phong.data.FirstOrDefault().IdKhu != null)
+                            {
+                                var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu);
+                                if (khu.status == 200)
+                                {
+                                    hoadon.NameKhu = khu.data.FirstOrDefault().Name;
+                                }
+                            }
+                        }
+                    }
+                    if (item.IdNhanVien != null)
+                    {
+                        hoadon.IdNhanVien = item.IdNhanVien;
+                        var nhanvien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien);
+                        if(nhanvien.status ==200)
+                        {
+                            hoadon.NameNhanVien = nhanvien.data.FirstOrDefault().Name;
+                            hoadon.EmailNhanVien = nhanvien.data.FirstOrDefault().Email;
+                        }
+                    }
+                    if (item.IdSinhVien != null)
+                    {
+                        hoadon.IdSinhVien= item.IdSinhVien;
+                        var sinhvien = await _sinhVienHelper.GetSinhVienById(item.IdSinhVien);
+                        if(sinhvien.status ==200)
+                        {
+                            hoadon.NameSinhVien = sinhvien.data.FirstOrDefault().Name;
+                            hoadon.EmailSinhVien = sinhvien.data.FirstOrDefault().Email;
+                            hoadon.MaSinhVien = sinhvien.data.FirstOrDefault().MaSv;
+                        }
+                    }
+                    hoadon.STT = i;
+                    listHoaDon.Add(hoadon);
+                    i++;
                 }
             }
         }

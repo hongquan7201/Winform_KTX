@@ -8,7 +8,7 @@ namespace ProjectQLKTX.Interface
         Task<APIRespone<List<Hoadon>>> GetListHoaDon();
         Task<APIRespone<Hoadon>> GetHoaDon(Guid id);
         Task<APIRespone<string>> AddHoaDon(Hoadon hoaDon);
-        Task<APIRespone<string>> EditHoaDon(Guid id, Hoadon hoaDon);
+        Task<APIRespone<string>> EditHoaDon(Hoadon hoaDon);
         Task<APIRespone<string>> DeleteHoaDon(Guid id);
     }
 }

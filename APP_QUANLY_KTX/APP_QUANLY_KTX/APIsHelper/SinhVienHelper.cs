@@ -111,5 +111,16 @@ namespace ProjectQLKTX.APIsHelper
             APIRespone<List<Sinhvien>> data = JsonConvert.DeserializeObject < APIRespone<List<Sinhvien>>>(body);
             return data;
         }
+
+        public async Task<APIRespone<List<Sinhvien>>> GetSinhVienByEmail(string email)
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            string query = "/api/user/search/email?email={0}";
+            var response = await httpClient.GetAsync(string.Format(query, email));
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<List<Sinhvien>> data = JsonConvert.DeserializeObject<APIRespone<List<Sinhvien>>>(body);
+            return data;
+        }
     }
 }
