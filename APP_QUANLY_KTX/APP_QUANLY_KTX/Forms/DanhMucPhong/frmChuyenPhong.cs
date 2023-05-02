@@ -58,7 +58,7 @@ namespace ProjectQLKTX
                         break;
                     }
                 }
-                var result = await _sinhVienHelper.EditSinhVien(_sinhvien.Id,_sinhvien);
+                var result = await _sinhVienHelper.EditSinhVien(_sinhvien);
                 messager = result.message;
             }
             catch(Exception ex)

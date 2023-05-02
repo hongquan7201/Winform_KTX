@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json;
 
 namespace ProjectQLKTX.Models;
 
 public partial class Sinhvien
 {
-    public Guid Id { get; set; }
+    public Guid? Id { get; set; }
     public string? Email { get; set; }
     public string? GioiTinh { get; set; }
     public int? STT { get;set; }

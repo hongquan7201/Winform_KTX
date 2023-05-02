@@ -17,7 +17,17 @@ namespace ProjectQLKTX.APIsHelper
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var json = JsonConvert.SerializeObject(thanNhan, jsonSerializerSettings);
+            //var json = JsonConvert.SerializeObject(thanNhan, jsonSerializerSettings);
+            var json = JsonConvert.SerializeObject(new
+            {
+                Name = thanNhan.Name,
+                Address = thanNhan.Address,
+                Sdt = thanNhan.Sdt,
+                Gender = thanNhan.Gender,
+                IdUser = thanNhan.IdUser,
+                IdQuanHe = thanNhan.IdQuanHe
+            });
+
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync($"/api/thannhan/add", content);
             var body = await response.Content.ReadAsStringAsync();

@@ -1,6 +1,8 @@
 ﻿using DevExpress.Utils;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Files;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
@@ -9,18 +11,15 @@ namespace ProjectQLKTX
 {
     public partial class frmThongTinSV : DevExpress.XtraEditors.XtraForm
     {
+        private readonly frmLoading _frmLoading;
         private readonly ISinhVienHelper _sinhVienHelper;
         private readonly IThanNhanHelper _thanNhanHelper;
         private readonly IQuanHeHelper _quanHeHelper;
         private readonly IPhongHelper _phongHelper;
         private readonly IKhuHelper _khuHelper;
         private readonly ITruongHelper _truongHelper;
-        List<Quanhe> _listQuanhe;
-        List<Phong> _listPhong;
-        List<Khu> _listKhu;
-        List<Truong> _listTruong;
-        private Thannhan _thanNhan;
-        public frmThongTinSV(ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper)
+        private string messager = "";
+        public frmThongTinSV(ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, frmLoading frmLoading)
         {
             InitializeComponent();
             _sinhVienHelper = sinhVienHelper;
@@ -29,11 +28,7 @@ namespace ProjectQLKTX
             _phongHelper = phongHelper;
             _khuHelper = khuHelper;
             _truongHelper = truongHelper;
-            _listKhu = new List<Khu>();
-            _listPhong = new List<Phong>();
-            _listQuanhe = new List<Quanhe>();
-            _listTruong = new List<Truong>();
-            _thanNhan = new Thannhan();
+            _frmLoading = frmLoading;
         }
 
         private Sinhvien _sinhVien { get; set; }
@@ -131,59 +126,107 @@ namespace ProjectQLKTX
                 Log.Error("frmDSNhanVien " + listSinhVien);
                 Log.Error(ex, ex.Message);
             }
-            var listKhu = await _khuHelper.GetListKhu();
-            if (listKhu.status == 200)
-            {
-                foreach (var item in listKhu.data)
-                {
-                    cbKhu.Properties.Items.Add(item.Name);
-                    _listKhu.Add(item);
-                }
-
-            }
-            var listPhong = await _phongHelper.GetListPhong();
-            if (listPhong.status == 200)
-            {
-                foreach (var item in listPhong.data)
-                {
-                    cbPhong.Properties.Items.Add(item.Name);
-                    _listPhong.Add(item);
-                }
-            }
-            var listTruong = await _truongHelper.GetListTruong();
-            if (listTruong.status == 200)
-            {
-                foreach (var item in listTruong.data)
-                {
-                    cbTruong.Properties.Items.Add(item.Name);
-                    _listTruong.Add(item);
-                }
-            }
-            var listQuanHe = await _quanHeHelper.GetListQuanHe();
-            if (listQuanHe.status == 200)
-            {
-                cbQuanHe.Properties.Items.Clear();
-                foreach (var item in listQuanHe.data)
-                {
-                    cbQuanHe.Properties.Items.Add(item.Name);
-                    _listQuanhe.Add(item);
-                }
-            }
         }
         private async void frmThongTinSV_Load(object sender, EventArgs e)
         {
-
             imgSVNu.Visible = false;
             imgSVNam.Visible = false;
             gcDanhSach.DataSource = GlobalModel.ListSinhVien;
             gcDanhSach.RefreshDataSource();
+            cbPhong.Properties.Items.Clear();
+            cbKhu.Properties.Items.Clear();
+            lbDem.Text = GlobalModel.ListSinhVien.Count.ToString();
+            foreach (var phong in GlobalModel.ListPhong)
+            {
+                cbPhong.Properties.Items.Add(phong.Name);
+                cbKhu.Properties.Items.Add(phong.NameKhu);
+            }
+            cbQuanHe.Properties.Items.Clear();
+            foreach (var item in GlobalModel.ListQuanhe)
+            {
+                cbQuanHe.Properties.Items.Add(item.Name);
+            }
+            cbTruong.Properties.Items.Clear();
+            foreach (var item in GlobalModel.ListTruong)
+            {
+                cbTruong.Properties.Items.Add(item.Name);
+            }
         }
 
-        private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private async void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            _frmLoading.Show();
+            await AddSinhVien();
+            _frmLoading.Hide();
+            MessageBox.Show(messager);
         }
-
+        private async Task AddSinhVien()
+        {
+           Sinhvien newSinhVien = new Sinhvien();
+           newSinhVien.Name = txtHoTen.Text;
+           newSinhVien.MaSv = txtMaSV.Text;
+           newSinhVien.Address = txtDiaChi.Text;
+           newSinhVien.BirthDay = dtNgaySinh.Text;
+           newSinhVien.Cccd = txtCCCD.Text;
+           newSinhVien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
+           newSinhVien.Email = txtEmail.Text;
+           newSinhVien.Password = txtEmail.Text;
+           newSinhVien.Sdt = txtSDT.Text;
+            if (cbGioiTinh.Text == "Nam")
+            {
+               newSinhVien.Gender = true;
+            }
+            else
+            {
+               newSinhVien.Gender = false;
+            }
+            foreach (var item in GlobalModel.ListTruong)
+            {
+                if (cbTruong.Text == item.Name)
+                {
+                   newSinhVien.IdTruong = item.Id;
+                }
+            }
+            foreach (var item in GlobalModel.ListPhong)
+            {
+                if (cbPhong.Text == item.Name)
+                {
+                   newSinhVien.IdPhong = item.Id;
+                }
+            }
+            var sinhvien = await _sinhVienHelper.AddSinhVien(GlobalModel.SinhVien);
+            if(sinhvien.status == 200)
+            {
+               newSinhVien.Code = sinhvien.code;
+               newSinhVien.Id = sinhvien.id;
+                Thannhan thannhan = new Thannhan();
+                thannhan.Address = txtDiaChiTN.Text;
+                thannhan.IdUser =newSinhVien.Id;
+                thannhan.Name = txtTenTN.Text;
+                foreach (var item in GlobalModel.ListQuanhe)
+                {
+                    if (cbQuanHe.Text == item.Name)
+                    {
+                        thannhan.IdQuanHe = item.Id;
+                    }
+                }
+                thannhan.Sdt = txtSDTTN.Text;
+                if (cbGioiTinhTN.Text == "Nam")
+                {
+                    thannhan.Gender = true;
+                }
+                else
+                {
+                    thannhan.Gender = false;
+                }
+                var resultThanNhan = await _thanNhanHelper.AddThanNhan(thannhan);
+            }
+            await LoadSinhVien(GlobalModel.ListSinhVien);
+            gcDanhSach.DataSource = GlobalModel.ListSinhVien;
+            gcDanhSach.RefreshDataSource();
+            lbDem.Text = GlobalModel.ListSinhVien.Count.ToString();
+            messager = sinhvien.message;
+        }
         private void gcDanhSach_DoubleClick(object sender, EventArgs e)
         {
             try
@@ -250,6 +293,13 @@ namespace ProjectQLKTX
 
         private async void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            _frmLoading.Show();
+            await EditSinhVien();
+            _frmLoading.Hide();
+            MessageBox.Show(messager);
+        }
+        private async Task EditSinhVien()
+        {
             _sinhVien.Name = txtHoTen.Text;
             _sinhVien.Email = txtEmail.Text;
             _sinhVien.Address = txtDiaChi.Text;
@@ -260,61 +310,62 @@ namespace ProjectQLKTX
             _sinhVien.MaSv = txtMaSV.Text;
             if (txtTenTN != null)
             {
-                _thanNhan.IdUser = _sinhVien.Id;
+                Thannhan thannhan = new Thannhan();
+                thannhan.IdUser = _sinhVien.Id;
                 if (_sinhVien.idThanNhan != null)
                 {
-                    _thanNhan.Id = _sinhVien.idThanNhan;
-                    _thanNhan.Address = txtDiaChiTN.Text;
+                    thannhan.Id = _sinhVien.idThanNhan;
+                    thannhan.Address = txtDiaChiTN.Text;
                     if (cbQuanHe.Text != null)
                     {
-                        foreach (var item in _listQuanhe)
+                        foreach (var item in GlobalModel.ListQuanhe)
                         {
                             if (cbQuanHe.Text == item.Name)
                             {
-                                _thanNhan.IdQuanHe = item.Id;
+                                thannhan.IdQuanHe = item.Id;
                             }
 
                         }
                     }
-                    _thanNhan.Sdt = txtSDT.Text;
-                    _thanNhan.Name = txtTenTN.Text;
+                    thannhan.Sdt = txtSDT.Text;
+                    thannhan.Name = txtTenTN.Text;
                     if (cbGioiTinhTN.Text == "Nam")
                     {
-                        _thanNhan.Gender = true;
+                        thannhan.Gender = true;
                     }
                     else
                     {
-                        _thanNhan.Gender = false;
+                        thannhan.Gender = false;
                     }
-                    var s = await _thanNhanHelper.EditThanNhan(_thanNhan);
+                    var s = await _thanNhanHelper.EditThanNhan(thannhan);
                 }
                 else
                 {
-                    _thanNhan.Address = txtDiaChiTN.Text;
+                    thannhan.Address = txtDiaChiTN.Text;
                     if (cbQuanHe.Text != null)
                     {
-                        foreach (var item in _listQuanhe)
+                        foreach (var item in GlobalModel.ListQuanhe)
                         {
                             if (cbQuanHe.Text == item.Name)
                             {
-                                _thanNhan.IdQuanHe = item.Id;
+                                thannhan.IdQuanHe = item.Id;
                             }
 
                         }
                     }
-                    _thanNhan.Sdt = txtSDT.Text;
-                    _thanNhan.Name = txtTenTN.Text;
+                    thannhan.Sdt = txtSDT.Text;
+                    thannhan.Name = txtTenTN.Text;
                     if (cbGioiTinhTN.Text == "Nam")
                     {
-                        _thanNhan.Gender = true;
+                        thannhan.Gender = true;
                     }
                     else
                     {
-                        _thanNhan.Gender = false;
+                        thannhan.Gender = false;
                     }
-                    var s = await _thanNhanHelper.AddThanNhan(_thanNhan);
+                    var s = await _thanNhanHelper.AddThanNhan(thannhan);
                 }
-              
+
             }
             if (cbGioiTinh.Text == "Nam")
             {
@@ -326,23 +377,22 @@ namespace ProjectQLKTX
             }
             if (cbPhong.Text != _sinhVien.Phong || cbKhu.Text != _sinhVien.Khu)
             {
-                foreach (var phong in _listPhong)
+                foreach (var phong in GlobalModel.ListPhong)
                 {
                     if (phong.Name == cbPhong.Text)
                     {
-                        foreach (var khu in _listKhu)
-                        {
-                            if (khu.Name == cbKhu.Text)
-                            {
-                                var s = await _phongHelper.EditPhong(phong);
-                            }
-                        }
-
                         _sinhVien.IdPhong = phong.Id;
                     }
                 }
             }
-            var result = await _sinhVienHelper.EditSinhVien(_sinhVien.Id, _sinhVien);
+            var result = await _sinhVienHelper.EditSinhVien(_sinhVien);
+            if (result.status == 200)
+            {
+                await LoadSinhVien(GlobalModel.ListSinhVien);
+                gcDanhSach.DataSource = GlobalModel.ListSinhVien;
+                gcDanhSach.RefreshDataSource();
+                lbDem.Text = GlobalModel.ListSinhVien.Count.ToString();
+            }
             try
             {
                 await LoadSinhVien(GlobalModel.ListSinhVien);
@@ -354,62 +404,162 @@ namespace ProjectQLKTX
                 Log.Error(ex, ex.Message);
             }
         }
-
         private async void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _frmLoading.Show();
+            await DeleteSinhVien();
+            _frmLoading.Hide();
+            MessageBox.Show(messager);
+
+        }
+        private async Task DeleteSinhVien()
         {
             var deleteById = await _sinhVienHelper.DeleteSinhVien(_sinhVien.Id);
             try
             {
-                if (deleteById.status == 200)
+                if(deleteById.status == 200)
                 {
-                    MessageBox.Show(deleteById.message);
+                    await LoadSinhVien(GlobalModel.ListSinhVien);
+                    gcDanhSach.DataSource = GlobalModel.ListSinhVien;
+                    gcDanhSach.RefreshDataSource();
+                    lbDem.Text = GlobalModel.ListSinhVien.Count.ToString();
                 }
+                messager = deleteById.message;
             }
             catch (Exception ex)
             {
                 Log.Error(ex, ex.Message, ex.StackTrace);
             }
-
+        }
+        private async void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _frmLoading.Show();
+          await   LoadSinhVien(GlobalModel.ListSinhVien);
+            _frmLoading.Hide();
+        }
+        private void btnXuatfileExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Export.ExportExcel(gcDanhSach, "DanhSachSinhVien");
         }
 
-        private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnInfilePDF_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadSinhVien(GlobalModel.ListSinhVien);
+            Export.ExportPDF(gcDanhSach, "DanhSachSinhVien");
         }
-
-        private void txtEmail_EditValueChanged(object sender, EventArgs e)
+        private async void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(txtTim.EditValue.ToString()))
+            {
+                _frmLoading.Show();
+                await SearchSinhVien(GlobalModel.ListSinhVien, txtTim.EditValue.ToString());
+                _frmLoading.Hide();
+                MessageBox.Show(messager);
+            }
+            else
+            {
+                MessageBox.Show("Vui Lòng Nhập Thông Tin cần Tìm!");
+            }
         }
-
-        private void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private async Task SearchSinhVien(List<Sinhvien> listSinhVien, string nameSearch)
         {
+            APIRespone<List<Sinhvien>> resultSinhVien = new APIRespone<List<Sinhvien>>();
+            long intValue;
+            if (long.TryParse(nameSearch, out intValue))
+            {
+                resultSinhVien = await _sinhVienHelper.GetSinhVienByCCCD(nameSearch);
+            }
+            else
+            {
+                resultSinhVien = await _sinhVienHelper.GetSinhVienByName(nameSearch);
+            }
+            if (resultSinhVien.status == 200)
+            {
+                List<Sinhvien> lstSinhVien= new List<Sinhvien>();
+                foreach (var item in listSinhVien)
+                {
+                    lstSinhVien.Add(item);
+                }
+                listSinhVien.Clear();
+                int i = 1;
+                foreach (var item in resultSinhVien.data)
+                {
+                    Sinhvien sinhvien = new Sinhvien();
+                    sinhvien.Address = item.Address;
+                    sinhvien.Cccd = item.Cccd;
+                    sinhvien.Name = item.Name;
+                    sinhvien.Sdt = item.Sdt;
+                    sinhvien.BirthDay = item.BirthDay;
+                    sinhvien.Id = item.Id;
+                    sinhvien.IdPhong = item.IdPhong;
+                    if (item.IdPhong != null)
+                    {
+                        var resultPhong = await _phongHelper.GetPhong(item.IdPhong);
+                        if (resultPhong.status == 200)
+                        {
+                            if (resultPhong.data.FirstOrDefault().IdKhu != null)
+                            {
+                                sinhvien.Phong = resultPhong.data.FirstOrDefault().Name; 
+                                var resultKhu = await _khuHelper.GetKhu(resultPhong.data.FirstOrDefault().IdKhu);
+                                if (resultKhu.status == 200)
+                                {
+                                    sinhvien.Khu = resultKhu.data.FirstOrDefault().Name;
+                                }
+                            }
+                        }
+                    }
+                    if (item.IdTruong != null)
+                    {
+                        var resultTruong = await _truongHelper.GetTruong(item.IdTruong);
+                        if (resultTruong.status == 200)
+                        {
+                            sinhvien.Truong = resultTruong.data.FirstOrDefault().Name;
+                        }
+                    }
+                    sinhvien.idThanNhan = item.idThanNhan;
+                    if (sinhvien.idThanNhan != null)
+                    {
+                        var thannhan = await _thanNhanHelper.GetThanNhan(sinhvien.idThanNhan);
+                        if (thannhan.status == 200)
+                        {
+                            sinhvien.TenThanNhan = thannhan.data.FirstOrDefault().Name;
+                            sinhvien.SDTThanNhan = thannhan.data.FirstOrDefault().Sdt;
+                            sinhvien.AddressThanNha = thannhan.data.FirstOrDefault().Address;
+                            if (thannhan.data.FirstOrDefault().Gender == true)
+                            {
 
+                                sinhvien.GioiTinhThanNhan = "Nam";
+                            }
+                            else
+                            {
+                                sinhvien.GioiTinhThanNhan = "Nữ";
+                            }
+                            if (thannhan.data.FirstOrDefault().IdQuanHe != null)
+                            {
+                                var quanHe = await _quanHeHelper.GetQuanHe(thannhan.data.FirstOrDefault().IdQuanHe);
+                                if (quanHe.status == 200)
+                                {
+                                    item.QuanHe = quanHe.data.FirstOrDefault().Name;
+                                }
+                            }
+                        }
+                    }
+                    sinhvien.STT = i;
+                    listSinhVien.Add(sinhvien);
+                    i++;
+                }
+            }
+           messager=  resultSinhVien.message;
         }
-
-        private void btnReload_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void cbKhu_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnXoa_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void btnTim_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void btnXoa_ItemClick_2(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void btnSua_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
+            cbPhong.Properties.Items.Clear();
+            foreach(var item in GlobalModel.ListPhong)
+            {
+                if(cbKhu.Text == item.NameKhu&& item.QuantityPeople < 8)
+                {
+                    cbPhong.Properties.Items.Add(item.Name);
+                }
+            }
         }
     }
 }

@@ -55,7 +55,7 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> DeleteSinhVien(Guid id)
+        public async Task<APIRespone<string>> DeleteSinhVien(Guid? id)
         {
             string url = Constant.Domain + "api/phong/deleteSinhVien";// Thay đổi đường dẫn API của bạn
             var httpClient = new HttpClient();

@@ -6,7 +6,7 @@
         public static Sinhvien SinhVien = new Sinhvien();
         public static Nhanvien Nhanvien  = new Nhanvien();
         public static bool IsAddXe = false;
-        public static List<Xe> _listXe = new List<Xe>();
+        public static List<Xe> ListXe = new List<Xe>();
         public static List<Chitietphieukho> ListChiTietPhieuKho = new List<Chitietphieukho>();
         public static List<Taisan> ListTaiSan = new List<Taisan>();
         public static List<Vatdung> ListVatDung = new List<Vatdung>();
@@ -18,5 +18,6 @@
         public static List<Chitietcongto> ListChitietcongto = new List<Chitietcongto>();
         public static List<Truong> ListTruong = new List<Truong>();
         public static List<Bienlai> ListBienLai = new List<Bienlai>();
+        public static List<Quanhe> ListQuanhe = new List<Quanhe>();
     }
 }

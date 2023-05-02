@@ -167,7 +167,7 @@ namespace ProjectQLKTX
                     _listTruong.Add(item);
                 }
             }
-            gcDanhSach.DataSource = GlobalModel._listXe;
+            gcDanhSach.DataSource = GlobalModel.ListXe;
             gcDanhSach.RefreshDataSource();
             GlobalModel.IsAddXe = false;
         }
@@ -183,7 +183,7 @@ namespace ProjectQLKTX
                 {
                     var hittest = gridView.CalcHitInfo(args.Location);
                     var s = hittest.RowHandle;
-                    account = GlobalModel._listXe[s];
+                    account = GlobalModel.ListXe[s];
                     GetAccount(account);
                 }
             }
@@ -273,14 +273,14 @@ namespace ProjectQLKTX
 
         private async void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            await SearchSinhVien(GlobalModel._listXe, txtTim.EditValue.ToString());
-            gcDanhSach.DataSource = GlobalModel._listXe;
+            await SearchSinhVien(GlobalModel.ListXe, txtTim.EditValue.ToString());
+            gcDanhSach.DataSource = GlobalModel.ListXe;
             gcDanhSach.RefreshDataSource();
         }
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadXe(GlobalModel._listXe);
+            LoadXe(GlobalModel.ListXe);
         }
 
         private async void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -288,7 +288,7 @@ namespace ProjectQLKTX
             var resultDelete = await _xeHelper.DeleteXe(account.Id);
             if (resultDelete.status == 200)
             {
-                await LoadXe(GlobalModel._listXe);
+                await LoadXe(GlobalModel.ListXe);
                 txtTenXe.Text = string.Empty;
                 cbTruong.Text = _listTruong[0].Name;
                 txtMaSV.Text = string.Empty;
@@ -323,7 +323,7 @@ namespace ProjectQLKTX
             var resultEdit = await _xeHelper.EditXe(xe);
             if (resultEdit.status == 200)
             {
-                await LoadXe(GlobalModel._listXe);
+                await LoadXe(GlobalModel.ListXe);
             }
             MessageBox.Show(resultEdit.message);
 
@@ -331,6 +331,16 @@ namespace ProjectQLKTX
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnTim_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnSua_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }

@@ -1,7 +1,4 @@
-﻿using DevExpress.CodeParser;
-using DevExpress.Mvvm.Native;
-using DevExpress.Mvvm.POCO;
-using DevExpress.XtraBars;
+﻿using DevExpress.XtraBars;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
@@ -10,6 +7,7 @@ namespace ProjectQLKTX
 {
     public partial class Home : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private readonly IThongKeHelper _thongKeHelper;
         private readonly INhanVienHelper _nhanVienHelper;
         private readonly ISinhVienHelper _sinhVienHelper;
         private readonly IThanNhanHelper _thanNhanHelper;
@@ -30,7 +28,7 @@ namespace ProjectQLKTX
         private readonly frmDangNhap _frmDangNhap;
         private readonly frmLoading _frmLoading;
         private readonly frmQLiXe _frmQLiXe;
-        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper, IChietTietPhieuKhoHelper chietTietPhieuKhoHelper, frmDangNhap frmDangNhap, frmLoading frmLoading, frmQLiXe frmQLiXe, IBankingHelper bankingHelper, IChiTietCongToHelper chiTietCongToHelper, ICongToHelper congToHelper, IBienLaiHelper bienLaiHelper, IHoaDonHelper hoaDonHelper)
+        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper, IChietTietPhieuKhoHelper chietTietPhieuKhoHelper, frmDangNhap frmDangNhap, frmLoading frmLoading, frmQLiXe frmQLiXe, IBankingHelper bankingHelper, IChiTietCongToHelper chiTietCongToHelper, ICongToHelper congToHelper, IBienLaiHelper bienLaiHelper, IHoaDonHelper hoaDonHelper, IThongKeHelper thongKeHelper)
         {
             InitializeComponent();
             _nhanVienHelper = nhanVienHelper;
@@ -53,6 +51,7 @@ namespace ProjectQLKTX
             _congToHelper = congToHelper;
             _bienLaiHelper = bienLaiHelper;
             _hoaDonHelper = hoaDonHelper;
+            _thongKeHelper = thongKeHelper;
         }
         private void btnDoiMK_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -81,8 +80,11 @@ namespace ProjectQLKTX
         {
             _frmLoading.Show();
             await LoadSinhVien(GlobalModel.ListSinhVien);
+            await LoadListPhong(GlobalModel.ListPhong);
+            await LoadListTruong(GlobalModel.ListTruong);
+            await LoadListQuanHe(GlobalModel.ListQuanhe);
             _frmLoading.Hide();
-            frmThongTinSV frmThongTinCaNhanSV = new frmThongTinSV(_sinhVienHelper, _thanNhanHelper, _quanHeHelper, _phongHelper, _khuHelper, _truongHelper);
+            frmThongTinSV frmThongTinCaNhanSV = new frmThongTinSV(_sinhVienHelper, _thanNhanHelper, _quanHeHelper, _phongHelper, _khuHelper, _truongHelper,_frmLoading);
             frmThongTinCaNhanSV.ShowDialog();
         }
         private async void btnDSNhanVien_ItemClick(object sender, ItemClickEventArgs e)
@@ -119,7 +121,7 @@ namespace ProjectQLKTX
         private async void btnQLiXe_ItemClick(object sender, ItemClickEventArgs e)
         {
             _frmLoading.Show();
-            await LoadListXe(GlobalModel._listXe);
+            await LoadListXe(GlobalModel.ListXe);
             _frmLoading.Hide();
             _frmQLiXe.ShowDialog();
         }
@@ -133,7 +135,7 @@ namespace ProjectQLKTX
         }
         private async void btnThanhToan_ItemClick(object sender, ItemClickEventArgs e)
         {
-            _frmLoading.Show();
+            _frmLoading.ShowDialog();
             await LoadListBienLai(GlobalModel.ListBienLai);
             _frmLoading.Hide();
             frmBienLai frmBienLai = new frmBienLai(_frmLoading,_bienLaiHelper,_sinhVienHelper,_nhanVienHelper,_khuHelper,_phongHelper,_bankingHelper);
@@ -163,18 +165,17 @@ namespace ProjectQLKTX
             frmQLiTaiSan.ShowDialog();
         }
 
-        private void btnBCDThu_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnBCDThu_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmBaoCaoDoanhThu frmBaoCaoDoanhThu = new frmBaoCaoDoanhThu();
+            frmBaoCaoDoanhThu frmBaoCaoDoanhThu = new frmBaoCaoDoanhThu(_thongKeHelper);
             frmBaoCaoDoanhThu.ShowDialog();
         }
 
-        private void btnThongKeSV_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnThongKeSV_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmThongKeSinhVien frmThongKeSinhVien = new frmThongKeSinhVien();
+            frmThongKeSinhVien frmThongKeSinhVien = new frmThongKeSinhVien(_thongKeHelper);
             frmThongKeSinhVien.ShowDialog();
         }
-
         private void btnDSTruong_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmDSTruong frmDSTruong = new frmDSTruong(_truongHelper);
@@ -797,6 +798,18 @@ namespace ProjectQLKTX
                     }
                     listBienLai.Add(bienlai);
                     i++;
+                }
+            }
+        }
+        private async Task LoadListQuanHe(List<Quanhe> listQuanHe)
+        {
+            var result = await _quanHeHelper.GetListQuanHe();
+            if(result.status== 200)
+            {
+                listQuanHe.Clear();
+                foreach(var item in result.data)
+                {
+                    listQuanHe.Add(item);
                 }
             }
         }

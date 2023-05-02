@@ -1,31 +1,47 @@
-﻿using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Net.Http;
 
 namespace ProjectQLKTX.APIsHelper
 {
     public class SinhVienHelper : ISinhVienHelper
     {
-        public async Task<APIRespone<string>> AddSinhVien(Sinhvien sinhVien)
+        public async Task<Register> AddSinhVien(Sinhvien sinhVien)
         {
+
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var json = JsonConvert.SerializeObject(sinhVien, jsonSerializerSettings);
+            // var json = JsonConvert.SerializeObject(sinhVien, jsonSerializerSettings);
+            var json = JsonConvert.SerializeObject(new
+            {
+                Email = sinhVien.Email,
+                MaSv = sinhVien.MaSv,
+                Password = sinhVien.Password,
+                Name = sinhVien.Name,
+                Address = sinhVien.Address,
+                Cccd = sinhVien.Cccd,
+                Sdt = sinhVien.Sdt,
+                Gender = sinhVien.Gender,
+                IdPhong = sinhVien.IdPhong,
+                IdTruong = sinhVien.IdTruong,
+                BirthDay = sinhVien.BirthDay,
+                CreateAt = sinhVien.CreateAt
+            });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/sinhvien/register", content);
+            var response = await httpClient.PostAsync($"api/sinhvien/register", content);
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
+            Register data = JsonConvert.DeserializeObject<Register>(body);
             return data;
         }
 
-        public async Task<APIRespone<string>> DeleteSinhVien(Guid id)
+        public async Task<APIRespone<string>> DeleteSinhVien(Guid? id)
         {
 
             HttpClient httpClient = new HttpClient();
@@ -38,7 +54,7 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> EditSinhVien(Guid id, Sinhvien sinhVien)
+        public async Task<APIRespone<string>> EditSinhVien(Sinhvien sinhVien)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
@@ -46,7 +62,7 @@ namespace ProjectQLKTX.APIsHelper
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(sinhVien, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/user/edit?id={id}", content);
+            var response = await httpClient.PutAsync($"api/user/edit", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;

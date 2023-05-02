@@ -69,6 +69,7 @@
             this.Name = "frmBaoCaoDoanhThu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Báo Cáo Doanh Thu";
+            this.Load += new System.EventHandler(this.frmBaoCaoDoanhThu_Load);
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhThu)).EndInit();

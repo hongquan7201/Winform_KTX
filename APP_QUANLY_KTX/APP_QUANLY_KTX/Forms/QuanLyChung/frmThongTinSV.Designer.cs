@@ -98,6 +98,7 @@
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
+            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
@@ -106,7 +107,6 @@
             this.txtTim = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnTim = new DevExpress.XtraBars.BarButtonItem();
-            this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -211,6 +211,7 @@
             this.gcDanhSach.TabIndex = 54;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
+            this.gcDanhSach.DoubleClick += new System.EventHandler(this.gcDanhSach_DoubleClick);
             // 
             // gvDanhSach
             // 
@@ -1086,6 +1087,7 @@
             this.cbKhu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbKhu.Size = new System.Drawing.Size(203, 24);
             this.cbKhu.TabIndex = 46;
+            this.cbKhu.SelectedIndexChanged += new System.EventHandler(this.cbKhu_SelectedIndexChanged);
             // 
             // labelControl20
             // 
@@ -1158,12 +1160,22 @@
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
             // 
+            // btnThem
+            // 
+            this.btnThem.Caption = "Thêm";
+            this.btnThem.Id = 21;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
+            this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
+            // 
             // btnSua
             // 
             this.btnSua.Caption = "Sửa";
             this.btnSua.Id = 1;
             this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
             this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnXoa
             // 
@@ -1172,6 +1184,7 @@
             this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnReload
             // 
@@ -1180,6 +1193,7 @@
             this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
             this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnInfilePDF
             // 
@@ -1188,6 +1202,7 @@
             this.btnInfilePDF.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnInfilePDF.ImageOptions.Image")));
             this.btnInfilePDF.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnInfilePDF.ImageOptions.LargeImage")));
             this.btnInfilePDF.Name = "btnInfilePDF";
+            this.btnInfilePDF.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInfilePDF_ItemClick);
             // 
             // btnXuatfileExcel
             // 
@@ -1196,6 +1211,7 @@
             this.btnXuatfileExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXuatfileExcel.ImageOptions.Image")));
             this.btnXuatfileExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXuatfileExcel.ImageOptions.LargeImage")));
             this.btnXuatfileExcel.Name = "btnXuatfileExcel";
+            this.btnXuatfileExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXuatfileExcel_ItemClick);
             // 
             // txtTim
             // 
@@ -1217,14 +1233,7 @@
             this.btnTim.Id = 11;
             this.btnTim.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTim.ImageOptions.SvgImage")));
             this.btnTim.Name = "btnTim";
-            // 
-            // btnThem
-            // 
-            this.btnThem.Caption = "Thêm";
-            this.btnThem.Id = 21;
-            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
-            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
-            this.btnThem.Name = "btnThem";
+            this.btnTim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTim_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -1381,6 +1390,7 @@
             this.Name = "frmThongTinSV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông Tin Sinh Viên";
+            this.Load += new System.EventHandler(this.frmThongTinSV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sinhvienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
