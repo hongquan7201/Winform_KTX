@@ -17,7 +17,18 @@ namespace ProjectQLKTX.APIsHelper
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var json = JsonConvert.SerializeObject(nhanVien, jsonSerializerSettings);
+            var json = JsonConvert.SerializeObject(new
+            {
+                Name = nhanVien.Name,
+                Password = nhanVien.Password,
+                Email = nhanVien.Email,
+                Address = nhanVien.Address,
+                CreateAt = nhanVien.CreateAt,
+                Birthday = nhanVien.Birthday,
+                Cccd = nhanVien.Cccd,
+                Gender = nhanVien.Gender,
+                Sdt = nhanVien.Sdt
+            });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync($"api/nhanvien/register", content);
             var body = await response.Content.ReadAsStringAsync();
@@ -46,7 +57,19 @@ namespace ProjectQLKTX.APIsHelper
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var json = JsonConvert.SerializeObject(nhanVien, jsonSerializerSettings);
+            var json = JsonConvert.SerializeObject(new
+            {
+                Id = nhanVien.Id,
+                Name = nhanVien.Name,
+                Password = nhanVien.Password,
+                Email = nhanVien.Email,
+                Address = nhanVien.Address,
+                CreateAt = nhanVien.CreateAt,
+                Birthday = nhanVien.Birthday,
+                Cccd = nhanVien.Cccd,
+                Gender = nhanVien.Gender,
+                Sdt = nhanVien.Sdt
+            });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PutAsync($"api/nhanvien/edit", content);
             var body = await response.Content.ReadAsStringAsync();

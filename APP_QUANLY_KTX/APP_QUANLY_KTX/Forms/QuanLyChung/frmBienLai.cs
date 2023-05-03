@@ -76,9 +76,13 @@ namespace ProjectQLKTX
 
         }
 
-        private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private async void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            _frmLoading.Show();
+            await LoadListBienLai(GlobalModel.ListBienLai);
+            gcDanhSach.DataSource = GlobalModel.ListBienLai;
+            gcDanhSach.RefreshDataSource();
+            _frmLoading.Hide();
         }
         private void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

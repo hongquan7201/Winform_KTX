@@ -334,15 +334,5 @@ namespace ProjectQLKTX
         {
 
         }
-
-        private void btnTim_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void btnSua_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
     }
 }

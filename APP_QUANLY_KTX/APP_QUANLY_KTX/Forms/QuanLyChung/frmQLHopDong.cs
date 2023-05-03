@@ -6,6 +6,7 @@ using ProjectQLKTX.APIsHelper;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
+using ProjectQLKTX.Files;
 
 namespace ProjectQLKTX
 {
@@ -320,6 +321,11 @@ namespace ProjectQLKTX
             _frmLoading.Hide();
             gcDanhSach.DataSource = GlobalModel.ListHopDong;
             gcDanhSach.RefreshDataSource();
+        }
+
+        private void btnXuatfileExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Export.ExportExcel(gcDanhSach, "DanhSachHopDong");
         }
     }
 }

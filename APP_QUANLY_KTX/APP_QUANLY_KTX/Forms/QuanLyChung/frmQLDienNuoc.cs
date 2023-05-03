@@ -54,7 +54,7 @@ namespace ProjectQLKTX
                 txtTongTien.Text = string.Empty;
                 dtThangThu.Text = string.Empty;
             }
-          
+
         }
         private async void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -244,7 +244,7 @@ namespace ProjectQLKTX
 
         private void cbKhu_SelectedIndexChanged(object sender, EventArgs e)
         {
-          cbPhong.Properties.Items.Clear();
+            cbPhong.Properties.Items.Clear();
             foreach (var item in GlobalModel.ListPhong)
             {
                 if (cbKhu.Text == item.NameKhu)
@@ -297,6 +297,14 @@ namespace ProjectQLKTX
             }
             gcDanhSach.DataSource = GlobalModel.ListChitietcongto;
             gcDanhSach.RefreshDataSource();
+        }
+
+        private async void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _frmLoading.Show();
+            await EditChiTietCongTo();
+            _frmLoading.Hide();
+            MessageBox.Show(messager);
         }
     }
 }

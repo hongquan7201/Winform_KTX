@@ -32,7 +32,7 @@ namespace ProjectQLKTX
         }
         private void lbQuenMK_Click(object sender, EventArgs e)
         {
-            frmQuenMK QuenMatKhau = new frmQuenMK(_frmLoading,_nhanVienHelper);
+            frmQuenMK QuenMatKhau = new frmQuenMK(_frmLoading, _nhanVienHelper);
             QuenMatKhau.Show();
             this.Hide();
         }
@@ -54,10 +54,10 @@ namespace ProjectQLKTX
             if (!string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtPassword.Text))
             {
                 _frmLoading.Show();
-                await  Login();
+                await Login();
                 _frmLoading.Hide();
                 MessageBox.Show(message);
-                if(IsCheck ==true)
+                if (IsCheck == true)
                 {
                     this.Hide();
                 }
@@ -118,11 +118,6 @@ namespace ProjectQLKTX
                 Log.Error(ex, ex.Message);
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void cbHienthi_CheckedChanged_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

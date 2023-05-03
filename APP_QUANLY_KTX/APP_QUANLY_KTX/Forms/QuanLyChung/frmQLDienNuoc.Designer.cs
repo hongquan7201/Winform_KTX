@@ -182,6 +182,7 @@
             btnSua.Id = 1;
             btnSua.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnSua.ImageOptions.SvgImage");
             btnSua.Name = "btnSua";
+            btnSua.ItemClick += btnSua_ItemClick;
             // 
             // btnXoa
             // 
@@ -483,10 +484,6 @@
             gcDanhSach.TabIndex = 51;
             gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gvDanhSach });
             gcDanhSach.DoubleClick += gcDanhSach_DoubleClick;
-            // 
-            // chitietcongtoBindingSource
-            // 
-            chitietcongtoBindingSource.DataSource = typeof(Models.Chitietcongto);
             // 
             // gvDanhSach
             // 

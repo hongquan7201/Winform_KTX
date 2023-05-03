@@ -62,7 +62,7 @@ namespace ProjectQLKTX
                 gcDanhSach.DataSource = chitietphieukhos;
                 gcDanhSach.RefreshDataSource();
             }
-          
+
         }
         private async void frmQLiKho_Load(object sender, EventArgs e)
         {
@@ -184,6 +184,21 @@ namespace ProjectQLKTX
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnXuatfileExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }

@@ -226,6 +226,7 @@
             cbGioiTinh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             cbGioiTinh.Size = new Size(120, 24);
             cbGioiTinh.TabIndex = 75;
+            cbGioiTinh.SelectedIndexChanged += cbGioiTinh_SelectedIndexChanged;
             // 
             // labelControl12
             // 
@@ -425,6 +426,7 @@
             btnLapPhieu.Id = 0;
             btnLapPhieu.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnLapPhieu.ImageOptions.SvgImage");
             btnLapPhieu.Name = "btnLapPhieu";
+            btnLapPhieu.ItemClick += btnLapPhieu_ItemClick;
             // 
             // btnDangKyXe
             // 
@@ -433,6 +435,7 @@
             btnDangKyXe.ImageOptions.Image = (Image)resources.GetObject("btnDangKyXe.ImageOptions.Image");
             btnDangKyXe.ImageOptions.LargeImage = (Image)resources.GetObject("btnDangKyXe.ImageOptions.LargeImage");
             btnDangKyXe.Name = "btnDangKyXe";
+            btnDangKyXe.ItemClick += btnDangKyXe_ItemClick;
             // 
             // btnReload
             // 
@@ -444,6 +447,7 @@
             btnReload.ImageOptions.Image = (Image)resources.GetObject("btnReload.ImageOptions.Image");
             btnReload.ImageOptions.LargeImage = (Image)resources.GetObject("btnReload.ImageOptions.LargeImage");
             btnReload.Name = "btnReload";
+            btnReload.ItemClick += btnReload_ItemClick;
             // 
             // galleryDropDown1
             // 
@@ -471,7 +475,7 @@
             btnTim.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnTim.ImageOptions.SvgImage");
             btnTim.Name = "btnTim";
             btnTim.Size = new Size(80, 0);
-            btnTim.ItemClick += btnTim_ItemClick_1;
+            btnTim.ItemClick += btnTim_ItemClick;
             // 
             // barDockControlTop
             // 
@@ -876,6 +880,7 @@
             cbPhong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             cbPhong.Size = new Size(190, 24);
             cbPhong.TabIndex = 71;
+            cbPhong.SelectedIndexChanged += cbPhong_SelectedIndexChanged;
             // 
             // cbKhu
             // 
@@ -887,6 +892,7 @@
             cbKhu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             cbKhu.Size = new Size(190, 24);
             cbKhu.TabIndex = 60;
+            cbKhu.SelectedIndexChanged += cbKhu_SelectedIndexChanged;
             // 
             // labelControl9
             // 
@@ -948,6 +954,7 @@
             Name = "frmDKPhong";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng Ký Phòng";
+            Load += frmDKPhong_Load;
             ((System.ComponentModel.ISupportInitialize)groupControl2).EndInit();
             groupControl2.ResumeLayout(false);
             groupControl2.PerformLayout();
