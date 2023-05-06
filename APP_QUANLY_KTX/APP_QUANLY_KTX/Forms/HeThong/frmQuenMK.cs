@@ -55,5 +55,10 @@ namespace ProjectQLKTX
             }
 
         }
+
+        private void btnLayLaiMK_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
