@@ -11,13 +11,14 @@ namespace ProjectQLKTX.APIsHelper
 {
     public class BankingHelper : IBankingHelper
     {
-        public async Task<APIRespone<string>> AddBanking(Banking banking)
+        public async Task<APIRespone<string>> AddBanking(Banking banking, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(banking, jsonSerializerSettings);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync($"api/banking/add", content);
             var body = await response.Content.ReadAsStringAsync();
@@ -25,10 +26,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Banking>> GetBankingByCode(string code)
+        public async Task<APIRespone<Banking>> GetBankingByCode(string code, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             string query = "/api/banking/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, code));
             var body = await response.Content.ReadAsStringAsync();
@@ -36,10 +38,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<List<Banking>>> GetListBanking()
+        public async Task<APIRespone<List<Banking>>> GetListBanking(string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             string query = "/api/banking";
             var response = await httpClient.GetAsync(query);
             var body = await response.Content.ReadAsStringAsync();

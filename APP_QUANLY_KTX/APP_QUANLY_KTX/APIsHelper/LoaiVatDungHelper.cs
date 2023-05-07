@@ -11,10 +11,11 @@ namespace ProjectQLKTX.APIsHelper
 {
     public class LoaiVatDungHelper : ILoaiVatDungHelper
     {
-        public async Task<APIRespone<string>> AddLoaiVatDung(Loaivatdung loaiVatDung)
+        public async Task<APIRespone<string>> AddLoaiVatDung(Loaivatdung loaiVatDung, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(loaiVatDung, jsonSerializerSettings);
@@ -25,22 +26,28 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> DeleteLoaiVatDung(Guid id)
+        public async Task<APIRespone<string>> DeleteLoaiVatDung(Guid id, string token)
         {
-            HttpClient httpClient = new HttpClient();
-            string url = Constant.Domain + "/api/loaivatdung/delete"; // Thay đổi đường dẫn API của bạn
-            var request = new HttpRequestMessage(HttpMethod.Delete, url);
-            request.Content = new StringContent(id.ToString(), System.Text.Encoding.UTF8, "application/json");
+            string url = Constant.Domain + "api/loaivatdung/delete";// Thay đổi đường dẫn API của bạn
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
+            var jsonId = JsonConvert.SerializeObject(id);
+            var content = new StringContent(jsonId, Encoding.UTF8, "application/json");
+            var request = new HttpRequestMessage(HttpMethod.Delete, url)
+            {
+                Content = content
+            };
             var response = await httpClient.SendAsync(request);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
         }
 
-        public async Task<APIRespone<string>> EditLoaiVatDung(Guid id, Loaivatdung loaiVatDung)
+        public async Task<APIRespone<string>> EditLoaiVatDung(Guid id, Loaivatdung loaiVatDung, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(loaiVatDung, jsonSerializerSettings);
@@ -51,10 +58,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<List<Loaivatdung>>> GetListLoaiVatDung()
+        public async Task<APIRespone<List<Loaivatdung>>> GetListLoaiVatDung(string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             string query = "/api/loaivatdung";
             var response = await httpClient.GetAsync(query);
             var body = await response.Content.ReadAsStringAsync();
@@ -62,10 +70,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Loaivatdung>> GetLoaiVatDung(Guid id)
+        public async Task<APIRespone<Loaivatdung>> GetLoaiVatDung(Guid id, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             string query = "/api/loaivatdung/{0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();

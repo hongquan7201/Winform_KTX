@@ -5,10 +5,10 @@ namespace ProjectQLKTX.Interface
 {
     public interface IKhuHelper
     {
-        Task<APIRespone<List<Khu>>> GetListKhu();
-        Task<APIRespone<List<Khu>>> GetKhu(Guid? id);
-        Task<APIRespone<string>> AddKhu(Khu khu);
-        Task<APIRespone<string>> EditKhu(Guid id,Khu khu);
-        Task<APIRespone<string>> DeleteKhu(Guid id);
+        Task<APIRespone<List<Khu>>> GetListKhu(string token);
+        Task<APIRespone<List<Khu>>> GetKhu(Guid? id, string token);
+        Task<APIRespone<string>> AddKhu(Khu khu, string token);
+        Task<APIRespone<string>> EditKhu(Guid id,Khu khu, string token);
+        Task<APIRespone<string>> DeleteKhu(Guid id, string token);
     }
 }

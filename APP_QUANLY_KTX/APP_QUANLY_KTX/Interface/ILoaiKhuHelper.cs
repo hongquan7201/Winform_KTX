@@ -5,10 +5,10 @@ namespace ProjectQLKTX.Interface
 {
     public interface ILoaiKhuHelper
     {
-        Task<APIRespone<List<Loaikhu>>> GetListLoaiKhu();
-        Task<APIRespone<Loaikhu>> GetLoaiKhu(Guid id);
-        Task<APIRespone<string>> AddLoaiKhu(Loaikhu loaiKhu);
-        Task<APIRespone<string>> EditLoaiKhu(Guid id,Loaikhu loaiKhu);
-        Task<APIRespone<string>> DeleteLoaiKhu(Guid id);
+        Task<APIRespone<List<Loaikhu>>> GetListLoaiKhu(string token);
+        Task<APIRespone<Loaikhu>> GetLoaiKhu(Guid id, string token);
+        Task<APIRespone<string>> AddLoaiKhu(Loaikhu loaiKhu, string token);
+        Task<APIRespone<string>> EditLoaiKhu(Guid id,Loaikhu loaiKhu, string token);
+        Task<APIRespone<string>> DeleteLoaiKhu(Guid id, string token);
     }
 }

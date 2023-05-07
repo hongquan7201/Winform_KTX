@@ -11,10 +11,11 @@ namespace ProjectQLKTX.APIsHelper
 {
     public class PhongHelper : IPhongHelper
     {
-        public async Task<APIRespone<string>> AddPhong(Phong phong)
+        public async Task<APIRespone<string>> AddPhong(Phong phong, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(phong, jsonSerializerSettings);
@@ -25,10 +26,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> AddSinhVien(SVP sVP)
+        public async Task<APIRespone<string>> AddSinhVien(SVP sVP, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(sVP, jsonSerializerSettings);
@@ -39,10 +41,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> DeletePhong(Guid id)
+        public async Task<APIRespone<string>> DeletePhong(Guid id, string token)
         {
             string url = Constant.Domain + "api/phong/delete";// Thay đổi đường dẫn API của bạn
             var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             var jsonId = JsonConvert.SerializeObject(id);
             var content = new StringContent(jsonId, Encoding.UTF8, "application/json");
             var request = new HttpRequestMessage(HttpMethod.Delete, url)
@@ -55,10 +58,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> DeleteSinhVien(Guid? id)
+        public async Task<APIRespone<string>> DeleteSinhVien(Guid? id, string token)
         {
             string url = Constant.Domain + "api/phong/deleteSinhVien";// Thay đổi đường dẫn API của bạn
             var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             var jsonId = JsonConvert.SerializeObject(id);
             var content = new StringContent(jsonId, Encoding.UTF8, "application/json");
             var request = new HttpRequestMessage(HttpMethod.Delete, url)
@@ -71,10 +75,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> EditPhong(Phong phong)
+        public async Task<APIRespone<string>> EditPhong(Phong phong, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(phong, jsonSerializerSettings);
@@ -85,10 +90,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<List<Phong>>> GetListPhong()
+        public async Task<APIRespone<List<Phong>>> GetListPhong(string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             string query = "/api/phong";
             var response = await httpClient.GetAsync(query);
             var body = await response.Content.ReadAsStringAsync();
@@ -96,10 +102,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<List<Phong>>> GetPhong(Guid? id)
+        public async Task<APIRespone<List<Phong>>> GetPhong(Guid? id, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             string query = "/api/phong/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();

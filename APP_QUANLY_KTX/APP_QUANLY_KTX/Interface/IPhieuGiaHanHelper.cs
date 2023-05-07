@@ -5,10 +5,10 @@ namespace ProjectQLKTX.Interface
 {
     public interface IPhieuGiaHanHelper
     {
-        Task<APIRespone<List<Phieugiahan>>> GetListPhieuGiaHan();
-        Task<APIRespone<Phieugiahan>> GetPhieuGiaHan(Guid id);
-        Task<APIRespone<string>> AddPhieuGiaHan(Phieugiahan phieuGiaHan);
-        Task<APIRespone<string>> EditPhieuGiaHan(Guid id,Phieugiahan phieuGiaHan);
-        Task<APIRespone<string>> DeletePhieuGiaHan(Guid id);
+        Task<APIRespone<List<Phieugiahan>>> GetListPhieuGiaHan(string token);
+        Task<APIRespone<Phieugiahan>> GetPhieuGiaHan(Guid id, string token);
+        Task<APIRespone<string>> AddPhieuGiaHan(Phieugiahan phieuGiaHan, string token);
+        Task<APIRespone<string>> EditPhieuGiaHan(Guid id,Phieugiahan phieuGiaHan, string token);
+        Task<APIRespone<string>> DeletePhieuGiaHan(Guid id, string token);
     }
 }

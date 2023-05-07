@@ -5,13 +5,13 @@ namespace ProjectQLKTX.Interface
 {
     public interface INhanVienHelper
     {
-        Task<APIRespone<List<Nhanvien>>> GetListNhanVien();
-        Task< APIRespone<List<Nhanvien>>> GetNhanVienById(Guid? id);
-        Task<APIRespone<string>> AddNhanVien(Nhanvien nhanVien);
-        Task <APIRespone<string>> EditNhanVien(Nhanvien nhanVien);
-        Task<APIRespone<string>> DeleteNhanVien(Guid id);
-        Task<APIRespone<List<Nhanvien>>> GetNhanVienByName(string? name);
-        Task<APIRespone<List<Nhanvien>>> GetNhanVienByEmail(string? email);
-        Task<APIRespone<string>> ResetPassword(string email);
+        Task<APIRespone<List<Nhanvien>>> GetListNhanVien(string token);
+        Task< APIRespone<List<Nhanvien>>> GetNhanVienById(Guid? id, string token);
+        Task<APIRespone<string>> AddNhanVien(Nhanvien nhanVien, string token);
+        Task <APIRespone<string>> EditNhanVien(Nhanvien nhanVien, string token);
+        Task<APIRespone<string>> DeleteNhanVien(Guid id, string token);
+        Task<APIRespone<List<Nhanvien>>> GetNhanVienByName(string? name, string token);
+        Task<APIRespone<List<Nhanvien>>> GetNhanVienByEmail(string? email, string token);
+        Task<APIRespone<string>> ResetPassword(string email, string token);
     }
 }

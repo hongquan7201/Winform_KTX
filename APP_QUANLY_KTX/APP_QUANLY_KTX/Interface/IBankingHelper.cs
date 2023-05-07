@@ -6,7 +6,7 @@ namespace ProjectQLKTX.Interface
     public interface IBankingHelper
     {
         Task<APIRespone<List<Banking>>> GetListBanking();
-        Task<APIRespone<string>> AddBanking(Banking banking);
-        Task<APIRespone<Banking>> GetBankingByCode(string code);
+        Task<APIRespone<string>> AddBanking(Banking banking, string token);
+        Task<APIRespone<Banking>> GetBankingByCode(string code, string token);
     }
 }

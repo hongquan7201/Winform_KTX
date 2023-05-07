@@ -11,10 +11,11 @@ namespace ProjectQLKTX.APIsHelper
 {
     public class TaiSanHelper : ITaiSanHelper
     {
-        public async Task<APIRespone<string>> AddTaiSan(Taisan taiSan)
+        public async Task<APIRespone<string>> AddTaiSan(Taisan taiSan,  string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(taiSan, jsonSerializerSettings);
@@ -25,10 +26,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> DeleteTaiSan(Guid id)
+        public async Task<APIRespone<string>> DeleteTaiSan(Guid id, string token)
         {
             string url = Constant.Domain + "api/taisan/delete";// Thay đổi đường dẫn API của bạn
             var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             var jsonId = JsonConvert.SerializeObject(id);
             var content = new StringContent(jsonId, Encoding.UTF8, "application/json");
             var request = new HttpRequestMessage(HttpMethod.Delete, url)
@@ -41,10 +43,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> EditTaiSan(Taisan taiSan)
+        public async Task<APIRespone<string>> EditTaiSan(Taisan taiSan, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(taiSan, jsonSerializerSettings);
@@ -55,10 +58,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<List<Taisan>>> GetListTaiSan()
+        public async Task<APIRespone<List<Taisan>>> GetListTaiSan(string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             string query = "/api/taisan";
             var response = await httpClient.GetAsync(query);
             var body = await response.Content.ReadAsStringAsync();
@@ -66,10 +70,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<List<Taisan>>> GetTaiSan(Guid id)
+        public async Task<APIRespone<List<Taisan>>> GetTaiSan(Guid id, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             string query = "/api/taisan/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();

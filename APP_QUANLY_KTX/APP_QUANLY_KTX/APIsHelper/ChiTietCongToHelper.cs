@@ -11,10 +11,11 @@ namespace ProjectQLKTX.APIsHelper
 {
     public class ChiTietCongToHelper : IChiTietCongToHelper
     {
-        public async Task<APIRespone<string>> AddChiTietCongTo(Chitietcongto chiTietCongTo)
+        public async Task<APIRespone<string>> AddChiTietCongTo(Chitietcongto chiTietCongTo, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(chiTietCongTo, jsonSerializerSettings);
@@ -25,11 +26,12 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> DeleteChiTietCongTo(Guid id)
+        public async Task<APIRespone<string>> DeleteChiTietCongTo(Guid id, string token)
         {
             HttpClient httpClient = new HttpClient();
             string url = Constant.Domain + "/api/chitietcongto/delete"; // Thay đổi đường dẫn API của bạn
             var request = new HttpRequestMessage(HttpMethod.Delete, url);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             request.Content = new StringContent(id.ToString(), System.Text.Encoding.UTF8, "application/json");
             var response = await httpClient.SendAsync(request);
             var body = await response.Content.ReadAsStringAsync();
@@ -37,11 +39,12 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> EditChiTietCongTo(Guid id, Chitietcongto chiTietCongTo)
+        public async Task<APIRespone<string>> EditChiTietCongTo(Guid id, Chitietcongto chiTietCongTo, string token)
         {
 
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(chiTietCongTo, jsonSerializerSettings);
@@ -52,10 +55,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Chitietcongto>> GetChiTietCongTo(Guid id)
+        public async Task<APIRespone<Chitietcongto>> GetChiTietCongTo(Guid id, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             string query = "/api/chitietcongto/{0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
@@ -63,10 +67,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<List<Chitietcongto>>> GetListChiTietCongTo()
+        public async Task<APIRespone<List<Chitietcongto>>> GetListChiTietCongTo(string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             string query = "/api/chitietcongto";
             var response = await httpClient.GetAsync(query);
             var body = await response.Content.ReadAsStringAsync();

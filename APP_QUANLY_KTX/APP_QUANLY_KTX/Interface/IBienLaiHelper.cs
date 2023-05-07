@@ -5,10 +5,10 @@ namespace ProjectQLKTX.Interface
 {
     public interface IBienLaiHelper
     {
-        Task<APIRespone<List<Bienlai>>> GetListBienLai();
-        Task<APIRespone<Bienlai>> GetBienLai(Guid id);
-        Task<APIRespone<string>> AddBienLai(Bienlai bienLai);
-        Task<APIRespone<string>> EditBienLai(Bienlai bienLai);
-        Task<APIRespone<string>> DeleteBienLai(Guid id);
+        Task<APIRespone<List<Bienlai>>> GetListBienLai(string token);
+        Task<APIRespone<Bienlai>> GetBienLai(Guid id, string token);
+        Task<APIRespone<string>> AddBienLai(Bienlai bienLai, string token);
+        Task<APIRespone<string>> EditBienLai(Bienlai bienLai, string token);
+        Task<APIRespone<string>> DeleteBienLai(Guid id, string token);
     }
 }

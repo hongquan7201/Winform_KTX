@@ -11,10 +11,11 @@ namespace ProjectQLKTX.APIsHelper
 {
     public class TruongHelper : ITruongHelper
     {
-        public async Task<APIRespone<string>> AddTruong(Truong truong)
+        public async Task<APIRespone<string>> AddTruong(Truong truong, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(truong, jsonSerializerSettings);
@@ -25,10 +26,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> DeleteTruong(Guid id)
+        public async Task<APIRespone<string>> DeleteTruong(Guid id, string token)
         {
             HttpClient httpClient = new HttpClient();
             string url = Constant.Domain + "/api/truong/delete"; // Thay đổi đường dẫn API của bạn
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             var request = new HttpRequestMessage(HttpMethod.Delete, url);
             request.Content = new StringContent(id.ToString(), System.Text.Encoding.UTF8, "application/json");
             var response = await httpClient.SendAsync(request);
@@ -37,10 +39,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> EditTruong(Truong truong)
+        public async Task<APIRespone<string>> EditTruong(Truong truong, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(truong, jsonSerializerSettings);
@@ -51,10 +54,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<List<Truong>>> GetListTruong()
+        public async Task<APIRespone<List<Truong>>> GetListTruong(string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             string query = "/api/truong";
             var response = await httpClient.GetAsync(query);
             var body = await response.Content.ReadAsStringAsync();
@@ -62,10 +66,11 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<List<Truong>>> GetTruong(Guid? id)
+        public async Task<APIRespone<List<Truong>>> GetTruong(Guid? id,string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
             string query = "/api/truong/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
