@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Files;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
@@ -81,7 +82,7 @@ namespace ProjectQLKTX
                         break;
                     }
                 }
-                var result = await _chiTietCongToHelper.AddChiTietCongTo(chitietcongto);
+                var result = await _chiTietCongToHelper.AddChiTietCongTo(chitietcongto, Constant.Token);
                 if (result.status == 200)
                 {
                     await LoadListDienNuoc(GlobalModel.ListChitietcongto);
@@ -105,7 +106,7 @@ namespace ProjectQLKTX
                 chitietcongto.ChiSoNuocDauThang = int.Parse(txtChiSoNuocDau.Text);
                 chitietcongto.ChiSoNuocCuoiThang = int.Parse(txtChiSoNuocCuoi.Text);
                 chitietcongto.CreateAt = DateTime.Parse(dtThangThu.Text);
-                var result = await _chiTietCongToHelper.AddChiTietCongTo(chitietcongto);
+                var result = await _chiTietCongToHelper.AddChiTietCongTo(chitietcongto, Constant.Token);
                 if (result.status == 200)
                 {
                     await LoadListDienNuoc(GlobalModel.ListChitietcongto);
@@ -131,7 +132,7 @@ namespace ProjectQLKTX
         }
         private async Task LoadListDienNuoc(List<Chitietcongto> listChiTietCongTo)
         {
-            var chiTietCongTos = await _chiTietCongToHelper.GetListChiTietCongTo();
+            var chiTietCongTos = await _chiTietCongToHelper.GetListChiTietCongTo(Constant.Token);
             try
             {
                 if (chiTietCongTos.status == 200)
@@ -157,14 +158,14 @@ namespace ProjectQLKTX
                         {
                             if (chitietcongto.IdPhong != null)
                             {
-                                var phong = await _phongHelper.GetPhong(chitietcongto.IdPhong);
+                                var phong = await _phongHelper.GetPhong(chitietcongto.IdPhong, Constant.Token);
                                 if (phong.status == 200)
                                 {
                                     chitietcongto.NamePhong = phong.data.FirstOrDefault().Name;
                                     chitietcongto.IdKhu = phong.data.FirstOrDefault().IdKhu;
                                     if (chitietcongto.IdKhu != null)
                                     {
-                                        var khu = await _khuHelper.GetKhu(chitietcongto.IdKhu);
+                                        var khu = await _khuHelper.GetKhu(chitietcongto.IdKhu, Constant.Token);
                                         if (khu.status == 200)
                                         {
                                             chitietcongto.NameKhu = khu.data.FirstOrDefault().Name;
@@ -216,7 +217,7 @@ namespace ProjectQLKTX
         {
             try
             {
-                var delete = await _chiTietCongToHelper.DeleteChiTietCongTo(_ChiTietCongTo.Id);
+                var delete = await _chiTietCongToHelper.DeleteChiTietCongTo(_ChiTietCongTo.Id, Constant.Token);
                 if (delete.status == 200)
                 {
                     await LoadListDienNuoc(GlobalModel.ListChitietcongto);

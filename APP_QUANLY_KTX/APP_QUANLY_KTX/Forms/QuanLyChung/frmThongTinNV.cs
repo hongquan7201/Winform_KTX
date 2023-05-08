@@ -1,4 +1,5 @@
-﻿using ProjectQLKTX.Interface;
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
 
@@ -69,7 +70,7 @@ namespace ProjectQLKTX
                 GlobalModel.Nhanvien.Address = txtDiaChi.Text;
                 GlobalModel.Nhanvien.Sdt = txtSDT.Text;
                 GlobalModel.Nhanvien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
-                var result = await _nhanVienHelper.EditNhanVien(GlobalModel.Nhanvien);
+                var result = await _nhanVienHelper.EditNhanVien(GlobalModel.Nhanvien, Constant.Token);
                 messager = result.message;
             }
             catch (Exception ex)

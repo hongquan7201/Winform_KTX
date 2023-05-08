@@ -1,4 +1,5 @@
-﻿using ProjectQLKTX.Interface;
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
 
@@ -79,7 +80,7 @@ namespace ProjectQLKTX
                 nhanvien.Id = GlobalModel.Nhanvien.Id;
                 nhanvien.Email = GlobalModel.Nhanvien.Email;
                 nhanvien.Password = pass;
-                var result = await _nhanVienHelper.EditNhanVien(nhanvien);
+                var result = await _nhanVienHelper.EditNhanVien(nhanvien, Constant.Token);
                 if(result.status == 200)
                 {
                     messager = "Đổi Mật Khẩu Thành Công! Vui Lòng Đăng Nhập Lại Tài Khoản!";

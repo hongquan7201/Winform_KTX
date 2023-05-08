@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
@@ -50,7 +51,7 @@ namespace ProjectQLKTX
         {
             if (!string.IsNullOrEmpty(txtTim.EditValue.ToString()))
             {
-                var result = await _bankingHelper.GetBankingByCode(txtTim.EditValue.ToString());
+                var result = await _bankingHelper.GetBankingByCode(txtTim.EditValue.ToString(), Constant.Token);
                 if (result.status == 200)
                 {
                     banking.type = result.data.type;
@@ -62,7 +63,7 @@ namespace ProjectQLKTX
                     banking.creatAt = result.data.creatAt;
                     if (banking.IdUser != null)
                     {
-                        var sinhvien = await _sinhVienHelper.GetSinhVienById(banking.IdUser);
+                        var sinhvien = await _sinhVienHelper.GetSinhVienById(banking.IdUser, Constant.Token);
                         if (sinhvien.status == 200)
                         {
                             banking.Name = sinhvien.data.FirstOrDefault().Name;
@@ -70,13 +71,13 @@ namespace ProjectQLKTX
                             banking.Sdt = sinhvien.data.FirstOrDefault().Sdt;
                             if (sinhvien.data.FirstOrDefault().IdPhong != null)
                             {
-                                var phong = await _phongHelper.GetPhong(sinhvien.data.FirstOrDefault().IdPhong);
+                                var phong = await _phongHelper.GetPhong(sinhvien.data.FirstOrDefault().IdPhong, Constant.Token);
                                 if (phong.status == 200)
                                 {
                                     banking.NamePhong = phong.data.FirstOrDefault().Name;
                                     if (phong.data.FirstOrDefault().IdKhu != null)
                                     {
-                                        var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu);
+                                        var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu, Constant.Token);
                                         if (khu.status == 200)
                                         {
                                             banking.NameKhu = khu.data.FirstOrDefault().Name;
@@ -133,7 +134,7 @@ namespace ProjectQLKTX
         }
         private async Task LoadListBanking(List<Banking> listBanking)
         {
-            var lstBanking = await _bankingHelper.GetListBanking();
+            var lstBanking = await _bankingHelper.GetListBanking(Constant.Token);
             if (lstBanking.status == 200)
             {
                 listBanking.Clear();
@@ -151,7 +152,7 @@ namespace ProjectQLKTX
                     banking.STT = i;
                     if (banking.IdUser != null)
                     {
-                        var sinhvien = await _sinhVienHelper.GetSinhVienById(banking.IdUser);
+                        var sinhvien = await _sinhVienHelper.GetSinhVienById(banking.IdUser, Constant.Token);
                         if (sinhvien.status == 200)
                         {
                             banking.Name = sinhvien.data.FirstOrDefault().Name;
@@ -159,13 +160,13 @@ namespace ProjectQLKTX
                             banking.Sdt = sinhvien.data.FirstOrDefault().Sdt;
                             if (sinhvien.data.FirstOrDefault().IdPhong != null)
                             {
-                                var phong = await _phongHelper.GetPhong(sinhvien.data.FirstOrDefault().IdPhong);
+                                var phong = await _phongHelper.GetPhong(sinhvien.data.FirstOrDefault().IdPhong, Constant.Token);
                                 if (phong.status == 200)
                                 {
                                     banking.NamePhong = phong.data.FirstOrDefault().Name;
                                     if (phong.data.FirstOrDefault().IdKhu != null)
                                     {
-                                        var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu);
+                                        var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu, Constant.Token);
                                         if (khu.status == 200)
                                         {
                                             banking.NameKhu = khu.data.FirstOrDefault().Name;

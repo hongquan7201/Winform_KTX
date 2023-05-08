@@ -2,6 +2,7 @@
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using ProjectQLKTX.APIsHelper;
+using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Files;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
@@ -122,7 +123,7 @@ namespace ProjectQLKTX
             Bienlai bienlai = new Bienlai();
             bienlai.Id = _bienLai.Id;
             bienlai.Status = true;
-            var result = await _bienLaiHelper.EditBienLai(bienlai);
+            var result = await _bienLaiHelper.EditBienLai(bienlai, Constant.Token);
             if (result.status == 200)
             {
                 Banking banking = new Banking();
@@ -132,7 +133,7 @@ namespace ProjectQLKTX
                 banking.type = "Thanh Toán Qua Nhân Viên " + _bienLai.EmailNV;
                 banking.creatAt = DateTime.Now;
                 banking.IdBienLai = _bienLai.Id;
-                var resultBanking = await _bankingHelper.AddBanking(banking);
+                var resultBanking = await _bankingHelper.AddBanking(banking, Constant.Token);
                 if (resultBanking.status == 200)
                 {
                     await LoadListBienLai(GlobalModel.ListBienLai);
@@ -149,7 +150,7 @@ namespace ProjectQLKTX
         }
         private async Task LoadListBienLai(List<Bienlai> listBienLai)
         {
-            var bienLais = await _bienLaiHelper.GetListBienLai();
+            var bienLais = await _bienLaiHelper.GetListBienLai(Constant.Token);
             if (bienLais.status == 200)
             {
                 int i = 1;
@@ -178,7 +179,7 @@ namespace ProjectQLKTX
                     bienlai.IdSinhVien = item.IdSinhVien;
                     if (bienlai.IdSinhVien != null)
                     {
-                        var sinhvien = await _sinhVienHelper.GetSinhVienById(bienlai.IdSinhVien);
+                        var sinhvien = await _sinhVienHelper.GetSinhVienById(bienlai.IdSinhVien, Constant.Token);
                         if (sinhvien.status == 200)
                         {
                             bienlai.NameSinhVien = sinhvien.data.FirstOrDefault().Name;
@@ -196,13 +197,13 @@ namespace ProjectQLKTX
                             }
                             if (sinhvien.data.FirstOrDefault().IdPhong != null)
                             {
-                                var phong = await _phongHelper.GetPhong(sinhvien.data.FirstOrDefault().IdPhong);
+                                var phong = await _phongHelper.GetPhong(sinhvien.data.FirstOrDefault().IdPhong, Constant.Token);
                                 if (phong.status == 200)
                                 {
                                     bienlai.Phong = phong.data.FirstOrDefault().Name;
                                     if (phong.data.FirstOrDefault().IdKhu != null)
                                     {
-                                        var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu);
+                                        var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu, Constant.Token);
                                         if (khu.status == 200)
                                         {
                                             bienlai.Khu = khu.data.FirstOrDefault().Name;
@@ -214,7 +215,7 @@ namespace ProjectQLKTX
                     }
                     if (item.IdNhanVien != null)
                     {
-                        var nhanvien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien);
+                        var nhanvien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien, Constant.Token);
                         if (nhanvien.status == 200)
                         {
                             bienlai.NameNhanVien = nhanvien.data.FirstOrDefault().Name;

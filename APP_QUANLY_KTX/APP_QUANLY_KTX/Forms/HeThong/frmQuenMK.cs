@@ -1,4 +1,5 @@
-﻿using ProjectQLKTX.Interface;
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
 
@@ -39,7 +40,7 @@ namespace ProjectQLKTX
         {
             try
             {
-                var result = await _nhanVienHelper.ResetPassword(email);
+                var result = await _nhanVienHelper.ResetPassword(email, Constant.Token);
                 if (result.status == 200)
                 {
                     message = "Reset Thành Công! Vui Lòng Check Email Để Nhận Password! Để Đăng Nhập!";

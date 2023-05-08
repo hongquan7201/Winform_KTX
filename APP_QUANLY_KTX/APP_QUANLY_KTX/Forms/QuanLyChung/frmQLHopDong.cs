@@ -69,7 +69,7 @@ namespace ProjectQLKTX
         }
         private async Task LoadListHopDong(List<Hopdong> listHopDong)
         {
-            var resultListHopDong = await _hopDongHelper.GetListHopDong();
+            var resultListHopDong = await _hopDongHelper.GetListHopDong(Constant.Token);
             if (resultListHopDong.status == 200)
             {
                 int i = 1;
@@ -78,7 +78,7 @@ namespace ProjectQLKTX
                 {
                     if (item.IdNhanVien != null)
                     {
-                        var resultNhanVien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien);
+                        var resultNhanVien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien, Constant.Token);
                         if (resultNhanVien.status == 200)
                         {
                             item.NameNhanVien = resultNhanVien.data.FirstOrDefault().Name;
@@ -87,7 +87,7 @@ namespace ProjectQLKTX
                     }
                     if (item.IdSinhVien != null)
                     {
-                        var resultSinhVien = await _sinhVienHelper.GetSinhVienById(item.IdSinhVien);
+                        var resultSinhVien = await _sinhVienHelper.GetSinhVienById(item.IdSinhVien, Constant.Token);
                         if (resultSinhVien.status == 200)
                         {
                             item.MaSinhVien = resultSinhVien.data.FirstOrDefault().MaSv;
@@ -97,7 +97,7 @@ namespace ProjectQLKTX
                     }
                     if (item.IdPhong != null)
                     {
-                        var resultPhong = await _phongHelper.GetPhong(item.IdPhong);
+                        var resultPhong = await _phongHelper.GetPhong(item.IdPhong, Constant.Token);
                         if (resultPhong.status == 200)
                         {
                             item.Phong = resultPhong.data.FirstOrDefault().Name;
@@ -108,7 +108,7 @@ namespace ProjectQLKTX
                     i++;
                 }
             }
-            var listPhong = await _phongHelper.GetListPhong();
+            var listPhong = await _phongHelper.GetListPhong(Constant.Token);
             if (listPhong.status == 200)
             {
                 GlobalModel.ListPhong.Clear();
@@ -190,11 +190,11 @@ namespace ProjectQLKTX
             long intValue;
             if (long.TryParse(nameSearch, out intValue))
             {
-                resultSinhVien = await _sinhVienHelper.GetSinhVienByCCCD(nameSearch);
+                resultSinhVien = await _sinhVienHelper.GetSinhVienByCCCD(nameSearch, Constant.Token);
             }
             else
             {
-                resultSinhVien = await _sinhVienHelper.GetSinhVienByName(nameSearch);
+                resultSinhVien = await _sinhVienHelper.GetSinhVienByName(nameSearch, Constant.Token);
             }
             if (resultSinhVien.status == 200)
             {
@@ -252,7 +252,7 @@ namespace ProjectQLKTX
             hopdong.NgayKetThuc = DateTime.Parse(dtNgayKetKhuc.Text);
             hopdong.IdNhanVien = GlobalModel.Nhanvien.Id;
             hopdong.IdSinhVien = _hopdong.IdSinhVien;
-            var resultAddHopDong = await _hopDongHelper.AddHopDong(hopdong);
+            var resultAddHopDong = await _hopDongHelper.AddHopDong(hopdong, Constant.Token);
             if (resultAddHopDong.status == 200)
             {
                 await LoadListHopDong(GlobalModel.ListHopDong);
@@ -291,7 +291,7 @@ namespace ProjectQLKTX
             hopdong.NgayKetThuc = DateTime.Parse(dtNgayKetKhuc.Text);
             hopdong.IdNhanVien = GlobalModel.Nhanvien.Id;
             hopdong.IdSinhVien = _hopdong.IdSinhVien;
-            var resultEditHopDong = await _hopDongHelper.EditHopDong(hopdong.Id, hopdong);
+            var resultEditHopDong = await _hopDongHelper.EditHopDong(hopdong.Id, hopdong, Constant.Token);
             if (resultEditHopDong.status == 200)
             {
                 await LoadListHopDong(GlobalModel.ListHopDong);
@@ -304,7 +304,7 @@ namespace ProjectQLKTX
         private async void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _frmLoading.Show();
-            var delete = await _hopDongHelper.DeleteHopDong(_hopdong.Id);
+            var delete = await _hopDongHelper.DeleteHopDong(_hopdong.Id, Constant.Token);
             if (delete.status == 200)
             {
                 await LoadListHopDong(GlobalModel.ListHopDong);

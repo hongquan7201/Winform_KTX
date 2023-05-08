@@ -5,6 +5,6 @@ namespace ProjectQLKTX.Interface
 {
     public interface IThongKeHelper
     {
-        Task<APIRespone<ResponeThongKe>> GetThongKe(string url, int yearFind);
+        Task<APIRespone<ResponeThongKe>> GetThongKe(string url, int yearFind, string token);
     }
 }

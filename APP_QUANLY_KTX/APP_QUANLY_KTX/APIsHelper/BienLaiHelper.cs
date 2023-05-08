@@ -3,6 +3,7 @@ using Newtonsoft.Json.Serialization;
 using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
+using Serilog;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -16,7 +17,7 @@ namespace ProjectQLKTX.APIsHelper
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(bienLai, jsonSerializerSettings);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -30,7 +31,7 @@ namespace ProjectQLKTX.APIsHelper
         {
             string url = Constant.Domain + "api/bienlai/delete";// Thay đổi đường dẫn API của bạn
             var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
             var jsonId = JsonConvert.SerializeObject(id);
             var content = new StringContent(jsonId, Encoding.UTF8, "application/json");
             var request = new HttpRequestMessage(HttpMethod.Delete, url)
@@ -47,7 +48,7 @@ namespace ProjectQLKTX.APIsHelper
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(bienLai, jsonSerializerSettings);
@@ -62,7 +63,7 @@ namespace ProjectQLKTX.APIsHelper
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
             string query = "/api/bienlai/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
@@ -72,14 +73,23 @@ namespace ProjectQLKTX.APIsHelper
 
         public async Task<APIRespone<List<Bienlai>>> GetListBienLai(string token)
         {
-            HttpClient httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri(Constant.Domain);
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", token);
-            string query = "/api/bienlai";
-            var response = await httpClient.GetAsync(query);
-            var body = await response.Content.ReadAsStringAsync();
-            APIRespone<List<Bienlai>> data = JsonConvert.DeserializeObject<APIRespone<List<Bienlai>>>(body);
-            return data;
+            try
+            {
+                HttpClient httpClient = new HttpClient();
+                httpClient.BaseAddress = new Uri(Constant.Domain);
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+                string query = "/api/bienlai";
+                var response = await httpClient.GetAsync(query);
+                var body = await response.Content.ReadAsStringAsync();
+                APIRespone<List<Bienlai>> data = JsonConvert.DeserializeObject<APIRespone<List<Bienlai>>>(body);
+                return data;
+            }
+            catch(Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+                return null;
+            }
+          
         }
     }
 }

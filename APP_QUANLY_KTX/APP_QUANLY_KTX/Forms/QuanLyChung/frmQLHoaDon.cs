@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Files;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
@@ -46,7 +47,7 @@ namespace ProjectQLKTX
         {
             if (!string.IsNullOrEmpty(txtEmail.Text) && txtEmailNV.Text == GlobalModel.Nhanvien.Email)
             {
-                var checkSinhVien = await _sinhVienHelper.GetSinhVienByEmail(txtEmail.Text);
+                var checkSinhVien = await _sinhVienHelper.GetSinhVienByEmail(txtEmail.Text, Constant.Token);
                 if (checkSinhVien.status == 200)
                 {
                     Hoadon hoadon = new Hoadon();
@@ -56,7 +57,7 @@ namespace ProjectQLKTX
                     hoadon.Total = decimal.Parse(txtTongTien.Text);
                     hoadon.IdNhanVien = GlobalModel.Nhanvien.Id;
                     hoadon.IdSinhVien = checkSinhVien.data.FirstOrDefault().Id;
-                    var result = await _hoaDonHelper.EditHoaDon(hoadon);
+                    var result = await _hoaDonHelper.EditHoaDon(hoadon, Constant.Token);
                     await LoadListHoaDon(GlobalModel.ListHoaDon);
                     gcDanhSach.DataSource = GlobalModel.ListHoaDon;
                     gcDanhSach.RefreshDataSource();
@@ -83,7 +84,7 @@ namespace ProjectQLKTX
         }
         private async Task Delete()
         {
-            var result = await _hoaDonHelper.DeleteHoaDon(_hoaDon.Id);
+            var result = await _hoaDonHelper.DeleteHoaDon(_hoaDon.Id, Constant.Token);
             messager = result.message;
         }
         private async void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -110,7 +111,7 @@ namespace ProjectQLKTX
             if (!string.IsNullOrEmpty(txtTim.EditValue.ToString()))
             {
                 bool result = false;
-                var checkSinhVien = await _sinhVienHelper.GetSinhVienByEmail(txtTim.EditValue.ToString());
+                var checkSinhVien = await _sinhVienHelper.GetSinhVienByEmail(txtTim.EditValue.ToString(), Constant.Token);
                 if (checkSinhVien.status == 200)
                 {
                     foreach(var item in GlobalModel.ListHoaDon)
@@ -157,7 +158,7 @@ namespace ProjectQLKTX
         {
             if(!string.IsNullOrEmpty(txtEmail.Text)&&txtEmailNV.Text == GlobalModel.Nhanvien.Email)
             {
-                var checkSinhVien = await _sinhVienHelper.GetSinhVienByEmail(txtEmail.Text);
+                var checkSinhVien = await _sinhVienHelper.GetSinhVienByEmail(txtEmail.Text, Constant.Token);
                 if(checkSinhVien.status == 200)
                 {
                     Hoadon hoadon = new Hoadon();
@@ -165,7 +166,7 @@ namespace ProjectQLKTX
                     hoadon.Status = true;
                     hoadon.IdNhanVien = GlobalModel.Nhanvien.Id;
                     hoadon.IdSinhVien = checkSinhVien.data.FirstOrDefault().Id;
-                    var result = await _hoaDonHelper.EditHoaDon(hoadon);
+                    var result = await _hoaDonHelper.EditHoaDon(hoadon, Constant.Token);
                     if (result.status == 200)
                     {
                         Banking banking = new Banking();
@@ -174,7 +175,7 @@ namespace ProjectQLKTX
                         banking.IdUser = GlobalModel.Nhanvien.Id;
                         banking.creatAt = DateTime.Now;
                         banking.type = "Banking " + GlobalModel.Nhanvien.Email;
-                        var resultBanking = await _bankingHelper.AddBanking(banking);
+                        var resultBanking = await _bankingHelper.AddBanking(banking, Constant.Token);
                         messager = "Thanh Toán Thành Công!";
                     }
                     await LoadListHoaDon(GlobalModel.ListHoaDon);
@@ -215,7 +216,7 @@ namespace ProjectQLKTX
         }
         private async Task LoadListHoaDon(List<Hoadon> listHoaDon)
         {
-            var hoaDons = await _hoaDonHelper.GetListHoaDon();
+            var hoaDons = await _hoaDonHelper.GetListHoaDon(Constant.Token);
             if (hoaDons.status == 200)
             {
                 int i = 1;
@@ -237,13 +238,13 @@ namespace ProjectQLKTX
                     if (item.IdPhong != null)
                     {
                         hoadon.IdPhong = item.Id;
-                        var phong = await _phongHelper.GetPhong(item.IdPhong);
+                        var phong = await _phongHelper.GetPhong(item.IdPhong, Constant.Token);
                         if (phong.status == 200)
                         {
                             hoadon.NamePhong = phong.data.FirstOrDefault().Name;
                             if (phong.data.FirstOrDefault().IdKhu != null)
                             {
-                                var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu);
+                                var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu, Constant.Token);
                                 if (khu.status == 200)
                                 {
                                     hoadon.NameKhu = khu.data.FirstOrDefault().Name;
@@ -254,7 +255,7 @@ namespace ProjectQLKTX
                     if (item.IdNhanVien != null)
                     {
                         hoadon.IdNhanVien = item.IdNhanVien;
-                        var nhanvien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien);
+                        var nhanvien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien, Constant.Token);
                         if (nhanvien.status == 200)
                         {
                             hoadon.NameNhanVien = nhanvien.data.FirstOrDefault().Name;
@@ -264,7 +265,7 @@ namespace ProjectQLKTX
                     if (item.IdSinhVien != null)
                     {
                         hoadon.IdSinhVien = item.IdSinhVien;
-                        var sinhvien = await _sinhVienHelper.GetSinhVienById(item.IdSinhVien);
+                        var sinhvien = await _sinhVienHelper.GetSinhVienById(item.IdSinhVien, Constant.Token);
                         if (sinhvien.status == 200)
                         {
                             hoadon.NameSinhVien = sinhvien.data.FirstOrDefault().Name;

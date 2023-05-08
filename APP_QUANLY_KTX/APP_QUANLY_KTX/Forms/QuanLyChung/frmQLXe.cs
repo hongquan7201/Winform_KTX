@@ -69,7 +69,7 @@ namespace ProjectQLKTX
         }
         private async Task LoadXe(List<Xe> listXe)
         {
-            var list = await _xeHelper.GetListXe();
+            var list = await _xeHelper.GetListXe(Constant.Token);
             if (list.status == 200)
             {
                 listXe.Clear();
@@ -78,7 +78,7 @@ namespace ProjectQLKTX
                 {
                     if (item.IdUser != null)
                     {
-                        var user = await _sinhVienHelper.GetSinhVienById(item.IdUser);
+                        var user = await _sinhVienHelper.GetSinhVienById(item.IdUser, Constant.Token);
                         if (user.status == 200)
                         {
                             item.NameUser = user.data.FirstOrDefault().Name;
@@ -98,13 +98,13 @@ namespace ProjectQLKTX
                             item.IdPhong = user.data.FirstOrDefault().IdPhong;
                             if (item.IdPhong != null)
                             {
-                                var resultPhong = await _phongHelper.GetPhong(item.IdPhong);
+                                var resultPhong = await _phongHelper.GetPhong(item.IdPhong, Constant.Token);
                                 if (resultPhong.status == 200)
                                 {
                                     item.IdKhu = resultPhong.data.FirstOrDefault().IdKhu;
                                     if (item.IdKhu != null)
                                     {
-                                        var resultKhu = await _khuHelper.GetKhu(item.IdKhu);
+                                        var resultKhu = await _khuHelper.GetKhu(item.IdKhu, Constant.Token);
                                         if (resultKhu.status == 200)
                                         {
                                             item.NameKhu = resultKhu.data.FirstOrDefault().Name;
@@ -114,7 +114,7 @@ namespace ProjectQLKTX
                             }
                             if (user.data.FirstOrDefault().IdTruong != null)
                             {
-                                var resultTruong = await _truongHelper.GetTruong(user.data.FirstOrDefault().IdTruong);
+                                var resultTruong = await _truongHelper.GetTruong(user.data.FirstOrDefault().IdTruong, Constant.Token);
                                 if (resultTruong.status == 200)
                                 {
                                     item.Truong = resultTruong.data.FirstOrDefault().Name;
@@ -157,7 +157,7 @@ namespace ProjectQLKTX
                     imgSVNu.Visible = true;
                 }
             }
-            var resultTruong = await _truongHelper.GetListTruong();
+            var resultTruong = await _truongHelper.GetListTruong(Constant.Token);
             if (resultTruong.status == 200)
             {
                 cbTruong.Properties.Items.Clear();
@@ -198,11 +198,11 @@ namespace ProjectQLKTX
             long intValue;
             if (long.TryParse(nameSearch, out intValue))
             {
-                resultSinhVien = await _sinhVienHelper.GetSinhVienByCCCD(nameSearch);
+                resultSinhVien = await _sinhVienHelper.GetSinhVienByCCCD(nameSearch, Constant.Token);
             }
             else
             {
-                resultSinhVien = await _sinhVienHelper.GetSinhVienByName(nameSearch);
+                resultSinhVien = await _sinhVienHelper.GetSinhVienByName(nameSearch, Constant.Token);
             }
             if (resultSinhVien.status == 200)
             {
@@ -238,12 +238,12 @@ namespace ProjectQLKTX
                     }
                     if (item.IdPhong != null)
                     {
-                        var resultPhong = await _phongHelper.GetPhong(item.IdPhong);
+                        var resultPhong = await _phongHelper.GetPhong(item.IdPhong, Constant.Token);
                         if (resultPhong.status == 200)
                         {
                             if (resultPhong.data.FirstOrDefault().IdKhu != null)
                             {
-                                var resultKhu = await _khuHelper.GetKhu(resultPhong.data.FirstOrDefault().IdKhu);
+                                var resultKhu = await _khuHelper.GetKhu(resultPhong.data.FirstOrDefault().IdKhu, Constant.Token);
                                 if (resultKhu.status == 200)
                                 {
                                     xe.NameKhu = resultKhu.data.FirstOrDefault().Name;
@@ -253,7 +253,7 @@ namespace ProjectQLKTX
                     }
                     if (item.IdTruong != null)
                     {
-                        var resultTruong = await _truongHelper.GetTruong(item.IdTruong);
+                        var resultTruong = await _truongHelper.GetTruong(item.IdTruong, Constant.Token);
                         if (resultTruong.status == 200)
                         {
                             xe.Truong = resultTruong.data.FirstOrDefault().Name;
@@ -285,7 +285,7 @@ namespace ProjectQLKTX
 
         private async void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var resultDelete = await _xeHelper.DeleteXe(account.Id);
+            var resultDelete = await _xeHelper.DeleteXe(account.Id, Constant.Token);
             if (resultDelete.status == 200)
             {
                 await LoadXe(GlobalModel.ListXe);
@@ -320,7 +320,7 @@ namespace ProjectQLKTX
             xe.Color = txtMauXe.Text;
             xe.Code = txtBSoXe.Text;
             xe.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
-            var resultEdit = await _xeHelper.EditXe(xe);
+            var resultEdit = await _xeHelper.EditXe(xe, Constant.Token);
             if (resultEdit.status == 200)
             {
                 await LoadXe(GlobalModel.ListXe);

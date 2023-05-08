@@ -1,4 +1,5 @@
-﻿using ProjectQLKTX.Interface;
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Interface;
 using ProjectQLKTX.Logins;
 using ProjectQLKTX.Models;
 using Serilog;
@@ -102,6 +103,13 @@ namespace ProjectQLKTX
                             GlobalModel.Nhanvien.Sdt = login.data.FirstOrDefault().Sdt;
                             GlobalModel.Nhanvien.CreateAt = login.data.FirstOrDefault().CreateAt;
                             GlobalModel.Nhanvien.Id = login.data.FirstOrDefault().Id;
+                            if (login.token != null)
+                            {
+                               string[] s = login.token.Split(' ');
+                                Constant.Token = s[1];
+
+                            }
+                            
                         }
                     }
                     IsCheck = true;

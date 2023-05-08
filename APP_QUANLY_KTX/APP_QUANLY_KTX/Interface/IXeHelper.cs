@@ -10,10 +10,10 @@ namespace ProjectQLKTX.Interface
 {
     public interface IXeHelper
     {
-        Task<APIRespone<List<Xe>>> GetListXe();
-        Task<APIRespone<List<Xe>>> GetXe(Guid? id);
-        Task<APIRespone<string>> AddXe(Xe xe);
-        Task<APIRespone<string>> EditXe(Xe xe);
-        Task<APIRespone<string>> DeleteXe(Guid id);
+        Task<APIRespone<List<Xe>>> GetListXe(string token);
+        Task<APIRespone<List<Xe>>> GetXe(Guid? id, string token);
+        Task<APIRespone<string>> AddXe(Xe xe, string token);
+        Task<APIRespone<string>> EditXe(Xe xe, string token);
+        Task<APIRespone<string>> DeleteXe(Guid id, string token);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Files;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
@@ -23,7 +24,7 @@ namespace ProjectQLKTX
         private Nhanvien account = new Nhanvien();
         private async Task LoadAccount(List<Nhanvien> listNhanVien)
         {
-            var result = await _nhanVienHelper.GetListNhanVien();
+            var result = await _nhanVienHelper.GetListNhanVien(Constant.Token);
             try
             {
                 if (result != null && result.status == 200)
@@ -119,7 +120,7 @@ namespace ProjectQLKTX
                 {
                     nhanvien.Gender = false;
                 }
-                var result = await _nhanVienHelper.AddNhanVien(nhanvien);
+                var result = await _nhanVienHelper.AddNhanVien(nhanvien, Constant.Token);
                 if (result.status == 200)
                 {
                     await LoadAccount(GlobalModel.ListNhanVien);
@@ -160,7 +161,7 @@ namespace ProjectQLKTX
                 {
                     nhanvien.Gender = false;
                 }
-                var result = await _nhanVienHelper.EditNhanVien(account);
+                var result = await _nhanVienHelper.EditNhanVien(account, Constant.Token);
                 if (result.status == 200)
                 {
                     await LoadAccount(GlobalModel.ListNhanVien);
@@ -183,7 +184,7 @@ namespace ProjectQLKTX
         {
             try
             {
-                var result = await _nhanVienHelper.DeleteNhanVien(account.Id);
+                var result = await _nhanVienHelper.DeleteNhanVien(account.Id, Constant.Token);
                 if (result.status == 200)
                 {
                     await LoadAccount(GlobalModel.ListNhanVien);
@@ -252,7 +253,7 @@ namespace ProjectQLKTX
         {
             try
             {
-                var result = await _nhanVienHelper.GetNhanVienByName(nameFind);
+                var result = await _nhanVienHelper.GetNhanVienByName(nameFind, Constant.Token);
                 if (result.data.Count > 0)
                 {
                     listNhanVien.Clear();
@@ -285,7 +286,7 @@ namespace ProjectQLKTX
         }
         private void cbGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbGioiTinh.Text == "Nam")
+            if (cbGioiTinh.Text == "Nam")
             {
                 imgNVNam.Visible = true;
                 imgNVNu.Visible = false;

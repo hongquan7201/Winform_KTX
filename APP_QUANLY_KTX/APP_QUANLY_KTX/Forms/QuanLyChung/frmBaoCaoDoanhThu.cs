@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraCharts;
+using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 
 namespace ProjectQLKTX
@@ -20,7 +21,7 @@ namespace ProjectQLKTX
 
         private async void frmBaoCaoDoanhThu_Load(object sender, EventArgs e)
         {
-            var result = await _thongKeHelper.GetThongKe("api/thongke/doanhthu", DateTime.Now.Year);
+            var result = await _thongKeHelper.GetThongKe("api/thongke/doanhthu", DateTime.Now.Year, Constant.Token);
             if (result.status == 200)
             {
                 DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series("Tổng Số Doanh Thu Năm " + DateTime.Now.Year, DevExpress.XtraCharts.ViewType.Bar);

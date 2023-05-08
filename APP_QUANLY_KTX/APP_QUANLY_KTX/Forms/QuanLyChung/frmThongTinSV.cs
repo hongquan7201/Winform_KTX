@@ -34,7 +34,7 @@ namespace ProjectQLKTX
         private Sinhvien _sinhVien { get; set; }
         private async Task LoadSinhVien(List<Sinhvien> listAccount)
         {
-            var listSinhVien = await _sinhVienHelper.GetListSinhVien();
+            var listSinhVien = await _sinhVienHelper.GetListSinhVien(Constant.Token);
             try
             {
                 if (listSinhVien != null && listSinhVien.status == 200)
@@ -46,7 +46,7 @@ namespace ProjectQLKTX
                     {
                         if (item.idThanNhan != null)
                         {
-                            var nhanNhan = await _thanNhanHelper.GetThanNhan(item.idThanNhan);
+                            var nhanNhan = await _thanNhanHelper.GetThanNhan(item.idThanNhan, Constant.Token);
                             if (nhanNhan.status == 200)
                             {
                                 item.TenThanNhan = nhanNhan.data.FirstOrDefault().Name;
@@ -63,7 +63,7 @@ namespace ProjectQLKTX
                                 }
                                 if (nhanNhan.data.FirstOrDefault().IdQuanHe != null)
                                 {
-                                    var quanHe = await _quanHeHelper.GetQuanHe(nhanNhan.data.FirstOrDefault().IdQuanHe);
+                                    var quanHe = await _quanHeHelper.GetQuanHe(nhanNhan.data.FirstOrDefault().IdQuanHe, Constant.Token);
                                     if (quanHe.status == 200)
                                     {
                                         item.QuanHe = quanHe.data.FirstOrDefault().Name;
@@ -75,7 +75,7 @@ namespace ProjectQLKTX
                         }
                         if (item.IdTruong != null)
                         {
-                            var truong = await _truongHelper.GetTruong(item.IdTruong);
+                            var truong = await _truongHelper.GetTruong(item.IdTruong, Constant.Token);
                             if (truong.status == 200)
                             {
                                 item.Truong = truong.data.FirstOrDefault().Name;
@@ -84,13 +84,13 @@ namespace ProjectQLKTX
                         }
                         if (item.IdPhong != null)
                         {
-                            var phong = await _phongHelper.GetPhong(item.IdPhong);
+                            var phong = await _phongHelper.GetPhong(item.IdPhong, Constant.Token);
                             if (phong.status == 200)
                             {
                                 item.Phong = phong.data.FirstOrDefault().Name;
                                 if (phong.data.FirstOrDefault().IdKhu != null)
                                 {
-                                    var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu);
+                                    var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu, Constant.Token);
                                     if (khu.status == 200)
                                     {
                                         item.Khu = khu.data.FirstOrDefault().Name;
@@ -194,7 +194,7 @@ namespace ProjectQLKTX
                    newSinhVien.IdPhong = item.Id;
                 }
             }
-            var sinhvien = await _sinhVienHelper.AddSinhVien(GlobalModel.SinhVien);
+            var sinhvien = await _sinhVienHelper.AddSinhVien(GlobalModel.SinhVien, Constant.Token);
             if(sinhvien.status == 200)
             {
                newSinhVien.Code = sinhvien.code;
@@ -219,7 +219,7 @@ namespace ProjectQLKTX
                 {
                     thannhan.Gender = false;
                 }
-                var resultThanNhan = await _thanNhanHelper.AddThanNhan(thannhan);
+                var resultThanNhan = await _thanNhanHelper.AddThanNhan(thannhan, Constant.Token);
             }
             await LoadSinhVien(GlobalModel.ListSinhVien);
             gcDanhSach.DataSource = GlobalModel.ListSinhVien;
@@ -337,7 +337,7 @@ namespace ProjectQLKTX
                     {
                         thannhan.Gender = false;
                     }
-                    var s = await _thanNhanHelper.EditThanNhan(thannhan);
+                    var s = await _thanNhanHelper.EditThanNhan(thannhan, Constant.Token);
                 }
                 else
                 {
@@ -363,7 +363,7 @@ namespace ProjectQLKTX
                     {
                         thannhan.Gender = false;
                     }
-                    var s = await _thanNhanHelper.AddThanNhan(thannhan);
+                    var s = await _thanNhanHelper.AddThanNhan(thannhan, Constant.Token);
                 }
 
             }
@@ -385,7 +385,7 @@ namespace ProjectQLKTX
                     }
                 }
             }
-            var result = await _sinhVienHelper.EditSinhVien(_sinhVien);
+            var result = await _sinhVienHelper.EditSinhVien(_sinhVien, Constant.Token);
             if (result.status == 200)
             {
                 await LoadSinhVien(GlobalModel.ListSinhVien);
@@ -414,7 +414,7 @@ namespace ProjectQLKTX
         }
         private async Task DeleteSinhVien()
         {
-            var deleteById = await _sinhVienHelper.DeleteSinhVien(_sinhVien.Id);
+            var deleteById = await _sinhVienHelper.DeleteSinhVien(_sinhVien.Id, Constant.Token);
             try
             {
                 if(deleteById.status == 200)
@@ -466,11 +466,11 @@ namespace ProjectQLKTX
             long intValue;
             if (long.TryParse(nameSearch, out intValue))
             {
-                resultSinhVien = await _sinhVienHelper.GetSinhVienByCCCD(nameSearch);
+                resultSinhVien = await _sinhVienHelper.GetSinhVienByCCCD(nameSearch, Constant.Token);
             }
             else
             {
-                resultSinhVien = await _sinhVienHelper.GetSinhVienByName(nameSearch);
+                resultSinhVien = await _sinhVienHelper.GetSinhVienByName(nameSearch, Constant.Token);
             }
             if (resultSinhVien.status == 200)
             {
@@ -493,13 +493,13 @@ namespace ProjectQLKTX
                     sinhvien.IdPhong = item.IdPhong;
                     if (item.IdPhong != null)
                     {
-                        var resultPhong = await _phongHelper.GetPhong(item.IdPhong);
+                        var resultPhong = await _phongHelper.GetPhong(item.IdPhong, Constant.Token);
                         if (resultPhong.status == 200)
                         {
                             if (resultPhong.data.FirstOrDefault().IdKhu != null)
                             {
                                 sinhvien.Phong = resultPhong.data.FirstOrDefault().Name; 
-                                var resultKhu = await _khuHelper.GetKhu(resultPhong.data.FirstOrDefault().IdKhu);
+                                var resultKhu = await _khuHelper.GetKhu(resultPhong.data.FirstOrDefault().IdKhu, Constant.Token);
                                 if (resultKhu.status == 200)
                                 {
                                     sinhvien.Khu = resultKhu.data.FirstOrDefault().Name;
@@ -509,7 +509,7 @@ namespace ProjectQLKTX
                     }
                     if (item.IdTruong != null)
                     {
-                        var resultTruong = await _truongHelper.GetTruong(item.IdTruong);
+                        var resultTruong = await _truongHelper.GetTruong(item.IdTruong, Constant.Token);
                         if (resultTruong.status == 200)
                         {
                             sinhvien.Truong = resultTruong.data.FirstOrDefault().Name;
@@ -518,7 +518,7 @@ namespace ProjectQLKTX
                     sinhvien.idThanNhan = item.idThanNhan;
                     if (sinhvien.idThanNhan != null)
                     {
-                        var thannhan = await _thanNhanHelper.GetThanNhan(sinhvien.idThanNhan);
+                        var thannhan = await _thanNhanHelper.GetThanNhan(sinhvien.idThanNhan, Constant.Token);
                         if (thannhan.status == 200)
                         {
                             sinhvien.TenThanNhan = thannhan.data.FirstOrDefault().Name;
@@ -535,7 +535,7 @@ namespace ProjectQLKTX
                             }
                             if (thannhan.data.FirstOrDefault().IdQuanHe != null)
                             {
-                                var quanHe = await _quanHeHelper.GetQuanHe(thannhan.data.FirstOrDefault().IdQuanHe);
+                                var quanHe = await _quanHeHelper.GetQuanHe(thannhan.data.FirstOrDefault().IdQuanHe, Constant.Token);
                                 if (quanHe.status == 200)
                                 {
                                     item.QuanHe = quanHe.data.FirstOrDefault().Name;

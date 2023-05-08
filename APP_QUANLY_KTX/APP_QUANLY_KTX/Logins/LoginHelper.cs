@@ -11,7 +11,7 @@ namespace ProjectQLKTX.Logins
 {
     public class LoginHelper : ILoginHelper
     {
-        public async Task<APIRespone<List<Nhanvien>>> Login(Account account)
+        public async Task<LoginRespone<List<Nhanvien>>> Login(Account account)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
@@ -21,7 +21,7 @@ namespace ProjectQLKTX.Logins
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync($"api/nhanvien/login", content);
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<List<Nhanvien>> data = JsonConvert.DeserializeObject<APIRespone<List<Nhanvien>>>(body);
+            LoginRespone<List<Nhanvien>> data = JsonConvert.DeserializeObject<LoginRespone<List<Nhanvien>>>(body);
             return data;
 
         }

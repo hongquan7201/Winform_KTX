@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Files;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
@@ -24,7 +25,7 @@ namespace ProjectQLKTX
         }
         private async Task LoadListTaiSan(List<Taisan> listTaiSan)
         {
-            var taiSans = await _taiSanHelper.GetListTaiSan();
+            var taiSans = await _taiSanHelper.GetListTaiSan(Constant.Token);
             if (taiSans.status == 200)
             {
                 int i = 1;
@@ -33,7 +34,7 @@ namespace ProjectQLKTX
                 {
                     if (item.IdVatDung != null)
                     {
-                        var vatDungs = await _vatDungHelper.GetVatDung(item.IdVatDung);
+                        var vatDungs = await _vatDungHelper.GetVatDung(item.IdVatDung, Constant.Token);
                         if (vatDungs.status == 200)
                         {
                             item.NameVatDung = vatDungs.data.FirstOrDefault().Name;
@@ -41,7 +42,7 @@ namespace ProjectQLKTX
                     }
                     if (item.IdPhong != null)
                     {
-                        var phongs = await _phongHelper.GetPhong(item.IdPhong);
+                        var phongs = await _phongHelper.GetPhong(item.IdPhong, Constant.Token);
                         if (phongs.status == 200)
                         {
                             item.NamePhong = phongs.data.FirstOrDefault().Name;
@@ -64,7 +65,7 @@ namespace ProjectQLKTX
                     i++;
                 }
 
-                var listPhong = await _phongHelper.GetListPhong();
+                var listPhong = await _phongHelper.GetListPhong(Constant.Token);
                 if (listPhong.status == 200)
                 {
                     cbPhong.Properties.Items.Clear();
@@ -73,7 +74,7 @@ namespace ProjectQLKTX
                         cbPhong.Properties.Items.Add(item.Name);
                     }
                 }
-                var listVatDung = await _vatDungHelper.GetListVatDung();
+                var listVatDung = await _vatDungHelper.GetListVatDung(Constant.Token);
                 if (listVatDung.status == 200)
                 {
                     GlobalModel.ListVatDung.Clear();
@@ -172,7 +173,7 @@ namespace ProjectQLKTX
             }
             taisan.Quantity = int.Parse(txtSoLuong.Text);
             taisan.Status = true;
-            var resultTaiSan = await _taiSanHelper.AddTaiSan(taisan);
+            var resultTaiSan = await _taiSanHelper.AddTaiSan(taisan, Constant.Token);
             await LoadListTaiSan( GlobalModel.ListTaiSan);
             MessageBox.Show(resultTaiSan.message);
         }
@@ -247,14 +248,14 @@ namespace ProjectQLKTX
                 taisan.Status = false;
             }
 
-            var resultTaiSan = await _taiSanHelper.EditTaiSan(taisan);
+            var resultTaiSan = await _taiSanHelper.EditTaiSan(taisan, Constant.Token);
             await LoadListTaiSan( GlobalModel.ListTaiSan);
             MessageBox.Show(resultTaiSan.message);
         }
 
         private async void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var resultDelete = await _taiSanHelper.DeleteTaiSan(_taiSan.Id);
+            var resultDelete = await _taiSanHelper.DeleteTaiSan(_taiSan.Id, Constant.Token);
             await LoadListTaiSan( GlobalModel.ListTaiSan);
             MessageBox.Show(resultDelete.message);
         }

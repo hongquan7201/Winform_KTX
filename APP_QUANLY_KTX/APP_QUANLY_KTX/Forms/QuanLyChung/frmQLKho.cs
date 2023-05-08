@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
@@ -24,7 +25,7 @@ namespace ProjectQLKTX
         }
         private async Task LoadKho(List<Chitietphieukho> chitietphieukhos)
         {
-            var resultChiTietPhieuKho = await _chietPhieuKhoHelper.GetListChietTietPhieuKho();
+            var resultChiTietPhieuKho = await _chietPhieuKhoHelper.GetListChietTietPhieuKho(Constant.Token);
             if (resultChiTietPhieuKho.status == 200)
             {
                 int i = 1;
@@ -33,7 +34,7 @@ namespace ProjectQLKTX
                 {
                     if (item.IdVatDung != null)
                     {
-                        var resultVatDung = await _vatDungHelper.GetVatDung(item.IdVatDung);
+                        var resultVatDung = await _vatDungHelper.GetVatDung(item.IdVatDung, Constant.Token);
                         if (resultVatDung.status == 200)
                         {
                             item.NameVatDung = resultVatDung.data.FirstOrDefault().Name;
@@ -41,7 +42,7 @@ namespace ProjectQLKTX
                     }
                     if (item.IdNhanVien != null)
                     {
-                        var resultNhanVien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien);
+                        var resultNhanVien = await _nhanVienHelper.GetNhanVienById(item.IdNhanVien, Constant.Token);
                         if (resultNhanVien.status == 200)
                         {
                             item.NameNhanVien = resultNhanVien.data.FirstOrDefault().Name;
@@ -68,7 +69,7 @@ namespace ProjectQLKTX
         {
             gcDanhSach.DataSource = GlobalModel.ListChiTietPhieuKho;
             gcDanhSach.RefreshDataSource();
-            var resulListtVatDung = await _vatDungHelper.GetListVatDung();
+            var resulListtVatDung = await _vatDungHelper.GetListVatDung(Constant.Token);
             if (resulListtVatDung.status == 200)
             {
                 cbTenVatDung.Properties.Items.Clear();

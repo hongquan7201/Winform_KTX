@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
@@ -19,7 +20,7 @@ namespace ProjectQLKTX
         private Truong _truong = new Truong();
         private async void frmDSTruong_Load(object sender, EventArgs e)
         {
-            var getList = await _truongHelper.GetListTruong();
+            var getList = await _truongHelper.GetListTruong(Constant.Token);
             if (getList.status == 200)
             {
                 foreach (var item in getList.data)
@@ -49,10 +50,10 @@ namespace ProjectQLKTX
             {
                 Truong truong = new Truong();
                 truong.Name = txtTruong.Text;
-                var add = await _truongHelper.AddTruong(truong);
+                var add = await _truongHelper.AddTruong(truong, Constant.Token);
                 if (add.status == 200)
                 {
-                    var getList = await _truongHelper.GetListTruong();
+                    var getList = await _truongHelper.GetListTruong(Constant.Token);
                     if (getList.status == 200)
                     {
                         _listTruong.Clear();
@@ -79,10 +80,10 @@ namespace ProjectQLKTX
                 Truong truong = new Truong();
                 truong.Name = txtTruong.Text;
                 truong.Id = _truong.Id;
-                var edit = await _truongHelper.EditTruong(truong);
+                var edit = await _truongHelper.EditTruong(truong, Constant.Token);
                 if (edit.status == 200)
                 {
-                    var getList = await _truongHelper.GetListTruong();
+                    var getList = await _truongHelper.GetListTruong(Constant.Token);
                     if (getList.status == 200)
                     {
                         _listTruong.Clear();
@@ -99,10 +100,10 @@ namespace ProjectQLKTX
         }
         private async void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-                var delete = await _truongHelper.DeleteTruong(_truong.Id);
+                var delete = await _truongHelper.DeleteTruong(_truong.Id, Constant.Token);
                 if (delete.status == 200)
                 {
-                    var getList = await _truongHelper.GetListTruong();
+                    var getList = await _truongHelper.GetListTruong(Constant.Token);
                     if (getList.status == 200)
                     {
                         _listTruong.Clear();
@@ -119,7 +120,7 @@ namespace ProjectQLKTX
 
         private async void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var getList = await _truongHelper.GetListTruong();
+            var getList = await _truongHelper.GetListTruong(Constant.Token);
             if (getList.status == 200)
             {
                 _listTruong.Clear();

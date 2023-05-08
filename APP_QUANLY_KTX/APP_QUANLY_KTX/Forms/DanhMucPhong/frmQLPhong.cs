@@ -1,6 +1,7 @@
 ﻿using DevExpress.Utils;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
@@ -51,7 +52,7 @@ namespace ProjectQLKTX
         }
         private async Task LoadListPhong(List<Phong> listPhong)
         {
-            var phongs = await _phongHelper.GetListPhong();
+            var phongs = await _phongHelper.GetListPhong(Constant.Token);
             if (phongs.data.Count > 0)
             {
                 int i = 1;
@@ -67,7 +68,7 @@ namespace ProjectQLKTX
                     phong.STT = i;
                     if (phong.IdKhu != null)
                     {
-                        var khu = await _khuHelper.GetKhu(phong.IdKhu);
+                        var khu = await _khuHelper.GetKhu(phong.IdKhu, Constant.Token);
                         if (khu.status == 200)
                         {
                             phong.NameKhu = khu.data.FirstOrDefault().Name;
@@ -136,7 +137,7 @@ namespace ProjectQLKTX
                     break;
                 }
             }
-            var result = await _phongHelper.AddPhong(phong);
+            var result = await _phongHelper.AddPhong(phong, Constant.Token);
             if (result.status == 200)
             {
                 await LoadListPhong(GlobalModel.ListPhong);
@@ -159,7 +160,7 @@ namespace ProjectQLKTX
                     break;
                 }
             }
-            var result = await _phongHelper.EditPhong(phong);
+            var result = await _phongHelper.EditPhong(phong, Constant.Token);
             if (result.status == 200)
             {
                 await LoadListPhong(GlobalModel.ListPhong);
@@ -177,7 +178,7 @@ namespace ProjectQLKTX
         }
         private async Task Delete()
         {
-            var result = await _phongHelper.DeletePhong(_phong.Id);
+            var result = await _phongHelper.DeletePhong(_phong.Id, Constant.Token);
             if (result.status == 200)
             {
                 await LoadListPhong(GlobalModel.ListPhong);

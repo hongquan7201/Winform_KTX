@@ -1,4 +1,5 @@
-﻿using ProjectQLKTX.Interface;
+﻿using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
 
@@ -25,7 +26,7 @@ namespace ProjectQLKTX
 
         private async void btnTraPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var result = await _phongHelper.DeleteSinhVien(_sinhvien.Id);
+            var result = await _phongHelper.DeleteSinhVien(_sinhvien.Id, Constant.Token);
             MessageBox.Show(result.message);
         }
 
@@ -60,7 +61,7 @@ namespace ProjectQLKTX
         {
             try
             {
-                var resultSinhVien = await _sinhVienHelper.GetSinhVienByCCCD(nameSearch);
+                var resultSinhVien = await _sinhVienHelper.GetSinhVienByCCCD(nameSearch, Constant.Token);
                 if (resultSinhVien.status == 200)
                 {
                     _sinhvien.Id = resultSinhVien.data.FirstOrDefault().Id;
@@ -71,19 +72,19 @@ namespace ProjectQLKTX
                     _sinhvien.BirthDay = resultSinhVien.data.FirstOrDefault().BirthDay;
                     if (resultSinhVien.data.FirstOrDefault().IdTruong != null)
                     {
-                        var truong = await _truongHelper.GetTruong(resultSinhVien.data.FirstOrDefault().IdTruong);
+                        var truong = await _truongHelper.GetTruong(resultSinhVien.data.FirstOrDefault().IdTruong, Constant.Token);
                         _sinhvien.Truong = truong.data.FirstOrDefault().Name;
                     }
                     _sinhvien.Sdt = resultSinhVien.data.FirstOrDefault().Sdt;
                     if (resultSinhVien.data.FirstOrDefault().IdPhong != null)
                     {
-                        var phong = await _phongHelper.GetPhong(resultSinhVien.data.FirstOrDefault().IdPhong);
+                        var phong = await _phongHelper.GetPhong(resultSinhVien.data.FirstOrDefault().IdPhong, Constant.Token);
                         if (phong.status == 200)
                         {
                             _sinhvien.Phong = phong.data.FirstOrDefault().Name;
                             if (phong.data.FirstOrDefault().IdKhu != null)
                             {
-                                var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu);
+                                var khu = await _khuHelper.GetKhu(phong.data.FirstOrDefault().IdKhu, Constant.Token);
                                 if (khu.status == 200)
                                 {
                                     _sinhvien.Khu = khu.data.FirstOrDefault().Name;

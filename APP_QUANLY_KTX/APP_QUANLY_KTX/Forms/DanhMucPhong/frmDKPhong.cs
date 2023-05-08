@@ -1,18 +1,7 @@
-﻿using DevExpress.DataAccess.Native.Json;
-using DevExpress.XtraEditors;
-using ProjectQLKTX.APIsHelper;
+﻿using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ProjectQLKTX
 {
@@ -185,7 +174,7 @@ namespace ProjectQLKTX
         {
             try
             {
-                var resultSinhVien = await _sinhVienHelper.GetSinhVienByCCCD(nameSearch);
+                var resultSinhVien = await _sinhVienHelper.GetSinhVienByCCCD(nameSearch, Constant.Token);
                 if (resultSinhVien.status == 200)
                 {
                     GlobalModel.SinhVien.Id = resultSinhVien.data.FirstOrDefault().Id;
@@ -196,7 +185,7 @@ namespace ProjectQLKTX
                     GlobalModel.SinhVien.BirthDay = resultSinhVien.data.FirstOrDefault().BirthDay;
                     if (resultSinhVien.data.FirstOrDefault().IdTruong != null)
                     {
-                        var truong = await _truongHelper.GetTruong(resultSinhVien.data.FirstOrDefault().IdTruong);
+                        var truong = await _truongHelper.GetTruong(resultSinhVien.data.FirstOrDefault().IdTruong, Constant.Token);
                         GlobalModel.SinhVien.Truong = truong.data.FirstOrDefault().Name;
                     }
                     GlobalModel.SinhVien.Sdt = resultSinhVien.data.FirstOrDefault().Sdt;
@@ -224,7 +213,7 @@ namespace ProjectQLKTX
                         break;
                     }
                 }
-                var result = await _phongHelper.AddSinhVien(sVP);
+                var result = await _phongHelper.AddSinhVien(sVP, Constant.Token);
                 messager = result.message;
                 if (result.status == 200)
                 {
@@ -235,7 +224,7 @@ namespace ProjectQLKTX
                     hopdong.NgayBatDau = DateTime.Parse(dtNgayVao.Text);
                     hopdong.NgayKetThuc = DateTime.Parse(dtNgayHetHan.Text);
                     hopdong.IdPhong = GlobalModel.SinhVien.IdPhong;
-                    var resultHopDong = await _hopDongHelper.AddHopDong(hopdong);
+                    var resultHopDong = await _hopDongHelper.AddHopDong(hopdong,Constant.Token);
                     messager = resultHopDong.message;
                 }
             }
