@@ -114,16 +114,16 @@ namespace ProjectQLKTX
                 var checkSinhVien = await _sinhVienHelper.GetSinhVienByEmail(txtTim.EditValue.ToString(), Constant.Token);
                 if (checkSinhVien.status == 200)
                 {
-                    foreach(var item in GlobalModel.ListHoaDon)
+                    foreach (var item in GlobalModel.ListHoaDon)
                     {
-                        if(checkSinhVien.data.FirstOrDefault().Id == item.IdSinhVien)
+                        if (checkSinhVien.data.FirstOrDefault().Id == item.IdSinhVien)
                         {
                             GetAccount(item);
-                            result= true;
+                            result = true;
                             break;
                         }
                     }
-                    if(result==true)
+                    if (result == true)
                     {
                         messager = "Tìm Thành Công!";
                     }
@@ -149,17 +149,17 @@ namespace ProjectQLKTX
 
         private async void btnThanhToan_CheckedChanged(object sender, EventArgs e)
         {
-           _frmLoading.Show();
+            _frmLoading.Show();
             await ThanhToan();
             _frmLoading.Hide();
             MessageBox.Show(messager);
         }
         private async Task ThanhToan()
         {
-            if(!string.IsNullOrEmpty(txtEmail.Text)&&txtEmailNV.Text == GlobalModel.Nhanvien.Email)
+            if (!string.IsNullOrEmpty(txtEmail.Text) && txtEmailNV.Text == GlobalModel.Nhanvien.Email)
             {
                 var checkSinhVien = await _sinhVienHelper.GetSinhVienByEmail(txtEmail.Text, Constant.Token);
-                if(checkSinhVien.status == 200)
+                if (checkSinhVien.status == 200)
                 {
                     Hoadon hoadon = new Hoadon();
                     hoadon.Id = _hoaDon.Id;
@@ -171,7 +171,7 @@ namespace ProjectQLKTX
                     {
                         Banking banking = new Banking();
                         banking.IdHoaDon = hoadon.Id;
-                        banking.cmt = "HD-"+checkSinhVien.data.FirstOrDefault().Cccd;
+                        banking.cmt = "HD-" + checkSinhVien.data.FirstOrDefault().Cccd;
                         banking.IdUser = GlobalModel.Nhanvien.Id;
                         banking.creatAt = DateTime.Now;
                         banking.type = "Banking " + GlobalModel.Nhanvien.Email;
@@ -181,17 +181,17 @@ namespace ProjectQLKTX
                     await LoadListHoaDon(GlobalModel.ListHoaDon);
                     gcDanhSach.DataSource = GlobalModel.ListHoaDon;
                     gcDanhSach.RefreshDataSource();
-                   
+
                 }
                 else
                 {
                     messager = checkSinhVien.message;
                 }
-              
+
             }
             else
             {
-              messager=  "Vui Lòng Nhập Đúng Thông Tin!";
+                messager = "Vui Lòng Nhập Đúng Thông Tin!";
             }
         }
         private void gcDanhSach_DoubleClick(object sender, EventArgs e)
@@ -284,7 +284,7 @@ namespace ProjectQLKTX
             txtEmail.Text = hoadon.EmailSinhVien;
             txtEmailNV.Text = hoadon.EmailNhanVien;
             txtHoTen.Text = hoadon.NameSinhVien;
-            txtMaSV.Text = hoadon.MaSinhVien;
+            txtCCCD.Text = hoadon.MaSinhVien;
             txtTenNhanVien.Text = hoadon.NameNhanVien;
             txtTongTien.Text = hoadon.Total.ToString();
             cbKhu.Text = hoadon.NameKhu;

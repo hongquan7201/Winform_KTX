@@ -239,5 +239,10 @@ namespace ProjectQLKTX
                 }
             }
         }
+
+        private void btnThanhToan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
