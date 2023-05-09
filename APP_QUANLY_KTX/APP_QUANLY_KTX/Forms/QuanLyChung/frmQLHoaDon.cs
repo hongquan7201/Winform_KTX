@@ -290,7 +290,7 @@ namespace ProjectQLKTX
             cbKhu.Text = hoadon.NameKhu;
             cbPhong.Text = hoadon.NamePhong;
             dtNgayThu.Text = hoadon.CreateAt.ToString();
-            txtTrangThai.Text = hoadon.TrangThai;
+            cbTrangThai.Text = hoadon.TrangThai;
         }
     }
 }

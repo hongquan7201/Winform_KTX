@@ -349,28 +349,28 @@
             txtMaSV.Name = "txtMaSV";
             txtMaSV.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtMaSV.Properties.Appearance.Options.UseFont = true;
-            txtMaSV.Size = new Size(213, 24);
+            txtMaSV.Size = new Size(246, 24);
             txtMaSV.TabIndex = 62;
             // 
             // txtEmailNV
             // 
-            txtEmailNV.Location = new Point(523, 101);
+            txtEmailNV.Location = new Point(508, 101);
             txtEmailNV.MenuManager = barManager1;
             txtEmailNV.Name = "txtEmailNV";
             txtEmailNV.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmailNV.Properties.Appearance.Options.UseFont = true;
-            txtEmailNV.Size = new Size(213, 24);
+            txtEmailNV.Size = new Size(250, 24);
             txtEmailNV.TabIndex = 60;
             // 
             // labelControl5
             // 
             labelControl5.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl5.Appearance.Options.UseFont = true;
-            labelControl5.Location = new Point(462, 102);
+            labelControl5.Location = new Point(429, 102);
             labelControl5.Name = "labelControl5";
-            labelControl5.Size = new Size(31, 16);
+            labelControl5.Size = new Size(51, 16);
             labelControl5.TabIndex = 61;
-            labelControl5.Text = "Email";
+            labelControl5.Text = "Email NV";
             // 
             // txtEmail
             // 
@@ -379,18 +379,18 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmail.Properties.Appearance.Options.UseFont = true;
-            txtEmail.Size = new Size(213, 24);
+            txtEmail.Size = new Size(246, 24);
             txtEmail.TabIndex = 58;
             // 
             // labelControl1
             // 
             labelControl1.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl1.Appearance.Options.UseFont = true;
-            labelControl1.Location = new Point(55, 142);
+            labelControl1.Location = new Point(35, 144);
             labelControl1.Name = "labelControl1";
-            labelControl1.Size = new Size(31, 16);
+            labelControl1.Size = new Size(51, 16);
             labelControl1.TabIndex = 59;
-            labelControl1.Text = "Email";
+            labelControl1.Text = "Email SV";
             // 
             // txtHoTen
             // 
@@ -399,7 +399,7 @@
             txtHoTen.Name = "txtHoTen";
             txtHoTen.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtHoTen.Properties.Appearance.Options.UseFont = true;
-            txtHoTen.Size = new Size(213, 24);
+            txtHoTen.Size = new Size(246, 24);
             txtHoTen.TabIndex = 55;
             // 
             // labelControl2
@@ -416,7 +416,7 @@
             // 
             labelControl4.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl4.Appearance.Options.UseFont = true;
-            labelControl4.Location = new Point(411, 188);
+            labelControl4.Location = new Point(396, 188);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(82, 16);
             labelControl4.TabIndex = 54;
@@ -426,9 +426,9 @@
             // 
             dtNgayKetKhuc.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             dtNgayKetKhuc.Format = DateTimePickerFormat.Short;
-            dtNgayKetKhuc.Location = new Point(524, 184);
+            dtNgayKetKhuc.Location = new Point(509, 184);
             dtNgayKetKhuc.Name = "dtNgayKetKhuc";
-            dtNgayKetKhuc.Size = new Size(210, 26);
+            dtNgayKetKhuc.Size = new Size(247, 26);
             dtNgayKetKhuc.TabIndex = 53;
             // 
             // labelControl7
@@ -450,7 +450,7 @@
             cbPhong.Properties.Appearance.Options.UseFont = true;
             cbPhong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             cbPhong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            cbPhong.Size = new Size(213, 24);
+            cbPhong.Size = new Size(246, 24);
             cbPhong.TabIndex = 51;
             // 
             // labelControl19
@@ -467,7 +467,7 @@
             // 
             labelControl12.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl12.Appearance.Options.UseFont = true;
-            labelControl12.Location = new Point(416, 144);
+            labelControl12.Location = new Point(401, 144);
             labelControl12.Name = "labelControl12";
             labelControl12.Size = new Size(77, 16);
             labelControl12.TabIndex = 46;
@@ -475,28 +475,28 @@
             // 
             // txtTenNV
             // 
-            txtTenNV.Location = new Point(524, 59);
+            txtTenNV.Location = new Point(509, 59);
             txtTenNV.MenuManager = barManager1;
             txtTenNV.Name = "txtTenNV";
             txtTenNV.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtTenNV.Properties.Appearance.Options.UseFont = true;
-            txtTenNV.Size = new Size(212, 24);
+            txtTenNV.Size = new Size(249, 24);
             txtTenNV.TabIndex = 8;
             // 
             // dtNgayBatDau
             // 
             dtNgayBatDau.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             dtNgayBatDau.Format = DateTimePickerFormat.Short;
-            dtNgayBatDau.Location = new Point(524, 144);
+            dtNgayBatDau.Location = new Point(509, 144);
             dtNgayBatDau.Name = "dtNgayBatDau";
-            dtNgayBatDau.Size = new Size(210, 26);
+            dtNgayBatDau.Size = new Size(247, 26);
             dtNgayBatDau.TabIndex = 18;
             // 
             // labelControl3
             // 
             labelControl3.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl3.Appearance.Options.UseFont = true;
-            labelControl3.Location = new Point(411, 60);
+            labelControl3.Location = new Point(396, 60);
             labelControl3.Name = "labelControl3";
             labelControl3.Size = new Size(84, 16);
             labelControl3.TabIndex = 9;
