@@ -55,15 +55,15 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Chitietcongto>> GetChiTietCongTo(Guid id, string token)
+        public async Task<APIRespone<List<Chitietcongto>>> GetChiTietCongTo(Guid? id, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
-            string query = "/api/chitietcongto/{0}";
+            string query = "/api/chitietcongto/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<Chitietcongto> data = JsonConvert.DeserializeObject<APIRespone<Chitietcongto>>(body);
+            APIRespone<List<Chitietcongto>> data = JsonConvert.DeserializeObject<APIRespone<List<Chitietcongto>>>(body);
             return data;
         }
 

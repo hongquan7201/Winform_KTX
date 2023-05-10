@@ -1,6 +1,8 @@
 ﻿using DevExpress.Utils;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraScheduler.Reporting.Native;
+using ProjectQLKTX.APIsHelper;
 using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Files;
 using ProjectQLKTX.Interface;
@@ -18,9 +20,10 @@ namespace ProjectQLKTX
         private readonly INhanVienHelper _nhanVienHelper;
         private readonly ISinhVienHelper _sinhVienHelper;
         private readonly IBankingHelper _bankingHelper;
+        private readonly IChiTietCongToHelper _chiTietCongToHelper;
         private Hoadon _hoaDon = new Hoadon();
         private string messager = "Vui Lòng Thử Lại! ";
-        public frmQLiHoaDon(IHoaDonHelper hoaDonHelper, frmLoading frmLoading, IPhongHelper phongHelper, IKhuHelper khuHelper, INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper)
+        public frmQLiHoaDon(IHoaDonHelper hoaDonHelper, frmLoading frmLoading, IPhongHelper phongHelper, IKhuHelper khuHelper, INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IChiTietCongToHelper chiTietCongToHelper)
         {
             InitializeComponent();
             _hoaDonHelper = hoaDonHelper;
@@ -29,6 +32,7 @@ namespace ProjectQLKTX
             _khuHelper = khuHelper;
             _nhanVienHelper = nhanVienHelper;
             _sinhVienHelper = sinhVienHelper;
+            _chiTietCongToHelper = chiTietCongToHelper;
         }
 
         private void frmQLiHoaDon_Load(object sender, EventArgs e)
@@ -147,13 +151,6 @@ namespace ProjectQLKTX
 
         }
 
-        private async void btnThanhToan_CheckedChanged(object sender, EventArgs e)
-        {
-            _frmLoading.Show();
-            await ThanhToan();
-            _frmLoading.Hide();
-            MessageBox.Show(messager);
-        }
         private async Task ThanhToan()
         {
             if (!string.IsNullOrEmpty(txtEmail.Text) && txtEmailNV.Text == GlobalModel.Nhanvien.Email)
@@ -166,17 +163,43 @@ namespace ProjectQLKTX
                     hoadon.Status = true;
                     hoadon.IdNhanVien = GlobalModel.Nhanvien.Id;
                     hoadon.IdSinhVien = checkSinhVien.data.FirstOrDefault().Id;
+                    hoadon.IdChiTietCongTo = _hoaDon.IdChiTietCongTo;
+                    hoadon.Total = _hoaDon.Total;
+                    hoadon.IdPhong = _hoaDon.IdPhong;
+                    hoadon.CreateAt = _hoaDon.CreateAt;
                     var result = await _hoaDonHelper.EditHoaDon(hoadon, Constant.Token);
-                    if (result.status == 200)
+                    //if (result.status == 200)
+                    //{
+                    //    Banking banking = new Banking();
+                    //    banking.IdHoaDon = hoadon.Id;
+                    //    banking.cmt = "HD-" + checkSinhVien.data.FirstOrDefault().Cccd;
+                    //    banking.IdUser = GlobalModel.Nhanvien.Id;
+                    //    banking.creatAt = DateTime.Now;
+                    //    banking.type = "Banking " + GlobalModel.Nhanvien.Email;
+                    //    var resultBanking = await _bankingHelper.AddBanking(banking, Constant.Token);
+                    messager = "Thanh Toán Thành Công!";
+                    //}
+
+                    var report = new Report_Hoadon();
+                    // Set the value of the "MaGiaoDich" field
+                    report.Parameters["NameSinhVien1"].Value = "Họ, tên sinh viên: " + checkSinhVien.data.FirstOrDefault().Name + ".";
+                    report.Parameters["MaBienLai"].Value = "Mã biên lai: " + _hoaDon.MaGiaoDich;
+                    report.Parameters["NamePhong"].Value = "Phòng: ." + _hoaDon.NamePhong + ".";
+                    report.Parameters["NameKhu"].Value = "Khu: " + _hoaDon.NameKhu + ".";
+                    report.Parameters["CCCD"].Value = "CCCD: " + checkSinhVien.data.FirstOrDefault().Cccd + ".";
+                    report.Parameters["TienDien"].Value = "Tiền điện: " + _hoaDon.TienDien.ToString() + ".(đồng)";
+                    report.Parameters["TienNuoc"].Value = "Tiền nước: " + _hoaDon.TienNuoc.ToString() + ".(đồng)";
+                    report.Parameters["Total"].Value = "Tổng tiền: " + _hoaDon.Total.ToString() + ".(đồng)";
+                    report.Parameters["NgayDong"].Value = "Ngày đóng:  ngày " + _hoaDon.CreateAt.Value.Day + " tháng " + _hoaDon.CreateAt.Value.Month + " năm " + _hoaDon.CreateAt.Value.Year + ".";
+                    report.Parameters["CreatAt"].Value = "Đà Nẵng,  ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year + ".";
+                    report.Parameters["MaSo"].Value = "Số: " + checkSinhVien.data.FirstOrDefault().Cccd + "/QĐ-TTQLKTX";
+                    // Export the report to PDF
+                    SaveFileDialog save = new SaveFileDialog();
+                    save.FileName = checkSinhVien.data.FirstOrDefault().Cccd + "_HoaDon.pdf"; // Đặt tên file mặc định là "TaiSan.pdf"
+                    save.Filter = "PDF Files|*.pdf"; // Chỉ cho phép lưu file có đuôi .pdf
+                    if (save.ShowDialog() == DialogResult.OK)
                     {
-                        Banking banking = new Banking();
-                        banking.IdHoaDon = hoadon.Id;
-                        banking.cmt = "HD-" + checkSinhVien.data.FirstOrDefault().Cccd;
-                        banking.IdUser = GlobalModel.Nhanvien.Id;
-                        banking.creatAt = DateTime.Now;
-                        banking.type = "Banking " + GlobalModel.Nhanvien.Email;
-                        var resultBanking = await _bankingHelper.AddBanking(banking, Constant.Token);
-                        messager = "Thanh Toán Thành Công!";
+                        report.ExportToPdf(save.FileName);
                     }
                     await LoadListHoaDon(GlobalModel.ListHoaDon);
                     gcDanhSach.DataSource = GlobalModel.ListHoaDon;
@@ -224,8 +247,10 @@ namespace ProjectQLKTX
                 foreach (var item in hoaDons.data)
                 {
                     Hoadon hoadon = new Hoadon();
+                    hoadon.Id = item.Id;
                     hoadon.Total = item.Total;
                     hoadon.Status = item.Status;
+                    hoadon.MaGiaoDich = ConvertHelper.ConvertToGuid(item.Id);
                     if (hoadon.Status == true)
                     {
                         hoadon.TrangThai = "Đã Thanh Toán";
@@ -270,7 +295,16 @@ namespace ProjectQLKTX
                         {
                             hoadon.NameSinhVien = sinhvien.data.FirstOrDefault().Name;
                             hoadon.EmailSinhVien = sinhvien.data.FirstOrDefault().Email;
-                            hoadon.MaSinhVien = sinhvien.data.FirstOrDefault().MaSv;
+                            hoadon.MaSinhVien = sinhvien.data.FirstOrDefault().Cccd;
+                        }
+                    }
+                    if (item.IdChiTietCongTo != null)
+                    {
+                        var resultChiTietCongTo = await _chiTietCongToHelper.GetChiTietCongTo(item.IdChiTietCongTo, Constant.Token);
+                        if (resultChiTietCongTo.status == 200)
+                        {
+                            hoadon.TienDien = resultChiTietCongTo.data.FirstOrDefault().TienDien.ToString();
+                            hoadon.TienNuoc = resultChiTietCongTo.data.FirstOrDefault().TienNuoc.ToString();
                         }
                     }
                     hoadon.STT = i;
@@ -281,6 +315,9 @@ namespace ProjectQLKTX
         }
         private void GetAccount(Hoadon hoadon)
         {
+            txtMaGD.Text = hoadon.MaGiaoDich;
+            txtTienDien.Text = hoadon.TienDien;
+            txtTienNuoc.Text = hoadon.TienNuoc;
             txtEmail.Text = hoadon.EmailSinhVien;
             txtEmailNV.Text = hoadon.EmailNhanVien;
             txtHoTen.Text = hoadon.NameSinhVien;
@@ -289,8 +326,16 @@ namespace ProjectQLKTX
             txtTongTien.Text = hoadon.Total.ToString();
             cbKhu.Text = hoadon.NameKhu;
             cbPhong.Text = hoadon.NamePhong;
-            dtNgayThu.Text = hoadon.CreateAt.ToString();
             cbTrangThai.Text = hoadon.TrangThai;
+            dtNgayThu.Text = hoadon.CreateAt.ToString();
+        }
+
+        private async void btnThanhToan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _frmLoading.Show();
+            await ThanhToan();
+            _frmLoading.Hide();
+            MessageBox.Show(messager);
         }
     }
 }

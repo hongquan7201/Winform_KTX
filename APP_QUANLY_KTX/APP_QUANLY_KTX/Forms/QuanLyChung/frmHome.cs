@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using ProjectQLKTX.APIsHelper.API;
+using ProjectQLKTX.Files;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
@@ -93,7 +94,7 @@ namespace ProjectQLKTX
             _frmLoading.Show();
             await LoadListNhanVien(GlobalModel.ListNhanVien);
             _frmLoading.Hide();
-            frmDSNhanVien frmDSNhanVien = new frmDSNhanVien(_nhanVienHelper,_frmLoading);
+            frmDSNhanVien frmDSNhanVien = new frmDSNhanVien(_nhanVienHelper, _frmLoading);
             frmDSNhanVien.ShowDialog();
         }
         private async void btnTTNhanVien_ItemClick(object sender, ItemClickEventArgs e)
@@ -148,7 +149,7 @@ namespace ProjectQLKTX
             await LoadListHoaDon(GlobalModel.ListHoaDon);
             await LoadListPhong(GlobalModel.ListPhong);
             _frmLoading.Hide();
-            frmQLiHoaDon frmQLHoaDon = new frmQLiHoaDon(_hoaDonHelper, _frmLoading, _phongHelper, _khuHelper, _nhanVienHelper, _sinhVienHelper);
+            frmQLiHoaDon frmQLHoaDon = new frmQLiHoaDon(_hoaDonHelper, _frmLoading, _phongHelper, _khuHelper, _nhanVienHelper, _sinhVienHelper, _chiTietCongToHelper);
             frmQLHoaDon.ShowDialog();
         }
 
@@ -192,6 +193,8 @@ namespace ProjectQLKTX
             GlobalModel.IsLogin = false;
             DANHMUC.Visible = false;
             QUANLY.Visible = false;
+            btnDoiMK.Enabled = false;
+            BAOCAOTHONGKE.Visible = false;
             _frmDangNhap.ShowDialog();
             Thread thread = new Thread(check);
             thread.IsBackground = true;
@@ -205,6 +208,8 @@ namespace ProjectQLKTX
                 {
                     DANHMUC.Visible = true;
                     QUANLY.Visible = true;
+                    btnDoiMK.Enabled = true;
+                    BAOCAOTHONGKE.Visible = true;
                     if (GlobalModel.Nhanvien.IsAdmin == true)
                     {
                         btnDSNV.Enabled = true;
@@ -230,6 +235,8 @@ namespace ProjectQLKTX
             btnDangxuat.Caption = "Đăng Nhập";
             DANHMUC.Visible = false;
             QUANLY.Visible = false;
+            btnDoiMK.Enabled = false;
+            BAOCAOTHONGKE.Visible = false;
         }
         private async Task LoadListXe(List<Xe> listXe)
         {
@@ -446,7 +453,7 @@ namespace ProjectQLKTX
                     {
                         if (item.idThanNhan != null)
                         {
-                            var nhanNhan = await _thanNhanHelper.GetThanNhan(item.idThanNhan,Constant.Token);
+                            var nhanNhan = await _thanNhanHelper.GetThanNhan(item.idThanNhan, Constant.Token);
                             if (nhanNhan.status == 200)
                             {
                                 item.TenThanNhan = nhanNhan.data.FirstOrDefault().Name;
@@ -747,11 +754,12 @@ namespace ProjectQLKTX
                         bienlai.TienXe = item.TienXe;
                         bienlai.Total = item.TienPhong + item.TienXe;
                         bienlai.Status = item.Status;
+                        bienlai.MaGiaoDich = ConvertHelper.ConvertToGuid(item.Id);
                         if (bienlai.Status == true)
                         {
                             bienlai.TrangThai = "Đã Thanh Toán";
                         }
-                        else
+                        else if (bienlai.Status == false)
                         {
                             bienlai.TrangThai = "Chưa Thanh Toán";
                         }
@@ -836,6 +844,8 @@ namespace ProjectQLKTX
                 foreach (var item in hoaDons.data)
                 {
                     Hoadon hoadon = new Hoadon();
+                    hoadon.MaGiaoDich = ConvertHelper.ConvertToGuid(item.Id);
+                    hoadon.Id = item.Id;
                     hoadon.Total = item.Total;
                     hoadon.Status = item.Status;
                     if (hoadon.Status == true)
@@ -882,7 +892,16 @@ namespace ProjectQLKTX
                         {
                             hoadon.NameSinhVien = sinhvien.data.FirstOrDefault().Name;
                             hoadon.EmailSinhVien = sinhvien.data.FirstOrDefault().Email;
-                            hoadon.MaSinhVien = sinhvien.data.FirstOrDefault().MaSv;
+                            hoadon.MaSinhVien = sinhvien.data.FirstOrDefault().Cccd;
+                        }
+                    }
+                    if (item.IdChiTietCongTo != null)
+                    {
+                        var resultChiTietCongTo = await _chiTietCongToHelper.GetChiTietCongTo(item.IdChiTietCongTo, Constant.Token);
+                        if (resultChiTietCongTo.status == 200)
+                        {
+                            hoadon.TienDien = resultChiTietCongTo.data.FirstOrDefault().TienDien.ToString();
+                            hoadon.TienNuoc = resultChiTietCongTo.data.FirstOrDefault().TienNuoc.ToString();
                         }
                     }
                     hoadon.STT = i;

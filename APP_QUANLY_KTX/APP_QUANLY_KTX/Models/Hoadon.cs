@@ -26,4 +26,7 @@ public partial class Hoadon
     public string? MaSinhVien { get; set; }
     public string? EmailNhanVien { get; set; }
     public int? STT { get; set; }
+    public string? MaGiaoDich { get; set; }
+    public string? TienDien { get; set; }
+    public string? TienNuoc { get; set; }
 }

@@ -117,10 +117,10 @@
             TIENPHONG = new DevExpress.XtraGrid.Columns.GridColumn();
             TIENXE = new DevExpress.XtraGrid.Columns.GridColumn();
             TONGCONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            MAGIAODICH = new DevExpress.XtraGrid.Columns.GridColumn();
             repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            MAGIAODICH = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)barManager1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemTextEdit4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemTextEdit1).BeginInit();
@@ -253,31 +253,35 @@
             barDockControlTop.Dock = DockStyle.Top;
             barDockControlTop.Location = new Point(0, 0);
             barDockControlTop.Manager = barManager1;
-            barDockControlTop.Size = new Size(1151, 24);
+            barDockControlTop.Margin = new Padding(4);
+            barDockControlTop.Size = new Size(1343, 30);
             // 
             // barDockControlBottom
             // 
             barDockControlBottom.CausesValidation = false;
             barDockControlBottom.Dock = DockStyle.Bottom;
-            barDockControlBottom.Location = new Point(0, 554);
+            barDockControlBottom.Location = new Point(0, 682);
             barDockControlBottom.Manager = barManager1;
-            barDockControlBottom.Size = new Size(1151, 0);
+            barDockControlBottom.Margin = new Padding(4);
+            barDockControlBottom.Size = new Size(1343, 0);
             // 
             // barDockControlLeft
             // 
             barDockControlLeft.CausesValidation = false;
             barDockControlLeft.Dock = DockStyle.Left;
-            barDockControlLeft.Location = new Point(0, 24);
+            barDockControlLeft.Location = new Point(0, 30);
             barDockControlLeft.Manager = barManager1;
-            barDockControlLeft.Size = new Size(0, 530);
+            barDockControlLeft.Margin = new Padding(4);
+            barDockControlLeft.Size = new Size(0, 652);
             // 
             // barDockControlRight
             // 
             barDockControlRight.CausesValidation = false;
             barDockControlRight.Dock = DockStyle.Right;
-            barDockControlRight.Location = new Point(1151, 24);
+            barDockControlRight.Location = new Point(1343, 30);
             barDockControlRight.Manager = barManager1;
-            barDockControlRight.Size = new Size(0, 530);
+            barDockControlRight.Margin = new Padding(4);
+            barDockControlRight.Size = new Size(0, 652);
             // 
             // barButtonItem5
             // 
@@ -392,40 +396,44 @@
             groupControl4.Controls.Add(labelControl22);
             groupControl4.Controls.Add(txtTienPhong);
             groupControl4.Controls.Add(labelControl13);
-            groupControl4.Location = new Point(458, 34);
+            groupControl4.Location = new Point(534, 42);
+            groupControl4.Margin = new Padding(4);
             groupControl4.Name = "groupControl4";
-            groupControl4.Size = new Size(691, 287);
+            groupControl4.Size = new Size(806, 353);
             groupControl4.TabIndex = 49;
             groupControl4.Text = "Thanh Toán";
             // 
             // txtMaGD
             // 
-            txtMaGD.Location = new Point(476, 46);
+            txtMaGD.Location = new Point(555, 57);
+            txtMaGD.Margin = new Padding(4);
             txtMaGD.MenuManager = barManager1;
             txtMaGD.Name = "txtMaGD";
             txtMaGD.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtMaGD.Properties.Appearance.Options.UseFont = true;
-            txtMaGD.Size = new Size(201, 24);
+            txtMaGD.Size = new Size(234, 30);
             txtMaGD.TabIndex = 102;
             // 
             // labelControl7
             // 
             labelControl7.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl7.Appearance.Options.UseFont = true;
-            labelControl7.Location = new Point(392, 51);
+            labelControl7.Location = new Point(452, 63);
+            labelControl7.Margin = new Padding(4);
             labelControl7.Name = "labelControl7";
-            labelControl7.Size = new Size(74, 16);
+            labelControl7.Size = new Size(98, 21);
             labelControl7.TabIndex = 101;
             labelControl7.Text = "Mã Giao Dịch";
             // 
             // txtTenNV
             // 
-            txtTenNV.Location = new Point(118, 190);
+            txtTenNV.Location = new Point(138, 234);
+            txtTenNV.Margin = new Padding(4);
             txtTenNV.MenuManager = barManager1;
             txtTenNV.Name = "txtTenNV";
             txtTenNV.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtTenNV.Properties.Appearance.Options.UseFont = true;
-            txtTenNV.Size = new Size(250, 24);
+            txtTenNV.Size = new Size(292, 30);
             txtTenNV.TabIndex = 85;
             // 
             // labelControl20
@@ -434,9 +442,10 @@
             labelControl20.Appearance.ForeColor = Color.Red;
             labelControl20.Appearance.Options.UseFont = true;
             labelControl20.Appearance.Options.UseForeColor = true;
-            labelControl20.Location = new Point(678, 172);
+            labelControl20.Location = new Point(791, 212);
+            labelControl20.Margin = new Padding(4);
             labelControl20.Name = "labelControl20";
-            labelControl20.Size = new Size(8, 18);
+            labelControl20.Size = new Size(9, 22);
             labelControl20.TabIndex = 100;
             labelControl20.Text = "đ";
             // 
@@ -444,9 +453,10 @@
             // 
             labelControl15.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl15.Appearance.Options.UseFont = true;
-            labelControl15.Location = new Point(29, 242);
+            labelControl15.Location = new Point(34, 298);
+            labelControl15.Margin = new Padding(4);
             labelControl15.Name = "labelControl15";
-            labelControl15.Size = new Size(63, 16);
+            labelControl15.Size = new Size(80, 21);
             labelControl15.TabIndex = 45;
             labelControl15.Text = "Trạng Thái";
             // 
@@ -454,14 +464,16 @@
             // 
             dtNgayHetHan.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             dtNgayHetHan.Format = DateTimePickerFormat.Short;
-            dtNgayHetHan.Location = new Point(118, 141);
+            dtNgayHetHan.Location = new Point(138, 174);
+            dtNgayHetHan.Margin = new Padding(4);
             dtNgayHetHan.Name = "dtNgayHetHan";
-            dtNgayHetHan.Size = new Size(250, 26);
+            dtNgayHetHan.Size = new Size(291, 30);
             dtNgayHetHan.TabIndex = 83;
             // 
             // cbTrangThai
             // 
-            cbTrangThai.Location = new Point(118, 237);
+            cbTrangThai.Location = new Point(138, 292);
+            cbTrangThai.Margin = new Padding(4);
             cbTrangThai.MenuManager = barManager1;
             cbTrangThai.Name = "cbTrangThai";
             cbTrangThai.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -469,16 +481,17 @@
             cbTrangThai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             cbTrangThai.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             cbTrangThai.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            cbTrangThai.Size = new Size(250, 24);
+            cbTrangThai.Size = new Size(292, 30);
             cbTrangThai.TabIndex = 46;
             // 
             // labelControl11
             // 
             labelControl11.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl11.Appearance.Options.UseFont = true;
-            labelControl11.Location = new Point(15, 141);
+            labelControl11.Location = new Point(18, 174);
+            labelControl11.Margin = new Padding(4);
             labelControl11.Name = "labelControl11";
-            labelControl11.Size = new Size(77, 16);
+            labelControl11.Size = new Size(102, 21);
             labelControl11.TabIndex = 82;
             labelControl11.Text = "Ngày Hết Hạn";
             // 
@@ -486,9 +499,10 @@
             // 
             labelControl6.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl6.Appearance.Options.UseFont = true;
-            labelControl6.Location = new Point(8, 193);
+            labelControl6.Location = new Point(9, 238);
+            labelControl6.Margin = new Padding(4);
             labelControl6.Name = "labelControl6";
-            labelControl6.Size = new Size(84, 16);
+            labelControl6.Size = new Size(105, 19);
             labelControl6.TabIndex = 43;
             labelControl6.Text = "Tên Nhân Viên";
             // 
@@ -496,18 +510,20 @@
             // 
             dtNgayBatDau.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             dtNgayBatDau.Format = DateTimePickerFormat.Short;
-            dtNgayBatDau.Location = new Point(118, 92);
+            dtNgayBatDau.Location = new Point(138, 113);
+            dtNgayBatDau.Margin = new Padding(4);
             dtNgayBatDau.Name = "dtNgayBatDau";
-            dtNgayBatDau.Size = new Size(250, 26);
+            dtNgayBatDau.Size = new Size(291, 30);
             dtNgayBatDau.TabIndex = 81;
             // 
             // labelControl10
             // 
             labelControl10.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl10.Appearance.Options.UseFont = true;
-            labelControl10.Location = new Point(15, 92);
+            labelControl10.Location = new Point(18, 113);
+            labelControl10.Margin = new Padding(4);
             labelControl10.Name = "labelControl10";
-            labelControl10.Size = new Size(77, 16);
+            labelControl10.Size = new Size(102, 21);
             labelControl10.TabIndex = 80;
             labelControl10.Text = "Ngày Bắt Đầu";
             // 
@@ -515,30 +531,33 @@
             // 
             dtNgayDong.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             dtNgayDong.Format = DateTimePickerFormat.Short;
-            dtNgayDong.Location = new Point(118, 43);
+            dtNgayDong.Location = new Point(138, 53);
+            dtNgayDong.Margin = new Padding(4);
             dtNgayDong.Name = "dtNgayDong";
-            dtNgayDong.Size = new Size(250, 26);
+            dtNgayDong.Size = new Size(291, 30);
             dtNgayDong.TabIndex = 79;
             // 
             // labelControl8
             // 
             labelControl8.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl8.Appearance.Options.UseFont = true;
-            labelControl8.Location = new Point(30, 43);
+            labelControl8.Location = new Point(35, 53);
+            labelControl8.Margin = new Padding(4);
             labelControl8.Name = "labelControl8";
-            labelControl8.Size = new Size(62, 16);
+            labelControl8.Size = new Size(79, 19);
             labelControl8.TabIndex = 78;
             labelControl8.Text = "Ngày Đóng";
             // 
             // txtTongTien
             // 
-            txtTongTien.Location = new Point(476, 185);
+            txtTongTien.Location = new Point(555, 228);
+            txtTongTien.Margin = new Padding(4);
             txtTongTien.MenuManager = barManager1;
             txtTongTien.Name = "txtTongTien";
             txtTongTien.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtTongTien.Properties.Appearance.Options.UseFont = true;
             txtTongTien.Properties.ReadOnly = true;
-            txtTongTien.Size = new Size(201, 24);
+            txtTongTien.Size = new Size(234, 30);
             txtTongTien.TabIndex = 75;
             // 
             // labelControl25
@@ -547,20 +566,22 @@
             labelControl25.Appearance.ForeColor = Color.Blue;
             labelControl25.Appearance.Options.UseFont = true;
             labelControl25.Appearance.Options.UseForeColor = true;
-            labelControl25.Location = new Point(396, 185);
+            labelControl25.Location = new Point(462, 228);
+            labelControl25.Margin = new Padding(4);
             labelControl25.Name = "labelControl25";
-            labelControl25.Size = new Size(56, 15);
+            labelControl25.Size = new Size(74, 19);
             labelControl25.TabIndex = 74;
             labelControl25.Text = "Tổng Tiền";
             // 
             // txtTienXe
             // 
-            txtTienXe.Location = new Point(476, 138);
+            txtTienXe.Location = new Point(555, 170);
+            txtTienXe.Margin = new Padding(4);
             txtTienXe.MenuManager = barManager1;
             txtTienXe.Name = "txtTienXe";
             txtTienXe.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtTienXe.Properties.Appearance.Options.UseFont = true;
-            txtTienXe.Size = new Size(201, 24);
+            txtTienXe.Size = new Size(234, 30);
             txtTienXe.TabIndex = 68;
             // 
             // labelControl22
@@ -569,20 +590,22 @@
             labelControl22.Appearance.ForeColor = Color.FromArgb(255, 128, 0);
             labelControl22.Appearance.Options.UseFont = true;
             labelControl22.Appearance.Options.UseForeColor = true;
-            labelControl22.Location = new Point(410, 141);
+            labelControl22.Location = new Point(478, 174);
+            labelControl22.Margin = new Padding(4);
             labelControl22.Name = "labelControl22";
-            labelControl22.Size = new Size(43, 15);
+            labelControl22.Size = new Size(57, 19);
             labelControl22.TabIndex = 65;
             labelControl22.Text = "Tiền Xe";
             // 
             // txtTienPhong
             // 
-            txtTienPhong.Location = new Point(476, 94);
+            txtTienPhong.Location = new Point(555, 116);
+            txtTienPhong.Margin = new Padding(4);
             txtTienPhong.MenuManager = barManager1;
             txtTienPhong.Name = "txtTienPhong";
             txtTienPhong.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtTienPhong.Properties.Appearance.Options.UseFont = true;
-            txtTienPhong.Size = new Size(201, 24);
+            txtTienPhong.Size = new Size(234, 30);
             txtTienPhong.TabIndex = 61;
             // 
             // labelControl13
@@ -591,9 +614,10 @@
             labelControl13.Appearance.ForeColor = Color.Red;
             labelControl13.Appearance.Options.UseFont = true;
             labelControl13.Appearance.Options.UseForeColor = true;
-            labelControl13.Location = new Point(401, 100);
+            labelControl13.Location = new Point(468, 123);
+            labelControl13.Margin = new Padding(4);
             labelControl13.Name = "labelControl13";
-            labelControl13.Size = new Size(63, 15);
+            labelControl13.Size = new Size(84, 19);
             labelControl13.TabIndex = 62;
             labelControl13.Text = "Tiền Phòng";
             // 
@@ -619,22 +643,24 @@
             groupControl2.Controls.Add(labelControl3);
             groupControl2.Controls.Add(labelControl2);
             groupControl2.Controls.Add(labelControl4);
-            groupControl2.Location = new Point(1, 34);
+            groupControl2.Location = new Point(1, 42);
+            groupControl2.Margin = new Padding(4);
             groupControl2.Name = "groupControl2";
-            groupControl2.Size = new Size(455, 287);
+            groupControl2.Size = new Size(531, 353);
             groupControl2.TabIndex = 47;
             groupControl2.Text = "Thông tin sinh viên";
             // 
             // cbKhu
             // 
-            cbKhu.Location = new Point(294, 250);
+            cbKhu.Location = new Point(343, 308);
+            cbKhu.Margin = new Padding(4);
             cbKhu.MenuManager = barManager1;
             cbKhu.Name = "cbKhu";
             cbKhu.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             cbKhu.Properties.Appearance.Options.UseFont = true;
             cbKhu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             cbKhu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            cbKhu.Size = new Size(123, 24);
+            cbKhu.Size = new Size(144, 30);
             cbKhu.TabIndex = 86;
             cbKhu.SelectedIndexChanged += cbKhu_SelectedIndexChanged;
             // 
@@ -642,60 +668,66 @@
             // 
             labelControl5.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl5.Appearance.Options.UseFont = true;
-            labelControl5.Location = new Point(260, 253);
+            labelControl5.Location = new Point(303, 311);
+            labelControl5.Margin = new Padding(4);
             labelControl5.Name = "labelControl5";
-            labelControl5.Size = new Size(21, 16);
+            labelControl5.Size = new Size(27, 19);
             labelControl5.TabIndex = 87;
             labelControl5.Text = "Khu";
             // 
             // txtMaSV
             // 
-            txtMaSV.Location = new Point(96, 81);
+            txtMaSV.Location = new Point(112, 100);
+            txtMaSV.Margin = new Padding(4);
             txtMaSV.MenuManager = barManager1;
             txtMaSV.Name = "txtMaSV";
             txtMaSV.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtMaSV.Properties.Appearance.Options.UseFont = true;
-            txtMaSV.Size = new Size(123, 24);
+            txtMaSV.Size = new Size(144, 30);
             txtMaSV.TabIndex = 85;
             // 
             // cbPhong
             // 
-            cbPhong.Location = new Point(97, 250);
+            cbPhong.Location = new Point(113, 308);
+            cbPhong.Margin = new Padding(4);
             cbPhong.MenuManager = barManager1;
             cbPhong.Name = "cbPhong";
             cbPhong.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             cbPhong.Properties.Appearance.Options.UseFont = true;
             cbPhong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             cbPhong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            cbPhong.Size = new Size(122, 24);
+            cbPhong.Size = new Size(142, 30);
             cbPhong.TabIndex = 47;
             // 
             // labelControl17
             // 
             labelControl17.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl17.Appearance.Options.UseFont = true;
-            labelControl17.Location = new Point(33, 171);
+            labelControl17.Location = new Point(38, 210);
+            labelControl17.Margin = new Padding(4);
             labelControl17.Name = "labelControl17";
-            labelControl17.Size = new Size(31, 16);
+            labelControl17.Size = new Size(39, 19);
             labelControl17.TabIndex = 84;
             labelControl17.Text = "Email";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(97, 166);
+            txtEmail.Location = new Point(113, 204);
+            txtEmail.Margin = new Padding(4);
             txtEmail.Name = "txtEmail";
             txtEmail.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmail.Properties.Appearance.Options.UseFont = true;
-            txtEmail.Size = new Size(320, 24);
+            txtEmail.Size = new Size(373, 30);
             txtEmail.TabIndex = 83;
             // 
             // labelControl19
             // 
             labelControl19.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl19.Appearance.Options.UseFont = true;
-            labelControl19.Location = new Point(32, 212);
+            labelControl19.Location = new Point(37, 261);
+            labelControl19.Margin = new Padding(4);
             labelControl19.Name = "labelControl19";
-            labelControl19.Size = new Size(32, 16);
+            labelControl19.Size = new Size(41, 19);
             labelControl19.TabIndex = 82;
             labelControl19.Text = "CCCD";
             // 
@@ -703,18 +735,20 @@
             // 
             dtNgaySinh.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             dtNgaySinh.Format = DateTimePickerFormat.Short;
-            dtNgaySinh.Location = new Point(290, 124);
+            dtNgaySinh.Location = new Point(338, 153);
+            dtNgaySinh.Margin = new Padding(4);
             dtNgaySinh.Name = "dtNgaySinh";
-            dtNgaySinh.Size = new Size(127, 26);
+            dtNgaySinh.Size = new Size(148, 30);
             dtNgaySinh.TabIndex = 80;
             // 
             // labelControl16
             // 
             labelControl16.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl16.Appearance.Options.UseFont = true;
-            labelControl16.Location = new Point(29, 253);
+            labelControl16.Location = new Point(34, 311);
+            labelControl16.Margin = new Padding(4);
             labelControl16.Name = "labelControl16";
-            labelControl16.Size = new Size(35, 16);
+            labelControl16.Size = new Size(45, 19);
             labelControl16.TabIndex = 48;
             labelControl16.Text = "Phòng";
             // 
@@ -722,15 +756,17 @@
             // 
             labelControl12.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl12.Appearance.Options.UseFont = true;
-            labelControl12.Location = new Point(39, 129);
+            labelControl12.Location = new Point(46, 159);
+            labelControl12.Margin = new Padding(4);
             labelControl12.Name = "labelControl12";
-            labelControl12.Size = new Size(25, 16);
+            labelControl12.Size = new Size(30, 19);
             labelControl12.TabIndex = 46;
             labelControl12.Text = "SĐT";
             // 
             // cbGioiTinh
             // 
-            cbGioiTinh.Location = new Point(290, 81);
+            cbGioiTinh.Location = new Point(338, 100);
+            cbGioiTinh.Margin = new Padding(4);
             cbGioiTinh.MenuManager = barManager1;
             cbGioiTinh.Name = "cbGioiTinh";
             cbGioiTinh.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -738,46 +774,50 @@
             cbGioiTinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
             cbGioiTinh.Properties.Items.AddRange(new object[] { "Nam", "Nữ" });
             cbGioiTinh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            cbGioiTinh.Size = new Size(127, 24);
+            cbGioiTinh.Size = new Size(148, 30);
             cbGioiTinh.TabIndex = 34;
             // 
             // txtSDT
             // 
-            txtSDT.Location = new Point(96, 126);
+            txtSDT.Location = new Point(112, 155);
+            txtSDT.Margin = new Padding(4);
             txtSDT.MenuManager = barManager1;
             txtSDT.Name = "txtSDT";
             txtSDT.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtSDT.Properties.Appearance.Options.UseFont = true;
-            txtSDT.Size = new Size(123, 24);
+            txtSDT.Size = new Size(144, 30);
             txtSDT.TabIndex = 45;
             // 
             // txtCCCD
             // 
-            txtCCCD.Location = new Point(96, 209);
+            txtCCCD.Location = new Point(112, 257);
+            txtCCCD.Margin = new Padding(4);
             txtCCCD.MenuManager = barManager1;
             txtCCCD.Name = "txtCCCD";
             txtCCCD.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtCCCD.Properties.Appearance.Options.UseFont = true;
-            txtCCCD.Size = new Size(321, 24);
+            txtCCCD.Size = new Size(374, 30);
             txtCCCD.TabIndex = 19;
             // 
             // txtHoTen
             // 
-            txtHoTen.Location = new Point(97, 38);
+            txtHoTen.Location = new Point(113, 47);
+            txtHoTen.Margin = new Padding(4);
             txtHoTen.MenuManager = barManager1;
             txtHoTen.Name = "txtHoTen";
             txtHoTen.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtHoTen.Properties.Appearance.Options.UseFont = true;
-            txtHoTen.Size = new Size(320, 24);
+            txtHoTen.Size = new Size(373, 30);
             txtHoTen.TabIndex = 8;
             // 
             // labelControl1
             // 
             labelControl1.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl1.Appearance.Options.UseFont = true;
-            labelControl1.Location = new Point(27, 84);
+            labelControl1.Location = new Point(31, 103);
+            labelControl1.Margin = new Padding(4);
             labelControl1.Name = "labelControl1";
-            labelControl1.Size = new Size(37, 16);
+            labelControl1.Size = new Size(44, 19);
             labelControl1.TabIndex = 5;
             labelControl1.Text = "Mã SV";
             // 
@@ -785,9 +825,10 @@
             // 
             labelControl3.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl3.Appearance.Options.UseFont = true;
-            labelControl3.Location = new Point(23, 40);
+            labelControl3.Location = new Point(27, 49);
+            labelControl3.Margin = new Padding(4);
             labelControl3.Name = "labelControl3";
-            labelControl3.Size = new Size(41, 16);
+            labelControl3.Size = new Size(53, 21);
             labelControl3.TabIndex = 9;
             labelControl3.Text = "Họ Tên";
             // 
@@ -795,9 +836,10 @@
             // 
             labelControl2.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl2.Appearance.Options.UseFont = true;
-            labelControl2.Location = new Point(231, 86);
+            labelControl2.Location = new Point(270, 106);
+            labelControl2.Margin = new Padding(4);
             labelControl2.Name = "labelControl2";
-            labelControl2.Size = new Size(50, 16);
+            labelControl2.Size = new Size(65, 21);
             labelControl2.TabIndex = 15;
             labelControl2.Text = "Giới Tính";
             // 
@@ -805,20 +847,23 @@
             // 
             labelControl4.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl4.Appearance.Options.UseFont = true;
-            labelControl4.Location = new Point(226, 128);
+            labelControl4.Location = new Point(264, 158);
+            labelControl4.Margin = new Padding(4);
             labelControl4.Name = "labelControl4";
-            labelControl4.Size = new Size(57, 16);
+            labelControl4.Size = new Size(72, 19);
             labelControl4.TabIndex = 13;
             labelControl4.Text = "Ngày Sinh";
             // 
             // gcDanhSach
             // 
             gcDanhSach.DataSource = bienlaiBindingSource;
-            gcDanhSach.Location = new Point(0, 24);
+            gcDanhSach.EmbeddedNavigator.Margin = new Padding(4);
+            gcDanhSach.Location = new Point(0, 30);
             gcDanhSach.MainView = gvDanhSach;
+            gcDanhSach.Margin = new Padding(4);
             gcDanhSach.Name = "gcDanhSach";
             gcDanhSach.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repositoryItemLookUpEdit2 });
-            gcDanhSach.Size = new Size(1145, 202);
+            gcDanhSach.Size = new Size(1336, 249);
             gcDanhSach.TabIndex = 50;
             gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gvDanhSach, gridView1 });
             gcDanhSach.DoubleClick += gcDanhSach_DoubleClick;
@@ -830,6 +875,7 @@
             // gvDanhSach
             // 
             gvDanhSach.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] { STT, MASV, TENSV, GIOITINH, NGAYSINH, SDT, EMAIL, CCCD, PHONG, NGAYDONG, NGAYBATDAU, NGAYKETTHUC, TENNHANVIEN, TRANGTHAI, TIENPHONG, TIENXE, TONGCONG, MAGIAODICH });
+            gvDanhSach.DetailHeight = 431;
             gvDanhSach.GridControl = gcDanhSach;
             gvDanhSach.Name = "gvDanhSach";
             gvDanhSach.OptionsView.ShowGroupPanel = false;
@@ -849,13 +895,13 @@
             STT.Caption = "STT";
             STT.FieldName = "STT";
             STT.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            STT.MaxWidth = 30;
-            STT.MinWidth = 30;
+            STT.MaxWidth = 35;
+            STT.MinWidth = 35;
             STT.Name = "STT";
             STT.OptionsColumn.ReadOnly = true;
             STT.Visible = true;
             STT.VisibleIndex = 0;
-            STT.Width = 30;
+            STT.Width = 35;
             // 
             // MASV
             // 
@@ -872,13 +918,13 @@
             MASV.Caption = "MÃ SV";
             MASV.FieldName = "MaSinhVien";
             MASV.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            MASV.MaxWidth = 90;
-            MASV.MinWidth = 90;
+            MASV.MaxWidth = 105;
+            MASV.MinWidth = 105;
             MASV.Name = "MASV";
             MASV.OptionsColumn.ReadOnly = true;
             MASV.Visible = true;
             MASV.VisibleIndex = 1;
-            MASV.Width = 90;
+            MASV.Width = 105;
             // 
             // TENSV
             // 
@@ -895,13 +941,13 @@
             TENSV.Caption = "TÊN SINH VIÊN";
             TENSV.FieldName = "NameSinhVien";
             TENSV.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            TENSV.MaxWidth = 150;
-            TENSV.MinWidth = 150;
+            TENSV.MaxWidth = 175;
+            TENSV.MinWidth = 175;
             TENSV.Name = "TENSV";
             TENSV.OptionsColumn.ReadOnly = true;
             TENSV.Visible = true;
             TENSV.VisibleIndex = 2;
-            TENSV.Width = 150;
+            TENSV.Width = 175;
             // 
             // GIOITINH
             // 
@@ -918,13 +964,13 @@
             GIOITINH.Caption = "GIỚI TÍNH";
             GIOITINH.FieldName = "GioiTinhSV";
             GIOITINH.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            GIOITINH.MaxWidth = 90;
-            GIOITINH.MinWidth = 90;
+            GIOITINH.MaxWidth = 105;
+            GIOITINH.MinWidth = 105;
             GIOITINH.Name = "GIOITINH";
             GIOITINH.OptionsColumn.ReadOnly = true;
             GIOITINH.Visible = true;
             GIOITINH.VisibleIndex = 3;
-            GIOITINH.Width = 90;
+            GIOITINH.Width = 105;
             // 
             // NGAYSINH
             // 
@@ -940,13 +986,13 @@
             NGAYSINH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             NGAYSINH.Caption = "NGÀY SINH";
             NGAYSINH.FieldName = "NgaySinhSV";
-            NGAYSINH.MaxWidth = 150;
-            NGAYSINH.MinWidth = 150;
+            NGAYSINH.MaxWidth = 175;
+            NGAYSINH.MinWidth = 175;
             NGAYSINH.Name = "NGAYSINH";
             NGAYSINH.OptionsColumn.ReadOnly = true;
             NGAYSINH.Visible = true;
             NGAYSINH.VisibleIndex = 4;
-            NGAYSINH.Width = 150;
+            NGAYSINH.Width = 175;
             // 
             // SDT
             // 
@@ -962,13 +1008,13 @@
             SDT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             SDT.Caption = "SĐT";
             SDT.FieldName = "SdtSV";
-            SDT.MaxWidth = 130;
-            SDT.MinWidth = 130;
+            SDT.MaxWidth = 152;
+            SDT.MinWidth = 152;
             SDT.Name = "SDT";
             SDT.OptionsColumn.ReadOnly = true;
             SDT.Visible = true;
             SDT.VisibleIndex = 5;
-            SDT.Width = 130;
+            SDT.Width = 152;
             // 
             // EMAIL
             // 
@@ -984,11 +1030,11 @@
             EMAIL.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             EMAIL.Caption = "EMAIL";
             EMAIL.FieldName = "EmailSV";
-            EMAIL.MaxWidth = 150;
-            EMAIL.MinWidth = 150;
+            EMAIL.MaxWidth = 175;
+            EMAIL.MinWidth = 175;
             EMAIL.Name = "EMAIL";
             EMAIL.OptionsColumn.ReadOnly = true;
-            EMAIL.Width = 150;
+            EMAIL.Width = 175;
             // 
             // CCCD
             // 
@@ -1004,13 +1050,13 @@
             CCCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             CCCD.Caption = "CCCD";
             CCCD.FieldName = "CCCD";
-            CCCD.MaxWidth = 130;
-            CCCD.MinWidth = 130;
+            CCCD.MaxWidth = 152;
+            CCCD.MinWidth = 152;
             CCCD.Name = "CCCD";
             CCCD.OptionsColumn.ReadOnly = true;
             CCCD.Visible = true;
             CCCD.VisibleIndex = 6;
-            CCCD.Width = 130;
+            CCCD.Width = 152;
             // 
             // PHONG
             // 
@@ -1026,13 +1072,13 @@
             PHONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             PHONG.Caption = "PHÒNG";
             PHONG.FieldName = "Phong";
-            PHONG.MaxWidth = 90;
-            PHONG.MinWidth = 90;
+            PHONG.MaxWidth = 105;
+            PHONG.MinWidth = 105;
             PHONG.Name = "PHONG";
             PHONG.OptionsColumn.ReadOnly = true;
             PHONG.Visible = true;
             PHONG.VisibleIndex = 7;
-            PHONG.Width = 90;
+            PHONG.Width = 105;
             // 
             // NGAYDONG
             // 
@@ -1048,11 +1094,11 @@
             NGAYDONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             NGAYDONG.Caption = "NGÀY ĐÓNG";
             NGAYDONG.FieldName = "NgayDong";
-            NGAYDONG.MaxWidth = 140;
-            NGAYDONG.MinWidth = 140;
+            NGAYDONG.MaxWidth = 163;
+            NGAYDONG.MinWidth = 163;
             NGAYDONG.Name = "NGAYDONG";
             NGAYDONG.OptionsColumn.ReadOnly = true;
-            NGAYDONG.Width = 140;
+            NGAYDONG.Width = 163;
             // 
             // NGAYBATDAU
             // 
@@ -1068,13 +1114,13 @@
             NGAYBATDAU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             NGAYBATDAU.Caption = "NGÀY BẮT ĐẦU";
             NGAYBATDAU.FieldName = "NgayBatDau";
-            NGAYBATDAU.MaxWidth = 140;
-            NGAYBATDAU.MinWidth = 140;
+            NGAYBATDAU.MaxWidth = 163;
+            NGAYBATDAU.MinWidth = 163;
             NGAYBATDAU.Name = "NGAYBATDAU";
             NGAYBATDAU.OptionsColumn.ReadOnly = true;
             NGAYBATDAU.Visible = true;
             NGAYBATDAU.VisibleIndex = 8;
-            NGAYBATDAU.Width = 140;
+            NGAYBATDAU.Width = 163;
             // 
             // NGAYKETTHUC
             // 
@@ -1090,13 +1136,13 @@
             NGAYKETTHUC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             NGAYKETTHUC.Caption = "NGÀY KẾT THÚC";
             NGAYKETTHUC.FieldName = "NgayHetHan";
-            NGAYKETTHUC.MaxWidth = 140;
-            NGAYKETTHUC.MinWidth = 140;
+            NGAYKETTHUC.MaxWidth = 163;
+            NGAYKETTHUC.MinWidth = 163;
             NGAYKETTHUC.Name = "NGAYKETTHUC";
             NGAYKETTHUC.OptionsColumn.ReadOnly = true;
             NGAYKETTHUC.Visible = true;
             NGAYKETTHUC.VisibleIndex = 9;
-            NGAYKETTHUC.Width = 140;
+            NGAYKETTHUC.Width = 163;
             // 
             // TENNHANVIEN
             // 
@@ -1112,13 +1158,13 @@
             TENNHANVIEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             TENNHANVIEN.Caption = "TÊN NHÂN VIÊN";
             TENNHANVIEN.FieldName = "NameNhanVien";
-            TENNHANVIEN.MaxWidth = 150;
-            TENNHANVIEN.MinWidth = 150;
+            TENNHANVIEN.MaxWidth = 175;
+            TENNHANVIEN.MinWidth = 175;
             TENNHANVIEN.Name = "TENNHANVIEN";
             TENNHANVIEN.OptionsColumn.ReadOnly = true;
             TENNHANVIEN.Visible = true;
             TENNHANVIEN.VisibleIndex = 10;
-            TENNHANVIEN.Width = 150;
+            TENNHANVIEN.Width = 175;
             // 
             // TRANGTHAI
             // 
@@ -1134,13 +1180,13 @@
             TRANGTHAI.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             TRANGTHAI.Caption = "TRẠNG THÁI";
             TRANGTHAI.FieldName = "TrangThai";
-            TRANGTHAI.MaxWidth = 130;
-            TRANGTHAI.MinWidth = 130;
+            TRANGTHAI.MaxWidth = 152;
+            TRANGTHAI.MinWidth = 152;
             TRANGTHAI.Name = "TRANGTHAI";
             TRANGTHAI.OptionsColumn.ReadOnly = true;
             TRANGTHAI.Visible = true;
             TRANGTHAI.VisibleIndex = 11;
-            TRANGTHAI.Width = 130;
+            TRANGTHAI.Width = 152;
             // 
             // TIENPHONG
             // 
@@ -1156,11 +1202,11 @@
             TIENPHONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             TIENPHONG.Caption = "TIỀN PHÒNG";
             TIENPHONG.FieldName = "TienPhong";
-            TIENPHONG.MaxWidth = 120;
-            TIENPHONG.MinWidth = 120;
+            TIENPHONG.MaxWidth = 140;
+            TIENPHONG.MinWidth = 140;
             TIENPHONG.Name = "TIENPHONG";
             TIENPHONG.OptionsColumn.ReadOnly = true;
-            TIENPHONG.Width = 120;
+            TIENPHONG.Width = 140;
             // 
             // TIENXE
             // 
@@ -1176,11 +1222,11 @@
             TIENXE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             TIENXE.Caption = "TIỀN XE";
             TIENXE.FieldName = "TienXe";
-            TIENXE.MaxWidth = 120;
-            TIENXE.MinWidth = 120;
+            TIENXE.MaxWidth = 140;
+            TIENXE.MinWidth = 140;
             TIENXE.Name = "TIENXE";
             TIENXE.OptionsColumn.ReadOnly = true;
-            TIENXE.Width = 120;
+            TIENXE.Width = 140;
             // 
             // TONGCONG
             // 
@@ -1196,37 +1242,13 @@
             TONGCONG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             TONGCONG.Caption = "TỔNG CỘNG";
             TONGCONG.FieldName = "Total";
-            TONGCONG.MaxWidth = 150;
-            TONGCONG.MinWidth = 150;
+            TONGCONG.MaxWidth = 175;
+            TONGCONG.MinWidth = 175;
             TONGCONG.Name = "TONGCONG";
             TONGCONG.OptionsColumn.ReadOnly = true;
             TONGCONG.Visible = true;
             TONGCONG.VisibleIndex = 12;
-            TONGCONG.Width = 150;
-            // 
-            // repositoryItemLookUpEdit2
-            // 
-            repositoryItemLookUpEdit2.AutoHeight = false;
-            repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
-            repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
-            // 
-            // gridView1
-            // 
-            gridView1.GridControl = gcDanhSach;
-            gridView1.Name = "gridView1";
-            // 
-            // groupControl1
-            // 
-            groupControl1.Appearance.BackColor = Color.DodgerBlue;
-            groupControl1.Appearance.Options.UseBackColor = true;
-            groupControl1.AppearanceCaption.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            groupControl1.AppearanceCaption.Options.UseFont = true;
-            groupControl1.Controls.Add(gcDanhSach);
-            groupControl1.Location = new Point(1, 327);
-            groupControl1.Name = "groupControl1";
-            groupControl1.Size = new Size(1148, 231);
-            groupControl1.TabIndex = 101;
-            groupControl1.Text = "Danh Sách";
+            TONGCONG.Width = 175;
             // 
             // MAGIAODICH
             // 
@@ -1241,19 +1263,45 @@
             MAGIAODICH.AppearanceHeader.Options.UseTextOptions = true;
             MAGIAODICH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             MAGIAODICH.Caption = "MÃ GIAO DỊCH";
-            MAGIAODICH.FieldName = "MAGIAODICH";
-            MAGIAODICH.MaxWidth = 130;
-            MAGIAODICH.MinWidth = 130;
+            MAGIAODICH.FieldName = "MaGiaoDich";
+            MAGIAODICH.MaxWidth = 152;
+            MAGIAODICH.MinWidth = 152;
             MAGIAODICH.Name = "MAGIAODICH";
             MAGIAODICH.Visible = true;
             MAGIAODICH.VisibleIndex = 13;
-            MAGIAODICH.Width = 130;
+            MAGIAODICH.Width = 152;
+            // 
+            // repositoryItemLookUpEdit2
+            // 
+            repositoryItemLookUpEdit2.AutoHeight = false;
+            repositoryItemLookUpEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            repositoryItemLookUpEdit2.Name = "repositoryItemLookUpEdit2";
+            // 
+            // gridView1
+            // 
+            gridView1.DetailHeight = 431;
+            gridView1.GridControl = gcDanhSach;
+            gridView1.Name = "gridView1";
+            // 
+            // groupControl1
+            // 
+            groupControl1.Appearance.BackColor = Color.DodgerBlue;
+            groupControl1.Appearance.Options.UseBackColor = true;
+            groupControl1.AppearanceCaption.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            groupControl1.AppearanceCaption.Options.UseFont = true;
+            groupControl1.Controls.Add(gcDanhSach);
+            groupControl1.Location = new Point(1, 402);
+            groupControl1.Margin = new Padding(4);
+            groupControl1.Name = "groupControl1";
+            groupControl1.Size = new Size(1339, 284);
+            groupControl1.TabIndex = 101;
+            groupControl1.Text = "Danh Sách";
             // 
             // frmBienLai
             // 
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1151, 554);
+            ClientSize = new Size(1343, 682);
             Controls.Add(groupControl1);
             Controls.Add(groupControl2);
             Controls.Add(groupControl4);
@@ -1263,6 +1311,7 @@
             Controls.Add(barDockControlTop);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             IconOptions.Icon = (Icon)resources.GetObject("frmBienLai.IconOptions.Icon");
+            Margin = new Padding(4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmBienLai";

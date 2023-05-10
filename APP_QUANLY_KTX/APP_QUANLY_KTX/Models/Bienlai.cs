@@ -33,4 +33,5 @@ public partial class Bienlai
     public int? STT { get; set; }
     public string? EmailNV { get; set; }
     public string? TrangThai { get;set; }
+    public string? MaGiaoDich { get; set; }
 }

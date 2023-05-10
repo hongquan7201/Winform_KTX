@@ -1,6 +1,9 @@
-﻿using DevExpress.Utils;
+﻿using DevExpress.Security;
+using DevExpress.Utils;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraReports.UI;
+using DevExpress.XtraVerticalGrid;
 using ProjectQLKTX.APIsHelper;
 using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Files;
@@ -43,14 +46,15 @@ namespace ProjectQLKTX
             txtTienPhong.Text = bienlai.TienPhong.ToString();
             txtTienXe.Text = bienlai.TienXe.ToString();
             txtTongTien.Text = bienlai.Total.ToString();
-            dtNgayBatDau.Text = bienlai.NgayBatDau.ToString();
-            dtNgayDong.Text = bienlai.NgayDong.ToString();
-            dtNgayHetHan.Text = bienlai.NgayHetHan.ToString();
-            dtNgaySinh.Text = bienlai.NgaySinhSV;
             cbGioiTinh.Text = bienlai.GioiTinhSV;
             cbKhu.Text = bienlai.Khu;
             cbPhong.Text = bienlai.Phong;
             cbTrangThai.Text = bienlai.TrangThai;
+            txtMaGD.Text = bienlai.MaGiaoDich;
+            dtNgayBatDau.Text = bienlai.NgayBatDau.ToString();
+            dtNgayDong.Text = bienlai.NgayDong.ToString();
+            dtNgayHetHan.Text = bienlai.NgayHetHan.ToString();
+            dtNgaySinh.Text = bienlai.NgaySinhSV;
         }
         private void btnXuatfileExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -110,41 +114,67 @@ namespace ProjectQLKTX
                 Log.Error(ex, ex.Message);
             }
         }
-
-        private async void btnThanhToan_CheckedChanged(object sender, EventArgs e)
-        {
-            _frmLoading.Show();
-            await ThanhToan();
-            _frmLoading.Hide();
-            MessageBox.Show(messager);
-        }
         private async Task ThanhToan()
         {
             Bienlai bienlai = new Bienlai();
             bienlai.Id = _bienLai.Id;
             bienlai.Status = true;
+            bienlai.IdNhanVien = _bienLai.IdNhanVien;
+            bienlai.IdSinhVien = _bienLai.IdSinhVien;
+            bienlai.TienPhong = _bienLai.TienPhong;
+            bienlai.TienXe = _bienLai.TienXe;
+            bienlai.NgayBatDau = _bienLai.NgayBatDau;
+            bienlai.NgayDong = _bienLai.NgayDong;
+            bienlai.NgayHetHan = _bienLai.NgayHetHan;
+            bienlai.Total = _bienLai.Total;
             var result = await _bienLaiHelper.EditBienLai(bienlai, Constant.Token);
-            if (result.status == 200)
+            //if (result.status == 200)
+            //{
+            //    Banking banking = new Banking();
+            //    banking.amount = _bienLai.Total.ToString();
+            //    banking.IdUser = _bienLai.IdSinhVien;
+            //    banking.cmt = "BL-" + _bienLai.CCCD;
+            //    banking.type = "Thanh Toán Qua Nhân Viên " + _bienLai.EmailNV;
+            //    banking.creatAt = DateTime.Now;
+            //    banking.IdBienLai = _bienLai.Id;
+            //    var resultBanking = await _bankingHelper.AddBanking(banking, Constant.Token);
+            //    if (resultBanking.status == 200)
+            //    {
+            //        await LoadListBienLai(GlobalModel.ListBienLai);
+            //        gcDanhSach.DataSource = GlobalModel.ListBienLai;
+            //        gcDanhSach.RefreshDataSource();
+                   messager = "Thanh Toán Thành Công!";
+            //    }
+            //}
+            //else
+            //{
+            //    messager = result.message;
+            //}
+            var report = new Report_Bienlai();
+            // Set the value of the "MaGiaoDich" field
+            report.Parameters["NameSinhVien1"].Value = "Họ, tên sinh viên: " + _bienLai.NameSinhVien + ".";
+            if (_bienLai.SdtSV != null)
             {
-                Banking banking = new Banking();
-                banking.amount = _bienLai.Total.ToString();
-                banking.IdUser = _bienLai.IdSinhVien;
-                banking.cmt = "BL-" + _bienLai.CCCD;
-                banking.type = "Thanh Toán Qua Nhân Viên " + _bienLai.EmailNV;
-                banking.creatAt = DateTime.Now;
-                banking.IdBienLai = _bienLai.Id;
-                var resultBanking = await _bankingHelper.AddBanking(banking, Constant.Token);
-                if (resultBanking.status == 200)
-                {
-                    await LoadListBienLai(GlobalModel.ListBienLai);
-                    gcDanhSach.DataSource = GlobalModel.ListBienLai;
-                    gcDanhSach.RefreshDataSource();
-                    messager = "Thanh Toán Thành Công!";
-                }
+                report.Parameters["SDTSinhVien"].Value = "Số điện thoại: " + _bienLai.SdtSV + ".";
             }
-            else
+            report.Parameters["MaBienLai"].Value = "Mã biên lai: " + _bienLai.MaGiaoDich + ".";
+            report.Parameters["NamePhong"].Value = "Phòng: ." + _bienLai.Phong + ".";
+            report.Parameters["NameKhu"].Value = "Khu: " + _bienLai.Khu + ".";
+            report.Parameters["CCCD"].Value = "CCCD: " + _bienLai.CCCD + ".";
+            report.Parameters["TienPhong"].Value = "Tiền phòng: " + _bienLai.TienPhong + ".(đồng)";
+            report.Parameters["TienXe"].Value = "Tiền xe: " + _bienLai.TienXe + ".(đồng)";
+            report.Parameters["Total"].Value = "Tổng tiền: " + _bienLai.Total + ".(đồng)";
+            report.Parameters["NgayDong"].Value = "Ngày đóng:  ngày " + _bienLai.NgayDong.Value.Day + " tháng " + _bienLai.NgayDong.Value.Month + " năm " + _bienLai.NgayDong.Value.Year + ".";
+            report.Parameters["NgayHetHan"].Value = "Ngày hết hạn:  ngày " + _bienLai.NgayHetHan.Value.Day + " tháng " + _bienLai.NgayHetHan.Value.Month + " năm " + _bienLai.NgayHetHan.Value.Year + ".";
+            report.Parameters["CreatAt"].Value = "Đà Nẵng,  ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year + ".";
+            report.Parameters["MaSo"].Value = "Số: " + _bienLai.CCCD + "./QĐ-TTQLKTX";
+            // Export the report to PDF
+            SaveFileDialog save = new SaveFileDialog();
+            save.FileName = _bienLai.CCCD + "_BienLai.pdf"; // Đặt tên file mặc định là "TaiSan.pdf"
+            save.Filter = "PDF Files|*.pdf"; // Chỉ cho phép lưu file có đuôi .pdf
+            if (save.ShowDialog() == DialogResult.OK)
             {
-                messager = result.message;
+                report.ExportToPdf(save.FileName);
             }
 
         }
@@ -166,6 +196,7 @@ namespace ProjectQLKTX
                     bienlai.TienXe = item.TienXe;
                     bienlai.Total = item.TienPhong + item.TienXe;
                     bienlai.Status = item.Status;
+                    bienlai.MaGiaoDich = ConvertHelper.ConvertToGuid(item.Id);
                     if (bienlai.Status == true)
                     {
                         bienlai.TrangThai = "Đã Thanh Toán";
@@ -240,9 +271,12 @@ namespace ProjectQLKTX
             }
         }
 
-        private void btnThanhToan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private async void btnThanhToan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            _frmLoading.Show();
+            await ThanhToan();
+            _frmLoading.Hide();
+            MessageBox.Show(messager);
         }
     }
 }

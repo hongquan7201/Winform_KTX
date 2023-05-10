@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using DevExpress.Accessibility;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
@@ -15,10 +16,19 @@ namespace ProjectQLKTX.APIsHelper
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var json = JsonConvert.SerializeObject(banking, jsonSerializerSettings);
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+            var json = JsonConvert.SerializeObject(new
+            {
+                IdUser = banking.IdUser,
+                amount = banking.amount,
+                cmt = banking.cmt,
+                type = banking.type,
+                creatAt = banking.creatAt,
+                IdBienLai = banking.IdBienLai
+
+            });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync($"api/banking/add", content);
             var body = await response.Content.ReadAsStringAsync();
