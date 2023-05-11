@@ -3,11 +3,11 @@
     public class Banking
     {
         public Guid Id { get; set; }
-        public string code { get; set; }
-        public string type { get; set; }
-        public string cmt { get; set; }
-        public DateTime creatAt { get; set; }
-        public string amount { get; set; }
+        public string? Code { get; set; }
+        public string? Type { get; set; }
+        public string? Comment { get; set; }
+        public DateTime CreateAt { get; set; }
+        public decimal? Amount { get; set; }
         public Guid? IdUser { get; set; }
         public Guid? IdHoaDon { get; set; }
         public Guid? IdBienLai { get; set; }

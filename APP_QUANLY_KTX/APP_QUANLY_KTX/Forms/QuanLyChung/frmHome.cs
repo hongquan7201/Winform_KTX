@@ -652,13 +652,13 @@ namespace ProjectQLKTX
                 foreach (var item in lstBanking.data)
                 {
                     Banking banking = new Banking();
-                    banking.type = item.type;
+                    banking.Type = item.Type;
                     banking.IdUser = item.IdUser;
-                    banking.amount = item.amount;
-                    banking.code = item.code;
+                    banking.Amount = item.Amount;
+                    banking.Code = item.Code;
                     banking.Id = item.Id;
-                    banking.cmt = item.cmt;
-                    banking.creatAt = item.creatAt;
+                    banking.Comment = item.Comment;
+                    banking.CreateAt = item.CreateAt;
                     banking.STT = i;
                     if (banking.IdUser != null)
                     {

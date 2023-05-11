@@ -24,7 +24,7 @@
 
         /// <summary>
         /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// the contents of this method with the Code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -663,7 +663,7 @@
             // 
             // txtTenNhanVien
             // 
-            txtTenNhanVien.Location = new Point(582, 57);
+            txtTenNhanVien.Location = new Point(582, 56);
             txtTenNhanVien.Margin = new Padding(4);
             txtTenNhanVien.MenuManager = barManager1;
             txtTenNhanVien.Name = "txtTenNhanVien";

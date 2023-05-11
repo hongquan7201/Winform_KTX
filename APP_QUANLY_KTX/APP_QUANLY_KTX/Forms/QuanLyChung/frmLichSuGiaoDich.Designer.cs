@@ -24,7 +24,7 @@
 
         /// <summary>
         /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// the contents of this method with the Code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -804,7 +804,7 @@
             MAGIAODICH.AppearanceHeader.Options.UseTextOptions = true;
             MAGIAODICH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             MAGIAODICH.Caption = "MÃ GIAO DỊCH";
-            MAGIAODICH.FieldName = "code";
+            MAGIAODICH.FieldName = "Code";
             MAGIAODICH.MaxWidth = 100;
             MAGIAODICH.MinWidth = 100;
             MAGIAODICH.Name = "MAGIAODICH";
@@ -826,7 +826,7 @@
             LOAIGIAODICH.AppearanceHeader.Options.UseTextOptions = true;
             LOAIGIAODICH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             LOAIGIAODICH.Caption = "LOẠI GIAO DỊCH";
-            LOAIGIAODICH.FieldName = "type";
+            LOAIGIAODICH.FieldName = "Type";
             LOAIGIAODICH.MaxWidth = 150;
             LOAIGIAODICH.MinWidth = 150;
             LOAIGIAODICH.Name = "LOAIGIAODICH";
@@ -848,7 +848,7 @@
             SOTIEN.AppearanceHeader.Options.UseTextOptions = true;
             SOTIEN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             SOTIEN.Caption = "SỐ TIỀN";
-            SOTIEN.FieldName = "amount";
+            SOTIEN.FieldName = "Amount";
             SOTIEN.MaxWidth = 150;
             SOTIEN.MinWidth = 150;
             SOTIEN.Name = "SOTIEN";
@@ -870,7 +870,7 @@
             NOIDUNG.AppearanceHeader.Options.UseTextOptions = true;
             NOIDUNG.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             NOIDUNG.Caption = "NỘI DUNG";
-            NOIDUNG.FieldName = "cmt";
+            NOIDUNG.FieldName = "Comment";
             NOIDUNG.MaxWidth = 150;
             NOIDUNG.MinWidth = 150;
             NOIDUNG.Name = "NOIDUNG";
@@ -889,7 +889,7 @@
             NGAYTHANHTOAN.AppearanceHeader.Options.UseTextOptions = true;
             NGAYTHANHTOAN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             NGAYTHANHTOAN.Caption = "NGÀY THANH TOÁN";
-            NGAYTHANHTOAN.FieldName = "creatAt";
+            NGAYTHANHTOAN.FieldName = "CreateAt";
             NGAYTHANHTOAN.MaxWidth = 150;
             NGAYTHANHTOAN.MinWidth = 150;
             NGAYTHANHTOAN.Name = "NGAYTHANHTOAN";

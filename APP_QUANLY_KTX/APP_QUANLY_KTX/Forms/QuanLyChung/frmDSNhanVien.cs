@@ -299,5 +299,10 @@ namespace ProjectQLKTX
                 imgNo.Visible = false;
             }
         }
+
+        private void txtSDT_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

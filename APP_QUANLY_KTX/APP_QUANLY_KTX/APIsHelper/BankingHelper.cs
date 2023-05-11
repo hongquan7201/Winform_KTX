@@ -22,12 +22,11 @@ namespace ProjectQLKTX.APIsHelper
             var json = JsonConvert.SerializeObject(new
             {
                 IdUser = banking.IdUser,
-                amount = banking.amount,
-                cmt = banking.cmt,
-                type = banking.type,
-                creatAt = banking.creatAt,
-                IdBienLai = banking.IdBienLai
-
+                Amount = banking.Amount,
+                Comment = banking.Comment,
+                Type = banking.Type,
+                IdBienLai = banking.IdBienLai,
+                IdHoaDon = banking.IdHoaDon
             });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync($"api/banking/add", content);

@@ -168,17 +168,16 @@ namespace ProjectQLKTX
                     hoadon.IdPhong = _hoaDon.IdPhong;
                     hoadon.CreateAt = _hoaDon.CreateAt;
                     var result = await _hoaDonHelper.EditHoaDon(hoadon, Constant.Token);
-                    //if (result.status == 200)
-                    //{
-                    //    Banking banking = new Banking();
-                    //    banking.IdHoaDon = hoadon.Id;
-                    //    banking.cmt = "HD-" + checkSinhVien.data.FirstOrDefault().Cccd;
-                    //    banking.IdUser = GlobalModel.Nhanvien.Id;
-                    //    banking.creatAt = DateTime.Now;
-                    //    banking.type = "Banking " + GlobalModel.Nhanvien.Email;
-                    //    var resultBanking = await _bankingHelper.AddBanking(banking, Constant.Token);
-                    messager = "Thanh Toán Thành Công!";
-                    //}
+                    if (result.status == 200)
+                    {
+                        Banking banking = new Banking();
+                        banking.IdHoaDon = hoadon.Id;
+                        banking.Comment = "HD-" + checkSinhVien.data.FirstOrDefault().Cccd;
+                        banking.IdUser = GlobalModel.Nhanvien.Id;
+                        banking.Type = "Thanh Toán Qua: " + GlobalModel.Nhanvien.Email;
+                        var resultBanking = await _bankingHelper.AddBanking(banking, Constant.Token);
+                        messager = "Thanh Toán Thành Công!";
+                    }
 
                     var report = new Report_Hoadon();
                     // Set the value of the "MaGiaoDich" field

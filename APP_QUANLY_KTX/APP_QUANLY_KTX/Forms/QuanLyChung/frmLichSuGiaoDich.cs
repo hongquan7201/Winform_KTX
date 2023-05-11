@@ -30,14 +30,14 @@ namespace ProjectQLKTX
         {
             txtEmail.Text = banking.Email;
             txtHoTen.Text = banking.Name;
-            txtLoaiGiaoDich.Text = banking.type;
-            txtMaGiaoDich.Text = banking.code;
-            txtNoiDung.Text = banking.cmt;
+            txtLoaiGiaoDich.Text = banking.Type;
+            txtMaGiaoDich.Text = banking.Code;
+            txtNoiDung.Text = banking.Comment;
             txtSDT.Text = banking.Sdt;
-            txtSoTien.Text = banking.amount;
+            txtSoTien.Text = banking.Amount.ToString();
             cbKhu.Text = banking.NameKhu;
             cbPhong.Text = banking.NamePhong;
-            dtNgayThanhToan.Text = banking.creatAt.ToString();
+            dtNgayThanhToan.Text = banking.CreateAt.ToString();
         }
         private async void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -54,13 +54,13 @@ namespace ProjectQLKTX
                 var result = await _bankingHelper.GetBankingByCode(txtTim.EditValue.ToString(), Constant.Token);
                 if (result.status == 200)
                 {
-                    banking.type = result.data.type;
+                    banking.Type = result.data.Type;
                     banking.IdUser = result.data.IdUser;
-                    banking.amount = result.data.amount;
-                    banking.code = result.data.code;
+                    banking.Amount = result.data.Amount;
+                    banking.Code = result.data.Code;
                     banking.Id = result.data.Id;
-                    banking.cmt = result.data.cmt;
-                    banking.creatAt = result.data.creatAt;
+                    banking.Comment = result.data.Comment;
+                    banking.CreateAt = result.data.CreateAt;
                     if (banking.IdUser != null)
                     {
                         var sinhvien = await _sinhVienHelper.GetSinhVienById(banking.IdUser, Constant.Token);
@@ -142,13 +142,13 @@ namespace ProjectQLKTX
                 foreach (var item in lstBanking.data)
                 {
                     Banking banking = new Banking();
-                    banking.type = item.type;
+                    banking.Type = item.Type;
                     banking.IdUser = item.IdUser;
-                    banking.amount = item.amount;
-                    banking.code = item.code;
+                    banking.Amount = item.Amount;
+                    banking.Code = item.Code;
                     banking.Id = item.Id;
-                    banking.cmt = item.cmt;
-                    banking.creatAt = item.creatAt;
+                    banking.Comment = item.Comment;
+                    banking.CreateAt = item.CreateAt;
                     banking.STT = i;
                     if (banking.IdUser != null)
                     {

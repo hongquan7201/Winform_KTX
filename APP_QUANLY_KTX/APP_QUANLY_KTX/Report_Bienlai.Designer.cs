@@ -24,7 +24,7 @@
 
         /// <summary>
         /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// the contents of this method with the Code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -757,7 +757,7 @@
             this.xrTableCell5.StylePriority.UseFont = false;
             this.xrTableCell5.StylePriority.UsePadding = false;
             this.xrTableCell5.StylePriority.UseTextAlignment = false;
-            this.xrTableCell5.Text = "TRUNG TÂM QUẢN LÝ KÝ TÚC XÁ";
+            this.xrTableCell5.Text = "TRUNG TÂM QUẢN LÝ KÍ TÚC XÁ";
             this.xrTableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             this.xrTableCell5.Weight = 3.2686951942993794D;
             // 
@@ -880,7 +880,7 @@
             // 
             // objectDataSource1
             // 
-            this.objectDataSource1.DataSourceType = null;
+            this.objectDataSource1.DataSource = typeof(global::ProjectQLKTX.Models.Bienlai);
             this.objectDataSource1.Name = "objectDataSource1";
             // 
             // NameSinhVien1

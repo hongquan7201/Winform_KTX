@@ -128,28 +128,28 @@ namespace ProjectQLKTX
             bienlai.NgayHetHan = _bienLai.NgayHetHan;
             bienlai.Total = _bienLai.Total;
             var result = await _bienLaiHelper.EditBienLai(bienlai, Constant.Token);
-            //if (result.status == 200)
-            //{
-            //    Banking banking = new Banking();
-            //    banking.amount = _bienLai.Total.ToString();
-            //    banking.IdUser = _bienLai.IdSinhVien;
-            //    banking.cmt = "BL-" + _bienLai.CCCD;
-            //    banking.type = "Thanh Toán Qua Nhân Viên " + _bienLai.EmailNV;
-            //    banking.creatAt = DateTime.Now;
-            //    banking.IdBienLai = _bienLai.Id;
-            //    var resultBanking = await _bankingHelper.AddBanking(banking, Constant.Token);
-            //    if (resultBanking.status == 200)
-            //    {
-            //        await LoadListBienLai(GlobalModel.ListBienLai);
-            //        gcDanhSach.DataSource = GlobalModel.ListBienLai;
-            //        gcDanhSach.RefreshDataSource();
-                   messager = "Thanh Toán Thành Công!";
-            //    }
-            //}
-            //else
-            //{
-            //    messager = result.message;
-            //}
+            if (result.status == 200)
+            {
+                Banking banking = new Banking();
+                banking.Amount = _bienLai.Total;
+                banking.IdUser = _bienLai.IdSinhVien;
+                banking.Comment = "BL-" + _bienLai.CCCD;
+                banking.Type = "Thanh Toán Qua: " + _bienLai.EmailNV;
+                banking.CreateAt = DateTime.Now;
+                banking.IdBienLai = _bienLai.Id;
+                var resultBanking = await _bankingHelper.AddBanking(banking, Constant.Token);
+                if (resultBanking.status == 200)
+                {
+                    await LoadListBienLai(GlobalModel.ListBienLai);
+                    gcDanhSach.DataSource = GlobalModel.ListBienLai;
+                    gcDanhSach.RefreshDataSource();
+                    messager = "Thanh Toán Thành Công!";
+                }
+            }
+            else
+            {
+                messager = result.message;
+            }
             var report = new Report_Bienlai();
             // Set the value of the "MaGiaoDich" field
             report.Parameters["NameSinhVien1"].Value = "Họ, tên sinh viên: " + _bienLai.NameSinhVien + ".";

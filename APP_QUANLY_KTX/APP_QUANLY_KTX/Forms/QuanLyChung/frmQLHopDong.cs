@@ -327,5 +327,28 @@ namespace ProjectQLKTX
         {
             Export.ExportExcel(gcDanhSach, "DanhSachHopDong");
         }
+
+        private void btnInfilePDF_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var report = new Report_Hopdong();
+            // Set the value of the "MaGiaoDich" field
+            report.Parameters["NameSinhVien"].Value = "Họ, tên sinh viên: " + _hopdong.NameSinhVien + ".";
+            report.Parameters["MaGiaoDich"].Value = "Mã Hợp Đồng: " + _hopdong.Id.ToString();
+            report.Parameters["NamePhong"].Value = "Phòng: ." + _hopdong.Phong + ".";
+            report.Parameters["MaSinhVien"].Value = "Mã Số Sinh Viên: " + _hopdong.MaSinhVien + ".";
+            report.Parameters["EmailSinhVien"].Value = "Email Sinh Viên: " + _hopdong.EmailSinhVien + ".";
+            report.Parameters["NgayBatDau"].Value = "Ngày Bắt Đầu:  ngày " + _hopdong.NgayBatDau.Value.Day + " tháng " + _hopdong.NgayBatDau.Value.Month + " năm " + _hopdong.NgayBatDau.Value.Year + ".";
+            report.Parameters["NgayKetThuc"].Value = "Ngày Kết Thúc:  ngày " + _hopdong.NgayKetThuc.Value.Day + " tháng " + _hopdong.NgayKetThuc.Value.Month + " năm " + _hopdong.NgayKetThuc.Value.Year + ".";
+            report.Parameters["CreatAt"].Value = "Đà Nẵng,  ngày " + DateTime.Now.Day + " tháng " + DateTime.Now.Month + " năm " + DateTime.Now.Year + ".";
+            report.Parameters["MaSo"].Value = "Số: " + DateTime.Now.Month + "/HĐ-TTQLKTX";
+            // Export the report to PDF
+            SaveFileDialog save = new SaveFileDialog();
+            save.FileName = _hopdong.MaSinhVien + "_HopDong.pdf"; // Đặt tên file mặc định là "TaiSan.pdf"
+            save.Filter = "PDF Files|*.pdf"; // Chỉ cho phép lưu file có đuôi .pdf
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                report.ExportToPdf(save.FileName);
+            }
+        }
     }
 }
