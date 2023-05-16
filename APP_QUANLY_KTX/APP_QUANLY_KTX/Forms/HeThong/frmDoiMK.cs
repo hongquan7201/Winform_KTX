@@ -59,36 +59,39 @@ namespace ProjectQLKTX
 
         private async void btnDongY_CheckedChanged(object sender, EventArgs e)
         {
-            string pass = (string)Properties.Settings.Default["Password"];
-            if (txtPasswordCu.Text == pass && txtPasswordMoi.Text == txtNhapLaiPassword.Text)
+            try
             {
-                _frmLoading.Show();
-                await Edit(pass);
-                _frmLoading.Hide();
-                MessageBox.Show(messager);
+                string pass = (string)Properties.Settings.Default["Password"];
+                if (txtPasswordCu.Text == pass && txtPasswordMoi.Text == txtNhapLaiPassword.Text)
+                {
+                    _frmLoading.Show();
+                    await Edit(pass);
+                    _frmLoading.Hide();
+                    var s = messager;
+
+                    MessageBox.Show(messager);
+                }
+                else
+                {
+                    MessageBox.Show("Vui Lòng Nhập Đúng Thông Tin!");
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Vui Lòng Nhập Đúng Thông Tin!");
+                Log.Error(ex, ex.Message);
             }
+           
         }
         private async Task Edit(string pass)
         {
             try
             {
-                Nhanvien nhanvien = new Nhanvien();
-                nhanvien.Id = GlobalModel.Nhanvien.Id;
-                nhanvien.Email = GlobalModel.Nhanvien.Email;
-                nhanvien.Password = pass;
-                var result = await _nhanVienHelper.EditNhanVien(nhanvien, Constant.Token);
-                if(result.status == 200)
-                {
-                    messager = "Đổi Mật Khẩu Thành Công! Vui Lòng Đăng Nhập Lại Tài Khoản!";
-                }
-                else
-                {
-                    messager = result.message;
-                }
+                ChangePasswordNhanVien nhanvien = new ChangePasswordNhanVien();
+                nhanvien.idNhanVien = GlobalModel.Nhanvien.Id;
+                nhanvien.oldPassword = pass;
+                nhanvien.newPassword = txtPasswordMoi.Text;
+                var result = await _nhanVienHelper.ChangePassword(nhanvien, Constant.Token);
+                messager = result.message;
             }
             catch (Exception ex)
             {

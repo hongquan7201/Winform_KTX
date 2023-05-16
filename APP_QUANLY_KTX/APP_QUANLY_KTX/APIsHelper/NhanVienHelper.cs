@@ -20,6 +20,7 @@ namespace ProjectQLKTX.APIsHelper
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(new
             {
+                IdRole = nhanVien.IdRole,
                 Name = nhanVien.Name,
                 Password = nhanVien.Password,
                 Email = nhanVien.Email,
@@ -36,6 +37,22 @@ namespace ProjectQLKTX.APIsHelper
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
         }
+
+        public async Task<APIRespone<string>> ChangePassword(ChangePasswordNhanVien changePasswordNhanVien, string token)
+        {
+            HttpClient httpClient = new HttpClient();
+            httpClient.BaseAddress = new Uri(Constant.Domain);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+            var json = JsonConvert.SerializeObject(changePasswordNhanVien, jsonSerializerSettings);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await httpClient.PutAsync($"api/nhanvien/changepass", content);
+            var body = await response.Content.ReadAsStringAsync();
+            APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
+            return data;
+        }
+
         public async Task<APIRespone<string>> DeleteNhanVien(Guid id, string token)
         {
             string url = Constant.Domain + "api/nhanvien/delete";// Thay đổi đường dẫn API của bạn
@@ -142,5 +159,6 @@ namespace ProjectQLKTX.APIsHelper
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
         }
+
     }
 }

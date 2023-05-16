@@ -34,8 +34,7 @@ namespace ProjectQLKTX
         private void lbQuenMK_Click(object sender, EventArgs e)
         {
             frmQuenMK QuenMatKhau = new frmQuenMK(_frmLoading, _nhanVienHelper);
-            QuenMatKhau.Show();
-            this.Hide();
+            QuenMatKhau.ShowDialog();
         }
 
         private void cbHienthi_CheckedChanged(object sender, EventArgs e)
@@ -105,11 +104,11 @@ namespace ProjectQLKTX
                             GlobalModel.Nhanvien.Id = login.data.FirstOrDefault().Id;
                             if (login.token != null)
                             {
-                               string[] s = login.token.Split(' ');
+                                string[] s = login.token.Split(' ');
                                 Constant.Token = s[1];
 
                             }
-                            
+
                         }
                     }
                     IsCheck = true;

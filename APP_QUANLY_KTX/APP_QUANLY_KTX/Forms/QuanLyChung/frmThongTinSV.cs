@@ -18,7 +18,7 @@ namespace ProjectQLKTX
         private readonly IPhongHelper _phongHelper;
         private readonly IKhuHelper _khuHelper;
         private readonly ITruongHelper _truongHelper;
-        private string messager = "";
+        private string messager = "Vui Lòng Thử Lại!";
         public frmThongTinSV(ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, frmLoading frmLoading)
         {
             InitializeComponent();

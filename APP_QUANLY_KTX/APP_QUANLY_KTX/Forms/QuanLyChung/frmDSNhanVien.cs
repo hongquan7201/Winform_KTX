@@ -1,4 +1,5 @@
-﻿using DevExpress.Utils;
+﻿using DevExpress.CodeParser;
+using DevExpress.Utils;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using ProjectQLKTX.APIsHelper.API;
@@ -12,14 +13,16 @@ namespace ProjectQLKTX
 {
     public partial class frmDSNhanVien : DevExpress.XtraEditors.XtraForm
     {
+        private readonly IRoleHelper _roleHelper;
         private readonly INhanVienHelper _nhanVienHelper;
         private readonly frmLoading _frmLoading;
         private string messager = "";
-        public frmDSNhanVien(INhanVienHelper nhanVienHelper, frmLoading frmLoading)
+        public frmDSNhanVien(INhanVienHelper nhanVienHelper, frmLoading frmLoading, IRoleHelper roleHelper)
         {
             InitializeComponent();
             _nhanVienHelper = nhanVienHelper;
             _frmLoading = frmLoading;
+            _roleHelper = roleHelper;
         }
         private Nhanvien account = new Nhanvien();
         private async Task LoadAccount(List<Nhanvien> listNhanVien)
@@ -43,6 +46,14 @@ namespace ProjectQLKTX
                         {
                             item.GioiTinh = "Nữ";
                         }
+                        if (item.IdRole != null)
+                        {
+                            var role = await _roleHelper.GetRole(item.IdRole);
+                            if (role.status == 200)
+                            {
+                                item.NameRole = role.data.FirstOrDefault().Name;
+                            }
+                        }
                         listNhanVien.Add(item);
                         i++;
                     }
@@ -62,21 +73,16 @@ namespace ProjectQLKTX
             gcDanhSach.DataSource = GlobalModel.ListNhanVien;
             gcDanhSach.RefreshDataSource();
             lbDem.Text = GlobalModel.ListNhanVien.Count.ToString();
+            foreach (var item in GlobalModel.ListRole)
+            {
+                cbChucVu.Text = item.Name;
+            }
         }
         private async void GetAccount(Nhanvien nhanvien)
         {
             txtHoTen.Text = nhanvien.Name;
             txtEmail.Text = nhanvien.Email;
             txtDiaChi.Text = nhanvien.Address;
-            try
-            {
-                dtNgayDangKy.Text = nhanvien.CreateAt.ToString();
-                dtNgaySinh.Text = nhanvien.Birthday.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Vui Lòng Định Dạng Lại dd/mm/yyyy");
-            }
             txtCCCD.Text = nhanvien.Cccd;
             txtSDT.Text = nhanvien.Sdt;
             cbGioiTinh.Text = nhanvien.GioiTinh;
@@ -89,6 +95,16 @@ namespace ProjectQLKTX
             {
                 imgNVNam.Visible = false;
                 imgNVNu.Visible = true;
+            }
+            cbChucVu.Text = nhanvien.NameRole;
+            try
+            {
+                dtNgayDangKy.Text = nhanvien.CreateAt.Value.Day + "/" + nhanvien.CreateAt.Value.Month + "/" + nhanvien.CreateAt.Value.Year;
+                dtNgaySinh.Text = nhanvien.Birthday;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui Lòng Định Dạng Lại dd/mm/yyyy");
             }
         }
 
@@ -108,10 +124,16 @@ namespace ProjectQLKTX
                 nhanvien.Password = txtEmail.Text;
                 nhanvien.Email = txtEmail.Text;
                 nhanvien.Address = txtDiaChi.Text;
-                nhanvien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
-                nhanvien.Birthday = dtNgaySinh.Text;
                 nhanvien.Cccd = txtCCCD.Text;
                 nhanvien.Sdt = txtSDT.Text;
+                foreach (var item in GlobalModel.ListRole)
+                {
+                    if (item.Name == cbChucVu.Text)
+                    {
+                        nhanvien.IdRole = item.Id;
+                        break;
+                    }
+                }
                 if (cbGioiTinh.Text == "Nam")
                 {
                     nhanvien.Gender = true;
@@ -125,6 +147,8 @@ namespace ProjectQLKTX
                 {
                     await LoadAccount(GlobalModel.ListNhanVien);
                 }
+                nhanvien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
+                nhanvien.Birthday = dtNgaySinh.Text;
                 messager = result.message;
             }
             catch (Exception ex)
@@ -149,9 +173,15 @@ namespace ProjectQLKTX
                 nhanvien.Name = txtHoTen.Text;
                 nhanvien.Email = txtEmail.Text;
                 nhanvien.Address = txtDiaChi.Text;
-                nhanvien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
-                nhanvien.Birthday = dtNgaySinh.Text;
                 nhanvien.Cccd = txtCCCD.Text;
+                foreach (var item in GlobalModel.ListRole)
+                {
+                    if (item.Name == cbChucVu.Text)
+                    {
+                        nhanvien.IdRole = item.Id;
+                        break;
+                    }
+                }
                 nhanvien.Sdt = txtSDT.Text;
                 if (cbGioiTinh.Text == "Nam")
                 {
@@ -166,6 +196,8 @@ namespace ProjectQLKTX
                 {
                     await LoadAccount(GlobalModel.ListNhanVien);
                 }
+                nhanvien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
+                nhanvien.Birthday = dtNgaySinh.Text;
                 messager = result.message;
             }
             catch (Exception ex)

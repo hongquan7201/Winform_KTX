@@ -9,6 +9,7 @@ namespace ProjectQLKTX
 {
     public partial class Home : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private readonly IRoleHelper _roleHelper;
         private readonly IThongKeHelper _thongKeHelper;
         private readonly INhanVienHelper _nhanVienHelper;
         private readonly ISinhVienHelper _sinhVienHelper;
@@ -30,7 +31,7 @@ namespace ProjectQLKTX
         private readonly frmDangNhap _frmDangNhap;
         private readonly frmLoading _frmLoading;
         private readonly frmQLiXe _frmQLiXe;
-        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper, IChietTietPhieuKhoHelper chietTietPhieuKhoHelper, frmDangNhap frmDangNhap, frmLoading frmLoading, frmQLiXe frmQLiXe, IBankingHelper bankingHelper, IChiTietCongToHelper chiTietCongToHelper, ICongToHelper congToHelper, IBienLaiHelper bienLaiHelper, IHoaDonHelper hoaDonHelper, IThongKeHelper thongKeHelper)
+        public Home(INhanVienHelper nhanVienHelper, ISinhVienHelper sinhVienHelper, IThanNhanHelper thanNhanHelper, IQuanHeHelper quanHeHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, ITaiSanHelper taiSanHelper, IVatDungHelper vatDungHelper, IChietTietPhieuKhoHelper chietTietPhieuKhoHelper, frmDangNhap frmDangNhap, frmLoading frmLoading, frmQLiXe frmQLiXe, IBankingHelper bankingHelper, IChiTietCongToHelper chiTietCongToHelper, ICongToHelper congToHelper, IBienLaiHelper bienLaiHelper, IHoaDonHelper hoaDonHelper, IThongKeHelper thongKeHelper, IRoleHelper roleHelper)
         {
             InitializeComponent();
             _nhanVienHelper = nhanVienHelper;
@@ -54,6 +55,7 @@ namespace ProjectQLKTX
             _bienLaiHelper = bienLaiHelper;
             _hoaDonHelper = hoaDonHelper;
             _thongKeHelper = thongKeHelper;
+            _roleHelper = roleHelper;
         }
         private void btnDoiMK_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -93,9 +95,22 @@ namespace ProjectQLKTX
         {
             _frmLoading.Show();
             await LoadListNhanVien(GlobalModel.ListNhanVien);
+            await LoadListRole(GlobalModel.ListRole);
             _frmLoading.Hide();
-            frmDSNhanVien frmDSNhanVien = new frmDSNhanVien(_nhanVienHelper, _frmLoading);
+            frmDSNhanVien frmDSNhanVien = new frmDSNhanVien(_nhanVienHelper, _frmLoading, _roleHelper);
             frmDSNhanVien.ShowDialog();
+        }
+        private async Task LoadListRole(List<Role> listRole)
+        {
+            var reult = await _roleHelper.GetListRole();
+            if(reult.status == 200)
+            {
+                listRole.Clear();
+                foreach(var item in reult.data)
+                {
+                    listRole.Add(item);
+                }
+            }
         }
         private async void btnTTNhanVien_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -424,13 +439,17 @@ namespace ProjectQLKTX
                         {
                             item.GioiTinh = "Nữ";
                         }
+                        if (item.IdRole != null)
+                        {
+                            var role = await  _roleHelper.GetRole(item.IdRole);
+                            if(role.status == 200)
+                            {
+                                item.NameRole = role.data.FirstOrDefault().Name;
+                            }
+                        }
                         listNhanVien.Add(item);
                         i++;
                     }
-                }
-                else
-                {
-                    MessageBox.Show(result.message);
                 }
             }
             catch (Exception ex)

@@ -24,21 +24,6 @@ namespace ProjectQLKTX
             txtHoTen.Text = xe.NameUser;
             txtDiaChi.Text = xe.Address;
             cbKhu.Text = xe.NameKhu;
-            try
-            {
-                if (xe.CreateAt != null)
-                {
-                    dtNgayDangKy.Text = xe.CreateAt.ToString();
-                }
-                if (!string.IsNullOrEmpty(xe.BirthDay))
-                {
-                    dtNgaySinh.Text = xe.BirthDay.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Vui Lòng Định Dạng Lại dd/mm/yyyy");
-            }
             txtCCCD.Text = xe.Cccd;
             txtSDT.Text = xe.Sdt;
             cbGioiTinh.Text = xe.GioiTinh;
@@ -57,6 +42,21 @@ namespace ProjectQLKTX
             txtBSoXe.Text = xe.Code;
             txtMauXe.Text = xe.Color;
             txtTenXe.Text = xe.Name;
+            try
+            {
+                if (xe.CreateAt != null)
+                {
+                    dtNgayDangKy.Text = xe.CreateAt.ToString();
+                }
+                if (!string.IsNullOrEmpty(xe.BirthDay))
+                {
+                    dtNgaySinh.Text = xe.BirthDay.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui Lòng Định Dạng Lại dd/mm/yyyy");
+            }
         }
         public frmQLiXe(IXeHelper xeHelper, ISinhVienHelper sinhVienHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper)
         {
@@ -331,6 +331,11 @@ namespace ProjectQLKTX
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnThem_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }

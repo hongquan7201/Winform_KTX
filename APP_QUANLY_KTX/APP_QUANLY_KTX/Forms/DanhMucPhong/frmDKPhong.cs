@@ -224,7 +224,7 @@ namespace ProjectQLKTX
                     hopdong.NgayBatDau = DateTime.Parse(dtNgayVao.Text);
                     hopdong.NgayKetThuc = DateTime.Parse(dtNgayHetHan.Text);
                     hopdong.IdPhong = GlobalModel.SinhVien.IdPhong;
-                    var resultHopDong = await _hopDongHelper.AddHopDong(hopdong,Constant.Token);
+                    var resultHopDong = await _hopDongHelper.AddHopDong(hopdong, Constant.Token);
                     messager = resultHopDong.message;
                 }
             }

@@ -29,5 +29,6 @@ public partial class Nhanvien
     public bool? Status { get; set; }
 
     public Guid? IdRole { get; set; }
+    public  string? NameRole { get; set; }
 
 }

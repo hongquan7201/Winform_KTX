@@ -20,5 +20,6 @@
         public static List<Bienlai> ListBienLai = new List<Bienlai>();
         public static List<Quanhe> ListQuanhe = new List<Quanhe>();
         public static List<Hoadon> ListHoaDon = new List<Hoadon>();
+        public static List<Role> ListRole = new List<Role>();
     }
 }

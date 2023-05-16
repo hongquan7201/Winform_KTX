@@ -93,13 +93,15 @@ namespace ProjectQLKTX
         {
             gcDanhSach.DataSource = GlobalModel.ListTaiSan;
             gcDanhSach.RefreshDataSource();
+            cbPhong.Properties.Items.Clear();
+            cbTenTaiSan.Properties.Items.Clear();
             foreach(var item in GlobalModel.ListPhong)
             {
-                cbPhong.Properties.Items.Add(item);
+                cbPhong.Properties.Items.Add(item.Name);
             }
             foreach(var item in GlobalModel.ListVatDung)
             {
-                cbTenTaiSan.Properties.Items.Add(item);
+                cbTenTaiSan.Properties.Items.Add(item.Name);
             }
         }
 

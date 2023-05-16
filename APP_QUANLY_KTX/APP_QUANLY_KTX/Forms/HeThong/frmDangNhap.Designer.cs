@@ -61,10 +61,10 @@
             // 
             lbQuenMK.AutoSize = true;
             lbQuenMK.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbQuenMK.Location = new Point(343, 271);
-            lbQuenMK.Margin = new Padding(4, 0, 4, 0);
+            lbQuenMK.Location = new Point(386, 334);
+            lbQuenMK.Margin = new Padding(5, 0, 5, 0);
             lbQuenMK.Name = "lbQuenMK";
-            lbQuenMK.Size = new Size(130, 21);
+            lbQuenMK.Size = new Size(169, 27);
             lbQuenMK.TabIndex = 4;
             lbQuenMK.Text = "Quên mật khẩu?";
             lbQuenMK.TextAlign = ContentAlignment.TopCenter;
@@ -77,9 +77,10 @@
             btnDangNhap.Appearance.Options.UseBackColor = true;
             btnDangNhap.Appearance.Options.UseFont = true;
             btnDangNhap.ImageOptions.Image = (Image)resources.GetObject("btnDangNhap.ImageOptions.Image");
-            btnDangNhap.Location = new Point(187, 223);
+            btnDangNhap.Location = new Point(218, 274);
+            btnDangNhap.Margin = new Padding(4, 4, 4, 4);
             btnDangNhap.Name = "btnDangNhap";
-            btnDangNhap.Size = new Size(135, 34);
+            btnDangNhap.Size = new Size(158, 42);
             btnDangNhap.TabIndex = 3;
             btnDangNhap.Text = "Đăng nhập";
             btnDangNhap.CheckedChanged += btnDangNhap_CheckedChanged;
@@ -91,9 +92,10 @@
             btnThoat.Appearance.Options.UseBackColor = true;
             btnThoat.Appearance.Options.UseFont = true;
             btnThoat.ImageOptions.Image = (Image)resources.GetObject("btnThoat.ImageOptions.Image");
-            btnThoat.Location = new Point(323, 223);
+            btnThoat.Location = new Point(377, 274);
+            btnThoat.Margin = new Padding(4, 4, 4, 4);
             btnThoat.Name = "btnThoat";
-            btnThoat.Size = new Size(133, 34);
+            btnThoat.Size = new Size(155, 42);
             btnThoat.TabIndex = 5;
             btnThoat.Text = "Thoát";
             btnThoat.CheckedChanged += btnThoat_CheckedChanged;
@@ -103,10 +105,10 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(81, 157);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(94, 193);
+            label6.Margin = new Padding(5, 0, 5, 0);
             label6.Name = "label6";
-            label6.Size = new Size(83, 21);
+            label6.Size = new Size(110, 27);
             label6.TabIndex = 52;
             label6.Text = "Mật khẩu:";
             label6.TextAlign = ContentAlignment.TopCenter;
@@ -114,37 +116,39 @@
             // pictureEdit5
             // 
             pictureEdit5.EditValue = resources.GetObject("pictureEdit5.EditValue");
-            pictureEdit5.Location = new Point(43, 153);
+            pictureEdit5.Location = new Point(50, 188);
+            pictureEdit5.Margin = new Padding(4, 4, 4, 4);
             pictureEdit5.Name = "pictureEdit5";
             pictureEdit5.Properties.Appearance.BackColor = SystemColors.GradientActiveCaption;
             pictureEdit5.Properties.Appearance.Options.UseBackColor = true;
             pictureEdit5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             pictureEdit5.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             pictureEdit5.Properties.ZoomPercent = 5D;
-            pictureEdit5.Size = new Size(37, 30);
+            pictureEdit5.Size = new Size(43, 37);
             pictureEdit5.TabIndex = 51;
             // 
             // pictureEdit6
             // 
             pictureEdit6.EditValue = resources.GetObject("pictureEdit6.EditValue");
-            pictureEdit6.Location = new Point(46, 104);
+            pictureEdit6.Location = new Point(54, 128);
+            pictureEdit6.Margin = new Padding(4, 4, 4, 4);
             pictureEdit6.Name = "pictureEdit6";
             pictureEdit6.Properties.Appearance.BackColor = SystemColors.GradientActiveCaption;
             pictureEdit6.Properties.Appearance.Options.UseBackColor = true;
             pictureEdit6.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             pictureEdit6.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             pictureEdit6.Properties.ZoomPercent = 5D;
-            pictureEdit6.Size = new Size(37, 30);
+            pictureEdit6.Size = new Size(43, 37);
             pictureEdit6.TabIndex = 49;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(86, 110);
-            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Location = new Point(100, 135);
+            label7.Margin = new Padding(5, 0, 5, 0);
             label7.Name = "label7";
-            label7.Size = new Size(55, 21);
+            label7.Size = new Size(74, 27);
             label7.TabIndex = 50;
             label7.Text = "Email:";
             label7.TextAlign = ContentAlignment.TopCenter;
@@ -153,10 +157,10 @@
             // 
             panel2.BackColor = Color.White;
             panel2.Controls.Add(txtEmail);
-            panel2.Location = new Point(187, 102);
-            panel2.Margin = new Padding(4);
+            panel2.Location = new Point(218, 126);
+            panel2.Margin = new Padding(5, 5, 5, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(264, 41);
+            panel2.Size = new Size(308, 50);
             panel2.TabIndex = 46;
             // 
             // txtEmail
@@ -165,11 +169,11 @@
             txtEmail.BorderStyle = BorderStyle.None;
             txtEmail.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmail.ForeColor = Color.Black;
-            txtEmail.Location = new Point(4, 9);
-            txtEmail.Margin = new Padding(4);
+            txtEmail.Location = new Point(5, 11);
+            txtEmail.Margin = new Padding(5, 5, 5, 5);
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(253, 23);
+            txtEmail.Size = new Size(295, 28);
             txtEmail.TabIndex = 1;
             // 
             // panel6
@@ -177,18 +181,19 @@
             panel6.BackColor = Color.White;
             panel6.Controls.Add(cbHienthi);
             panel6.Controls.Add(txtPassword);
-            panel6.Location = new Point(187, 151);
-            panel6.Margin = new Padding(4);
+            panel6.Location = new Point(218, 186);
+            panel6.Margin = new Padding(5, 5, 5, 5);
             panel6.Name = "panel6";
-            panel6.Size = new Size(264, 41);
+            panel6.Size = new Size(308, 50);
             panel6.TabIndex = 45;
             // 
             // cbHienthi
             // 
-            cbHienthi.Location = new Point(244, 12);
+            cbHienthi.Location = new Point(285, 15);
+            cbHienthi.Margin = new Padding(4, 4, 4, 4);
             cbHienthi.Name = "cbHienthi";
             cbHienthi.Properties.Caption = "";
-            cbHienthi.Size = new Size(19, 20);
+            cbHienthi.Size = new Size(22, 24);
             cbHienthi.TabIndex = 45;
             cbHienthi.CheckedChanged += cbHienthi_CheckedChanged;
             // 
@@ -198,12 +203,12 @@
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtPassword.ForeColor = Color.Black;
-            txtPassword.Location = new Point(4, 9);
-            txtPassword.Margin = new Padding(4);
+            txtPassword.Location = new Point(5, 11);
+            txtPassword.Margin = new Padding(5, 5, 5, 5);
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(233, 23);
+            txtPassword.Size = new Size(272, 28);
             txtPassword.TabIndex = 2;
             // 
             // label1
@@ -211,10 +216,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.DarkOrange;
-            label1.Location = new Point(230, 31);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(268, 38);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(155, 26);
+            label1.Size = new Size(196, 35);
             label1.TabIndex = 58;
             label1.Text = "ĐĂNG NHẬP";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -222,14 +227,15 @@
             // pictureEdit1
             // 
             pictureEdit1.EditValue = resources.GetObject("pictureEdit1.EditValue");
-            pictureEdit1.Location = new Point(3, 4);
+            pictureEdit1.Location = new Point(4, 5);
+            pictureEdit1.Margin = new Padding(4, 4, 4, 4);
             pictureEdit1.Name = "pictureEdit1";
             pictureEdit1.Properties.Appearance.BackColor = SystemColors.GradientActiveCaption;
             pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
             pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             pictureEdit1.Properties.ZoomPercent = 70D;
-            pictureEdit1.Size = new Size(178, 78);
+            pictureEdit1.Size = new Size(208, 96);
             pictureEdit1.TabIndex = 38;
             // 
             // pictureEdit2
@@ -285,9 +291,9 @@
             // 
             Appearance.BackColor = SystemColors.GradientActiveCaption;
             Appearance.Options.UseBackColor = true;
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(477, 301);
+            ClientSize = new Size(556, 370);
             Controls.Add(pictureEdit1);
             Controls.Add(label1);
             Controls.Add(lbQuenMK);
@@ -301,6 +307,7 @@
             Controls.Add(panel6);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             IconOptions.Icon = (Icon)resources.GetObject("frmDangNhap.IconOptions.Icon");
+            Margin = new Padding(4, 4, 4, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmDangNhap";
