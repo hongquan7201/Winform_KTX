@@ -101,7 +101,7 @@
             this.btnLayLaiMK.Size = new System.Drawing.Size(183, 40);
             this.btnLayLaiMK.TabIndex = 71;
             this.btnLayLaiMK.Text = "Lấy lại mật khẩu";
-            this.btnLayLaiMK.CheckedChanged += new System.EventHandler(this.btnLayLaiMK_CheckedChanged_1);
+            this.btnLayLaiMK.CheckedChanged += new System.EventHandler(this.btnLayLaiMK_CheckedChanged);
             // 
             // label6
             // 

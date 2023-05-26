@@ -1,12 +1,12 @@
-﻿using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
-using System.Net.Http.Headers;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
-using DevExpress.ClipboardSource.SpreadsheetML;
+using static DevExpress.XtraBars.Docking2010.Views.BaseRegistrator;
 
 namespace ProjectQLKTX.APIsHelper
 {
@@ -19,7 +19,13 @@ namespace ProjectQLKTX.APIsHelper
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var json = JsonConvert.SerializeObject(xe, jsonSerializerSettings);
+            var json = JsonConvert.SerializeObject(new
+            {
+                IdUser = xe.IdUser,
+                Name = xe.Name,
+                Code = xe.Code,
+                color = xe.Color
+            });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync($"api/xe/add", content);
             var body = await response.Content.ReadAsStringAsync();
@@ -51,7 +57,15 @@ namespace ProjectQLKTX.APIsHelper
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var json = JsonConvert.SerializeObject(xe, jsonSerializerSettings);
+            var json = JsonConvert.SerializeObject(new
+            {
+                Id = xe.Id,
+                CreateAt = xe.CreateAt,
+                IdUser = xe.IdUser,
+                Name = xe.Name,
+                Code = xe.Code,
+                color = xe.Color
+            });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PutAsync($"api/xe/edit", content);
             var body = await response.Content.ReadAsStringAsync();
@@ -59,7 +73,7 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<List<Xe>>> GetListXe(string  token)
+        public async Task<APIRespone<List<Xe>>> GetListXe(string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);

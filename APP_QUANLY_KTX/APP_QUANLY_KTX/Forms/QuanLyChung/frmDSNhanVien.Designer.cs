@@ -158,6 +158,7 @@
             btnThem.ImageOptions.Image = (Image)resources.GetObject("btnThem.ImageOptions.Image");
             btnThem.ImageOptions.LargeImage = (Image)resources.GetObject("btnThem.ImageOptions.LargeImage");
             btnThem.Name = "btnThem";
+            btnThem.ItemClick += btnThem_ItemClick;
             // 
             // btnSua
             // 
@@ -165,6 +166,7 @@
             btnSua.Id = 1;
             btnSua.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnSua.ImageOptions.SvgImage");
             btnSua.Name = "btnSua";
+            btnSua.ItemClick += btnSua_ItemClick;
             // 
             // btnXoa
             // 
@@ -173,6 +175,7 @@
             btnXoa.ImageOptions.Image = (Image)resources.GetObject("btnXoa.ImageOptions.Image");
             btnXoa.ImageOptions.LargeImage = (Image)resources.GetObject("btnXoa.ImageOptions.LargeImage");
             btnXoa.Name = "btnXoa";
+            btnXoa.ItemClick += btnXoa_ItemClick;
             // 
             // btnReload
             // 
@@ -190,6 +193,7 @@
             btnInfilePDF.ImageOptions.Image = (Image)resources.GetObject("btnInfilePDF.ImageOptions.Image");
             btnInfilePDF.ImageOptions.LargeImage = (Image)resources.GetObject("btnInfilePDF.ImageOptions.LargeImage");
             btnInfilePDF.Name = "btnInfilePDF";
+            btnInfilePDF.ItemClick += btnInfilePDF_ItemClick;
             // 
             // btnXuatfileExcel
             // 
@@ -198,6 +202,7 @@
             btnXuatfileExcel.ImageOptions.Image = (Image)resources.GetObject("btnXuatfileExcel.ImageOptions.Image");
             btnXuatfileExcel.ImageOptions.LargeImage = (Image)resources.GetObject("btnXuatfileExcel.ImageOptions.LargeImage");
             btnXuatfileExcel.Name = "btnXuatfileExcel";
+            btnXuatfileExcel.ItemClick += btnXuatfileExcel_ItemClick;
             // 
             // txtTim
             // 
@@ -228,7 +233,7 @@
             barDockControlTop.Location = new Point(0, 0);
             barDockControlTop.Manager = barManager1;
             barDockControlTop.Margin = new Padding(4);
-            barDockControlTop.Size = new Size(945, 65);
+            barDockControlTop.Size = new Size(1012, 30);
             // 
             // barDockControlBottom
             // 
@@ -237,25 +242,25 @@
             barDockControlBottom.Location = new Point(0, 725);
             barDockControlBottom.Manager = barManager1;
             barDockControlBottom.Margin = new Padding(4);
-            barDockControlBottom.Size = new Size(945, 0);
+            barDockControlBottom.Size = new Size(1012, 0);
             // 
             // barDockControlLeft
             // 
             barDockControlLeft.CausesValidation = false;
             barDockControlLeft.Dock = DockStyle.Left;
-            barDockControlLeft.Location = new Point(0, 65);
+            barDockControlLeft.Location = new Point(0, 30);
             barDockControlLeft.Manager = barManager1;
             barDockControlLeft.Margin = new Padding(4);
-            barDockControlLeft.Size = new Size(0, 660);
+            barDockControlLeft.Size = new Size(0, 695);
             // 
             // barDockControlRight
             // 
             barDockControlRight.CausesValidation = false;
             barDockControlRight.Dock = DockStyle.Right;
-            barDockControlRight.Location = new Point(945, 65);
+            barDockControlRight.Location = new Point(1012, 30);
             barDockControlRight.Manager = barManager1;
             barDockControlRight.Margin = new Padding(4);
-            barDockControlRight.Size = new Size(0, 660);
+            barDockControlRight.Size = new Size(0, 695);
             // 
             // barButtonItem5
             // 
@@ -375,10 +380,10 @@
             groupControl2.Controls.Add(labelControl6);
             groupControl2.Controls.Add(labelControl5);
             groupControl2.Controls.Add(txtCCCD);
-            groupControl2.Location = new Point(2, 73);
+            groupControl2.Location = new Point(2, 50);
             groupControl2.Margin = new Padding(4);
             groupControl2.Name = "groupControl2";
-            groupControl2.Size = new Size(943, 358);
+            groupControl2.Size = new Size(1010, 382);
             groupControl2.TabIndex = 11;
             groupControl2.Text = "Thông Tin Nhân Viên";
             // 
@@ -393,6 +398,7 @@
             cbChucVu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             cbChucVu.Size = new Size(167, 30);
             cbChucVu.TabIndex = 64;
+            cbChucVu.SelectedIndexChanged += cbChucVu_SelectedIndexChanged;
             // 
             // labelControl7
             // 
@@ -428,6 +434,7 @@
             cbGioiTinh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             cbGioiTinh.Size = new Size(167, 30);
             cbGioiTinh.TabIndex = 61;
+            cbGioiTinh.SelectedIndexChanged += cbGioiTinh_SelectedIndexChanged;
             // 
             // dtNgayDangKy
             // 
@@ -626,9 +633,10 @@
             gcDanhSach.Margin = new Padding(4);
             gcDanhSach.Name = "gcDanhSach";
             gcDanhSach.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] { repositoryItemLookUpEdit2 });
-            gcDanhSach.Size = new Size(940, 229);
+            gcDanhSach.Size = new Size(1004, 229);
             gcDanhSach.TabIndex = 12;
             gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] { gvDanhSach });
+            gcDanhSach.Click += gcDanhSach_DoubleClick;
             // 
             // gvDanhSach
             // 
@@ -870,10 +878,10 @@
             groupControl1.Controls.Add(labelControl17);
             groupControl1.Controls.Add(lbDem);
             groupControl1.Controls.Add(gcDanhSach);
-            groupControl1.Location = new Point(2, 436);
+            groupControl1.Location = new Point(2, 433);
             groupControl1.Margin = new Padding(4);
             groupControl1.Name = "groupControl1";
-            groupControl1.Size = new Size(943, 289);
+            groupControl1.Size = new Size(1010, 292);
             groupControl1.TabIndex = 59;
             groupControl1.Text = "Danh Sách";
             groupControl1.DoubleClick += gcDanhSach_DoubleClick;
@@ -906,7 +914,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(945, 725);
+            ClientSize = new Size(1012, 725);
             Controls.Add(groupControl1);
             Controls.Add(groupControl2);
             Controls.Add(barDockControlLeft);

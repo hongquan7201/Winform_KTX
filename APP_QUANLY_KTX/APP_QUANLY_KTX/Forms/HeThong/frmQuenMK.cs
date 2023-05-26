@@ -19,10 +19,10 @@ namespace ProjectQLKTX
 
         private async void btnLayLaiMK_CheckedChanged(object sender, EventArgs e)
         {
-            if (txtCCCD.Text == GlobalModel.Nhanvien.Cccd && txtEmail.Text == GlobalModel.Nhanvien.Cccd)
+            if (!string.IsNullOrEmpty(txtCCCD.Text)&& !string.IsNullOrEmpty(txtEmail.Text))
             {
                 _frmLoading.Show();
-                await Reset(txtEmail.Text);
+                await Reset(txtEmail.Text.Trim());
                 _frmLoading.Hide();
                 MessageBox.Show(message);
             }
@@ -40,7 +40,7 @@ namespace ProjectQLKTX
         {
             try
             {
-                var result = await _nhanVienHelper.ResetPassword(email, Constant.Token);
+                var result = await _nhanVienHelper.ResetPassword(email);
                 if (result.status == 200)
                 {
                     message = "Reset Thành Công! Vui Lòng Check Email Để Nhận Password! Để Đăng Nhập!";
@@ -54,11 +54,6 @@ namespace ProjectQLKTX
             {
                 Log.Error(ex, ex.Message);
             }
-
-        }
-
-        private void btnLayLaiMK_CheckedChanged_1(object sender, EventArgs e)
-        {
 
         }
     }

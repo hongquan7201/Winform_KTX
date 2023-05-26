@@ -42,18 +42,18 @@ namespace ProjectQLKTX
         private async void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _frmLoading.Show();
-            await SearchCode(_banking);
-            GetAccAccount(_banking);
+            await SearchCode();
             _frmLoading.Hide();
             MessageBox.Show(messager);
         }
-        private async Task SearchCode(Banking banking)
+        private async Task SearchCode()
         {
             if (!string.IsNullOrEmpty(txtTim.EditValue.ToString()))
             {
                 var result = await _bankingHelper.GetBankingByCode(txtTim.EditValue.ToString(), Constant.Token);
                 if (result.status == 200)
                 {
+                    Banking banking = new Banking();
                     banking.Type = result.data.Type;
                     banking.IdUser = result.data.IdUser;
                     banking.Amount = result.data.Amount;
@@ -92,6 +92,7 @@ namespace ProjectQLKTX
                     GlobalModel.ListBanking.Add(banking);
                     gcDanhSach.DataSource = GlobalModel.ListBanking;
                     gcDanhSach.RefreshDataSource();
+                    GetAccAccount(banking);
                 }
                 messager = result.message;
             }

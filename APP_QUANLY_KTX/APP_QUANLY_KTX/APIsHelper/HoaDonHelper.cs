@@ -58,15 +58,15 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Hoadon>> GetHoaDon(Guid id, string token)
+        public async Task<APIRespone<List<Hoadon>>> GetHoaDon(Guid id, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
-            string query = "/api/hoadon/{0}";
+            string query = "/api/hoadon/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<Hoadon> data = JsonConvert.DeserializeObject<APIRespone<Hoadon>>(body);
+            APIRespone<List<Hoadon>> data = JsonConvert.DeserializeObject<APIRespone<List<Hoadon>>>(body);
             return data;
         }
 

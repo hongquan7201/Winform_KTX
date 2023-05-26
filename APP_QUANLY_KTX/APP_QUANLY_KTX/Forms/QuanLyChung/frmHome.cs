@@ -1,9 +1,11 @@
-﻿using DevExpress.XtraBars;
+﻿using DevExpress.CodeParser;
+using DevExpress.XtraBars;
 using ProjectQLKTX.APIsHelper.API;
 using ProjectQLKTX.Files;
 using ProjectQLKTX.Interface;
 using ProjectQLKTX.Models;
 using Serilog;
+using VietnamNumber;
 
 namespace ProjectQLKTX
 {
@@ -62,9 +64,12 @@ namespace ProjectQLKTX
             frmDoiMK frmDoiMK = new frmDoiMK(_frmLoading, _nhanVienHelper);
             frmDoiMK.ShowDialog();
         }
-        private void btnDangKyPhong_ItemClick(object sender, ItemClickEventArgs e)
+        private async void btnDangKyPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmDKPhong frmDangKyPhong = new frmDKPhong(_sinhVienHelper, _phongHelper, _khuHelper, _truongHelper, _hopDongHelper, _xeHelper, _frmLoading);
+            _frmLoading.Show();
+            await LoadListPhong(GlobalModel.ListPhong);
+            _frmLoading.Hide();
+            frmDKPhong frmDangKyPhong = new frmDKPhong(_sinhVienHelper, _phongHelper, _khuHelper, _truongHelper, _hopDongHelper, _xeHelper, _frmLoading,_bienLaiHelper);
             frmDangKyPhong.ShowDialog();
         }
         private async void btnChuyenPhong_ItemClick(object sender, ItemClickEventArgs e)
@@ -103,10 +108,10 @@ namespace ProjectQLKTX
         private async Task LoadListRole(List<Role> listRole)
         {
             var reult = await _roleHelper.GetListRole();
-            if(reult.status == 200)
+            if (reult.status == 200)
             {
                 listRole.Clear();
-                foreach(var item in reult.data)
+                foreach (var item in reult.data)
                 {
                     listRole.Add(item);
                 }
@@ -164,7 +169,7 @@ namespace ProjectQLKTX
             await LoadListHoaDon(GlobalModel.ListHoaDon);
             await LoadListPhong(GlobalModel.ListPhong);
             _frmLoading.Hide();
-            frmQLiHoaDon frmQLHoaDon = new frmQLiHoaDon(_hoaDonHelper, _frmLoading, _phongHelper, _khuHelper, _nhanVienHelper, _sinhVienHelper, _chiTietCongToHelper);
+            frmQLiHoaDon frmQLHoaDon = new frmQLiHoaDon(_hoaDonHelper, _frmLoading, _phongHelper, _khuHelper, _nhanVienHelper, _sinhVienHelper, _chiTietCongToHelper, _bankingHelper);
             frmQLHoaDon.ShowDialog();
         }
 
@@ -210,6 +215,7 @@ namespace ProjectQLKTX
             QUANLY.Visible = false;
             btnDoiMK.Enabled = false;
             BAOCAOTHONGKE.Visible = false;
+            btnDangxuat.Caption = "Đăng Nhập";
             _frmDangNhap.ShowDialog();
             Thread thread = new Thread(check);
             thread.IsBackground = true;
@@ -270,6 +276,7 @@ namespace ProjectQLKTX
                             item.NameUser = user.data.FirstOrDefault().Name;
                             item.Address = user.data.FirstOrDefault().Address;
                             item.Cccd = user.data.FirstOrDefault().Cccd;
+                            item.MaSv = user.data.FirstOrDefault().MaSv;
                             item.Sdt = user.data.FirstOrDefault().Sdt;
                             item.Gender = user.data.FirstOrDefault().Gender;
                             if (item.Gender == true)
@@ -345,7 +352,7 @@ namespace ProjectQLKTX
                     }
                     else
                     {
-                        item.TinhTrang = "Hư";
+                        item.TinhTrang = "Hỏng";
                     }
                     item.STT = i;
                     chitietphieukhos.Add(item);
@@ -441,8 +448,8 @@ namespace ProjectQLKTX
                         }
                         if (item.IdRole != null)
                         {
-                            var role = await  _roleHelper.GetRole(item.IdRole);
-                            if(role.status == 200)
+                            var role = await _roleHelper.GetRole(item.IdRole);
+                            if (role.status == 200)
                             {
                                 item.NameRole = role.data.FirstOrDefault().Name;
                             }
@@ -571,6 +578,7 @@ namespace ProjectQLKTX
                         chitietcongto.TienNuoc = item.TienNuoc;
                         chitietcongto.Total = item.Total;
                         chitietcongto.IdPhong = item.IdPhong;
+                        chitietcongto.IdCongTo = item.IdCongTo;
                         if (chitietcongto.IdPhong != null)
                         {
                             if (chitietcongto.IdPhong != null)
@@ -795,6 +803,7 @@ namespace ProjectQLKTX
                                 bienlai.EmailSV = sinhvien.data.FirstOrDefault().Email;
                                 bienlai.NgaySinhSV = sinhvien.data.FirstOrDefault().BirthDay;
                                 bienlai.MaSinhVien = sinhvien.data.FirstOrDefault().MaSv;
+                                bienlai.SdtSV = sinhvien.data.FirstOrDefault().Sdt;
                                 if (sinhvien.data.FirstOrDefault().Gender == true)
                                 {
                                     bienlai.GioiTinhSV = "Nam";
@@ -878,7 +887,7 @@ namespace ProjectQLKTX
                     hoadon.CreateAt = item.CreateAt;
                     if (item.IdPhong != null)
                     {
-                        hoadon.IdPhong = item.Id;
+                        hoadon.IdPhong = item.IdPhong;
                         var phong = await _phongHelper.GetPhong(item.IdPhong, Constant.Token);
                         if (phong.status == 200)
                         {

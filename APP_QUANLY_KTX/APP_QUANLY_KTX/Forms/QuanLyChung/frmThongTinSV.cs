@@ -131,6 +131,7 @@ namespace ProjectQLKTX
         {
             imgSVNu.Visible = false;
             imgSVNam.Visible = false;
+            imgNo.Visible = true;
             gcDanhSach.DataSource = GlobalModel.ListSinhVien;
             gcDanhSach.RefreshDataSource();
             cbPhong.Properties.Items.Clear();
@@ -162,46 +163,46 @@ namespace ProjectQLKTX
         }
         private async Task AddSinhVien()
         {
-           Sinhvien newSinhVien = new Sinhvien();
-           newSinhVien.Name = txtHoTen.Text;
-           newSinhVien.MaSv = txtMaSV.Text;
-           newSinhVien.Address = txtDiaChi.Text;
-           newSinhVien.BirthDay = dtNgaySinh.Text;
-           newSinhVien.Cccd = txtCCCD.Text;
-           newSinhVien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
-           newSinhVien.Email = txtEmail.Text;
-           newSinhVien.Password = txtEmail.Text;
-           newSinhVien.Sdt = txtSDT.Text;
+            Sinhvien newSinhVien = new Sinhvien();
+            newSinhVien.Name = txtHoTen.Text;
+            newSinhVien.MaSv = txtMaSV.Text;
+            newSinhVien.Address = txtDiaChi.Text;
+            newSinhVien.BirthDay = dtNgaySinh.Text;
+            newSinhVien.Cccd = txtCCCD.Text;
+            newSinhVien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
+            newSinhVien.Email = txtEmail.Text;
+            newSinhVien.Password = txtEmail.Text;
+            newSinhVien.Sdt = txtSDT.Text;
             if (cbGioiTinh.Text == "Nam")
             {
-               newSinhVien.Gender = true;
+                newSinhVien.Gender = true;
             }
             else
             {
-               newSinhVien.Gender = false;
+                newSinhVien.Gender = false;
             }
             foreach (var item in GlobalModel.ListTruong)
             {
                 if (cbTruong.Text == item.Name)
                 {
-                   newSinhVien.IdTruong = item.Id;
+                    newSinhVien.IdTruong = item.Id;
                 }
             }
             foreach (var item in GlobalModel.ListPhong)
             {
                 if (cbPhong.Text == item.Name)
                 {
-                   newSinhVien.IdPhong = item.Id;
+                    newSinhVien.IdPhong = item.Id;
                 }
             }
-            var sinhvien = await _sinhVienHelper.AddSinhVien(GlobalModel.SinhVien, Constant.Token);
-            if(sinhvien.status == 200)
+            var sinhvien = await _sinhVienHelper.AddSinhVien(newSinhVien, Constant.Token);
+            if (sinhvien.status == 200)
             {
-               newSinhVien.Code = sinhvien.code;
-               newSinhVien.Id = sinhvien.id;
+                newSinhVien.Code = sinhvien.code;
+                newSinhVien.Id = sinhvien.id;
                 Thannhan thannhan = new Thannhan();
                 thannhan.Address = txtDiaChiTN.Text;
-                thannhan.IdUser =newSinhVien.Id;
+                thannhan.IdUser = newSinhVien.Id;
                 thannhan.Name = txtTenTN.Text;
                 foreach (var item in GlobalModel.ListQuanhe)
                 {
@@ -220,6 +221,10 @@ namespace ProjectQLKTX
                     thannhan.Gender = false;
                 }
                 var resultThanNhan = await _thanNhanHelper.AddThanNhan(thannhan, Constant.Token);
+                if (resultThanNhan.status == 200)
+                {
+
+                }
             }
             await LoadSinhVien(GlobalModel.ListSinhVien);
             gcDanhSach.DataSource = GlobalModel.ListSinhVien;
@@ -261,21 +266,6 @@ namespace ProjectQLKTX
             cbKhu.Text = sinhVien.Khu;
             cbPhong.Text = sinhVien.Phong;
             cbGioiTinhTN.Text = sinhVien.GioiTinhThanNhan;
-            try
-            {
-                if (sinhVien.CreateAt != null)
-                {
-                    dtNgayDangKy.Text = sinhVien.CreateAt.ToString();
-                }
-                if (!string.IsNullOrEmpty(sinhVien.BirthDay))
-                {
-                    dtNgaySinh.Text = sinhVien.BirthDay.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Vui Lòng Định Dạng Lại dd/mm/yyyy");
-            }
             txtCCCD.Text = sinhVien.Cccd;
             txtSDT.Text = sinhVien.Sdt;
             cbGioiTinh.Text = sinhVien.GioiTinh;
@@ -289,8 +279,23 @@ namespace ProjectQLKTX
                 imgSVNam.Visible = false;
                 imgSVNu.Visible = true;
             }
-        }
+            try
+            {
+                if (sinhVien.CreateAt != null)
+                {
+                    dtNgayDangKy.Value = sinhVien.CreateAt;
+                }
+                if (!string.IsNullOrEmpty(sinhVien.BirthDay))
+                {
+                    dtNgaySinh.Text = sinhVien.BirthDay;
+                }
+            }
+            catch (Exception ex)
+            {
 
+            }
+
+        }
         private async void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _frmLoading.Show();
@@ -396,7 +401,7 @@ namespace ProjectQLKTX
             try
             {
                 await LoadSinhVien(GlobalModel.ListSinhVien);
-                MessageBox.Show(result.message);
+                messager = result.message;
             }
             catch (Exception ex)
             {
@@ -414,10 +419,11 @@ namespace ProjectQLKTX
         }
         private async Task DeleteSinhVien()
         {
-            var deleteById = await _sinhVienHelper.DeleteSinhVien(_sinhVien.Id, Constant.Token);
+
             try
             {
-                if(deleteById.status == 200)
+                var deleteById = await _sinhVienHelper.DeleteSinhVien(_sinhVien.Id, Constant.Token);
+                if (deleteById.status == 200)
                 {
                     await LoadSinhVien(GlobalModel.ListSinhVien);
                     gcDanhSach.DataSource = GlobalModel.ListSinhVien;
@@ -434,14 +440,13 @@ namespace ProjectQLKTX
         private async void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _frmLoading.Show();
-          await   LoadSinhVien(GlobalModel.ListSinhVien);
+            await LoadSinhVien(GlobalModel.ListSinhVien);
             _frmLoading.Hide();
         }
         private void btnXuatfileExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Export.ExportExcel(gcDanhSach, "DanhSachSinhVien");
         }
-
         private void btnInfilePDF_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Export.ExportPDF(gcDanhSach, "DanhSachSinhVien");
@@ -452,6 +457,9 @@ namespace ProjectQLKTX
             {
                 _frmLoading.Show();
                 await SearchSinhVien(GlobalModel.ListSinhVien, txtTim.EditValue.ToString());
+                gcDanhSach.DataSource = GlobalModel.ListSinhVien;
+                gcDanhSach.RefreshDataSource();
+                lbDem.Text = GlobalModel.ListSinhVien.Count.ToString();
                 _frmLoading.Hide();
                 MessageBox.Show(messager);
             }
@@ -474,7 +482,7 @@ namespace ProjectQLKTX
             }
             if (resultSinhVien.status == 200)
             {
-                List<Sinhvien> lstSinhVien= new List<Sinhvien>();
+                List<Sinhvien> lstSinhVien = new List<Sinhvien>();
                 foreach (var item in listSinhVien)
                 {
                     lstSinhVien.Add(item);
@@ -490,6 +498,17 @@ namespace ProjectQLKTX
                     sinhvien.Sdt = item.Sdt;
                     sinhvien.BirthDay = item.BirthDay;
                     sinhvien.Id = item.Id;
+                    sinhvien.MaSv = item.MaSv;
+                    sinhvien.Gender = item.Gender;
+                    sinhvien.Email = item.Email;
+                    if (sinhvien.Gender == true)
+                    {
+                        sinhvien.GioiTinh = "Nam";
+                    }
+                    else
+                    {
+                        sinhvien.GioiTinh = "Nữ";
+                    }
                     sinhvien.IdPhong = item.IdPhong;
                     if (item.IdPhong != null)
                     {
@@ -498,7 +517,7 @@ namespace ProjectQLKTX
                         {
                             if (resultPhong.data.FirstOrDefault().IdKhu != null)
                             {
-                                sinhvien.Phong = resultPhong.data.FirstOrDefault().Name; 
+                                sinhvien.Phong = resultPhong.data.FirstOrDefault().Name;
                                 var resultKhu = await _khuHelper.GetKhu(resultPhong.data.FirstOrDefault().IdKhu, Constant.Token);
                                 if (resultKhu.status == 200)
                                 {
@@ -518,6 +537,7 @@ namespace ProjectQLKTX
                     sinhvien.idThanNhan = item.idThanNhan;
                     if (sinhvien.idThanNhan != null)
                     {
+
                         var thannhan = await _thanNhanHelper.GetThanNhan(sinhvien.idThanNhan, Constant.Token);
                         if (thannhan.status == 200)
                         {
@@ -538,7 +558,7 @@ namespace ProjectQLKTX
                                 var quanHe = await _quanHeHelper.GetQuanHe(thannhan.data.FirstOrDefault().IdQuanHe, Constant.Token);
                                 if (quanHe.status == 200)
                                 {
-                                    item.QuanHe = quanHe.data.FirstOrDefault().Name;
+                                    sinhvien.QuanHe = quanHe.data.FirstOrDefault().Name;
                                 }
                             }
                         }
@@ -548,17 +568,33 @@ namespace ProjectQLKTX
                     i++;
                 }
             }
-           messager=  resultSinhVien.message;
+            messager = resultSinhVien.message;
         }
         private void cbKhu_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbPhong.Properties.Items.Clear();
-            foreach(var item in GlobalModel.ListPhong)
+            foreach (var item in GlobalModel.ListPhong)
             {
-                if(cbKhu.Text == item.NameKhu&& item.QuantityPeople < 8)
+                if (cbKhu.Text == item.NameKhu && item.QuantityPeople < 8)
                 {
                     cbPhong.Properties.Items.Add(item.Name);
                 }
+            }
+        }
+
+        private void cbGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbGioiTinh.Text == "Nam")
+            {
+                imgSVNam.Visible = true;
+                imgSVNu.Visible = false;
+                imgNo.Visible = false;
+            }
+            else
+            {
+                imgSVNam.Visible = false;
+                imgSVNu.Visible = true;
+                imgNo.Visible = false;
             }
         }
     }

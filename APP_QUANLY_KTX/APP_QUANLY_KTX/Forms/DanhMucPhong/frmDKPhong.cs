@@ -13,9 +13,10 @@ namespace ProjectQLKTX
         private readonly ITruongHelper _truongHelper;
         private readonly IHopDongHelper _hopDongHelper;
         private readonly IXeHelper _xeHelper;
+        private readonly IBienLaiHelper _bienLaiHelper;
         private readonly frmLoading _frmLoading;
         private string messager = "Vui Lòng Thử Lại!";
-        public frmDKPhong(ISinhVienHelper sinhVienHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, frmLoading frmLoading)
+        public frmDKPhong(ISinhVienHelper sinhVienHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, IHopDongHelper hopDongHelper, IXeHelper xeHelper, frmLoading frmLoading, IBienLaiHelper bienLaiHelper)
         {
             InitializeComponent();
             _sinhVienHelper = sinhVienHelper;
@@ -25,7 +26,7 @@ namespace ProjectQLKTX
             _hopDongHelper = hopDongHelper;
             _xeHelper = xeHelper;
             _frmLoading = frmLoading;
-
+            _bienLaiHelper = bienLaiHelper;
         }
         private void GetAccount(Sinhvien sinhvien)
         {
@@ -33,7 +34,6 @@ namespace ProjectQLKTX
             txtDiaChi.Text = sinhvien.Address;
             txtEmail.Text = sinhvien.Email;
             txtHoTen.Text = sinhvien.Name;
-            dtNgaySinh.Text = sinhvien.BirthDay;
             if (sinhvien.Gender == true)
             {
                 cbGioiTinh.Text = "Nam";
@@ -51,11 +51,12 @@ namespace ProjectQLKTX
             txtMaSV.Text = sinhvien.MaSv;
             cbTruong.Text = sinhvien.Truong;
             txtSDT.Text = sinhvien.Sdt;
+            dtNgaySinh.Text = sinhvien.BirthDay;
         }
         private void btnDangKyXe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             GlobalModel.IsAddXe = true;
-            frmQLiXe frm = new frmQLiXe(_xeHelper, _sinhVienHelper, _phongHelper, _khuHelper, _truongHelper);
+            frmQLiXe frm = new frmQLiXe(_xeHelper, _sinhVienHelper, _phongHelper, _khuHelper, _truongHelper, _frmLoading);
             frm.ShowDialog();
         }
 
@@ -145,6 +146,7 @@ namespace ProjectQLKTX
             {
                 imgSVNu.Visible = false;
                 imgNo.Visible = false;
+
                 imgSVNam.Visible = true;
             }
             else
@@ -183,6 +185,8 @@ namespace ProjectQLKTX
                     GlobalModel.SinhVien.Email = resultSinhVien.data.FirstOrDefault().Email;
                     GlobalModel.SinhVien.Name = resultSinhVien.data.FirstOrDefault().Name;
                     GlobalModel.SinhVien.BirthDay = resultSinhVien.data.FirstOrDefault().BirthDay;
+                    GlobalModel.SinhVien.MaSv = resultSinhVien.data.FirstOrDefault().MaSv;
+                    GlobalModel.SinhVien.Gender = resultSinhVien.data.FirstOrDefault().Gender;
                     if (resultSinhVien.data.FirstOrDefault().IdTruong != null)
                     {
                         var truong = await _truongHelper.GetTruong(resultSinhVien.data.FirstOrDefault().IdTruong, Constant.Token);
@@ -206,7 +210,7 @@ namespace ProjectQLKTX
                 sVP.idSV = GlobalModel.SinhVien.Id;
                 foreach (var item in GlobalModel.ListPhong)
                 {
-                    if (cbTruong.Text == item.Name)
+                    if (cbPhong.Text == item.Name)
                     {
                         sVP.idPhong = item.Id;
                         GlobalModel.SinhVien.IdPhong = item.Id;
@@ -225,8 +229,14 @@ namespace ProjectQLKTX
                     hopdong.NgayKetThuc = DateTime.Parse(dtNgayHetHan.Text);
                     hopdong.IdPhong = GlobalModel.SinhVien.IdPhong;
                     var resultHopDong = await _hopDongHelper.AddHopDong(hopdong, Constant.Token);
-                    messager = resultHopDong.message;
+                    Bienlai bienlai = new Bienlai();
+                    bienlai.IdNhanVien = GlobalModel.Nhanvien.Id;
+                    bienlai.IdSinhVien = GlobalModel.SinhVien.Id;
+                    bienlai.NgayBatDau = DateTime.Parse(dtNgayVao.Text);
+                    bienlai.NgayHetHan = DateTime.Parse(dtNgayHetHan.Text);
+                    await _bienLaiHelper.AddBienLai(bienlai, Constant.Token);
                 }
+                messager = result.message;
             }
             catch (Exception ex)
             {

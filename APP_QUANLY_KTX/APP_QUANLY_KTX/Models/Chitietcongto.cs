@@ -16,10 +16,11 @@ public partial class Chitietcongto
     public decimal? TienDien { get; set; }
     public decimal? TienNuoc { get; set; }
     public decimal? Total { get; set; }
-    public DateTime? CreateAt { get; set; }
-    public Guid? IdPhong { get; set;}
-    public Guid? IdKhu { get;set; }
-    public string? NamePhong { get; set; }  
+    public DateTime CreateAt { get; set; }
+    public Guid? IdPhong { get; set; }
+    public Guid? IdKhu { get; set; }
+    public string? NamePhong { get; set; }
     public string? NameKhu { get; set; }
     public string? NameCongTo { get; set; }
+    public Guid? IdCongTo { get; set; }
 }

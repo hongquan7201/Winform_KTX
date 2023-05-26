@@ -12,7 +12,7 @@ namespace ProjectQLKTX.Interface
         Task<APIRespone<string>> DeleteNhanVien(Guid id, string token);
         Task<APIRespone<List<Nhanvien>>> GetNhanVienByName(string? name, string token);
         Task<APIRespone<List<Nhanvien>>> GetNhanVienByEmail(string? email, string token);
-        Task<APIRespone<string>> ResetPassword(string email, string token);
+        Task<APIRespone<string>> ResetPassword(string email);
        Task<APIRespone<string>>ChangePassword(ChangePasswordNhanVien changePasswordNhanVien , string token);
     }
 }

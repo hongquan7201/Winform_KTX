@@ -12,5 +12,6 @@ namespace ProjectQLKTX.Interface
         Task<APIRespone<string>> DeletePhong(Guid id, string token);
         Task<APIRespone<string>> AddSinhVien(SVP sVP, string token);
         Task<APIRespone<string>> DeleteSinhVien(Guid? id, string token);
+        Task<APIRespone<List<Sinhvien>>> GetAllSinhVienInPhong(Guid? idPhong, string token);
     }
 }

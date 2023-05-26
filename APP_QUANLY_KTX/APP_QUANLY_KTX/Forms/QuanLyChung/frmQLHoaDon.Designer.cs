@@ -65,6 +65,7 @@
             barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             btnLuu = new DevExpress.XtraBars.BarButtonItem();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            txtHoTen = new DevExpress.XtraEditors.ComboBoxEdit();
             txtTienDien = new DevExpress.XtraEditors.TextEdit();
             labelControl13 = new DevExpress.XtraEditors.LabelControl();
             txtTienNuoc = new DevExpress.XtraEditors.TextEdit();
@@ -83,7 +84,6 @@
             txtEmail = new DevExpress.XtraEditors.TextEdit();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             dtNgayThu = new DateTimePicker();
-            txtHoTen = new DevExpress.XtraEditors.TextEdit();
             labelControl12 = new DevExpress.XtraEditors.LabelControl();
             labelControl11 = new DevExpress.XtraEditors.LabelControl();
             txtTenNhanVien = new DevExpress.XtraEditors.TextEdit();
@@ -113,6 +113,7 @@
             ((System.ComponentModel.ISupportInitialize)repositoryItemTextEdit4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)txtHoTen.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtTienDien.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtTienNuoc.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cbTrangThai.Properties).BeginInit();
@@ -122,7 +123,6 @@
             ((System.ComponentModel.ISupportInitialize)txtTongTien.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmailNV.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtEmail.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtHoTen.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtTenNhanVien.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cbPhong.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gcDanhSach).BeginInit();
@@ -395,6 +395,7 @@
             // 
             groupControl1.AppearanceCaption.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             groupControl1.AppearanceCaption.Options.UseFont = true;
+            groupControl1.Controls.Add(txtHoTen);
             groupControl1.Controls.Add(txtTienDien);
             groupControl1.Controls.Add(labelControl13);
             groupControl1.Controls.Add(txtTienNuoc);
@@ -413,7 +414,6 @@
             groupControl1.Controls.Add(txtEmail);
             groupControl1.Controls.Add(labelControl1);
             groupControl1.Controls.Add(dtNgayThu);
-            groupControl1.Controls.Add(txtHoTen);
             groupControl1.Controls.Add(labelControl12);
             groupControl1.Controls.Add(labelControl11);
             groupControl1.Controls.Add(txtTenNhanVien);
@@ -427,6 +427,20 @@
             groupControl1.Size = new Size(971, 440);
             groupControl1.TabIndex = 46;
             groupControl1.Text = "Thông Tin  Chung";
+            // 
+            // txtHoTen
+            // 
+            txtHoTen.Location = new Point(114, 54);
+            txtHoTen.Margin = new Padding(4);
+            txtHoTen.MenuManager = barManager1;
+            txtHoTen.Name = "txtHoTen";
+            txtHoTen.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtHoTen.Properties.Appearance.Options.UseFont = true;
+            txtHoTen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] { new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo) });
+            txtHoTen.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            txtHoTen.Size = new Size(304, 30);
+            txtHoTen.TabIndex = 119;
+            txtHoTen.SelectedIndexChanged += txtHoTen_SelectedIndexChanged;
             // 
             // txtTienDien
             // 
@@ -555,20 +569,20 @@
             // 
             // txtTongTien
             // 
-            txtTongTien.Location = new Point(294, 403);
+            txtTongTien.Location = new Point(111, 403);
             txtTongTien.Margin = new Padding(4);
             txtTongTien.MenuManager = barManager1;
             txtTongTien.Name = "txtTongTien";
             txtTongTien.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtTongTien.Properties.Appearance.Options.UseFont = true;
-            txtTongTien.Size = new Size(363, 30);
+            txtTongTien.Size = new Size(834, 30);
             txtTongTien.TabIndex = 105;
             // 
             // labelControl5
             // 
             labelControl5.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl5.Appearance.Options.UseFont = true;
-            labelControl5.Location = new Point(188, 409);
+            labelControl5.Location = new Point(9, 406);
             labelControl5.Margin = new Padding(4);
             labelControl5.Name = "labelControl5";
             labelControl5.Size = new Size(74, 21);
@@ -627,17 +641,6 @@
             dtNgayThu.Name = "dtNgayThu";
             dtNgayThu.Size = new Size(362, 30);
             dtNgayThu.TabIndex = 99;
-            // 
-            // txtHoTen
-            // 
-            txtHoTen.Location = new Point(114, 60);
-            txtHoTen.Margin = new Padding(4);
-            txtHoTen.MenuManager = barManager1;
-            txtHoTen.Name = "txtHoTen";
-            txtHoTen.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtHoTen.Properties.Appearance.Options.UseFont = true;
-            txtHoTen.Size = new Size(304, 30);
-            txtHoTen.TabIndex = 97;
             // 
             // labelControl12
             // 
@@ -996,6 +999,7 @@
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
             groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)txtHoTen.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtTienDien.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtTienNuoc.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cbTrangThai.Properties).EndInit();
@@ -1005,7 +1009,6 @@
             ((System.ComponentModel.ISupportInitialize)txtTongTien.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtEmailNV.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtEmail.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtHoTen.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtTenNhanVien.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cbPhong.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)gcDanhSach).EndInit();
@@ -1068,7 +1071,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn PHONG;
         private DevExpress.XtraGrid.Columns.GridColumn EMAIL;
         private DevExpress.XtraGrid.Columns.GridColumn EMAILNV;
-        private DevExpress.XtraEditors.TextEdit txtHoTen;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.TextEdit txtEmailNV;
@@ -1094,5 +1096,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.TextEdit txtTienNuoc;
         private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.ComboBoxEdit txtHoTen;
     }
 }

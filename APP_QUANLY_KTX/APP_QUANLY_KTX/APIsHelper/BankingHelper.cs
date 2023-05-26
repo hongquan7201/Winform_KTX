@@ -40,7 +40,7 @@ namespace ProjectQLKTX.APIsHelper
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
-            string query = "/api/banking/id?id={0}";
+            string query = "/api/banking/id?code={0}";
             var response = await httpClient.GetAsync(string.Format(query, code));
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<Banking> data = JsonConvert.DeserializeObject<APIRespone<Banking>>(body);

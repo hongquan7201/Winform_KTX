@@ -20,14 +20,13 @@ namespace ProjectQLKTX.APIsHelper
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(new
             {
-                IdRole = nhanVien.IdRole,
                 Name = nhanVien.Name,
                 Password = nhanVien.Password,
                 Email = nhanVien.Email,
                 Address = nhanVien.Address,
-                CreateAt = nhanVien.CreateAt,
                 Birthday = nhanVien.Birthday,
                 Cccd = nhanVien.Cccd,
+                IdRole = nhanVien.IdRole,
                 Gender = nhanVien.Gender,
                 Sdt = nhanVien.Sdt
             });
@@ -81,11 +80,12 @@ namespace ProjectQLKTX.APIsHelper
             {
                 Id = nhanVien.Id,
                 Name = nhanVien.Name,
-                Password = nhanVien.Password,
                 Email = nhanVien.Email,
+                Password = nhanVien.Password,
                 Address = nhanVien.Address,
                 CreateAt = nhanVien.CreateAt,
                 Birthday = nhanVien.Birthday,
+                IdRole = nhanVien.IdRole,
                 Cccd = nhanVien.Cccd,
                 Gender = nhanVien.Gender,
                 Sdt = nhanVien.Sdt
@@ -145,11 +145,10 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<string>> ResetPassword(string email, string token)
+        public async Task<APIRespone<string>> ResetPassword(string email)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var json = JsonConvert.SerializeObject(email, jsonSerializerSettings);

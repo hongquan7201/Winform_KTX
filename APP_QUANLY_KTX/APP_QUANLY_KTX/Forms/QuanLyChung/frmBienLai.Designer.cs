@@ -59,6 +59,8 @@
             btnThoat = new DevExpress.XtraBars.BarButtonItem();
             btnThem = new DevExpress.XtraBars.BarButtonItem();
             groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            txtTienBangChu = new DevExpress.XtraEditors.TextEdit();
+            labelControl9 = new DevExpress.XtraEditors.LabelControl();
             txtMaGD = new DevExpress.XtraEditors.TextEdit();
             labelControl7 = new DevExpress.XtraEditors.LabelControl();
             txtTenNV = new DevExpress.XtraEditors.TextEdit();
@@ -92,7 +94,6 @@
             cbGioiTinh = new DevExpress.XtraEditors.ComboBoxEdit();
             txtSDT = new DevExpress.XtraEditors.TextEdit();
             txtCCCD = new DevExpress.XtraEditors.TextEdit();
-            txtHoTen = new DevExpress.XtraEditors.TextEdit();
             labelControl1 = new DevExpress.XtraEditors.LabelControl();
             labelControl3 = new DevExpress.XtraEditors.LabelControl();
             labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -121,6 +122,7 @@
             repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            txtHoTen = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)barManager1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemTextEdit4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemTextEdit1).BeginInit();
@@ -128,6 +130,7 @@
             ((System.ComponentModel.ISupportInitialize)repositoryItemTextEdit3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl4).BeginInit();
             groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)txtTienBangChu.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtMaGD.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtTenNV.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cbTrangThai.Properties).BeginInit();
@@ -143,7 +146,6 @@
             ((System.ComponentModel.ISupportInitialize)cbGioiTinh.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtSDT.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtCCCD.Properties).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtHoTen.Properties).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gcDanhSach).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bienlaiBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gvDanhSach).BeginInit();
@@ -151,6 +153,7 @@
             ((System.ComponentModel.ISupportInitialize)gridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).BeginInit();
             groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)txtHoTen.Properties).BeginInit();
             SuspendLayout();
             // 
             // barManager1
@@ -377,6 +380,8 @@
             groupControl4.Appearance.Options.UseBackColor = true;
             groupControl4.AppearanceCaption.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             groupControl4.AppearanceCaption.Options.UseFont = true;
+            groupControl4.Controls.Add(txtTienBangChu);
+            groupControl4.Controls.Add(labelControl9);
             groupControl4.Controls.Add(txtMaGD);
             groupControl4.Controls.Add(labelControl7);
             groupControl4.Controls.Add(txtTenNV);
@@ -403,6 +408,30 @@
             groupControl4.TabIndex = 49;
             groupControl4.Text = "Thanh Toán";
             // 
+            // txtTienBangChu
+            // 
+            txtTienBangChu.Location = new Point(555, 287);
+            txtTienBangChu.Margin = new Padding(4);
+            txtTienBangChu.MenuManager = barManager1;
+            txtTienBangChu.Name = "txtTienBangChu";
+            txtTienBangChu.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtTienBangChu.Properties.Appearance.Options.UseFont = true;
+            txtTienBangChu.Size = new Size(234, 30);
+            txtTienBangChu.TabIndex = 104;
+            // 
+            // labelControl9
+            // 
+            labelControl9.Appearance.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            labelControl9.Appearance.ForeColor = Color.Blue;
+            labelControl9.Appearance.Options.UseFont = true;
+            labelControl9.Appearance.Options.UseForeColor = true;
+            labelControl9.Location = new Point(461, 298);
+            labelControl9.Margin = new Padding(4);
+            labelControl9.Name = "labelControl9";
+            labelControl9.Size = new Size(73, 19);
+            labelControl9.TabIndex = 103;
+            labelControl9.Text = "Bằng Chữ";
+            // 
             // txtMaGD
             // 
             txtMaGD.Location = new Point(555, 57);
@@ -418,7 +447,7 @@
             // 
             labelControl7.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl7.Appearance.Options.UseFont = true;
-            labelControl7.Location = new Point(452, 63);
+            labelControl7.Location = new Point(437, 62);
             labelControl7.Margin = new Padding(4);
             labelControl7.Name = "labelControl7";
             labelControl7.Size = new Size(98, 21);
@@ -550,7 +579,7 @@
             // 
             // txtTongTien
             // 
-            txtTongTien.Location = new Point(555, 228);
+            txtTongTien.Location = new Point(555, 232);
             txtTongTien.Margin = new Padding(4);
             txtTongTien.MenuManager = barManager1;
             txtTongTien.Name = "txtTongTien";
@@ -566,7 +595,7 @@
             labelControl25.Appearance.ForeColor = Color.Blue;
             labelControl25.Appearance.Options.UseFont = true;
             labelControl25.Appearance.Options.UseForeColor = true;
-            labelControl25.Location = new Point(462, 228);
+            labelControl25.Location = new Point(461, 241);
             labelControl25.Margin = new Padding(4);
             labelControl25.Name = "labelControl25";
             labelControl25.Size = new Size(74, 19);
@@ -614,7 +643,7 @@
             labelControl13.Appearance.ForeColor = Color.Red;
             labelControl13.Appearance.Options.UseFont = true;
             labelControl13.Appearance.Options.UseForeColor = true;
-            labelControl13.Location = new Point(468, 123);
+            labelControl13.Location = new Point(451, 123);
             labelControl13.Margin = new Padding(4);
             labelControl13.Name = "labelControl13";
             labelControl13.Size = new Size(84, 19);
@@ -625,6 +654,7 @@
             // 
             groupControl2.AppearanceCaption.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             groupControl2.AppearanceCaption.Options.UseFont = true;
+            groupControl2.Controls.Add(txtHoTen);
             groupControl2.Controls.Add(cbKhu);
             groupControl2.Controls.Add(labelControl5);
             groupControl2.Controls.Add(txtMaSV);
@@ -638,7 +668,6 @@
             groupControl2.Controls.Add(cbGioiTinh);
             groupControl2.Controls.Add(txtSDT);
             groupControl2.Controls.Add(txtCCCD);
-            groupControl2.Controls.Add(txtHoTen);
             groupControl2.Controls.Add(labelControl1);
             groupControl2.Controls.Add(labelControl3);
             groupControl2.Controls.Add(labelControl2);
@@ -798,17 +827,6 @@
             txtCCCD.Properties.Appearance.Options.UseFont = true;
             txtCCCD.Size = new Size(374, 30);
             txtCCCD.TabIndex = 19;
-            // 
-            // txtHoTen
-            // 
-            txtHoTen.Location = new Point(113, 47);
-            txtHoTen.Margin = new Padding(4);
-            txtHoTen.MenuManager = barManager1;
-            txtHoTen.Name = "txtHoTen";
-            txtHoTen.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtHoTen.Properties.Appearance.Options.UseFont = true;
-            txtHoTen.Size = new Size(373, 30);
-            txtHoTen.TabIndex = 8;
             // 
             // labelControl1
             // 
@@ -1297,6 +1315,17 @@
             groupControl1.TabIndex = 101;
             groupControl1.Text = "Danh Sách";
             // 
+            // txtHoTen
+            // 
+            txtHoTen.Location = new Point(113, 50);
+            txtHoTen.Margin = new Padding(4);
+            txtHoTen.MenuManager = barManager1;
+            txtHoTen.Name = "txtHoTen";
+            txtHoTen.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtHoTen.Properties.Appearance.Options.UseFont = true;
+            txtHoTen.Size = new Size(374, 30);
+            txtHoTen.TabIndex = 88;
+            // 
             // frmBienLai
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
@@ -1326,6 +1355,7 @@
             ((System.ComponentModel.ISupportInitialize)groupControl4).EndInit();
             groupControl4.ResumeLayout(false);
             groupControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)txtTienBangChu.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtMaGD.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtTenNV.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)cbTrangThai.Properties).EndInit();
@@ -1342,7 +1372,6 @@
             ((System.ComponentModel.ISupportInitialize)cbGioiTinh.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtSDT.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtCCCD.Properties).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtHoTen.Properties).EndInit();
             ((System.ComponentModel.ISupportInitialize)gcDanhSach).EndInit();
             ((System.ComponentModel.ISupportInitialize)bienlaiBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)gvDanhSach).EndInit();
@@ -1350,6 +1379,7 @@
             ((System.ComponentModel.ISupportInitialize)gridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)groupControl1).EndInit();
             groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)txtHoTen.Properties).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1389,7 +1419,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit txtHoTen;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private DevExpress.XtraEditors.GroupControl groupControl2;
@@ -1449,5 +1478,8 @@
         private DevExpress.XtraEditors.TextEdit txtMaGD;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraGrid.Columns.GridColumn MAGIAODICH;
+        private DevExpress.XtraEditors.TextEdit txtTienBangChu;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.TextEdit txtHoTen;
     }
 }

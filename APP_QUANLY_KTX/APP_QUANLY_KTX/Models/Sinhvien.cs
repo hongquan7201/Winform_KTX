@@ -34,7 +34,7 @@ public partial class Sinhvien
 
     public string? Code { get; set; }
 
-    public DateTime? CreateAt { get; set; }
+    public DateTime CreateAt { get; set; }
     /// <summary>
     /// //////////////////
     /// </summary>

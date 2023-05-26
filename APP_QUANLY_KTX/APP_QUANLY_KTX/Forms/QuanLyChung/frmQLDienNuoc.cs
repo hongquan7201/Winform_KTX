@@ -40,7 +40,7 @@ namespace ProjectQLKTX
                 txtTienDien.Text = chitietCongTo.TienDien.ToString();
                 txtTienNuoc.Text = chitietCongTo.TienNuoc.ToString();
                 txtTongTien.Text = chitietCongTo.Total.ToString();
-                dtThangThu.Text = chitietCongTo.CreateAt.ToString();
+                dtThangThu.Value = chitietCongTo.CreateAt;
             }
             else
             {
@@ -73,7 +73,10 @@ namespace ProjectQLKTX
                 chitietcongto.ChiSoDienCuoiThang = int.Parse(txtChiSoDienCuoi.Text);
                 chitietcongto.ChiSoNuocDauThang = int.Parse(txtChiSoNuocDau.Text);
                 chitietcongto.ChiSoNuocCuoiThang = int.Parse(txtChiSoNuocCuoi.Text);
+                chitietcongto.SoNuocTieuThu = chitietcongto.ChiSoNuocCuoiThang - chitietcongto.ChiSoNuocDauThang;
+                chitietcongto.SoDienTieuThu = chitietcongto.ChiSoDienCuoiThang - chitietcongto.ChiSoDienDauThang;
                 chitietcongto.CreateAt = DateTime.Parse(dtThangThu.Text);
+                chitietcongto.IdCongTo = _ChiTietCongTo.IdCongTo;
                 foreach (var item in GlobalModel.ListPhong)
                 {
                     if (item.Name == cbPhong.Text && item.NameKhu == cbKhu.Text)
@@ -100,13 +103,14 @@ namespace ProjectQLKTX
             {
                 Chitietcongto chitietcongto = new Chitietcongto();
                 chitietcongto.Id = _ChiTietCongTo.Id;
+                chitietcongto.IdCongTo = _ChiTietCongTo.IdCongTo;
                 chitietcongto.IdPhong = _ChiTietCongTo.IdPhong;
                 chitietcongto.ChiSoDienDauThang = int.Parse(txtChiSoDienDau.Text);
                 chitietcongto.ChiSoDienCuoiThang = int.Parse(txtChiSoDienCuoi.Text);
                 chitietcongto.ChiSoNuocDauThang = int.Parse(txtChiSoNuocDau.Text);
                 chitietcongto.ChiSoNuocCuoiThang = int.Parse(txtChiSoNuocCuoi.Text);
-                chitietcongto.CreateAt = DateTime.Parse(dtThangThu.Text);
-                var result = await _chiTietCongToHelper.AddChiTietCongTo(chitietcongto, Constant.Token);
+                chitietcongto.CreateAt = dtThangThu.Value;
+                var result = await _chiTietCongToHelper.EditChiTietCongTo(chitietcongto, Constant.Token);
                 if (result.status == 200)
                 {
                     await LoadListDienNuoc(GlobalModel.ListChitietcongto);
@@ -154,6 +158,7 @@ namespace ProjectQLKTX
                         chitietcongto.TienNuoc = item.TienNuoc;
                         chitietcongto.Total = item.Total;
                         chitietcongto.IdPhong = item.IdPhong;
+                        chitietcongto.IdCongTo = item.IdCongTo;
                         if (chitietcongto.IdPhong != null)
                         {
                             if (chitietcongto.IdPhong != null)
@@ -261,7 +266,8 @@ namespace ProjectQLKTX
             {
                 if (cbPhong.Text == item.NamePhong && cbKhu.Text == item.NameKhu)
                 {
-                    GetAccount(item);
+                    _ChiTietCongTo = item;
+                    GetAccount(_ChiTietCongTo);
                     break;
                 }
             }

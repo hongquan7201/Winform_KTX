@@ -15,10 +15,13 @@ namespace ProjectQLKTX
         private readonly IPhongHelper _phongHelper;
         private readonly IKhuHelper _khuHelper;
         private readonly ITruongHelper _truongHelper;
+        private readonly frmLoading _frmLoading;
         private Xe account;
         private List<Truong> _listTruong = new List<Truong>();
+        private string messager = "Vui Lòng Thử Lại";
         private async void GetAccount(Xe xe)
         {
+            cbGioiTinh.Text = xe.GioiTinh;
             cbTruong.Text = xe.Truong;
             txtMaSV.Text = xe.MaSv;
             txtHoTen.Text = xe.NameUser;
@@ -26,7 +29,6 @@ namespace ProjectQLKTX
             cbKhu.Text = xe.NameKhu;
             txtCCCD.Text = xe.Cccd;
             txtSDT.Text = xe.Sdt;
-            cbGioiTinh.Text = xe.GioiTinh;
             if (xe.Gender == true)
             {
                 imgSVNam.Visible = true;
@@ -42,23 +44,23 @@ namespace ProjectQLKTX
             txtBSoXe.Text = xe.Code;
             txtMauXe.Text = xe.Color;
             txtTenXe.Text = xe.Name;
+            if (xe.CreateAt != null)
+            {
+                dtNgayDangKy.Text = xe.CreateAt.ToString();
+            }
             try
             {
-                if (xe.CreateAt != null)
-                {
-                    dtNgayDangKy.Text = xe.CreateAt.ToString();
-                }
                 if (!string.IsNullOrEmpty(xe.BirthDay))
                 {
-                    dtNgaySinh.Text = xe.BirthDay.ToString();
+                    dtNgaySinh.Text = xe.BirthDay;
                 }
-            }
-            catch (Exception ex)
+            }catch(Exception ex)
             {
-                MessageBox.Show("Vui Lòng Định Dạng Lại dd/mm/yyyy");
+
             }
+         
         }
-        public frmQLiXe(IXeHelper xeHelper, ISinhVienHelper sinhVienHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper)
+        public frmQLiXe(IXeHelper xeHelper, ISinhVienHelper sinhVienHelper, IPhongHelper phongHelper, IKhuHelper khuHelper, ITruongHelper truongHelper, frmLoading frmLoading)
         {
             InitializeComponent();
             _xeHelper = xeHelper;
@@ -66,6 +68,7 @@ namespace ProjectQLKTX
             _phongHelper = phongHelper;
             _khuHelper = khuHelper;
             _truongHelper = truongHelper;
+            _frmLoading = frmLoading;
         }
         private async Task LoadXe(List<Xe> listXe)
         {
@@ -85,6 +88,7 @@ namespace ProjectQLKTX
                             item.Address = user.data.FirstOrDefault().Address;
                             item.Cccd = user.data.FirstOrDefault().Cccd;
                             item.Sdt = user.data.FirstOrDefault().Sdt;
+                            item.MaSv = user.data.FirstOrDefault().MaSv;
                             item.Gender = user.data.FirstOrDefault().Gender;
                             if (item.Gender == true)
                             {
@@ -126,8 +130,6 @@ namespace ProjectQLKTX
                         i++;
                     }
                 }
-                gcDanhSach.DataSource = listXe;
-                gcDanhSach.RefreshDataSource();
             }
         }
 
@@ -264,31 +266,43 @@ namespace ProjectQLKTX
                     i++;
                 }
             }
-            else
-            {
-                MessageBox.Show(resultSinhVien.message);
-            }
-
+            messager = resultSinhVien.message;
         }
 
         private async void btnTim_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            _frmLoading.Show();
             await SearchSinhVien(GlobalModel.ListXe, txtTim.EditValue.ToString());
             gcDanhSach.DataSource = GlobalModel.ListXe;
             gcDanhSach.RefreshDataSource();
+            _frmLoading.Hide();
+            MessageBox.Show(messager);
         }
 
-        private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private async void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            LoadXe(GlobalModel.ListXe);
+            _frmLoading.Show();
+            await LoadXe(GlobalModel.ListXe);
+            gcDanhSach.DataSource = GlobalModel.ListXe;
+            gcDanhSach.RefreshDataSource();
+            _frmLoading.Hide();
         }
 
         private async void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            _frmLoading.Show();
+            await delete();
+            _frmLoading.Hide();
+            MessageBox.Show(messager);
+        }
+        private async Task delete()
         {
             var resultDelete = await _xeHelper.DeleteXe(account.Id, Constant.Token);
             if (resultDelete.status == 200)
             {
                 await LoadXe(GlobalModel.ListXe);
+                gcDanhSach.DataSource = GlobalModel.ListXe;
+                gcDanhSach.RefreshDataSource();
                 txtTenXe.Text = string.Empty;
                 cbTruong.Text = _listTruong[0].Name;
                 txtMaSV.Text = string.Empty;
@@ -307,37 +321,63 @@ namespace ProjectQLKTX
                 txtMauXe.Text = string.Empty;
                 txtTenXe.Text = string.Empty;
             }
-
-            MessageBox.Show(resultDelete.message);
         }
 
         private async void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Xe xe = new Xe();
-            xe.Id = account.Id;
-            xe.IdUser = account.IdUser;
-            xe.Name = txtTenXe.Text;
-            xe.Color = txtMauXe.Text;
-            xe.Code = txtBSoXe.Text;
-            xe.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
-            var resultEdit = await _xeHelper.EditXe(xe, Constant.Token);
-            if (resultEdit.status == 200)
+            _frmLoading.Show();
+            await edit();
+            _frmLoading.Hide();
+            MessageBox.Show(messager);
+        }
+        private async Task edit()
+        {
+            try
             {
-                await LoadXe(GlobalModel.ListXe);
+                Xe xe = new Xe();
+                xe.Id = account.Id;
+                xe.IdUser = account.IdUser;
+                xe.Name = txtTenXe.Text;
+                xe.Color = txtMauXe.Text;
+                xe.Code = txtBSoXe.Text;
+                xe.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
+                var resultEdit = await _xeHelper.EditXe(xe, Constant.Token);
+                if (resultEdit.status == 200)
+                {
+                    await LoadXe(GlobalModel.ListXe);
+                    gcDanhSach.DataSource = GlobalModel.ListXe;
+                    gcDanhSach.RefreshDataSource();
+                }
+                messager = resultEdit.message;
             }
-            MessageBox.Show(resultEdit.message);
-
-
+            catch (Exception ex)
+            {
+                Log.Error(ex, ex.Message);
+            }
         }
-
-        private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private async void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            _frmLoading.Show();
+            await AddXe();
+            _frmLoading.Hide();
+            MessageBox.Show(messager);
         }
-
-        private void btnThem_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private async Task AddXe()
         {
-
+            Xe newXe = new Xe();
+            if (GlobalModel.IsAddXe == true)
+            {
+                newXe.IdUser = GlobalModel.SinhVien.Id;
+            }
+            else
+            {
+                newXe.IdUser = account.IdUser;
+            }
+            newXe.Name = txtTenXe.Text;
+            newXe.Code = txtBSoXe.Text;
+            newXe.Color = txtMauXe.Text;
+            var result = await _xeHelper.AddXe(newXe, Constant.Token);
+            messager = result.message;
         }
     }
 }

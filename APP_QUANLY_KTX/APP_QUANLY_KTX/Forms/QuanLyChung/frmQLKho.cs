@@ -90,7 +90,7 @@ namespace ProjectQLKTX
             }
             else if (chitietphieukho.Status == false && chitietphieukho.Quantity > 0)
             {
-                txtTinhTrang.Text = "Hư";
+                txtTinhTrang.Text = "Hỏng";
             }
             else
             {
@@ -165,7 +165,7 @@ namespace ProjectQLKTX
                         }
                         else if (item.Status == false && item.Quantity > 0)
                         {
-                            txtTinhTrang.Text = "Hư";
+                            txtTinhTrang.Text = "Hỏng";
                         }
                         else
                         {

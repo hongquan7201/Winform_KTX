@@ -42,7 +42,7 @@ namespace ProjectQLKTX
 
         private async void btnChuyenPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           _frmLoading?.Show();
+            _frmLoading.Show();
             await Edit();
             _frmLoading.Hide();
             MessageBox.Show(messager);
@@ -51,18 +51,25 @@ namespace ProjectQLKTX
         {
             try
             {
-                foreach (var phong in GlobalModel.ListPhong)
+                var result = await _phongHelper.DeleteSinhVien(_sinhvien.Id, Constant.Token);
+                if (result.status == 200)
                 {
-                    if (cbChuyenToiPhong.Text == phong.Name)
+                    SVP sVP = new SVP();
+                    sVP.idSV = GlobalModel.SinhVien.Id;
+                    foreach (var item in GlobalModel.ListPhong)
                     {
-                        _sinhvien.IdPhong = phong.Id;
-                        break;
+                        if (cbChuyenToiPhong.Text == item.Name && cbPhongHienTai.Text == item.NameKhu)
+                        {
+                            sVP.idPhong = item.Id;
+                            break;
+                        }
                     }
+                    var resultAdd = await _phongHelper.AddSinhVien(sVP, Constant.Token);
+                    messager = resultAdd.message;
                 }
-                var result = await _sinhVienHelper.EditSinhVien(_sinhvien, Constant.Token);
-                messager = result.message;
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Log.Error(ex, ex.Message);
             }
@@ -75,7 +82,7 @@ namespace ProjectQLKTX
             {
                 if (item.QuantityPeople < 8)
                 {
-                    cbChuyenToiKhu.Properties.Items.Add(item.NameKhu);
+                    cbPhongHienTai.Properties.Items.Add(item.NameKhu);
                     cbChuyenToiPhong.Properties.Items.Add(item.Name);
                 }
             }
@@ -115,9 +122,9 @@ namespace ProjectQLKTX
                             }
                         }
                     }
-                    _sinhvien.CreateAt = resultSinhVien.data.FirstOrDefault().CreateAt;
-
-                    GetAccount(GlobalModel.SinhVien);
+                    _sinhvien.MaSv = resultSinhVien.data.FirstOrDefault().MaSv;
+                    _sinhvien.Gender = resultSinhVien.data.FirstOrDefault().Gender;
+                    GetAccount(_sinhvien);
                 }
                 messager = resultSinhVien.message;
             }
@@ -131,7 +138,6 @@ namespace ProjectQLKTX
             txtCCCD.Text = sinhvien.Cccd;
             txtDiaChi.Text = sinhvien.Address;
             txtHoTen.Text = sinhvien.Name;
-            dtNgaySinh.Text = sinhvien.BirthDay;
             if (sinhvien.Gender == true)
             {
                 cbGioiTinh.Text = "Nam";
@@ -147,8 +153,32 @@ namespace ProjectQLKTX
             txtMaSV.Text = sinhvien.MaSv;
             cbTruong.Text = sinhvien.Truong;
             txtSDT.Text = sinhvien.Sdt;
-            cbPhongHienTai.Text = sinhvien.Phong;
+            cbChuyenToiKhu.Text = sinhvien.Phong;
             cbKhuHienTai.Text = sinhvien.Khu;
+            txtEmail.Text = sinhvien.Email;
+            txtTenNV.Text = GlobalModel.Nhanvien.Name;
+            dtNgaySinh.Text = sinhvien.BirthDay;
+        }
+        private void cbKhuHienTai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbPhongHienTai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbChuyenToiPhong.Properties.Items.Clear();
+            foreach (var item in GlobalModel.ListPhong)
+            {
+                if (cbPhongHienTai.Text == item.NameKhu && item.QuantityPeople < 8)
+                {
+                    cbChuyenToiPhong.Properties.Items.Add(item.Name);
+                }
+            }
+        }
+
+        private void cbChuyenToiPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

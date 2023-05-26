@@ -76,11 +76,11 @@ namespace ProjectQLKTX
                     MessageBox.Show("Vui Lòng Nhập Đúng Thông Tin!");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Log.Error(ex, ex.Message);
             }
-           
+
         }
         private async Task Edit(string pass)
         {

@@ -180,7 +180,7 @@
             groupControl2.Controls.Add(labelControl10);
             groupControl2.Controls.Add(txtCCCD);
             groupControl2.Location = new Point(0, 41);
-            groupControl2.Margin = new Padding(4, 4, 4, 4);
+            groupControl2.Margin = new Padding(4);
             groupControl2.Name = "groupControl2";
             groupControl2.Size = new Size(677, 452);
             groupControl2.TabIndex = 43;
@@ -189,7 +189,7 @@
             // txtMaSV
             // 
             txtMaSV.Location = new Point(262, 122);
-            txtMaSV.Margin = new Padding(4, 4, 4, 4);
+            txtMaSV.Margin = new Padding(4);
             txtMaSV.Name = "txtMaSV";
             txtMaSV.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtMaSV.Properties.Appearance.Options.UseFont = true;
@@ -199,7 +199,7 @@
             // cbTruong
             // 
             cbTruong.Location = new Point(262, 267);
-            cbTruong.Margin = new Padding(4, 4, 4, 4);
+            cbTruong.Margin = new Padding(4);
             cbTruong.Name = "cbTruong";
             cbTruong.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             cbTruong.Properties.Appearance.Options.UseFont = true;
@@ -214,7 +214,7 @@
             dtNgaySinh.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             dtNgaySinh.Format = DateTimePickerFormat.Short;
             dtNgaySinh.Location = new Point(483, 118);
-            dtNgaySinh.Margin = new Padding(4, 4, 4, 4);
+            dtNgaySinh.Margin = new Padding(4);
             dtNgaySinh.Name = "dtNgaySinh";
             dtNgaySinh.Size = new Size(144, 30);
             dtNgaySinh.TabIndex = 76;
@@ -222,7 +222,7 @@
             // cbGioiTinh
             // 
             cbGioiTinh.Location = new Point(262, 169);
-            cbGioiTinh.Margin = new Padding(4, 4, 4, 4);
+            cbGioiTinh.Margin = new Padding(4);
             cbGioiTinh.Name = "cbGioiTinh";
             cbGioiTinh.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             cbGioiTinh.Properties.Appearance.Options.UseFont = true;
@@ -231,13 +231,14 @@
             cbGioiTinh.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             cbGioiTinh.Size = new Size(140, 30);
             cbGioiTinh.TabIndex = 75;
+            cbGioiTinh.SelectedIndexChanged += cbGioiTinh_SelectedIndexChanged;
             // 
             // labelControl12
             // 
             labelControl12.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl12.Appearance.Options.UseFont = true;
             labelControl12.Location = new Point(177, 175);
-            labelControl12.Margin = new Padding(4, 4, 4, 4);
+            labelControl12.Margin = new Padding(4);
             labelControl12.Name = "labelControl12";
             labelControl12.Size = new Size(65, 21);
             labelControl12.TabIndex = 74;
@@ -246,7 +247,7 @@
             // txtEmail
             // 
             txtEmail.Location = new Point(262, 367);
-            txtEmail.Margin = new Padding(4, 4, 4, 4);
+            txtEmail.Margin = new Padding(4);
             txtEmail.Name = "txtEmail";
             txtEmail.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmail.Properties.Appearance.Options.UseFont = true;
@@ -258,7 +259,7 @@
             labelControl8.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl8.Appearance.Options.UseFont = true;
             labelControl8.Location = new Point(198, 370);
-            labelControl8.Margin = new Padding(4, 4, 4, 4);
+            labelControl8.Margin = new Padding(4);
             labelControl8.Name = "labelControl8";
             labelControl8.Size = new Size(39, 19);
             labelControl8.TabIndex = 72;
@@ -268,7 +269,7 @@
             // 
             imgSVNu.Image = (Image)resources.GetObject("imgSVNu.Image");
             imgSVNu.Location = new Point(9, 85);
-            imgSVNu.Margin = new Padding(4, 4, 4, 4);
+            imgSVNu.Margin = new Padding(4);
             imgSVNu.Name = "imgSVNu";
             imgSVNu.Size = new Size(142, 153);
             imgSVNu.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -279,7 +280,7 @@
             // 
             imgSVNam.Image = (Image)resources.GetObject("imgSVNam.Image");
             imgSVNam.Location = new Point(9, 85);
-            imgSVNam.Margin = new Padding(4, 4, 4, 4);
+            imgSVNam.Margin = new Padding(4);
             imgSVNam.Name = "imgSVNam";
             imgSVNam.Size = new Size(142, 153);
             imgSVNam.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -290,7 +291,7 @@
             // 
             imgNo.Image = Properties.Resources.noimage;
             imgNo.Location = new Point(9, 85);
-            imgNo.Margin = new Padding(4, 4, 4, 4);
+            imgNo.Margin = new Padding(4);
             imgNo.Name = "imgNo";
             imgNo.Size = new Size(142, 153);
             imgNo.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -302,7 +303,7 @@
             labelControl5.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl5.Appearance.Options.UseFont = true;
             labelControl5.Location = new Point(186, 273);
-            labelControl5.Margin = new Padding(4, 4, 4, 4);
+            labelControl5.Margin = new Padding(4);
             labelControl5.Name = "labelControl5";
             labelControl5.Size = new Size(53, 21);
             labelControl5.TabIndex = 50;
@@ -313,7 +314,7 @@
             labelControl1.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl1.Appearance.Options.UseFont = true;
             labelControl1.Location = new Point(191, 123);
-            labelControl1.Margin = new Padding(4, 4, 4, 4);
+            labelControl1.Margin = new Padding(4);
             labelControl1.Name = "labelControl1";
             labelControl1.Size = new Size(44, 19);
             labelControl1.TabIndex = 47;
@@ -324,7 +325,7 @@
             labelControl6.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl6.Appearance.Options.UseFont = true;
             labelControl6.Location = new Point(197, 220);
-            labelControl6.Margin = new Padding(4, 4, 4, 4);
+            labelControl6.Margin = new Padding(4);
             labelControl6.Name = "labelControl6";
             labelControl6.Size = new Size(41, 19);
             labelControl6.TabIndex = 41;
@@ -333,7 +334,7 @@
             // txtHoTen
             // 
             txtHoTen.Location = new Point(266, 74);
-            txtHoTen.Margin = new Padding(4, 4, 4, 4);
+            txtHoTen.Margin = new Padding(4);
             txtHoTen.Name = "txtHoTen";
             txtHoTen.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtHoTen.Properties.Appearance.Options.UseFont = true;
@@ -343,7 +344,7 @@
             // txtDiaChi
             // 
             txtDiaChi.Location = new Point(264, 315);
-            txtDiaChi.Margin = new Padding(4, 4, 4, 4);
+            txtDiaChi.Margin = new Padding(4);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtDiaChi.Properties.Appearance.Options.UseFont = true;
@@ -355,7 +356,7 @@
             labelControl3.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl3.Appearance.Options.UseFont = true;
             labelControl3.Location = new Point(188, 75);
-            labelControl3.Margin = new Padding(4, 4, 4, 4);
+            labelControl3.Margin = new Padding(4);
             labelControl3.Name = "labelControl3";
             labelControl3.Size = new Size(53, 21);
             labelControl3.TabIndex = 9;
@@ -366,7 +367,7 @@
             labelControl11.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl11.Appearance.Options.UseFont = true;
             labelControl11.Location = new Point(442, 170);
-            labelControl11.Margin = new Padding(4, 4, 4, 4);
+            labelControl11.Margin = new Padding(4);
             labelControl11.Name = "labelControl11";
             labelControl11.Size = new Size(30, 19);
             labelControl11.TabIndex = 39;
@@ -377,7 +378,7 @@
             labelControl4.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl4.Appearance.Options.UseFont = true;
             labelControl4.Location = new Point(410, 123);
-            labelControl4.Margin = new Padding(4, 4, 4, 4);
+            labelControl4.Margin = new Padding(4);
             labelControl4.Name = "labelControl4";
             labelControl4.Size = new Size(72, 19);
             labelControl4.TabIndex = 13;
@@ -386,7 +387,7 @@
             // txtSDT
             // 
             txtSDT.Location = new Point(483, 169);
-            txtSDT.Margin = new Padding(4, 4, 4, 4);
+            txtSDT.Margin = new Padding(4);
             txtSDT.Name = "txtSDT";
             txtSDT.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtSDT.Properties.Appearance.Options.UseFont = true;
@@ -398,7 +399,7 @@
             labelControl10.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl10.Appearance.Options.UseFont = true;
             labelControl10.Location = new Point(187, 319);
-            labelControl10.Margin = new Padding(4, 4, 4, 4);
+            labelControl10.Margin = new Padding(4);
             labelControl10.Name = "labelControl10";
             labelControl10.Size = new Size(53, 21);
             labelControl10.TabIndex = 37;
@@ -407,7 +408,7 @@
             // txtCCCD
             // 
             txtCCCD.Location = new Point(264, 219);
-            txtCCCD.Margin = new Padding(4, 4, 4, 4);
+            txtCCCD.Margin = new Padding(4);
             txtCCCD.Name = "txtCCCD";
             txtCCCD.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtCCCD.Properties.Appearance.Options.UseFont = true;
@@ -447,6 +448,7 @@
             btnLapPhieu.Id = 0;
             btnLapPhieu.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnLapPhieu.ImageOptions.SvgImage");
             btnLapPhieu.Name = "btnLapPhieu";
+            btnLapPhieu.ItemClick += btnLapPhieu_ItemClick;
             // 
             // btnDangKyXe
             // 
@@ -455,6 +457,7 @@
             btnDangKyXe.ImageOptions.Image = (Image)resources.GetObject("btnDangKyXe.ImageOptions.Image");
             btnDangKyXe.ImageOptions.LargeImage = (Image)resources.GetObject("btnDangKyXe.ImageOptions.LargeImage");
             btnDangKyXe.Name = "btnDangKyXe";
+            btnDangKyXe.ItemClick += btnDangKyXe_ItemClick;
             // 
             // btnReload
             // 
@@ -466,6 +469,7 @@
             btnReload.ImageOptions.Image = (Image)resources.GetObject("btnReload.ImageOptions.Image");
             btnReload.ImageOptions.LargeImage = (Image)resources.GetObject("btnReload.ImageOptions.LargeImage");
             btnReload.Name = "btnReload";
+            btnReload.ItemClick += btnReload_ItemClick;
             // 
             // galleryDropDown1
             // 
@@ -493,6 +497,7 @@
             btnTim.ImageOptions.SvgImage = (DevExpress.Utils.Svg.SvgImage)resources.GetObject("btnTim.ImageOptions.SvgImage");
             btnTim.Name = "btnTim";
             btnTim.Size = new Size(80, 0);
+            btnTim.ItemClick += btnTim_ItemClick;
             // 
             // barDockControlTop
             // 
@@ -500,7 +505,7 @@
             barDockControlTop.Dock = DockStyle.Top;
             barDockControlTop.Location = new Point(0, 0);
             barDockControlTop.Manager = barManager1;
-            barDockControlTop.Margin = new Padding(4, 4, 4, 4);
+            barDockControlTop.Margin = new Padding(4);
             barDockControlTop.Size = new Size(1070, 30);
             // 
             // barDockControlBottom
@@ -509,7 +514,7 @@
             barDockControlBottom.Dock = DockStyle.Bottom;
             barDockControlBottom.Location = new Point(0, 496);
             barDockControlBottom.Manager = barManager1;
-            barDockControlBottom.Margin = new Padding(4, 4, 4, 4);
+            barDockControlBottom.Margin = new Padding(4);
             barDockControlBottom.Size = new Size(1070, 0);
             // 
             // barDockControlLeft
@@ -518,7 +523,7 @@
             barDockControlLeft.Dock = DockStyle.Left;
             barDockControlLeft.Location = new Point(0, 30);
             barDockControlLeft.Manager = barManager1;
-            barDockControlLeft.Margin = new Padding(4, 4, 4, 4);
+            barDockControlLeft.Margin = new Padding(4);
             barDockControlLeft.Size = new Size(0, 466);
             // 
             // barDockControlRight
@@ -527,7 +532,7 @@
             barDockControlRight.Dock = DockStyle.Right;
             barDockControlRight.Location = new Point(1070, 30);
             barDockControlRight.Manager = barManager1;
-            barDockControlRight.Margin = new Padding(4, 4, 4, 4);
+            barDockControlRight.Margin = new Padding(4);
             barDockControlRight.Size = new Size(0, 466);
             // 
             // btnSua
@@ -774,7 +779,7 @@
             groupControl1.Controls.Add(labelControl16);
             groupControl1.Controls.Add(labelControl15);
             groupControl1.Location = new Point(679, 41);
-            groupControl1.Margin = new Padding(4, 4, 4, 4);
+            groupControl1.Margin = new Padding(4);
             groupControl1.Name = "groupControl1";
             groupControl1.Size = new Size(388, 268);
             groupControl1.TabIndex = 74;
@@ -786,7 +791,7 @@
             dtNgayDangKy.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             dtNgayDangKy.Format = DateTimePickerFormat.Short;
             dtNgayDangKy.Location = new Point(125, 228);
-            dtNgayDangKy.Margin = new Padding(4, 4, 4, 4);
+            dtNgayDangKy.Margin = new Padding(4);
             dtNgayDangKy.Name = "dtNgayDangKy";
             dtNgayDangKy.Size = new Size(221, 30);
             dtNgayDangKy.TabIndex = 81;
@@ -796,7 +801,7 @@
             labelControl2.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl2.Appearance.Options.UseFont = true;
             labelControl2.Location = new Point(21, 235);
-            labelControl2.Margin = new Padding(4, 4, 4, 4);
+            labelControl2.Margin = new Padding(4);
             labelControl2.Name = "labelControl2";
             labelControl2.Size = new Size(100, 19);
             labelControl2.TabIndex = 80;
@@ -808,7 +813,7 @@
             dtNgayHetHan.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             dtNgayHetHan.Format = DateTimePickerFormat.Short;
             dtNgayHetHan.Location = new Point(125, 177);
-            dtNgayHetHan.Margin = new Padding(4, 4, 4, 4);
+            dtNgayHetHan.Margin = new Padding(4);
             dtNgayHetHan.Name = "dtNgayHetHan";
             dtNgayHetHan.Size = new Size(221, 30);
             dtNgayHetHan.TabIndex = 78;
@@ -819,7 +824,7 @@
             dtNgayVao.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             dtNgayVao.Format = DateTimePickerFormat.Short;
             dtNgayVao.Location = new Point(125, 127);
-            dtNgayVao.Margin = new Padding(4, 4, 4, 4);
+            dtNgayVao.Margin = new Padding(4);
             dtNgayVao.Name = "dtNgayVao";
             dtNgayVao.Size = new Size(221, 30);
             dtNgayVao.TabIndex = 79;
@@ -827,7 +832,7 @@
             // txtEmailNV
             // 
             txtEmailNV.Location = new Point(125, 81);
-            txtEmailNV.Margin = new Padding(4, 4, 4, 4);
+            txtEmailNV.Margin = new Padding(4);
             txtEmailNV.Name = "txtEmailNV";
             txtEmailNV.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtEmailNV.Properties.Appearance.Options.UseFont = true;
@@ -839,7 +844,7 @@
             labelControl19.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl19.Appearance.Options.UseFont = true;
             labelControl19.Location = new Point(75, 82);
-            labelControl19.Margin = new Padding(4, 4, 4, 4);
+            labelControl19.Margin = new Padding(4);
             labelControl19.Name = "labelControl19";
             labelControl19.Size = new Size(39, 19);
             labelControl19.TabIndex = 65;
@@ -848,7 +853,7 @@
             // txtTenNV
             // 
             txtTenNV.Location = new Point(125, 36);
-            txtTenNV.Margin = new Padding(4, 4, 4, 4);
+            txtTenNV.Margin = new Padding(4);
             txtTenNV.Name = "txtTenNV";
             txtTenNV.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtTenNV.Properties.Appearance.Options.UseFont = true;
@@ -860,7 +865,7 @@
             labelControl18.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl18.Appearance.Options.UseFont = true;
             labelControl18.Location = new Point(15, 39);
-            labelControl18.Margin = new Padding(4, 4, 4, 4);
+            labelControl18.Margin = new Padding(4);
             labelControl18.Name = "labelControl18";
             labelControl18.Size = new Size(105, 19);
             labelControl18.TabIndex = 59;
@@ -871,7 +876,7 @@
             labelControl16.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl16.Appearance.Options.UseFont = true;
             labelControl16.Location = new Point(21, 185);
-            labelControl16.Margin = new Padding(4, 4, 4, 4);
+            labelControl16.Margin = new Padding(4);
             labelControl16.Name = "labelControl16";
             labelControl16.Size = new Size(102, 21);
             labelControl16.TabIndex = 61;
@@ -882,7 +887,7 @@
             labelControl15.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl15.Appearance.Options.UseFont = true;
             labelControl15.Location = new Point(50, 129);
-            labelControl15.Margin = new Padding(4, 4, 4, 4);
+            labelControl15.Margin = new Padding(4);
             labelControl15.Name = "labelControl15";
             labelControl15.Size = new Size(68, 19);
             labelControl15.TabIndex = 59;
@@ -897,7 +902,7 @@
             groupControl5.Controls.Add(labelControl9);
             groupControl5.Controls.Add(labelControl7);
             groupControl5.Location = new Point(679, 311);
-            groupControl5.Margin = new Padding(4, 4, 4, 4);
+            groupControl5.Margin = new Padding(4);
             groupControl5.Name = "groupControl5";
             groupControl5.Size = new Size(388, 181);
             groupControl5.TabIndex = 75;
@@ -906,7 +911,7 @@
             // cbPhong
             // 
             cbPhong.Location = new Point(125, 121);
-            cbPhong.Margin = new Padding(4, 4, 4, 4);
+            cbPhong.Margin = new Padding(4);
             cbPhong.Name = "cbPhong";
             cbPhong.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             cbPhong.Properties.Appearance.Options.UseFont = true;
@@ -914,11 +919,12 @@
             cbPhong.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             cbPhong.Size = new Size(222, 30);
             cbPhong.TabIndex = 71;
+            cbPhong.SelectedIndexChanged += cbPhong_SelectedIndexChanged;
             // 
             // cbKhu
             // 
             cbKhu.Location = new Point(125, 65);
-            cbKhu.Margin = new Padding(4, 4, 4, 4);
+            cbKhu.Margin = new Padding(4);
             cbKhu.Name = "cbKhu";
             cbKhu.Properties.Appearance.Font = new Font("Tahoma", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             cbKhu.Properties.Appearance.Options.UseFont = true;
@@ -926,13 +932,14 @@
             cbKhu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             cbKhu.Size = new Size(222, 30);
             cbKhu.TabIndex = 60;
+            cbKhu.SelectedIndexChanged += cbKhu_SelectedIndexChanged;
             // 
             // labelControl9
             // 
             labelControl9.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl9.Appearance.Options.UseFont = true;
             labelControl9.Location = new Point(75, 69);
-            labelControl9.Margin = new Padding(4, 4, 4, 4);
+            labelControl9.Margin = new Padding(4);
             labelControl9.Name = "labelControl9";
             labelControl9.Size = new Size(27, 19);
             labelControl9.TabIndex = 59;
@@ -943,7 +950,7 @@
             labelControl7.Appearance.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelControl7.Appearance.Options.UseFont = true;
             labelControl7.Location = new Point(58, 124);
-            labelControl7.Margin = new Padding(4, 4, 4, 4);
+            labelControl7.Margin = new Padding(4);
             labelControl7.Name = "labelControl7";
             labelControl7.Size = new Size(45, 19);
             labelControl7.TabIndex = 43;
@@ -984,7 +991,7 @@
             Controls.Add(barDockControlTop);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             IconOptions.Icon = (Icon)resources.GetObject("frmDKPhong.IconOptions.Icon");
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmDKPhong";

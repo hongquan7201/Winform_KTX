@@ -26,7 +26,9 @@ namespace ProjectQLKTX
 
         private async void btnTraPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            _frmLoading.Show();
             var result = await _phongHelper.DeleteSinhVien(_sinhvien.Id, Constant.Token);
+            _frmLoading.Hide();
             MessageBox.Show(result.message);
         }
 
@@ -94,7 +96,7 @@ namespace ProjectQLKTX
                     }
                     _sinhvien.CreateAt = resultSinhVien.data.FirstOrDefault().CreateAt;
 
-                    GetAccount(GlobalModel.SinhVien);
+                    GetAccount(_sinhvien);
                 }
                 messager = resultSinhVien.message;
             }

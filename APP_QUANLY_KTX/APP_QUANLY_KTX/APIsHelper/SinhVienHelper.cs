@@ -30,10 +30,8 @@ namespace ProjectQLKTX.APIsHelper
                 Cccd = sinhVien.Cccd,
                 Sdt = sinhVien.Sdt,
                 Gender = sinhVien.Gender,
-                IdPhong = sinhVien.IdPhong,
                 IdTruong = sinhVien.IdTruong,
-                BirthDay = sinhVien.BirthDay,
-                CreateAt = sinhVien.CreateAt
+                BirthDay = sinhVien.BirthDay
             });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PostAsync($"api/sinhvien/register", content);
@@ -44,12 +42,15 @@ namespace ProjectQLKTX.APIsHelper
 
         public async Task<APIRespone<string>> DeleteSinhVien(Guid? id, string token)
         {
-
-            HttpClient httpClient = new HttpClient();
-            string url = Constant.Domain + "/api/user/delete"; // Thay đổi đường dẫn API của bạn
-            var request = new HttpRequestMessage(HttpMethod.Delete, url);
+              string url = Constant.Domain + "api/user/delete";// Thay đổi đường dẫn API của bạn
+            var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
-            request.Content = new StringContent(JsonConvert.SerializeObject(id), System.Text.Encoding.UTF8, "application/json"); // Chuyển đối tượng id thành chuỗi JSON và đặt nội dung của request là chuỗi JSON này
+            var jsonId = JsonConvert.SerializeObject(id);
+            var content = new StringContent(jsonId, Encoding.UTF8, "application/json");
+            var request = new HttpRequestMessage(HttpMethod.Delete, url)
+            {
+                Content = content
+            };
             var response = await httpClient.SendAsync(request);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
@@ -63,7 +64,22 @@ namespace ProjectQLKTX.APIsHelper
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var json = JsonConvert.SerializeObject(sinhVien, jsonSerializerSettings);
+            // var json = JsonConvert.SerializeObject(sinhVien, jsonSerializerSettings);
+            var json = JsonConvert.SerializeObject(new
+            {
+                Id = sinhVien.Id,
+                Email = sinhVien.Email,
+                MaSv = sinhVien.MaSv,
+                Name = sinhVien.Name,
+                Address = sinhVien.Address,
+                Cccd = sinhVien.Cccd,
+                Password = sinhVien.Password,
+                Sdt = sinhVien.Sdt,
+                Gender = sinhVien.Gender,
+                IdTruong = sinhVien.IdTruong,
+                IdPhong = sinhVien.IdPhong,
+                BirthDay = sinhVien.BirthDay
+            });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await httpClient.PutAsync($"api/user/edit", content);
             var body = await response.Content.ReadAsStringAsync();
@@ -115,7 +131,7 @@ namespace ProjectQLKTX.APIsHelper
             string query = "/api/user/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<List<Sinhvien>> data = JsonConvert.DeserializeObject < APIRespone<List<Sinhvien>>>(body);
+            APIRespone<List<Sinhvien>> data = JsonConvert.DeserializeObject<APIRespone<List<Sinhvien>>>(body);
             return data;
         }
 

@@ -16,7 +16,7 @@ namespace ProjectQLKTX
         private readonly IRoleHelper _roleHelper;
         private readonly INhanVienHelper _nhanVienHelper;
         private readonly frmLoading _frmLoading;
-        private string messager = "";
+        private string messager = "Vui Lòng Thử Lại!";
         public frmDSNhanVien(INhanVienHelper nhanVienHelper, frmLoading frmLoading, IRoleHelper roleHelper)
         {
             InitializeComponent();
@@ -70,12 +70,15 @@ namespace ProjectQLKTX
         }
         private async void frmDSNhanVien_Load(object sender, EventArgs e)
         {
+            
+            imgNVNam.Visible = false;
+            imgNVNu.Visible = false;
             gcDanhSach.DataSource = GlobalModel.ListNhanVien;
             gcDanhSach.RefreshDataSource();
             lbDem.Text = GlobalModel.ListNhanVien.Count.ToString();
             foreach (var item in GlobalModel.ListRole)
             {
-                cbChucVu.Text = item.Name;
+                cbChucVu.Properties.Items.Add(item.Name);
             }
         }
         private async void GetAccount(Nhanvien nhanvien)
@@ -90,11 +93,13 @@ namespace ProjectQLKTX
             {
                 imgNVNam.Visible = true;
                 imgNVNu.Visible = false;
+                imgNo.Visible = false;
             }
             else
             {
                 imgNVNam.Visible = false;
                 imgNVNu.Visible = true;
+                imgNo.Visible = false;
             }
             cbChucVu.Text = nhanvien.NameRole;
             try
@@ -134,7 +139,7 @@ namespace ProjectQLKTX
                         break;
                     }
                 }
-                if (cbGioiTinh.Text == "Nam")
+                if (imgNVNam.Visible == true)
                 {
                     nhanvien.Gender = true;
                 }
@@ -142,13 +147,12 @@ namespace ProjectQLKTX
                 {
                     nhanvien.Gender = false;
                 }
+                nhanvien.Birthday = dtNgaySinh.Text;
                 var result = await _nhanVienHelper.AddNhanVien(nhanvien, Constant.Token);
                 if (result.status == 200)
                 {
                     await LoadAccount(GlobalModel.ListNhanVien);
                 }
-                nhanvien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
-                nhanvien.Birthday = dtNgaySinh.Text;
                 messager = result.message;
             }
             catch (Exception ex)
@@ -173,6 +177,7 @@ namespace ProjectQLKTX
                 nhanvien.Name = txtHoTen.Text;
                 nhanvien.Email = txtEmail.Text;
                 nhanvien.Address = txtDiaChi.Text;
+                nhanvien.Password = account.Password;
                 nhanvien.Cccd = txtCCCD.Text;
                 foreach (var item in GlobalModel.ListRole)
                 {
@@ -183,7 +188,7 @@ namespace ProjectQLKTX
                     }
                 }
                 nhanvien.Sdt = txtSDT.Text;
-                if (cbGioiTinh.Text == "Nam")
+                if (imgNVNam.Visible == true)
                 {
                     nhanvien.Gender = true;
                 }
@@ -191,13 +196,14 @@ namespace ProjectQLKTX
                 {
                     nhanvien.Gender = false;
                 }
-                var result = await _nhanVienHelper.EditNhanVien(account, Constant.Token);
+                nhanvien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
+                nhanvien.Birthday = dtNgaySinh.Text;
+                var result = await _nhanVienHelper.EditNhanVien(nhanvien, Constant.Token);
                 if (result.status == 200)
                 {
                     await LoadAccount(GlobalModel.ListNhanVien);
                 }
-                nhanvien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
-                nhanvien.Birthday = dtNgaySinh.Text;
+                
                 messager = result.message;
             }
             catch (Exception ex)
@@ -302,6 +308,14 @@ namespace ProjectQLKTX
                         {
                             item.GioiTinh = "Nữ";
                         }
+                        if(item.IdRole != null)
+                        {
+                            var role = await  _roleHelper.GetRole(item.IdRole);
+                            if(role.status == 200)
+                            {
+                                item.NameRole = role.data.FirstOrDefault().Name;
+                            }
+                        }
                         listNhanVien.Add(item);
                         i++;
                     }
@@ -333,6 +347,11 @@ namespace ProjectQLKTX
         }
 
         private void txtSDT_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbChucVu_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -19,9 +19,17 @@ namespace ProjectQLKTX.APIsHelper
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
             var jsonSerializerSettings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var json = JsonConvert.SerializeObject(bienLai, jsonSerializerSettings);
+            var json = JsonConvert.SerializeObject(new
+            {
+                idNhanVien = bienLai.IdNhanVien,
+                idSinhVien = bienLai.IdSinhVien,
+                ngayBatDau = bienLai.NgayBatDau,
+                ngayHetHan = bienLai.NgayHetHan,
+                status = false
+            });
+
             var content = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PutAsync($"api/bienlai/add", content);
+            var response = await httpClient.PostAsync($"api/bienlai/add", content);
             var body = await response.Content.ReadAsStringAsync();
             APIRespone<string> data = JsonConvert.DeserializeObject<APIRespone<string>>(body);
             return data;
@@ -59,7 +67,7 @@ namespace ProjectQLKTX.APIsHelper
             return data;
         }
 
-        public async Task<APIRespone<Bienlai>> GetBienLai(Guid id, string token)
+        public async Task<APIRespone<List<Bienlai>>> GetBienLai(Guid id, string token)
         {
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(Constant.Domain);
@@ -67,7 +75,7 @@ namespace ProjectQLKTX.APIsHelper
             string query = "/api/bienlai/id?id={0}";
             var response = await httpClient.GetAsync(string.Format(query, id));
             var body = await response.Content.ReadAsStringAsync();
-            APIRespone<Bienlai> data = JsonConvert.DeserializeObject<APIRespone<Bienlai>>(body);
+            APIRespone<List<Bienlai>> data = JsonConvert.DeserializeObject<APIRespone<List<Bienlai>>>(body);
             return data;
         }
 
@@ -84,12 +92,12 @@ namespace ProjectQLKTX.APIsHelper
                 APIRespone<List<Bienlai>> data = JsonConvert.DeserializeObject<APIRespone<List<Bienlai>>>(body);
                 return data;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Log.Error(ex, ex.Message);
                 return null;
             }
-          
+
         }
     }
 }
