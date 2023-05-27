@@ -64,12 +64,17 @@ namespace ProjectQLKTX
                 string pass = (string)Properties.Settings.Default["Password"];
                 if (txtPasswordCu.Text == pass && txtPasswordMoi.Text == txtNhapLaiPassword.Text)
                 {
-                    _frmLoading.Show();
-                    await Edit(pass);
-                    _frmLoading.Hide();
-                    var s = messager;
-
-                    MessageBox.Show(messager);
+                    if(txtPasswordMoi.Text.Length > 8)
+                    {
+                        _frmLoading.Show();
+                        await Edit(pass);
+                        _frmLoading.Hide();
+                        MessageBox.Show(messager);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui Lòng Nhập Mật Khẩu Trên 8 Ký Tự Trở Lên!");
+                    }
                 }
                 else
                 {
@@ -97,6 +102,11 @@ namespace ProjectQLKTX
             {
                 Log.Error(ex, ex.Message);
             }
+        }
+
+        private void pictureEdit4_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

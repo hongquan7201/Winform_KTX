@@ -167,7 +167,7 @@ namespace ProjectQLKTX
             newSinhVien.Name = txtHoTen.Text;
             newSinhVien.MaSv = txtMaSV.Text;
             newSinhVien.Address = txtDiaChi.Text;
-            newSinhVien.BirthDay = dtNgaySinh.Text;
+            newSinhVien.BirthDay = dtNgaySinh.Value;
             newSinhVien.Cccd = txtCCCD.Text;
             newSinhVien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
             newSinhVien.Email = txtEmail.Text;
@@ -285,10 +285,7 @@ namespace ProjectQLKTX
                 {
                     dtNgayDangKy.Value = sinhVien.CreateAt;
                 }
-                if (!string.IsNullOrEmpty(sinhVien.BirthDay))
-                {
-                    dtNgaySinh.Text = sinhVien.BirthDay;
-                }
+                    dtNgaySinh.Value = sinhVien.BirthDay;
             }
             catch (Exception ex)
             {
@@ -309,7 +306,7 @@ namespace ProjectQLKTX
             _sinhVien.Email = txtEmail.Text;
             _sinhVien.Address = txtDiaChi.Text;
             _sinhVien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
-            _sinhVien.BirthDay = dtNgaySinh.Text;
+            _sinhVien.BirthDay = dtNgaySinh.Value;
             _sinhVien.Cccd = txtCCCD.Text;
             _sinhVien.Sdt = txtSDT.Text;
             _sinhVien.MaSv = txtMaSV.Text;

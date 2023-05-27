@@ -104,8 +104,8 @@ namespace ProjectQLKTX
             cbChucVu.Text = nhanvien.NameRole;
             try
             {
-                dtNgayDangKy.Text = nhanvien.CreateAt.Value.Day + "/" + nhanvien.CreateAt.Value.Month + "/" + nhanvien.CreateAt.Value.Year;
-                dtNgaySinh.Text = nhanvien.Birthday;
+                dtNgayDangKy.Value = nhanvien.CreateAt;
+                dtNgaySinh.Value = nhanvien.Birthday;
             }
             catch (Exception ex)
             {
@@ -147,7 +147,7 @@ namespace ProjectQLKTX
                 {
                     nhanvien.Gender = false;
                 }
-                nhanvien.Birthday = dtNgaySinh.Text;
+                nhanvien.Birthday = dtNgaySinh.Value;
                 var result = await _nhanVienHelper.AddNhanVien(nhanvien, Constant.Token);
                 if (result.status == 200)
                 {
@@ -197,7 +197,7 @@ namespace ProjectQLKTX
                     nhanvien.Gender = false;
                 }
                 nhanvien.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
-                nhanvien.Birthday = dtNgaySinh.Text;
+                nhanvien.Birthday = dtNgaySinh.Value;
                 var result = await _nhanVienHelper.EditNhanVien(nhanvien, Constant.Token);
                 if (result.status == 200)
                 {

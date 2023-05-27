@@ -51,23 +51,18 @@ namespace ProjectQLKTX
         {
             try
             {
-                var result = await _phongHelper.DeleteSinhVien(_sinhvien.Id, Constant.Token);
-                if (result.status == 200)
+                SVP sVP = new SVP();
+                sVP.idSV = GlobalModel.SinhVien.Id;
+                foreach (var item in GlobalModel.ListPhong)
                 {
-                    SVP sVP = new SVP();
-                    sVP.idSV = GlobalModel.SinhVien.Id;
-                    foreach (var item in GlobalModel.ListPhong)
+                    if (cbChuyenToiPhong.Text == item.Name && cbPhongHienTai.Text == item.NameKhu)
                     {
-                        if (cbChuyenToiPhong.Text == item.Name && cbPhongHienTai.Text == item.NameKhu)
-                        {
-                            sVP.idPhong = item.Id;
-                            break;
-                        }
+                        sVP.idPhong = item.Id;
+                        break;
                     }
-                    var resultAdd = await _phongHelper.AddSinhVien(sVP, Constant.Token);
-                    messager = resultAdd.message;
                 }
-
+                var resultAdd = await _phongHelper.AddSinhVien(sVP, Constant.Token);
+                messager = resultAdd.message;
             }
             catch (Exception ex)
             {
@@ -157,7 +152,7 @@ namespace ProjectQLKTX
             cbKhuHienTai.Text = sinhvien.Khu;
             txtEmail.Text = sinhvien.Email;
             txtTenNV.Text = GlobalModel.Nhanvien.Name;
-            dtNgaySinh.Text = sinhvien.BirthDay;
+            dtNgaySinh.Value = sinhvien.BirthDay;
         }
         private void cbKhuHienTai_SelectedIndexChanged(object sender, EventArgs e)
         {

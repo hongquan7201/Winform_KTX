@@ -24,7 +24,7 @@ public partial class Bienlai
     public string? MaSinhVien { get; set; }
     public string? GioiTinhSV { get;set; }
     public string? SdtSV { get;set; }
-    public string? NgaySinhSV { get; set; }
+    public DateTime NgaySinhSV { get; set; }
     public string? EmailSV { get;set; }
     public string? CCCD { get;set; }
     public string? Phong { get; set; }

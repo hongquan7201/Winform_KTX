@@ -51,7 +51,7 @@ namespace ProjectQLKTX
             txtMaSV.Text = sinhvien.MaSv;
             cbTruong.Text = sinhvien.Truong;
             txtSDT.Text = sinhvien.Sdt;
-            dtNgaySinh.Text = sinhvien.BirthDay;
+            dtNgaySinh.Value = sinhvien.BirthDay;
         }
         private void btnDangKyXe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -225,15 +225,15 @@ namespace ProjectQLKTX
                     hopdong.CreateAt = DateTime.Parse(dtNgayDangKy.Text);
                     hopdong.IdNhanVien = GlobalModel.Nhanvien.Id;
                     hopdong.IdSinhVien = GlobalModel.SinhVien.Id;
-                    hopdong.NgayBatDau = DateTime.Parse(dtNgayVao.Text);
-                    hopdong.NgayKetThuc = DateTime.Parse(dtNgayHetHan.Text);
+                    hopdong.NgayBatDau = dtNgayVao.Value;
+                    hopdong.NgayKetThuc = dtNgayHetHan.Value;
                     hopdong.IdPhong = GlobalModel.SinhVien.IdPhong;
                     var resultHopDong = await _hopDongHelper.AddHopDong(hopdong, Constant.Token);
                     Bienlai bienlai = new Bienlai();
                     bienlai.IdNhanVien = GlobalModel.Nhanvien.Id;
                     bienlai.IdSinhVien = GlobalModel.SinhVien.Id;
-                    bienlai.NgayBatDau = DateTime.Parse(dtNgayVao.Text);
-                    bienlai.NgayHetHan = DateTime.Parse(dtNgayHetHan.Text);
+                    bienlai.NgayBatDau = dtNgayVao.Value;
+                    bienlai.NgayHetHan = dtNgayHetHan.Value;
                     await _bienLaiHelper.AddBienLai(bienlai, Constant.Token);
                 }
                 messager = result.message;

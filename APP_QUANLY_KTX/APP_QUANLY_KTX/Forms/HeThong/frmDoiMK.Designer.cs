@@ -220,7 +220,7 @@
             // pictureEdit4
             // 
             pictureEdit4.EditValue = resources.GetObject("pictureEdit4.EditValue");
-            pictureEdit4.Location = new Point(31, 252);
+            pictureEdit4.Location = new Point(30, 249);
             pictureEdit4.Margin = new Padding(4);
             pictureEdit4.Name = "pictureEdit4";
             pictureEdit4.Properties.Appearance.BackColor = SystemColors.GradientActiveCaption;
@@ -230,15 +230,16 @@
             pictureEdit4.Properties.ZoomPercent = 6D;
             pictureEdit4.Size = new Size(51, 57);
             pictureEdit4.TabIndex = 53;
+            pictureEdit4.EditValueChanged += pictureEdit4_EditValueChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(77, 276);
+            label4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(76, 273);
             label4.Margin = new Padding(5, 0, 5, 0);
             label4.Name = "label4";
-            label4.Size = new Size(194, 27);
+            label4.Size = new Size(158, 22);
             label4.TabIndex = 54;
             label4.Text = "Nhập lại mật khẩu:";
             label4.TextAlign = ContentAlignment.TopCenter;

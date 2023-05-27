@@ -55,7 +55,7 @@ namespace ProjectQLKTX
             dtNgayBatDau.Text = bienlai.NgayBatDau.ToString();
             dtNgayDong.Text = bienlai.NgayDong.ToString();
             dtNgayHetHan.Text = bienlai.NgayHetHan.ToString();
-            dtNgaySinh.Text = bienlai.NgaySinhSV;
+            dtNgaySinh.Value = bienlai.NgaySinhSV;
         }
         private void btnXuatfileExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

@@ -27,5 +27,5 @@ public partial class Xe
     public string? Sdt { get; set;}
     public string? GioiTinh { get;set; }
     public bool? Gender { get; set; }
-    public string? BirthDay { get;set; }
+    public DateTime BirthDay { get;set; }
 }

@@ -65,7 +65,7 @@ namespace ProjectQLKTX
             {
                 GlobalModel.Nhanvien.Name = txtHoTen.Text;
                 GlobalModel.Nhanvien.Email = txtEmail.Text;
-                GlobalModel.Nhanvien.Birthday = dtNgaySinh.Text;
+                GlobalModel.Nhanvien.Birthday = dtNgaySinh.Value;
                 GlobalModel.Nhanvien.Cccd = txtCCCD.Text;
                 GlobalModel.Nhanvien.Address = txtDiaChi.Text;
                 GlobalModel.Nhanvien.Sdt = txtSDT.Text;

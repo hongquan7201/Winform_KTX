@@ -28,7 +28,7 @@ public partial class Sinhvien
     public Guid? idXe { get; set; }
     public Guid? idThanNhan { get; set; }
 
-    public string? BirthDay { get; set; }
+    public DateTime BirthDay { get; set; }
 
     public bool? Status { get; set; }
 

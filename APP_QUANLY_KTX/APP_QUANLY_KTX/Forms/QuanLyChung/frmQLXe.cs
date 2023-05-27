@@ -50,9 +50,9 @@ namespace ProjectQLKTX
             }
             try
             {
-                if (!string.IsNullOrEmpty(xe.BirthDay))
+                if (xe.BirthDay !=null) 
                 {
-                    dtNgaySinh.Text = xe.BirthDay;
+                    dtNgaySinh.Value = xe.BirthDay;
                 }
             }catch(Exception ex)
             {
@@ -141,7 +141,7 @@ namespace ProjectQLKTX
                 txtDiaChi.Text = GlobalModel.SinhVien.Address;
                 txtCCCD.Text = GlobalModel.SinhVien.Cccd;
                 txtMaSV.Text = GlobalModel.SinhVien.MaSv;
-                dtNgaySinh.Text = GlobalModel.SinhVien.BirthDay;
+                dtNgaySinh.Value = GlobalModel.SinhVien.BirthDay;
                 txtSDT.Text = GlobalModel.SinhVien.Sdt;
                 cbTruong.Text = GlobalModel.SinhVien.Truong;
                 if (GlobalModel.SinhVien.Gender == true)

@@ -110,7 +110,7 @@ namespace ProjectQLKTX
             txtCCCD.Text = sinhvien.Cccd;
             txtDiaChi.Text = sinhvien.Address;
             txtHoTen.Text = sinhvien.Name;
-            dtNgaySinh.Text = sinhvien.BirthDay;
+            dtNgaySinh.Value = sinhvien.BirthDay;
             if (sinhvien.Gender == true)
             {
                 cbGioiTinh.Text = "Nam";

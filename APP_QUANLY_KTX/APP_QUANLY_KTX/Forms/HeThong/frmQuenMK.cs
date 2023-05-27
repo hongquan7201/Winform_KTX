@@ -19,7 +19,7 @@ namespace ProjectQLKTX
 
         private async void btnLayLaiMK_CheckedChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtCCCD.Text)&& !string.IsNullOrEmpty(txtEmail.Text))
+            if (!string.IsNullOrEmpty(txtEmail.Text))
             {
                 _frmLoading.Show();
                 await Reset(txtEmail.Text.Trim());
