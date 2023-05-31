@@ -1,0 +1,22 @@
+
+				ĐỒ ÁN TỐT NGHIỆP 29/05/2023.
+Tên dự án: HỆ THỐNG QUẢN LÝ KÝ TÚC XÁ TÍCH HỢP API.
+* Chú ý:
+Có 3 Project cần chạy 1 lúc thì mới có thể gọi là 1 dự án đầy đủ thông tin nhất.
+	- Web View (dành cho Sinh viên).
+		Step 1: Cần cài node.js
+		Step 2: Chạy trên Visual Studio Code.
+	- Web API (dùng để tương tác, trao đổi và lưu trữ dữ liệu từ website với winform).
+		Step 1: Mở SQL Server, copy (Server name) của máy tính bạn và chọn (Connect) sau đó chọn (File) -> (Open -> (File...) tiếp tục chọn vào (Execute).
+		Step 2: Mở final API chọn(appsetting.json) thay đổi Admin bằng cái Server name của bạn
+		Step 3: Mở Models chọn file (QuanlyktxContext.cs) thay đổi Admin bằng cái Server name của bạn
+		Step 4: Mở file (reminder.txt) thay đổi Admin bằng cái Server name của bạn. Sau đó copy toàn bộ đoạn trong ngoặc.(Scaffold-DbContext "Data Source=Admin;Initial Catalog=QUANLYKTX;Integrated Security=True;encrypt=false" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force)
+		Vào Tools -> Nuget... -> Console rồi dán đoạn vừa copy vào.
+		Step 5: Nếu muốn có dữ liệu mẫu thì qua file (Program.cs) bỏ comment Main.Instance.Insert() và Start project.
+			- Chọn Solution -> Properties -> Startup Project -> Multiple startup projects -> Apply -> OK. Để chạy cả RequestAPIBanking.
+			- Chạy lần đầu, lần tiếp theo nhớ đóng đoạn commen //Main.Instance.Insert().
+		Nếu muốn đăng ký tài khoản thì Start project lên và chọn (Role) để lấy ID. Copy id xong chọn (Register) để đăng ký tk. Lấy tk vừa tạo để login trên Winform.
+	- Winform (dành cho Admin, Nhân viên).
+		Step 1: Cần cài DevExpress phiên bản (22.2.5).
+		Step 2: Chọn  Server Explorer -> Connect to Database -> Nhập Server name SQL -> Select... -> chọn QUANLYKTX -> OK và Start project.
+	* Lưu ý: file Final API luôn luôn phải chạy trước khi chạy Web View hoặc Winform.
