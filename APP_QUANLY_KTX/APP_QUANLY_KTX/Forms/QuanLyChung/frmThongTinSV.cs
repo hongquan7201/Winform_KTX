@@ -285,7 +285,7 @@ namespace ProjectQLKTX
                 {
                     dtNgayDangKy.Value = sinhVien.CreateAt;
                 }
-                    dtNgaySinh.Value = sinhVien.BirthDay;
+                dtNgaySinh.Value = sinhVien.BirthDay;
             }
             catch (Exception ex)
             {

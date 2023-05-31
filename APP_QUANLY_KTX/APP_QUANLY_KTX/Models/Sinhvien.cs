@@ -39,7 +39,6 @@ public partial class Sinhvien
     /// //////////////////
     /// </summary>
     public string? TenThanNhan { get;set; }
-    public string? BirthDayThanNhan { get; set; }
     public string? GioiTinhThanNhan { get; set; }
     public string? AddressThanNha { get; set; }
     public string? SDTThanNhan { get; set; }

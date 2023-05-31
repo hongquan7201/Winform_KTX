@@ -15,7 +15,7 @@ public partial class Thannhan
 
     public bool? Gender { get; set; }
 
-    public DateTime Birthday { get; set; }
+    public DateTime? Birthday { get; set; }
 
     public Guid? IdUser { get; set; }
 

@@ -343,6 +343,7 @@
             cbTenVatDung.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             cbTenVatDung.Size = new Size(244, 24);
             cbTenVatDung.TabIndex = 106;
+            cbTenVatDung.Click += cbTenVatDung_SelectedIndexChanged;
             // 
             // txtTenNV
             // 
@@ -568,6 +569,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Quản Lí Kho";
             Load += frmQLiKho_Load;
+            Click += frmQLiKho_Load;
             ((System.ComponentModel.ISupportInitialize)barManager1).EndInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemTextEdit4).EndInit();
             ((System.ComponentModel.ISupportInitialize)repositoryItemTextEdit1).EndInit();

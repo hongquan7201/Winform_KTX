@@ -876,6 +876,7 @@ namespace ProjectQLKTX
                     hoadon.Id = item.Id;
                     hoadon.Total = item.Total;
                     hoadon.Status = item.Status;
+                    hoadon.IdChiTietCongTo = item.IdChiTietCongTo;
                     if (hoadon.Status == true)
                     {
                         hoadon.TrangThai = "Đã Thanh Toán";

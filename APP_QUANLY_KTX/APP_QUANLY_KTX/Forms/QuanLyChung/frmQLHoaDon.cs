@@ -320,6 +320,7 @@ namespace ProjectQLKTX
                     hoadon.Id = item.Id;
                     hoadon.Total = item.Total;
                     hoadon.Status = item.Status;
+                    hoadon.IdChiTietCongTo = item.IdChiTietCongTo;
                     hoadon.MaGiaoDich = ConvertHelper.ConvertToGuid(item.Id);
                     if (hoadon.Status == true)
                     {
